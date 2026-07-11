@@ -1,0 +1,123 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "deures": "Deberes",
+    "autoavaluacio": "Autoevaluación"
+  },
+  "home": {
+    "kicker": "Biología y Geología · 3º ESO · IE Temple",
+    "title": "El mapa del curso",
+    "intro": "Siete situaciones de aprendizaje para entender la vida, el cuerpo y el planeta. Haz clic en una zona para entrar.",
+    "sessionsCount": "{{count}} sesiones",
+    "comingSoon": "Próximamente",
+    "open": "Entrar"
+  },
+  "sa": {
+    "objectives": "Objetivos de aprendizaje",
+    "competencies": "Competencias",
+    "product": "Producto final",
+    "enigmas": "Los enigmas de la SA",
+    "sessions": "Sesiones",
+    "session": "Sesión",
+    "finalSession": "Reto final",
+    "keySession": "Sesión clave",
+    "flipped": "Aula invertida"
+  },
+  "session": {
+    "engage": "Para empezar",
+    "explore": "Explora",
+    "explica": "La teoría",
+    "elabora": "Materiales",
+    "exitTicket": "Exit ticket",
+    "homework": "Tarea en casa",
+    "recovery": "¿Has faltado?",
+    "duration": "Duración",
+    "materials": "Materiales",
+    "instructions": "Instrucciones",
+    "downloadFitxa": "Descargar ficha",
+    "downloadTeoria": "Descargar teoría (PDF)",
+    "downloadRubrica": "Descargar rúbrica",
+    "fitxaAtClass": "Ficha disponible en clase",
+    "teoriaSoon": "Teoría en PDF disponible próximamente",
+    "appComingSoonTitle": "Animación interactiva disponible próximamente",
+    "exitPaperNote": "Este exit ticket se hace en papel en clase.",
+    "exitAbsentAccordion": "¿Has faltado? Hazlo online aquí",
+    "deliverables": "Entregas de esta sesión",
+    "flippedReading": "Leer primero",
+    "graphicResources": "Gráficas de trabajo",
+    "recoverySteps": "Pasos para recuperar la sesión por tu cuenta",
+    "metacognition": "Reflexiona",
+    "reportStructure": "Estructura del informe",
+    "roleA": "Rol A",
+    "roleB": "Rol B",
+    "prevSession": "Sesión anterior",
+    "nextSession": "Sesión siguiente",
+    "backToSA": "Volver a la SA"
+  },
+  "exitForm": {
+    "nom": "Nombre",
+    "cognom": "Apellido",
+    "grup": "Grupo",
+    "autoavaluacio": "¿Cómo crees que te ha ido? (opcional)",
+    "autoOptions": {
+      "NA": "Aún debo esforzarme más (NA)",
+      "AS": "Me las he apañado (AS)",
+      "AN": "Lo he hecho bien (AN)",
+      "AE": "Lo he hecho muy bien (AE)"
+    },
+    "answerPlaceholder": "Escribe tu respuesta aquí…",
+    "send": "Abrir Gmail con las respuestas",
+    "sent": "Se ha abierto Gmail con tu exit ticket preparado. Comprueba que todo es correcto y haz clic en Enviar dentro de Gmail.",
+    "requiredFields": "Hay que rellenar nombre, apellido y grupo antes de enviar.",
+    "gdprNote": "Tus respuestas no se guardan en ningún sitio: solo se abren en Gmail para que las envíes tú."
+  },
+  "homework": {
+    "deadline": "Fecha límite",
+    "daysLeft": "Quedan {{count}} días",
+    "daysLeft_one": "Queda 1 día",
+    "today": "¡Acaba hoy!",
+    "overdue": "Plazo pasado",
+    "none": "No hay deberes nuevos en esta sesión.",
+    "also": "También"
+  },
+  "deures": {
+    "title": "Deberes y plazos",
+    "intro": "Todas las tareas de casa de las sesiones publicadas, en orden de sesión.",
+    "noDeadline": "Sin fecha límite fijada"
+  },
+  "auto": {
+    "title": "Autoevaluación pre-examen",
+    "intro": "Marca lo que has entregado y las notas de tus exit tickets (los tienes en papel). El gráfico te dirá cómo vas en cada objetivo de aprendizaje. No se guarda nada: al salir de la página, todo desaparece.",
+    "selectSA": "Elige la situación de aprendizaje",
+    "yourName": "Tu nombre (para el PDF)",
+    "homeworkSection": "Deberes",
+    "exitSection": "Exit tickets",
+    "hwDelivered": "Entregado",
+    "hwLate": "Tarde",
+    "hwNot": "No entregado",
+    "notDone": "No hecho",
+    "chartTitle": "Logro estimado por objetivo de aprendizaje",
+    "pendingTitle": "Tareas pendientes",
+    "noPending": "Ninguna tarea pendiente. ¡Buen trabajo!",
+    "estimateText": "Según tus notas, tu nivel estimado global es:",
+    "reflectionTitle": "Reflexión final",
+    "q1": "¿Qué objetivo de aprendizaje llevas más flojo? ¿Qué harás para reforzarlo antes de la prueba?",
+    "q2": "¿Qué actividad de la SA te ha ayudado más a entender los conceptos? ¿Por qué?",
+    "q3": "Si volvieras a empezar la SA, ¿qué harías diferente?",
+    "downloadPdf": "Descargar PDF",
+    "pdfFooter": "Generado localmente en el navegador. Ningún dato almacenado ni transmitido.",
+    "date": "Fecha",
+    "level": "Nivel"
+  },
+  "bar": {
+    "simplify": "SIMPLIFICA"
+  },
+  "common": {
+    "proximament": "Próximamente",
+    "proximamentText": "Esta situación de aprendizaje aún no está publicada. La encontrarás aquí cuando empiece.",
+    "backHome": "Volver al mapa del curso",
+    "notFound": "Esta página no existe.",
+    "footer": "Biología y Geología · 3º ESO · IE Temple",
+    "footerGdpr": "Esta web no guarda ningún dato personal."
+  }
+}

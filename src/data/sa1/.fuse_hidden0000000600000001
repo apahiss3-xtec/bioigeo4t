@@ -1,0 +1,252 @@
+export const sa1s3 = {
+  id: "s3",
+  saId: "sa1",
+  title: "Mateix ADN, cèl·lules tan diferents — i per què el cos en fa de noves",
+  sessionNumber: 3,
+  biome: "sa1",
+  duration: "2h",
+  engageImage: "/images/sa1-s3-divisio.png",
+
+  // Repte oral curt: el time-lapse en directe + pregunta oral, abans d'escriure les idees prèvies.
+  engageChallenge: "Mirem juntes un time-lapse de 30 segons d'una cèl·lula dividint-se. En veu alta, tots alhora: per quina raó creieu que una cèl·lula es divideix?",
+  engageQuestion: "Totes les teves cèl·lules tenen exactament el mateix ADN. Llavors, per quina raó una neurona i una cèl·lula de la pell són tan completament diferents?",
+  engageContext: "Idees prèvies individuals, 2 min. Després: time-lapse 30 seg de divisió cel·lular en directe. 'Per quina raó una cèl·lula es divideix?'",
+
+  // Time-lapse REAL (microscòpia, no animació) de divisió cel·lular, per mostrar en directe abans
+  // de la pregunta oral. Validat per Albert (2026-06-29): la part bona del vídeo comença al 0:51.
+  // Alternatives si cal canviar-lo: "Time-lapse movie of U-2 OS cell division" (youtube.com/watch?v=TVMWvIHzedU),
+  // "Cell Division Time lapse" (youtube.com/watch?v=Wz4igVjNGq4).
+  engageVideo: {
+    type: "youtube",
+    youtubeId: "L61Gp_d7evo",
+    title: "Real Microscopic Mitosis (MRC) — time-lapse real de divisió cel·lular",
+    start: 51,
+    end: 81,
+    note: "Time-lapse real (microscòpia, no animació). Reproduït en directe a classe abans de la pregunta oral."
+  },
+
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A/B/C) ──────────
+  levelObjectives: {
+    A: [
+      "Raono com un error en la mitosi pot portar a un tumor, i per quina raó la quimioteràpia afecta especialment els teixits de renovació ràpida.",
+      "Explico per quina raó la meiosi, no la mitosi, genera variabilitat genètica, i el paper del crossing over.",
+      "Justifico per quina raó sense meiosi cada generació de reproducció sexual duplicaria el material genètic.",
+      "Argumento per quina raó dues cèl·lules amb el mateix ADN poden ser tan completament diferents (expressió gènica diferencial)."
+    ],
+    B: [
+      "Distingeixo mitosi (2 filles idèntiques, per créixer i reparar) de meiosi (4 filles amb la meitat, per gàmetes).",
+      "Explico per quina raó el cos necessita que hi hagi divisió cel·lular constant (exemples: pell, eritròcits).",
+      "Relaciono la mitosi descontrolada amb el càncer.",
+      "Explico per quina raó cèl·lules amb el mateix ADN expressen gens diferents i donen lloc a tipus cel·lulars tan dispars."
+    ],
+    C: [
+      "Sé dir per quina raó el cos fabrica cèl·lules noves (créixer, curar ferides).",
+      "Reconec que la mitosi fa 2 còpies idèntiques i la meiosi fa cèl·lules sexuals amb la meitat del material.",
+      "Completo: «la divisió cel·lular que fa 2 cèl·lules iguals es diu _______».",
+      "Identifico si cal mitosi o meiosi per a una situació donada (curar una ferida vs. fer un òvul)."
+    ]
+  },
+
+  // ── BASTIMENT/REPTE PER APARTAT segons el nivell ────────
+  apartatExtras: {
+    "1": {
+      challenge:
+        "La meiosi té dues divisions consecutives però l'ADN no es copia entre les dues. Per quina raó creus que cal que sigui així? Quina cosa passaria si l'ADN es dupliqués entre la meiosi I i la meiosi II?"
+    },
+    "2": {
+      scaffold:
+        "Completa: la mitosi fa _____ cèl·lules filles que són _________ a la mare. La meiosi fa _____ cèl·lules amb _______ del material genètic. La mitosi serveix per ________ i la meiosi per __________.",
+      challenge:
+        "Una cèl·lula amb el mateix ADN es pot convertir en neurona o en eritròcit depenent de quins gens expressa. Quina cosa creus que controla quins gens s'activen? Busca la paraula «epigenètica»."
+    },
+    "3": {
+      scaffold:
+        "Per a cada cas, primer decideix: cal fer còpies idèntiques o cèl·lules sexuals? Idèntiques → _______ / Sexuals → _______.",
+      challenge:
+        "La quimioteràpia bloqueja la mitosi a totes les cèl·lules del cos, no només les canceroses. Per quina raó creus que afecta especialment el cabell, les mucoses i la medul·la òssia? Raona-ho des del tipus de teixits i la seva taxa de renovació."
+    }
+  },
+
+  // ── APARTAT 0 · IDEES PRÈVIES ─────────────────────────────
+  ideesPrevies: {
+    startPoint:
+      "Avui parlem d'un misteri: totes les teves cèl·lules, des de la primera, venen d'una sola cèl·lula. I totes tenen el mateix ADN. Però una neurona i una cèl·lula de la pell són completament diferents. Escriu el que penses — no hi ha resposta equivocada ara.",
+    prompts: [
+      {
+        kind: "write",
+        text: "Per quina raó creus que el teu cos necessita fer cèl·lules noves constantment?",
+        starter: "Crec que el cos necessita cèl·lules noves perquè..."
+      },
+      {
+        kind: "write",
+        text: "Si totes les cèl·lules del teu cos tenen el mateix ADN, per quina raó una neurona i una cèl·lula de la pell poden ser tan completament diferents?",
+        starter: "Crec que pot ser perquè..."
+      },
+      {
+        kind: "draw",
+        text: "Dibuixa com creus que es divideix una cèl·lula en dues."
+      }
+    ]
+  },
+
+  exploreActivity: {
+    what: "Classifica les targetes del sobre en dos jocs (mitosi: 2 filles idèntiques / meiosi: 4 filles amb la meitat) i justifica per a quines situacions serviria cada un. Sense noms de fase ni notació 2n/n.",
+    who: { mode: "grup4", label: "Grups de 4 (un sobre per grup)" },
+    time: 20,
+    note: "Primer classifica, després discutiu en grup per quina raó calen dos tipus de divisió."
+  },
+  exploreInstructions: [
+    "Obres el sobre de targetes (sobre per grup)",
+    "Joc 1 — Mitosi: ordena les targetes 'cèl·lula mare → 2 filles idèntiques'. Per a quines situacions serviria?",
+    "Joc 2 — Meiosi: ordena les targetes 'cèl·lula mare → 4 filles amb la MEITAT del material'. Per a quines situacions?",
+    "Classifica i justifica SENSE noms de fase ni notació 2n/n",
+    "Escriu: per quina raó creus que calen dos tipus de divisió?"
+  ],
+  exploreDuration: "30 min",
+  exploreMaterials: ["Sobre amb targetes de card-sort (preparat pel professor)"],
+  appSrc: "/apps/app_mitosi_meiosi.html",
+  exploreNote: "CAP nom de fase (profase, metàfase...). CAP notació 2n/n. Això és de 4t. Ara: funció, no mecànica.",
+
+  theoryPoints: [
+    {
+      id: "t1",
+      apartat: "1",
+      heading: "Per quina raó les cèl·lules es divideixen?",
+      text: "El cos necessita ==cèl·lules noves== constantment: per créixer, per curar ferides, per substituir cèl·lules mortes (==eritròcits|r== viuen ~120 dies). Sense ==divisió cel·lular==, el cos no es pot reparar.",
+      type: "concept",
+      video: "/animacions/sa1-s3-t1.mp4"
+    },
+    {
+      id: "t2",
+      apartat: "2",
+      heading: "==Mitosi==: còpies idèntiques",
+      text: "La ==mitosi== produeix ==2 cèl·lules filles idèntiques== a la mare. S'usa per créixer, curar ferides i substituir cèl·lules. La ==diferenciació|o== (per quina raó una neurona és diferent d'un eritròcit malgrat tenir el mateix ADN) depèn de quins ==gens|p== s'expressen, no de quin ==ADN|p== es té.",
+      type: "keyequation",
+      video: "/animacions/sa1-s3-t2.mp4"
+    },
+    {
+      id: "t3",
+      apartat: "2",
+      heading: "==Meiosi|o==: la meitat, per reproduir-se",
+      text: "La ==meiosi== produeix ==cèl·lules sexuals|o== (espermatozoides i òvuls) amb la ==MEITAT del material genètic|o==. Quan un espermatozoide i un òvul es fusionen, recuperen la quantitat completa. Sense meiosi, cada generació duplicaria el material genètic. Pont directe a SA4.",
+      type: "concept",
+      badge: "🔗 Ho veuràs a SA4",
+      video: "/animacions/sa1-s3-t3.mp4"
+    },
+    {
+      id: "t5",
+      apartat: "2",
+      heading: "La resposta a la pregunta inicial",
+      text: "Totes les cèl·lules tenen el mateix ==ADN|p== però expressen ==gens DIFERENTS|p==. Una neurona té actius els gens de connexions nervioses; una cèl·lula de la pell té actius els de ==queratina==. L'ADN és el mateix però el '==programa en execució|o==' canvia.",
+      type: "synthesis",
+      video: "/animacions/sa1-s3-t5.mp4"
+    },
+    {
+      id: "t4",
+      apartat: "3",
+      heading: "==Càncer|r==: mitosi descontrolada",
+      text: "El ==càncer== és el resultat d'una ==mitosi== que s'ha ==desregulat|r==: les cèl·lules es divideixen sense control ni ordre. No substitueixen cèl·lules mortes sinó que s'acumulen formant ==tumors|r== que interfereixen amb el funcionament dels teixits.",
+      type: "concept",
+      video: "/animacions/sa1-s3-t4.mp4"
+    }
+  ],
+
+  graphicResources: [
+    { id: "Fig.1", apartat: "3", before: true, title: "Curar una ferida = mitosi en acció", src: "/images/sa1-ferida.png", note: "La pell es repara fent cèl·lules noves idèntiques per mitosi. Un exemple quotidià de per què el cos es divideix constantment — situa't aquí abans de veure el contrast amb el càncer." }
+  ],
+
+  fitxaUrl: "/fitxes/sa1-s3-fitxa.pdf",
+  teoriaPdfUrl: null,
+
+  // ── GUIA DE LA FITXA (apartats reals del full imprès) ────
+  fitxaGuide: {
+    fitxaName: "Fitxa S3 — La divisió cel·lular",
+    steps: [
+      {
+        apartat: "0",
+        title: "Idees prèvies",
+        time: "10 min",
+        phase: "engage",
+        instruction: "Omple l'apartat 0 — Idees prèvies del full: si totes les cèl·lules tenen el mateix ADN, com poden ser tan diferents? Escriu el que pensis ara.",
+        hints: []
+      },
+      {
+        apartat: "1",
+        title: "Explore: classifica les divisions",
+        time: "30 min",
+        phase: "explore",
+        instruction: "Amb les targetes del sobre, omple l'apartat 1 del full: ordena i classifica les dues divisions.",
+        hints: [
+          "No busquis noms de fases: fixa't en QUANTES filles surten i QUANT material genètic porta cadascuna.",
+          "Per a cada joc pregunta't: per a quines situacions del cos serviria aquest tipus de resultat?"
+        ]
+      },
+      {
+        apartat: "2",
+        title: "Per quina raó hi ha dos tipus de divisió",
+        time: "25 min",
+        phase: "explica",
+        instruction: "Amb la teoria llegida, omple l'apartat 2 del full.",
+        hints: [
+          "Una divisió fa còpies exactes; l'altra fa la meitat. Cada resultat resol un problema diferent del cos: quins?",
+          "Si les cèl·lules sexuals portessin TOT el material, quina cosa passaria en ajuntar-se dues a cada generació?"
+        ]
+      },
+      {
+        apartat: "3",
+        title: "Aplica-ho a casos reals",
+        time: "20 min",
+        phase: "explica",
+        instruction: "Omple l'apartat 3 del full: ferides, neurones i càncer.",
+        hints: [
+          "Per a cada cas, primer decideix: cal fer cèl·lules noves? De quin tipus, idèntiques o amb la meitat?",
+          "El càncer no és una divisió 'diferent': és la mateixa mitosi sense fre. On és el problema, doncs?"
+        ]
+      }
+    ]
+  },
+
+  exitTicketType: "paper",
+  exitTicketQuestions: [
+    {
+      id: "q1",
+      type: "open",
+      text: "Explica amb les teves paraules per quina raó hi ha dos tipus de divisió cel·lular. Quan cal cadascun?",
+      hint: "Pensa en dues necessitats diferents del cos: créixer/reparar i fer descendència. Quin resultat necessita cadascuna?"
+    },
+    {
+      id: "q2",
+      type: "open",
+      text: "Totes les cèl·lules del teu cos tenen el mateix ADN. Per quina raó una neurona és completament diferent d'un eritròcit?",
+      hint: "El secret no és l'ADN (és el mateix a totes): és quins gens estan actius a cada cèl·lula."
+    },
+    {
+      id: "q3",
+      type: "multiple",
+      text: "El càncer és una malaltia perillosa principalment perquè:",
+      options: [
+        "Les cèl·lules es divideixen sense control i interfereixen amb el funcionament dels teixits",
+        "Les cèl·lules es divideixen massa lentament",
+        "Les cèl·lules perden tot el seu ADN",
+        "Les cèl·lules ja no poden absorbir nutrients"
+      ],
+      correct: 0
+    }
+  ],
+
+  homework: {
+    description: "Decideix l'angle del teu pòster per a S4: quin aspecte de la cèl·lula vols comunicar i a quin públic?",
+    deadline: "2026-09-XX"
+  },
+
+  recoveryInstructions: [
+    "Mira el time-lapse de divisió cel·lular (vídeo d'aquesta pàgina, 30 seg)",
+    "Explora l'app de mitosi i meiosi: avança els passos i comprèn per a quina raó cada divisió existeix",
+    "Llegeix la teoria d'aquesta pàgina, especialment la diferència entre mitosi i meiosi",
+    "Omple la fitxa S3 (descàrrega a ELABORA)",
+    "L'exit tiquet en paper el reparteix el professor a la Sessió 3, o fes-lo online aquí"
+  ],
+
+  oaLinks: ["OA4"],
+  competencies: ["CE2", "CE1"]
+}

@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────
+   IE Temple · Bio/Geo 3r ESO — sistema de disseny CLAR
+   Paleta pastel del sistema IE Temple: fons blanc / off-white
+   càlid, porpra + taronja de marca, biomes pastel per SA.
+   (El fons blanc facilita imprimir la teoria: les imatges ja
+    porten fons blanc.)
+   ────────────────────────────────────────────────────────── */
+:root {
+  /* Fons i superfícies */
+  --bg: #fdfafb;          /* off-white càlid (page) */
+  --bg-soft: #f6f1fa;     /* panell suau amb tint porpra (fórmules) */
+  --surface: #ffffff;     /* targetes blanques */
+  --surface-2: #f5f1f8;   /* superfície secundària */
+
+  /* Tinta */
+  --text: #4a3f3f;        /* marró gairebé negre, càlid */
+  --muted: #6b5e5e;       /* cos secundari */
+
+  /* Marca */
+  --purple: #c084fc;      /* porpra pastel de marca */
+  --purple-deep: #9333ea; /* porpra profund (hover) */
+  --purple-ink: #7c3aed;  /* porpra de text/insígnia sobre clar (text blanc OK) */
+  --orange: #e8872e;      /* taronja accent (família del halo "ie") */
+
+  /* Línies / separadors */
+  --rule: rgba(74, 63, 63, 0.10);
+  --rule-strong: rgba(124, 58, 237, 0.28);
+
+  /* Ombres suaus (sistema IE Temple) */
+  --shadow-soft: 0 10px 32px rgba(74, 63, 63, 0.08);
+  --shadow-float: 0 18px 44px rgba(192, 132, 252, 0.18);
+
+  /* Bioma per defecte (es sobreescriu per SA) */
+  --biome: #6b4fa0;
+  --biome-accent: #7c3aed;
+}
+
+/* Biomes per SA — primari (insígnies amb text blanc) + accent
+   (s'usa com a color de TEXT sobre blanc → ha de ser llegible). */
+.biome-sa1 { --biome: #6b4fa0; --biome-accent: #7c3aed; } /* cèl·lula · porpra */
+.biome-sa2 { --biome: #8b1a1a; --biome-accent: #c0392b; } /* cos humà · carmí */
+.biome-sa3 { --biome: #2f6b5e; --biome-accent: #157f6b; } /* defenses · verd-teal */
+.biome-sa4 { --biome: #8a5fcc; --biome-accent: #8350c8; } /* reproducció · porpra */
+.biome-sa5 { --biome: #3e7c4f; --biome-accent: #357044; } /* xarxa vida · verd */
+.biome-sa6 { --biome: #b3661f; --biome-accent: #b3661f; } /* planeta · ocre */
+.biome-sa7 { --biome: #7a5c44; --biome-accent: #7a5c44; } /* terra · marró */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-body;
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--purple-ink);
+  color: #fff;
+}
+
+/* Eyebrow / kicker en majúscules amb tracking (IE Temple) */
+.kicker {
+  @apply font-display uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--purple-ink);
+}
+
+/* Número gran morat com a accent (passos, preguntes) */
+.bignum {
+  @apply font-display;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--purple-ink);
+  min-width: 2.2rem;
+}
+
+/* Línia separadora fina */
+.rule {
+  border-top: 1px solid var(--rule);
+}
+
+/* ──────────────────────────────────────────────────────────
+   Ressaltat de paraules clau (component Word del mòdul de
+   divisió cel·lular): fons al 22% de l'accent + lleugera
+   inclinació. S'aplica via sintaxi ==paraula== al component T.
+   ────────────────────────────────────────────────────────── */
+.word-hl {
+  background: color-mix(in oklab, var(--hl-color, var(--biome-accent)) 22%, transparent);
+  color: inherit;
+  font-weight: 600;
+  padding: 0 0.18em;
+  border-radius: 0.3em;
+  display: inline-block;
+  transform: rotate(var(--hl-tilt, -1.2deg));
+}
+
+/* Inclinació alternada perquè respiri com a les maquetes */
+.word-hl:nth-of-type(even) { --hl-tilt: 1.1deg; }
+
+/* Suport antic sense color-mix: tint porpra suau de seguretat */
+@supports not (background: color-mix(in oklab, red 22%, transparent)) {
+  .word-hl { background: rgba(192, 132, 252, 0.22); }
+}
+
+/* En mode SIMPLIFICA no inclinem (lectura més neta) */
+body.simplified .word-hl { transform: none; }
+
+/* Capçalera de secció en barra morada (IE Temple) */
+.section-bar {
+  background: var(--purple-ink);
+  color: #fff;
+  @apply font-display uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 24px;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+a.card:hover,
+.card.group:hover {
+  box-shadow: var(--shadow-float);
+}
+
+/* ──────────────────────────────────────────────────────────
+   Mode SIMPLIFICA: lectura fàcil
+   ────────────────────────────────────────────────────────── */
+body.simplified {
+  font-size: 19px;
+  line-height: 2;
+  letter-spacing: 0.01em;
+  word-spacing: 0.05em;
+}
+
+body.simplified p,
+body.simplified li {
+  max-width: 62ch;
+}
+
+body.simplified .decorative {
+  display: none;
+}
+
+body.simplified a {
+  text-decoration: underline;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Traducció per hover (glossari per a alumnat nouvingut)
+   ────────────────────────────────────────────────────────── */
+.gloss {
+  position: relative;
+  border-bottom: 2px dotted var(--orange);
+  cursor: help;
+  border-radius: 2px;
+}
+
+.gloss:hover,
+.gloss:focus-visible {
+  background: rgba(232, 135, 46, 0.14);
+  outline: none;
+}
+
+.gloss::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--orange);
+  color: #2a211c;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.3;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  max-width: 320px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 60;
+}
+
+.gloss::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--orange);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 60;
+}
+
+.gloss:hover::after,
+.gloss:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.gloss:hover::before,
+.gloss:focus-visible::before {
+  opacity: 1;
+}
+
+.gloss-rtl::after {
+  direction: rtl;
+  font-size: 1.05rem;
+}
+
+/* Scrollbar clara discreta */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: #e3dcec; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--purple); }

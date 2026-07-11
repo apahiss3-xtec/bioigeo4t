@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="'Fira Sans Extra Condensed','Fira Sans',sans-serif">
+<text x="380.0" y="28" font-size="18" font-weight="700" fill="#5A2E77" text-anchor="middle">Com distingir una cèl·lula EN DIVISIÓ d'una que NO ho està</text>
+<g><circle cx="150" cy="140" r="44" fill="#F7F1FB" stroke="#7B3F9E" stroke-width="2.4"/><circle cx="150" cy="140" r="22.0" fill="#EBD6F7" stroke="#A66BC9" stroke-width="1.6"/><circle cx="144" cy="136" r="3.4" fill="#A66BC9"/><circle cx="157" cy="145" r="3" fill="#A66BC9"/></g>
+<text x="150" y="212" font-size="15" font-weight="900" fill="#5A2E77" text-anchor="middle">INTERFASE</text>
+<text x="150" y="232" font-size="13" fill="#5A2E77" text-anchor="middle">Nucli difús, sense fils foscos.</text>
+<text x="150" y="250" font-size="13" fill="#C0392B" text-anchor="middle" font-weight="700">NO compta com a mitosi</text>
+<g><circle cx="370" cy="140" r="44" fill="#F7F1FB" stroke="#7B3F9E" stroke-width="2.4"/><line x1="343.8" y1="125.6" x2="368.2" y2="134.4" stroke="#7B3F9E" stroke-width="6" stroke-linecap="round"/><line x1="355.4" y1="129.4" x2="380.6" y2="122.6" stroke="#C0392B" stroke-width="6" stroke-linecap="round"/><line x1="375.5" y1="122.7" x2="388.5" y2="145.3" stroke="#7B3F9E" stroke-width="6" stroke-linecap="round"/><line x1="352.0" y1="158.4" x2="372.0" y2="141.6" stroke="#C0392B" stroke-width="6" stroke-linecap="round"/><line x1="367.7" y1="145.5" x2="390.3" y2="158.5" stroke="#7B3F9E" stroke-width="6" stroke-linecap="round"/></g>
+<text x="370" y="212" font-size="15" font-weight="900" fill="#5A2E77" text-anchor="middle">EN DIVISIÓ (mitosi)</text>
+<text x="370" y="232" font-size="13" fill="#5A2E77" text-anchor="middle">Cromosomes condensats visibles.</text>
+<text x="370" y="250" font-size="13" fill="#7B3F9E" text-anchor="middle" font-weight="700">SÍ compta com a mitosi</text>
+<rect x="510" y="70" width="228" height="190" rx="12" fill="#F3E8FA" stroke="#7B3F9E" stroke-width="2"/>
+<text x="624" y="98" font-size="14" font-weight="900" fill="#5A2E77" text-anchor="middle">ÍNDEX MITÒTIC</text>
+<text x="624" y="132" font-size="15" fill="#5A2E77" text-anchor="middle">cèl·lules en mitosi</text>
+<line x1="540" y1="142" x2="708" y2="142" stroke="#5A2E77" stroke-width="1.6"/>
+<text x="624" y="162" font-size="15" fill="#5A2E77" text-anchor="middle">total de cèl·lules</text>
+<text x="624" y="188" font-size="15" font-weight="700" fill="#7B3F9E" text-anchor="middle">× 100</text>
+<text x="624" y="224" font-size="12.5" fill="#C0392B" text-anchor="middle" font-weight="700">Per sobre de ~10%:</text>
+<text x="624" y="242" font-size="12.5" fill="#C0392B" text-anchor="middle">risc de procés cancerós</text>
+<text x="380.0" y="300" font-size="13.5" fill="#5A2E77" text-anchor="middle">Un fàrmac funciona si, després del tractament, l'índex mitòtic BAIXA respecte a l'inicial.</text>
+</svg>

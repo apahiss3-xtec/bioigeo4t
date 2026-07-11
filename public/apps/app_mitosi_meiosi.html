@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divisió cel·lular · Mitosi i Meiosi · IE Temple · 4t ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #c084fc;
+  --purple-ink: #5a4aa0;
+  --purple-deep: #7B68C8;
+  --ink: #1A1A2E;
+  --ink-2: #4A3F3F;
+  --muted: #666666;
+  --surface: #fdfafb;
+  --rule: #EAE6F6;
+  --rule-dark: #C8C2DD;
+  --teal: #81c3c3;
+  --teal-tint: #EAF3F8;
+  --yellow-tint: #FFF9E0;
+  --purple-tint: #EFEAF5;
+  --green-tint: #EAF4EB;
+  --peach-tint: #FBEEE0;
+  --chr1: #E76F6F;
+  --chr2: #6FA3E7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  background: var(--surface);
+  color: var(--ink-2);
+  min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+header {
+  background: var(--purple-ink);
+  padding: 14px 24px 12px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+}
+.header-left { display: flex; flex-direction: column; }
+.header-eyebrow {
+  font-size: 11px; font-weight: 700; color: var(--purple);
+  letter-spacing: .1em; text-transform: uppercase;
+}
+.header-title { font-size: 22px; font-weight: 700; color: #fff; line-height: 1.1; }
+.header-right { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+
+.lang-btn, .simplify-btn {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 12px; font-weight: 700; letter-spacing: .06em;
+  text-transform: uppercase; cursor: pointer;
+  border: none; border-radius: 9999px;
+  padding: 5px 14px; transition: all .2s;
+}
+.simplify-btn {
+  background: var(--yellow-tint); color: var(--purple-ink);
+}
+.simplify-btn:hover { background: #f9dc5c; }
+.simplify-btn.active { background: #f9dc5c; box-shadow: 0 0 0 2px var(--purple-ink); }
+
+.lang-btn { background: rgba(255,255,255,.12); color: #fff; }
+.lang-btn:hover { background: rgba(255,255,255,.22); }
+.lang-btn.active { background: var(--purple); color: var(--ink); }
+
+/* ── MODE TOGGLE ────────────────────────────────── */
+.mode-bar {
+  display: flex; align-items: stretch; gap: 0;
+  border-bottom: 2px solid var(--rule);
+  background: var(--surface);
+}
+.mode-tab {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 18px; font-weight: 700; cursor: pointer;
+  padding: 12px 32px; border: none; background: transparent;
+  color: var(--muted); letter-spacing: .05em;
+  border-bottom: 3px solid transparent; margin-bottom: -2px;
+  transition: all .2s; text-transform: uppercase;
+}
+.mode-tab:hover { color: var(--purple-deep); }
+.mode-tab.active {
+  color: var(--purple-ink);
+  border-bottom-color: var(--purple-ink);
+  background: var(--purple-tint);
+}
+.mode-badge {
+  display: inline-block; font-size: 11px; font-weight: 400;
+  background: var(--rule); color: var(--muted);
+  border-radius: 9999px; padding: 1px 8px; margin-left: 6px;
+  vertical-align: middle;
+}
+.mode-tab.active .mode-badge {
+  background: var(--purple-deep); color: #fff;
+}
+
+/* ── LAYOUT ─────────────────────────────────────── */
+.app-body {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  grid-template-rows: auto 1fr;
+  min-height: calc(100vh - 100px);
+}
+
+/* ── PHASE TIMELINE ─────────────────────────────── */
+.phase-timeline {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 0;
+  padding: 16px 20px;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--rule);
+  background: #fff;
+}
+.phase-btn {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 13px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: .05em; cursor: pointer;
+  padding: 8px 16px; border: 2px solid var(--rule);
+  background: var(--surface); color: var(--muted);
+  border-radius: 8px; white-space: nowrap;
+  transition: all .2s; position: relative;
+  flex-shrink: 0;
+}
+.phase-btn:hover { border-color: var(--purple-deep); color: var(--purple-deep); }
+.phase-btn.active {
+  background: var(--purple-ink); color: #fff;
+  border-color: var(--purple-ink);
+}
+.phase-arrow {
+  font-size: 16px; color: var(--rule-dark); flex-shrink: 0; padding: 0 4px;
+}
+.phase-divider {
+  font-size: 10px; font-weight: 700; color: var(--teal);
+  letter-spacing: .08em; text-transform: uppercase;
+  background: var(--teal-tint); border-radius: 4px; padding: 3px 8px;
+  flex-shrink: 0; margin: 0 6px;
+}
+
+/* ── CELL CANVAS ────────────────────────────────── */
+.cell-canvas {
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px 24px;
+  background: var(--surface);
+  position: relative; overflow: hidden;
+  min-height: 440px;
+}
+.cell-canvas::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 30%, rgba(192,132,252,.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 70%, rgba(129,195,195,.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cell-diagram {
+  max-width: 100%; max-height: 360px;
+  transition: opacity .3s ease;
+}
+
+/* ── PHASE LABEL ────────────────────────────────── */
+.phase-label-area {
+  padding: 12px 24px 4px;
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+}
+.phase-label-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--purple-deep);
+}
+.phase-label-title {
+  font-size: 32px; font-weight: 700; color: var(--ink); line-height: 1.05;
+}
+.phase-label-notation {
+  display: inline-block;
+  font-size: 14px; font-weight: 700; letter-spacing: .06em;
+  background: var(--purple-ink); color: #fff;
+  border-radius: 6px; padding: 2px 10px; margin-top: 4px;
+}
+
+/* ── SIDE INFO ──────────────────────────────────── */
+.side-info {
+  grid-row: 2 / 4;
+  border-left: 1px solid var(--rule);
+  padding: 20px;
+  background: #fff;
+  overflow-y: auto;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.info-section-title {
+  font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--purple-ink);
+  border-bottom: 1px solid var(--rule); padding-bottom: 6px; margin-bottom: 4px;
+}
+.info-text {
+  font-size: 16px; line-height: 1.55; color: var(--ink-2);
+}
+.info-text.simplified {
+  font-size: 17px; line-height: 1.6; color: var(--ink);
+  font-weight: 400;
+}
+
+.key-points { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.key-point {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 15px; color: var(--ink-2); line-height: 1.45;
+}
+.key-point::before {
+  content: '→';
+  color: var(--purple-deep); font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+
+.chromosome-legend {
+  background: var(--purple-tint); border-radius: 8px; padding: 12px;
+}
+.legend-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; font-size: 14px; }
+.legend-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+.notation-badge {
+  display: inline-block; font-size: 13px; font-weight: 700;
+  background: var(--purple-ink); color: #fff;
+  border-radius: 6px; padding: 2px 10px; margin-top: 6px;
+}
+
+.compare-table {
+  width: 100%; border-collapse: collapse; font-size: 14px;
+}
+.compare-table th {
+  background: var(--purple-ink); color: #fff; padding: 8px 10px;
+  text-align: left; font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+}
+.compare-table td {
+  padding: 7px 10px; border-bottom: 1px solid var(--rule); color: var(--ink-2);
+}
+.compare-table tr:nth-child(even) td { background: var(--purple-tint); }
+
+/* ── TOOLTIP SISTEMA MULTILINGÜE ─────────────────── */
+.tr-word {
+  cursor: help;
+  border-bottom: 1px dashed var(--purple-deep);
+  position: relative; display: inline;
+}
+.tr-word .tooltip-box {
+  display: none; position: absolute; bottom: 120%; left: 50%; transform: translateX(-50%);
+  background: var(--purple-ink); color: #fff;
+  font-size: 14px; font-weight: 700; padding: 4px 10px;
+  border-radius: 6px; white-space: nowrap; z-index: 100;
+  pointer-events: none;
+}
+.tr-word .tooltip-box::after {
+  content: ''; position: absolute; top: 100%; left: 50%;
+  transform: translateX(-50%); border: 5px solid transparent;
+  border-top-color: var(--purple-ink);
+}
+.lang-ar .tr-word .tooltip-ar,
+.lang-es .tr-word .tooltip-es,
+.lang-ur .tr-word .tooltip-ur { display: block; }
+
+/* ── COMPARISON VIEW ────────────────────────────── */
+.comparison-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; padding: 20px;
+}
+.comparison-cell {
+  background: #fff; border: 1px solid var(--rule); border-radius: 12px;
+  overflow: hidden;
+}
+.comparison-header {
+  background: var(--purple-ink); color: #fff;
+  padding: 10px 16px; font-size: 16px; font-weight: 700; letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.comparison-content { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+
+/* ── ANIMATIONS ─────────────────────────────────── */
+@keyframes fadeIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+.cell-diagram { animation: fadeIn .35s ease; }
+
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .6; } }
+.chromosome-pulse { animation: pulse 2s ease-in-out infinite; }
+
+/* ── NAV BOTTOM ─────────────────────────────────── */
+.bottom-nav {
+  grid-column: 1 / 2;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 24px;
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+}
+.nav-btn {
+  font-family: 'Fira Sans Extra Condensed', sans-serif;
+  font-size: 15px; font-weight: 700; letter-spacing: .04em;
+  cursor: pointer; border: 2px solid var(--purple-ink);
+  border-radius: 8px; padding: 8px 20px;
+  background: transparent; color: var(--purple-ink);
+  transition: all .2s;
+}
+.nav-btn:hover { background: var(--purple-ink); color: #fff; }
+.nav-btn:disabled { opacity: .3; cursor: not-allowed; }
+.nav-btn.primary { background: var(--purple-ink); color: #fff; }
+.nav-btn.primary:hover { background: var(--purple-deep); border-color: var(--purple-deep); }
+
+.step-counter {
+  font-size: 14px; color: var(--muted); letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+/* ── SCROLLBAR ──────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--rule); }
+::-webkit-scrollbar-thumb { background: var(--rule-dark); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <span class="header-eyebrow">Biologia i Geologia · 4t ESO · IE Temple · SA2 «La cèl·lula»</span>
+    <span class="header-title">Divisió cel·lular: Mitosi i Meiosi</span>
+  </div>
+  <div class="header-right">
+    <button class="simplify-btn" id="btnSimplify" onclick="toggleSimplify()">Simplifica</button>
+    <button class="lang-btn" id="btnAr" onclick="setLang('ar')">عربي</button>
+    <button class="lang-btn" id="btnEs" onclick="setLang('es')">Castellano</button>
+    <button class="lang-btn" id="btnUr" onclick="setLang('ur')">اردو</button>
+  </div>
+</header>
+
+<!-- Mode tabs -->
+<div class="mode-bar">
+  <button class="mode-tab active" id="tabMitosi" onclick="setMode('mitosi')">
+    Mitosi <span class="mode-badge">6 fases</span>
+  </button>
+  <button class="mode-tab" id="tabMeiosi" onclick="setMode('meiosi')">
+    Meiosi <span class="mode-badge">10 fases</span>
+  </button>
+  <button class="mode-tab" id="tabCompara" onclick="setMode('compara')">
+    Compara
+  </button>
+</div>
+
+<!-- Phase timeline -->
+<div class="phase-timeline" id="phaseTimeline"></div>
+
+<!-- Main layout -->
+<div class="app-body" id="appBody">
+  <!-- Cell canvas -->
+  <div class="cell-canvas" id="cellCanvas">
+    <svg id="cellSvg" class="cell-diagram" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" width="400" height="320"></svg>
+  </div>
+
+  <!-- Phase label -->
+  <div class="phase-label-area" id="phaseLabelArea">
+    <div class="phase-label-eyebrow" id="phaseEyebrow"></div>
+    <div class="phase-label-title" id="phaseTitle"></div>
+    <div id="phaseNotation"></div>
+  </div>
+
+  <!-- Side info -->
+  <div class="side-info" id="sideInfo"></div>
+
+  <!-- Bottom nav -->
+  <div class="bottom-nav">
+    <button class="nav-btn" id="btnPrev" onclick="navigate(-1)">← Anterior</button>
+    <span class="step-counter" id="stepCounter"></span>
+    <button class="nav-btn primary" id="btnNext" onclick="navigate(1)">Següent →</button>
+  </div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────
+// SVG DRAWING FUNCTIONS
+// ─────────────────────────────────────────────────
+
+const colors = {
+  membrane: '#7B68C8',
+  nuclearMembrane: '#5a4aa0',
+  chr1a: '#E76F6F',
+  chr2a: '#6FA3E7',
+  spindle: '#C8C2DD',
+  cellFill: 'rgba(239,234,245,0.3)',
+  nucleusFill: 'rgba(239,234,245,0.5)',
+};
+
+function cellBase(cx, cy, rx, ry, fill = colors.cellFill) {
+  return `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${fill}" stroke="${colors.membrane}" stroke-width="3"/>`;
+}
+
+function nucleus(cx, cy, r) {
+  return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>`;
+}
+
+function chromatin(cx, cy) {
+  return `
+    <path d="M${cx-20},${cy-10} Q${cx-5},${cy+10} ${cx+15},${cy}" stroke="${colors.chr1a}" stroke-width="2.5" fill="none" opacity=".7"/>
+    <path d="M${cx+20},${cy-15} Q${cx+5},${cy+5} ${cx-10},${cy+10}" stroke="${colors.chr2a}" stroke-width="2.5" fill="none" opacity=".7"/>
+    <path d="M${cx-15},${cy+5} Q${cx},${cy-8} ${cx+10},${cy+15}" stroke="#6FBE7A" stroke-width="2" fill="none" opacity=".6"/>
+  `;
+}
+
+function chromosome(cx, cy, color, angle = 0, condensed = true, w = 10, h = 28) {
+  const dx = condensed ? 4 : 0;
+  return `
+    <g transform="translate(${cx},${cy}) rotate(${angle})">
+      <rect x="${-dx/2-w/2}" y="${-h/2}" width="${w/2+dx/4}" height="${h}" rx="4" fill="${color}" opacity=".85"/>
+      <rect x="${dx/4}" y="${-h/2}" width="${w/2+dx/4}" height="${h}" rx="4" fill="${color}" opacity=".7"/>
+      <line x1="${-dx/2}" y1="0" x2="${dx/2}" y2="0" stroke="${color}" stroke-width="1.5" opacity=".5"/>
+    </g>
+  `;
+}
+
+function chromosomeSingle(cx, cy, color, angle = 0, w = 8, h = 24) {
+  return `
+    <g transform="translate(${cx},${cy}) rotate(${angle})">
+      <rect x="${-w/2}" y="${-h/2}" width="${w}" height="${h}" rx="4" fill="${color}" opacity=".85"/>
+    </g>
+  `;
+}
+
+function spindleFibers(cx, cy, chr_positions, poleTy = 60, poleBy = 260) {
+  let lines = '';
+  chr_positions.forEach(p => {
+    lines += `<line x1="${cx}" y1="${poleTy}" x2="${p[0]}" y2="${p[1]}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>`;
+    lines += `<line x1="${cx}" y1="${poleBy}" x2="${p[0]}" y2="${p[1]}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>`;
+  });
+  return lines;
+}
+
+// ── MITOSI ─────────────────────────────────────────────
+
+function drawInterfase(cx = 200, cy = 160) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    ${nucleus(cx, cy, 50)}
+    ${chromatin(cx, cy)}
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">ADN copiat (cromosomes no condensats)</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (amb còpies → 2 × 2n)</text>
+  `;
+}
+
+function drawProfase(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    <circle cx="${cx}" cy="${cy}" r="50" fill="none" stroke="${colors.nuclearMembrane}" stroke-width="1.5" stroke-dasharray="5,4" opacity=".4"/>
+    ${chromosome(cx-30, cy-20, colors.chr1a, -15)}
+    ${chromosome(cx-15, cy+20, colors.chr1a, 10)}
+    ${chromosome(cx+25, cy-15, colors.chr2a, 15)}
+    ${chromosome(cx+10, cy+25, colors.chr2a, -10)}
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromosomes condensats, membrana nuclear es trenca</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (cromàtides germanes unides)</text>
+  `;
+}
+
+function drawMetafase(cx = 200, cy = 155) {
+  const spindles = [[cx-30, cy], [cx-15, cy], [cx+15, cy], [cx+30, cy]];
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    ${spindleFibers(cx, cy, spindles, cy-100, cy+100)}
+    ${chromosome(cx-28, cy, colors.chr1a, 90, true, 10, 28)}
+    ${chromosome(cx-14, cy, colors.chr1a, 90, true, 10, 28)}
+    ${chromosome(cx+14, cy, colors.chr2a, 90, true, 10, 28)}
+    ${chromosome(cx+28, cy, colors.chr2a, 90, true, 10, 28)}
+    <line x1="${cx-70}" y1="${cy}" x2="${cx+70}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".4"/>
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromosomes a l'equador (placa metafàsica)</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (cromàtides germanes unides)</text>
+  `;
+}
+
+function drawAnafase(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    ${chromosomeSingle(cx-25, cy-50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx-10, cy-50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx+10, cy-50, colors.chr2a, 90)}
+    ${chromosomeSingle(cx+25, cy-50, colors.chr2a, 90)}
+    ${chromosomeSingle(cx-25, cy+50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx-10, cy+50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx+10, cy+50, colors.chr2a, 90)}
+    ${chromosomeSingle(cx+25, cy+50, colors.chr2a, 90)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" stroke-dasharray="4,3" opacity=".4"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromàtides germanes separen cap als pols</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">4n transitòriament (cap pol: 2n)</text>
+  `;
+}
+
+function drawTelofase(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    <ellipse cx="${cx}" cy="${cy-60}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    <ellipse cx="${cx}" cy="${cy+60}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    ${chromatin(cx, cy-62)}
+    ${chromatin(cx, cy+58)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.membrane}" stroke-width="2" stroke-dasharray="6,4" opacity=".5"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Dos nuclis nous es formen, cèl·lula s'allarga</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada pol: 2n</text>
+  `;
+}
+
+function drawCitoquinesi(cx = 200, cy = 155) {
+  return `
+    <ellipse cx="${cx}" cy="${cy-62}" rx="110" ry="78" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="3"/>
+    <ellipse cx="${cx}" cy="${cy+62}" rx="110" ry="78" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="3"/>
+    ${nucleus(cx, cy-62, 38)}
+    ${nucleus(cx, cy+62, 38)}
+    ${chromatin(cx, cy-68)}
+    ${chromatin(cx, cy+56)}
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Citoplasma es divideix → 2 cèl·lules filles</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2 cèl·lules 2n idèntiques</text>
+  `;
+}
+
+// ── MEIOSI ─────────────────────────────────────────────
+
+function drawMeiosiInterfase(cx = 200, cy = 160) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    ${nucleus(cx, cy, 50)}
+    ${chromatin(cx, cy)}
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">ADN copiat una sola vegada (vindrà 2 divisions)</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (amb còpies: 2 × 2n)</text>
+  `;
+}
+
+function drawProfase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    <circle cx="${cx}" cy="${cy}" r="50" fill="none" stroke="${colors.nuclearMembrane}" stroke-width="1.5" stroke-dasharray="5,4" opacity=".4"/>
+    <!-- Bivalent 1: parella vermella -->
+    <g transform="translate(${cx-25},${cy-10})">
+      <rect x="-9" y="-16" width="9" height="32" rx="4" fill="${colors.chr1a}" opacity=".85"/>
+      <rect x="0" y="-16" width="9" height="32" rx="4" fill="${colors.chr1a}" opacity=".6"/>
+    </g>
+    <!-- Bivalent 2: parella blava -->
+    <g transform="translate(${cx+25},${cy+10})">
+      <rect x="-9" y="-16" width="9" height="32" rx="4" fill="${colors.chr2a}" opacity=".85"/>
+      <rect x="0" y="-16" width="9" height="32" rx="4" fill="${colors.chr2a}" opacity=".6"/>
+    </g>
+    <!-- Crossing over symbol -->
+    <line x1="${cx-20}" y1="${cy-5}" x2="${cx-30}" y2="${cy+5}" stroke="#E7B96F" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="${cx-20}" cy="${cy-5}" r="3" fill="#E7B96F"/>
+    <text x="${cx-12}" y="${cy-22}" font-family="Fira Sans Extra Condensed" font-size="10" fill="#E7B96F" font-weight="bold">crossing over</text>
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Homòlegs aparellats (bivalents); crossing over</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (cromàtides unides, bivalents)</text>
+  `;
+}
+
+function drawMetafase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    <line x1="${cx-70}" y1="${cy-100}" x2="${cx-22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <line x1="${cx-70}" y1="${cy+100}" x2="${cx-22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <line x1="${cx+70}" y1="${cy-100}" x2="${cx+22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <line x1="${cx+70}" y1="${cy+100}" x2="${cx+22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <!-- Bivalents a l'equador -->
+    <g transform="translate(${cx-22},${cy})">
+      <rect x="-8" y="-16" width="8" height="32" rx="4" fill="${colors.chr1a}" opacity=".85"/>
+      <rect x="0" y="-16" width="8" height="32" rx="4" fill="${colors.chr1a}" opacity=".6"/>
+    </g>
+    <g transform="translate(${cx+22},${cy})">
+      <rect x="-8" y="-16" width="8" height="32" rx="4" fill="${colors.chr2a}" opacity=".85"/>
+      <rect x="0" y="-16" width="8" height="32" rx="4" fill="${colors.chr2a}" opacity=".6"/>
+    </g>
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".4"/>
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Bivalents a l'equador; cada pol rep un homòleg</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (bivalents a l'equador)</text>
+  `;
+}
+
+function drawAnafase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    <!-- Homòlegs (no cromàtides) cap als pols -->
+    ${chromosome(cx-45, cy-55, colors.chr1a, -8, true, 9, 26)}
+    ${chromosome(cx-20, cy-55, colors.chr1a, 8, true, 9, 26)}
+    ${chromosome(cx+20, cy+55, colors.chr2a, -8, true, 9, 26)}
+    ${chromosome(cx+45, cy+55, colors.chr2a, 8, true, 9, 26)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" stroke-dasharray="4,3" opacity=".3"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Homòlegs separen cap als pols (cromàtides unides)</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada pol: n (cromàtides unides)</text>
+  `;
+}
+
+function drawTelofase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    <ellipse cx="${cx}" cy="${cy-65}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    <ellipse cx="${cx}" cy="${cy+65}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    ${chromosome(cx-20, cy-65, colors.chr1a, 0, true, 9, 22)}
+    ${chromosome(cx+20, cy-65, colors.chr1a, 0, true, 9, 22)}
+    ${chromosome(cx-20, cy+65, colors.chr2a, 0, true, 9, 22)}
+    ${chromosome(cx+20, cy+65, colors.chr2a, 0, true, 9, 22)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.membrane}" stroke-width="2" stroke-dasharray="6,4" opacity=".5"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">2 cèl·lules haploides formant-se</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada cèl·lula: n (cromàtides germanes unides)</text>
+  `;
+}
+
+function drawProfase2() {
+  const cx1 = 130, cx2 = 270, cy = 155;
+  return `
+    ${cellBase(cx1, cy, 90, 80)}
+    ${chromosome(cx1-15, cy-10, colors.chr1a, -10, true, 8, 22)}
+    ${chromosome(cx1+15, cy+10, colors.chr1a, 10, true, 8, 22)}
+    ${cellBase(cx2, cy, 90, 80)}
+    ${chromosome(cx2-15, cy-10, colors.chr2a, -10, true, 8, 22)}
+    ${chromosome(cx2+15, cy+10, colors.chr2a, 10, true, 8, 22)}
+    <text x="200" y="278" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">2 cèl·lules n preparen la 2a divisió (sense copiar ADN)</text>
+    <text x="200" y="294" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada cèl·lula: n (cromàtides unides)</text>
+  `;
+}
+
+function drawMetafase2() {
+  const cx1 = 130, cx2 = 270, cy = 155;
+  return `
+    ${cellBase(cx1, cy, 90, 80)}
+    ${chromosome(cx1-14, cy, colors.chr1a, 90, true, 8, 22)}
+    ${chromosome(cx1+14, cy, colors.chr1a, 90, true, 8, 22)}
+    <line x1="${cx1-60}" y1="${cy}" x2="${cx1+60}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".5"/>
+    ${cellBase(cx2, cy, 90, 80)}
+    ${chromosome(cx2-14, cy, colors.chr2a, 90, true, 8, 22)}
+    ${chromosome(cx2+14, cy, colors.chr2a, 90, true, 8, 22)}
+    <line x1="${cx2-60}" y1="${cy}" x2="${cx2+60}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".5"/>
+    <text x="200" y="278" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromosomes a l'equador de cada cèl·lula n</text>
+    <text x="200" y="294" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada cèl·lula: n (cromàtides a l'equador)</text>
+  `;
+}
+
+function drawAnafase2() {
+  const cx1 = 130, cx2 = 270, cy = 155;
+  return `
+    ${cellBase(cx1, cy, 90, 95)}
+    ${chromosomeSingle(cx1-18, cy-45, colors.chr1a, 90, 7, 20)}
+    ${chromosomeSingle(cx1+18, cy-45, colors.chr1a, 90, 7, 20)}
+    ${chromosomeSingle(cx1-18, cy+45, colors.chr1a, 90, 7, 20)}
+    ${chromosomeSingle(cx1+18, cy+45, colors.chr1a, 90, 7, 20)}
+    ${cellBase(cx2, cy, 90, 95)}
+    ${chromosomeSingle(cx2-18, cy-45, colors.chr2a, 90, 7, 20)}
+    ${chromosomeSingle(cx2+18, cy-45, colors.chr2a, 90, 7, 20)}
+    ${chromosomeSingle(cx2-18, cy+45, colors.chr2a, 90, 7, 20)}
+    ${chromosomeSingle(cx2+18, cy+45, colors.chr2a, 90, 7, 20)}
+    <text x="200" y="295" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromàtides germanes separen cap als pols (×2)</text>
+    <text x="200" y="311" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada pol: n (cromosomes simples)</text>
+  `;
+}
+
+function drawTelofase2() {
+  const positions = [[110, 110], [290, 110], [110, 210], [290, 210]];
+  let svg = '';
+  const chrColors = [colors.chr1a, colors.chr2a, colors.chr1a, colors.chr2a];
+  positions.forEach((p, i) => {
+    svg += `<ellipse cx="${p[0]}" cy="${p[1]}" rx="68" ry="58" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="2.5"/>`;
+    svg += nucleus(p[0], p[1], 26);
+    svg += chromatin(p[0], p[1]);
+  });
+  svg += `<text x="200" y="294" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">4 nuclis haploides — citoquinesi imminent</text>`;
+  svg += `<text x="200" y="310" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">4 cèl·lules n (cromosomes descomprimits)</text>`;
+  return svg;
+}
+
+function drawGametes() {
+  const positions = [[90, 100], [200, 80], [310, 100], [200, 230]];
+  const labels = ['Gàmeta 1', 'Gàmeta 2', 'Gàmeta 3', 'Gàmeta 4'];
+  let svg = '';
+  positions.forEach((p, i) => {
+    const col = i < 2 ? colors.chr1a : colors.chr2a;
+    svg += `<circle cx="${p[0]}" cy="${p[1]}" r="48" fill="${colors.cellFill}" stroke="${col}" stroke-width="2.5"/>`;
+    svg += nucleus(p[0], p[1], 22);
+    svg += chromatin(p[0], p[1]);
+    svg += `<text x="${p[0]}" y="${p[1]+62}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="11" fill="${col}" font-weight="bold">${labels[i]}</text>`;
+  });
+  svg += `<text x="200" y="300" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">4 gàmetes, cada un diferent (variabilitat)</text>`;
+  svg += `<text x="200" y="316" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">4 cèl·lules n — fecundació: n + n = 2n</text>`;
+  return svg;
+}
+
+// ─────────────────────────────────────────────────
+// DATA: FASES
+// ─────────────────────────────────────────────────
+// Versió 4t ESO: noms de fase, notació 2n/n, totes les fases intermèdies incloses.
+// Versió 3r ESO (simplificada, sense notació): app_mitosi_meiosi.html al portal 3r ESO.
+
+const PHASES = {
+  mitosi: [
+    {
+      id: 'interfase-m',
+      name: 'Interfase',
+      eyebrow: 'Mitosi · Fase 1 de 6',
+      notation: '2n → 2n (ADN copiat: 2 × 2n)',
+      description: 'La cèl·lula <span class="tr-word">creix<span class="tooltip-box tooltip-ar">ينمو</span><span class="tooltip-box tooltip-es">crece</span><span class="tooltip-box tooltip-ur">بڑھتا ہے</span></span> i fa una còpia completa del seu <span class="tr-word">material genètic<span class="tooltip-box tooltip-ar">المادة الوراثية</span><span class="tooltip-box tooltip-es">material genético</span><span class="tooltip-box tooltip-ur">جینیاتی مادہ</span></span> (ADN). La quantitat de material és 2n, però amb les còpies passa a tenir 2 × 2n (cromàtides germanes unides als centròmers). La membrana nuclear encara és intacta.',
+      simplified: 'La cèl·lula creix i fa una fotocòpia del seu ADN. Segueix sent 2n, però amb dues còpies de cada cromosoma unides.',
+      points: ['La cèl·lula creix de mida', 'Duplicació del DNA (S: síntesi)', 'La membrana nuclear és intacta', 'Pas previ obligatori a qualsevol divisió'],
+      svg: drawInterfase,
+      chromosomes: '2n (amb còpies: 2 × 2n)',
+    },
+    {
+      id: 'profase-m',
+      name: 'Profase',
+      eyebrow: 'Mitosi · Fase 2 de 6',
+      notation: '2n (cromàtides germanes visibles)',
+      description: 'Els cromosomes es <span class="tr-word">condensen<span class="tooltip-box tooltip-ar">يتكثف</span><span class="tooltip-box tooltip-es">se condensan</span><span class="tooltip-box tooltip-ur">گھنے ہو جاتے ہیں</span></span> i es fan visibles al microscopi (dues cromàtides germanes per cromosoma, unides al centròmer). La <span class="tr-word">membrana nuclear<span class="tooltip-box tooltip-ar">الغشاء النووي</span><span class="tooltip-box tooltip-es">membrana nuclear</span><span class="tooltip-box tooltip-ur">نیوکلیئر جھلی</span></span> comença a desaparèixer.',
+      simplified: 'Els cromosomes es fan visibles (es "retorcen"). La membrana del nucli comença a desfer-se.',
+      points: ['Cromosomes condensats → visibles al microscopi', 'Cada cromosoma: 2 cromàtides germanes unides', 'Membrana nuclear es desfà', 'Es forma el fus acromàtic (fibres del fus)'],
+      svg: drawProfase,
+      chromosomes: '2n (cromàtides unides; X visibles)',
+    },
+    {
+      id: 'metafase-m',
+      name: 'Metafase',
+      eyebrow: 'Mitosi · Fase 3 de 6',
+      notation: '2n (a l\'equador)',
+      description: 'Els cromosomes s\'alineen a l\'<span class="tr-word">equador<span class="tooltip-box tooltip-ar">خط الاستواء</span><span class="tooltip-box tooltip-es">ecuador</span><span class="tooltip-box tooltip-ur">خط استوا</span></span> (placa metafàsica). Les fibres del fus s\'uneixen als <span class="tr-word">centròmers<span class="tooltip-box tooltip-ar">السنترومير</span><span class="tooltip-box tooltip-es">centrómeros</span><span class="tooltip-box tooltip-ur">سینٹرومیر</span></span> de cada cromosoma. Cadascun és tirat cap als dos pols oposats.',
+      simplified: 'Els cromosomes es posen en fila al mig de la cèl·lula. Com si es posessin a la línia de sortida d\'una cursa, un a cada costat.',
+      points: ['Cromosomes a la placa metafàsica (equador)', 'Fibres del fus unides als centròmers', 'Punt de control: totes les fibres unides correctament', 'Preparació per repartir per igual'],
+      svg: drawMetafase,
+      chromosomes: '2n (cromàtides unides, a l\'equador)',
+    },
+    {
+      id: 'anafase-m',
+      name: 'Anafase',
+      eyebrow: 'Mitosi · Fase 4 de 6',
+      notation: 'Cap pol: 2n (cromosomes simples)',
+      description: 'Les <span class="tr-word">cromàtides germanes<span class="tooltip-box tooltip-ar">الكروماتيدات الشقيقة</span><span class="tooltip-box tooltip-es">cromátidas hermanas</span><span class="tooltip-box tooltip-ur">بہن کروماٹڈ</span></span> se separen: cada centròmer es trenca i una cromàtida va cap a cada pol. La cèl·lula s\'allarga. En aquest moment, cada pol té la quantitat completa (2n) de cromosomes individuals.',
+      simplified: 'Les dues còpies de cada cromosoma es separen: una va cap amunt i l\'altra cap avall. La cèl·lula s\'allarga com un xiclet.',
+      points: ['Separació de cromàtides germanes', 'Cada pol rep una còpia de cada cromosoma', 'La cèl·lula s\'allarga', 'Cada pol: 2n (cromosomes individuals)'],
+      svg: drawAnafase,
+      chromosomes: 'Cada pol: 2n (cromosomes simples)',
+    },
+    {
+      id: 'telofase-m',
+      name: 'Telofase',
+      eyebrow: 'Mitosi · Fase 5 de 6',
+      notation: '2 nuclis, cadascun 2n',
+      description: 'Es formen dos nous <span class="tr-word">nuclis<span class="tooltip-box tooltip-ar">نوى</span><span class="tooltip-box tooltip-es">núcleos</span><span class="tooltip-box tooltip-ur">نیوکلئی</span></span>: la membrana nuclear es refà al voltant de cada grup de cromosomes. Els cromosomes comencen a descompactar-se. La cèl·lula encara és una, però té dos nuclis (2n cadascun).',
+      simplified: 'Es formen dos nuclis nous. La cèl·lula té ara dos nuclis separats, un a cada banda.',
+      points: ['Membranes nuclears noves es formen', 'Cromosomes es descompacten (ADN accessible)', 'Dos nuclis 2n a la mateixa cèl·lula', 'El citoplasma encara no s\'ha dividit'],
+      svg: drawTelofase,
+      chromosomes: '2 nuclis, cadascun 2n',
+    },
+    {
+      id: 'citoquinesi-m',
+      name: 'Citoquinesi',
+      eyebrow: 'Mitosi · Resultat final',
+      notation: '2 cèl·lules filles 2n',
+      description: 'El <span class="tr-word">citoplasma<span class="tooltip-box tooltip-ar">السيتوبلازم</span><span class="tooltip-box tooltip-es">citoplasma</span><span class="tooltip-box tooltip-ur">سائٹوپلازم</span></span> es divideix: la cèl·lula es "pelliga" per la meitat. El resultat final: 2 cèl·lules filles <span class="tr-word">idèntiques<span class="tooltip-box tooltip-ar">متطابقتان</span><span class="tooltip-box tooltip-es">idénticas</span><span class="tooltip-box tooltip-ur">یکساں</span></span> a la cèl·lula mare. Funció: créixer, reparar teixits, substituir cèl·lules desgastades.',
+      simplified: 'El citoplasma es parteix en dos. Resultat: 2 cèl·lules noves exactament iguals a la mare.',
+      points: ['Divisió del citoplasma (no del nucli)', '2 cèl·lules filles 2n, idèntiques entre elles i a la mare', 'Cap variabilitat genètica generada', 'Funció: creixement i reparació (cèl·lules somàtiques)'],
+      svg: drawCitoquinesi,
+      chromosomes: '2 cèl·lules filles: 2n cadascuna',
+    },
+  ],
+
+  meiosi: [
+    {
+      id: 'interfase-mei',
+      name: 'Interfase',
+      eyebrow: 'Meiosi · Fase 1 de 10',
+      notation: '2n → 2n (ADN copiat una sola vegada)',
+      description: 'Com a la mitosi, la cèl·lula fa una còpia del seu <span class="tr-word">ADN<span class="tooltip-box tooltip-ar">الحمض النووي</span><span class="tooltip-box tooltip-es">ADN</span><span class="tooltip-box tooltip-ur">ڈی این اے</span></span>. <strong>Diferència clau:</strong> aquest ADN es copiarà <em>una sola vegada</em>, però la cèl·lula es dividirà <em>dues vegades</em>. Això és el que permetrà reduir a la meitat el nombre de cromosomes.',
+      simplified: 'La cèl·lula fa una còpia del seu ADN (igual que si fes mitosi). Però vindrà una gran diferència: es dividirà dues vegades seguides.',
+      points: ['L\'ADN es copia una sola vegada (com a la mitosi)', 'Però vindran dues divisions consecutives', 'Es parteix d\'una cèl·lula 2n', 'La doble divisió (sense nova còpia intermèdia) és el que reduirà a n'],
+      svg: drawMeiosiInterfase,
+      chromosomes: '2n (ADN copiat: 2 × 2n)',
+    },
+    {
+      id: 'profase1-mei',
+      name: 'Profase I',
+      eyebrow: 'Meiosi I · Fase 2 de 10',
+      notation: '2n (bivalents; crossing over)',
+      description: 'Els cromosomes homòlegs (un del pare, un de la mare) s\'<span class="tr-word">aparellen<span class="tooltip-box tooltip-ar">يقترن</span><span class="tooltip-box tooltip-es">se emparejan</span><span class="tooltip-box tooltip-ur">جوڑا بناتے ہیں</span></span> formant <em>bivalents</em>. Sovint s\'intercanvien fragments entre homòlegs: el <span class="tr-word">crossing over<span class="tooltip-box tooltip-ar">العبور</span><span class="tooltip-box tooltip-es">sobrecruzamiento</span><span class="tooltip-box tooltip-ur">کراسنگ اوور</span></span>. Aquesta fase és la font principal de <strong>variabilitat genètica</strong> de la meiosi.',
+      simplified: 'El cromosoma que vas heretar del teu pare i el que vas heretar de la teva mare s\'ajunten en parella i de vegades intercanvien trossets. Per això cada cèl·lula sexual que faràs serà única.',
+      points: ['Homòlegs aparellats: bivalents (= 2 cromosomes × 2 cromàtides = 4 cromàtides)', 'Crossing over: intercanvi de segments entre cromàtides no germanes', 'Font principal de variabilitat genètica', 'La membrana nuclear es desfà'],
+      svg: drawProfase1,
+      chromosomes: '2n (bivalents amb crossing over)',
+    },
+    {
+      id: 'metafase1-mei',
+      name: 'Metafase I',
+      eyebrow: 'Meiosi I · Fase 3 de 10',
+      notation: '2n (bivalents a l\'equador)',
+      description: 'Els bivalents s\'alineen a l\'equador. A diferència de la mitosi, aquí és el parell de cromosomes homòlegs (el bivalent sencer) el que s\'alinea — no cromosomes individuals. L\'ordre en què se situen és a l\'atzar (independència de l\'assortiment), cosa que genera més variabilitat.',
+      simplified: 'Les parelles d\'homòlegs (els bivalents) es col·loquen al mig de la cèl·lula. On es posarà cada parella és totalment a l\'atzar: per això els fills d\'uns mateixos pares no s\'assemblen del tot.',
+      points: ['Bivalents (parelles d\'homòlegs) a la placa metafàsica', 'Cada bivalent s\'orienta a l\'atzar cap a un pol o l\'altre', 'Independència de l\'assortiment (2a font de variabilitat)', 'Les fibres del fus s\'uneixen als centròmers dels homòlegs (no de les cromàtides)'],
+      svg: drawMetafase1,
+      chromosomes: '2n (bivalents a l\'equador)',
+    },
+    {
+      id: 'anafase1-mei',
+      name: 'Anafase I',
+      eyebrow: 'Meiosi I · Fase 4 de 10',
+      notation: 'Cada pol: n (cromàtides unides)',
+      description: 'Els cromosomes <span class="tr-word">homòlegs<span class="tooltip-box tooltip-ar">متماثلة</span><span class="tooltip-box tooltip-es">homólogos</span><span class="tooltip-box tooltip-ur">ہومولوگس</span></span> se separen: cada membre d\'un bivalent va cap a un pol diferent. <strong>Important:</strong> les cromàtides germanes NO se separen aquí (a diferència de l\'anafase de la mitosi). Per això cada pol arriba a tenir n cromosomes (però cada cromosoma encara té 2 cromàtides unides).',
+      simplified: 'Els cromosomes homòlegs (del pare i de la mare) van a pols oposats. Les dues còpies de cada cromosoma (cromàtides) segueixen unides. Resultat: cada costat té la meitat dels cromosomes originals.',
+      points: ['Se separen homòlegs (NO cromàtides germanes)', 'Cada pol rep n cromosomes (cada un amb 2 cromàtides unides)', 'Reducció de 2n a n en cada pol', 'La separació a l\'atzar aquí també genera variabilitat'],
+      svg: drawAnafase1,
+      chromosomes: 'Cada pol: n (cromàtides germanes unides)',
+    },
+    {
+      id: 'telofase1-mei',
+      name: 'Telofase I',
+      eyebrow: 'Meiosi I · Fase 5 de 10',
+      notation: '2 cèl·lules n (cromàtides unides)',
+      description: 'Comencen a formar-se dos nuclis. La cèl·lula es divideix (citoquinesi) i resulten <strong>2 cèl·lules haploides</strong> (n). Cada una té la meitat dels cromosomes originals, però cada cromosoma encara té les dues cromàtides germanes unides. <strong>No hi haurà nova còpia d\'ADN</strong> entre la meiosi I i la meiosi II.',
+      simplified: 'La cèl·lula es parteix en dues. Cada cèl·lula nova té la meitat dels cromosomes (n). No fan cap nova còpia d\'ADN; passen directament a la 2a divisió.',
+      points: ['Citoquinesi: 2 cèl·lules filles haploides (n)', 'Cada cèl·lula: n cromosomes, cadascun amb 2 cromàtides unides', 'NO hi ha nova replicació d\'ADN entre meiosi I i II', 'Les 2 cèl·lules poden ser genèticament diferents (per crossing over i assortiment)'],
+      svg: drawTelofase1,
+      chromosomes: '2 cèl·lules n (cromàtides germanes unides)',
+    },
+    {
+      id: 'profase2-mei',
+      name: 'Profase II',
+      eyebrow: 'Meiosi II · Fase 6 de 10',
+      notation: 'n (cromàtides unides, ×2 cèl·lules)',
+      description: 'Cada una de les 2 cèl·lules haploides (n) inicia la Meiosi II. Els cromosomes es tornen a condensar. La membrana nuclear es torna a desfà. Esta divisió s\'assembla molt a la mitosi, però parteix de cèl·lules n (amb la meitat dels cromosomes).',
+      simplified: 'Les dues cèl·lules que tenim (n) es preparen per tornar a dividir-se. Els seus cromosomes es tornen a condensar, com al principi d\'una mitosi.',
+      points: ['Les 2 cèl·lules n preparen la 2a divisió', 'Cromosomes es condensen de nou', 'Membrana nuclear es trenca', 'Cap còpia nova d\'ADN: els cromosomes n segueixen amb 2 cromàtides'],
+      svg: drawProfase2,
+      chromosomes: 'n (cromàtides unides) × 2 cèl·lules',
+    },
+    {
+      id: 'metafase2-mei',
+      name: 'Metafase II',
+      eyebrow: 'Meiosi II · Fase 7 de 10',
+      notation: 'n (cromosomes a l\'equador) × 2 cèl·lules',
+      description: 'En cada una de les 2 cèl·lules, els cromosomes individuals (no bivalents: no hi ha homòlegs en cada cèl·lula n) s\'alineen a l\'equador. Les fibres del fus s\'uneixen als centròmers, igual que a la metafase de la mitosi. Ara la divisió separarà cromàtides germanes.',
+      simplified: 'Dins de cada una de les 2 cèl·lules, els cromosomes es posen al mig, a punt per repartir les dues còpies (cromàtides) de cada cromosoma.',
+      points: ['Cromosomes individuals (no bivalents) a l\'equador', 'Fibres del fus s\'uneixen als centròmers', 'Passa simultàniament a les 2 cèl·lules haploides', 'A punt per separar cromàtides germanes'],
+      svg: drawMetafase2,
+      chromosomes: 'n (a l\'equador) × 2 cèl·lules',
+    },
+    {
+      id: 'anafase2-mei',
+      name: 'Anafase II',
+      eyebrow: 'Meiosi II · Fase 8 de 10',
+      notation: 'Cada pol: n (cromosomes simples) × 2 cèl·lules',
+      description: 'Les <span class="tr-word">cromàtides germanes<span class="tooltip-box tooltip-ar">الكروماتيدات الشقيقة</span><span class="tooltip-box tooltip-es">cromátidas hermanas</span><span class="tooltip-box tooltip-ur">بہن کروماٹڈ</span></span> se separen: cada centròmer es trenca i una cromàtida va cap a cada pol. <em>Ara sí</em> que és el mateix que l\'anafase de la mitosi, però dins de cèl·lules n. Passa simultàniament a les 2 cèl·lules.',
+      simplified: 'Ara les dues còpies de cada cromosoma (les cromàtides germanes) es separen: una va cap amunt i l\'altra cap avall, dins de cada una de les 2 cèl·lules.',
+      points: ['Separació de cromàtides germanes (com a l\'anafase de la mitosi)', 'Cada pol rep cromosomes simples (1 cromàtida)', 'Passa a les 2 cèl·lules simultàniament → 4 grups de cromosomes', 'Cada pol: n cromosomes simples'],
+      svg: drawAnafase2,
+      chromosomes: 'n (cromosomes simples) × 2 cèl·lules en curs',
+    },
+    {
+      id: 'telofase2-mei',
+      name: 'Telofase II',
+      eyebrow: 'Meiosi II · Fase 9 de 10',
+      notation: '4 nuclis n (cromosomes simples)',
+      description: 'Es formen 4 nous nuclis haploides. Les membranes nuclears es refan al voltant de cada grup de cromosomes. Seguirà la citoquinesi de cada una de les 2 cèl·lules, donant 4 cèl·lules haploides en total. Cada una és genèticament única.',
+      simplified: 'Es formen 4 nuclis. La citoquinesi completarà la divisió i deixarà 4 cèl·lules noves, totes haploides (n) i totes una mica diferents entre elles.',
+      points: ['4 nuclis haploides formats', 'Cromosomes es descompacten', 'Citoquinesi → 4 cèl·lules n', 'Cada una és genèticament única (per crossing over + assortiment)'],
+      svg: drawTelofase2,
+      chromosomes: '4 nuclis n (citoquinesi imminent)',
+    },
+    {
+      id: 'gametes-mei',
+      name: 'Gàmetes (resultat)',
+      eyebrow: 'Meiosi · Resultat final',
+      notation: '4 cèl·lules n — fecundació: n + n = 2n',
+      description: 'El resultat de la meiosi: <strong>4 <span class="tr-word">gàmetes<span class="tooltip-box tooltip-ar">أمشاج</span><span class="tooltip-box tooltip-es">gametos</span><span class="tooltip-box tooltip-ur">گیمیٹ</span></span></strong> (<span class="tr-word">espermatozoides<span class="tooltip-box tooltip-ar">الحيوانات المنوية</span><span class="tooltip-box tooltip-es">espermatozoides</span><span class="tooltip-box tooltip-ur">نطفہ</span></span> o <span class="tr-word">òvuls<span class="tooltip-box tooltip-ar">البيوض</span><span class="tooltip-box tooltip-es">óvulos</span><span class="tooltip-box tooltip-ur">بیضہ</span></span>), cada un amb la meitat del material genètic (n) i genèticament únic. Quan dos gàmetes s\'uneixen (<span class="tr-word">fecundació<span class="tooltip-box tooltip-ar">الإخصاب</span><span class="tooltip-box tooltip-es">fecundación</span><span class="tooltip-box tooltip-ur">کھاد</span></span>), es restaura la quantitat 2n a la nova cèl·lula (zigot).',
+      simplified: 'El resultat final és 4 cèl·lules reproductores (espermatozoides o òvuls), totes haploides (n) i totes únicas. Quan dues s\'uneixen en la fecundació, la nova cèl·lula torna a tenir el nombre complet (2n).',
+      points: ['4 gàmetes n, cada un diferent dels altres', 'Funció: reproducció sexual', 'Fecundació: n + n = 2n (zigot)', 'Per que els fills no son idèntics als pares ni als germans: crossing over + assortiment independent + fecundació aleatòria'],
+      svg: drawGametes,
+      chromosomes: '4 cèl·lules n — fecundació n + n = 2n',
+    },
+  ]
+};
+
+// ─────────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────────
+
+let mode = 'mitosi';
+let currentPhase = 0;
+let simplified = false;
+let lang = null;
+
+// ─────────────────────────────────────────────────
+// RENDER
+// ─────────────────────────────────────────────────
+
+function getPhases() { return PHASES[mode] || []; }
+
+function renderTimeline() {
+  const tl = document.getElementById('phaseTimeline');
+  const phases = getPhases();
+  let html = '';
+
+  if (mode === 'meiosi') {
+    phases.forEach((p, i) => {
+      if (i === 1) html += `<span class="phase-divider">— Meiosi I —</span>`;
+      if (i === 5) html += `<span class="phase-divider">— Meiosi II —</span>`;
+      if (i === 9) html += `<span class="phase-divider">— Resultat —</span>`;
+      html += `<button class="phase-btn${currentPhase === i ? ' active' : ''}" onclick="goTo(${i})">${p.name}</button>`;
+      if (i < phases.length - 1) html += `<span class="phase-arrow">→</span>`;
+    });
+  } else if (mode === 'mitosi') {
+    phases.forEach((p, i) => {
+      html += `<button class="phase-btn${currentPhase === i ? ' active' : ''}" onclick="goTo(${i})">${p.name}</button>`;
+      if (i < phases.length - 1) html += `<span class="phase-arrow">→</span>`;
+    });
+  }
+
+  tl.innerHTML = html;
+}
+
+function renderPhase() {
+  if (mode === 'compara') { renderCompara(); return; }
+
+  const phases = getPhases();
+  const ph = phases[currentPhase];
+  if (!ph) return;
+
+  // SVG
+  const svg = document.getElementById('cellSvg');
+  svg.style.opacity = 0;
+  setTimeout(() => {
+    svg.innerHTML = ph.svg();
+    svg.style.opacity = 1;
+  }, 150);
+
+  // Labels
+  document.getElementById('phaseEyebrow').textContent = ph.eyebrow;
+  document.getElementById('phaseTitle').textContent = ph.name;
+
+  const notEl = document.getElementById('phaseNotation');
+  notEl.innerHTML = ph.notation
+    ? `<span class="phase-label-notation">${ph.notation}</span>`
+    : '';
+
+  // Side info
+  const si = document.getElementById('sideInfo');
+  si.innerHTML = `
+    <div>
+      <div class="info-section-title">Descripció</div>
+      <div class="info-text${simplified ? ' simplified' : ''}" id="phaseDesc">
+        ${simplified ? ph.simplified : ph.description}
+      </div>
+    </div>
+    <div>
+      <div class="info-section-title">Punts clau</div>
+      <ul class="key-points">
+        ${ph.points.map(p => `<li class="key-point">${p}</li>`).join('')}
+      </ul>
+    </div>
+    <div class="chromosome-legend">
+      <div class="info-section-title" style="border-color:var(--rule-dark)">Material genètic</div>
+      <div class="legend-row">
+        <span class="legend-dot" style="background:#E76F6F"></span>
+        <span style="font-size:14px;color:var(--ink-2)">Grup 1 (vermell)</span>
+      </div>
+      <div class="legend-row">
+        <span class="legend-dot" style="background:#6FA3E7"></span>
+        <span style="font-size:14px;color:var(--ink-2)">Grup 2 (blau)</span>
+      </div>
+      <div style="font-size:13px;color:var(--muted);margin-top:6px">Quantitat: <strong style="color:var(--purple-ink)">${ph.chromosomes}</strong></div>
+      <div class="notation-badge">${ph.notation || ''}</div>
+    </div>
+  `;
+
+  // Step counter
+  document.getElementById('stepCounter').textContent =
+    `Fase ${currentPhase + 1} / ${phases.length}`;
+
+  // Nav buttons
+  document.getElementById('btnPrev').disabled = currentPhase === 0;
+  document.getElementById('btnNext').disabled = currentPhase === phases.length - 1;
+  document.getElementById('btnNext').textContent =
+    currentPhase === phases.length - 1 ? 'Fi' : 'Següent →';
+
+  applyLang();
+}
+
+function renderCompara() {
+  const cellCanvas = document.getElementById('cellCanvas');
+  const phaseLabelArea = document.getElementById('phaseLabelArea');
+  const sideInfo = document.getElementById('sideInfo');
+  const bottomNav = document.querySelector('.bottom-nav');
+
+  cellCanvas.innerHTML = `
+    <div class="comparison-grid" style="width:100%">
+      <div class="comparison-cell">
+        <div class="comparison-header">Mitosi</div>
+        <div class="comparison-content">
+          <table class="compare-table">
+            <tr><th>Característica</th><th>Valor</th></tr>
+            <tr><td>Divisions</td><td>1</td></tr>
+            <tr><td>Cèl·lules filles</td><td>2</td></tr>
+            <tr><td>Ploïdia resultant</td><td>2n (igual que la mare)</td></tr>
+            <tr><td>Fases intermèdies</td><td>Profase, Metafase, Anafase, Telofase</td></tr>
+            <tr><td>Separació en anafase</td><td>Cromàtides germanes</td></tr>
+            <tr><td>Variabilitat genètica</td><td>No (còpies idèntiques)</td></tr>
+            <tr><td>Funció</td><td>Creixement, reparació (somàtica)</td></tr>
+            <tr><td>On ocorre</td><td>Totes les cèl·lules somàtiques</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="comparison-cell">
+        <div class="comparison-header">Meiosi</div>
+        <div class="comparison-content">
+          <table class="compare-table">
+            <tr><th>Característica</th><th>Valor</th></tr>
+            <tr><td>Divisions</td><td>2 (Meiosi I + Meiosi II)</td></tr>
+            <tr><td>Cèl·lules filles</td><td>4</td></tr>
+            <tr><td>Ploïdia resultant</td><td>n (la meitat de la mare)</td></tr>
+            <tr><td>Fases intermèdies</td><td>Profase I, Metafase I, Anafase I, Telofase I + Profase II, Metafase II, Anafase II, Telofase II</td></tr>
+            <tr><td>Separació en Anafase I</td><td>Cromosomes homòlegs</td></tr>
+            <tr><td>Separació en Anafase II</td><td>Cromàtides germanes</td></tr>
+            <tr><td>Variabilitat genètica</td><td>Sí (crossing over + assortiment independent)</td></tr>
+            <tr><td>Funció</td><td>Gametogènesi (reproducció sexual)</td></tr>
+            <tr><td>On ocorre</td><td>Gònades (testicles / ovaris)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+
+  phaseLabelArea.innerHTML = `
+    <div class="phase-label-eyebrow">Comparació</div>
+    <div class="phase-label-title">Mitosi vs. Meiosi</div>
+    <span class="phase-label-notation">2n → 2n (mitosi) · 2n → n (meiosi) · n + n = 2n (fecundació)</span>
+  `;
+
+  sideInfo.innerHTML = `
+    <div>
+      <div class="info-section-title">Diferències fonamentals</div>
+      <ul class="key-points">
+        <li class="key-point">La meiosi té 2 divisions; la mitosi, 1</li>
+        <li class="key-point">La meiosi té Profase I amb aparellament d'homòlegs i crossing over: origen de variabilitat</li>
+        <li class="key-point">A l'Anafase I separen homòlegs (no cromàtides); a l'Anafase II i a la mitosi separen cromàtides germanes</li>
+        <li class="key-point">Meiosi: 2n → n (reducció de ploïdia). Mitosi: 2n → 2n</li>
+        <li class="key-point">Fecundació: n (gàmeta) + n (gàmeta) = 2n (zigot) → manté constant la ploïdia entre generacions</li>
+      </ul>
+    </div>
+    <div>
+      <div class="info-section-title">Regla mnemotècnica</div>
+      <div class="info-text"><strong>MitoSI → Idèntiques · MeiO → Ovaris/testis</strong><br>Mitosi: 1 divisió, 2 filles, 2n. Meiosi: 2 divisions, 4 filles, n.</div>
+    </div>
+  `;
+
+  bottomNav.innerHTML = `<div></div><span class="step-counter">Vista comparativa</span><div></div>`;
+}
+
+function renderAll() {
+  renderTimeline();
+  renderPhase();
+}
+
+// ─────────────────────────────────────────────────
+// CONTROLS
+// ─────────────────────────────────────────────────
+
+function setMode(m) {
+  mode = m;
+  currentPhase = 0;
+  document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1)).classList.add('active');
+
+  const tl = document.getElementById('phaseTimeline');
+  tl.style.display = m === 'compara' ? 'none' : 'flex';
+
+  const bl = document.querySelector('.bottom-nav');
+  bl.style.display = m === 'compara' ? 'none' : 'flex';
+
+  const cv = document.getElementById('cellCanvas');
+  cv.style.display = 'flex';
+  cv.style.flexWrap = m === 'compara' ? 'wrap' : '';
+
+  if (m !== 'compara') {
+    const svg = document.createElement('svg');
+    svg.id = 'cellSvg';
+    svg.classList.add('cell-diagram');
+    svg.setAttribute('viewBox', '0 0 400 320');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    svg.setAttribute('width', '400');
+    svg.setAttribute('height', '320');
+    cv.innerHTML = '';
+    cv.appendChild(svg);
+  }
+
+  renderAll();
+}
+
+function goTo(i) {
+  currentPhase = i;
+  renderAll();
+}
+
+function navigate(dir) {
+  const phases = getPhases();
+  currentPhase = Math.max(0, Math.min(phases.length - 1, currentPhase + dir));
+  renderAll();
+}
+
+function toggleSimplify() {
+  simplified = !simplified;
+  document.getElementById('btnSimplify').classList.toggle('active', simplified);
+  renderPhase();
+}
+
+function setLang(l) {
+  lang = lang === l ? null : l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  if (lang) document.getElementById('btn' + l.charAt(0).toUpperCase() + l.slice(1)).classList.add('active');
+  applyLang();
+}
+
+function applyLang() {
+  const body = document.body;
+  body.classList.remove('lang-ar', 'lang-es', 'lang-ur');
+  if (lang) body.classList.add('lang-' + lang);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', e => {
+  if (mode === 'compara') return;
+  if (e.key === 'ArrowRight') navigate(1);
+  if (e.key === 'ArrowLeft') navigate(-1);
+});
+
+// Init
+renderAll();
+</script>
+</body>
+</html>

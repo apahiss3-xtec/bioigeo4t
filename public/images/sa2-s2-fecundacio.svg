@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <marker id="ar2" markerWidth="12" markerHeight="12" refX="8" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 Z" fill="#5A2E77"/></marker>
+    <style>
+      .cell{fill:#f3e8fa;stroke:#7B3F9E;stroke-width:2.5}
+      .cr-r{stroke:#c0392b;stroke-width:6;stroke-linecap:round}
+      .cr-b{stroke:#2166a8;stroke-width:6;stroke-linecap:round}
+      .lbl{fill:#5A2E77;font-weight:900;font-size:15px}
+      .n{fill:#5A2E77;font-weight:900;font-size:22px}
+      .sub{fill:#3a3340;font-size:13px}
+    </style>
+  </defs>
+
+  <!-- Òvul (n) -->
+  <circle class="cell" cx="110" cy="150" r="52"/>
+  <line class="cr-r" x1="92" y1="135" x2="92" y2="159"/>
+  <line class="cr-b" x1="120" y1="140" x2="120" y2="164"/>
+  <text x="110" y="228" text-anchor="middle" class="lbl">Òvul</text>
+  <text x="110" y="250" text-anchor="middle" class="n">n = 23</text>
+  <text x="110" y="270" text-anchor="middle" class="sub">(la meitat)</text>
+
+  <text x="230" y="160" text-anchor="middle" fill="#5A2E77" font-size="40" font-weight="900">+</text>
+
+  <!-- Espermatozoide (n) -->
+  <circle class="cell" cx="350" cy="150" r="52"/>
+  <line class="cr-r" x1="332" y1="135" x2="332" y2="159"/>
+  <line class="cr-b" x1="360" y1="140" x2="360" y2="164"/>
+  <path d="M402,150 q40,-14 70,6 q-30,-4 -70,10" fill="#A66BC9" opacity="0.6"/>
+  <text x="350" y="228" text-anchor="middle" class="lbl">Espermatozoide</text>
+  <text x="350" y="250" text-anchor="middle" class="n">n = 23</text>
+  <text x="350" y="270" text-anchor="middle" class="sub">(la meitat)</text>
+
+  <path d="M470,150 L560,150" fill="none" stroke="#5A2E77" stroke-width="3" marker-end="url(#ar2)"/>
+  <text x="515" y="138" text-anchor="middle" class="sub" font-weight="700">fecundació</text>
+
+  <!-- Zigot (2n) -->
+  <circle class="cell" cx="650" cy="150" r="60"/>
+  <line class="cr-r" x1="626" y1="132" x2="626" y2="158"/>
+  <line class="cr-b" x1="642" y1="138" x2="642" y2="164"/>
+  <line class="cr-r" x1="662" y1="132" x2="662" y2="158"/>
+  <line class="cr-b" x1="678" y1="138" x2="678" y2="164"/>
+  <text x="650" y="240" text-anchor="middle" class="lbl">Zigot</text>
+  <text x="650" y="262" text-anchor="middle" class="n">2n = 46</text>
+  <text x="650" y="282" text-anchor="middle" class="sub">(complet)</text>
+
+  <rect x="70" y="315" width="620" height="46" rx="8" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.5"/>
+  <text x="380" y="335" text-anchor="middle" fill="#7a5800" font-size="13.5" font-weight="700">Si els gàmetes tinguessin 46 (i no 23)...</text>
+  <text x="380" y="353" text-anchor="middle" fill="#7a5800" font-size="13">el fill en tindria 92, el net 184... cada generació doblaria. La meiosi ho evita.</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f6ece8"/>
+      <stop offset="1" stop-color="#fbf4f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="380" rx="14" fill="url(#bg)"/>
+  <text x="360" y="42" text-anchor="middle" font-size="26" font-weight="900" fill="#a24e24">🕵️ Detector de pseudociència</text>
+  <text x="360" y="66" text-anchor="middle" font-size="15" fill="#6b4a3a" font-style="italic">5 senyals d'alerta: com més senyals encaixen, més sospitosa és una afirmació</text>
+
+  <!-- 5 cards -->
+  <g>
+    <rect x="24" y="92" width="320" height="80" rx="10" fill="#fff" stroke="#e0b7a4" stroke-width="1.5"/>
+    <circle cx="60" cy="132" r="20" fill="#c96f3e"/>
+    <text x="60" y="140" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">1</text>
+    <text x="92" y="122" font-size="15.5" font-weight="700" fill="#a24e24">No es pot comprovar</text>
+    <text x="92" y="143" font-size="13" fill="#4a3a30">No hi ha cap experiment fiable</text>
+    <text x="92" y="160" font-size="13" fill="#4a3a30">que la posi a prova.</text>
+  </g>
+  <g>
+    <rect x="376" y="92" width="320" height="80" rx="10" fill="#fff" stroke="#e0b7a4" stroke-width="1.5"/>
+    <circle cx="412" cy="132" r="20" fill="#c96f3e"/>
+    <text x="412" y="140" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">2</text>
+    <text x="444" y="122" font-size="15.5" font-weight="700" fill="#a24e24">No admet crítica</text>
+    <text x="444" y="143" font-size="13" fill="#4a3a30">Mai canvia ni es corregeix,</text>
+    <text x="444" y="160" font-size="13" fill="#4a3a30">encara que hi hagi proves en contra.</text>
+  </g>
+  <g>
+    <rect x="24" y="184" width="320" height="80" rx="10" fill="#fff" stroke="#e0b7a4" stroke-width="1.5"/>
+    <circle cx="60" cy="224" r="20" fill="#c96f3e"/>
+    <text x="60" y="232" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">3</text>
+    <text x="92" y="214" font-size="15.5" font-weight="700" fill="#a24e24">Es basa en autoritat</text>
+    <text x="92" y="235" font-size="13" fill="#4a3a30">«Ho diu un expert» o testimonis,</text>
+    <text x="92" y="252" font-size="13" fill="#4a3a30">mai en dades ni mesures.</text>
+  </g>
+  <g>
+    <rect x="376" y="184" width="320" height="80" rx="10" fill="#fff" stroke="#e0b7a4" stroke-width="1.5"/>
+    <circle cx="412" cy="224" r="20" fill="#c96f3e"/>
+    <text x="412" y="232" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">4</text>
+    <text x="444" y="214" font-size="15.5" font-weight="700" fill="#a24e24">Sona «científica»</text>
+    <text x="444" y="235" font-size="13" fill="#4a3a30">Fa servir paraules com «quàntic»,</text>
+    <text x="444" y="252" font-size="13" fill="#4a3a30">«energia» o «natural» per convèncer.</text>
+  </g>
+  <g>
+    <rect x="200" y="276" width="320" height="80" rx="10" fill="#fff" stroke="#e0b7a4" stroke-width="1.5"/>
+    <circle cx="236" cy="316" r="20" fill="#c96f3e"/>
+    <text x="236" y="324" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">5</text>
+    <text x="268" y="306" font-size="15.5" font-weight="700" fill="#a24e24">Apel·la al que vols creure</text>
+    <text x="268" y="327" font-size="13" fill="#4a3a30">Es recolza en desitjos, valors</text>
+    <text x="268" y="344" font-size="13" fill="#4a3a30">o identitat, no en garanties fortes.</text>
+  </g>
+</svg>

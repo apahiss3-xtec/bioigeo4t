@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 600" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5A2E77"/></marker>
+    <style>
+      .cell{fill:#f3e8fa;stroke:#7B3F9E;stroke-width:2.5}
+      .cr-r{stroke:#c0392b;stroke-width:6;stroke-linecap:round}
+      .cr-b{stroke:#2166a8;stroke-width:6;stroke-linecap:round}
+      .lbl{fill:#5A2E77;font-weight:900}
+      .sub{fill:#3a3340;font-size:14px}
+      .cnt{fill:#5A2E77;font-size:13px;font-weight:700}
+      .head{fill:#fff;font-weight:900;font-size:19px}
+    </style>
+  </defs>
+
+  <!-- Mother cell -->
+  <circle class="cell" cx="380" cy="70" r="52"/>
+  <line class="cr-r" x1="352" y1="52" x2="352" y2="76"/>
+  <line class="cr-r" x1="368" y1="52" x2="368" y2="76"/>
+  <line class="cr-b" x1="392" y1="60" x2="392" y2="84"/>
+  <line class="cr-b" x1="408" y1="60" x2="408" y2="84"/>
+  <text x="380" y="140" text-anchor="middle" class="lbl" font-size="16">Cèl·lula de partida</text>
+  <text x="380" y="158" text-anchor="middle" class="cnt">4 cromosomes = 2 parelles</text>
+
+  <!-- Split arrows -->
+  <path d="M355,165 C280,185 220,195 190,215" fill="none" stroke="#5A2E77" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M405,165 C500,185 560,195 580,215" fill="none" stroke="#5A2E77" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- MITOSI header -->
+  <rect x="70" y="200" width="240" height="30" rx="6" fill="#7B3F9E"/>
+  <text x="190" y="221" text-anchor="middle" class="head">MITOSI</text>
+  <text x="190" y="250" text-anchor="middle" class="sub">1 divisió</text>
+
+  <!-- MEIOSI header -->
+  <rect x="450" y="200" width="240" height="30" rx="6" fill="#A66BC9"/>
+  <text x="570" y="221" text-anchor="middle" class="head">MEIOSI</text>
+  <text x="570" y="250" text-anchor="middle" class="sub">2 divisions seguides</text>
+
+  <!-- MITOSI result: 2 identical cells -->
+  <g>
+    <circle class="cell" cx="130" cy="330" r="46"/>
+    <line class="cr-r" x1="108" y1="315" x2="108" y2="337"/>
+    <line class="cr-r" x1="122" y1="315" x2="122" y2="337"/>
+    <line class="cr-b" x1="140" y1="322" x2="140" y2="344"/>
+    <line class="cr-b" x1="154" y1="322" x2="154" y2="344"/>
+    <circle class="cell" cx="250" cy="330" r="46"/>
+    <line class="cr-r" x1="228" y1="315" x2="228" y2="337"/>
+    <line class="cr-r" x1="242" y1="315" x2="242" y2="337"/>
+    <line class="cr-b" x1="260" y1="322" x2="260" y2="344"/>
+    <line class="cr-b" x1="274" y1="322" x2="274" y2="344"/>
+  </g>
+  <text x="190" y="400" text-anchor="middle" class="lbl" font-size="15">2 cèl·lules IDÈNTIQUES</text>
+  <text x="190" y="420" text-anchor="middle" class="cnt">4 cromosomes cadascuna (material complet)</text>
+  <rect x="60" y="440" width="260" height="46" rx="8" fill="#f3e8fa" stroke="#7B3F9E" stroke-width="1.5"/>
+  <text x="190" y="463" text-anchor="middle" class="sub" font-weight="700">Per a què?</text>
+  <text x="190" y="480" text-anchor="middle" class="sub">Créixer i reparar (tot el cos)</text>
+
+  <!-- MEIOSI result: 4 half cells -->
+  <g>
+    <circle class="cell" cx="480" cy="320" r="34"/>
+    <line class="cr-r" x1="468" y1="308" x2="468" y2="328"/>
+    <line class="cr-b" x1="490" y1="312" x2="490" y2="332"/>
+    <circle class="cell" cx="560" cy="320" r="34"/>
+    <line class="cr-r" x1="548" y1="308" x2="548" y2="328"/>
+    <line class="cr-b" x1="570" y1="312" x2="570" y2="332"/>
+    <circle class="cell" cx="640" cy="320" r="34"/>
+    <line class="cr-r" x1="628" y1="308" x2="628" y2="328"/>
+    <line class="cr-b" x1="650" y1="312" x2="650" y2="332"/>
+    <circle class="cell" cx="600" cy="384" r="34"/>
+    <line class="cr-r" x1="588" y1="372" x2="588" y2="392"/>
+    <line class="cr-b" x1="610" y1="376" x2="610" y2="396"/>
+  </g>
+  <text x="570" y="440" text-anchor="middle" class="lbl" font-size="15">4 cèl·lules (gàmetes), la MEITAT</text>
+  <text x="570" y="460" text-anchor="middle" class="cnt">2 cromosomes cadascuna · totes diferents</text>
+  <rect x="450" y="475" width="260" height="46" rx="8" fill="#f1eaf4" stroke="#A66BC9" stroke-width="1.5"/>
+  <text x="580" y="498" text-anchor="middle" class="sub" font-weight="700">Per a què?</text>
+  <text x="580" y="515" text-anchor="middle" class="sub">Fer òvuls i espermatozoides (reproducció)</text>
+
+  <text x="380" y="565" text-anchor="middle" fill="#78707e" font-size="12" font-style="italic">Les dues parteixen de la mateixa cèl·lula i copien l&#39;ADN: la diferència és quantes vegades es divideix.</text>
+</svg>

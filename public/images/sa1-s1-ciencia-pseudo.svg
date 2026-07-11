@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="'Fira Sans Extra Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="380" fill="#f7fafb"/>
+  <text x="360" y="36" text-anchor="middle" font-size="26" font-weight="700" fill="#1f5f6b">Ciència vs. Pseudociència</text>
+
+  <!-- Science column -->
+  <rect x="24" y="60" width="320" height="300" rx="14" fill="#e8f3f4" stroke="#2a6f7f" stroke-width="2"/>
+  <text x="184" y="94" text-anchor="middle" font-size="22" font-weight="700" fill="#1f5f6b">CIÈNCIA</text>
+  <line x1="48" y1="108" x2="320" y2="108" stroke="#9cc6cc" stroke-width="1"/>
+  <text x="48" y="140" font-size="15" fill="#234">✔ Té un mètode: hipòtesi →</text>
+  <text x="62" y="160" font-size="15" fill="#234">experiment → revisió crítica</text>
+  <text x="48" y="192" font-size="15" fill="#234">✔ Es comprova amb proves</text>
+  <text x="62" y="212" font-size="15" fill="#234">fiables i repetibles</text>
+  <text x="48" y="244" font-size="15" fill="#234">✔ Admet crítica i es rectifica</text>
+  <text x="48" y="276" font-size="15" fill="#234">✔ Es basa en dades i models</text>
+  <text x="48" y="316" font-size="14" font-style="italic" fill="#456">Biologia, Física, Geologia,</text>
+  <text x="48" y="336" font-size="14" font-style="italic" fill="#456">Química...</text>
+
+  <!-- Pseudoscience column -->
+  <rect x="376" y="60" width="320" height="300" rx="14" fill="#f6ece8" stroke="#c96f3e" stroke-width="2"/>
+  <text x="536" y="94" text-anchor="middle" font-size="22" font-weight="700" fill="#a24e24">PSEUDOCIÈNCIA</text>
+  <line x1="400" y1="108" x2="672" y2="108" stroke="#e0b49c" stroke-width="1"/>
+  <text x="400" y="140" font-size="15" fill="#423">✘ Sembla ciència, però no té</text>
+  <text x="414" y="160" font-size="15" fill="#423">mètode científic</text>
+  <text x="400" y="192" font-size="15" fill="#423">✘ No es comprova amb</text>
+  <text x="414" y="212" font-size="15" fill="#423">experiments fiables</text>
+  <text x="400" y="244" font-size="15" fill="#423">✘ No admet crítica ni es corregeix</text>
+  <text x="400" y="276" font-size="15" fill="#423">✘ Es basa en creences i opinions</text>
+  <text x="400" y="316" font-size="14" font-style="italic" fill="#654">Astrologia, homeopatia,</text>
+  <text x="400" y="336" font-size="14" font-style="italic" fill="#654">ufologia, reiki...</text>
+</svg>

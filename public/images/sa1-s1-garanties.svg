@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" font-family="'Fira Sans Extra Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="360" fill="#f7fafb"/>
+  <text x="360" y="34" text-anchor="middle" font-size="26" font-weight="700" fill="#1f5f6b">Els 5 tipus de GARANTIES</text>
+  <text x="360" y="56" text-anchor="middle" font-size="15" fill="#4a6b72">Amb què justifiquem que una cosa és certa?</text>
+
+  <!-- Dades -->
+  <g>
+    <rect x="24" y="84" width="200" height="110" rx="12" fill="#2a6f7f"/>
+    <text x="124" y="118" text-anchor="middle" font-size="21" font-weight="700" fill="#fff">DADES</text>
+    <text x="124" y="146" text-anchor="middle" font-size="14" fill="#e8f3f4">Números, mesures,</text>
+    <text x="124" y="164" text-anchor="middle" font-size="14" fill="#e8f3f4">fets concrets.</text>
+    <text x="124" y="184" text-anchor="middle" font-size="13" font-style="italic" fill="#bfe0e4">"Hi plou 225 dies l'any"</text>
+  </g>
+  <!-- Models -->
+  <g>
+    <rect x="260" y="84" width="200" height="110" rx="12" fill="#38a3a5"/>
+    <text x="360" y="118" text-anchor="middle" font-size="21" font-weight="700" fill="#fff">MODELS</text>
+    <text x="360" y="146" text-anchor="middle" font-size="14" fill="#eafafa">Com funciona un sistema,</text>
+    <text x="360" y="164" text-anchor="middle" font-size="14" fill="#eafafa">lleis i probabilitats.</text>
+    <text x="360" y="184" text-anchor="middle" font-size="13" font-style="italic" fill="#d4f0f0">"La moneda: 50% cara"</text>
+  </g>
+  <!-- Habits -->
+  <g>
+    <rect x="496" y="84" width="200" height="110" rx="12" fill="#e0a458"/>
+    <text x="596" y="118" text-anchor="middle" font-size="21" font-weight="700" fill="#3a2a10">HÀBITS</text>
+    <text x="596" y="146" text-anchor="middle" font-size="14" fill="#4a3818">"Sempre ha estat així"</text>
+    <text x="596" y="164" text-anchor="middle" font-size="14" fill="#4a3818">o "això és nou".</text>
+    <text x="596" y="184" text-anchor="middle" font-size="13" font-style="italic" fill="#5a4520">"A la tardor sol ploure"</text>
+  </g>
+  <!-- Autoritat -->
+  <g>
+    <rect x="142" y="214" width="200" height="110" rx="12" fill="#c96f3e"/>
+    <text x="242" y="248" text-anchor="middle" font-size="21" font-weight="700" fill="#fff">AUTORITAT</text>
+    <text x="242" y="276" text-anchor="middle" font-size="14" fill="#fbe8dc">Fiabilitat d'una persona</text>
+    <text x="242" y="294" text-anchor="middle" font-size="14" fill="#fbe8dc">o institució.</text>
+    <text x="242" y="314" text-anchor="middle" font-size="13" font-style="italic" fill="#f3cbb2">"Ho diu la del temps"</text>
+  </g>
+  <!-- Identitat/valors/biaixos -->
+  <g>
+    <rect x="378" y="214" width="230" height="110" rx="12" fill="#8a5a9e"/>
+    <text x="493" y="244" text-anchor="middle" font-size="19" font-weight="700" fill="#fff">IDENTITAT i VALORS</text>
+    <text x="493" y="266" text-anchor="middle" font-size="13" fill="#efe2f4">Desitjos, creences, biaixos,</text>
+    <text x="493" y="284" text-anchor="middle" font-size="13" fill="#efe2f4">qui som o què volem.</text>
+    <text x="493" y="306" text-anchor="middle" font-size="13" font-style="italic" fill="#dcc6e6">"Tinc ganes que plogui"</text>
+  </g>
+</svg>
