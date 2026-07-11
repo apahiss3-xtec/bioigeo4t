@@ -23,7 +23,7 @@ export default function Navbar() {
             <span className="font-display font-bold text-lg block truncate">
               Biologia i Geologia
             </span>
-            <span className="kicker block">3r ESO</span>
+            <span className="kicker block">4t ESO</span>
           </div>
         </Link>
         <nav className="ms-auto flex items-center gap-1">

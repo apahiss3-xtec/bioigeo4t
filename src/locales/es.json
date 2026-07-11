@@ -5,7 +5,7 @@
     "autoavaluacio": "Autoevaluación"
   },
   "home": {
-    "kicker": "Biología y Geología · 3º ESO · IE Temple",
+    "kicker": "Biología y Geología · 4º ESO · IE Temple",
     "title": "El mapa del curso",
     "intro": "Siete situaciones de aprendizaje para entender la vida, el cuerpo y el planeta. Haz clic en una zona para entrar.",
     "sessionsCount": "{{count}} sesiones",
@@ -117,7 +117,7 @@
     "proximamentText": "Esta situación de aprendizaje aún no está publicada. La encontrarás aquí cuando empiece.",
     "backHome": "Volver al mapa del curso",
     "notFound": "Esta página no existe.",
-    "footer": "Biología y Geología · 3º ESO · IE Temple",
+    "footer": "Biología y Geología · 4º ESO · IE Temple",
     "footerGdpr": "Esta web no guarda ningún dato personal."
   }
 }

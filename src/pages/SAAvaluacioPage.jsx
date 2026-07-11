@@ -276,7 +276,7 @@ export default function SAAvaluacioPage() {
             fontFamily: "'Quicksand', sans-serif", padding: '32px', fontSize: '13px', lineHeight: 1.5
           }}
         >
-          <p style={pdfKicker}>Biologia i Geologia · 3r ESO · IE Temple</p>
+          <p style={pdfKicker}>Biologia i Geologia · 4t ESO · IE Temple</p>
           <h1 style={pdfH1}>
             {t('auto.title')} — {sa.id.toUpperCase()}: {sa.title}
           </h1>

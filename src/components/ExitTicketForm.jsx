@@ -10,7 +10,7 @@ const buildGmailUrl = (sessionData, formValues) => {
     `[Exit tiquet] ${sessionData.saId.toUpperCase()} ${sessionData.id.toUpperCase()} · ${formValues.nom} ${formValues.cognom} · Grup ${formValues.grup}`
   )
   const lines = [
-    `Assignatura: Biologia i Geologia 3r ESO`,
+    `Assignatura: Biologia i Geologia 4t ESO`,
     `Sessió: ${sessionData.title}`,
     `Alumne/a: ${formValues.nom} ${formValues.cognom} — Grup ${formValues.grup}`,
     `Autoavaluació: ${formValues.autoavaluacio || 'No indicada'}`,
