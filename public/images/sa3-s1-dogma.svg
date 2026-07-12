@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E4A9E"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="340" fill="#ffffff"/>
+  <text x="460" y="38" text-anchor="middle" font-size="27" font-weight="700" fill="#2E4A9E" letter-spacing="0.5">Del codi a la característica</text>
+  <text x="460" y="64" text-anchor="middle" font-size="17" fill="#5B7BE0">La informació de l'ADN acaba fent que un organisme sigui com és</text>
+
+  <!-- ADN -->
+  <rect x="30" y="110" width="170" height="120" rx="14" fill="#EAEFFB" stroke="#2E4A9E" stroke-width="2.5"/>
+  <text x="115" y="150" text-anchor="middle" font-size="24" font-weight="700" fill="#2E4A9E">ADN</text>
+  <text x="115" y="177" text-anchor="middle" font-size="15" fill="#333">el missatge</text>
+  <text x="115" y="200" text-anchor="middle" font-size="15" fill="#333">4 lletres:</text>
+  <text x="115" y="221" text-anchor="middle" font-size="18" font-weight="700" fill="#5B7BE0">A · T · G · C</text>
+
+  <!-- ARN -->
+  <rect x="270" y="110" width="170" height="120" rx="14" fill="#EAF6F0" stroke="#2E7D57" stroke-width="2.5"/>
+  <text x="355" y="150" text-anchor="middle" font-size="24" font-weight="700" fill="#2E7D57">ARN</text>
+  <text x="355" y="177" text-anchor="middle" font-size="15" fill="#333">una còpia</text>
+  <text x="355" y="197" text-anchor="middle" font-size="15" fill="#333">del missatge</text>
+
+  <!-- Proteïna -->
+  <rect x="510" y="110" width="170" height="120" rx="14" fill="#FBEFEA" stroke="#B5502A" stroke-width="2.5"/>
+  <text x="595" y="150" text-anchor="middle" font-size="23" font-weight="700" fill="#B5502A">Proteïna</text>
+  <text x="595" y="177" text-anchor="middle" font-size="15" fill="#333">la peça que</text>
+  <text x="595" y="197" text-anchor="middle" font-size="15" fill="#333">FA la feina</text>
+
+  <!-- Caracteristica -->
+  <rect x="750" y="110" width="150" height="120" rx="14" fill="#F3EEFA" stroke="#7B3F9E" stroke-width="2.5"/>
+  <text x="825" y="150" text-anchor="middle" font-size="20" font-weight="700" fill="#7B3F9E">Caràcter</text>
+  <text x="825" y="177" text-anchor="middle" font-size="15" fill="#333">com és</text>
+  <text x="825" y="197" text-anchor="middle" font-size="15" fill="#333">l'organisme</text>
+
+  <!-- arrows -->
+  <line x1="205" y1="170" x2="262" y2="170" stroke="#2E4A9E" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="233" y="158" text-anchor="middle" font-size="13" fill="#2E4A9E">es copia</text>
+  <line x1="445" y1="170" x2="502" y2="170" stroke="#2E4A9E" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="473" y="158" text-anchor="middle" font-size="13" fill="#2E4A9E">es fabrica</text>
+  <line x1="685" y1="170" x2="744" y2="170" stroke="#2E4A9E" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="714" y="158" text-anchor="middle" font-size="13" fill="#2E4A9E">dona lloc a</text>
+
+  <text x="460" y="285" text-anchor="middle" font-size="16" fill="#333">Un <tspan font-weight="700" fill="#2E4A9E">gen</tspan> és el tros del missatge amb les instruccions per a <tspan font-weight="700">una proteïna</tspan>.</text>
+  <text x="460" y="312" text-anchor="middle" font-size="16" fill="#333">Si canvia una lletra (una <tspan font-weight="700" fill="#B5502A">mutació</tspan>), la proteïna pot sortir diferent — i el caràcter també.</text>
+</svg>

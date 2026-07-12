@@ -1,32 +1,18 @@
 export const sa3 = {
   id: "sa3",
-  title: "Defensors del cos",
-  subtitle: "Una grip ha afectat la meitat de la classe en 3 dies. Com ens defensem?",
+  title: "El codi de la vida",
+  subtitle: "Com pot un canvi en una molècula minúscula canviar un ésser viu sencer?",
   biome: "sa3",
-  color: { primary: '#2F6B5E', accent: '#157F6B' },
-  sessions: 5,
-  portadaImage: "/images/sa3-portada.jpg",
-  description: "Seguiràs el rastre d'un virus des que entra al cos fins que el sistema immunitari el destrueix — i entendràs per quina raó les vacunes salven vides, per quina raó els antibiòtics no funcionen contra la grip, i per quina raó les drogues enganyen el cervell.",
-  product: "Campanya de comunicació científica: desmunta un mite sobre salut (pòster digital o vídeo curt de 60 s)",
-  enigmas: [
-    {
-      id: "enigma1",
-      title: "La grip de novembre",
-      description: "En 3 dies, la meitat de la classe ha agafat la grip. Però la Martina, que no s'ha vacunat mai, no l'ha agafada — i la seva àvia, que sí que és vacunada, tampoc. Com és possible? Al final de la SA ho sabràs."
-    },
-    {
-      id: "enigma2",
-      title: "L'article anti-vacunes",
-      description: "Un article que circula per les xarxes afirma que una vacuna causa autisme. L'ha compartit milers de vegades. Però la revista científica que el va publicar el va retirar anys més tard. Per quina raó? Era ciència? Al final de la SA ho sabràs."
-    }
-  ],
+  color: { primary: "#2E4A9E", accent: "#5B7BE0" },
+  sessions: 4,
+  portadaImage: "/images/sa3-s1-portada.jpg",
+  description: "Dins de cada cèl·lula teva hi ha un missatge escrit amb només quatre lletres (A, T, G, C) que diu com ets. En aquesta situació descobriràs com aquest codi es transforma en proteïnes i, per tant, en característiques teves; què passa quan una lletra canvia (una mutació); i fins on hauríem de poder-lo reescriure nosaltres (CRISPR). Primer trauràs l'ADN d'una cèl·lula amb les teves mans.",
+  product: "Un assaig argumentatiu sobre l'edició genètica (CRISPR): decidir, amb fonaments científics i ètics, què es POT fer i què s'HAURIA de fer amb el codi de la vida, defensant-ho amb arguments propis.",
   objectives: [
-    { id: "OA1", text: "Patògens i contagi", desc: "Identificar els tipus de patògens, les vies de transmissió i interpretar una corba epidèmica bàsica" },
-    { id: "OA2", text: "Sistema immunitari", desc: "Explicar les respostes immunitàries innata i adaptativa, el paper dels anticossos i la memòria immunològica" },
-    { id: "OA3", text: "Vacunes i fonts (CE2)", desc: "Explicar com funcionen les vacunes i avaluar la credibilitat de fonts sobre salut" },
-    { id: "OA4", text: "Fàrmacs i drogues", desc: "Distingir tipus de medicaments i explicar per quina raó les drogues causen addicció" }
+    { id: "OA1", text: "L'estructura del codi", desc: "Interpretar el model simplificat de l'ADN i l'ARN (doble cadena, complementarietat A-T / G-C) i relacionar-lo amb la seva funció de guardar informació" },
+    { id: "OA2", text: "Del gen a la proteïna", desc: "Explicar com la informació de l'ADN es transforma en proteïnes (transcripció i traducció) i com això determina les característiques d'un organisme: genotip i fenotip" },
+    { id: "OA3", text: "Quan el codi canvia", desc: "Predir com una mutació (canvi de lletres) pot alterar una proteïna i el fenotip, i relacionar les mutacions amb l'origen de la variabilitat" },
+    { id: "OA4", text: "Reescriure el codi?", desc: "Valorar críticament l'edició genètica (CRISPR) amb fonaments científics i ètics, contrastant la fiabilitat de les fonts i decidint amb criteri propi" }
   ],
-  competencies: ["CE2", "CE5"],
-  flippedClassroom: true,
-  flippedNote: "S2–S5 usen aula invertida: lectura prèvia a casa (disponible aquí), formulari de comprensió al principi de classe."
+  competencies: ["CE1", "CE2", "CE3", "CE4"]
 }
