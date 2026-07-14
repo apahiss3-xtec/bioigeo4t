@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed',sans-serif">
+  <rect x="0" y="0" width="920" height="420" fill="#ffffff"/>
+  <text x="460" y="38" text-anchor="middle" font-size="27" font-weight="700" fill="#2E4A9E" letter-spacing="0.5">L'ADN per dins: la doble cadena</text>
+  <text x="460" y="64" text-anchor="middle" font-size="17" fill="#5B7BE0">Dues cadenes i quatre lletres que s'aparellen sempre igual: A amb T, G amb C</text>
+
+  <!-- Left: two backbones with rungs (schematic ladder, slightly twisted look via curved sides) -->
+  <!-- backbones as straight rails for clarity -->
+  <rect x="112" y="105" width="12" height="260" rx="6" fill="#2E4A9E"/>
+  <rect x="296" y="105" width="12" height="260" rx="6" fill="#2E4A9E"/>
+  <text x="118" y="95" text-anchor="middle" font-size="14" fill="#2E4A9E" font-weight="600">cadena 1</text>
+  <text x="302" y="95" text-anchor="middle" font-size="14" fill="#2E4A9E" font-weight="600">cadena 2</text>
+
+  <!-- Rungs: base pairs. Left base color / right base color -->
+  <!-- rung template: two boxes joined -->
+  <!-- pair 1: A-T -->
+  <g>
+    <rect x="124" y="118" width="80" height="30" rx="6" fill="#EAEFFB" stroke="#2E4A9E" stroke-width="2"/>
+    <rect x="216" y="118" width="80" height="30" rx="6" fill="#FBEFEA" stroke="#B5502A" stroke-width="2"/>
+    <line x1="204" y1="133" x2="216" y2="133" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="140" text-anchor="middle" font-size="20" font-weight="700" fill="#2E4A9E">A</text>
+    <text x="256" y="140" text-anchor="middle" font-size="20" font-weight="700" fill="#B5502A">T</text>
+  </g>
+  <!-- pair 2: G-C -->
+  <g>
+    <rect x="124" y="166" width="80" height="30" rx="6" fill="#EAF6F0" stroke="#2E7D57" stroke-width="2"/>
+    <rect x="216" y="166" width="80" height="30" rx="6" fill="#FDF3DA" stroke="#9A7A0A" stroke-width="2"/>
+    <line x1="204" y1="181" x2="216" y2="181" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="188" text-anchor="middle" font-size="20" font-weight="700" fill="#2E7D57">G</text>
+    <text x="256" y="188" text-anchor="middle" font-size="20" font-weight="700" fill="#9A7A0A">C</text>
+  </g>
+  <!-- pair 3: T-A -->
+  <g>
+    <rect x="124" y="214" width="80" height="30" rx="6" fill="#FBEFEA" stroke="#B5502A" stroke-width="2"/>
+    <rect x="216" y="214" width="80" height="30" rx="6" fill="#EAEFFB" stroke="#2E4A9E" stroke-width="2"/>
+    <line x1="204" y1="229" x2="216" y2="229" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="236" text-anchor="middle" font-size="20" font-weight="700" fill="#B5502A">T</text>
+    <text x="256" y="236" text-anchor="middle" font-size="20" font-weight="700" fill="#2E4A9E">A</text>
+  </g>
+  <!-- pair 4: C-G -->
+  <g>
+    <rect x="124" y="262" width="80" height="30" rx="6" fill="#FDF3DA" stroke="#9A7A0A" stroke-width="2"/>
+    <rect x="216" y="262" width="80" height="30" rx="6" fill="#EAF6F0" stroke="#2E7D57" stroke-width="2"/>
+    <line x1="204" y1="277" x2="216" y2="277" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="284" text-anchor="middle" font-size="20" font-weight="700" fill="#9A7A0A">C</text>
+    <text x="256" y="284" text-anchor="middle" font-size="20" font-weight="700" fill="#2E7D57">G</text>
+  </g>
+  <!-- pair 5: A-T -->
+  <g>
+    <rect x="124" y="310" width="80" height="30" rx="6" fill="#EAEFFB" stroke="#2E4A9E" stroke-width="2"/>
+    <rect x="216" y="310" width="80" height="30" rx="6" fill="#FBEFEA" stroke="#B5502A" stroke-width="2"/>
+    <line x1="204" y1="325" x2="216" y2="325" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="332" text-anchor="middle" font-size="20" font-weight="700" fill="#2E4A9E">A</text>
+    <text x="256" y="332" text-anchor="middle" font-size="20" font-weight="700" fill="#B5502A">T</text>
+  </g>
+
+  <!-- Right legend / rules -->
+  <rect x="400" y="118" width="490" height="222" rx="14" fill="#F6F8FE" stroke="#2E4A9E" stroke-width="2"/>
+  <text x="424" y="150" font-size="19" font-weight="700" fill="#2E4A9E">La regla de la complementarietat</text>
+
+  <rect x="424" y="166" width="150" height="36" rx="8" fill="#EAEFFB" stroke="#2E4A9E" stroke-width="1.5"/>
+  <text x="499" y="190" text-anchor="middle" font-size="18" font-weight="700" fill="#2E4A9E">A &#8213; T</text>
+  <rect x="590" y="166" width="150" height="36" rx="8" fill="#EAF6F0" stroke="#2E7D57" stroke-width="1.5"/>
+  <text x="665" y="190" text-anchor="middle" font-size="18" font-weight="700" fill="#2E7D57">G &#8213; C</text>
+
+  <text x="424" y="232" font-size="15.5" fill="#333">L'ordre de les lletres és el missatge (la informació).</text>
+  <text x="424" y="258" font-size="15.5" fill="#333">Tenir dues cadenes = tenir el missatge per duplicat:</text>
+  <text x="424" y="280" font-size="15.5" fill="#333">per això l'ADN es pot copiar sense perdre'l abans</text>
+  <text x="424" y="302" font-size="15.5" fill="#333">que la cèl·lula es divideixi.</text>
+  <text x="424" y="330" font-size="14" font-style="italic" fill="#5B7BE0">Si en una cadena hi ha A-G-C, a l'altra hi ha T-C-G.</text>
+
+  <text x="424" y="356" font-size="13.5" fill="#8894b8">La línia de punts = les dues lletres es donen la mà (s’aparellen).</text>
+  <text x="460" y="392" text-anchor="middle" font-size="13.5" fill="#8894b8">Model simplificat · les lletres i colors s'afegeixen com a text editable (IE Temple)</text>
+</svg>

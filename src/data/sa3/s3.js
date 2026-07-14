@@ -1,166 +1,253 @@
 export const sa3s3 = {
-  id: "s3", saId: "sa3",
-  title: "Vacunes: ciència o mite?",
-  sessionNumber: 3, biome: "sa3", duration: "2h",
-  engageImage: "/images/sa3-s3-vacunes.jpg",
+  id: "s3",
+  saId: "sa3",
+  title: "De l'ADN a la proteïna",
+  sessionNumber: 3,
+  biome: "sa3",
+  duration: "2h",
+  engageImage: "/images/sa3-s3-portada.jpg",
 
-  engageQuestion: "Un article que has vist a les xarxes diu que les vacunes causen autisme. Has preguntat a casa i alguns adults en dubten. Avui analitzareu l'article original i veureu per quina raó la revista el va retirar. Però primer: com saps si una informació científica és fiable?",
-  engageContext: "Revisió formulari comprensió prèvia (S2 deures). Connexió amb l'enigma 2 de la paret. El professor projecta el titular de l'article Wakefield de 1998 i un estudi de 2019 (1.2 M de nens). L'alumnat ha d'avaluar-los amb criteri — però primer cal aprendre els criteris.",
+  // ── ENGANXA (hook) ───────────────────────────────────────
+  engageChallenge: "Dues persones tenen el mateix gen de l'hemoglobina, la proteïna que transporta l'oxigen a la sang. La seva seqüència d'ADN és gairebé idèntica: es diferencien en UNA sola lletra de tot el gen. Una té la sang normal; l'altra té anèmia falciforme (drepanocitosi), una malaltia on els glòbuls vermells adopten forma de falç, s'encallen als vasos i no transporten bé l'oxigen. El repte: com pot ser que canviar UNA lletra en una molècula tan llarga canviï tota una persona? Heu de seguir el camí que va de l'ADN fins a la proteïna i trobar exactament on aquest canvi ho espatlla tot.",
+  engageQuestion: "Si l'ADN no surt mai del nucli, però les proteïnes es fabriquen fora, al citoplasma, com arriba el missatge de l'ADN fins a la fàbrica de proteïnes? I com és que una sola lletra canviada pot deixar una persona malalta?",
+  engageContext: "A la sessió passada vau treure l'ADN i vau veure com és per dins (doble cadena, quatre lletres). Avui descobrireu QUÈ FA aquesta informació: com es llegeix i es tradueix per fabricar proteïnes, que són les que construeixen i fan funcionar el cos. Fareu de traductors del codi genètic amb una taula de codons, i al final aplicareu tot el camí a un cas real: la mutació que causa l'anèmia falciforme.",
 
-  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A/B/C) ──────────
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
     A: [
-      "Explico el mecanisme d'acció de les vacunes (antigen atenuat → resposta adaptativa → memòria) i calculo el llindar d'immunitat de grup per a una malaltia donada.",
-      "Analitzo l'article de Wakefield aplicant els 4 criteris de qualitat i identifico exactament quin criteri va ser violat i com.",
-      "Dissenyo una campanya de comunicació que distingeixi pseudociència de ciència real, citant evidències concretes i anticipant contrarguments.",
-      "Evaluo per quina raó l'immunitat de grup és un fenomen de solidaritat col·lectiva, no individual (CE5)."
+      "Explico el camí complet gen → ARNm → proteïna → característica distingint la transcripció (còpia de l'ADN a ARN dins el nucli) de la traducció (lectura de l'ARN al ribosoma per fabricar la proteïna), i justifico per què cal un missatger intermediari.",
+      "Tradueixo una seqüència d'ADN a ARNm i després a aminoàcids fent servir la complementarietat i la taula de codons, i explico què és un codó i un anticodó.",
+      "Relaciono el genotip (l'ordre de les lletres) amb el fenotip (la característica observable) i argumento per què l'ordre de les lletres, i no les lletres en si, és el que conté la informació.",
+      "Predic l'efecte d'una mutació puntual sobre la proteïna i el fenotip (cas de l'anèmia falciforme) i explico per què algunes mutacions canvien la persona i d'altres no (mutació silenciosa)."
     ],
     B: [
-      "Explico com funciona una vacuna (antigen → resposta adaptativa → memòria) i el concepte d'immunitat de grup.",
-      "Aplico els 4 criteris de qualitat d'una font (revisió per parells, mida de la mostra, conflicte d'interès, replicació) a dos articles contraposats.",
-      "Explico per quina raó l'article de Wakefield va ser retirat i per quina raó no es pot afirmar que les vacunes causen autisme.",
-      "Relaciono l'immunitat de grup amb la protecció de persones que no es poden vacunar (bebès, immunodeprimits)."
-    ],
-    C: [
-      "Completo: la vacuna conté l'antigen _____ (feble/inactivat) → el cos fabrica _____ → i guarda _____ immunològica → si el patogen real arriba, la resposta és _____.",
-      "Identifico al menys 2 problemes de l'article Wakefield (mida de la mostra, conflicte d'interès).",
-      "Sé dir que si el 95% de la classe es vacuna, els que no es poden vacunar (bebès, malalts) estan protegits perquè el virus _____ (no pot circular).",
-      "Reconec que una afirmació de xarxes socials NO és evidència científica i sé dir 1 criteri per distingir-les."
+      "Ordeno els passos del camí gen → ARNm → proteïna → característica i dic que la transcripció passa al nucli (es copia l'ADN a ARN) i la traducció al ribosoma (es fabrica la proteïna).",
+      "Amb l'ajuda de la taula de codons, tradueixo una seqüència curta d'ADN a ARNm i a aminoàcids, i dic que cada codó (3 lletres) correspon a un aminoàcid.",
+      "Explico amb un exemple que l'ordre de les lletres de l'ADN determina la característica (genotip → fenotip).",
+      "Identifico, en el cas de l'anèmia falciforme, quina lletra ha canviat i quin aminoàcid queda diferent."
     ]
   },
 
-  // ── BASTIMENT/REPTE PER APARTAT ──────────────────────────
+  // ── BASTIMENT/REPTE PER APARTAT segons el nivell ────────
+  // scaffoldFade: "mitjana" — coherent amb SA3·S1 i S2; l'activitat de traducció té guia (taula) però el raonament és de l'alumnat.
+  scaffoldFade: "mitjana",
   apartatExtras: {
     "1": {
-      scaffold: "Per a cada font (article Wakefield / estudi 2019), omple la graella: ¿Publicada en revista científica revisada per parells? (sí/no) · ¿Mida de la mostra? (nombre de participants) · ¿Hi ha conflicte d'interès del autor? (sí/no/desconegut) · ¿Ha estat replicat per altres grups? (sí/no). Puntua cada font de 0 a 4.",
-      challenge: "L'article de Wakefield va ser retirat el 2010. Però molts pares no van llegir la retractació. Quins factors psicològics expliquen per quina raó la gent recorda millor la notícia original que la correcció posterior? Proposa una estratègia de comunicació que tingui en compte aquest biaix."
+      scaffold:
+        "Fes servir una comparació: l'ADN és com el llibre de receptes original de la biblioteca, que NO es pot treure d'allà (no surt del nucli). Per cuinar (fabricar una proteïna) a la cuina (el citoplasma), primer en fas una FOTOCÒPIA d'una sola recepta: aquesta còpia és l'ARN missatger (ARNm). Copiar la recepta = TRANSCRIPCIÓ (passa al nucli). Cuinar seguint la còpia = TRADUCCIÓ (passa al ribosoma). Aquesta imatge et dona els dos passos i on passa cadascun.",
+      challenge:
+        "Explica el camí gen → ARNm → proteïna → característica SENSE la comparació de la recepta, amb el vocabulari científic exacte (nucli, transcripció, ARN polimerasa, ribosoma, traducció). Respon també: per què creus que la cèl·lula no fabrica la proteïna directament sobre l'ADN, dins el nucli? Quin avantatge té fer servir un missatger intermediari (l'ARNm)?"
     },
     "2": {
-      scaffold: "Completa el diagrama de la vacuna: (1) S'injecta l'antigen _____ del patogen. (2) Els limfòcits ___ fabriquen ___. (3) Queden _____ de memòria. (4) Si arriba el patogen real → resposta secundària → _____ en hores. Relació amb SA3·S2: quin tipus d'immunitat activa la vacuna?",
-      challenge: "Calcula: si el R₀ del xarampió és 15, quin percentatge de la població cal vacunar per mantenir R₀ efectiu < 1? Fórmula: llindar = 1 - 1/R₀. Per quina raó si el xarampió és quasi eradicat en un país, UNA família sense vacunar pot provocar un brot local?"
+      scaffold:
+        "Ves pas a pas amb la taula. (1) De l'ADN a l'ARNm: copia la cadena canviant cada lletra per la seva complementària i escrivint U on tocaria T (l'ARN no té T, té U). (2) Separa l'ARNm en grups de 3 lletres: cada grup de 3 és un CODÓ. (3) Busca cada codó a la taula de codons i escriu l'aminoàcid corresponent. L'ANTICODÓ és el grup de 3 lletres de l'ARN de transferència que encaixa amb el codó per complementarietat.",
+      challenge:
+        "Tradueix la seqüència sencer sense pistes intermèdies i, a més, dona la volta al procés: si una proteïna comença per Met-Val-His, quines seqüències d'ARNm i d'ADN podrien haver-la originat? Explica per què pot haver-hi MÉS D'UNA resposta possible (pista: mira quants codons diferents donen el mateix aminoàcid a la taula) i què ens diu això sobre el codi genètic."
     },
     "3": {
-      scaffold: "Llegeix els 4 criteris de qualitat. Ara aplica'ls a una afirmació que coneixes de les xarxes ('el vitamina C cura el refredat'). Criteris: revisió per parells (sí/no), mida de la mostra (gran/petita/no diu), conflicte d'interès (el qui ho diu ven suplements?), replicació (altri ho ha comprovat?). Quin és el resultat?",
-      challenge: "Cerca un exemple real de pseudociència en salut que no hàgem vist a classe. Aplica-hi els 4 criteris i elabora una fitxa de 'desmuntatge': l'afirmació, els criteris que falla, i l'evidència real que la contradiu. Font: PubMed o Cochrane Library."
+      scaffold:
+        "GENOTIP = la informació escrita a l'ADN (l'ordre de les lletres). FENOTIP = la característica que es veu o es pot mesurar (el color dels ulls, tenir la sang normal o falciforme). El camí és: l'ordre de les lletres decideix l'ordre dels aminoàcids → l'ordre dels aminoàcids decideix la forma de la proteïna → la forma de la proteïna decideix si funciona bé → i això dona la característica. Pensa en les lletres A-D-N-A vs N-A-D-A: mateixes lletres, ordre diferent, significat diferent.",
+      challenge:
+        "Argumenta per què diem que la informació és l'ORDRE de les lletres i no les lletres en si (relaciona-ho amb com, canviant l'ordre de les mateixes lletres, canvia el significat d'una paraula). Després connecta-ho amb SA2: si totes les cèl·lules d'una persona tenen el MATEIX ADN, com pot ser que una neurona i una cèl·lula de la pell siguin tan diferents? (Pista: no totes les cèl·lules llegeixen les mateixes receptes.)"
+    },
+    "4": {
+      scaffold:
+        "A l'anèmia falciforme canvia UNA sola lletra del gen de l'hemoglobina. Segueix el camí que ja saps: aquesta lletra fa canviar UN codó de l'ARNm → aquest codó fa posar un aminoàcid DIFERENT (on hi havia d'anar glutamat, hi va valina) → la proteïna canvia lleugerament de forma → els glòbuls vermells s'enganxen i prenen forma de falç → la persona té anèmia. Una lletra al principi, tota una malaltia al final.",
+      challenge:
+        "Explica tot el camí de la mutació falciforme amb precisió (lletra → codó → aminoàcid → proteïna → cèl·lula → persona). Després respon la pregunta clau: si canviéssim una altra lletra i el codó nou seguís donant EL MATEIX aminoàcid, la persona estaria malalta? Com se'n diu, d'aquest tipus de mutació? I què ens diu això sobre per què no totes les mutacions són perilloses (algunes són fins i tot la matèria primera de l'evolució, que veureu a SA5)?"
     }
   },
 
   // ── APARTAT 0 · IDEES PRÈVIES ─────────────────────────────
   ideesPrevies: {
-    startPoint: "Avui analitzareu fonts científiques reals. Primer, la posada en comú del formulari de comprensió prèvia. Després treballareu per grups amb dos documents contraposats. Escriviu el que penseu ara — al final de la sessió compareu.",
+    startPoint:
+      "Abans de començar, recupera el que vas veure a la sessió passada i el vídeo de casa. No es corregeix.",
     prompts: [
       {
         kind: "write",
-        text: "Has vist alguna vegada una notícia sobre vacunes o medicaments que et va semblar sospitosa? Per quina raó et va semblar sospitosa? Quines pistes et van fer dubtar?",
-        starter: "Una vegada vaig veure una notícia que deia... i em va semblar sospitosa perquè..."
+        text: "Ahir vas veure que l'ADN guarda informació amb quatre lletres. Per a què creus que serveix aquesta informació? Què fabrica, la cèl·lula, seguint-la?",
+        starter: "La informació de l'ADN serveix per… i la cèl·lula fabrica…"
       },
       {
         kind: "write",
-        text: "Si dos articles diuen coses oposades sobre la mateixa vacuna, com decideixes a quin creure? Quins criteris fas servir (o faràs servir a partir d'avui)?",
-        starter: "Per decidir a quin creure, jo miraria..."
+        text: "L'ADN es queda dins el nucli, però les proteïnes es fabriquen fora. Com creus que arriba el missatge de l'ADN fins a la fàbrica de proteïnes?",
+        starter: "Crec que el missatge arriba…"
       }
     ]
   },
 
+  // ── EXPLORA (ABP · traducció del codi genètic) ───────────
+  exploreActivity: {
+    what: "Feu de traductors del codi genètic. A partir d'un fragment del gen de l'hemoglobina, recorreu tot el camí: copieu l'ADN a ARNm (transcripció), talleu l'ARNm en codons de 3 lletres i, amb la taula de codons, obteniu la seqüència d'aminoàcids de la proteïna (traducció). Després repetiu el procés amb la versió MUTADA del gen (anèmia falciforme) i comparеu: quina lletra ha canviat, quin aminoàcid queda diferent i per què això canvia la persona.",
+    who: { mode: "grup", label: "Parelles o equips de 3" },
+    time: 50,
+    note: "La gràcia no és «encertar les lletres», sinó veure com un canvi minúscul a l'inici (una lletra) es propaga fins a un efecte enorme al final (una malaltia). Compareu sempre la versió normal amb la mutada, l'una al costat de l'altra."
+  },
   exploreInstructions: [
-    "Cada grup rep dues fitxes: Fitxa A (resum de l'article Wakefield 1998, n=12) i Fitxa B (resum de l'estudi danes 2019, n=1.200.000)",
-    "Per grups de 3: apliqueu la graella dels 4 criteris a les dues fitxes (10 min)",
-    "Posada en comú: cada grup comparteix la puntuació i el criteri decisiu (5 min)",
-    "El professor revela per quina raó The Lancet va retirar l'article: conflicte d'interès econòmic + dades manipulades + n massa petit",
-    "Moment epistèmic: 'Un sol article, per gran que sigui la revista, mai és suficient. La ciència funciona per replicació.'"
+    "Escriviu la cadena d'ARNm a partir de la cadena motlle de l'ADN (complementarietat, i U en lloc de T)",
+    "Separeu l'ARNm en codons (grups de 3 lletres), començant pel codó d'inici AUG",
+    "Amb la taula de codons, traduïu cada codó al seu aminoàcid i escriviu la seqüència de la proteïna",
+    "Repetiu-ho amb el gen MUTAT (anèmia falciforme) i marqueu la lletra que ha canviat",
+    "Compareu les dues proteïnes: quin aminoàcid és diferent i on? Relacioneu-ho amb la forma de falç del glòbul vermell"
   ],
-  exploreDuration: "30 min",
-  exploreMaterials: ["Fitxa A: resum Wakefield (imprès)", "Fitxa B: resum estudi danès (imprès)", "Graella dels 4 criteris (fitxa S3)"],
+  exploreDuration: "50 min",
+  appSrc: null,
+  exploreNote: "Itinerari guiat: la taula de codons i la seqüència es donen, però la traducció i la interpretació del canvi les feu vosaltres. És un exercici de resolució de problemes (mètode preferent a 4t).",
 
+  // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [
     {
       id: "t1",
-      apartat: "2",
-      video: "/animacions/sa3-s3-t1.mp4",
-      heading: "Com funciona una ==vacuna==: l'entrenament del SI",
-      text: "La vacuna conté l'==antigen|o== del patogen en forma ==atenuada, inactivada o com a fragment|o== (no causa la malaltia). El SI respon: limfòcits B → ==anticossos|g== → cèl·lules de ==memòria|g==. Quan arriba el patogen ==real|r==, la resposta secundària és ==immediata|g== → malaltia avortada o lleu. Connexió S2: la vacuna activa la ==immunitat adaptativa|g== sense passar la malaltia.",
+      apartat: "1",
+      heading: "El camí de la informació: ==transcripció== i ==traducció==",
+      text: "L'ADN es queda al ==nucli|p==, però les proteïnes es fabriquen fora, al ==citoplasma|p==. Per això la cèl·lula fa una còpia d'un gen en forma d'==ARN missatger (ARNm)==: aquest pas es diu ==transcripció== i el fa una màquina, l'==ARN polimerasa==. L'ARNm surt del nucli i, al ==ribosoma|p==, es llegeix per fabricar la proteïna: aquest segon pas és la ==traducció==. El camí complet és ==gen → ARNm → proteïna → característica==.",
       type: "concept"
     },
     {
       id: "t2",
       apartat: "2",
-      video: "/animacions/sa3-s3-t2.mp4",
-      heading: "==Immunitat de grup==: per quina raó TOTS hem de vacunar-nos",
-      text: "Si prou persones estan immunitzades, el virus ==no pot circular|g== i protegeix fins i tot els que NO es poden vacunar (bebès <6 mesos, immunodeprimits, persones al·lèrgiques). ==Llindar d'immunitat de grup== = 1 − 1/R₀. Per al ==xarampió (R₀≈15)|r== cal vacunar el ==93%|g== de la població. Per sota del llindar: risc de brots.",
-      type: "concept",
-      badge: "🤝 CE5 — Salut col·lectiva"
+      heading: "El codi genètic: ==codons== i ==anticodons==",
+      text: "L'ARNm es llegeix de ==tres en tres== lletres. Cada grup de tres és un ==codó==, i cada codó indica un ==aminoàcid== (les peces de què estan fetes les proteïnes). Hi ha un codó d'==inici== (==AUG==) i codons d'==aturada|p== (STOP). L'ARN de transferència que porta cada aminoàcid té un ==anticodó==: tres lletres que encaixen amb el codó per ==complementarietat==. Com que l'ARN no té T, en comptes de T fa servir ==U==.",
+      type: "concept"
     },
     {
       id: "t3",
       apartat: "3",
-      video: "/animacions/sa3-s3-t3.mp4",
-      heading: "El cas ==Wakefield== (1998): per quina raó l'article va ser retirat",
-      text: "Andrew Wakefield va publicar a ==The Lancet|o== un estudi amb ==12 nens|r== que suggeria vincle entre la vacuna MMR i l'autisme. Problemes: ==mostra irrisòria (n=12)|r==, ==conflicte d'interès econòmic|r== (cobrava d'advocats anti-vacunes), ==dades manipulades|r==. El 2010, The Lancet ==va retirar l'article|r==. Wakefield va perdre la ==llicència mèdica|r==. Cap estudi posterior (milions de nens) ha trobat cap vincle.",
-      type: "epistemic",
-      badge: "⚠️ Enigma 2 — clau"
+      heading: "Del ==genotip== al ==fenotip==",
+      text: "El ==genotip== és la informació escrita a l'ADN (l'==ordre de les lletres==); el ==fenotip== és la característica observable (la sang normal o falciforme, el color dels ulls…). L'ordre de les lletres decideix l'ordre dels ==aminoàcids==, que decideix la ==forma== de la proteïna, que decideix si ==funciona== bé. Per això la informació és l'==ordre== de les lletres, no les lletres soltes: com a ==A-D-N-A== i ==N-A-D-A==, les mateixes lletres en un altre ordre volen dir coses diferents.",
+      type: "concept"
     },
     {
       id: "t4",
-      apartat: "3",
-      video: "/animacions/sa3-s3-t4.mp4",
-      heading: "Com avaluar una font: 4 preguntes clau (==CE2==)",
-      text: "1. ==Qui ho publica?|o== (revista revisada per parells vs blog d'opinió). 2. ==Quina mostra?|o== (n=12 vs n=1.200.000 → la mida importa). 3. ==Hi ha conflicte d'interès?|r== (l'autor en treu profit econòmic?). 4. ==Ha estat replicat?|g== (un sol estudi no és suficient, cal que d'altres grups independents arribin al mateix resultat). ==Un de sol mai no és suficient|r==.",
-      type: "concept",
-      badge: "🔬 CE2 — Avaluació de fonts"
-    },
-    {
-      id: "t5",
-      apartat: "3",
-      video: "/animacions/sa3-s3-t5.mp4",
-      heading: "Connexió ==enigma 2==: resolució",
-      text: "L'article de Wakefield era ==pseudociència amb frau intencional|r==: mostra massa petita, conflicte d'interès, dades manipulades. La ciència real: ==estudis de milions de nens|g== (Danès 2019, n=650.000; britànic, n=498.000; etc.) == no han trobat cap vincle|g== entre la vacuna MMR i l'autisme. L'article va ser retirat perquè ==no complia els criteris bàsics de la ciència|r==.",
-      type: "synthesis",
-      badge: "✅ Enigma 2 — resolt parcialment"
+      apartat: "4",
+      heading: "Una lletra ho pot canviar tot: la ==mutació==",
+      text: "Una ==mutació== és un canvi en la seqüència de l'ADN. A l'==anèmia falciforme== canvia ==una sola lletra== del gen de l'hemoglobina: el codó canvia i, on hi havia d'anar ==glutamat==, hi va ==valina==. La proteïna canvia de forma, els glòbuls vermells prenen ==forma de falç== i la persona té la malaltia. Però ==no totes les mutacions== tenen efecte: si el codó nou dona el ==mateix aminoàcid==, la proteïna no canvia (==mutació silenciosa==). Les mutacions són també la matèria primera de l'==evolució== (SA5).",
+      type: "concept"
     }
   ],
 
   graphicResources: [
-    { id: "G2", apartat: "2", title: "Diagrama immunitat de grup", src: "/images/sa3-g2-immunitat-grup.svg", note: "Comparativa: 0% vacunats (virus circula lliurement) vs 50% (alguns protegits) vs 95% (virus no pot circular, protegit el bebè no vacunable)." }
+    { id: "Fig.1", apartat: "1", before: false, title: "El camí de l'ADN a la proteïna", src: "/images/sa3-s3-dogma-detall.svg", note: "Del gen (al nucli) a la característica. L'ADN es copia a ARNm (transcripció, dins el nucli); l'ARNm surt i al ribosoma es llegeix de tres en tres per encadenar aminoàcids i fabricar la proteïna (traducció). La proteïna dona la característica." },
+    { id: "Fig.2", apartat: "4", before: false, title: "Una lletra canviada: l'anèmia falciforme", src: "/images/sa3-s3-falciforme.svg", note: "El mateix gen amb una sola lletra diferent. El codó GAG (glutamat) passa a GTG/GUG (valina); la proteïna canvia i el glòbul vermell, rodó i flexible, es torna una falç rígida." }
   ],
 
-  fitxaUrl: "/fitxes/sa3-s3-fitxa.pdf", teoriaPdfUrl: null,
+  // ── ELABORA ──────────────────────────────────────────────
+  fitxaUrl: "/fitxes/sa3-s3-fitxa.pdf",
+  teoriaPdfUrl: null,
+  elaborateNote: "Tancament de la fitxa: després de traduir el gen normal i el mutat, respon per què una sola lletra canviada pot causar una malaltia i quan, en canvi, un canvi de lletra no té cap efecte (mutació silenciosa).",
 
+  // ── GUIA DE LA FITXA ─────────────────────────────────────
   fitxaGuide: {
-    fitxaName: "Fitxa S3 — Vacunes: ciència o mite?",
+    fitxaName: "Fitxa S3 — De l'ADN a la proteïna",
     steps: [
-      { apartat: "0", title: "Idees prèvies", time: "5 min", phase: "engage", instruction: "Apartat 0: escriu com decidiràs a quin article creure si dos diuen coses oposades. Anoteu sense por — ara no es corregeix.", hints: [] },
-      { apartat: "1", title: "Anàlisi de fonts (grups)", time: "25 min", phase: "explore", instruction: "Apartat 1: aplica la graella dels 4 criteris a les fitxes A (Wakefield) i B (estudi danès). Per cada criteri, puntua 0 (no el compleix) o 1 (sí). Suma les puntuacions.", hints: [
-        "Criteri 1: revista revisada per parells = la comunitat científica ha revisat l'article ABANS de publicar-lo. The Lancet ho és — però retirar un article implica que el sistema va fallar inicialment.",
-        "Criteri 4 (replicació): un estudi aïllat no estableix una veritat científica. Quin dels dos articles ha estat replicat per d'altres grups?"
-      ] },
-      { apartat: "2", title: "Com funcionen les vacunes", time: "20 min", phase: "explica", instruction: "Apartat 2: completa el diagrama de la vacuna i calcula el llindar d'immunitat de grup per al xarampió (R₀=15) i la grip (R₀=2.5).", hints: [
-        "Diagrama vacuna: antigen atenuat → SI activa → anticossos + cèl·lules memòria → si arriba el patogen real → resposta ràpida.",
-        "Llindar = 1 - 1/R₀. Agafa una calculadora. Per al xarampió: 1 - 1/15 = 1 - 0.067 = 0.933 → 93.3%."
-      ] },
-      { apartat: "3", title: "4 criteris de qualitat + enigma 2", time: "15 min", phase: "explica", instruction: "Apartat 3: escriu els 4 criteris i aplica'ls a l'afirmació 'les vacunes causen autisme'. Per cada criteri, indica si l'evidència disponible (estudi danès vs Wakefield) la suporta o la refuta.", hints: [
-        "El criteri de replicació és el definitiu: si 5 estudis independents amb milions de nens no troben vincle, la hipòtesi queda refutada.",
-        "Conflicte d'interès: per quina raó algú voldria que la gent cregués que les vacunes causen autisme? Pensa en qui en treu profit."
-      ] }
+      {
+        apartat: "0",
+        title: "Idees prèvies",
+        time: "6 min",
+        phase: "engage",
+        instruction: "Omple l'apartat 0: per a què serveix la informació de l'ADN i com creus que el missatge arriba fins a la fàbrica de proteïnes. No es corregeix.",
+        hints: []
+      },
+      {
+        apartat: "1",
+        title: "El camí: transcripció i traducció",
+        time: "20 min",
+        phase: "explica",
+        instruction: "Amb la Fig.1, completa el camí gen → ARNm → proteïna → característica i indica on passa cada pas (transcripció al nucli, traducció al ribosoma).",
+        hints: [
+          "Transcripció = copiar l'ADN a ARNm (al nucli). Traducció = fabricar la proteïna (al ribosoma).",
+          "L'ARNm és el missatger que surt del nucli perquè l'ADN no en surt."
+        ]
+      },
+      {
+        apartat: "2",
+        title: "Tradueix el codi genètic",
+        time: "25 min",
+        phase: "explore",
+        instruction: "Passa la seqüència d'ADN a ARNm (U en lloc de T), sepаra-la en codons de 3 lletres i, amb la taula de codons, escriu la proteïna.",
+        hints: [
+          "Recorda la complementarietat i que l'ARN fa servir U en lloc de T.",
+          "Cada 3 lletres (codó) = 1 aminoàcid. Comença per AUG (inici)."
+        ]
+      },
+      {
+        apartat: "3",
+        title: "Del genotip al fenotip",
+        time: "12 min",
+        phase: "explica",
+        instruction: "Explica amb un exemple com l'ordre de les lletres (genotip) acaba determinant una característica (fenotip). Fes servir la idea A-D-N-A / N-A-D-A.",
+        hints: [
+          "Ordre de lletres → ordre d'aminoàcids → forma de la proteïna → característica.",
+          "Mateixes lletres en un altre ordre = missatge diferent."
+        ]
+      },
+      {
+        apartat: "4",
+        title: "Una lletra ho canvia tot: la mutació",
+        time: "17 min",
+        phase: "elabora",
+        instruction: "Tradueix el gen MUTAT (anèmia falciforme), marca la lletra i l'aminoàcid que canvien i explica per què això causa la malaltia. Digues quan un canvi de lletra NO tindria efecte.",
+        hints: [
+          "Compara el gen normal i el mutat l'un al costat de l'altre.",
+          "Si el codó nou dona el mateix aminoàcid, la proteïna no canvia (mutació silenciosa)."
+        ]
+      }
     ]
   },
 
+  // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
   exitTicketQuestions: [
-    { id: "q1", type: "open", text: "Explica com funciona una vacuna. Usa els conceptes: antigen, anticòs, memòria immunològica, resposta secundària.", hint: "Segueix la cadena: vacuna injecta antigen atenuat → SI respon → fa anticossos + cèl·lules de memòria → si el patogen real arriba → resposta ràpida → malaltia avortada o lleu." },
-    { id: "q2", type: "open", text: "Aplica els 4 criteris de qualitat a l'article de Wakefield. Quin criteri falla de forma més greu? Per quina raó?", hint: "Els 4 criteris: revisió per parells, mida de la mostra, conflicte d'interès, replicació. Wakefield: n=12 (massa petit), conflicte d'interès econòmic, cap estudi posterior ho ha replicat." },
-    { id: "q3", type: "multiple", text: "Per quina raó és important que el 95% de la població es vacuni contra el xarampió?", options: ["Per protegir els que no es poden vacunar (bebès, immunodeprimits) bloquejant la circulació del virus", "Perquè d'altra manera la vacuna no funciona per a ningú", "Per obligació legal a tots els països", "Per augmentar la producció de laboratoris farmacèutics"], correct: 0 }
+    {
+      id: "q1",
+      type: "multiple",
+      text: "Quina diferència hi ha entre transcripció i traducció?",
+      options: [
+        "La transcripció copia l'ADN a ARNm (al nucli); la traducció fabrica la proteïna llegint l'ARNm (al ribosoma)",
+        "La transcripció fabrica la proteïna i la traducció copia l'ADN",
+        "Són el mateix procés amb dos noms diferents",
+        "La transcripció passa al ribosoma i la traducció al nucli"
+      ],
+      correct: 0
+    },
+    {
+      id: "q2",
+      type: "open",
+      text: "Un fragment d'ARNm és AUG-GUG-CAC. Fent servir la taula de codons (AUG=Met, GUG=Val, CAC=His), escriu la seqüència d'aminoàcids i explica què és un codó.",
+      hint: "Cada grup de 3 lletres (codó) correspon a un aminoàcid."
+    },
+    {
+      id: "q3",
+      type: "open",
+      text: "A l'anèmia falciforme canvia una sola lletra del gen. Explica, pas a pas, com un canvi tan petit pot fer que una persona estigui malalta.",
+      hint: "Segueix el camí: lletra → codó → aminoàcid → proteïna → glòbul vermell → persona."
+    }
   ],
 
-  homework: {
-    description: "Llegeix la introducció als medicaments (apartat TEORIA d'aquesta pàgina, S4). Omple el formulari de comprensió prèvia (Classroom). Comença a pensar en el tema de la teva campanya de comunicació (pòster o vídeo de 60 s).",
-    note: "La campanya és el producte final de la SA (entrega a S5). El tema ha de ser un mite sobre salut. Exemples: 'els antibiòtics curen totes les infeccions', 'el paracetamol és inofensiu', 'les drogues 'lleugeres' no enganxen'.",
-    deadline: "2026-11-XX"
+  // ── METACOGNICIÓ ─────────────────────────────────────────
+  metacognition: {
+    prompt: "Què t'ha semblat més difícil: fer la traducció amb la taula de codons o entendre com una lletra pot canviar tota una persona? Ara pots respondre la pregunta de l'inici: com pot ser que canviar una sola lletra ho canviï tot?",
+    type: "reflection"
   },
+
+  // ── FEINA A CASA ─────────────────────────────────────────
+  homework: {
+    description: "Prepara't per al debat de la propera sessió sobre CRISPR (edició genètica): si ara ja saps que canviar una lletra de l'ADN pot curar o causar una malaltia, pensa DOS arguments a favor i DOS en contra d'editar el genoma d'un embrió humà. Anota d'on has tret la informació (recorda la graella de fonts fiables de SA1).",
+    deadline: null,
+    note: "Connecta el mecanisme (avui: com una lletra canvia la proteïna) amb la decisió ètica (S4: hauríem de reescriure-la nosaltres?)."
+  },
+
+  // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
-    "Llegeix la teoria d'aquesta pàgina (vacunes, immunitat de grup, 4 criteris de qualitat)",
-    "Aplica els 4 criteris a 1 afirmació sobre salut que trobis a les xarxes (qualsevol)",
-    "Omple la fitxa S3 apartats 0–3",
-    "Exit tiquet online aquí"
+    "Llegeix l'apartat EXPLICA: transcripció (ADN→ARNm, al nucli) i traducció (ARNm→proteïna, al ribosoma)",
+    "Mira la Fig.1 (camí de l'ADN a la proteïna) i la Fig.2 (la mutació falciforme)",
+    "Descarrega la fitxa S3 i practica la traducció: passa una seqüència d'ADN a ARNm, separa-la en codons i tradueix-la amb la taula",
+    "Fes l'apartat 4: tradueix el gen mutat, troba la lletra i l'aminoàcid que canvien i explica per què causa la malaltia",
+    "Assegura't d'entendre la diferència genotip (ordre de lletres) → fenotip (característica) i què és una mutació silenciosa"
   ],
-  oaLinks: ["OA2", "OA3"], competencies: ["CE2", "CE5"]
+
+  // ── COMPETÈNCIES ─────────────────────────────────────────
+  oaLinks: ["OA2", "OA3"],
+  competencies: ["CE1", "CE4"],
+  criterisAvaluacio: ["1.1", "1.2", "4.1"]
 }

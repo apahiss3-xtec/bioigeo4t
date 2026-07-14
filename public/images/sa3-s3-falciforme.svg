@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed',sans-serif">
+  <defs>
+    <marker id="ah2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#22357A"/></marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="22" font-weight="700" fill="#22357A">Una lletra canviada: l'anèmia falciforme</text>
+
+  <!-- NORMAL column -->
+  <text x="220" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#2E4A9E">Hemoglobina NORMAL</text>
+  <rect x="60" y="86" width="320" height="40" rx="8" fill="#eef1fb" stroke="#5B7BE0" stroke-width="1.5"/>
+  <text x="220" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#22357A" letter-spacing="1.5">…ACT · CCT · GAG</text>
+  <text x="220" y="120" text-anchor="middle" font-size="11" fill="#666">ARNm: …ACU · CCU · GAG</text>
+  <text x="220" y="150" text-anchor="middle" font-size="13" fill="#333">aminoàcid: … Thr · Pro · <tspan font-weight="700" fill="#2E7D57">Glu</tspan></text>
+  <circle cx="220" cy="228" r="46" fill="#e2575c"/>
+  <ellipse cx="220" cy="228" rx="30" ry="18" fill="#c23b41"/>
+  <text x="220" y="298" text-anchor="middle" font-size="13" font-weight="700" fill="#2E4A9E">glòbul rodó i flexible</text>
+  <text x="220" y="316" text-anchor="middle" font-size="11.5" fill="#666">transporta bé l'oxigen</text>
+
+  <!-- arrow -->
+  <line x1="404" y1="228" x2="476" y2="228" stroke="#22357A" stroke-width="2.5" marker-end="url(#ah2)"/>
+  <text x="440" y="214" text-anchor="middle" font-size="12" font-weight="700" fill="#7B3F9E">1 lletra</text>
+
+  <!-- MUTANT column -->
+  <text x="660" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#7B3F9E">Hemoglobina FALCIFORME</text>
+  <rect x="500" y="86" width="320" height="40" rx="8" fill="#f7ecfc" stroke="#b07fd0" stroke-width="1.5"/>
+  <text x="660" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#22357A" letter-spacing="1.5">…ACT · CCT · G<tspan fill="#7B3F9E">T</tspan>G</text>
+  <text x="660" y="120" text-anchor="middle" font-size="11" fill="#666">ARNm: …ACU · CCU · G<tspan fill="#7B3F9E" font-weight="700">U</tspan>G</text>
+  <text x="660" y="150" text-anchor="middle" font-size="13" fill="#333">aminoàcid: … Thr · Pro · <tspan font-weight="700" fill="#7B3F9E">Val</tspan></text>
+  <path d="M660 186 C712 190 720 250 676 276 C700 250 690 214 636 214 C660 224 668 250 648 268 C628 250 632 200 660 186 Z" fill="#8f3f45"/>
+  <text x="660" y="298" text-anchor="middle" font-size="13" font-weight="700" fill="#7B3F9E">glòbul en forma de falç</text>
+  <text x="660" y="316" text-anchor="middle" font-size="11.5" fill="#666">s'encalla i no porta bé l'oxigen</text>
+
+  <text x="440" y="366" text-anchor="middle" font-size="12.5" fill="#444">Una sola lletra (GAG → G<tspan font-weight="700" fill="#7B3F9E">U</tspan>G) canvia un aminoàcid (Glu → Val), la proteïna i tota la persona.</text>
+</svg>
