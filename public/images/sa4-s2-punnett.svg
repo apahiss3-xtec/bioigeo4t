@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <style>
+      .ink{fill:#16302c}.mut{fill:#4d6560}
+      .hd{font-size:20px;font-weight:800;fill:#ffffff}
+      .lbl{font-size:15px;fill:#16302c}.sm{font-size:12.5px;fill:#4d6560}
+      .gam{font-size:20px;font-weight:800;fill:#17605A}
+      .cell{font-size:22px;font-weight:800;fill:#16302c}
+      .dom{fill:#1E7A70}.rec{fill:#ffffff;stroke:#17605A;stroke-width:2}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+  <rect x="0" y="0" width="760" height="46" fill="#1E7A70"/>
+  <text x="24" y="30" class="hd">El quadre de Punnett: creuar dos portadors (Aa × Aa)</text>
+
+  <!-- ===== PUNNETT GRID (left) ===== -->
+  <g transform="translate(60,86)">
+    <text x="130" y="-30" text-anchor="middle" class="lbl" font-weight="700">Pare Aa</text>
+    <text x="-58" y="140" text-anchor="middle" class="lbl" font-weight="700" transform="rotate(-90,-58,140)">Mare Aa</text>
+    <!-- gamete headers -->
+    <text x="70" y="-4" text-anchor="middle" class="gam">A</text>
+    <text x="190" y="-4" text-anchor="middle" class="gam">a</text>
+    <text x="-8" y="78" text-anchor="middle" class="gam">A</text>
+    <text x="-8" y="198" text-anchor="middle" class="gam">a</text>
+    <!-- 2x2 grid -->
+    <rect x="10" y="10" width="120" height="120" fill="#e7f4f1" stroke="#17605A" stroke-width="2"/>
+    <rect x="130" y="10" width="120" height="120" fill="#e7f4f1" stroke="#17605A" stroke-width="2"/>
+    <rect x="10" y="130" width="120" height="120" fill="#e7f4f1" stroke="#17605A" stroke-width="2"/>
+    <rect x="130" y="130" width="120" height="120" fill="#fdf7e2" stroke="#17605A" stroke-width="2"/>
+    <text x="70" y="80" text-anchor="middle" class="cell">AA</text>
+    <text x="190" y="80" text-anchor="middle" class="cell">Aa</text>
+    <text x="70" y="200" text-anchor="middle" class="cell">Aa</text>
+    <text x="190" y="200" text-anchor="middle" class="cell">aa</text>
+  </g>
+
+  <!-- ===== RESULT SUMMARY (right) ===== -->
+  <g transform="translate(400,80)">
+    <rect x="0" y="0" width="320" height="126" rx="12" fill="#EAF5F2" stroke="#bfe0d9" stroke-width="1.5"/>
+    <text x="16" y="26" font-size="14" font-weight="800" fill="#17605A" letter-spacing="1">GENOTIPS (el que porten)</text>
+    <text x="16" y="54" class="lbl"><tspan font-weight="800" fill="#17605A">1</tspan> AA  ·  <tspan font-weight="800" fill="#17605A">2</tspan> Aa  ·  <tspan font-weight="800" fill="#17605A">1</tspan> aa</text>
+    <text x="16" y="76" class="sm">proporció 1 : 2 : 1</text>
+    <line x1="16" y1="88" x2="304" y2="88" stroke="#bfe0d9" stroke-width="1.5"/>
+    <text x="16" y="112" class="sm">3 de cada 4 tenen com a mínim una A → veuen el tret dominant</text>
+
+    <rect x="0" y="140" width="320" height="120" rx="12" fill="#f6ece8" stroke="#e6c9bb" stroke-width="1.5"/>
+    <text x="16" y="166" font-size="14" font-weight="800" fill="#a24e24" letter-spacing="1">FENOTIPS (el que es veu)</text>
+    <text x="16" y="196" class="lbl"><tspan font-weight="800" fill="#1E7A70">3</tspan> dominant  :  <tspan font-weight="800" fill="#16302c">1</tspan> recessiu</text>
+    <g transform="translate(16,214)">
+      <circle cx="12" cy="14" r="12" class="dom"/><circle cx="42" cy="14" r="12" class="dom"/><circle cx="72" cy="14" r="12" class="dom"/><circle cx="112" cy="14" r="12" class="rec"/>
+      <text x="150" y="19" class="sm">3 : 1 esperat</text>
+    </g>
+  </g>
+
+  <text x="60" y="378" class="sm">El quadre NO diu què li passarà a UN fill concret: diu la <tspan font-weight="700" fill="#17605A">tendència</tspan> quan hi ha molts descendents.</text>
+</svg>
