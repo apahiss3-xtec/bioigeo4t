@@ -1,159 +1,254 @@
 export const sa4s3 = {
-  id: "s3", saId: "sa4",
-  title: "De la cèl·lula a la persona",
-  sessionNumber: 3, biome: "sa4", duration: "2h",
-  engageImage: "/images/sa4-s3-fecundacio.jpg",
+  id: "s3",
+  saId: "sa4",
+  title: "Quan Mendel no n'hi ha prou",
+  sessionNumber: 3,
+  biome: "sa4",
+  duration: "2h",
+  engageImage: "/images/sa4-s3-portada.jpg",
 
-  engageQuestion: "Cada un de vosaltres ha 'guanyat' una competició de 200 milions de candidats (els espermatozoides). I al mateix temps, l'òvul que va ser fecundat era 1 dels ~400 que allibera una dona en tota la vida. Per quina raó sou VOSALTRES i no una altra persona? Avui ho entendreu.",
-  engageContext: "Revisió breu de la S2: tenim gàmetes (espermatozoides i òvuls). Avui: el que passa quan es troben. Connexió important amb SA1/S2 (meiosi): els gàmetes son el resultat de la meiosi. El producte final de la SA (fitxa de respostes) es comença a esbossar avui.",
+  // ── ENGANXA (hook) ───────────────────────────────────────
+  engageChallenge: "Mendel deia: un al·lel mana (dominant) i l'altre s'amaga (recessiu). Però mira aquests tres casos reals. Creues una flor VERMELLA amb una de BLANCA i tots els fills surten ROSA — ni vermells ni blancs. Una parella en què ell és del grup sanguini A i ella del B té una filla de grup AB: els dos caràcters es veuen alhora. I l'alçada o el color de pell no van «a saltes» (alt o baix), sinó que hi ha de tot, amb tots els intermedis. Cap dels tres encaixa amb el «dominant tapa recessiu». El repte d'avui: entendre que el model de Mendel és una bona base, però la natura té més maneres d'heretar un caràcter — i aprendre a reconèixer quina és cadascuna.",
+  engageQuestion: "Si un al·lel sempre tapés l'altre, no hi hauria flors rosades ni persones de grup AB. Com s'hereten els caràcters que NO segueixen el «dominant-recessiu» simple? I per què l'alçada o el color de pell tenen tants matisos en lloc de dues categories?",
+  engageContext: "A S1 vas aprendre el vocabulari (al·lel, genotip, fenotip) i a S2 a predir amb el quadre de Punnett quan hi ha dominància simple. Avui descobriràs tres situacions que Mendel no explica del tot: la dominància incompleta (barreja), la codominància (els dos alhora) i l'al·lelisme múltiple (més de dos al·lels per un gen), i veuràs per què la majoria de caràcters humans (alçada, color de pell) són poligènics i multifactorials. Al final classificaràs casos segons el tipus d'herència, una eina que necessitaràs per al pòster Heredity ID.",
 
-  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A/B/C) ──────────
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
     A: [
-      "Explico per quina raó la fecundació requereix que únicament 1 espermatozoide penetri l'òvul (mecanismes de bloqueig de polispèrmia) i les conseqüències si fallés.",
-      "Distingeixo la fecundació in vitro (FIV) de la natural i analitzo les implicacions biològiques (selecció d'embrions, transferència, taxa d'implantació).",
-      "Explico per quina raó els bessons idèntics son sempre del mateix sexe biològic i els fraterns no, connectant-ho amb la meiosi i la determinació cromosòmica.",
-      "Construeixo la línia de temps del desenvolupament embrionari (setmana 1-40) identificant les fites clau de cada trimestre."
+      "Distingeixo amb precisió dominància incompleta, codominància i al·lelisme múltiple, i justifico amb el fenotip de l'heterozigot per què cada cas NO és dominància simple.",
+      "Resolc problemes de grups sanguinis (sistema ABO) raonant amb tres al·lels i predint els grups possibles dels fills a partir dels genotips dels pares.",
+      "Argumento per què la majoria de caràcters humans (alçada, color de pell) són poligènics i multifactorials, i explico per què això produeix una variació contínua i no categories netes.",
+      "Classifico casos nous segons el tipus d'herència i justifico la tria amb el patró de fenotips observat, identificant quan una dada no permet decidir."
     ],
     B: [
-      "Explico el procés de fecundació (lloc, zigot, 23+23=46 cromosomes) i la determinació del sexe biològic (XX/XY) i per quina raó el sexe el determina l'espermatozoide.",
-      "Distingeixo embrió (0-8 setmanes) de fetus (8 setmanes-naixement) i identifico les fites principals de cada trimestre.",
-      "Explico la diferència entre bessons univitel·lins (idèntics) i bivitel·lins (fraterns) en termes d'ADN i connexió amb la meiosi (SA1).",
-      "Connecto la fecundació amb la meiosi (SA1/S2): per quina raó els gàmetes han de tenir 23 cromosomes i no 46."
-    ],
-    C: [
-      "Completo: el zigot es forma quan ___ + ___ = ___ cromosomes. El sexe el determina l'___ perquè porta la cromosoma X o ___.",
-      "Identifico les fites del primer trimestre: setmana ___ (cor batega) · setmana ___ (ja és fetus) · setmana ___ (nadó viable).",
-      "Completo: bessons idèntics → 1 zigot es divideix → sempre sexe biològic ___. Bessons fraterns → 2 òvuls fecundats → poden tenir sexes ___.",
-      "Connecto amb SA1: si els gàmetes tenen 23 cromosomes, és perquè es van formar per ___ (meiosi / mitosi)."
+      "Reconec quan un cas és de dominància incompleta (surt una barreja) o de codominància (es veuen els dos alhora) mirant el fenotip de l'heterozigot.",
+      "Ompliu un quadre de Punnett d'un creuament de grups sanguinis i dic quins grups poden tenir els fills.",
+      "Explico amb les meves paraules per què l'alçada o el color de pell tenen molts valors intermedis i no només «alt/baix».",
+      "Classifico un cas senzill segons el tipus d'herència seguint una taula de pistes."
     ]
   },
 
-  // ── BASTIMENT/REPTE PER APARTAT ──────────────────────────
+  // ── BASTIMENT/REPTE PER APARTAT segons el nivell ────────
+  // scaffoldFade: "mitjana" — SA4 és al 2n trimestre; es manté la bastida a nivell mitjà (com S1 i S2).
+  scaffoldFade: "mitjana",
   apartatExtras: {
+    "1": {
+      scaffold:
+        "Fixa't només en l'HETEROZIGOT (el que té els dos al·lels diferents). En dominància simple, l'heterozigot es veu igual que el dominant (Aa es veu com AA). En dominància INCOMPLETA, l'heterozigot és una BARREJA: vermell + blanc = rosa. La pista clau és: «l'heterozigot, s'assembla a un dels pares o és intermedi?». Si és intermedi → dominància incompleta.",
+      challenge:
+        "En dominància incompleta, el creuament VB × VB dóna 1 vermell : 2 rosa : 1 blanc. Compara aquesta proporció FENOTÍPICA amb la d'un creuament Aa × Aa de dominància simple (3:1) i explica per què, aquí, la proporció de genotips i la de fenotips coincideixen (1:2:1). Què fa la dominància incompleta que la simple no fa?"
+    },
     "2": {
-      scaffold: "Completa la taula de la fecundació: Lloc on passa: ___. Cèl·lula que resulta: ___. Nombre de cromosomes: ___+___ = ___. Qui determina el sexe biològic: ___. Per quina raó: l'espermatozoide pot portar ___ o ___, però l'òvul sempre porta ___.",
-      challenge: "En la FIV (fecundació in vitro), els embrions es creen al laboratori i es pot fer un diagnòstic genètic preimplantacional. Quines possibilitats obre? Quins debats bioètics planteja? Analitza des de la perspectiva científica (CE1: possibilitats tècniques) i des de la CE5 (implicacions per a la salut i la societat)."
+      scaffold:
+        "El sistema ABO té TRES al·lels d'un mateix gen: I^A, I^B i i. Regles: I^A i I^B són tots dos dominants sobre i, però ENTRE ELLS són codominants (si tens els dos, es veuen els dos → grup AB). El i és recessiu (només surt grup 0 si és ii). Per fer el quadre, tracta cada al·lel com sempre, però recorda aquestes tres regles en llegir el resultat.",
+      challenge:
+        "Un pare de grup A i una mare de grup B tenen quatre fills: un de cada grup (A, B, AB i 0). Demostra amb genotips i un quadre de Punnett que això és possible, i indica quins genotips havien de tenir els pares perquè pugui sortir un fill de grup 0."
     },
     "3": {
-      scaffold: "Dibuixa la línia de temps de l'embaràs (40 setmanes = 3 trimestres). Marca: zigot (dia 1) → implantació (dia 7-10) → embrió (fins setmana 8) → fetus → viabilitat (~22 setmanes) → part (setmana 38-40). Quin òrgan gestiona els intercanvis entre mare i fetus?",
-      challenge: "Per quina raó els bessons univitel·lins son genèticament idèntics però poden diferir en fenotip (aspecte, personalitat, malalties)? Dona almenys 2 factors ambientals que modifiquen l'expressió gènica. Connexió SA1: ADN → gens → expressió gènica modulada per l'ambient (epigenètica)."
+      scaffold:
+        "Un caràcter POLIGÈNIC depèn de molts gens alhora; cada al·lel «actiu» hi suma una miqueta (com sumar monedes). Per això no surten dues categories, sinó molts valors intermedis (una gradació). Si a més hi influeix l'ambient (alimentació, sol...), es diu MULTIFACTORIAL. Pista: si veus una variació contínua (de mica en mica, sense saltes), pensa en poligènia.",
+      challenge:
+        "Explica per què un caràcter poligènic dóna una distribució en forma de campana (pocs individus als extrems, molts al mig) mentre que un caràcter mendelià simple dóna proporcions discretes (3:1). Relaciona-ho amb la idea de «sumar molts efectes petits a l'atzar»."
+    },
+    "4": {
+      scaffold:
+        "Per classificar un cas, mira el fenotip de l'heterozigot i el nombre de classes: (1) si l'heterozigot és igual al dominant → dominància simple; (2) si és una barreja intermèdia → dominància incompleta; (3) si es veuen els dos trets alhora → codominància; (4) si hi ha més de dos al·lels pel gen → al·lelisme múltiple; (5) si hi ha variació contínua amb molts intermedis → poligènica/multifactorial. Fes servir aquestes cinc pistes com una clau dicotòmica.",
+      challenge:
+        "Crea tu un cas nou (inventat però coherent) per a cada tipus d'herència i intercanvia'ls amb un company perquè els classifiqui. Un dels teus casos ha de ser «ambigu a propòsit»: explica quina dada addicional caldria per decidir-ho amb seguretat."
     }
   },
 
   // ── APARTAT 0 · IDEES PRÈVIES ─────────────────────────────
   ideesPrevies: {
-    startPoint: "Avui descobrirem per quina raó sou vosaltres i no una altra persona. Recorda el que saps de la meiosi (SA1) — avui la necessitaràs. Escriu el que creus que passa des de la fecundació fins al naixement.",
+    startPoint:
+      "Recuperem S2. Ja saps predir amb el quadre de Punnett quan un al·lel domina l'altre. Abans de veure els casos que se'n surten, posa a prova la teva intuïció.",
     prompts: [
       {
         kind: "write",
-        text: "Un espermatozoide té 23 cromosomes i un òvul en té 23. Quan es fecunden, quants cromosomes tindrà la cèl·lula resultant? Connecta-ho amb el que vas aprendre de la meiosi a SA1.",
-        starter: "Si espermatozoide (23) + òvul (23) = ___ cromosomes. A SA1 vam aprendre que la meiosi..."
+        text: "Si creues una flor vermella amb una de blanca, de quin color esperes els fills? Pot sortir un color que no tingui cap dels dos pares?",
+        starter: "Crec que sortiran… perquè…"
       },
       {
         kind: "write",
-        text: "Per quina raó creus que l'embaràs dura aproximadament 9 mesos? Quins canvis creus que es produeixen durant aquest temps perquè el fetus estigui preparat per néixer?",
-        starter: "Crec que l'embaràs dura 9 mesos perquè el fetus necessita..."
+        text: "Per què hi ha persones molt altes, molt baixes i de tantes alçades intermèdies, i no només «altes» o «baixes» com passa amb el color de la llavor del pèsol?",
+        starter: "Crec que és perquè l'alçada depèn de…"
       }
     ]
   },
 
+  // ── EXPLORA (ABP · classificació de casos) ─────────
+  exploreActivity: {
+    what: "En equip feu de servei de genètica d'un hospital. Rebeu tres casos reals que no encaixen amb el «dominant-recessiu» simple: (1) un viver que obté flors roses creuant vermelles i blanques; (2) una parella (pare grup A, mare grup B) que ha tingut fills dels quatre grups sanguinis i vol saber com és possible; (3) un estudi d'alçada d'una població amb tots els valors intermedis. Per a cada cas heu de decidir QUIN tipus d'herència explica el que s'observa i justificar-ho, i resoldre amb un quadre de Punnett el cas dels grups sanguinis.",
+    who: { mode: "grup", label: "Equips de 3 (servei de genètica)" },
+    time: 45,
+    note: "Indagació: la clau no és memoritzar noms, sinó ADONAR-SE que el fenotip de l'heterozigot (barreja? els dos alhora? intermedi continu?) és la pista que revela el tipus d'herència. Cada equip ha de defensar la seva classificació davant d'un altre amb l'evidència del cas.",
+  },
   exploreInstructions: [
-    "El docent projecta la seqüència d'animació del procés de fecundació i desenvolupament embrionari (2-3 min)",
-    "Per parelles: ompliu la línia de temps del desenvol­upament (setmanes 1-40) amb les 6 fites clau de la fitxa",
-    "Tasca: identifiqueu a la línia quan passa: a) fecundació; b) implantació; c) primers batecs del cor; d) inici del període fetal",
-    "Connexió SA1: per quina raó els gàmetes tenen 23 cromosomes? Escriviu la resposta en 2 frases",
-    "Moment epistèmic: per quina raó sou vosaltres? L'atzar de la meiosi (assortiment independent de cromosomes + combinació aleatòria de gàmetes)"
+    "Cas flors: quin color té l'heterozigot? És intermedi o igual a un pare? Decidiu el tipus d'herència i escriviu la proporció esperada de VB × VB",
+    "Cas grups sanguinis: escriviu els genotips possibles del pare (A) i de la mare (B), feu el quadre de Punnett i digueu quins grups poden tenir els fills",
+    "Cas alçada: la variació és a saltes o contínua? Decidiu si és mendeliana simple o poligènica/multifactorial i justifiqueu-ho",
+    "Prepareu la defensa: per a cada cas, quina EVIDÈNCIA concreta us fa triar aquell tipus d'herència i no un altre"
   ],
-  exploreDuration: "25 min",
-  exploreMaterials: ["Projecció: animació fecundació i embaràs (3 min)", "Línia de temps en blanc (fitxa S3)", "Imatge comparativa: embrió setmana 4 vs fetus setmana 12 vs nadó terme"],
+  exploreDuration: "45 min",
+  appSrc: null,
+  exploreNote: "Demostració a l'aula: cada equip presenta un dels tres casos a un altre equip i ha de convèncer-lo del tipus d'herència fent servir el fenotip de l'heterozigot com a prova. Si els dos equips discrepen, han d'acordar quina dada addicional els trauria el dubte.",
 
+  // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [
     {
       id: "t1",
-      apartat: "2",
-      heading: "==Gàmetes==: la connexió amb la meiosi (SA1)",
-      text: "Connexió SA1/S2: els gàmetes (==espermatozoides|b== i ==òvuls|o==) es formen per ==meiosi== → cada gàmeta té ==23 cromosomes|g== (la meitat dels 46 normals). Quan es fusionen: ==23 + 23 = 46|g== → cèl·lula diploide normal. L'==assortiment independent|p== durant la meiosi genera milions de combinacions possibles → per quina raó cada persona és genèticament única. Espermatozoides: 200-500 milions per ejaculació, vida 3-5 dies a les trompes. Òvul: 1 per cicle (rarament 2), vida ≈12-24 hores.",
-      type: "concept",
-      badge: "🔗 Connexió SA1",
-      video: "/animacions/sa4-s2-t1.mp4"
+      apartat: "1",
+      heading: "==Dominància incompleta==: l'heterozigot és una ==barreja==",
+      text: "A vegades ==cap al·lel domina== del tot. En les flors de la ==bella de nit== (Mirabilis jalapa), una planta vermella (==VV==) creuada amb una blanca (==BB==) dóna fills tots ==rosa== (==VB==): un fenotip ==intermedi==, barreja dels dos. Si creues dues roses (VB × VB) surten ==1 vermell : 2 rosa : 1 blanc==. Fixa't: aquí la proporció de ==fenotips== (1:2:1) és igual que la de ==genotips==, perquè cada genotip es veu diferent.",
+      type: "concept"
     },
     {
       id: "t2",
       apartat: "2",
-      heading: "==Fecundació==: l'unió dels gàmetes",
-      text: "Lloc habitual: ==trompes de Fal·lopi|o==. Procés: 1 espermatozoide penetra l'òvul → els nuclis es fusionen → ==zigot== (primera cèl·lula de la nova persona, 46 cromosomes). ==Determinació del sexe biològic==: l'òvul sempre porta X. L'espermatozoide porta X (→ ==noia XX|o==) o Y (→ ==noi XY|b==). El sexe biològic el determina l'espermatozoide perquè és l'únic que pot aportar el cromosoma Y.",
-      type: "concept",
-      video: "/animacions/sa4-s2-t2.mp4"
+      heading: "==Codominància==: els dos al·lels es veuen ==alhora==",
+      text: "En la ==codominància== l'heterozigot mostra ==els dos trets sencers==, no una barreja. El cas clàssic són els ==grups sanguinis==: si tens l'al·lel ==I^A== i el ==I^B==, els glòbuls porten ==els dos antígens== (A i B) → ets grup ==AB==. No és rosa: és A ==i== B de veritat, cadascun complet. La diferència amb la dominància incompleta és clau: incompleta = ==mescla==; codominància = ==tots dos sencers==.",
+      type: "concept"
     },
     {
       id: "t3",
-      apartat: "3",
-      heading: "De ==zigot== a ==embrió==: les primeres setmanes",
-      text: "Dia 1: ==zigot== (1 cèl·lula, 46 cr.) → divisions mitòtiques → mòrula → blastocist. Dia 7-10: ==implantació|g== a l'endometri de l'úter. Setmanes 2-8: ==embrió==. Setmana 4: el ==cor batega|r==. Setmana 5: s'esbossen els membres. Setmana 8: ja hi ha tots els òrgans en formació (≈2 cm). ==Placenta==: òrgan de connexió mare-embrió → intercanvia nutrients, O₂, CO₂ i substàncies de rebuig sense barrejar la sang. A partir de la setmana 9: ==fetus==.",
-      type: "concept",
-      video: "/animacions/sa4-s2-t3.mp4"
+      apartat: "2",
+      heading: "==Al·lelisme múltiple==: un gen amb ==més de dos== al·lels",
+      text: "Mendel treballava amb ==dos== al·lels per gen, però un gen en pot tenir ==més==. El sistema ==ABO== en té ==tres==: ==I^A==, ==I^B== i ==i==. Regles: I^A i I^B ==dominen== sobre i, però entre ells són ==codominants==. Així, grup A = I^A I^A o I^A i · grup B = I^B I^B o I^B i · grup ==AB== = I^A I^B · grup ==0== = ==ii==. Cada persona només en porta ==dos==, però a la població n'hi ha tres circulant.",
+      type: "concept"
     },
     {
       id: "t4",
       apartat: "3",
-      heading: "L'==embaràs==: tres trimestres",
-      text: "==1r trimestre (0-12 setm.)==: formació d'òrgans (embrió → fetus), risc més alt d'avortament espontani, possibles nàusees. ==2n trimestre (13-26 setm.)==: creixement ràpid, moviments perceptibles, tots els òrgans presents; viabilitat ≈ ==setmana 22-24|o== (els pulmons ja funcionen mínimament). ==3r trimestre (27-40 setm.)==: maduració d'òrgans (sobretot pulmons i cervell), acumulació de greix subcutani. ==Part==: contraccions de l'úter → dilatació del coll uterí → expulsió del fetus → expulsió de la placenta.",
-      type: "concept",
-      video: "/animacions/sa4-s2-t4.mp4"
-    },
-    {
-      id: "t5",
-      apartat: "3",
-      heading: "==Bessons==: idèntics vs fraterns",
-      text: "==Bessons univitel·lins (idèntics)|g==: 1 zigot es divideix en 2 embrions → mateixa informació genètica → sempre el ==mateix sexe biològic==. Idèntics genèticament però no clons: l'ambient i l'epigenètica modifiquen l'expressió gènica (connexió SA1/ADN). ==Bessons bivitel·lins (fraterns)|o==: 2 òvuls alliberats i fecundats per 2 espermatozoides → tan similars genèticament com qualsevol parella de germans → poden tenir ==sexes biològics diferents==.",
-      type: "concept",
-      video: "/animacions/sa4-s2-t5.mp4"
+      heading: "==Poligènia== i herència ==multifactorial==: quan Mendel es queda curt",
+      text: "La majoria de caràcters humans (==alçada==, ==color de pell==, pes) ==no== depenen d'un sol gen: són ==poligènics== (molts gens que hi sumen una mica cadascun) i sovint ==multifactorials== (també hi influeix l'==ambient==: alimentació, sol...). Per això no hi ha ==dues== categories sinó una ==variació contínua== amb tots els intermedis, en forma de ==campana==. El model mendelià simple segueix sent la base, però ==no ho explica tot==: reconèixer-ne els límits és fer bona ciència.",
+      type: "epistemic",
+      badge: "🔬 Límits del model"
     }
   ],
 
   graphicResources: [
-    { id: "G1", apartat: "2", title: "Determinació del sexe biològic (XX/XY)", src: "/images/sa4-g3-determinacio-sexe.svg", note: "Diagrama amb l'òvul (sempre X) i els dos tipus d'espermatozoide (X o Y). Resultat: XX (noia) o XY (noi). Connexió: per quina raó el sexe biològic el determina el pare (l'únic que aporta Y)." },
-    { id: "G2", apartat: "3", title: "Línia de temps del desenvolupament (0-40 setmanes)", src: "/images/sa4-g4-linia-temps-embaras.svg", note: "Embrió setmana 4 / fetus setmana 12 / fetus viable setmana 24 / nadó terme setmana 40. Mides relatives." }
+    { id: "Fig.1", apartat: "1", before: false, title: "Dominància incompleta: vermell × blanc = rosa", src: "/images/sa4-s3-domin-incompleta.svg", note: "V = al·lel vermell, B = al·lel blanc; cap domina. L'heterozigot VB és rosa (intermedi). El creuament VB × VB dóna 1 vermell : 2 rosa : 1 blanc — la proporció de fenotips coincideix amb la de genotips (1:2:1)." },
+    { id: "Fig.2", apartat: "2", before: false, title: "Grups sanguinis: codominància i tres al·lels (ABO)", src: "/images/sa4-s3-grups-sang.svg", note: "Un gen amb tres al·lels (I^A, I^B, i). I^A i I^B són codominants entre ells (grup AB mostra els dos antígens alhora) i tots dos dominen sobre i (grup 0 = ii). És alhora codominància i al·lelisme múltiple." },
+    { id: "Fig.3", apartat: "3", before: false, title: "Herència poligènica i multifactorial", src: "/images/sa4-s3-poligenia.svg", note: "El color de pell o l'alçada depenen de molts gens que sumen una mica cadascun (poligènia) i de l'ambient (multifactorial). El resultat és una variació contínua en forma de campana, no dues categories netes." }
   ],
 
-  fitxaUrl: "/fitxes/sa4-s3-fitxa.pdf", teoriaPdfUrl: null,
+  // ── ELABORA ──────────────────────────────────────────────
+  fitxaUrl: "/fitxes/sa4-s3-fitxa.pdf",
+  teoriaPdfUrl: null,
+  elaborateNote: "Tancament de la fitxa: torna als tres casos del hook (flors rosa, fills de grup AB, alçada contínua) i etiqueta cadascun amb el seu tipus d'herència, explicant en una frase quina evidència t'ho ha fet decidir.",
 
+  // ── GUIA DE LA FITXA ─────────────────────────────────────
   fitxaGuide: {
-    fitxaName: "Fitxa S3 — De la cèl·lula a la persona",
+    fitxaName: "Fitxa S3 — Quan Mendel no n'hi ha prou",
     steps: [
-      { apartat: "0", title: "Idees prèvies", time: "5 min", phase: "engage", instruction: "Apartat 0: quants cromosomes té el zigot? Connecta-ho amb la meiosi (SA1). Escriu el que creus que passa en els primers 9 mesos.", hints: [] },
-      { apartat: "1", title: "Línia de temps de l'embaràs", time: "20 min", phase: "explore", instruction: "Apartat 1: omple la línia de temps (setmanes 1-40) amb les 6 fites clau. Quan passa de ser embrió a fetus? Quan és viable?", hints: [
-        "Embrió = fins setmana 8 (tots els òrgans en formació). Fetus = de setmana 9 fins al naixement. Viable = ≈ setmana 22-24 (els pulmons ja funcionen mínimament).",
-        "Connexió: per quina raó el cor batega a la setmana 4? Compara la velocitat de formació dels òrgans (1r trimestre) amb la velocitat de creixement i maduració (2n-3r trimestre)."
-      ] },
-      { apartat: "2", title: "Gàmetes i fecundació", time: "20 min", phase: "explica", instruction: "Apartat 2: omple la taula de la fecundació. Per quina raó els gàmetes tenen 23 cromosomes i no 46? Qui determina el sexe biològic i per quina raó?", hints: [
-        "Connexió SA1: la meiosi redueix a la meitat el nombre de cromosomes. Si la cèl·lula humana ha de tenir 46, cada gàmeta ha d'aportar exactament 23.",
-        "Sexe biològic: l'òvul sempre porta X. Si l'espermatozoide porta X → XX (noia). Si porta Y → XY (noi). L'atzar de quins espermatozoides arriben a l'òvul primer."
-      ] },
-      { apartat: "3", title: "Embaràs i bessons", time: "15 min", phase: "explica", instruction: "Apartat 3: descriu les característiques de cada trimestre. Explica la diferència entre bessons univitel·lins i bivitel·lins en termes d'ADN i sexe biològic.", hints: [
-        "Univitel·lins: 1 zigot + mitosi → 2 individus idèntics genèticament → sempre el mateix sexe cromosòmic (XX o XY).",
-        "Bivitel·lins: 2 meiosis + 2 fecundacions → 2 individus tan similars com qualsevol parella de germans → poden tenir sexes cromosòmics diferents."
-      ] }
+      {
+        apartat: "0",
+        title: "Idees prèvies",
+        time: "8 min",
+        phase: "engage",
+        instruction: "Omple l'apartat 0: de quin color esperes els fills de vermell × blanc, i per què l'alçada té tants valors intermedis. No es corregeix.",
+        hints: []
+      },
+      {
+        apartat: "1",
+        title: "Dominància incompleta",
+        time: "28 min",
+        phase: "explore",
+        instruction: "Estudia el cas de les flors i decideix el tipus d'herència mirant l'heterozigot. Fes el quadre VB × VB i escriu la proporció 1:2:1.",
+        hints: [
+          "L'heterozigot VB és rosa: una barreja, no igual a cap pare.",
+          "Aquí cada genotip es veu diferent, per això fenotips = genotips = 1:2:1."
+        ]
+      },
+      {
+        apartat: "2",
+        title: "Codominància i grups sanguinis",
+        time: "35 min",
+        phase: "explica",
+        instruction: "Aprèn les regles de l'ABO (tres al·lels; I^A i I^B codominants, i recessiu). Resol el cas pare A × mare B i digues quins grups poden tenir els fills.",
+        hints: [
+          "Grup A = I^A I^A o I^A i; grup B = I^B I^B o I^B i; AB = I^A I^B; 0 = ii.",
+          "Perquè surti un fill de grup 0, tots dos pares han de portar l'al·lel i."
+        ]
+      },
+      {
+        apartat: "3",
+        title: "Poligènia i multifactorial",
+        time: "20 min",
+        phase: "elabora",
+        instruction: "Explica per què l'alçada i el color de pell tenen variació contínua (campana) i no dues categories. Relaciona-ho amb «molts gens + ambient».",
+        hints: [
+          "Cada al·lel actiu suma una mica: molts intermedis possibles.",
+          "Si a més hi influeix l'ambient (alimentació, sol), és multifactorial."
+        ]
+      },
+      {
+        apartat: "4",
+        title: "Classificar casos",
+        time: "17 min",
+        phase: "elabora",
+        instruction: "Fes servir la clau de pistes per classificar cada cas segons el tipus d'herència i justifica la tria amb el fenotip de l'heterozigot.",
+        hints: [
+          "Barreja intermèdia → incompleta; els dos alhora → codominància.",
+          "Més de dos al·lels → al·lelisme múltiple; variació contínua → poligènica."
+        ]
+      }
     ]
   },
 
+  // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
   exitTicketQuestions: [
-    { id: "q1", type: "open", text: "El zigot humà té 46 cromosomes. Connecta-ho amb la meiosi (SA1): per quina raó els gàmetes han de tenir exactament 23 cromosomes i no 46?", hint: "La reproducció sexual = unió de 2 gàmetes. Si cada gàmeta portés 46 cromosomes, el zigot en tindria 92 → el nombre doblaria cada generació. La meiosi evita aquest doblament reduint a la meitat el nombre." },
-    { id: "q2", type: "multiple", text: "Una parella de bessons és formada per un noi i una noia. Quin tipus de bessons son?", options: ["Bivitel·lins (fraterns): 2 òvuls fecundats per 2 espermatozoides", "Univitel·lins (idèntics): 1 zigot dividit en 2", "Impossible saber-ho sense anàlisi genètica", "Univitel·lins perquè han nascut el mateix dia"], correct: 0 }
+    {
+      id: "q1",
+      type: "multiple",
+      text: "Creues una flor vermella (VV) amb una de blanca (BB) i TOTS els fills surten rosa. Quin tipus d'herència és?",
+      options: [
+        "Dominància incompleta (l'heterozigot és una barreja intermèdia)",
+        "Dominància simple (el vermell domina)",
+        "Codominància (es veuen els dos colors per separat)",
+        "Al·lelisme múltiple (hi ha tres al·lels)"
+      ],
+      correct: 0
+    },
+    {
+      id: "q2",
+      type: "open",
+      text: "Una persona de grup AB té els antígens A i B alhora als glòbuls. Per què això és codominància i NO dominància incompleta? Quina diferència hi ha amb la flor rosa?",
+      hint: "En codominància es veuen els dos trets sencers (A i B de veritat); en dominància incompleta surt una mescla intermèdia (rosa) que no és cap dels dos."
+    },
+    {
+      id: "q3",
+      type: "open",
+      text: "Un pare de grup 0 i una mare de grup AB tenen fills. Quins grups sanguinis poden tenir els fills i quins NO? Fes-ho amb els genotips.",
+      hint: "Pare 0 = ii (només passa i); mare AB = I^A I^B (passa I^A o I^B). Els fills seran I^A i (grup A) o I^B i (grup B): mai AB ni 0."
+    }
   ],
 
-  homework: {
-    description: "Busca 1 imatge mèdica d'un embrió humà a la setmana 6 i 1 d'un fetus a la setmana 20 (font fiable: webs mèdiques o científiques). Escriu 3 diferències observables. Porta-les a S4.",
-    note: "Cal buscar fonts fiables (webs mèdiques, no xarxes socials) — pràctica CE2.",
-    deadline: "2026-01-XX"
+  // ── METACOGNICIÓ ─────────────────────────────────────────
+  metacognition: {
+    prompt: "Abans d'avui pensaves que sempre un al·lel «tapa» l'altre? Quin dels tres casos (flors rosa, grup AB, alçada contínua) t'ha costat més d'encaixar i per què? Quan et donen un cas nou, saps quina pista mirar primer per decidir el tipus d'herència?",
+    type: "reflection"
   },
+
+  // ── FEINA A CASA ─────────────────────────────────────────
+  homework: {
+    description: "Resol una tanda curta de problemes: un de dominància incompleta (proporció de fenotips), un de grups sanguinis (grups possibles dels fills d'una parella) i una pregunta breu sobre per què un caràcter donat (p. ex. el color d'ulls o l'alçada) és poligènic. Torna a mirar el caràcter del teu projecte Heredity ID i decideix si segueix un patró mendelià simple o no: ho hauràs d'argumentar al pòster.",
+    deadline: null,
+    note: "Aprenentatge significatiu: decideixes quin model d'herència explica el TEU caràcter real, cosa que hauràs de justificar al pòster científic final."
+  },
+
+  // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
-    "Llegeix la teoria d'aquesta pàgina (gàmetes, fecundació, embrió/fetus, trimestres, bessons)",
-    "Connecta amb SA1: per quina raó els gàmetes tenen 23 cromosomes (meiosi) i el zigot en té 46",
-    "Omple la fitxa S3 apartats 0-3 i la línia de temps",
-    "Exit tiquet en paper a S4"
+    "Llegeix l'apartat EXPLICA: dominància incompleta, codominància, al·lelisme múltiple i herència poligènica/multifactorial",
+    "Estudia la Fig.1 (vermell × blanc → rosa, 1:2:1), la Fig.2 (grups sanguinis ABO i codominància) i la Fig.3 (poligènia: variació contínua)",
+    "Descarrega la fitxa S3 i resol el quadre de grups sanguinis de l'apartat 2 i la classificació de casos de l'apartat 4",
+    "Comprova que saps la diferència clau: dominància incompleta = mescla intermèdia; codominància = els dos trets alhora",
+    "L'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET); porta la tanda de problemes resolta"
   ],
-  oaLinks: ["OA3"], competencies: ["CE1", "CE5"]
+
+  // ── COMPETÈNCIES ─────────────────────────────────────────
+  oaLinks: ["OA3"],
+  competencies: ["CE1", "CE4"],
+  criterisAvaluacio: ["1.2", "4.1"]
 }

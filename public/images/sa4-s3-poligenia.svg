@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" font-family='Fira Sans Extra Condensed, sans-serif'>
+<defs><linearGradient id="skin" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#f2e0cf"/><stop offset="50%" stop-color="#b98a5e"/><stop offset="100%" stop-color="#5a3a22"/></linearGradient></defs>
+<rect width="720" height="430" fill="#e7f4f1"/>
+<text x="360" y="30" text-anchor="middle" font-size="21" font-weight="900" fill="#17605A">Quan molts gens + l'ambient: herència poligènica</text>
+<text x="360" y="52" text-anchor="middle" font-size="12.5" fill="#4d6560">El color de pell o l'alçada NO són «un gen dominant»: molts gens hi sumen una mica cadascun</text>
+<!-- additive alleles bar -->
+<text x="70" y="86" font-size="12" font-weight="700" fill="#1d1622">Cada al·lel «actiu» suma una mica de pigment:</text>
+<rect x="70" y="96" width="580" height="26" rx="6" fill="url(#skin)" stroke="#a7cfc7"/>
+<text x="72" y="140" font-size="10.5" fill="#4d6560">pocs al·lels actius</text>
+<text x="648" y="140" text-anchor="end" font-size="10.5" fill="#4d6560">molts al·lels actius</text>
+<!-- distribution: many intermediate phenotypes -->
+<text x="360" y="180" text-anchor="middle" font-size="12.5" font-weight="700" fill="#17605A">Resultat: molts fenotips intermedis, no 2 categories netes</text>
+<rect x="110" y="354" width="72" height="26" rx="4" fill="#f2e0cf" stroke="#a7cfc7"/><text x="146.0" y="398" text-anchor="middle" font-size="10" fill="#4d6560">molt clara</text><rect x="200" y="276" width="72" height="104" rx="4" fill="#d8b78f" stroke="#a7cfc7"/><text x="236.0" y="398" text-anchor="middle" font-size="10" fill="#4d6560">clara</text><rect x="290" y="224" width="72" height="156" rx="4" fill="#b98a5e" stroke="#a7cfc7"/><text x="326.0" y="398" text-anchor="middle" font-size="10" fill="#4d6560">intermèdia</text><rect x="380" y="276" width="72" height="104" rx="4" fill="#8a5f3a" stroke="#a7cfc7"/><text x="416.0" y="398" text-anchor="middle" font-size="10" fill="#4d6560">fosca</text><rect x="470" y="354" width="72" height="26" rx="4" fill="#5a3a22" stroke="#a7cfc7"/><text x="506.0" y="398" text-anchor="middle" font-size="10" fill="#4d6560">molt fosca</text><line x1="95" y1="380" x2="640" y2="380" stroke="#17605A" stroke-width="1.5"/><text x="360" y="420" text-anchor="middle" font-size="11" font-style="italic" fill="#4d6560">La corba en forma de campana és el senyal d'una herència poligènica i multifactorial (gens + ambient).</text></svg>
