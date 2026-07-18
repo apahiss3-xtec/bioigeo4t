@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <rect width="560" height="420" fill="#fefdff"/>
+  <text x="280" y="34" text-anchor="middle" font-size="22" font-weight="800" fill="#17605A">Qui determina el sexe?</text>
+  <text x="280" y="56" text-anchor="middle" font-size="14" fill="#3a3340">La mare (XX) sempre aporta una X · el pare (XY) aporta X o Y</text>
+
+  <!-- Parents -->
+  <g>
+    <rect x="70" y="76" width="130" height="42" rx="8" fill="#e7f4f1" stroke="#1E7A70" stroke-width="1.5"/>
+    <text x="135" y="103" text-anchor="middle" font-size="18" font-weight="700" fill="#17605A">Mare&#160;&#160;XX</text>
+    <rect x="360" y="76" width="130" height="42" rx="8" fill="#e7f4f1" stroke="#1E7A70" stroke-width="1.5"/>
+    <text x="425" y="103" text-anchor="middle" font-size="18" font-weight="700" fill="#17605A">Pare&#160;&#160;XY</text>
+  </g>
+
+  <!-- Punnett grid -->
+  <g stroke="#a7cfc7" stroke-width="1.5">
+    <!-- header cells -->
+    <rect x="150" y="150" width="70" height="52" fill="#fefdff"/>
+    <rect x="220" y="150" width="130" height="52" fill="#17605A"/>
+    <rect x="350" y="150" width="130" height="52" fill="#17605A"/>
+    <!-- row labels -->
+    <rect x="150" y="202" width="70" height="90" fill="#1E7A70"/>
+    <rect x="150" y="292" width="70" height="90" fill="#1E7A70"/>
+    <!-- body -->
+    <rect x="220" y="202" width="130" height="90" fill="#fbe9d9"/>
+    <rect x="350" y="202" width="130" height="90" fill="#dbeffb"/>
+    <rect x="220" y="292" width="130" height="90" fill="#fbe9d9"/>
+    <rect x="350" y="292" width="130" height="90" fill="#dbeffb"/>
+  </g>
+
+  <!-- header text (father gametes) -->
+  <text x="285" y="182" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">X</text>
+  <text x="415" y="182" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">Y</text>
+  <text x="285" y="142" text-anchor="middle" font-size="12" fill="#17605A" font-style="italic">gàmetes del pare</text>
+  <!-- row labels (mother gametes) -->
+  <text x="185" y="253" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">X</text>
+  <text x="185" y="343" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">X</text>
+  <text x="128" y="297" text-anchor="middle" font-size="12" fill="#17605A" font-style="italic" transform="rotate(-90 128 297)">gàmetes de la mare</text>
+
+  <!-- body results -->
+  <text x="285" y="243" text-anchor="middle" font-size="22" font-weight="800" fill="#1d1622">XX</text>
+  <text x="285" y="268" text-anchor="middle" font-size="13" fill="#a24e24" font-weight="700">nena</text>
+  <text x="415" y="243" text-anchor="middle" font-size="22" font-weight="800" fill="#1d1622">XY</text>
+  <text x="415" y="268" text-anchor="middle" font-size="13" fill="#2f6ea4" font-weight="700">nen</text>
+  <text x="285" y="333" text-anchor="middle" font-size="22" font-weight="800" fill="#1d1622">XX</text>
+  <text x="285" y="358" text-anchor="middle" font-size="13" fill="#a24e24" font-weight="700">nena</text>
+  <text x="415" y="333" text-anchor="middle" font-size="22" font-weight="800" fill="#1d1622">XY</text>
+  <text x="415" y="358" text-anchor="middle" font-size="13" fill="#2f6ea4" font-weight="700">nen</text>
+
+  <text x="280" y="406" text-anchor="middle" font-size="15" font-weight="700" fill="#17605A">Proporció esperada: 1 nena : 1 nen (50%) — ho decideix el pare</text>
+</svg>

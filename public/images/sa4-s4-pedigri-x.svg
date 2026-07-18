@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <rect width="640" height="480" fill="#fefdff"/>
+  <text x="320" y="32" text-anchor="middle" font-size="22" font-weight="800" fill="#17605A">Herència lligada al X: mare portadora × pare sa</text>
+  <text x="320" y="54" text-anchor="middle" font-size="14" fill="#3a3340">X amb H = al·lel sa · X amb h = al·lel de l'hemofília (recessiu)</text>
+  <text x="34" y="120" font-size="13" font-weight="700" fill="#78707e">Pares</text>
+  <text x="34" y="300" font-size="13" font-weight="700" fill="#78707e">Fills</text>
+  <circle cx="210" cy="115" r="26" fill="#fff" stroke="#1E7A70" stroke-width="2.5"/>
+  <path d="M210,89 A26,26 0 0,1 210,141 Z" fill="#9fd8cd"/>
+  <text x="210" y="168" text-anchor="middle" font-size="15" font-weight="700" fill="#17605A">Mare portadora</text>
+  <text x="210" y="189" text-anchor="middle" font-size="16" font-weight="800" fill="#1d1622"><tspan>X</tspan><tspan font-size="10" dy="-6">H</tspan><tspan dy="6"></tspan><tspan> </tspan><tspan>X</tspan><tspan font-size="10" dy="-6">h</tspan><tspan dy="6"></tspan></text>
+  <rect x="404" y="89" width="52" height="52" fill="#fff" stroke="#1E7A70" stroke-width="2.5"/>
+  <text x="430" y="168" text-anchor="middle" font-size="15" font-weight="700" fill="#17605A">Pare sa</text>
+  <text x="430" y="189" text-anchor="middle" font-size="16" font-weight="800" fill="#1d1622"><tspan>X</tspan><tspan font-size="10" dy="-6">H</tspan><tspan dy="6"></tspan><tspan> </tspan><tspan>Y</tspan></text>
+  <line x1="236" y1="115" x2="404" y2="115" stroke="#3a3340" stroke-width="2"/>
+  <line x1="320" y1="115" x2="320" y2="218" stroke="#3a3340" stroke-width="2"/>
+  <line x1="115" y1="218" x2="525" y2="218" stroke="#3a3340" stroke-width="2"/>
+  <line x1="115" y1="218" x2="115" y2="252" stroke="#3a3340" stroke-width="2"/>
+  <circle cx="115" cy="280" r="24" fill="#fff" stroke="#1E7A70" stroke-width="2.5"/>
+  <text x="115" y="328" text-anchor="middle" font-size="13.5" fill="#1d1622" font-weight="700">Filla sana</text>
+  <text x="115" y="348" text-anchor="middle" font-size="15" font-weight="800" fill="#1d1622"><tspan>X</tspan><tspan font-size="10" dy="-6">H</tspan><tspan dy="6"></tspan><tspan> </tspan><tspan>X</tspan><tspan font-size="10" dy="-6">H</tspan><tspan dy="6"></tspan></text>
+  <line x1="252" y1="218" x2="252" y2="252" stroke="#3a3340" stroke-width="2"/>
+  <circle cx="252" cy="280" r="24" fill="#fff" stroke="#1E7A70" stroke-width="2.5"/>
+  <path d="M252,256 A24,24 0 0,1 252,304 Z" fill="#9fd8cd"/>
+  <text x="252" y="328" text-anchor="middle" font-size="13.5" fill="#1d1622" font-weight="700">Filla portadora</text>
+  <text x="252" y="348" text-anchor="middle" font-size="15" font-weight="800" fill="#1d1622"><tspan>X</tspan><tspan font-size="10" dy="-6">H</tspan><tspan dy="6"></tspan><tspan> </tspan><tspan>X</tspan><tspan font-size="10" dy="-6">h</tspan><tspan dy="6"></tspan></text>
+  <line x1="388" y1="218" x2="388" y2="252" stroke="#3a3340" stroke-width="2"/>
+  <rect x="364" y="256" width="48" height="48" fill="#fff" stroke="#1E7A70" stroke-width="2.5"/>
+  <text x="388" y="328" text-anchor="middle" font-size="13.5" fill="#1d1622" font-weight="700">Fill sa</text>
+  <text x="388" y="348" text-anchor="middle" font-size="15" font-weight="800" fill="#1d1622"><tspan>X</tspan><tspan font-size="10" dy="-6">H</tspan><tspan dy="6"></tspan><tspan> </tspan><tspan>Y</tspan></text>
+  <line x1="525" y1="218" x2="525" y2="252" stroke="#3a3340" stroke-width="2"/>
+  <rect x="501" y="256" width="48" height="48" fill="#c96f3e" stroke="#a24e24" stroke-width="2.5"/>
+  <text x="525" y="328" text-anchor="middle" font-size="13.5" fill="#a24e24" font-weight="800">Fill hemofílic</text>
+  <text x="525" y="348" text-anchor="middle" font-size="15" font-weight="800" fill="#1d1622"><tspan>X</tspan><tspan font-size="10" dy="-6">h</tspan><tspan dy="6"></tspan><tspan> </tspan><tspan>Y</tspan></text>
+  <rect x="70" y="384" width="500" height="44" rx="10" fill="#e7f4f1" stroke="#a7cfc7" stroke-width="1.5"/>
+  <circle cx="98" cy="406" r="10" fill="#fff" stroke="#1E7A70" stroke-width="2"/>
+  <text x="115" y="411" font-size="12" fill="#3a3340">dona sana</text>
+  <circle cx="212" cy="406" r="10" fill="#fff" stroke="#1E7A70" stroke-width="2"/>
+  <path d="M212,396 A10,10 0 0,1 212,416 Z" fill="#9fd8cd"/>
+  <text x="229" y="411" font-size="12" fill="#3a3340">portadora</text>
+  <rect x="322" y="396" width="20" height="20" fill="#fff" stroke="#1E7A70" stroke-width="2"/>
+  <text x="350" y="411" font-size="12" fill="#3a3340">home sa</text>
+  <rect x="442" y="396" width="20" height="20" fill="#c96f3e" stroke="#a24e24" stroke-width="2"/>
+  <text x="470" y="411" font-size="12" fill="#3a3340">afectat</text>
+  <text x="320" y="456" text-anchor="middle" font-size="13" font-weight="700" fill="#17605A">Cap filla afectada (½ portadores) · ½ dels fills afectats: la malaltia salta generacions</text>
+</svg>
