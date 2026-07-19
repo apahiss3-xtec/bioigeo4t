@@ -1,0 +1,47 @@
+<svg viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Sans Extra Condensed',sans-serif" role="img" aria-label="Arbre de decisió per determinar el tipus d'herència a partir d'un pedigrí">
+  <rect x="0" y="0" width="760" height="430" fill="#fefdff"/>
+  <text x="380" y="30" text-anchor="middle" font-size="20" font-weight="900" fill="#17605A">Quin tipus d'herència? — guia ràpida a partir del pedigrí</text>
+
+  <!-- Q1 -->
+  <rect x="250" y="52" width="260" height="46" rx="10" fill="#e7f4f1" stroke="#1E7A70" stroke-width="2"/>
+  <text x="380" y="72" text-anchor="middle" font-size="14.5" font-weight="700" fill="#17605A">1. El caràcter «salta» generacions?</text>
+  <text x="380" y="90" text-anchor="middle" font-size="12" fill="#3a3340">(apareix, desapareix i torna a aparèixer)</text>
+
+  <!-- branch SI / NO -->
+  <line x1="300" y1="98" x2="170" y2="130" stroke="#a7cfc7" stroke-width="2"/>
+  <line x1="460" y1="98" x2="600" y2="130" stroke="#a7cfc7" stroke-width="2"/>
+  <text x="210" y="120" font-size="12" font-weight="800" fill="#c96f3e">SÍ salta</text>
+  <text x="540" y="120" font-size="12" font-weight="800" fill="#8a5a9e">NO, a cada generació</text>
+
+  <!-- Recessiu branch -->
+  <rect x="40" y="132" width="300" height="40" rx="9" fill="#f6ece8" stroke="#c96f3e" stroke-width="2"/>
+  <text x="190" y="157" text-anchor="middle" font-size="14" font-weight="800" fill="#a24e24">→ Probablement RECESSIU</text>
+
+  <!-- Dominant branch -->
+  <rect x="430" y="132" width="300" height="40" rx="9" fill="#f1eaf4" stroke="#8a5a9e" stroke-width="2"/>
+  <text x="580" y="157" text-anchor="middle" font-size="14" font-weight="800" fill="#6f4585">→ Probablement DOMINANT</text>
+
+  <!-- Q2 under recessiu -->
+  <line x1="190" y1="172" x2="190" y2="196" stroke="#a7cfc7" stroke-width="2"/>
+  <rect x="30" y="198" width="320" height="46" rx="10" fill="#e7f4f1" stroke="#1E7A70" stroke-width="2"/>
+  <text x="190" y="218" text-anchor="middle" font-size="13.5" font-weight="700" fill="#17605A">2. Afecta molt més els HOMES i</text>
+  <text x="190" y="236" text-anchor="middle" font-size="13.5" font-weight="700" fill="#17605A">salta per les DONES?</text>
+
+  <line x1="120" y1="244" x2="90" y2="272" stroke="#a7cfc7" stroke-width="2"/>
+  <line x1="260" y1="244" x2="290" y2="272" stroke="#a7cfc7" stroke-width="2"/>
+  <text x="55" y="264" font-size="11.5" font-weight="800" fill="#c96f3e">SÍ</text>
+  <text x="300" y="264" font-size="11.5" font-weight="800" fill="#1E7A70">NO, per igual</text>
+
+  <rect x="10" y="274" width="230" height="56" rx="9" fill="#eef7f5" stroke="#17605A" stroke-width="2"/>
+  <text x="125" y="296" text-anchor="middle" font-size="13" font-weight="800" fill="#17605A">LLIGAT AL X recessiu</text>
+  <text x="125" y="315" text-anchor="middle" font-size="11.5" fill="#3a3340">(home = hemizigot, 1 sola X)</text>
+
+  <rect x="256" y="274" width="230" height="56" rx="9" fill="#eef7f5" stroke="#17605A" stroke-width="2"/>
+  <text x="371" y="296" text-anchor="middle" font-size="13" font-weight="800" fill="#17605A">AUTOSÒMIC recessiu</text>
+  <text x="371" y="315" text-anchor="middle" font-size="11.5" fill="#3a3340">(dos pares sans → fill afectat)</text>
+
+  <!-- Then -->
+  <rect x="120" y="356" width="520" height="56" rx="10" fill="#fdf7e2" stroke="#c8960a" stroke-width="2"/>
+  <text x="380" y="378" text-anchor="middle" font-size="13.5" font-weight="800" fill="#7a5800">Després: escriu els GENOTIPS i comprova amb un QUADRE DE PUNNETT.</text>
+  <text x="380" y="398" text-anchor="middle" font-size="13" fill="#3a3340">Si va lligat al sexe, separa sempre FILLS (XY) i FILLES (XX).</text>
+</svg>
