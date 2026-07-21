@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs><style>
+    .box{fill:#f7ece6;stroke:#9C4A2F;stroke-width:2}
+    .crit{fill:#9C4A2F}
+    .critT{fill:#fff;font-size:15px;font-weight:700}
+    .grp{fill:#fff;stroke:#C77D4A;stroke-width:1.6}
+    .hdr{fill:#7E3A24;font-size:14px;font-weight:800}
+    .org{fill:#3a2a24;font-size:13px}
+    .sci{fill:#7E3A24;font-size:11.5px;font-style:italic}
+    .line{stroke:#C77D4A;stroke-width:2;fill:none}
+    .yn{fill:#9C4A2F;font-size:12px;font-weight:700}
+    .title{fill:#7E3A24;font-size:15px;font-weight:900;letter-spacing:.03em}
+  </style></defs>
+  <text x="360" y="26" text-anchor="middle" class="title">CLASSIFICAR ELS ORGANISMES DEL PATI PER TRETS COMPARTITS</text>
+
+  <rect x="272" y="40" width="176" height="38" rx="8" class="box"/>
+  <text x="360" y="64" text-anchor="middle" class="hdr">6 organismes del pati</text>
+
+  <rect x="285" y="96" width="150" height="32" rx="16" class="crit"/>
+  <text x="360" y="117" text-anchor="middle" class="critT">Té plomes?</text>
+  <path d="M360 78 V96" class="line"/>
+
+  <path d="M360 128 V152 H150 V176" class="line"/>
+  <path d="M360 128 V152 H500 V176" class="line"/>
+  <text x="250" y="148" class="yn">SÍ</text>
+  <text x="468" y="148" class="yn">NO</text>
+
+  <!-- Ocells -->
+  <rect x="55" y="176" width="190" height="104" rx="8" class="grp"/>
+  <text x="69" y="198" class="hdr">Ocells</text>
+  <text x="69" y="220" class="org">Gallina</text>
+  <text x="85" y="236" class="sci">Gallus gallus</text>
+  <text x="69" y="258" class="org">Pardal</text>
+  <text x="85" y="274" class="sci">Passer domesticus</text>
+
+  <!-- criterion 2 -->
+  <rect x="405" y="188" width="190" height="32" rx="16" class="crit"/>
+  <text x="500" y="209" text-anchor="middle" class="critT">És una planta?</text>
+
+  <path d="M500 220 V240 H335 V264" class="line"/>
+  <path d="M500 220 V240 H620 V264" class="line"/>
+  <text x="300" y="236" class="yn">SÍ</text>
+  <text x="590" y="236" class="yn">NO</text>
+
+  <!-- Plantes -->
+  <rect x="225" y="264" width="220" height="122" rx="8" class="grp"/>
+  <text x="239" y="286" class="hdr">Plantes</text>
+  <text x="239" y="308" class="org">Morera</text>
+  <text x="255" y="324" class="sci">Morus alba</text>
+  <text x="239" y="346" class="org">Plataner</text>
+  <text x="255" y="362" class="sci">Platanus × hispanica</text>
+  <text x="239" y="382" class="org">Card (mala herba)</text>
+
+  <!-- Invertebrats -->
+  <rect x="545" y="264" width="150" height="98" rx="8" class="grp"/>
+  <text x="559" y="286" class="hdr">Invertebrats</text>
+  <text x="559" y="308" class="org">Formiga</text>
+  <text x="575" y="324" class="sci">Lasius niger</text>
+
+  <!-- nomenclature model -->
+  <rect x="55" y="408" width="610" height="76" rx="10" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.6"/>
+  <text x="75" y="432" class="hdr" style="fill:#7a5800">El nom científic (nomenclatura binomial):</text>
+  <text x="75" y="465" font-size="21"><tspan fill="#7E3A24" font-weight="700" font-style="italic">Gallus</tspan><tspan fill="#3a2a24"> </tspan><tspan fill="#3a2a24" font-style="italic">gallus</tspan></text>
+  <text x="235" y="452" font-size="12" fill="#7a5800">↑ Gènere (majúscula)   ↑ espècie (minúscula)</text>
+  <text x="235" y="470" font-size="12" fill="#7a5800">S'escriu tot en cursiva o subratllat</text>
+</svg>

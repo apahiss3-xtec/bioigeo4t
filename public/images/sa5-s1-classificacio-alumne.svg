@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <style>
+      .box{fill:#f7ece6;stroke:#9C4A2F;stroke-width:2}
+      .crit{fill:#fff;stroke:#9C4A2F;stroke-width:2}
+      .critT{fill:#9C4A2F;font-size:14px;font-weight:700}
+      .grp{fill:#fff;stroke:#C77D4A;stroke-width:1.6;stroke-dasharray:5 4}
+      .lbl{fill:#7E3A24;font-size:13px;font-weight:700}
+      .line{stroke:#C77D4A;stroke-width:2;fill:none}
+      .yn{fill:#9C4A2F;font-size:12px;font-weight:700}
+      .title{fill:#7E3A24;font-size:15px;font-weight:900;letter-spacing:.03em}
+      .hint{fill:#a98b7a;font-size:11px;font-style:italic}
+    </style>
+  </defs>
+  <text x="360" y="26" text-anchor="middle" class="title">CLASSIFICA ELS ORGANISMES DEL PATI — TRIA EL CRITERI I OMPLE ELS GRUPS</text>
+
+  <rect x="270" y="40" width="180" height="40" rx="8" class="box"/>
+  <text x="360" y="65" text-anchor="middle" class="lbl">Els organismes que has observat</text>
+
+  <rect x="270" y="98" width="180" height="34" rx="17" class="crit"/>
+  <text x="360" y="120" text-anchor="middle" class="critT">Criteri 1: ____________ ?</text>
+  <path d="M360 80 V98" class="line"/>
+
+  <path d="M360 132 V150 H150 V172" class="line"/>
+  <path d="M360 132 V150 H500 V172" class="line"/>
+  <text x="255" y="146" class="yn">SÍ</text>
+  <text x="470" y="146" class="yn">NO</text>
+
+  <rect x="60" y="172" width="180" height="90" rx="8" class="grp"/>
+  <text x="150" y="192" text-anchor="middle" class="hint">grup 1 (escriu-hi els organismes)</text>
+
+  <rect x="410" y="182" width="180" height="34" rx="17" class="crit"/>
+  <text x="500" y="204" text-anchor="middle" class="critT">Criteri 2: __________ ?</text>
+
+  <path d="M500 216 V232 H330 V250" class="line"/>
+  <path d="M500 216 V232 H620 V250" class="line"/>
+  <text x="300" y="228" class="yn">SÍ</text>
+  <text x="590" y="228" class="yn">NO</text>
+
+  <rect x="220" y="250" width="215" height="95" rx="8" class="grp"/>
+  <text x="327" y="272" text-anchor="middle" class="hint">grup 2</text>
+  <rect x="540" y="250" width="150" height="95" rx="8" class="grp"/>
+  <text x="615" y="272" text-anchor="middle" class="hint">grup 3</text>
+
+  <rect x="60" y="372" width="600" height="70" rx="10" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.6"/>
+  <text x="80" y="396" class="lbl" style="fill:#7a5800">Model del nom científic (nomenclatura binomial):</text>
+  <text x="80" y="424" font-size="20"><tspan fill="#7E3A24" font-weight="700" font-style="italic">Gallus</tspan><tspan> </tspan><tspan fill="#3a2a24" font-style="italic">gallus</tspan></text>
+  <text x="230" y="418" font-size="12" fill="#7a5800">↑ Gènere (majúscula) · espècie (minúscula)</text>
+  <text x="230" y="432" font-size="12" fill="#7a5800">Escriu-los tot en cursiva o subratllats</text>
+</svg>
