@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <style>
+      .title{font-size:19px;font-weight:700;fill:#7E3A24}
+      .lab{font-size:14px;font-weight:600;fill:#3a3340}
+      .labw{font-size:14px;font-weight:700;fill:#f7ece6}
+      .small{font-size:12px;fill:#5a4a42}
+      .smallw{font-size:12px;fill:#e0b49f}
+      .surv{font-size:11.5px;font-weight:700;fill:#2f7d3a}
+      .cau{font-size:12px;font-weight:700;fill:#b23a2a}
+    </style>
+  </defs>
+  <text x="360" y="26" text-anchor="middle" class="title">Simulació de selecció natural: el fons decideix qui sobreviu</text>
+
+  <rect x="30" y="46" width="300" height="180" rx="10" fill="#3a2e28" stroke="#7E3A24" stroke-width="2"/>
+  <text x="180" y="70" text-anchor="middle" class="labw">Fons FOSC (variable independent)</text>
+  <circle cx="80" cy="110" r="11" fill="#4a3b32"/><circle cx="150" cy="150" r="11" fill="#4a3b32"/>
+  <circle cx="250" cy="120" r="11" fill="#4a3b32"/><circle cx="210" cy="185" r="11" fill="#4a3b32"/>
+  <circle cx="120" cy="180" r="11" fill="#f0e2d6"/><line x1="112" y1="172" x2="128" y2="188" stroke="#b23a2a" stroke-width="2.5"/><line x1="128" y1="172" x2="112" y2="188" stroke="#b23a2a" stroke-width="2.5"/>
+  <circle cx="270" cy="175" r="11" fill="#f0e2d6"/><line x1="262" y1="167" x2="278" y2="183" stroke="#b23a2a" stroke-width="2.5"/><line x1="278" y1="167" x2="262" y2="183" stroke="#b23a2a" stroke-width="2.5"/>
+  <circle cx="90" cy="150" r="11" fill="#f0e2d6"/><line x1="82" y1="142" x2="98" y2="158" stroke="#b23a2a" stroke-width="2.5"/><line x1="98" y1="142" x2="82" y2="158" stroke="#b23a2a" stroke-width="2.5"/>
+  <text x="180" y="216" text-anchor="middle" class="smallw">1 · les preses FOSQUES camuflen -&gt; sobreviuen</text>
+
+  <rect x="390" y="46" width="300" height="180" rx="10" fill="#efe4d8" stroke="#7E3A24" stroke-width="2"/>
+  <text x="540" y="70" text-anchor="middle" class="lab">Fons CLAR (variable independent)</text>
+  <circle cx="440" cy="110" r="11" fill="#f0e2d6" stroke="#c8b5a6"/><circle cx="510" cy="150" r="11" fill="#f0e2d6" stroke="#c8b5a6"/>
+  <circle cx="610" cy="120" r="11" fill="#f0e2d6" stroke="#c8b5a6"/><circle cx="570" cy="185" r="11" fill="#f0e2d6" stroke="#c8b5a6"/>
+  <circle cx="480" cy="180" r="11" fill="#4a3b32"/><line x1="472" y1="172" x2="488" y2="188" stroke="#b23a2a" stroke-width="2.5"/><line x1="488" y1="172" x2="472" y2="188" stroke="#b23a2a" stroke-width="2.5"/>
+  <circle cx="630" cy="175" r="11" fill="#4a3b32"/><line x1="622" y1="167" x2="638" y2="183" stroke="#b23a2a" stroke-width="2.5"/><line x1="638" y1="167" x2="622" y2="183" stroke="#b23a2a" stroke-width="2.5"/>
+  <circle cx="450" cy="150" r="11" fill="#4a3b32"/><line x1="442" y1="142" x2="458" y2="158" stroke="#b23a2a" stroke-width="2.5"/><line x1="458" y1="142" x2="442" y2="158" stroke="#b23a2a" stroke-width="2.5"/>
+  <text x="540" y="216" text-anchor="middle" class="small">2 · les preses CLARES camuflen -&gt; sobreviuen</text>
+
+  <circle cx="60" cy="262" r="9" fill="#4a3b32"/><text x="76" y="266" class="small">presa fosca</text>
+  <circle cx="185" cy="262" r="9" fill="#f0e2d6" stroke="#c8b5a6"/><text x="201" y="266" class="small">presa clara</text>
+  <line x1="300" y1="255" x2="316" y2="271" stroke="#b23a2a" stroke-width="2.5"/><line x1="316" y1="255" x2="300" y2="271" stroke="#b23a2a" stroke-width="2.5"/><text x="326" y="266" class="cau">caçada</text>
+  <text x="418" y="266" class="surv">sense creu = sobreviu i es reprodueix</text>
+
+  <rect x="30" y="292" width="660" height="70" rx="10" fill="#f7ece6" stroke="#C77D4A" stroke-width="1.5"/>
+  <text x="360" y="316" text-anchor="middle" class="lab">3 · La població «evoluciona» cap al color que camufla amb el fons.</text>
+  <text x="360" y="340" text-anchor="middle" class="small">Cap presa «vol» canviar: és l'AMBIENT (el fons) qui selecciona. Tu comptes els supervivents = variable dependent.</text>
+</svg>

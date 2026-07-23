@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <style>
+      .title{font-size:19px;font-weight:700;fill:#7E3A24}
+      .th{font-size:14px;font-weight:700;fill:#fffdfb}
+      .theory{font-size:14px;font-weight:700;fill:#7E3A24}
+      .cell{font-size:12.5px;fill:#3a3340}
+      .false{font-size:11px;font-weight:700;fill:#b23a2a}
+      .ok{font-size:11px;font-weight:700;fill:#2f7d3a}
+    </style>
+  </defs>
+  <text x="360" y="26" text-anchor="middle" class="title">Un mateix cas, quatre teories · El coll de la girafa</text>
+
+  <!-- header row -->
+  <rect x="20" y="44" width="200" height="40" fill="#9C4A2F"/>
+  <rect x="220" y="44" width="480" height="40" fill="#9C4A2F"/>
+  <text x="120" y="69" text-anchor="middle" class="th">Teoria</text>
+  <text x="460" y="69" text-anchor="middle" class="th">Què diu sobre el coll de la girafa</text>
+
+  <!-- Row 1 Fixisme -->
+  <rect x="20" y="84" width="200" height="72" fill="#f7ece6" stroke="#d3b2a0"/>
+  <rect x="220" y="84" width="480" height="72" fill="#fffdfb" stroke="#d3b2a0"/>
+  <text x="30" y="112" class="theory">Fixisme / creacionisme</text>
+  <text x="30" y="132" class="cell">(les espècies no canvien)</text>
+  <text x="232" y="110" class="cell">Les girafes SEMPRE han tingut el coll així.</text>
+  <text x="232" y="130" class="cell">No hi ha canvi ni evolució.</text>
+  <text x="232" y="149" class="false">✗ Descartat: hi ha fòssils i evolució observable.</text>
+
+  <!-- Row 2 Lamarckisme -->
+  <rect x="20" y="156" width="200" height="80" fill="#f7ece6" stroke="#d3b2a0"/>
+  <rect x="220" y="156" width="480" height="80" fill="#fffdfb" stroke="#d3b2a0"/>
+  <text x="30" y="184" class="theory">Lamarckisme</text>
+  <text x="30" y="204" class="cell">(Lamarck, 1809)</text>
+  <text x="30" y="222" class="cell">l'ús + herència</text>
+  <text x="232" y="182" class="cell">Cada girafa ESTIRA el coll per menjar fulles altes;</text>
+  <text x="232" y="201" class="cell">aquest coll més llarg el TRANSMET als fills.</text>
+  <text x="232" y="223" class="false">✗ Fals: l'esforç d'una vida no passa als gens.</text>
+
+  <!-- Row 3 Darwinisme -->
+  <rect x="20" y="236" width="200" height="80" fill="#f7ece6" stroke="#d3b2a0"/>
+  <rect x="220" y="236" width="480" height="80" fill="#fffdfb" stroke="#d3b2a0"/>
+  <text x="30" y="264" class="theory">Darwinisme</text>
+  <text x="30" y="284" class="cell">(Darwin, 1859)</text>
+  <text x="30" y="302" class="cell">selecció natural</text>
+  <text x="232" y="262" class="cell">JA hi havia girafes de colls diferents. Les de coll</text>
+  <text x="232" y="281" class="cell">llarg menjaven més, sobrevivien i deixaven més fills.</text>
+  <text x="232" y="303" class="cell">Mecanisme correcte, però no sabia com s'heretava.</text>
+
+  <!-- Row 4 Neodarwinisme -->
+  <rect x="20" y="316" width="200" height="86" fill="#efe0d0" stroke="#C77D4A" stroke-width="2"/>
+  <rect x="220" y="316" width="480" height="86" fill="#fbf3ea" stroke="#C77D4A" stroke-width="2"/>
+  <text x="30" y="344" class="theory">Neodarwinisme</text>
+  <text x="30" y="364" class="cell">(segle XX: Darwin</text>
+  <text x="30" y="382" class="cell">+ genètica/ADN)</text>
+  <text x="232" y="342" class="cell">Els colls diferents venen de MUTACIONS a l'atzar en</text>
+  <text x="232" y="361" class="cell">els gens. La selecció natural afavoreix el coll llarg i</text>
+  <text x="232" y="380" class="cell">els gens s'HERETEN. Uneix selecció + herència.</text>
+  <text x="232" y="398" class="ok">✓ Model acceptat per la ciència actual.</text>
+</svg>

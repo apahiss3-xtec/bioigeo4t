@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <style>
+      .title{font-size:19px;font-weight:700;fill:#7E3A24}
+      .lab{font-size:14px;font-weight:600;fill:#3a3340}
+      .labw{font-size:14px;font-weight:700;fill:#f7ece6}
+      .small{font-size:12px;fill:#5a4a42}
+      .q{font-size:13px;font-weight:700;fill:#a24e24}
+    </style>
+  </defs>
+  <text x="360" y="26" text-anchor="middle" class="title">El teu muntatge: preses de dos colors sobre dos fons</text>
+
+  <rect x="30" y="46" width="300" height="180" rx="10" fill="#3a2e28" stroke="#7E3A24" stroke-width="2"/>
+  <text x="180" y="70" text-anchor="middle" class="labw">Fons FOSC (variable independent)</text>
+  <circle cx="80" cy="110" r="11" fill="#4a3b32"/><circle cx="150" cy="150" r="11" fill="#4a3b32"/>
+  <circle cx="250" cy="120" r="11" fill="#4a3b32"/><circle cx="210" cy="185" r="11" fill="#4a3b32"/>
+  <circle cx="120" cy="180" r="11" fill="#f0e2d6"/><circle cx="270" cy="175" r="11" fill="#f0e2d6"/><circle cx="90" cy="150" r="11" fill="#f0e2d6"/>
+
+  <rect x="390" y="46" width="300" height="180" rx="10" fill="#efe4d8" stroke="#7E3A24" stroke-width="2"/>
+  <text x="540" y="70" text-anchor="middle" class="lab">Fons CLAR (variable independent)</text>
+  <circle cx="440" cy="110" r="11" fill="#f0e2d6" stroke="#c8b5a6"/><circle cx="510" cy="150" r="11" fill="#f0e2d6" stroke="#c8b5a6"/>
+  <circle cx="610" cy="120" r="11" fill="#f0e2d6" stroke="#c8b5a6"/><circle cx="570" cy="185" r="11" fill="#f0e2d6" stroke="#c8b5a6"/>
+  <circle cx="480" cy="180" r="11" fill="#4a3b32"/><circle cx="630" cy="175" r="11" fill="#4a3b32"/><circle cx="450" cy="150" r="11" fill="#4a3b32"/>
+
+  <circle cx="120" cy="255" r="9" fill="#4a3b32"/><text x="136" y="259" class="small">presa fosca</text>
+  <circle cx="255" cy="255" r="9" fill="#f0e2d6" stroke="#c8b5a6"/><text x="271" y="259" class="small">presa clara</text>
+
+  <rect x="30" y="284" width="660" height="44" rx="10" fill="#f7ece6" stroke="#C77D4A" stroke-width="1.5"/>
+  <text x="360" y="311" text-anchor="middle" class="q">Prediu tu: quin color sobreviurà a cada fons? Fes la cacera i compta els supervivents.</text>
+</svg>
