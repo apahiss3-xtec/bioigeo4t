@@ -1,164 +1,181 @@
 export const sa5s4 = {
-  id: "s4", saId: "sa5",
-  title: "La biodiversitat en perill",
-  sessionNumber: 4, biome: "sa5", duration: "2h",
-  engageImage: "/images/sa5-s4-biodiversitat.jpg",
+  id: "s4",
+  saId: "sa5",
+  title: "El museu evolutiu del pati",
+  sessionNumber: 4,
+  biome: "sa5",
+  duration: "2h",
+  engageImage: "/images/sa5-s4-portada.jpg",
 
-  engageQuestion: "Cada dia s'extingeixen entre 3 i 150 espècies al planeta (depèn de la font que consultis). Per quina raó hauria de preocupar-nos? Quantes espècies cal perdre perquè un ecosistema col·lapsi? I el pati de la nostra escola — és un ecosistema saludable o en perill?",
-  engageContext: "Posada en comú de les espècies invasores que ha investigat cada alumne (deures S3). Es construeix un mapa col·lectiu d'invasores a Catalunya. El docent obre la resolució de l'enigma: la cotorra és un cas d'espècie invasora, però no és l'únic problema que afronta la biodiversitat del nostre entorn.",
+  // ── ENGANXA (hook) ───────────────────────────────────────
+  engageChallenge: "Avui s'inaugura el museu. Durant tota la situació has actuat com un biòleg de camp: has sortit al pati a observar organismes reals, has buscat les proves que expliquen el seu parentiu, has entès per què canvien els éssers vius i has après a mirar un mateix cas des de les quatre grans teories de l'evolució. Ara toca posar-ho tot junt en una sola targeta i defensar-la davant dels teus companys. Cada equip exposa UN organisme del pati —la gallina, el plataner, la morera, un ocell, un insecte, una mala herba— i explica en una targeta-cas què vàreu observar, quina adaptació és, quina prova de l'evolució el sustenta i com l'explicarien Lamarck i el neodarwinisme. Després visitaràs els altres estands, els coavaluaràs amb una rúbrica i, per acabar, faràs sol un exercici tipus selectivitat: analitzar un cas nou des de les quatre teories. És el tancament de la situació i del trimestre.",
+  engageQuestion: "Si haguessis d'explicar en menys d'un minut per què el teu organisme del pati és com és, quines quatre coses no hi poden faltar? I com distingiries una explicació lamarckiana (errònia) d'una de neodarwiniana (correcta)?",
+  engageContext: "Aquesta és una sessió de síntesi i avaluació: no s'aprèn contingut nou, es demostra tot el que ja saps de la situació. Té tres moments. Primer, el museu: cada equip presenta la seva targeta-cas i defensa l'organisme oralment. Segon, la coavaluació: visites els altres estands i els puntues amb una rúbrica, donant una millora concreta. Tercer, l'exercici individual tipus PAU: analitzes un cas nou (el peix globus o la tolerància a la lactosa) des de les quatre teories, que és l'habilitat que se t'exigirà a la prova i a batxillerat. Tanquem amb una metacognició de tota la situació i del trimestre.",
 
-  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A/B/C) ──────────
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
     A: [
-      "Quantifico la biodiversitat d'un ecosistema usant l'índex de Shannon (diversitat específica) i argumento per quina raó un ecosistema amb alta biodiversitat és més resistent a les pertorbacions.",
-      "Analitzo un cas real d'extinció en cascada (efecte dominó ecològic) i predico quines espècies serien les primeres en desaparèixer si una espècie clau s'extingís al nostre entorn.",
-      "Avaluo críticamente les mesures de conservació d'una espècie amenaçada local (Rupicapra pyrenaica, Testudo hermanni, Acipenser sturio) identificant conflictes d'interessos i argumentant una proposta de gestió.",
-      "Relaciono les 5 amenaces principals a la biodiversitat (HIPPO: Habitat loss, Invasive species, Pollution, Population, Overexploitation) amb el context local i global i proposo accions concretes a escala escolar."
+      "Sintetitzo en una targeta-cas un organisme real del pati integrant els quatre eixos de la situació: el tret observat, l'adaptació (estructura → funció → ambient), la prova de l'evolució que el sustenta i la comparació Lamarck vs neodarwinisme, i el defenso oralment amb precisió.",
+      "Coavaluo els estands dels altres equips amb una rúbrica, justifico la meva valoració amb criteris i proposo a cada equip una millora concreta i argumentada.",
+      "Resolc sol un exercici tipus PAU analitzant un cas nou des de les quatre teories, argumento quina l'explica millor i detecto i corregeixo l'error lamarckià.",
+      "Valoro, en la metacognició de tancament, què he après al llarg de tota la situació sobre com i per què evolucionen els éssers vius, i com la ciència es revisa amb el temps."
     ],
     B: [
-      "Defineixo biodiversitat (específica, genètica i d'ecosistemes) i argumento per quina raó la seva pèrdua és un problema per als humans, no tan sols per a la natura.",
-      "Identifico les principals amenaces a la biodiversitat (destrucció d'hàbitat, espècies invasores, contaminació, sobreexplotació, canvi climàtic) i les relaciono amb casos locals.",
-      "Explico el mecanisme d'invasió biològica amb el cas de la cotorra argentina i resolc l'enigma de la SA.",
-      "Proposo 3 mesures concretes per millorar la biodiversitat del pati de l'escola i argumento per quina raó cada mesura és efectiva."
-    ],
-    C: [
-      "Completo: biodiversitat = el nombre i la ___ d'espècies en un ecosistema. Quanta més biodiversitat, l'ecosistema és ___ (més/menys) resistent als canvis.",
-      "Identifico almenys 3 amenaces a la biodiversitat de la llista: destrucció d'hàbitat / espècies invasores / contaminació / sobreexplotació / canvi climàtic.",
-      "Explico per quina raó la cotorra argentina s'ha expandit tant: no té ___ naturals a Europa, ocupa el ___ del teuladí i és ___ per a la competència pels nius.",
-      "Proposo 1 mesura concreta que podria fer la nostra escola per millorar la biodiversitat del pati."
+      "Completo la targeta-cas del meu organisme del pati seguint la plantilla amb els quatre apartats guiats (tret, adaptació, prova, Lamarck vs neodarwinisme) i la presento amb el guió de defensa donat.",
+      "Coavaluo un estand amb la rúbrica marcant les caselles i escrivint, amb l'ajuda dels starters, una cosa que fan bé i una millora.",
+      "Resolc, amb la graella parcialment resolta, un exercici tipus PAU analitzant un cas nou des de les quatre teories i identifico l'explicació lamarckiana incorrecta.",
+      "Reconec, amb ajuda, tres coses que he après a la situació i una raó per la qual la ciència ha anat canviant les seves explicacions."
     ]
   },
 
-  // ── BASTIMENT/REPTE PER APARTAT ──────────────────────────
+  // ── BASTIMENT/REPTE PER APARTAT segons el nivell ────────
+  // scaffoldFade: SA5 final del 2n trimestre; la bastida baixa (tendència cap a SA6-7).
+  scaffoldFade: "baixa",
   apartatExtras: {
+    "1": {
+      scaffold:
+        "La targeta-cas té quatre caselles i totes s'han de poder llegir en un cop d'ull. (1) TRET OBSERVAT: què vàreu veure al pati (el bec, les ales curtes, les fulles amples, les espines...). (2) ADAPTACIÓ: connecta ESTRUCTURA → FUNCIÓ → AMBIENT («aquest tret serveix per a ___ en un ambient on ___»). (3) PROVA DE L'EVOLUCIÓ: quina de les proves que has estudiat el sustenta (homologia, analogia, estructura vestigial, adaptació, selecció artificial/domesticació). (4) LAMARCK vs NEODARWINISME: una frase de cada, deixant clar per què la de Lamarck és FALSA. Recorda: «l'organisme es va esforçar / va voler» = sempre lamarckià = incorrecte.",
+      challenge:
+        "Munta la targeta-cas del teu organisme de manera que un visitant que no hagi vingut a classe l'entengui sol. Afegeix-hi una dada o una comparació que sorprengui (per exemple, l'avantpassat salvatge del teu organisme, o un organisme del pati que resolgui el mateix problema d'una altra manera). Prepara una defensa oral de 45 segons sense llegir la targeta."
+    },
     "2": {
-      scaffold: "Omple la taula d'amenaces: Destrucció d'hàbitat → exemple a Catalunya: ___. Espècie invasora → exemple: ___. Contaminació → exemple: ___. Per a cadascuna, escriu 1 acció humana concreta que l'hagi causat i 1 mesura que podria reduir-la.",
-      challenge: "Investiga el concepte de 'servei ecosistèmic': els ecosistemes ens proveeixen d'aire net, polinització de conreus, regulació del clima, purificació de l'aigua, etc. Calcula o estima el valor econòmic anual dels serveis ecosistèmics globals (cerca l'estudi de Costanza et al. 1997 o el TEEB 2010). Per quina raó molts economistes diuen que la biodiversitat és el capital natural més important del planeta?"
+      scaffold:
+        "Per coavaluar bé un estand no diguis només «m'agrada» o «està bé». Fes servir la rúbrica: mira si els quatre apartats hi són, si l'adaptació connecta de veritat estructura-funció-ambient, si la prova de l'evolució està ben triada i si la comparació Lamarck/neodarwinisme deixa clar l'error de Lamarck. Marca el nivell (encara no ho fa / ho fa amb ajuda / ho fa bé / ho fa molt bé) i escriu SEMPRE una millora concreta: «podríeu... perquè...».",
+      challenge:
+        "Coavalua dos estands diferents amb la rúbrica i, per a cadascun, detecta si hi ha algun error científic amagat (una prova mal triada, una explicació que en realitat és lamarckiana disfressada de neodarwiniana) i proposa com corregir-lo. Sigues exigent i just alhora."
     },
     "3": {
-      scaffold: "Omple el resum de l'enigma: La cotorra és exòtica perquè ___ (d'on ve). Ha tingut tant d'èxit perquè: 1) No té ___ naturals a Europa. 2) Competeix per ___ amb el teuladí. 3) Fa nius ___ que el teuladí no pot ocupar ni defensar. 4) S'adapta a l'ambient ___. Per aturar-la caldria: ___.",
-      challenge: "Proposa i justifica un pla de gestió de la cotorra argentina per al barri de l'escola. Ha de tenir en compte: l'eficàcia ecològica, l'acceptació social (molts ciutadans estimen les cotorres), l'ètica (mètodes letals vs no letals), i el cost econòmic. Consulta les mesures adoptades a Madrid, Barcelona i Sevilla i avalua quin model seguiries."
+      scaffold:
+        "L'exercici tipus PAU sempre demana el mateix: agafar UN cas i explicar-lo des de les quatre teories. Recorda l'estructura: FIXISME → no canvia, sempre ha estat igual. LAMARCKISME → l'ús/l'esforç desenvolupa el tret i es transmet (FALS). DARWINISME → ja hi havia variabilitat i l'ambient selecciona, però sense saber com s'hereta. NEODARWINISME → mutacions a l'atzar en els gens + herència + selecció natural (model actual). Fes servir la graella parcialment resolta com a bastida i completa el que falti.",
+      challenge:
+        "Resol el cas nou des de les quatre teories sense la graella parcial: redacta un text tipus PAU que digui explícitament quina teoria l'explica millor, per què les altres tres fallen i quina prova concreta descartaria el lamarckisme en aquest cas."
+    },
+    "4": {
+      scaffold:
+        "Per a la metacognició, torna a l'enigma inicial de la situació (què és obra de la natura i què és obra nostra al pati) i repassa mentalment les quatre sessions: el safari d'observació, les proves de l'evolució, per què canvien els éssers vius i el museu d'avui. Pensa què sabies al principi i què saps ara.",
+      challenge:
+        "Escriu una reflexió de tancament de la situació i del trimestre: quina idea t'ha canviat més la manera de mirar els éssers vius, quin moment (una prova, la simulació, un estand) t'ha fet fer un salt, i què t'agradaria entendre millor sobre l'evolució."
     }
   },
 
-  // ── APARTAT 0 · IDEES PRÈVIES ─────────────────────────────
+  // ── APARTAT 0 · IDEES PRÈVIES / REPÀS ─────────────────────
   ideesPrevies: {
-    startPoint: "Avui és l'última sessió de SA5. Resolem l'enigma i construïm el producte final: la investigació de l'entorn. Compartiu les espècies invasores de la feina a casa.",
+    startPoint:
+      "Abans d'inaugurar el museu, recorda l'enigma amb què vam començar la situació. No es corregeix: et servirà per tancar-la al final.",
     prompts: [
       {
         kind: "write",
-        text: "Creus que el pati de la nostra escola és un ecosistema saludable o en perill? Quines amenaces hi detectes? I quins senyals de biodiversitat?",
-        starter: "Crec que el pati de l'escola és... perquè..."
-      },
-      {
-        kind: "write",
-        text: "Si poguesses fer UNA SOLA cosa per millorar la biodiversitat del teu barri, quina seria? Per quina raó has triat aquesta i no una altra?",
-        starter: "La mesura que faria seria... perquè..."
+        text: "L'enigma de la situació era: al pati, quins organismes són com són per obra de la NATURA i quins per obra NOSTRA (perquè els hi hem posat o els hem domesticat)? Escriu un exemple de cada.",
+        starter: "Per obra de la natura: ___ . Per obra nostra: ___ ."
       }
     ]
   },
 
+  // ── EXPLORA (ABP · el museu + coavaluació) ───────────────
+  exploreActivity: {
+    what: "Inaugureu el museu evolutiu del pati. Cada equip munta el seu estand amb la targeta-cas d'UN organisme real del pati i el defensa oralment (uns 45 segons) davant els companys que el visiten. Després feu de visitants: recorreu els altres estands, els coavalueu amb la rúbrica i deixeu a cada equip una millora concreta. El museu és el producte final de la situació: demostra que sabeu observar, buscar proves, explicar el canvi evolutiu i contrastar les teories, tot alhora i sobre un organisme tangible i vostre.",
+    who: { mode: "grup", label: "Equips de 3-4 (munten l'estand i el defensen; després visiten i coavaluen)" },
+    time: 45,
+    note: "Càrrega cognitiva baixa i tangible: no és una exposició llarga, és UNA targeta ben feta i ben defensada. El valor és que integra tota la situació en un organisme real que heu triat vosaltres."
+  },
   exploreInstructions: [
-    "Per grups de 3-4: rebeu un sobre amb 4 casos de pertorbació d'ecosistemes catalans reals (cada grup té casos diferents)",
-    "Casos possibles: A) Incendi forestal a la garriga mediterrània. B) Dessecació d'una zona humida al delta del Llobregat. C) Introducció del cranc americà al riu Ter. D) Contaminació lumínica al litoral Costa Daurada",
-    "Tasca 1 (15 min): per a cada cas, identifiqueu l'amenaça principal, les espècies més afectades, l'impacte en la xarxa tròfica i 2 mesures de conservació possibles",
-    "Tasca 2 (10 min): cada grup presenta el seu cas als altres (2 min per cas). El docent sistematitza les 5 amenaces principals a la biodiversitat",
-    "Moment epistèmic: el docent tanca l'enigma de la cotorra argentina — tots els factors explicats al llarg de la SA conflueixen aquí"
+    "Munteu l'estand amb la targeta-cas del vostre organisme: tret observat, adaptació (estructura → funció → ambient), prova de l'evolució i Lamarck vs neodarwinisme",
+    "Prepareu una defensa oral de 45 segons: qui parla, què destaca, com respon si algú pregunta «i això com ho saps?»",
+    "Feu de visitants: recorreu els altres estands i escolteu la defensa de cada equip",
+    "Coavalueu cada estand amb la rúbrica: marqueu el nivell de cada criteri i escriviu una cosa que fan bé i una millora concreta",
+    "Detecteu si algun estand té un error científic amagat (prova mal triada o explicació lamarckiana disfressada) i proposeu com corregir-lo"
   ],
-  exploreDuration: "25 min",
-  exploreMaterials: ["Sobre amb 4 casos per grup (impressió prèvia + fotos)", "Fitxa d'anàlisi de casos (per grup)", "Projector: mapa d'espècies invasores a Catalunya (Generalitat)"],
+  exploreDuration: "45 min",
+  appSrc: null,
+  exploreNote: "Demostració a l'aula: la defensa oral de 45 segons de la vostra targeta i, com a visitants, la rúbrica de coavaluació emplenada amb una millora argumentada per a cada estand visitat.",
 
+  // ── EXPLICA (síntesi de tota la SA) ──────────────────────
   theoryPoints: [
     {
       id: "t1",
-      apartat: "2",
-      video: "/animacions/sa5-s4-t1.mp4",
-      heading: "==Biodiversitat==: per quina raó és fonamental",
-      text: "La ==biodiversitat== és el nombre i la varietat d'espècies (diversitat ==específica|g==), de gens (diversitat ==genètica|o==) i d'ecosistemes (diversitat d'==ecosistemes|b==) en una zona. Un ecosistema amb alta biodiversitat és ==més resilient|g==: si una espècie desapareix, n'hi ha d'altres que poden ocupar parcialment la seva funció. Un ecosistema amb baixa biodiversitat és ==fràgil|r==: la desaparició d'una espècie clau pot col·lapsar-lo. A més, els ecosistemes ens ofereixen ==serveis ecosistèmics|g== imprescindibles: air net, polinització dels conreus, regulació del clima, purificació de l'aigua, medicines, aliments. La pèrdua de biodiversitat ens perjudica directament.",
+      apartat: "1",
+      heading: "La ==targeta-cas==: els quatre eixos de la situació en una sola mirada",
+      text: "Tota la situació cap en una targeta amb quatre caselles. Primer, el ==tret observat==: allò concret que vau veure al pati. Segon, l'==adaptació==, que sempre connecta ==estructura → funció → ambient== (aquest tret serveix per a alguna cosa en un ambient concret). Tercer, la ==prova de l'evolució== que el sustenta: ==homologia== (mateix origen, funció diferent), ==analogia== (funció igual, origen diferent), ==estructura vestigial==, adaptació o ==selecció artificial== (domesticació). Quart, la comparació ==Lamarck vs neodarwinisme==. Si sabeu omplir aquesta targeta per a un organisme, sabeu evolució.",
       type: "concept"
     },
     {
       id: "t2",
-      apartat: "2",
-      video: "/animacions/sa5-s4-t2.mp4",
-      heading: "Les 5 grans amenaces: ==HIPPO==",
-      text: "Les 5 principals amenaces a la biodiversitat global s'acostumen a resumir com ==HIPPO|r==: ==H==àbitat loss (pèrdua i fragmentació d'hàbitat — la causa №1): tala de boscos, urbanització, agricultura intensiva. ==I==nvasive species (espècies invasores): competència, depredació sobre espècies autòctones. ==P==ollution (contaminació: aire, aigua, sòl, lumínica). ==P==opulation (sobreexplotació: caça, pesca, recol·lecció excessiva). ==O==verexploitation / canvi climàtic (l'última amenaça emergent però cada vegada la més gran). A Catalunya: destrucció de zones humides, incendis i espècies invasores son les principals.",
+      apartat: "1",
+      heading: "==Natura o nosaltres==: selecció natural i selecció artificial",
+      text: "Al pati hi conviuen els dos motors del canvi. A la ==selecció natural==, és l'==ambient== qui «tria» quins individus sobreviuen i es reprodueixen (els ocells salvatges, els insectes, les males herbes). A la ==selecció artificial== o ==domesticació==, som ==nosaltres== qui triem (la gallina, que ve del gall salvatge de la selva; la morera i el plataner, plantats i podats). El mecanisme és el mateix —hi ha variabilitat i algú selecciona—, però canvia ==qui selecciona==. Darwin va fer servir la domesticació com a ==prova viva== que la selecció funciona.",
       type: "concept"
     },
     {
       id: "t3",
       apartat: "3",
-      video: "/animacions/sa5-s4-t3.mp4",
-      heading: "==Espècies invasores==: mecanisme de la invasió",
-      text: "Una ==espècie invasora|r== és aquella introduïda fora del seu rang geogràfic natural (per acció humana, accidental o intencionada) que s'expandeix i causa impactes negatius en els ecosistemes, l'economia o la salut humana. Mecanisme de l'èxit invasor: ==absència de depredadors|r== naturals al nou hàbitat, ==alta plasticitat ecològica|o== (s'adapten a moltes condicions), ==taxa de reproducció elevada|o==, ==competència agressiva|r== per recursos. Exemples a Catalunya: cotorra argentina (Myiopsitta monachus), cranc americà de riu (Procambarus clarkii), silur (Silurus glanis), tortuga de Florida (Trachemys scripta), ailant (Ailanthus altissima).",
+      heading: "L'habilitat ==PAU==: un cas, quatre teories, i caçar l'error lamarckià",
+      text: "L'exercici tipus selectivitat sempre demana analitzar un cas des de les ==quatre teories==. ==Fixisme==: no canvia. ==Lamarckisme==: l'ús/l'esforç desenvolupa el tret i es ==transmet== (FALS). ==Darwinisme==: ja hi havia ==variabilitat== i l'ambient ==selecciona==, però sense saber com s'hereta. ==Neodarwinisme==: ==mutacions a l'atzar== en els gens + herència + selecció natural (model actual). La ==trampa== recurrent: qualsevol frase amb «l'organisme ==va voler==, es va ==esforçar==, ho ==necessitava== i per això ho va aconseguir i ho va passar als fills» és ==lamarckiana i incorrecta==. El que s'hereta són els ==gens==, no el que has fet amb el cos.",
       type: "concept"
     },
     {
       id: "t4",
-      apartat: "3",
-      video: "/animacions/sa5-s4-t4.mp4",
-      heading: "==Resolució== de l'enigma: la cotorra argentina",
-      text: "Ara pots resoldre l'enigma de SA5. La cotorra argentina (==Myiopsitta monachus|o==) ha desplaçat els teuladins del pati de l'escola per ==quatre raons interconnectades== que hem après al llarg de la SA: 1. ==Nínxol idèntic|r== (S2): cotorra i teuladí son consumidors de 1r ordre que mengen les mateixes llavors → competència interespecífica. 2. ==Principi d'exclusió competitiva|r== (S3): en el mateix nínxol, guanya qui és més competitiu. 3. ==Avantatges de la cotorra|r== (S3): nius col·lectius grans i defensables, comportament agressiu, sense depredadors naturals a Europa. 4. ==Absència de control biològic|r== (S4): és una espècie invasora sense enemics naturals que regulin la seva població. Solució: control actiu de poblacions + foment d'espècies autòctones (hàbitat favorable per als teuladins).",
-      type: "resolution",
-      badge: "✅ Resolució — Enigma 1"
+      apartat: "4",
+      heading: "La ciència es ==revisa==: mirada de tancament",
+      text: "En tancar la situació val la pena recordar-ho: les explicacions de l'evolució han ==canviat== amb el temps perquè la ciència és una tasca ==col·lectiva== que es ==corregeix== amb noves proves. Lamarck va encertar que les espècies canvien i es va equivocar en el mecanisme; Darwin va trobar el mecanisme però li faltava la genètica; el neodarwinisme ho va unir tot quan es va conèixer l'ADN. Saber distingir «el que una teoria explicava en el seu temps» de «el que sabem ara» és pensar com un ==científic==, i és el fil que hem seguit tota la situació.",
+      type: "epistemic",
+      badge: "🧭 Naturalesa de la ciència"
     }
   ],
 
   graphicResources: [
-    { id: "G1", apartat: "2", title: "Les 5 amenaces a la biodiversitat (HIPPO)", src: "/images/sa5-g6-hippo.svg", note: "Infografia de les 5 amenaces amb exemple local per a cada una i indicador de severitat relativa a Catalunya." },
-    { id: "G2", apartat: "3", title: "Mapa d'espècies invasores a Catalunya", src: "/images/sa5-g7-invasores-cat.svg", note: "Mapa esquemàtic amb les 6 espècies invasores més impactants a Catalunya: distribució, any d'introducció i hàbitat afectat." }
+    { id: "Fig.1", apartat: "1", before: false, title: "Targeta-cas del museu (model RESOLT: la gallina del pati)", src: "/images/sa5-s4-targeta-cas.svg", note: "Model d'una targeta-cas totalment resolta amb la gallina domèstica del pati (Gallus gallus domesticus): el tret observat (ales curtes, gairebé no vola), l'adaptació (estructura → funció → ambient), la prova de l'evolució (selecció artificial / domesticació, amb el gall salvatge de la selva com a avantpassat) i la comparació Lamarck (fals) vs neodarwinisme. És el model que has de seguir per fer la targeta del teu organisme; a la fitxa la faràs tu en blanc." },
+    { id: "Fig.2", apartat: "1", before: false, title: "Targeta-cas en blanc (per al teu organisme)", src: "/images/sa5-s4-targeta-cas-alumne.svg", note: "La mateixa plantilla de targeta-cas, buida, perquè hi posis el teu organisme del pati. Segueix l'ordre dels quatre eixos: tret observat, adaptació (estructura → funció → ambient), prova de l'evolució i Lamarck vs neodarwinisme." }
   ],
 
-  fitxaUrl: "/fitxes/sa5-s4-fitxa.pdf", teoriaPdfUrl: null,
+  // ── ELABORA ──────────────────────────────────────────────
+  fitxaUrl: "/fitxes/sa5-s4-fitxa.pdf",
+  teoriaPdfUrl: null,
+  elaborateNote: "Tancament de la situació: torna a l'enigma inicial (natura o nosaltres) i respon-lo ara amb el vocabulari de tota la SA (adaptació, prova de l'evolució, selecció natural vs artificial, les quatre teories). El museu i l'exercici PAU són la demostració que ja saps mirar qualsevol ésser viu amb ulls d'evolucionista.",
 
-  productInstructions: {
-    title: "Investigació de l'entorn: la xarxa de vida del nostre pati",
-    description: "Construeix el mapa de la xarxa alimentària de l'ecosistema del pati de l'escola (o un entorn proper que triïs). Identifica espècies, amenaces i proposa millores.",
-    steps: [
-      "1. Identifica almenys 8 espècies presents al teu ecosistema (productors + consumidors + descomponedors). Usa les fotos de S1 i iNaturalist.",
-      "2. Construeix la xarxa tròfica amb totes les espècies identificades. Indica el nivell tròfic de cada una.",
-      "3. Identifica almenys 1 amenaça real per a la biodiversitat d'aquest ecosistema (espècie invasora, contaminació, pèrdua d'hàbitat, etc.).",
-      "4. Analitza l'impacte de l'amenaça: quines espècies es veuen afectades? Com canvia la xarxa tròfica?",
-      "5. Proposa 2 mesures concretes de millora que es podrien implementar a l'escola o al barri. Justifica per quina raó serien eficaces."
-    ],
-    format: "Mapa en cartolina o digital (Canva, Google Slides) + descripció escrita (1 pàgina). Treball en grups de 3.",
-    rubrica: "OA1 (identificació espècies) + OA2 (xarxa tròfica correcta) + OA3 (relacions i cicles) + OA4 (amenaces i mesures) + CE5 (argumentació ambiental) + CE6 (contextualització local)"
-  },
-
+  // ── GUIA DE LA FITXA ─────────────────────────────────────
   fitxaGuide: {
-    fitxaName: "Fitxa S4 — La biodiversitat en perill",
+    fitxaName: "Fitxa S20 — El museu evolutiu del pati",
     steps: [
-      { apartat: "0", title: "Idees prèvies + posada en comú espècies invasores", time: "10 min", phase: "engage", instruction: "Apartat 0: reflexió sobre la salut del pati. Presenta l'espècie invasora que has investigat: nom, origen, impacte.", hints: [] },
-      { apartat: "1", title: "Anàlisi de casos de pertorbació", time: "25 min", phase: "explore", instruction: "Apartat 1: analitza els 4 casos del sobre (amenaça / espècies afectades / impacte tròfic / mesures). Presenta el teu cas al grup.", hints: [
-        "Per a cada cas, pensa en efectes en cascada: si l'amenaça afecta els productors, quins consumidors queden sense aliment? I els seus depredadors?",
-        "Mesures: distingueix entre mesures de prevenció (evitar que s'estengui) i de restauració (recuperar el que s'ha perdut). Tots dos tipus son importants."
-      ] },
-      { apartat: "2", title: "Biodiversitat i amenaces", time: "15 min", phase: "explica", instruction: "Apartat 2: omple la taula HIPPO (amenaça / exemple local / mesura). Explica per quina raó la biodiversitat és un servei ecosistèmic i no tan sols una qüestió ètica.", hints: [
-        "Servei ecosistèmic: tots els beneficis que els éssers humans obtenim dels ecosistemes (aliment, aire net, regulació climàtica, medicaments, turisme de natura...). La biodiversitat és la base d'aquests serveis.",
-        "HIPPO: Hàbitat / Invasores / Pol·lució / Sobreexplotació. Ordre d'importància global: la destrucció d'hàbitat és la causa №1."
-      ] },
-      { apartat: "3", title: "Resolució enigma + producte final", time: "10 min", phase: "explica", instruction: "Apartat 3: completa la resolució de l'enigma de la cotorra (4 factors). Comença la planificació del producte final (la xarxa tròfica del pati).", hints: [
-        "Resolució enigma: pensa en els 4 factors que hem anat descobrint sessions 1-4. Cadascun és una peça del trencaclosques.",
-        "Producte: comença per llistar les espècies que ja has observat al pati (S1 + deures). Quines relacions tròfiques pots establir entre elles?"
-      ] }
+      { apartat: "0", title: "L'enigma de la situació", time: "5 min", phase: "engage", instruction: "Recorda l'enigma inicial: al pati, què és obra de la natura i què és obra nostra? Escriu un exemple de cada. No es corregeix; el tancaràs al final.", hints: [] },
+      { apartat: "1", title: "La teva targeta-cas", time: "35 min", phase: "explore", instruction: "Completa la targeta-cas del teu organisme (Fig.2) amb els quatre eixos i prepara la defensa oral de 45 segons. Consulta el model resolt de la gallina (Fig.1) només si et cal.", hints: ["Adaptació = estructura → funció → ambient.", "Tria bé la prova: homologia, analogia, vestigial, adaptació o selecció artificial (domesticació)."] },
+      { apartat: "2", title: "Coavaluació dels estands", time: "20 min", phase: "explore", instruction: "Visita els altres estands i coavalua'ls amb la rúbrica: marca el nivell de cada criteri i escriu una cosa que fan bé i una millora concreta.", hints: ["No diguis només «està bé»: mira si els quatre apartats hi són i si són correctes.", "Detecta explicacions lamarckianes disfressades de neodarwinistes."] },
+      { apartat: "3", title: "Exercici individual tipus PAU", time: "25 min", phase: "elabora", instruction: "Analitza sol un cas nou (peix globus o tolerància a la lactosa) des de les quatre teories i argumenta quina l'explica millor. Detecta i corregeix l'error lamarckià.", hints: ["Segueix l'estructura fixisme / lamarckisme / darwinisme / neodarwinisme.", "«L'organisme es va esforçar i ho va passar als fills» = lamarckià = fals."] },
+      { apartat: "4", title: "Metacognició de tancament", time: "10 min", phase: "elabora", instruction: "Tanca la situació i el trimestre: respon l'enigma inicial amb el vocabulari nou i reflexiona sobre què has après i què t'agradaria entendre millor.", hints: ["Torna a l'exemple de natura/nosaltres del principi i millora'l.", "Pensa en un moment concret (una prova, la simulació, un estand) que t'hagi fet fer un salt."] }
     ]
   },
 
-  exitTicketType: "formulari_google",
+  // ── EXIT TIQUET (= exercici individual tipus PAU) ─────────
+  exitTicketType: "paper",
   exitTicketQuestions: [
-    { id: "q1", type: "open", text: "Explica la resolució de l'enigma de la cotorra argentina. Quins 4 factors expliquen per quina raó la cotorra ha desplaçat els teuladins del pati? Relaciona cada factor amb la sessió on ho has après.", hint: "S1: nínxol ecològic. S2: competència tròfica (mateix nivell). S3: principi d'exclusió competitiva + avantatges de la cotorra (nius, agressivitat). S4: espècie invasora sense depredadors naturals." },
-    { id: "q2", type: "open", text: "Proposa 2 mesures per millorar la biodiversitat del pati de l'escola. Per a cada mesura, explica: Què faries exactament? A qui beneficiaries? Per quina raó seria eficaç ecològicament?", hint: "Exemples possibles: instal·lar caixes nius per a teuladins, plantar arbustos autòctons florits, crear una zona de compostatge, reduir la il·luminació nocturna, instal·lar un hotel d'insectes." },
-    { id: "q3", type: "multiple", text: "Quina és la principal causa de pèrdua de biodiversitat al planeta?", options: ["Les espècies invasores", "La contaminació dels rius", "La destrucció i fragmentació d'hàbitats", "La caça furtiva"], correct: 2 },
-    { id: "q4", type: "open", text: "Compara la biodiversitat de dos ecosistemes: un camp de monocultiu de blat i un bosc mediterrani. Quin és més resilient a una plaga d'insectes? Per quina raó?", hint: "Resiliència = capacitat de recuperar-se d'una pertorbació. En el monocultiu, si el blat desapareix no hi ha alternatives. Al bosc mediterrani, altres plantes poden ocupar el buit i mantenir els cicles." }
+    { id: "q1", type: "open", text: "El peix globus és molt tòxic (té tetrodotoxina), però hi ha una serp que se'l menja sense morir: amb els anys, poblacions senceres de la serp s'han fet resistents al verí. Explica aquest cas amb la cadena mutació → variabilitat → selecció → canvi, assenyalant quin pas és a l'atzar i quin depèn de l'ambient.", hint: "La mutació de resistència apareix a l'atzar; el verí del peix globus (ambient) selecciona les serps que ja la tenien." },
+    { id: "q2", type: "multiple", text: "Molts humans adults poden digerir la llet (persistència de la lactasa) perquè els seus avantpassats eren ramaders. Quina explicació és correcta segons el neodarwinisme?", options: ["Ja hi havia persones amb una mutació que mantenia la lactasa activa d'adults; en poblacions ramaderes tenien avantatge, sobrevivien i es reproduïen més, i van transmetre el gen", "Els avantpassats van beure tanta llet que el seu cos es va acostumar i van passar aquesta capacitat als fills", "Tots els humans van decidir alhora poder digerir la llet perquè els convenia", "La capacitat de digerir la llet no té res a veure amb l'evolució"], correct: 0 },
+    { id: "q3", type: "open", text: "En un dels dos casos anteriors, escriu com l'explicaria (malament) el lamarckisme i digues quina prova concreta descartaria aquesta explicació lamarckiana.", hint: "Lamarck diria que l'ús/l'esforç desenvolupa el tret i es transmet; la prova: els caràcters adquirits durant la vida no passen als fills pels gens." }
   ],
 
-  homework: null,
+  // ── METACOGNICIÓ ─────────────────────────────────────────
+  metacognition: {
+    prompt: "Tanquem la situació i el trimestre. Torna a l'enigma inicial (natura o nosaltres): el respondries igual que al principi? Quina idea de tota la situació t'ha canviat més la manera de mirar els éssers vius, i quin moment concret (una prova, la simulació, un estand del museu) t'ha fet fer el salt? Què t'agradaria entendre millor sobre l'evolució?",
+    type: "reflection"
+  },
+
+  // ── FEINA A CASA ─────────────────────────────────────────
+  homework: {
+    description: "Cap tasca nova: la situació es tanca avui. Repassa la graella de les quatre teories i les proves de l'evolució de cara a la prova d'avaluació del trimestre.",
+    deadline: null,
+    note: "Fi de la SA5 i del segon trimestre. La targeta-cas i l'exercici PAU d'avui són la demostració avaluable de tota la situació."
+  },
+
+  // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
-    "Llegeix la teoria d'aquesta pàgina (biodiversitat, amenaces HIPPO, espècies invasores, resolució enigma)",
-    "Omple la taula HIPPO (5 amenaces + exemple local + mesura)",
-    "Escriu la resolució de l'enigma de la cotorra (4 factors)",
-    "Omple la fitxa S4 apartats 0-3",
-    "Lliura el formulari Google de l'exit tiquet"
+    "Llegeix l'apartat EXPLICA: la targeta-cas amb els quatre eixos, selecció natural vs artificial (domesticació), l'habilitat PAU d'analitzar un cas des de les quatre teories i com la ciència es revisa",
+    "Estudia la Fig.1 (targeta-cas resolta de la gallina del pati) i fes tu la Fig.2 en blanc amb un organisme del pati que triïs",
+    "Descarrega la fitxa S20 i completa la teva targeta-cas i la rúbrica de coavaluació",
+    "Fes l'exercici individual tipus PAU (peix globus o lactosa) analitzant el cas des de les quatre teories i corregint l'error lamarckià",
+    "Respon la metacognició de tancament tornant a l'enigma inicial de la situació"
   ],
-  oaLinks: ["OA3", "OA4"], competencies: ["CE4", "CE5", "CE6"]
+
+  // ── COMPETÈNCIES ─────────────────────────────────────────
+  oaLinks: ["OA1", "OA2", "OA3", "OA4"],
+  competencies: ["CE1", "CE2", "CE4"],
+  criterisAvaluacio: ["1.2", "1.3", "2.2", "4.1", "4.2"]
 }

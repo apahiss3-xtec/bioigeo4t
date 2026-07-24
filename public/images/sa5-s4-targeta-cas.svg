@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed',sans-serif">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7E3A24"/><stop offset="1" stop-color="#B4603A"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="748" height="458" rx="16" fill="#fffdfb" stroke="#d3b2a0" stroke-width="2"/>
+  <!-- header -->
+  <rect x="6" y="6" width="748" height="70" rx="16" fill="url(#hdr)"/>
+  <rect x="6" y="46" width="748" height="30" fill="url(#hdr)"/>
+  <text x="30" y="34" fill="#f0d3c2" font-size="12" letter-spacing="2">MUSEU EVOLUTIU DEL PATI · TARGETA-CAS</text>
+  <text x="30" y="60" fill="#ffffff" font-size="26" font-weight="900">Gallina del pati</text>
+  <text x="500" y="40" fill="#f6ece8" font-size="14" font-style="italic">Gallus gallus domesticus</text>
+  <text x="500" y="60" fill="#f0d3c2" font-size="12">avantpassat: gall salvatge de la selva (Gallus gallus)</text>
+  <text x="720" y="34" fill="#f0d3c2" font-size="26" text-anchor="end">🐔</text>
+  <!-- 4 zones grid -->
+  <!-- zone 1 -->
+  <rect x="26" y="92" width="345" height="160" rx="10" fill="#f7ece6" stroke="#d3b2a0" stroke-width="1.5"/>
+  <circle cx="48" cy="114" r="12" fill="#9C4A2F"/><text x="48" y="119" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">1</text>
+  <text x="68" y="119" fill="#7E3A24" font-size="15" font-weight="900">TRET OBSERVAT</text>
+  <text x="40" y="146" fill="#1d1622" font-size="14">Ales petites i pit pesant: gairebé</text>
+  <text x="40" y="166" fill="#1d1622" font-size="14">no vola (s'aixeca menys d'1 m).</text>
+  <text x="40" y="196" fill="#1d1622" font-size="14">Molt més grossa i mansa que el</text>
+  <text x="40" y="216" fill="#1d1622" font-size="14">gall salvatge, que sí que vola i</text>
+  <text x="40" y="236" fill="#1d1622" font-size="14">dorm dalt dels arbres.</text>
+  <!-- zone 2 -->
+  <rect x="389" y="92" width="345" height="160" rx="10" fill="#e6f5f5" stroke="#8fc4c6" stroke-width="1.5"/>
+  <circle cx="411" cy="114" r="12" fill="#2f9aa0"/><text x="411" y="119" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">2</text>
+  <text x="431" y="119" fill="#1c6f70" font-size="15" font-weight="900">ADAPTACIÓ</text>
+  <text x="403" y="145" fill="#155" font-size="12.5" font-weight="700">ESTRUCTURA → FUNCIÓ → AMBIENT</text>
+  <text x="403" y="171" fill="#1d1622" font-size="14">Estructura: cos gros, ales curtes.</text>
+  <text x="403" y="193" fill="#1d1622" font-size="14">Funció: molta carn i ous; no li cal</text>
+  <text x="403" y="213" fill="#1d1622" font-size="14">volar per fugir ni buscar menjar.</text>
+  <text x="403" y="235" fill="#1d1622" font-size="14">Ambient: el corral, protegit i amb</text>
+  <text x="403" y="243" fill="#1d1622" font-size="14"> </text>
+  <!-- zone 3 -->
+  <rect x="26" y="266" width="345" height="180" rx="10" fill="#fdf7e2" stroke="#d9bd6a" stroke-width="1.5"/>
+  <circle cx="48" cy="288" r="12" fill="#C8960A"/><text x="48" y="293" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">3</text>
+  <text x="68" y="293" fill="#7a5800" font-size="15" font-weight="900">PROVA DE L'EVOLUCIÓ</text>
+  <rect x="40" y="304" width="230" height="22" rx="11" fill="#C8960A"/>
+  <text x="155" y="319" fill="#fff" font-size="12.5" font-weight="700" text-anchor="middle">SELECCIÓ ARTIFICIAL (domesticació)</text>
+  <text x="40" y="348" fill="#1d1622" font-size="14">No la tria l'ambient, la triem</text>
+  <text x="40" y="368" fill="#1d1622" font-size="14">NOSALTRES: durant segles hem</text>
+  <text x="40" y="388" fill="#1d1622" font-size="14">criat les gallines més grosses i</text>
+  <text x="40" y="408" fill="#1d1622" font-size="14">manses. Darwin va fer servir la</text>
+  <text x="40" y="428" fill="#1d1622" font-size="14">domesticació com a «prova viva».</text>
+  <!-- zone 4 -->
+  <rect x="389" y="266" width="345" height="180" rx="10" fill="#f1eaf4" stroke="#b592c6" stroke-width="1.5"/>
+  <circle cx="411" cy="288" r="12" fill="#8a5a9e"/><text x="411" y="293" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">4</text>
+  <text x="431" y="293" fill="#6a3f7e" font-size="15" font-weight="900">LAMARCK vs NEODARWINISME</text>
+  <text x="403" y="322" fill="#b02a2a" font-size="13" font-weight="700">✗ Lamarck (FALS):</text>
+  <text x="403" y="342" fill="#1d1622" font-size="13.5">«De tant no volar, van perdre la</text>
+  <text x="403" y="360" fill="#1d1622" font-size="13.5">capacitat i la van passar als fills.»</text>
+  <text x="403" y="388" fill="#1a7a3a" font-size="13" font-weight="700">✓ Neodarwinisme:</text>
+  <text x="403" y="408" fill="#1d1622" font-size="13.5">Vam triar per criar les que ja</text>
+  <text x="403" y="426" fill="#1d1622" font-size="13.5">tenien gens de cos gros; l'herència</text>
+  <text x="403" y="444" fill="#1d1622" font-size="13.5">genètica ho fixa, no l'esforç.</text>
+</svg>

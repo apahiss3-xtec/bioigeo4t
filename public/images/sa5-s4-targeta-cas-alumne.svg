@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed',sans-serif">
+  <defs>
+    <linearGradient id="hdr" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7E3A24"/><stop offset="1" stop-color="#B4603A"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="6" width="748" height="458" rx="16" fill="#fffdfb" stroke="#d3b2a0" stroke-width="2"/>
+  <rect x="6" y="6" width="748" height="70" rx="16" fill="url(#hdr)"/>
+  <rect x="6" y="46" width="748" height="30" fill="url(#hdr)"/>
+  <text x="30" y="34" fill="#f0d3c2" font-size="12" letter-spacing="2">MUSEU EVOLUTIU DEL PATI · TARGETA-CAS</text>
+  <text x="30" y="62" fill="#ffffff" font-size="22" font-weight="900">El meu organisme: ______________________</text>
+  <text x="500" y="34" fill="#f0d3c2" font-size="12">nom científic: _______________</text>
+  <text x="720" y="34" fill="#f0d3c2" font-size="24" text-anchor="end">🔍</text>
+  <!-- zone 1 -->
+  <rect x="26" y="92" width="345" height="160" rx="10" fill="#f7ece6" stroke="#d3b2a0" stroke-width="1.5"/>
+  <circle cx="48" cy="114" r="12" fill="#9C4A2F"/><text x="48" y="119" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">1</text>
+  <text x="68" y="119" fill="#7E3A24" font-size="15" font-weight="900">TRET OBSERVAT</text>
+  <line x1="40" y1="152" x2="356" y2="152" stroke="#d3b2a0" stroke-width="1"/>
+  <line x1="40" y1="182" x2="356" y2="182" stroke="#d3b2a0" stroke-width="1"/>
+  <line x1="40" y1="212" x2="356" y2="212" stroke="#d3b2a0" stroke-width="1"/>
+  <line x1="40" y1="242" x2="356" y2="242" stroke="#d3b2a0" stroke-width="1"/>
+  <!-- zone 2 -->
+  <rect x="389" y="92" width="345" height="160" rx="10" fill="#e6f5f5" stroke="#8fc4c6" stroke-width="1.5"/>
+  <circle cx="411" cy="114" r="12" fill="#2f9aa0"/><text x="411" y="119" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">2</text>
+  <text x="431" y="119" fill="#1c6f70" font-size="15" font-weight="900">ADAPTACIÓ</text>
+  <text x="403" y="143" fill="#155" font-size="12" font-weight="700">ESTRUCTURA → FUNCIÓ → AMBIENT</text>
+  <line x1="403" y1="170" x2="719" y2="170" stroke="#8fc4c6" stroke-width="1"/>
+  <line x1="403" y1="200" x2="719" y2="200" stroke="#8fc4c6" stroke-width="1"/>
+  <line x1="403" y1="230" x2="719" y2="230" stroke="#8fc4c6" stroke-width="1"/>
+  <!-- zone 3 -->
+  <rect x="26" y="266" width="345" height="180" rx="10" fill="#fdf7e2" stroke="#d9bd6a" stroke-width="1.5"/>
+  <circle cx="48" cy="288" r="12" fill="#C8960A"/><text x="48" y="293" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">3</text>
+  <text x="68" y="293" fill="#7a5800" font-size="15" font-weight="900">PROVA DE L'EVOLUCIÓ</text>
+  <text x="40" y="316" fill="#7a5800" font-size="11.5">(homologia / analogia / vestigial / adaptació /</text>
+  <text x="40" y="332" fill="#7a5800" font-size="11.5">selecció artificial) — encercla i explica:</text>
+  <line x1="40" y1="360" x2="356" y2="360" stroke="#d9bd6a" stroke-width="1"/>
+  <line x1="40" y1="390" x2="356" y2="390" stroke="#d9bd6a" stroke-width="1"/>
+  <line x1="40" y1="420" x2="356" y2="420" stroke="#d9bd6a" stroke-width="1"/>
+  <!-- zone 4 -->
+  <rect x="389" y="266" width="345" height="180" rx="10" fill="#f1eaf4" stroke="#b592c6" stroke-width="1.5"/>
+  <circle cx="411" cy="288" r="12" fill="#8a5a9e"/><text x="411" y="293" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">4</text>
+  <text x="431" y="293" fill="#6a3f7e" font-size="15" font-weight="900">LAMARCK vs NEODARWINISME</text>
+  <text x="403" y="320" fill="#b02a2a" font-size="13" font-weight="700">✗ Lamarck (fals):</text>
+  <line x1="403" y1="342" x2="719" y2="342" stroke="#b592c6" stroke-width="1"/>
+  <line x1="403" y1="366" x2="719" y2="366" stroke="#b592c6" stroke-width="1"/>
+  <text x="403" y="392" fill="#1a7a3a" font-size="13" font-weight="700">✓ Neodarwinisme:</text>
+  <line x1="403" y1="414" x2="719" y2="414" stroke="#b592c6" stroke-width="1"/>
+  <line x1="403" y1="438" x2="719" y2="438" stroke="#b592c6" stroke-width="1"/>
+</svg>
