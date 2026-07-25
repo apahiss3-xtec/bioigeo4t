@@ -31,8 +31,7 @@
   <text x="403" y="171" fill="#1d1622" font-size="14">Estructura: cos gros, ales curtes.</text>
   <text x="403" y="193" fill="#1d1622" font-size="14">Funció: molta carn i ous; no li cal</text>
   <text x="403" y="213" fill="#1d1622" font-size="14">volar per fugir ni buscar menjar.</text>
-  <text x="403" y="235" fill="#1d1622" font-size="14">Ambient: el corral, protegit i amb</text>
-  <text x="403" y="243" fill="#1d1622" font-size="14"> </text>
+  <text x="403" y="235" fill="#1d1622" font-size="14">Ambient: corral protegit, menjar segur.</text>
   <!-- zone 3 -->
   <rect x="26" y="266" width="345" height="180" rx="10" fill="#fdf7e2" stroke="#d9bd6a" stroke-width="1.5"/>
   <circle cx="48" cy="288" r="12" fill="#C8960A"/><text x="48" y="293" fill="#fff" font-size="14" font-weight="900" text-anchor="middle">3</text>
