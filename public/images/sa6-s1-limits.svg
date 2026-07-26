@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="'Fira Sans Extra Condensed',sans-serif">
+  <rect width="760" height="340" fill="#fbfcfd"/>
+  <text x="380" y="28" text-anchor="middle" font-size="19" font-weight="900" fill="#2A3D4C">Els tres tipus de límits entre plaques</text>
+  <!-- DIVERGENT -->
+  <rect x="20" y="50" width="230" height="255" rx="10" fill="#eef3f6" stroke="#c3d2db"/>
+  <text x="135" y="74" text-anchor="middle" font-size="15" font-weight="900" fill="#3A5266">DIVERGENT</text>
+  <rect x="45" y="120" width="80" height="46" fill="#8a97a3"/>
+  <rect x="145" y="120" width="80" height="46" fill="#8a97a3"/>
+  <polygon points="125,120 145,120 135,90" fill="#b5482e"/>
+  <text x="180" y="100" text-anchor="middle" font-size="10" fill="#b5482e" font-weight="700">magma</text>
+  <line x1="90" y1="185" x2="55" y2="185" stroke="#3A5266" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="180" y1="185" x2="215" y2="185" stroke="#3A5266" stroke-width="3" marker-end="url(#a)"/>
+  <text x="135" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#2A3D4C">Es CREA escorça nova</text>
+  <text x="135" y="235" text-anchor="middle" font-size="11" fill="#5c7285">Les plaques se separen</text>
+  <text x="135" y="270" text-anchor="middle" font-size="11.5" font-style="italic" fill="#7a4a2a">Dorsal oceànica</text>
+  <!-- CONVERGENT -->
+  <rect x="265" y="50" width="230" height="255" rx="10" fill="#eef3f6" stroke="#c3d2db"/>
+  <text x="380" y="74" text-anchor="middle" font-size="15" font-weight="900" fill="#3A5266">CONVERGENT</text>
+  <rect x="290" y="120" width="90" height="46" fill="#8a97a3"/>
+  <polygon points="380,120 470,120 470,166 400,166" fill="#6f7d89"/>
+  <path d="M380 166 L400 200 L380 205 Z" fill="#5a6874"/>
+  <text x="345" y="112" text-anchor="middle" font-size="10" fill="#2A3D4C">fossa</text>
+  <line x1="330" y1="185" x2="365" y2="185" stroke="#3A5266" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="440" y1="185" x2="405" y2="185" stroke="#3A5266" stroke-width="3" marker-end="url(#a)"/>
+  <text x="380" y="222" text-anchor="middle" font-size="12" font-weight="700" fill="#2A3D4C">Es DESTRUEIX o s'ARRUGA</text>
+  <text x="380" y="242" text-anchor="middle" font-size="11" fill="#5c7285">Una placa s'enfonsa (subducció)</text>
+  <text x="380" y="272" text-anchor="middle" font-size="11.5" font-style="italic" fill="#7a4a2a">Fossa · orogen (muntanyes)</text>
+  <!-- TRANSFORMANT -->
+  <rect x="510" y="50" width="230" height="255" rx="10" fill="#eef3f6" stroke="#c3d2db"/>
+  <text x="625" y="74" text-anchor="middle" font-size="15" font-weight="900" fill="#3A5266">TRANSFORMANT</text>
+  <rect x="535" y="120" width="90" height="46" fill="#8a97a3"/>
+  <rect x="625" y="120" width="90" height="46" fill="#9aa6b1"/>
+  <line x1="625" y1="110" x2="625" y2="176" stroke="#b5482e" stroke-width="3" stroke-dasharray="5,4"/>
+  <line x1="560" y1="143" x2="600" y2="143" stroke="#3A5266" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="690" y1="143" x2="650" y2="143" stroke="#3A5266" stroke-width="3" marker-end="url(#a)"/>
+  <text x="625" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#2A3D4C">Ni es crea ni es destrueix</text>
+  <text x="625" y="235" text-anchor="middle" font-size="11" fill="#5c7285">Les plaques LLISQUEN de costat</text>
+  <text x="625" y="270" text-anchor="middle" font-size="11.5" font-style="italic" fill="#7a4a2a">Grans terratrèmols</text>
+  <defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#3A5266"/></marker></defs>
+</svg>

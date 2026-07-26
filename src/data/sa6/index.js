@@ -1,26 +1,26 @@
 export const sa6 = {
   id: "sa6",
-  title: "El planeta que s'escalfa",
-  subtitle: "Quant contamina el meu esmorzar?",
+  title: "Un planeta viu i inquiet",
+  subtitle: "Com reconstruïm la història d'un planeta que ningú va veure néixer?",
   biome: "sa6",
-  color: { primary: '#B3661F', accent: '#A05518' },
-  sessions: 4,
+  color: { primary: '#3A5266', accent: '#C0872E' },
+  sessions: 5,
   portadaImage: "/images/sa6-portada.jpg",
-  description: "Descobriràs que les decisions quotidianes —el que mengem, la llum que deixem encesa, el transport que triem— tenen un impacte real en el clima del planeta. Aprendràs a calcular la petjada de carboni del teu esmorzar, a distingir les energies renovables de les fòssils, a identificar el greenwashing i a dissenyar una acció concreta de millora per a la nostra escola.",
-  product: "Proposta d'acció escolar: disseny d'una mesura concreta i viable per reduir la petjada de carboni de l'escola (menú, energia, mobilitat, residus). Avaluada per un comitè d'iguals amb rúbrica d'evidència i viabilitat.",
+  description: "Actuaràs com a geòleg o geòloga d'un planeta molt semblant a la Terra i n'hauràs de reconstruir la història. A partir de proves —l'encaix dels continents, els fòssils guia, les roques, les serralades i els terratrèmols— entendràs que la superfície del planeta es mou, que les roques guarden memòria del passat i que llegir aquesta memòria permet deduir què va passar fa milions d'anys. En paral·lel, analitzaràs els riscos naturals reals del teu propi territori, les Terres de l'Ebre, i proposaràs mesures per reduir-los.",
+  product: "Vídeo divulgatiu «Gondwana Tales»: reconstrucció de la història geològica del planeta analitzat, justificada amb dades i amb el lèxic geològic (dorsal, límit transformant, fossa de subducció, cicle de Wilson…). Coavaluat per rúbrica. A més, un informe individual de riscos naturals d'un indret real.",
   enigmas: [
     {
       id: "enigma1",
-      title: "El bocadillo de pernil",
-      description: "Un bocadillo de pernil ibèric emet aproximadament 500 grams de CO₂ equivalent (gCO₂eq), mentre que un bocadillo de formatge fresc n'emet unes 100 grams — cinc vegades menys. Totes dues opcions tenen un pes i un valor nutritiu similars. Per quina raó la diferència d'impacte climàtic és tan gran? Al final de la SA entendràs el cicle de vida complet del pernil i sabràs per quina raó la ramaderia és una de les fonts d'emissions més importants del planeta."
+      title: "El planeta amb memòria",
+      description: "Ningú de nosaltres hi era fa 300 milions d'anys, quan tots els continents formaven una sola massa. Aleshores, com és que els geòlegs poden dir amb seguretat que estaven junts i que després es van separar? La resposta és que el planeta guarda memòria del seu passat: a les roques, als fòssils, a la forma de les costes i a la distribució dels terratrèmols hi ha proves que, ben llegides, expliquen la seva història. Al final de la situació sabràs llegir aquesta memòria i reconstruir la història d'un planeta sencer."
     }
   ],
   objectives: [
-    { id: "OA1", text: "Canvi climàtic: causes i mecanisme", desc: "Explicar el mecanisme de l'efecte hivernacle natural i la seva amplificació per l'activitat humana, identificar els principals gasos d'efecte hivernacle (CO₂, CH₄, N₂O), relacionar les causes del canvi climàtic amb les conseqüències observables (temperatura, glaceres, nivell del mar, fenòmens extrems) i argumentar per quina raó les evidències científiques son àmpliament consensuades" },
-    { id: "OA2", text: "Fonts d'energia renovables i no renovables", desc: "Distingir les fonts d'energia renovables (solar, eòlica, hidràulica, biomassa, geotèrmica) de les no renovables (combustibles fòssils: carbó, petroli, gas natural; energia nuclear), relacionar el consum de combustibles fòssils amb les emissions de CO₂ i argumentar per quina raó la transició energètica és necessària per a la mitigació del canvi climàtic" },
-    { id: "OA3", text: "Petjada de carboni i consum responsable (CE5)", desc: "Calcular i interpretar la petjada de carboni d'activitats quotidianes (alimentació, transport, energia a la llar), identificar les accions individuals i col·lectives que redueixen les emissions, distingir entre reducció, reutilització i reciclatge i argumentar per quina raó la reducció és la mesura més efectiva de les tres R" },
-    { id: "OA4", text: "Avaluació crítica de fonts i greenwashing (CE2)", desc: "Identificar tàctiques de greenwashing en anuncis i etiquetes reals, aplicar criteris de credibilitat (autoria, evidència, transparència, consens científic) per avaluar la fiabilitat d'una font ambiental i argumentar una postura fonamentada sobre un discurs ambiental contradictori (negacionisme vs alarmisme)" }
+    { id: "OA1", text: "Deriva continental i tectònica de plaques (CE1, CE6)", desc: "Explicar la deriva continental de Wegener i les proves que la sostenen (encaix de continents, fòssils guia iguals a continents separats, continuïtat de roques i serralades), descriure la tectònica de plaques i els tipus de límits (divergent, convergent, transformant) i relacionar-los amb el seu motor, la convecció del mantell." },
+    { id: "OA2", text: "Reconstrucció del passat geològic (CE6)", desc: "Deduir la història d'un paisatge o d'un planeta a partir de mapes, columnes, registres estratigràfics i fòssils guia, aplicant els principis geològics bàsics (horitzontalitat, superposició, actualisme) i el cicle de Wilson." },
+    { id: "OA3", text: "Riscos naturals i mitigació (CE5, CE6)", desc: "Identificar els principals riscos geològics d'un indret real (sísmic, volcànic, inundacions, esllavissades) en funció de la litologia, el relleu i la vegetació, analitzar com l'acció humana i l'escalfament global els poden intensificar i proposar mesures de prevenció i correcció." },
+    { id: "OA4", text: "Comunicació científica geològica (CE1, CE3)", desc: "Comunicar la reconstrucció de la història geològica en un vídeo divulgatiu i un informe de riscos, argumentant les conclusions a partir de les dades i utilitzant amb precisió el lèxic geològic." }
   ],
-  competencies: ["CE2", "CE5"],
+  competencies: ["CE1", "CE3", "CE5", "CE6"],
   flippedClassroom: false
 }

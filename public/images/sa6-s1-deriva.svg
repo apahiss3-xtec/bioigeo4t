@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" font-family="'Fira Sans Extra Condensed',sans-serif">
+  <rect width="720" height="430" fill="#fbfcfd"/>
+  <text x="360" y="30" text-anchor="middle" font-size="20" font-weight="900" fill="#2A3D4C">Les proves que dos continents van estar units</text>
+  <!-- ocean -->
+  <rect x="40" y="60" width="640" height="290" rx="8" fill="#dce8ef"/>
+  <text x="360" y="345" text-anchor="middle" font-size="13" font-style="italic" fill="#5c7285">Oceà que avui els separa</text>
+  <!-- left continent (fits with right) -->
+  <path d="M40 80 L300 80 L300 130 L270 165 L300 200 L270 240 L300 275 L300 330 L40 330 Z" fill="#c9b48f" stroke="#8a7550" stroke-width="2"/>
+  <!-- right continent (mirror fit) -->
+  <path d="M680 80 L360 80 L360 130 L390 165 L360 200 L390 240 L360 275 L360 330 L680 330 Z" fill="#c9b48f" stroke="#8a7550" stroke-width="2"/>
+  <text x="150" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#5c4d33">Continent A</text>
+  <text x="540" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#5c4d33">Continent B</text>
+  <!-- mountain range crossing (brown zigzag both sides) -->
+  <polyline points="230,150 250,135 270,150 290,138" fill="none" stroke="#7a4a2a" stroke-width="4"/>
+  <polyline points="390,138 410,150 430,135 450,150" fill="none" stroke="#7a4a2a" stroke-width="4"/>
+  <text x="360" y="150" text-anchor="middle" font-size="11" fill="#7a4a2a" font-weight="700">serralada</text>
+  <!-- fossil reptile markers near fitting edge -->
+  <circle cx="278" cy="215" r="12" fill="#3A5266"/><text x="278" y="219" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">R</text>
+  <circle cx="382" cy="215" r="12" fill="#3A5266"/><text x="382" y="219" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">R</text>
+  <!-- fossil fern markers -->
+  <rect x="255" y="288" width="22" height="22" rx="4" fill="#C0872E"/><text x="266" y="304" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">F</text>
+  <rect x="383" y="288" width="22" height="22" rx="4" fill="#C0872E"/><text x="394" y="304" text-anchor="middle" font-size="12" font-weight="900" fill="#fff">F</text>
+  <!-- legend -->
+  <text x="40" y="378" font-size="12.5" fill="#2A3D4C"><tspan font-weight="700">Proves:</tspan> les costes <tspan font-weight="700">encaixen</tspan>  ·  <tspan fill="#3A5266" font-weight="900">R</tspan> = mateix rèptil terrestre fòssil a les dues costes  ·  <tspan fill="#C0872E" font-weight="900">F</tspan> = mateixa falguera</text>
+  <text x="40" y="400" font-size="12.5" fill="#2A3D4C">La serralada <tspan font-weight="700">continua</tspan> d'un continent a l'altre. Un rèptil terrestre no pot travessar l'oceà: van estar <tspan font-weight="700">junts</tspan>.</text>
+</svg>
