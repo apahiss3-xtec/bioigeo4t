@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 430" font-family="'Fira Sans Extra Condensed',sans-serif">
+  <rect x="0" y="0" width="720" height="430" fill="#fdfefe"/>
+  <text x="360" y="26" text-anchor="middle" font-size="19" font-weight="900" fill="#2A3D4C">El cicle de Wilson: la vida d'un oceà</text>
+
+  <!-- 4 panels 2x2 -->
+  <!-- panel 1 NEIX -->
+  <g>
+    <rect x="30" y="45" width="310" height="160" rx="8" fill="#eef3f6" stroke="#b7ccd8"/>
+    <text x="45" y="66" font-size="13" font-weight="900" fill="#3A5266">1 · NEIX</text>
+    <rect x="45" y="120" width="130" height="55" fill="#7a8b4a"/>
+    <rect x="195" y="120" width="130" height="55" fill="#7a8b4a"/>
+    <polygon points="185,120 170,100 200,100" fill="#c0392b"/>
+    <line x1="185" y1="175" x2="185" y2="120" stroke="#c0392b" stroke-width="2" stroke-dasharray="4"/>
+    <text x="185" y="95" text-anchor="middle" font-size="10" font-weight="700" fill="#c0392b">rift</text>
+    <text x="185" y="192" text-anchor="middle" font-size="11" fill="#33404b">Un continent es trenca · ex: Rift africà</text>
+  </g>
+  <!-- panel 2 CREIX -->
+  <g>
+    <rect x="380" y="45" width="310" height="160" rx="8" fill="#eef3f6" stroke="#b7ccd8"/>
+    <text x="395" y="66" font-size="13" font-weight="900" fill="#3A5266">2 · CREIX</text>
+    <rect x="395" y="120" width="90" height="55" fill="#7a8b4a"/>
+    <rect x="585" y="120" width="90" height="55" fill="#7a8b4a"/>
+    <rect x="485" y="140" width="100" height="35" fill="#2f6f8a"/>
+    <polygon points="535,140 522,122 548,122" fill="#c0392b"/>
+    <text x="535" y="117" text-anchor="middle" font-size="10" font-weight="700" fill="#c0392b">dorsal</text>
+    <text x="535" y="192" text-anchor="middle" font-size="11" fill="#33404b">La dorsal fabrica escorça · ex: Atlàntic</text>
+  </g>
+  <!-- panel 3 ES TANCA -->
+  <g>
+    <rect x="30" y="230" width="310" height="160" rx="8" fill="#eef3f6" stroke="#b7ccd8"/>
+    <text x="45" y="251" font-size="13" font-weight="900" fill="#3A5266">3 · ES TANCA</text>
+    <rect x="45" y="305" width="95" height="55" fill="#7a8b4a"/>
+    <rect x="230" y="305" width="95" height="55" fill="#7a8b4a"/>
+    <rect x="140" y="322" width="90" height="38" fill="#2f6f8a"/>
+    <path d="M140,305 L110,360" stroke="#2A3D4C" stroke-width="3"/>
+    <text x="120" y="300" text-anchor="middle" font-size="10" font-weight="700" fill="#2A3D4C">subducció</text>
+    <text x="185" y="378" text-anchor="middle" font-size="11" fill="#33404b">Subducció als marges · ex: Pacífic</text>
+  </g>
+  <!-- panel 4 DESAPAREIX -->
+  <g>
+    <rect x="380" y="230" width="310" height="160" rx="8" fill="#eef3f6" stroke="#b7ccd8"/>
+    <text x="395" y="251" font-size="13" font-weight="900" fill="#3A5266">4 · DESAPAREIX</text>
+    <rect x="395" y="305" width="140" height="55" fill="#7a8b4a"/>
+    <rect x="535" y="305" width="140" height="55" fill="#7a8b4a"/>
+    <polygon points="505,305 535,272 565,305" fill="#8a6d3b"/>
+    <text x="620" y="292" text-anchor="middle" font-size="10" font-weight="700" fill="#8a6d3b">serralada</text>
+    <text x="535" y="378" text-anchor="middle" font-size="11" fill="#33404b">Els continents xoquen · ex: Himàlaia</text>
+  </g>
+  <text x="360" y="416" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5c7285">Un oceà neix, creix, es tanca i desapareix: mira els límits per saber en quina fase és.</text>
+</svg>

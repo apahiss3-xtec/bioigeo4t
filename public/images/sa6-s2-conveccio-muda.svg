@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" font-family="'Fira Sans Extra Condensed',sans-serif">
+  <defs>
+    <linearGradient id="mant" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e8964a"/><stop offset="1" stop-color="#8a2f14"/>
+    </linearGradient>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#3A5266"/>
+    </marker>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#fff"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="720" height="420" fill="#fdfefe"/>
+  <text x="360" y="26" text-anchor="middle" font-size="19" font-weight="900" fill="#2A3D4C">La convecció del mantell: dedueix que passa a cada límit</text>
+
+  <!-- mantle box -->
+  <rect x="40" y="120" width="640" height="250" rx="6" fill="url(#mant)"/>
+  <text x="655" y="240" text-anchor="end" font-size="13" font-style="italic" fill="#ffe9d6">Mantell (roca calenta que flueix a poc a poc)</text>
+
+  <!-- lithosphere plates on top -->
+  <rect x="40" y="108" width="290" height="20" fill="#5b6b77"/>
+  <rect x="390" y="108" width="290" height="20" fill="#5b6b77"/>
+  <text x="185" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">PLACA</text>
+  <text x="535" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">PLACA</text>
+
+  <!-- convection cells arrows (rising centre, spreading, sinking sides) -->
+  <!-- rising centre -->
+  <line x1="360" y1="350" x2="360" y2="140" stroke="#fff" stroke-width="3" marker-end="url(#arw)"/>
+  <!-- spread to left -->
+  <path d="M360,145 C300,145 240,150 180,150" fill="none" stroke="#fff" stroke-width="3" marker-end="url(#arw)"/>
+  <!-- spread to right -->
+  <path d="M360,145 C420,145 480,150 540,150" fill="none" stroke="#fff" stroke-width="3" marker-end="url(#arw)"/>
+  <!-- sink left -->
+  <line x1="150" y1="155" x2="150" y2="345" stroke="#fff" stroke-width="3" marker-end="url(#arw)"/>
+  <!-- sink right -->
+  <line x1="570" y1="155" x2="570" y2="345" stroke="#fff" stroke-width="3" marker-end="url(#arw)"/>
+  <!-- return to centre bottom -->
+  <path d="M155,350 C240,365 300,358 355,352" fill="none" stroke="#fff" stroke-width="2.5" marker-end="url(#arw)"/>
+  <path d="M565,350 C480,365 420,358 365,352" fill="none" stroke="#fff" stroke-width="2.5" marker-end="url(#arw)"/>
+
+  <!-- SUBDUCTION right (symmetric) -->
+  <path d="M680,108 L570,150" stroke="#2A3D4C" stroke-width="3"/>
+  <text x="625" y="98" text-anchor="middle" font-size="12" font-weight="900" fill="#2A3D4C">SUBDUCCIÓ</text>
+  <!-- DORSAL at centre -->
+  <polygon points="360,108 348,90 372,90" fill="#c0392b"/>
+  <text x="360" y="82" text-anchor="middle" font-size="12" font-weight="900" fill="#c0392b">DORSAL</text>
+
+  <!-- SUBDUCTION left -->
+  <path d="M40,108 L150,150" stroke="#2A3D4C" stroke-width="3"/>
+  <text x="95" y="98" text-anchor="middle" font-size="12" font-weight="900" fill="#2A3D4C">SUBDUCCIÓ</text>
+
+  <text x="360" y="405" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5c7285">Observa les fletxes: on puja el material i on baixa? I que hi passa amb l&#8217;escorca a cada limit?</text>
+</svg>
