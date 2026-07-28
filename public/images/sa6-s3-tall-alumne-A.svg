@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 760 490" width="760" height="490">
+<title>Tall geologic sector nord</title>
+<rect width="760" height="490" fill="#fdfefe"/>
+<defs><pattern id="hx" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#8a9aa4"/><line x1="0" y1="0" x2="0" y2="8" stroke="#6d7f8a" stroke-width="1.5"/></pattern></defs>
+<text x="380.0" y="30" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="17" font-weight="900" fill="#3A5266" text-anchor="middle">TALL GEOL&#210;GIC DEL PLANETA &#183; sector nord</text>
+<text x="380.0" y="50" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="12" font-weight="400" fill="#5c7285" text-anchor="middle">Ordena tots els esdeveniments i justifica cada pas</text>
+<defs><clipPath id="lowA"><path d="M-20,216 Q2.0,208 24,216 Q46.0,224 68,216 Q90.0,208 112,216 Q134.0,224 156,216 Q178.0,208 200,216 Q222.0,224 244,216 Q266.0,208 288,216 Q310.0,224 332,216 Q354.0,208 376,216 Q398.0,224 420,216 Q442.0,208 464,216 Q486.0,224 508,216 Q530.0,208 552,216 Q574.0,224 596,216 Q618.0,208 640,216 Q662.0,224 684,216 Q706.0,208 728,216 Q750.0,224 772,216 Q776.0,208 780,216  L780,604 L-20,604 Z"/></clipPath><clipPath id="uppA"><path d="M-20,216 Q2.0,208 24,216 Q46.0,224 68,216 Q90.0,208 112,216 Q134.0,224 156,216 Q178.0,208 200,216 Q222.0,224 244,216 Q266.0,208 288,216 Q310.0,224 332,216 Q354.0,208 376,216 Q398.0,224 420,216 Q442.0,208 464,216 Q486.0,224 508,216 Q530.0,208 552,216 Q574.0,224 596,216 Q618.0,208 640,216 Q662.0,224 684,216 Q706.0,208 728,216 Q750.0,224 772,216 Q776.0,208 780,216  L780,34 L-20,34 Z"/></clipPath><clipPath id="frA"><rect x="60" y="74" width="640" height="330"/></clipPath><clipPath id="clA"><path d="M56,54 L520,54 L586,464 L56,464 Z"/></clipPath><clipPath id="crA"><path d="M520,54 L704,54 L704,464 L586,464 Z"/></clipPath><g id="geoA">
+<rect x="-20" y="156" width="800" height="388" fill="url(#hx)"/>
+<g clip-path="url(#lowA)">
+<path d="M-20,216 C170,216 250,106 380,106 C510,106 590,216 780,216 L780,604 L-20,604 Z" fill="#b1895c" stroke="#7a8f9c" stroke-width="1.3"/>
+<path d="M-20,278 C170,278 250,168 380,168 C510,168 590,278 780,278 L780,604 L-20,604 Z" fill="#b9c8d1" stroke="#7a8f9c" stroke-width="1.3"/>
+<path d="M-20,340 C170,340 250,230 380,230 C510,230 590,340 780,340 L780,604 L-20,604 Z" fill="#d9b978" stroke="#7a8f9c" stroke-width="1.3"/>
+<path d="M-20,402 C170,402 250,292 380,292 C510,292 590,402 780,402 L780,604 L-20,604 Z" fill="url(#hx)" stroke="#7a8f9c" stroke-width="1.3"/>
+<ellipse cx="180" cy="300" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="250" cy="262" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="470" cy="262" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="560" cy="300" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+</g>
+<g clip-path="url(#uppA)">
+<rect x="-20" y="158" width="800" height="62" fill="#e8dcc0" stroke="#7a8f9c" stroke-width="1.2"/>
+<rect x="-20" y="108" width="800" height="50" fill="#eef2f4" stroke="#7a8f9c" stroke-width="1.2"/>
+<rect x="-20" y="44" width="800" height="72" fill="#a8c08a" stroke="#7a8f9c" stroke-width="1.2"/>
+</g>
+<path d="M-20,216 Q2.0,208 24,216 Q46.0,224 68,216 Q90.0,208 112,216 Q134.0,224 156,216 Q178.0,208 200,216 Q222.0,224 244,216 Q266.0,208 288,216 Q310.0,224 332,216 Q354.0,208 376,216 Q398.0,224 420,216 Q442.0,208 464,216 Q486.0,224 508,216 Q530.0,208 552,216 Q574.0,224 596,216 Q618.0,208 640,216 Q662.0,224 684,216 Q706.0,208 728,216 Q750.0,224 772,216 Q776.0,208 780,216 " fill="none" stroke="#6d4b17" stroke-width="3.2"/>
+<path d="M298,524 L320,524 L344,159 L320,159 Z" fill="#8c3f3f" stroke="#6d2f2f" stroke-width="1.4"/>
+<line x1="-20" y1="158" x2="780" y2="158" stroke="#7a8f9c" stroke-width="1.4"/>
+</g>
+</defs>
+<g clip-path="url(#frA)"><g clip-path="url(#clA)"><use xlink:href="#geoA"/></g><g clip-path="url(#crA)"><g transform="translate(0,16)"><use xlink:href="#geoA"/></g></g><path d="M520,60 L586,444" stroke="#243440" stroke-width="4.2"/></g>
+<path d="M498,142 l0,-26 m-7,9 l7,-10 l7,10" stroke="#243440" stroke-width="2.6" fill="none"/>
+<path d="M608,300 l0,26 m-7,-9 l7,10 l7,-10" stroke="#243440" stroke-width="2.6" fill="none"/>
+<rect x="60" y="74" width="640" height="330" fill="none" stroke="#2A3D4C" stroke-width="2"/>
+<circle cx="672" cy="100" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="672" y="104.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">F</text>
+<circle cx="672" cy="136" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="672" y="140.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">E</text>
+<circle cx="672" cy="192" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="672" y="196.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">D</text>
+<circle cx="110" cy="240" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="110" y="244.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">C</text>
+<circle cx="130" cy="306" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="130" y="310.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">B</text>
+<circle cx="420" cy="266" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="420" y="270.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">A</text>
+<circle cx="332" cy="300" r="12" fill="#fff" stroke="#6d2f2f" stroke-width="1.8"/><text x="332" y="304.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#6d2f2f" text-anchor="middle">M</text>
+<circle cx="556" cy="368" r="12" fill="#fff" stroke="#243440" stroke-width="1.8"/><text x="556" y="372.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#243440" text-anchor="middle">X</text>
+<text x="60" y="430" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="11.5" font-weight="600" fill="#5c7285" text-anchor="start">A &#183; B &#183; C = capes plegades &#160;&#183;&#160; D &#183; E &#183; F = capes horitzontals &#160;&#183;&#160; M = dic de magma &#160;&#183;&#160; X = falla</text>
+<path d="M60,448 Q74.0,443 88,448 Q102.0,453 116,448 Q130.0,443 144,448 Q157.0,453 170,448 " fill="none" stroke="#6d4b17" stroke-width="3"/>
+<text x="180" y="452" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="11.5" font-weight="400" fill="#6d4b17" text-anchor="start">superf&#237;cie d&#39;erosi&#243; (discord&#224;n&#231;a)</text>
+<rect x="440" y="440" width="14" height="14" fill="url(#hx)" stroke="#7a8f9c"/><text x="460" y="452" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start">roques m&#233;s antigues (basament)</text>
+</svg>

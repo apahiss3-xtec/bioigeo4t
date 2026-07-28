@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 760 500" width="760" height="500">
+<title>Tall geologic per ordenar</title>
+<rect width="760" height="500" fill="#fdfefe"/>
+<defs><pattern id="hx" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#8a9aa4"/><line x1="0" y1="0" x2="0" y2="8" stroke="#6d7f8a" stroke-width="1.5"/></pattern></defs>
+<text x="380.0" y="30" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="17" font-weight="900" fill="#3A5266" text-anchor="middle">TALL GEOL&#210;GIC DEL PLANETA</text>
+<text x="380.0" y="50" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="12" font-weight="400" fill="#5c7285" text-anchor="middle">Ordena els esdeveniments i indica amb quin principi ho decideixes</text>
+<defs><clipPath id="lowg"><path d="M-20,214 Q2.0,206 24,214 Q46.0,222 68,214 Q90.0,206 112,214 Q134.0,222 156,214 Q178.0,206 200,214 Q222.0,222 244,214 Q266.0,206 288,214 Q310.0,222 332,214 Q354.0,206 376,214 Q398.0,222 420,214 Q442.0,206 464,214 Q486.0,222 508,214 Q530.0,206 552,214 Q574.0,222 596,214 Q618.0,206 640,214 Q662.0,222 684,214 Q706.0,206 728,214 Q750.0,222 772,214 Q776.0,206 780,214  L780,604 L-20,604 Z"/></clipPath><clipPath id="uppg"><path d="M-20,214 Q2.0,206 24,214 Q46.0,222 68,214 Q90.0,206 112,214 Q134.0,222 156,214 Q178.0,206 200,214 Q222.0,222 244,214 Q266.0,206 288,214 Q310.0,222 332,214 Q354.0,206 376,214 Q398.0,222 420,214 Q442.0,206 464,214 Q486.0,222 508,214 Q530.0,206 552,214 Q574.0,222 596,214 Q618.0,206 640,214 Q662.0,222 684,214 Q706.0,206 728,214 Q750.0,222 772,214 Q776.0,206 780,214  L780,34 L-20,34 Z"/></clipPath><clipPath id="fr"><rect x="60" y="74" width="640" height="330"/></clipPath><clipPath id="clB"><path d="M56,54 L520,54 L586,464 L56,464 Z"/></clipPath><clipPath id="crB"><path d="M520,54 L704,54 L704,464 L586,464 Z"/></clipPath><g id="geo">
+<rect x="-20" y="154" width="800" height="370" fill="url(#hx)"/>
+<g clip-path="url(#lowg)">
+<polygon points="-20,178.75 780,391.25 780,486.25 -20,273.75" fill="#d9b978" stroke="#7a8f9c" stroke-width="1.3"/>
+<polygon points="-20,83.75 780,296.25 780,391.25 -20,178.75" fill="#b9c8d1" stroke="#7a8f9c" stroke-width="1.3"/>
+<polygon points="-20,-11.25 780,201.25 780,296.25 -20,83.75" fill="#b1895c" stroke="#7a8f9c" stroke-width="1.3"/>
+<ellipse cx="150" cy="262" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="230" cy="300" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="300" cy="350" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="430" cy="330" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="560" cy="300" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+<ellipse cx="650" cy="242" rx="9" ry="4.5" fill="#8a6a2f" opacity=".55"/>
+</g>
+<g clip-path="url(#uppg)">
+<rect x="-20" y="166" width="800" height="58" fill="#e8dcc0" stroke="#7a8f9c" stroke-width="1.2"/>
+<rect x="-20" y="118" width="800" height="48" fill="#eef2f4" stroke="#7a8f9c" stroke-width="1.2"/>
+<rect x="-20" y="44" width="800" height="72" fill="#a8c08a" stroke="#7a8f9c" stroke-width="1.2"/>
+</g>
+<path d="M-20,214 Q2.0,206 24,214 Q46.0,222 68,214 Q90.0,206 112,214 Q134.0,222 156,214 Q178.0,206 200,214 Q222.0,222 244,214 Q266.0,206 288,214 Q310.0,222 332,214 Q354.0,206 376,214 Q398.0,222 420,214 Q442.0,206 464,214 Q486.0,222 508,214 Q530.0,206 552,214 Q574.0,222 596,214 Q618.0,206 640,214 Q662.0,222 684,214 Q706.0,206 728,214 Q750.0,222 772,214 Q776.0,206 780,214 " fill="none" stroke="#6d4b17" stroke-width="3.2"/>
+</g>
+</defs>
+<g clip-path="url(#fr)"><g clip-path="url(#clB)"><use xlink:href="#geo"/></g><g clip-path="url(#crB)"><g transform="translate(0,16)"><use xlink:href="#geo"/></g></g><path d="M520,60 L586,444" stroke="#243440" stroke-width="4.2"/></g>
+<path d="M498,150 l0,-28 m-7,10 l7,-11 l7,11" stroke="#243440" stroke-width="2.6" fill="none"/>
+<path d="M608,300 l0,28 m-7,-10 l7,11 l7,-11" stroke="#243440" stroke-width="2.6" fill="none"/>
+<rect x="60" y="74" width="640" height="330" fill="none" stroke="#2A3D4C" stroke-width="2"/>
+<circle cx="672" cy="100" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="672" y="104.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">F</text>
+<circle cx="672" cy="152" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="672" y="156.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">E</text>
+<circle cx="672" cy="208" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="672" y="212.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">D</text>
+<circle cx="640" cy="258" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="640" y="262.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">C</text>
+<circle cx="460" cy="300" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="460" y="304.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">B</text>
+<circle cx="120" cy="258" r="12" fill="#fff" stroke="#3A5266" stroke-width="1.8"/><text x="120" y="262.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#3A5266" text-anchor="middle">A</text>
+<circle cx="556" cy="368" r="12" fill="#fff" stroke="#243440" stroke-width="1.8"/><text x="556" y="372.9" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="14" font-weight="900" fill="#243440" text-anchor="middle">X</text>
+<text x="60" y="430" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="11.5" font-weight="600" fill="#5c7285" text-anchor="start">A &#183; B &#183; C = capes inclinades &#160;&#183;&#160; D &#183; E &#183; F = capes horitzontals &#160;&#183;&#160; X = falla</text>
+<path d="M60,448 Q74.0,443 88,448 Q102.0,453 116,448 Q130.0,443 144,448 Q157.0,453 170,448 " fill="none" stroke="#6d4b17" stroke-width="3"/>
+<text x="180" y="452" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="11.5" font-weight="400" fill="#6d4b17" text-anchor="start">superf&#237;cie d&#39;erosi&#243; (discord&#224;n&#231;a)</text>
+<rect x="440" y="440" width="14" height="14" fill="url(#hx)" stroke="#7a8f9c"/><text x="460" y="452" font-family="'Fira Sans Extra Condensed',sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start">roques m&#233;s antigues (basament)</text>
+</svg>
