@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 410" width="780" height="410" font-family="Fira Sans Extra Condensed, Arial Narrow, sans-serif">
+  <rect x="0" y="0" width="780" height="410" fill="#ffffff"/>
+  <text x="390" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#2A3D4C">Per què s'enfonsa el delta de l'Ebre</text>
+  <text x="390" y="43" text-anchor="middle" font-size="13" fill="#5c7285">Tall esquemàtic del riu, de l'embassament i del delta (les distàncies no són a escala).</text>
+
+  <!-- escena -->
+  <rect x="18" y="56" width="744" height="150" fill="#eaf3f8"/>
+  <!-- muntanyes -->
+  <path d="M18 206 L18 146 L92 92 L176 156 L176 206 Z" fill="#9aa9a0"/>
+  <path d="M18 206 L18 146 L92 92 L120 116 L52 206 Z" fill="#8496a0" opacity="0.45"/>
+  <!-- embassament -->
+  <rect x="176" y="158" width="67" height="48" fill="#6fa3bd"/>
+  <rect x="176" y="194" width="67" height="12" fill="#8a6a3f"/>
+  <rect x="243" y="150" width="14" height="56" fill="#7d848a"/>
+  <text x="210" y="106" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2A3D4C">EMBASSAMENT</text>
+  <text x="210" y="120" text-anchor="middle" font-size="11.5" fill="#5c7285">(Mequinensa, Riba-roja)</text>
+  <text x="210" y="176" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">aigua</text>
+  <path d="M180 232 L200 208" stroke="#8a5e18" stroke-width="2"/>
+  <path d="M196 208 l6 0 l-2 7" fill="#8a5e18"/>
+  <text x="164" y="246" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8a5e18">el fang es queda aquí</text>
+
+  <!-- riu -->
+  <path d="M257 192 L500 198 L500 206 L257 206 Z" fill="#6fa3bd"/>
+  <text x="386" y="184" text-anchor="middle" font-size="12" fill="#2f6f8a">riu Ebre — ara baixa amb poc sediment</text>
+
+  <!-- delta -->
+  <path d="M500 198 L700 202 L700 214 L500 214 Z" fill="#c8b489"/>
+  <text x="590" y="194" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6b5b34">DELTA (arrossars)</text>
+  <g stroke="#8a5e18" stroke-width="2">
+    <path d="M530 222 L530 238"/><path d="M570 222 L570 238"/><path d="M610 222 L610 238"/>
+  </g>
+  <path d="M526 234 l4 8 l4 -8 M566 234 l4 8 l4 -8 M606 234 l4 8 l4 -8" fill="#8a5e18"/>
+  <text x="470" y="256" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8a5e18">sense fang nou, es compacta i s'enfonsa</text>
+
+  <!-- mar -->
+  <rect x="700" y="200" width="62" height="60" fill="#4a8fb0"/>
+  <rect x="700" y="186" width="62" height="14" fill="#7fbdd8"/>
+  <text x="731" y="197" text-anchor="middle" font-size="10.5" fill="#123c50">mar</text>
+  <path d="M714 182 L714 152" stroke="#1c6f70" stroke-width="2.5"/>
+  <path d="M710 156 l4 -8 l4 8" fill="#1c6f70"/>
+  <text x="758" y="128" text-anchor="end" font-size="11.5" font-weight="700" fill="#1c6f70">puja el nivell</text>
+  <text x="758" y="142" text-anchor="end" font-size="11.5" font-weight="700" fill="#1c6f70">del mar</text>
+  <path d="M698 208 L644 208" stroke="#b03a3a" stroke-width="2.5"/>
+  <path d="M650 204 l-8 4 l8 4" fill="#b03a3a"/>
+  <text x="668" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#b03a3a">el mar entra</text>
+
+  <!-- cadena -->
+  <rect x="18" y="278" width="744" height="26" fill="#2A3D4C"/>
+  <text x="390" y="296" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">LA CADENA DE CAUSES</text>
+
+  <g font-size="12">
+    <rect x="18" y="312" width="140" height="52" fill="#eef3f6" stroke="#a9bccb"/>
+    <text x="88" y="332" text-anchor="middle" font-weight="700" fill="#2A3D4C">1. Embassaments</text>
+    <text x="88" y="348" text-anchor="middle" fill="#33404b">retenen el sediment</text>
+
+    <rect x="170" y="312" width="140" height="52" fill="#eef3f6" stroke="#a9bccb"/>
+    <text x="240" y="332" text-anchor="middle" font-weight="700" fill="#2A3D4C">2. El delta</text>
+    <text x="240" y="348" text-anchor="middle" fill="#33404b">deixa de rebre fang</text>
+
+    <rect x="322" y="312" width="140" height="52" fill="#eef3f6" stroke="#a9bccb"/>
+    <text x="392" y="332" text-anchor="middle" font-weight="700" fill="#2A3D4C">3. Es compacta</text>
+    <text x="392" y="348" text-anchor="middle" fill="#33404b">i s'enfonsa</text>
+
+    <rect x="474" y="312" width="140" height="52" fill="#f8f0df" stroke="#C0872E"/>
+    <text x="544" y="332" text-anchor="middle" font-weight="700" fill="#8a5e18">4. Canvi climàtic</text>
+    <text x="544" y="348" text-anchor="middle" fill="#33404b">mar més alt, temporals</text>
+
+    <rect x="626" y="312" width="136" height="52" fill="#fbe9e9" stroke="#b03a3a"/>
+    <text x="694" y="332" text-anchor="middle" font-weight="700" fill="#b03a3a">5. Cada temporal</text>
+    <text x="694" y="348" text-anchor="middle" fill="#33404b">entra més endins</text>
+
+    <path d="M158 338 L170 338 M310 338 L322 338 M462 338 L474 338 M614 338 L626 338" stroke="#5c7285" stroke-width="2"/>
+  </g>
+  <text x="390" y="392" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5c7285">El pas 1 és una decisió humana presa fa dècades i a més de 100 km d'aquí; els passos 2 i 3 en són la conseqüència natural.</text>
+</svg>

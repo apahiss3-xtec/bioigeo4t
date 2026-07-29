@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" font-family="Fira Sans Extra Condensed, Arial Narrow, sans-serif">
+  <rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+  <text x="380" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#2A3D4C">El model del vessant</text>
+  <text x="380" y="43" text-anchor="middle" font-size="13" fill="#5c7285">Completa tu les tres caixes de sota abans de tocar l'aigua.</text>
+
+  <g>
+    <rect x="24" y="56" width="330" height="196" fill="#fbfcfd" stroke="#d8e2e8"/>
+    <rect x="24" y="56" width="330" height="22" fill="#3A5266"/>
+    <text x="189" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">SAFATA 1</text>
+    <path d="M96 96 h44 v22 h-44 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M140 100 l24 -8 v10 l-24 8 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M112 118 l-4 16 M124 118 l0 16 M136 118 l4 16" stroke="#4a9ec4" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M56 150 L286 206 L286 226 L56 170 Z" fill="#c9d4da" stroke="#8a9aa5" stroke-width="1.5"/>
+    <path d="M60 148 L284 202 L284 190 L60 136 Z" fill="#a9865c"/>
+        <path d="M292 214 L316 214 L312 244 L296 244 Z" fill="#e8f2f6" stroke="#7fb0c6" stroke-width="1.5"/>
+  </g>
+
+  <g>
+    <rect x="404" y="56" width="330" height="196" fill="#fbfcfd" stroke="#d8e2e8"/>
+    <rect x="404" y="56" width="330" height="22" fill="#3A5266"/>
+    <text x="569" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">SAFATA 2</text>
+    <path d="M476 96 h44 v22 h-44 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M520 100 l24 -8 v10 l-24 8 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M492 118 l-4 16 M504 118 l0 16 M516 118 l4 16" stroke="#4a9ec4" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M436 150 L666 206 L666 226 L436 170 Z" fill="#c9d4da" stroke="#8a9aa5" stroke-width="1.5"/>
+    <path d="M440 148 L664 202 L664 190 L440 136 Z" fill="#a9865c"/>
+    <g stroke="#3f7d4a" stroke-width="2" stroke-linecap="round" fill="none">
+      <path d="M462 141 l-4 -12 M462 141 l6 -10"/>
+      <path d="M498 150 l-4 -12 M498 150 l6 -10"/>
+      <path d="M534 159 l-4 -12 M534 159 l6 -10"/>
+      <path d="M570 168 l-4 -12 M570 168 l6 -10"/>
+      <path d="M606 177 l-4 -12 M606 177 l6 -10"/>
+      <path d="M642 186 l-4 -12 M642 186 l6 -10"/>
+    </g>
+        <path d="M672 214 L696 214 L692 244 L676 244 Z" fill="#e8f2f6" stroke="#7fb0c6" stroke-width="1.5"/>
+  </g>
+
+  <rect x="24" y="262" width="710" height="74" fill="#ffffff" stroke="#2f8a9a" stroke-dasharray="5 4"/>
+  <text x="34" y="278" font-size="12" font-weight="700" fill="#1c6f70">HA DE SER IGUAL (a les dues safates)</text>
+  <path d="M34 296 L724 296 M34 316 L724 316 M34 332 L724 332" stroke="#cfe0e4" stroke-width="1"/>
+
+  <rect x="24" y="342" width="352" height="66" fill="#ffffff" stroke="#C0872E" stroke-dasharray="5 4"/>
+  <text x="34" y="358" font-size="12" font-weight="700" fill="#8a5e18">NOMÉS CANVIA</text>
+  <path d="M34 376 L366 376 M34 400 L366 400" stroke="#ecdcc0" stroke-width="1"/>
+
+  <rect x="384" y="342" width="350" height="66" fill="#ffffff" stroke="#a9bccb" stroke-dasharray="5 4"/>
+  <text x="394" y="358" font-size="12" font-weight="700" fill="#2A3D4C">QUÈ MESURES</text>
+  <path d="M394 376 L724 376 M394 400 L724 400" stroke="#dde7ec" stroke-width="1"/>
+</svg>

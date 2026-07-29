@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" font-family="Fira Sans Extra Condensed, Arial Narrow, sans-serif">
+  <rect x="0" y="0" width="760" height="360" fill="#ffffff"/>
+  <text x="380" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#2A3D4C">El model del vessant: el muntatge</text>
+  <text x="380" y="43" text-anchor="middle" font-size="13" fill="#5c7285">Aquesta figura et diu com muntar-ho. El resultat no hi és: l'has de trobar tu.</text>
+
+  <!-- SAFATA 1 -->
+  <g>
+    <rect x="24" y="56" width="330" height="196" fill="#fbfcfd" stroke="#d8e2e8"/>
+    <rect x="24" y="56" width="330" height="22" fill="#3A5266"/>
+    <text x="189" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">SAFATA 1 · sòl nu</text>
+    <!-- regadora -->
+    <path d="M96 96 h44 v22 h-44 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M140 100 l24 -8 v10 l-24 8 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M112 118 l-4 16 M124 118 l0 16 M136 118 l4 16" stroke="#4a9ec4" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="118" y="92" text-anchor="middle" font-size="11.5" fill="#5c7285">mateixa aigua</text>
+    <!-- safata inclinada -->
+    <path d="M56 150 L286 206 L286 226 L56 170 Z" fill="#c9d4da" stroke="#8a9aa5" stroke-width="1.5"/>
+    <path d="M60 148 L284 202 L284 190 L60 136 Z" fill="#a9865c"/>
+    <text x="168" y="176" text-anchor="middle" font-size="12" font-weight="700" fill="#4a3a20" transform="rotate(13 168 176)">sòl nu</text>
+    <!-- got -->
+    <path d="M292 214 L316 214 L312 244 L296 244 Z" fill="#e8f2f6" stroke="#7fb0c6" stroke-width="1.5"/>
+    <text x="304" y="258" text-anchor="middle" font-size="11.5" fill="#5c7285">recolliu</text>
+  </g>
+
+  <!-- SAFATA 2 -->
+  <g>
+    <rect x="404" y="56" width="330" height="196" fill="#fbfcfd" stroke="#d8e2e8"/>
+    <rect x="404" y="56" width="330" height="22" fill="#3A5266"/>
+    <text x="569" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">SAFATA 2 · amb vegetació</text>
+    <path d="M476 96 h44 v22 h-44 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M520 100 l24 -8 v10 l-24 8 z" fill="#8fa6b4" stroke="#5c7285"/>
+    <path d="M492 118 l-4 16 M504 118 l0 16 M516 118 l4 16" stroke="#4a9ec4" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="498" y="92" text-anchor="middle" font-size="11.5" fill="#5c7285">mateixa aigua</text>
+    <path d="M436 150 L666 206 L666 226 L436 170 Z" fill="#c9d4da" stroke="#8a9aa5" stroke-width="1.5"/>
+    <path d="M440 148 L664 202 L664 190 L440 136 Z" fill="#a9865c"/>
+    <g stroke="#3f7d4a" stroke-width="2" stroke-linecap="round" fill="none">
+      <path d="M462 141 l-4 -12 M462 141 l6 -10"/>
+      <path d="M498 150 l-4 -12 M498 150 l6 -10"/>
+      <path d="M534 159 l-4 -12 M534 159 l6 -10"/>
+      <path d="M570 168 l-4 -12 M570 168 l6 -10"/>
+      <path d="M606 177 l-4 -12 M606 177 l6 -10"/>
+      <path d="M642 186 l-4 -12 M642 186 l6 -10"/>
+    </g>
+    <text x="548" y="180" text-anchor="middle" font-size="12" font-weight="700" fill="#2e5c36" transform="rotate(13 548 180)">sòl + vegetació</text>
+    <path d="M672 214 L696 214 L692 244 L676 244 Z" fill="#e8f2f6" stroke="#7fb0c6" stroke-width="1.5"/>
+    <text x="684" y="258" text-anchor="middle" font-size="11.5" fill="#5c7285">recolliu</text>
+  </g>
+
+  <!-- angle igual -->
+  <text x="379" y="150" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8a5e18">mateix</text>
+  <text x="379" y="163" text-anchor="middle" font-size="11.5" font-weight="700" fill="#8a5e18">pendent</text>
+
+  <!-- caixes -->
+  <rect x="24" y="266" width="352" height="44" fill="#e6f3f5" stroke="#2f8a9a"/>
+  <text x="34" y="283" font-size="12" font-weight="700" fill="#1c6f70">HA DE SER IGUAL</text>
+  <text x="34" y="301" font-size="12.5" fill="#33404b">sòl, gruix, pendent, aigua, alçada i ritme</text>
+
+  <rect x="384" y="266" width="350" height="44" fill="#f8f0df" stroke="#C0872E"/>
+  <text x="394" y="283" font-size="12" font-weight="700" fill="#8a5e18">NOMÉS CANVIA</text>
+  <text x="394" y="301" font-size="12.5" fill="#33404b">la vegetació (hi és o no hi és)</text>
+
+  <rect x="24" y="316" width="710" height="30" fill="#eef3f6" stroke="#a9bccb"/>
+  <text x="34" y="336" font-size="12" font-weight="700" fill="#2A3D4C">QUÈ MESUREU?</text>
+  <text x="146" y="336" font-size="12.5" fill="#33404b">ho decidiu vosaltres abans d'abocar l'aigua — i escriviu la predicció</text>
+</svg>

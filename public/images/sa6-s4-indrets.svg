@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 452" width="780" height="452" font-family="Fira Sans Extra Condensed, Arial Narrow, sans-serif">
+  <rect x="0" y="0" width="780" height="452" fill="#ffffff"/>
+  <text x="390" y="22" text-anchor="middle" font-size="16" font-weight="700" fill="#2A3D4C">Fitxes dels tres indrets · dades de camp</text>
+  <text x="390" y="39" text-anchor="middle" font-size="12" fill="#5c7285">Aquí només hi ha dades. Els riscos els has de deduir tu a partir d'aquestes dades.</text>
+
+  <!-- INDRET 1 -->
+  <g>
+    <rect x="18" y="52" width="240" height="382" fill="#fbfcfd" stroke="#a9bccb" stroke-width="1.5"/>
+    <rect x="18" y="52" width="240" height="30" fill="#3A5266"/>
+    <circle cx="38" cy="67" r="10" fill="#C0872E"/>
+    <text x="38" y="72" text-anchor="middle" font-size="12" font-weight="900" fill="#ffffff">1</text>
+    <text x="145" y="72" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">VESSANT DELS PORTS</text>
+    <!-- pictograma -->
+    <rect x="18" y="82" width="240" height="70" fill="#eaf3f8"/>
+    <path d="M18 152 L18 116 L84 84 L170 140 L258 152 Z" fill="#9aa9a0"/>
+    <g stroke="#4a3a2a" stroke-width="2.5" stroke-linecap="round">
+      <path d="M84 122 L84 106"/><path d="M84 112 l-7 -6 M84 112 l7 -6"/>
+      <path d="M116 138 L116 122"/><path d="M116 128 l-7 -6 M116 128 l7 -6"/>
+      <path d="M148 150 L148 134"/><path d="M148 140 l-7 -6 M148 140 l7 -6"/>
+    </g>
+    <text x="200" y="106" text-anchor="middle" font-size="11" fill="#5c7285">pinada cremada</text>
+
+    <text x="30" y="176" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">ROCA</text>
+    <text x="30" y="192" font-size="12.5" fill="#1a2027">Calcària dura, molt</text>
+    <text x="30" y="207" font-size="12.5" fill="#1a2027">esquerdada.</text>
+
+    <text x="30" y="232" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">RELLEU</text>
+    <text x="30" y="248" font-size="12.5" fill="#1a2027">Pendent molt fort,</text>
+    <text x="30" y="263" font-size="12.5" fill="#1a2027">barrancs estrets i secs.</text>
+
+    <text x="30" y="288" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">VEGETACIÓ</text>
+    <text x="30" y="304" font-size="12.5" fill="#1a2027">Pinada cremada l'estiu</text>
+    <text x="30" y="319" font-size="12.5" fill="#1a2027">passat: sòl nu, sense</text>
+    <text x="30" y="334" font-size="12.5" fill="#1a2027">arrels vives.</text>
+
+    <text x="30" y="359" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">QUÈ HI HA / QUI HI HA</text>
+    <text x="30" y="375" font-size="12.5" fill="#1a2027">Carretera de muntanya al</text>
+    <text x="30" y="390" font-size="12.5" fill="#1a2027">peu del vessant i masos.</text>
+  </g>
+
+  <!-- INDRET 2 -->
+  <g>
+    <rect x="270" y="52" width="240" height="382" fill="#fbfcfd" stroke="#a9bccb" stroke-width="1.5"/>
+    <rect x="270" y="52" width="240" height="30" fill="#3A5266"/>
+    <circle cx="290" cy="67" r="10" fill="#C0872E"/>
+    <text x="290" y="72" text-anchor="middle" font-size="12" font-weight="900" fill="#ffffff">2</text>
+    <text x="397" y="72" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">DELTA DE L'EBRE</text>
+    <rect x="270" y="82" width="240" height="70" fill="#eaf3f8"/>
+    <path d="M270 132 L446 132 L446 152 L270 152 Z" fill="#c8b489"/>
+    <path d="M446 132 L510 132 L510 152 L446 152 Z" fill="#4a8fb0"/>
+    <path d="M280 126 h30 M320 126 h30 M360 126 h30 M400 126 h30" stroke="#6fa3bd" stroke-width="3"/>
+    <text x="358" y="112" text-anchor="middle" font-size="11" fill="#5c7285">arrossars inundats</text>
+
+    <text x="282" y="176" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">ROCA</text>
+    <text x="282" y="192" font-size="12.5" fill="#1a2027">Sediments solts (llims i</text>
+    <text x="282" y="207" font-size="12.5" fill="#1a2027">sorres) amarats d'aigua.</text>
+
+    <text x="282" y="232" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">RELLEU</text>
+    <text x="282" y="248" font-size="12.5" fill="#1a2027">Totalment pla, entre 0 i</text>
+    <text x="282" y="263" font-size="12.5" fill="#1a2027">2 m sobre el nivell del mar.</text>
+
+    <text x="282" y="288" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">VEGETACIÓ</text>
+    <text x="282" y="304" font-size="12.5" fill="#1a2027">Arrossars i canyissar;</text>
+    <text x="282" y="319" font-size="12.5" fill="#1a2027">poca vegetació natural.</text>
+
+    <text x="282" y="359" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">QUÈ HI HA / QUI HI HA</text>
+    <text x="282" y="375" font-size="12.5" fill="#1a2027">Pobles, càmpings i milers</text>
+    <text x="282" y="390" font-size="12.5" fill="#1a2027">d'hectàrees de conreu.</text>
+    <text x="282" y="405" font-size="12" font-style="italic" fill="#8a5e18">Embassaments 100 km amunt.</text>
+  </g>
+
+  <!-- INDRET 3 -->
+  <g>
+    <rect x="522" y="52" width="240" height="382" fill="#fbfcfd" stroke="#a9bccb" stroke-width="1.5"/>
+    <rect x="522" y="52" width="240" height="30" fill="#3A5266"/>
+    <circle cx="542" cy="67" r="10" fill="#C0872E"/>
+    <text x="542" y="72" text-anchor="middle" font-size="12" font-weight="900" fill="#ffffff">3</text>
+    <text x="660" y="72" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">COSTA D'ALCANAR-VINARÒS</text>
+    <rect x="522" y="82" width="240" height="70" fill="#eaf3f8"/>
+    <path d="M522 132 L590 132 L590 152 L522 152 Z" fill="#dfd6bd"/>
+    <path d="M590 132 L762 132 L762 152 L590 152 Z" fill="#4a8fb0"/>
+    <rect x="646" y="118" width="18" height="12" fill="#7d848a" stroke="#4a5055"/>
+    <path d="M650 130 l-3 8 M660 130 l3 8" stroke="#7d848a" stroke-width="2"/>
+    <path d="M700 122 L724 152" stroke="#b03a3a" stroke-width="2.5" stroke-dasharray="7 5"/>
+    <text x="614" y="112" text-anchor="middle" font-size="11" fill="#5c7285">plataforma Castor</text>
+    <text x="736" y="118" text-anchor="end" font-size="11" font-weight="700" fill="#b03a3a">falla</text>
+
+    <text x="534" y="176" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">ROCA</text>
+    <text x="534" y="192" font-size="12.5" fill="#1a2027">Roques marines. Al subsòl</text>
+    <text x="534" y="207" font-size="12.5" fill="#1a2027">hi ha la falla d'Amposta.</text>
+
+    <text x="534" y="232" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">RELLEU</text>
+    <text x="534" y="248" font-size="12.5" fill="#1a2027">Costa baixa; el fons del</text>
+    <text x="534" y="263" font-size="12.5" fill="#1a2027">mar puja molt a poc a poc.</text>
+
+    <text x="534" y="288" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">VEGETACIÓ</text>
+    <text x="534" y="304" font-size="12.5" fill="#1a2027">Camps de cítrics i sòl</text>
+    <text x="534" y="319" font-size="12.5" fill="#1a2027">urbanitzat vora el mar.</text>
+
+    <text x="534" y="359" font-size="11" font-weight="700" letter-spacing="0.08em" fill="#8a5e18">QUÈ HI HA / QUI HI HA</text>
+    <text x="534" y="371" font-size="12" fill="#1a2027">Pobles a la costa. Abans de</text>
+    <text x="534" y="385" font-size="12" fill="#1a2027">2013 no s'hi coneixien sismes.</text>
+    <text x="534" y="399" font-size="12" fill="#1a2027">El 2013 s'hi va injectar gas a</text>
+    <text x="534" y="413" font-size="12" fill="#1a2027">pressió (Castor) i s'hi van</text>
+    <text x="534" y="427" font-size="12" fill="#1a2027">registrar més de 1.000 sismes.</text>
+  </g>
+</svg>

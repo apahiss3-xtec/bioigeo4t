@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 440" width="780" height="440" font-family="Fira Sans Extra Condensed, Arial Narrow, sans-serif">
+  <rect x="0" y="0" width="780" height="440" fill="#ffffff"/>
+  <text x="390" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#2A3D4C">El mateix fenomen, tres riscos molt diferents</text>
+  <text x="390" y="43" text-anchor="middle" font-size="13" fill="#5c7285">Als tres casos el barranc porta exactament la mateixa crescuda: la perillositat és idèntica.</text>
+
+  <!-- CAS A -->
+  <g>
+    <rect x="18" y="56" width="234" height="150" fill="#f7fafb" stroke="#d8e2e8"/>
+    <rect x="18" y="56" width="234" height="22" fill="#3A5266"/>
+    <text x="135" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">CAS A · camps, sense cases</text>
+    <rect x="18" y="170" width="234" height="36" fill="#e7ddc6"/>
+    <path d="M96 78 L96 206 L174 206 L174 78 Z" fill="#bcd9e6"/>
+    <path d="M96 78 L96 206 M174 78 L174 206" stroke="#7fb0c6" stroke-width="2"/>
+    <text x="135" y="120" text-anchor="middle" font-size="12" fill="#2f6f8a">barranc</text>
+    <text x="55" y="192" text-anchor="middle" font-size="12" fill="#6b5b34">camps</text>
+    <text x="215" y="192" text-anchor="middle" font-size="12" fill="#6b5b34">camps</text>
+  </g>
+  <!-- CAS B -->
+  <g>
+    <rect x="273" y="56" width="234" height="150" fill="#f7fafb" stroke="#d8e2e8"/>
+    <rect x="273" y="56" width="234" height="22" fill="#3A5266"/>
+    <text x="390" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">CAS B · cases noves, amb mur</text>
+    <rect x="273" y="170" width="234" height="36" fill="#e7ddc6"/>
+    <path d="M351 78 L351 206 L429 206 L429 78 Z" fill="#bcd9e6"/>
+    <path d="M351 78 L351 206 M429 78 L429 206" stroke="#7fb0c6" stroke-width="2"/>
+    <text x="390" y="120" text-anchor="middle" font-size="12" fill="#2f6f8a">barranc</text>
+    <rect x="343" y="118" width="9" height="52" fill="#8a8f95"/>
+    <rect x="428" y="118" width="9" height="52" fill="#8a8f95"/>
+    <rect x="294" y="132" width="44" height="38" fill="#dfe6ea" stroke="#8a8f95" stroke-width="1.5"/>
+    <path d="M290 132 L316 114 L342 132 Z" fill="#b0563f"/>
+    <rect x="444" y="132" width="44" height="38" fill="#dfe6ea" stroke="#8a8f95" stroke-width="1.5"/>
+    <path d="M440 132 L466 114 L492 132 Z" fill="#b0563f"/>
+    <text x="316" y="192" text-anchor="middle" font-size="11.5" fill="#5a6670">obra nova</text>
+    <text x="466" y="192" text-anchor="middle" font-size="11.5" fill="#5a6670">mur (correcció)</text>
+  </g>
+  <!-- CAS C -->
+  <g>
+    <rect x="528" y="56" width="234" height="150" fill="#f7fafb" stroke="#d8e2e8"/>
+    <rect x="528" y="56" width="234" height="22" fill="#3A5266"/>
+    <text x="645" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">CAS C · cases velles, sense mur</text>
+    <rect x="528" y="170" width="234" height="36" fill="#e7ddc6"/>
+    <path d="M606 78 L606 206 L684 206 L684 78 Z" fill="#bcd9e6"/>
+    <path d="M606 78 L606 206 M684 78 L684 206" stroke="#7fb0c6" stroke-width="2"/>
+    <text x="645" y="120" text-anchor="middle" font-size="12" fill="#2f6f8a">barranc</text>
+    <rect x="558" y="132" width="44" height="38" fill="#e4d9c4" stroke="#a08b62" stroke-width="1.5"/>
+    <path d="M554 132 L580 114 L606 132 Z" fill="#9a5b3c"/>
+    <rect x="688" y="132" width="44" height="38" fill="#e4d9c4" stroke="#a08b62" stroke-width="1.5"/>
+    <path d="M684 132 L710 114 L736 132 Z" fill="#9a5b3c"/>
+    <text x="580" y="192" text-anchor="middle" font-size="11.5" fill="#8a5e18">tàpia</text>
+    <text x="710" y="192" text-anchor="middle" font-size="11.5" fill="#8a5e18">tàpia</text>
+  </g>
+
+  <!-- TAULA -->
+  <g>
+    <rect x="18" y="216" width="744" height="26" fill="#2A3D4C"/>
+    <text x="152" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">FACTOR</text>
+    <text x="365" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">CAS A</text>
+    <text x="523" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">CAS B</text>
+    <text x="682" y="234" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">CAS C</text>
+
+    <rect x="18" y="242" width="744" height="36" fill="#eef3f6"/>
+    <text x="28" y="260" font-size="12.5" font-weight="700" fill="#2A3D4C">PERILLOSITAT</text>
+    <text x="28" y="273" font-size="11" fill="#5c7285">la crescuda del barranc</text>
+    <text x="365" y="266" text-anchor="middle" font-size="12.5" fill="#1a2027">la mateixa</text>
+    <text x="523" y="266" text-anchor="middle" font-size="12.5" fill="#1a2027">la mateixa</text>
+    <text x="682" y="266" text-anchor="middle" font-size="12.5" fill="#1a2027">la mateixa</text>
+
+    <rect x="18" y="278" width="744" height="36" fill="#ffffff"/>
+    <text x="28" y="296" font-size="12.5" font-weight="700" fill="#2A3D4C">EXPOSICIÓ</text>
+    <text x="28" y="309" font-size="11" fill="#5c7285">qui i què hi ha allà</text>
+    <text x="365" y="302" text-anchor="middle" font-size="12.5" fill="#1a2027">molt baixa: cap casa</text>
+    <text x="523" y="302" text-anchor="middle" font-size="12.5" fill="#1a2027">alta: hi viu gent</text>
+    <text x="682" y="302" text-anchor="middle" font-size="12.5" fill="#1a2027">alta: hi viu gent</text>
+
+    <rect x="18" y="314" width="744" height="36" fill="#eef3f6"/>
+    <text x="28" y="332" font-size="12.5" font-weight="700" fill="#2A3D4C">VULNERABILITAT</text>
+    <text x="28" y="345" font-size="11" fill="#5c7285">com de malament ho passen</text>
+    <text x="365" y="338" text-anchor="middle" font-size="12.5" fill="#1a2027">—</text>
+    <text x="523" y="338" text-anchor="middle" font-size="12.5" fill="#1a2027">baixa: obra nova</text>
+    <text x="682" y="338" text-anchor="middle" font-size="12.5" fill="#1a2027">alta: parets de tàpia</text>
+
+    <rect x="18" y="350" width="744" height="34" fill="#f8f0df" stroke="#C0872E"/>
+    <text x="28" y="372" font-size="13.5" font-weight="700" fill="#8a5e18">RISC RESULTANT</text>
+    <text x="365" y="372" text-anchor="middle" font-size="13.5" font-weight="700" fill="#2f7a4a">gairebé nul</text>
+    <text x="523" y="372" text-anchor="middle" font-size="13.5" font-weight="700" fill="#b0791c">moderat</text>
+    <text x="682" y="372" text-anchor="middle" font-size="13.5" font-weight="700" fill="#b03a3a">alt</text>
+    <path d="M286 216 L286 384 M444 216 L444 384 M602 216 L602 384" stroke="#ffffff" stroke-width="1" opacity="0.6"/>
+  </g>
+  <text x="390" y="398" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5c7285">Si un dels tres factors val zero, el risc és zero.</text>
+  <text x="390" y="414" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5c7285">La perillositat depèn de la geologia i el clima i costa molt de canviar;</text>
+  <text x="390" y="430" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5c7285">l'exposició i la vulnerabilitat depenen de decisions nostres.</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 452" width="780" height="452" font-family="Fira Sans Extra Condensed, Arial Narrow, sans-serif">
+  <rect x="0" y="0" width="780" height="452" fill="#ffffff"/>
+  <text x="390" y="24" text-anchor="middle" font-size="17" font-weight="700" fill="#2A3D4C">De l'embassament al delta</text>
+  <text x="390" y="43" text-anchor="middle" font-size="13" fill="#5c7285">Tall esquemàtic (no és a escala). La cadena de causes l'has d'escriure tu.</text>
+
+  <rect x="18" y="56" width="744" height="150" fill="#eaf3f8"/>
+  <path d="M18 206 L18 146 L92 92 L176 156 L176 206 Z" fill="#9aa9a0"/>
+  <path d="M18 206 L18 146 L92 92 L120 116 L52 206 Z" fill="#8496a0" opacity="0.45"/>
+  <rect x="176" y="158" width="67" height="48" fill="#6fa3bd"/>
+  <rect x="176" y="194" width="67" height="12" fill="#8a6a3f"/>
+  <rect x="243" y="150" width="14" height="56" fill="#7d848a"/>
+  <text x="210" y="106" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2A3D4C">EMBASSAMENT</text>
+  <text x="210" y="120" text-anchor="middle" font-size="11.5" fill="#5c7285">(Mequinensa, Riba-roja)</text>
+  <text x="210" y="176" text-anchor="middle" font-size="11.5" font-weight="700" fill="#ffffff">aigua</text>
+  <path d="M180 232 L200 208" stroke="#8a5e18" stroke-width="2"/>
+  <path d="M196 208 l6 0 l-2 7" fill="#8a5e18"/>
+  <text x="158" y="246" text-anchor="middle" font-size="11.5" font-style="italic" fill="#8a5e18">capa de fang al fons</text>
+
+  <path d="M257 192 L500 198 L500 206 L257 206 Z" fill="#6fa3bd"/>
+  <text x="386" y="184" text-anchor="middle" font-size="12" fill="#2f6f8a">riu Ebre</text>
+
+  <path d="M500 198 L700 202 L700 214 L500 214 Z" fill="#c8b489"/>
+  <text x="590" y="194" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6b5b34">DELTA (arrossars)</text>
+
+  <rect x="700" y="200" width="62" height="60" fill="#4a8fb0"/>
+  <rect x="700" y="186" width="62" height="14" fill="#7fbdd8"/>
+  <text x="731" y="197" text-anchor="middle" font-size="10.5" fill="#123c50">mar</text>
+  <path d="M714 182 L714 152" stroke="#1c6f70" stroke-width="2.5"/>
+  <path d="M710 156 l4 -8 l4 8" fill="#1c6f70"/>
+  <path d="M698 208 L644 208" stroke="#b03a3a" stroke-width="2.5"/>
+  <path d="M650 204 l-8 4 l8 4" fill="#b03a3a"/>
+
+  <rect x="18" y="278" width="744" height="26" fill="#2A3D4C"/>
+  <text x="390" y="296" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">LA CADENA DE CAUSES — escriu-hi tu cada pas</text>
+
+  <g font-size="12">
+    <rect x="18" y="312" width="140" height="88" fill="#ffffff" stroke="#a9bccb" stroke-dasharray="5 4"/>
+    <text x="27" y="328" font-weight="700" fill="#a9bccb">1</text>
+    <rect x="170" y="312" width="140" height="88" fill="#ffffff" stroke="#a9bccb" stroke-dasharray="5 4"/>
+    <text x="179" y="328" font-weight="700" fill="#a9bccb">2</text>
+    <rect x="322" y="312" width="140" height="88" fill="#ffffff" stroke="#a9bccb" stroke-dasharray="5 4"/>
+    <text x="331" y="328" font-weight="700" fill="#a9bccb">3</text>
+    <rect x="474" y="312" width="140" height="88" fill="#ffffff" stroke="#C0872E" stroke-dasharray="5 4"/>
+    <text x="483" y="328" font-weight="700" fill="#C0872E">4</text>
+    <rect x="626" y="312" width="136" height="88" fill="#ffffff" stroke="#b03a3a" stroke-dasharray="5 4"/>
+    <text x="635" y="328" font-weight="700" fill="#b03a3a">5</text>
+    <path d="M158 356 L170 356 M310 356 L322 356 M462 356 L474 356 M614 356 L626 356" stroke="#5c7285" stroke-width="2"/>
+  </g>
+  <text x="390" y="432" text-anchor="middle" font-size="12" font-style="italic" fill="#5c7285">Comença per què fa l'embassament amb el sediment i acaba per què nota la gent del delta. La casella 4 és del clima.</text>
+</svg>
