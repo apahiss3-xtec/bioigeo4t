@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+<rect width="760" height="470" fill="#ffffff"/>
+<text x="380" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#241F4A">Un tall de terreny amb dues capes de cendra volcànica</text>
+<text x="380" y="46" text-anchor="middle" font-size="12.5" font-style="italic" fill="#5a5580">Les dues capes de cendra ja estan datades al laboratori. L'os no s'ha pogut datar directament.</text>
+<rect x="160" y="72" width="200" height="58" fill="#d8cfc0" stroke="#5a5580" stroke-width="1.4"/>
+<text x="372" y="106" font-size="12.5" fill="#33404b">argila</text>
+<rect x="160" y="130" width="200" height="34" fill="#b9b3c9" stroke="#5a5580" stroke-width="1.4"/>
+<circle cx="184" cy="147" r="2.4" fill="#6b6486"/>
+<circle cx="222" cy="147" r="2.4" fill="#6b6486"/>
+<circle cx="260" cy="147" r="2.4" fill="#6b6486"/>
+<circle cx="298" cy="147" r="2.4" fill="#6b6486"/>
+<circle cx="336" cy="147" r="2.4" fill="#6b6486"/>
+<text x="372" y="152" font-size="12.5" fill="#33404b">cendra superior</text>
+<rect x="14" y="134" width="130" height="26" rx="6" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.4"/>
+<text x="79" y="152" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a5800">datada: 64 Ma</text>
+<line x1="144" y1="147" x2="160" y2="147" stroke="#c8960a" stroke-width="1.6"/>
+<rect x="160" y="164" width="200" height="84" fill="#e0d3a8" stroke="#5a5580" stroke-width="1.4"/>
+<text x="372" y="211" font-size="12.5" fill="#33404b">gres (hi ha l'os)</text>
+<rect x="160" y="248" width="200" height="34" fill="#b9b3c9" stroke="#5a5580" stroke-width="1.4"/>
+<circle cx="184" cy="265" r="2.4" fill="#6b6486"/>
+<circle cx="222" cy="265" r="2.4" fill="#6b6486"/>
+<circle cx="260" cy="265" r="2.4" fill="#6b6486"/>
+<circle cx="298" cy="265" r="2.4" fill="#6b6486"/>
+<circle cx="336" cy="265" r="2.4" fill="#6b6486"/>
+<text x="372" y="270" font-size="12.5" fill="#33404b">cendra inferior</text>
+<rect x="14" y="252" width="130" height="26" rx="6" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.4"/>
+<text x="79" y="270" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a5800">datada: 70 Ma</text>
+<line x1="144" y1="265" x2="160" y2="265" stroke="#c8960a" stroke-width="1.6"/>
+<rect x="160" y="282" width="200" height="52" fill="#c9b79a" stroke="#5a5580" stroke-width="1.4"/>
+<text x="372" y="313" font-size="12.5" fill="#33404b">conglomerat</text>
+<path d="M 230 198.0 q 12 -14 26 0 q 14 -9 23 5 q 9 14 -7 18 q -16 7 -28 -2 q -18 2 -14 -21 z" fill="#f7f4ee" stroke="#6b6486" stroke-width="1.6"/>
+<text x="372" y="230" font-size="11.5" font-style="italic" fill="#8a3d2c"></text>
+<line x1="530" y1="147" x2="530" y2="265" stroke="#37306B" stroke-width="1.8"/>
+<line x1="521" y1="147" x2="539" y2="147" stroke="#37306B" stroke-width="1.8"/>
+<line x1="510" y1="147" x2="521" y2="147" stroke="#37306B" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="521" y1="265" x2="539" y2="265" stroke="#37306B" stroke-width="1.8"/>
+<line x1="510" y1="265" x2="521" y2="265" stroke="#37306B" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="552" y="178" width="196" height="56" rx="8" fill="#ffffff" stroke="#37306B" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="650" y="199" text-anchor="middle" font-size="13" font-weight="700" fill="#37306B">edat de l'os</text>
+<text x="650" y="223" text-anchor="middle" font-size="20" font-weight="700" fill="#b3aed0">?</text>
+<text x="360" y="358" text-anchor="middle" font-size="12" font-style="italic" fill="#8a3d2c">L'os no porta cap rellotge que puguem llegir directament.</text>
+<rect x="24" y="374" width="712" height="82" rx="8" fill="#f1effa" stroke="#b3aed0" stroke-width="1.4"/>
+<text x="38" y="398" font-size="13" font-weight="700" fill="#241F4A">El que ja saps de la SA6 i que aquí et fa falta</text>
+<text x="38" y="420" font-size="12.5" fill="#33404b">A la SA6 vas aprendre uns quants principis geològics. Un d'ells diu com s'ordenen en el temps les capes d'un tall no capgirat.</text>
+<text x="38" y="442" font-size="12.5" fill="#33404b">Recorda'l: et dona l'ORDRE, però no el NÚMERO. El número el posa la datació de laboratori de les capes que la permeten.</text>
+</svg>

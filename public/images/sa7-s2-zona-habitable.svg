@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+<rect width="760" height="300" fill="#ffffff"/>
+<text x="380" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#241F4A">On pot haver-hi aigua líquida a la superfície d'un planeta</text>
+
+<!-- faixes -->
+<rect x="90" y="60" width="150" height="86" fill="#f6dcd6" stroke="#c4796b" stroke-width="1.2"/>
+<rect x="240" y="60" width="180" height="86" fill="#dff0e6" stroke="#3f8a63" stroke-width="1.6"/>
+<rect x="420" y="60" width="270" height="86" fill="#dde7f5" stroke="#4a6fa5" stroke-width="1.2"/>
+
+<text x="165" y="86" text-anchor="middle" font-size="13.5" font-weight="700" fill="#8a3d2c">MASSA A PROP</text>
+<text x="165" y="104" text-anchor="middle" font-size="12" fill="#5d3126">l'aigua s'evapora</text>
+<text x="165" y="120" text-anchor="middle" font-size="12" fill="#5d3126">i s'escapa a l'espai</text>
+
+<text x="330" y="86" text-anchor="middle" font-size="13.5" font-weight="700" fill="#1f5c3d">AIGUA LÍQUIDA POSSIBLE</text>
+<text x="330" y="104" text-anchor="middle" font-size="12" fill="#26533c">ni tanta calor que bulli</text>
+<text x="330" y="120" text-anchor="middle" font-size="12" fill="#26533c">ni tant fred que es geli</text>
+
+<text x="555" y="86" text-anchor="middle" font-size="13.5" font-weight="700" fill="#2b4a75">MASSA LLUNY</text>
+<text x="555" y="104" text-anchor="middle" font-size="12" fill="#2b4a75">l'aigua es queda</text>
+<text x="555" y="120" text-anchor="middle" font-size="12" fill="#2b4a75">sempre glaçada</text>
+
+<!-- estrella -->
+<circle cx="60" cy="103" r="34" fill="#E3B04B"/>
+<circle cx="60" cy="103" r="34" fill="none" stroke="#B0821F" stroke-width="1.5"/>
+<text x="60" y="160" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a5800">estrella</text>
+
+<!-- eix -->
+<line x1="90" y1="176" x2="700" y2="176" stroke="#241F4A" stroke-width="1.6"/>
+<polygon points="700,176 690,171 690,181" fill="#241F4A"/>
+<text x="395" y="196" text-anchor="middle" font-size="12.5" fill="#33404b">distància a l'estrella  →  (com més lluny, menys calor hi arriba)</text>
+
+<!-- planetes -->
+<circle cx="205" cy="176" r="8" fill="#c4796b" stroke="#8a3d2c" stroke-width="1.2"/>
+<text x="205" y="52" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8a3d2c">Venus</text>
+<line x1="205" y1="56" x2="205" y2="60" stroke="#8a3d2c" stroke-width="1"/>
+<line x1="205" y1="146" x2="205" y2="168" stroke="#8a3d2c" stroke-width="1" stroke-dasharray="3 3"/>
+
+<circle cx="300" cy="176" r="10" fill="#3f8a63" stroke="#1f5c3d" stroke-width="1.4"/>
+<text x="300" y="52" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f5c3d">Terra</text>
+<line x1="300" y1="56" x2="300" y2="60" stroke="#1f5c3d" stroke-width="1"/>
+<line x1="300" y1="146" x2="300" y2="166" stroke="#1f5c3d" stroke-width="1" stroke-dasharray="3 3"/>
+
+<circle cx="382" cy="176" r="7" fill="#a8724f" stroke="#6d442a" stroke-width="1.2"/>
+<text x="382" y="52" text-anchor="middle" font-size="12.5" font-weight="700" fill="#6d442a">Mart</text>
+<line x1="382" y1="56" x2="382" y2="60" stroke="#6d442a" stroke-width="1"/>
+<line x1="382" y1="146" x2="382" y2="169" stroke="#6d442a" stroke-width="1" stroke-dasharray="3 3"/>
+
+<!-- avis -->
+<rect x="90" y="212" width="600" height="70" rx="8" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.4"/>
+<text x="104" y="232" font-size="12.5" font-weight="700" fill="#7a5800">Compte amb aquesta figura</text>
+<text x="104" y="250" font-size="12" fill="#4a3a10">Estar dins la faixa verda no garanteix res: Mart hi és a dins i no hi té aigua líquida a la</text>
+<text x="104" y="266" font-size="12" fill="#4a3a10">superfície. La faixa només diu on és possible, i està dibuixada pensant en l'única vida que coneixem.</text>
+</svg>

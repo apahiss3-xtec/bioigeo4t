@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" width="720" height="480" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+  <rect width="720" height="480" fill="#ffffff"/>
+  <text x="24" y="30" font-size="19" font-weight="700" fill="#37306B">Les tres proves del Big Bang</text>
+  <text x="24" y="50" font-size="13" fill="#5a5580" font-style="italic">A dalt, el que s'observa avui amb instruments. A baix, el que se'n dedueix sobre el passat.</text>
+
+  <!-- columns -->
+  <g>
+    <rect x="24" y="66" width="212" height="128" rx="9" fill="#f1effa" stroke="#37306B" stroke-width="1.6"/>
+    <text x="38" y="88" font-size="11" font-weight="700" fill="#37306B">S'OBSERVA · 1</text>
+    <text x="38" y="108" font-size="12.5" font-weight="700" fill="#1a2027">L'expansió</text>
+    <text x="38" y="127" font-size="12" fill="#33404b">Totes les galàxies llunyanes</text>
+    <text x="38" y="143" font-size="12" fill="#33404b">s'allunyen de nosaltres, i com</text>
+    <text x="38" y="159" font-size="12" fill="#33404b">més lluny són, més de pressa</text>
+    <text x="38" y="175" font-size="12" fill="#33404b">ho fan.</text>
+    <circle cx="60" cy="186" r="0" fill="none"/>
+  </g>
+  <g>
+    <rect x="254" y="66" width="212" height="128" rx="9" fill="#f1effa" stroke="#37306B" stroke-width="1.6"/>
+    <text x="268" y="88" font-size="11" font-weight="700" fill="#37306B">S'OBSERVA · 2</text>
+    <text x="268" y="108" font-size="12.5" font-weight="700" fill="#1a2027">La radiació de fons</text>
+    <text x="268" y="127" font-size="12" fill="#33404b">Tot el cel, miris on miris,</text>
+    <text x="268" y="143" font-size="12" fill="#33404b">està banyat per una llum molt</text>
+    <text x="268" y="159" font-size="12" fill="#33404b">freda i gairebé igual en</text>
+    <text x="268" y="175" font-size="12" fill="#33404b">totes direccions.</text>
+  </g>
+  <g>
+    <rect x="484" y="66" width="212" height="128" rx="9" fill="#f1effa" stroke="#37306B" stroke-width="1.6"/>
+    <text x="498" y="88" font-size="11" font-weight="700" fill="#37306B">S'OBSERVA · 3</text>
+    <text x="498" y="108" font-size="12.5" font-weight="700" fill="#1a2027">Hidrogen i heli</text>
+    <text x="498" y="127" font-size="12" fill="#33404b">De cada 100 àtoms de</text>
+    <text x="498" y="143" font-size="12" fill="#33404b">l'univers, uns 92 són</text>
+    <text x="498" y="159" font-size="12" fill="#33404b">d'hidrogen i uns 8 d'heli;</text>
+    <text x="498" y="175" font-size="12" fill="#33404b">la resta, quantitats petites.</text>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#E3B04B" stroke-width="3" fill="none">
+    <path d="M130,196 L130,218"/><path d="M360,196 L360,218"/><path d="M590,196 L590,218"/>
+  </g>
+  <g fill="#E3B04B">
+    <polygon points="130,228 124,216 136,216"/><polygon points="360,228 354,216 366,216"/><polygon points="590,228 584,216 596,216"/>
+  </g>
+
+  <!-- deductions -->
+  <g>
+    <rect x="24" y="232" width="212" height="120" rx="9" fill="#fdf6e6" stroke="#B0821F" stroke-width="1.6"/>
+    <text x="38" y="254" font-size="11" font-weight="700" fill="#8a6410">SE'N DEDUEIX</text>
+    <text x="38" y="274" font-size="12" fill="#4a3b12">Si ara tot se separa, mirat</text>
+    <text x="38" y="290" font-size="12" fill="#4a3b12">enrere vol dir que abans tot</text>
+    <text x="38" y="306" font-size="12" fill="#4a3b12">estava més junt: hi va haver</text>
+    <text x="38" y="322" font-size="12" fill="#4a3b12">un moment d'inici, fa uns</text>
+    <text x="38" y="338" font-size="12" font-weight="700" fill="#4a3b12">13.800 milions d'anys.</text>
+  </g>
+  <g>
+    <rect x="254" y="232" width="212" height="120" rx="9" fill="#fdf6e6" stroke="#B0821F" stroke-width="1.6"/>
+    <text x="268" y="254" font-size="11" font-weight="700" fill="#8a6410">SE'N DEDUEIX</text>
+    <text x="268" y="274" font-size="12" fill="#4a3b12">És la llum més antiga que</text>
+    <text x="268" y="290" font-size="12" fill="#4a3b12">existeix, la resta d'un univers</text>
+    <text x="268" y="306" font-size="12" fill="#4a3b12">que era molt calent i s'ha anat</text>
+    <text x="268" y="322" font-size="12" fill="#4a3b12">refredant en expandir-se.</text>
+  </g>
+  <g>
+    <rect x="484" y="232" width="212" height="120" rx="9" fill="#fdf6e6" stroke="#B0821F" stroke-width="1.6"/>
+    <text x="498" y="254" font-size="11" font-weight="700" fill="#8a6410">SE'N DEDUEIX</text>
+    <text x="498" y="274" font-size="12" fill="#4a3b12">És exactament la proporció</text>
+    <text x="498" y="290" font-size="12" fill="#4a3b12">que el model prediu si els</text>
+    <text x="498" y="306" font-size="12" fill="#4a3b12">primers minuts van ser tan</text>
+    <text x="498" y="322" font-size="12" fill="#4a3b12">densos i calents com diu.</text>
+  </g>
+
+  <!-- bottom band -->
+  <rect x="24" y="366" width="672" height="58" rx="9" fill="#37306B"/>
+  <text x="40" y="388" font-size="13" font-weight="700" fill="#ffffff">Per què en calen tres i no n'hi ha prou amb una?</text>
+  <text x="40" y="407" font-size="12" fill="#dcd8ee">Cada prova, tota sola, admetria alguna altra explicació. La força del model ve que tres</text>
+  <text x="40" y="421" font-size="12" fill="#dcd8ee">observacions de tipus molt diferent porten totes al mateix lloc.</text>
+  <text x="24" y="446" font-size="11.5" fill="#b4463c" font-weight="700">Compte amb la paraula «bang»: no és una explosió DINS de l'espai, des d'un punt concret.</text>
+  <text x="24" y="462" font-size="11.5" fill="#5a5580">És l'espai mateix el que s'expandeix, i per això el Big Bang no té cap centre ni cap lloc on va passar.</text>
+</svg>

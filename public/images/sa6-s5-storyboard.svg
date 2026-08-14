@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 470" width="820" height="470" role="img" aria-label="Anatomia del vídeo divulgatiu">
+<title>Anatomia del vídeo divulgatiu</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C0872E"/></marker></defs>
+<rect x="0" y="0" width="820" height="470" fill="#ffffff"/>
+<rect x="0" y="0" width="820" height="470" fill="#ffffff"/>
+<text x="24.0" y="30.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="19" font-weight="700" fill="#2A3D4C" text-anchor="start">Anatomia del vídeo: què ha de dur cada escena</text>
+<text x="24.0" y="52.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">L'esquema dona l'ESTRUCTURA. El contingut és la vostra reconstrucció.</text>
+<rect x="24" y="74" width="188" height="306" rx="9" fill="#ffffff" stroke="#a9bccb" stroke-width="1.5"/>
+<rect x="24" y="74" width="188" height="34" rx="9" fill="#3A5266"/>
+<rect x="24" y="94" width="188" height="14" fill="#3A5266"/>
+<text x="34" y="89" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#cfe0ec" letter-spacing="1.2">ESCENA 1</text>
+<text x="34" y="104" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Proterozoic</text>
+<rect x="31" y="118" width="174" height="62" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="37" y="133" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#3A5266">IMATGE</text>
+<text x="37.0" y="147.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">Com era el planeta i com era</text>
+<text x="37.0" y="160.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el paisatge en aquell</text>
+<text x="37.0" y="173.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període</text>
+<rect x="31" y="183" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="37" y="198" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">① DADA</text>
+<text x="37.0" y="212.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">La prova concreta d'aquest</text>
+<text x="37.0" y="225.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període (fòssil, roca,</text>
+<text x="37.0" y="238.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">sisme, edat del fons)</text>
+<rect x="31" y="252" width="174" height="66" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="37" y="267" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">② INFERÈNCIA</text>
+<text x="37.0" y="281.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">El principi que et deixa fer</text>
+<text x="37.0" y="294.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el salt</text>
+<rect x="31" y="321" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="37" y="336" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#C0872E">③ CONCLUSIÓ</text>
+<text x="37.0" y="350.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">On eren els continents i</text>
+<text x="37.0" y="363.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">quins límits de placa hi</text>
+<text x="37.0" y="376.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">havia</text>
+<rect x="220" y="74" width="188" height="306" rx="9" fill="#ffffff" stroke="#a9bccb" stroke-width="1.5"/>
+<rect x="220" y="74" width="188" height="34" rx="9" fill="#3A5266"/>
+<rect x="220" y="94" width="188" height="14" fill="#3A5266"/>
+<text x="230" y="89" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#cfe0ec" letter-spacing="1.2">ESCENA 2</text>
+<text x="230" y="104" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Paleozoic</text>
+<rect x="227" y="118" width="174" height="62" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="233" y="133" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#3A5266">IMATGE</text>
+<text x="233.0" y="147.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">Com era el planeta i com era</text>
+<text x="233.0" y="160.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el paisatge en aquell</text>
+<text x="233.0" y="173.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període</text>
+<rect x="227" y="183" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="233" y="198" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">① DADA</text>
+<text x="233.0" y="212.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">La prova concreta d'aquest</text>
+<text x="233.0" y="225.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període (fòssil, roca,</text>
+<text x="233.0" y="238.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">sisme, edat del fons)</text>
+<rect x="227" y="252" width="174" height="66" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="233" y="267" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">② INFERÈNCIA</text>
+<text x="233.0" y="281.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">El principi que et deixa fer</text>
+<text x="233.0" y="294.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el salt</text>
+<rect x="227" y="321" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="233" y="336" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#C0872E">③ CONCLUSIÓ</text>
+<text x="233.0" y="350.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">On eren els continents i</text>
+<text x="233.0" y="363.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">quins límits de placa hi</text>
+<text x="233.0" y="376.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">havia</text>
+<rect x="416" y="74" width="188" height="306" rx="9" fill="#ffffff" stroke="#a9bccb" stroke-width="1.5"/>
+<rect x="416" y="74" width="188" height="34" rx="9" fill="#3A5266"/>
+<rect x="416" y="94" width="188" height="14" fill="#3A5266"/>
+<text x="426" y="89" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#cfe0ec" letter-spacing="1.2">ESCENA 3</text>
+<text x="426" y="104" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Mesozoic</text>
+<rect x="423" y="118" width="174" height="62" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="429" y="133" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#3A5266">IMATGE</text>
+<text x="429.0" y="147.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">Com era el planeta i com era</text>
+<text x="429.0" y="160.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el paisatge en aquell</text>
+<text x="429.0" y="173.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període</text>
+<rect x="423" y="183" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="429" y="198" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">① DADA</text>
+<text x="429.0" y="212.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">La prova concreta d'aquest</text>
+<text x="429.0" y="225.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període (fòssil, roca,</text>
+<text x="429.0" y="238.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">sisme, edat del fons)</text>
+<rect x="423" y="252" width="174" height="66" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="429" y="267" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">② INFERÈNCIA</text>
+<text x="429.0" y="281.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">El principi que et deixa fer</text>
+<text x="429.0" y="294.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el salt</text>
+<rect x="423" y="321" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="429" y="336" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#C0872E">③ CONCLUSIÓ</text>
+<text x="429.0" y="350.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">On eren els continents i</text>
+<text x="429.0" y="363.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">quins límits de placa hi</text>
+<text x="429.0" y="376.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">havia</text>
+<rect x="612" y="74" width="188" height="306" rx="9" fill="#ffffff" stroke="#a9bccb" stroke-width="1.5"/>
+<rect x="612" y="74" width="188" height="34" rx="9" fill="#3A5266"/>
+<rect x="612" y="94" width="188" height="14" fill="#3A5266"/>
+<text x="622" y="89" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#cfe0ec" letter-spacing="1.2">ESCENA 4</text>
+<text x="622" y="104" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Cenozoic</text>
+<rect x="619" y="118" width="174" height="62" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="625" y="133" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#3A5266">IMATGE</text>
+<text x="625.0" y="147.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">Com era el planeta i com era</text>
+<text x="625.0" y="160.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el paisatge en aquell</text>
+<text x="625.0" y="173.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període</text>
+<rect x="619" y="183" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="625" y="198" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">① DADA</text>
+<text x="625.0" y="212.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">La prova concreta d'aquest</text>
+<text x="625.0" y="225.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">període (fòssil, roca,</text>
+<text x="625.0" y="238.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">sisme, edat del fons)</text>
+<rect x="619" y="252" width="174" height="66" fill="#eef3f6" stroke="#d8e2e8" stroke-width="1"/>
+<text x="625" y="267" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#2f8a9a">② INFERÈNCIA</text>
+<text x="625.0" y="281.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">El principi que et deixa fer</text>
+<text x="625.0" y="294.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">el salt</text>
+<rect x="619" y="321" width="174" height="66" fill="#fbfdfe" stroke="#d8e2e8" stroke-width="1"/>
+<text x="625" y="336" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="700" fill="#C0872E">③ CONCLUSIÓ</text>
+<text x="625.0" y="350.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">On eren els continents i</text>
+<text x="625.0" y="363.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">quins límits de placa hi</text>
+<text x="625.0" y="376.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="10.5" font-weight="400" fill="#5c7285" text-anchor="start">havia</text>
+<rect x="24" y="394" width="772" height="60" rx="9" fill="#f8f0df" stroke="#C0872E" stroke-width="1.5"/>
+<text x="36.0" y="414.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#8a5e18" text-anchor="start">LÈXIC OBLIGATORI al vídeo:</text>
+<text x="36.0" y="433.8" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">dorsal oceànica · límit divergent · límit convergent · límit transformant · fossa de subducció · orogen ·</text>
+<text x="36.0" y="450.3" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">convecció del mantell · cicle de Wilson · fòssil guia · superposició · discordança</text>
+</svg>

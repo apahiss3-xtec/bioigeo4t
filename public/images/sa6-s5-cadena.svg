@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 366" width="820" height="366" role="img" aria-label="De la dada a la conclusió">
+<title>De la dada a la conclusió</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C0872E"/></marker></defs>
+<rect x="0" y="0" width="820" height="366" fill="#ffffff"/>
+<rect x="0" y="0" width="820" height="366" fill="#ffffff"/>
+<text x="24.0" y="30.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="19" font-weight="700" fill="#2A3D4C" text-anchor="start">L'esquelet d'un argument geològic</text>
+<text x="24.0" y="52.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Exemple resolt del planeta VELDOR (no és el vostre).</text>
+<rect x="24" y="72" width="248" height="206" rx="9" fill="#ffffff" stroke="#3A5266" stroke-width="2"/>
+<rect x="24" y="72" width="248" height="26" rx="9" fill="#3A5266"/>
+<rect x="24" y="86" width="248" height="12" fill="#3A5266"/>
+<text x="35.0" y="90.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="start">1 · DADA</text>
+<text x="35.0" y="116.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Què s'observa. Ningú ho discuteix.</text>
+<text x="35.0" y="143.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">A la costa est del continent</text>
+<text x="35.0" y="160.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">Àuria i a la costa oest del</text>
+<text x="35.0" y="176.9" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">continent Nèvia hi ha el mateix</text>
+<text x="35.0" y="193.8" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">fòssil de falguera terrestre, i</text>
+<text x="35.0" y="210.7" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">avui els separen 4.000 km d'oceà.</text>
+<line x1="274" y1="175.0" x2="288" y2="175.0" stroke="#C0872E" stroke-width="2.4" marker-end="url(#ar)"/>
+<rect x="290" y="72" width="248" height="206" rx="9" fill="#ffffff" stroke="#2f8a9a" stroke-width="2"/>
+<rect x="290" y="72" width="248" height="26" rx="9" fill="#2f8a9a"/>
+<rect x="290" y="86" width="248" height="12" fill="#2f8a9a"/>
+<text x="301.0" y="90.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="start">2 · INFERÈNCIA</text>
+<text x="301.0" y="116.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Quin principi et deixa fer el salt.</text>
+<text x="301.0" y="143.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">Una falguera terrestre no</text>
+<text x="301.0" y="160.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">travessa un oceà. Si el mateix</text>
+<text x="301.0" y="176.9" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">fòssil és als dos costats, les</text>
+<text x="301.0" y="193.8" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">dues costes havien d'estar en</text>
+<text x="301.0" y="210.7" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">contacte quan aquella planta</text>
+<text x="301.0" y="227.6" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">vivia.</text>
+<line x1="540" y1="175.0" x2="554" y2="175.0" stroke="#C0872E" stroke-width="2.4" marker-end="url(#ar)"/>
+<rect x="556" y="72" width="248" height="206" rx="9" fill="#ffffff" stroke="#C0872E" stroke-width="2"/>
+<rect x="556" y="72" width="248" height="26" rx="9" fill="#C0872E"/>
+<rect x="556" y="86" width="248" height="12" fill="#C0872E"/>
+<text x="567.0" y="90.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#ffffff" text-anchor="start">3 · CONCLUSIÓ</text>
+<text x="567.0" y="116.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Què va passar al passat.</text>
+<text x="567.0" y="143.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">Al Paleozoic, Àuria i Nèvia</text>
+<text x="567.0" y="160.1" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">formaven una sola massa</text>
+<text x="567.0" y="176.9" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">continental, que després es va</text>
+<text x="567.0" y="193.8" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">separar en obrir-se un oceà entre</text>
+<text x="567.0" y="210.7" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">totes dues.</text>
+<rect x="24" y="294" width="772" height="52" rx="9" fill="#e6f3f5" stroke="#2f8a9a" stroke-width="1.5"/>
+<text x="36.0" y="315.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">Sense la peça 2 el salt no està justificat: dir «estaven junts» sense dir per què el fòssil ho demostra no és</text>
+<text x="36.0" y="331.5" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">una conclusió científica, és una suposició.</text>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+  <rect width="720" height="560" fill="#ffffff"/>
+  <text x="24" y="26" font-size="18" font-weight="700" fill="#37306B">La teva línia del temps còsmica</text>
+  <text x="24" y="46" font-size="11.5" fill="#5a5580">1 · Calcula la data còsmica de cada fita. &#160;2 · Marca-la amb una ratlla a la banda blanca i posa-hi el número.</text>
+  <text x="24" y="62" font-size="11.5" fill="#5a5580">3 · Enganxa la targeta a una fila i uneix-la amb la seva ratlla. Si et cau al desembre, fes-ho a la línia B.</text>
+  <text x="24" y="88" font-size="11" font-weight="700" fill="#37306B">A · L'ANY CÒSMIC SENCER &#160;·&#160; 1 mes ≈ 1.150 milions d'anys</text>
+  <rect x="40.0" y="96" width="54.0" height="30" fill="#e8e5f4" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="67.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">GEN</text>
+  <rect x="94.0" y="96" width="54.0" height="30" fill="#f6f5fb" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="121.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">FEB</text>
+  <rect x="148.0" y="96" width="54.0" height="30" fill="#e8e5f4" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="175.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">MAR</text>
+  <rect x="202.0" y="96" width="54.0" height="30" fill="#f6f5fb" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="229.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">ABR</text>
+  <rect x="256.0" y="96" width="54.0" height="30" fill="#e8e5f4" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="283.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">MAI</text>
+  <rect x="310.0" y="96" width="54.0" height="30" fill="#f6f5fb" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="337.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">JUN</text>
+  <rect x="364.0" y="96" width="54.0" height="30" fill="#e8e5f4" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="391.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">JUL</text>
+  <rect x="418.0" y="96" width="54.0" height="30" fill="#f6f5fb" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="445.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">AGO</text>
+  <rect x="472.0" y="96" width="54.0" height="30" fill="#e8e5f4" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="499.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">SET</text>
+  <rect x="526.0" y="96" width="54.0" height="30" fill="#f6f5fb" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="553.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">OCT</text>
+  <rect x="580.0" y="96" width="54.0" height="30" fill="#e8e5f4" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="607.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">NOV</text>
+  <rect x="634.0" y="96" width="54.0" height="30" fill="#f6f5fb" stroke="#b9b4d2" stroke-width="1"/>
+  <text x="661.0" y="116" font-size="11.5" font-weight="700" fill="#37306B" text-anchor="middle">DES</text>
+  <text x="40" y="140" font-size="10" fill="#5a5580">1 de gener · Big Bang</text>
+  <rect x="40" y="146" width="648" height="24" rx="5" fill="#fdfcff" stroke="#B0821F" stroke-width="1.3"/>
+  <text x="52" y="163" font-size="10" fill="#c9bf9e">marca aquí la ratlla i el número de cada fita</text>
+  <rect x="40" y="176" width="648" height="54" rx="8" fill="#ffffff" stroke="#b9b4d2" stroke-width="1.4" stroke-dasharray="8 6"/>
+  <text x="52" y="207" font-size="10.5" fill="#c4bfd8">enganxa aquí les targetes de les fites que et caiguin de GENER a NOVEMBRE</text>
+  <rect x="40" y="236" width="648" height="54" rx="8" fill="#ffffff" stroke="#b9b4d2" stroke-width="1.4" stroke-dasharray="8 6"/>
+  <text x="52" y="267" font-size="10.5" fill="#c4bfd8">fila 2</text>
+  <line x1="24" y1="308" x2="696" y2="308" stroke="#e0dcee" stroke-width="1.5"/>
+  <text x="24" y="332" font-size="11" font-weight="700" fill="#8a6410">B · ZOOM DEL MES DE DESEMBRE &#160;·&#160; 1 dia ≈ 37,8 milions d'anys</text>
+  <text x="696" y="332" font-size="10.5" fill="#8a6410" text-anchor="end" font-style="italic">tot això és només l'últim tros de la línia de dalt</text>
+  <rect x="40.0" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="50.5" y="374" font-size="9.5" font-weight="700" fill="#8a6410" text-anchor="middle">1</text>
+  <rect x="60.9" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="81.8" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="102.7" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="123.6" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="134.1" y="374" font-size="9.5" font-weight="700" fill="#8a6410" text-anchor="middle">5</text>
+  <rect x="144.5" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="165.4" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="186.3" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="207.2" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="228.1" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="238.6" y="374" font-size="9.5" font-weight="700" fill="#8a6410" text-anchor="middle">10</text>
+  <rect x="249.0" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="269.9" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="290.8" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="311.7" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="332.6" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="343.1" y="374" font-size="9.5" font-weight="700" fill="#8a6410" text-anchor="middle">15</text>
+  <rect x="353.5" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="374.5" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="395.4" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="416.3" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="437.2" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="447.6" y="374" font-size="9.5" font-weight="700" fill="#8a6410" text-anchor="middle">20</text>
+  <rect x="458.1" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="479.0" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="499.9" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="520.8" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="541.7" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="552.1" y="374" font-size="9.5" font-weight="700" fill="#8a6410" text-anchor="middle">25</text>
+  <rect x="562.6" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="583.5" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="604.4" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="625.3" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <rect x="646.2" y="356" width="20.9" height="26" fill="#fdfaf1" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="656.6" y="374" font-size="9.5" font-weight="700" fill="#8a6410" text-anchor="middle">30</text>
+  <rect x="667.1" y="356" width="20.9" height="26" fill="#f7f2e2" stroke="#e0d5b5" stroke-width="0.8"/>
+  <text x="677.5" y="374" font-size="9.5" font-weight="700" fill="#b4463c" text-anchor="middle">31</text>
+  <rect x="40" y="388" width="648" height="24" rx="5" fill="#fdfcff" stroke="#B0821F" stroke-width="1.3"/>
+  <text x="52" y="405" font-size="10" fill="#c9bf9e">marca aquí la ratlla i el número de cada fita del desembre</text>
+  <rect x="40" y="428" width="648" height="54" rx="8" fill="#ffffff" stroke="#e0d5b5" stroke-width="1.4" stroke-dasharray="8 6"/>
+  <text x="52" y="459" font-size="10.5" fill="#d8cbab">enganxa aquí les targetes que et caiguin al DESEMBRE</text>
+  <rect x="40" y="488" width="648" height="54" rx="8" fill="#ffffff" stroke="#e0d5b5" stroke-width="1.4" stroke-dasharray="8 6"/>
+  <text x="52" y="519" font-size="10.5" fill="#d8cbab">fila 2</text>
+  <text x="24" y="550" font-size="10.5" fill="#6a6488" font-style="italic">Una pregunta per pensar mentre ho enganxes: per què ha calgut fer un zoom del mes de desembre?</text>
+</svg>

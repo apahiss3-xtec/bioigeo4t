@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 620" width="820" height="620" role="img" aria-label="Estructura d'un informe de riscos">
+<title>Estructura d'un informe de riscos</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C0872E"/></marker></defs>
+<rect x="0" y="0" width="820" height="620" fill="#ffffff"/>
+<rect x="0" y="0" width="820" height="620" fill="#ffffff"/>
+<text x="24.0" y="30.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="19" font-weight="700" fill="#2A3D4C" text-anchor="start">Els cinc blocs d'un informe de riscos</text>
+<text x="24.0" y="52.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Exemple breu d'un indret inventat, Sant Jordi de la Rambla, que NO és cap dels tres indrets de S24. El teu</text>
+<text x="24.0" y="68.5" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">indret és un altre i les seves dades són diferents.</text>
+<rect x="24" y="76" width="772" height="80" rx="9" fill="#ffffff" stroke="#3A5266" stroke-width="1.8"/>
+<rect x="24" y="76" width="6" height="80" rx="3" fill="#3A5266"/>
+<text x="42" y="97" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#3A5266">1 · SITUACIÓ</text>
+<text x="42.0" y="114.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">On és i què hi ha?</text>
+<text x="250.0" y="97.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">Sant Jordi de la Rambla: barri nou de 60 cases i una escola construïts dins</text>
+<text x="250.0" y="112.6" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">la llera plana d'una rambla que baixa seca gairebé tot l'any.</text>
+<line x1="60" y1="157" x2="60" y2="165" stroke="#C0872E" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="24" y="168" width="772" height="80" rx="9" fill="#ffffff" stroke="#3A5266" stroke-width="1.8"/>
+<rect x="24" y="168" width="6" height="80" rx="3" fill="#3A5266"/>
+<text x="42" y="189" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#3A5266">2 · DADES FÍSIQUES</text>
+<text x="42.0" y="206.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Quina roca, quin pendent,</text>
+<text x="42.0" y="221.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">quina vegetació?</text>
+<text x="250.0" y="189.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">Graves i sorres soltes de la rambla; terreny pla al fons d'una vall estreta;</text>
+<text x="250.0" y="204.6" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">conca de capçalera urbanitzada i asfaltada.</text>
+<line x1="60" y1="249" x2="60" y2="257" stroke="#C0872E" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="24" y="260" width="772" height="80" rx="9" fill="#ffffff" stroke="#2f8a9a" stroke-width="1.8"/>
+<rect x="24" y="260" width="6" height="80" rx="3" fill="#2f8a9a"/>
+<text x="42" y="281" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#2f8a9a">3 · RISCOS DEDUÏTS</text>
+<text x="42.0" y="298.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Quin fenomen, de quina dada</text>
+<text x="42.0" y="313.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">surt i de quin tipus és?</text>
+<text x="250.0" y="281.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">Inundació sobtada: la rambla és plana i el llit de graves indica que hi ha</text>
+<text x="250.0" y="296.6" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">circulat aigua amb força. Risc EXTERN.</text>
+<line x1="60" y1="341" x2="60" y2="349" stroke="#C0872E" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="24" y="352" width="772" height="80" rx="9" fill="#ffffff" stroke="#C0872E" stroke-width="1.8"/>
+<rect x="24" y="352" width="6" height="80" rx="3" fill="#C0872E"/>
+<text x="42" y="373" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#C0872E">4 · FACTOR HUMÀ</text>
+<text x="42.0" y="390.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Què hi han afegit les</text>
+<text x="42.0" y="405.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">persones? Puja la perillositat</text>
+<text x="42.0" y="420.4" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">o l'exposició?</text>
+<text x="250.0" y="373.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">Es va construir dins la llera (puja l'exposició) i l'asfalt de dalt fa que</text>
+<text x="250.0" y="388.6" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">l'aigua hi arribi més de pressa (puja la perillositat).</text>
+<line x1="60" y1="433" x2="60" y2="441" stroke="#C0872E" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="24" y="444" width="772" height="80" rx="9" fill="#ffffff" stroke="#C0872E" stroke-width="1.8"/>
+<rect x="24" y="444" width="6" height="80" rx="3" fill="#C0872E"/>
+<text x="42" y="465" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="700" fill="#C0872E">5 · MESURES</text>
+<text x="42.0" y="482.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">Predicció, prevenció o</text>
+<text x="42.0" y="497.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="11.5" font-weight="400" fill="#5c7285" text-anchor="start" font-style="italic">correcció? Sobre quin factor?</text>
+<text x="250.0" y="465.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">Sensor de nivell amb avís als mòbils (predicció) i simulacre anual a l'escola</text>
+<text x="250.0" y="480.6" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">(prevenció, baixa la vulnerabilitat). Límit: cap de les dues treu ni una casa</text>
+<text x="250.0" y="496.2" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12" font-weight="400" fill="#2A3D4C" text-anchor="start">de la llera.</text>
+<rect x="24" y="536" width="772" height="44" rx="9" fill="#e6f3f5" stroke="#2f8a9a" stroke-width="1.5"/>
+<text x="36.0" y="555.0" font-family="Fira Sans Extra Condensed, Fira Sans Condensed, Segoe UI, sans-serif" font-size="12.5" font-weight="400" fill="#2A3D4C" text-anchor="start">Un informe sense el bloc 3 lligat al bloc 2 no val: seria una llista de pors, no una anàlisi.</text>
+</svg>

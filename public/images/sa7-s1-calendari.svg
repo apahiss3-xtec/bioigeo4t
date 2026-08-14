@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 566" width="720" height="566" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+  <rect width="720" height="566" fill="#ffffff"/>
+  <text x="24" y="30" font-size="19" font-weight="700" fill="#37306B">El calendari còsmic: com es fa el càlcul</text>
+  <text x="24" y="50" font-size="12.5" fill="#5a5580" font-style="italic">Imagina que els 13.800 Ma de l'univers són un sol any: l'1 de gener és el Big Bang i avui és el 31 de desembre.</text>
+
+  <rect x="24" y="62" width="672" height="34" rx="8" fill="#37306B"/>
+  <text x="40" y="85" font-size="13.5" font-weight="700" fill="#ffffff">L'escala:  13.800 Ma ÷ 365 dies  =  37,8 Ma per cada dia còsmic  (≈ 38 Ma/dia)</text>
+
+  <!-- steps -->
+  <g>
+    <rect x="24" y="110" width="326" height="196" rx="9" fill="#f1effa" stroke="#37306B" stroke-width="1.6"/>
+    <text x="40" y="132" font-size="12.5" font-weight="700" fill="#37306B">ELS PASSOS</text>
+    <circle cx="48" cy="152" r="10" fill="#37306B"/><text x="48" y="157" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+    <text x="66" y="157" font-size="12.5" fill="#1a2027">Mira fa quants milions d'anys va passar.</text>
+    <circle cx="48" cy="188" r="10" fill="#37306B"/><text x="48" y="193" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+    <text x="66" y="187" font-size="12.5" fill="#1a2027">Calcula el temps que havia passat des del</text>
+    <text x="66" y="203" font-size="12.5" fill="#1a2027">Big Bang:  13.800 − (edat de la fita).</text>
+    <circle cx="48" cy="230" r="10" fill="#37306B"/><text x="48" y="235" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+    <text x="66" y="229" font-size="12.5" fill="#1a2027">Divideix-ho entre 37,8: et dona els dies</text>
+    <text x="66" y="245" font-size="12.5" fill="#1a2027">TRANSCORREGUTS des del començament.</text>
+    <circle cx="48" cy="272" r="10" fill="#37306B"/><text x="48" y="277" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+    <text x="66" y="271" font-size="12.5" fill="#1a2027">Regla: dia de l'any = aquest número</text>
+    <text x="66" y="287" font-size="12.5" fill="#1a2027">arrodonit cap AVALL + 1 → taula de la dreta.</text>
+  </g>
+
+  <!-- month table -->
+  <g>
+    <rect x="366" y="110" width="330" height="196" rx="9" fill="#ffffff" stroke="#b9b4d2" stroke-width="1.4"/>
+    <text x="382" y="132" font-size="12.5" font-weight="700" fill="#37306B">DIES ACUMULATS EN ACABAR CADA MES</text>
+    <g font-size="12" fill="#33404b">
+      <text x="382" y="156">gener 31</text><text x="484" y="156">maig 151</text><text x="596" y="156">setembre 273</text>
+      <text x="382" y="178">febrer 59</text><text x="484" y="178">juny 181</text><text x="596" y="178">octubre 304</text>
+      <text x="382" y="200">març 90</text><text x="484" y="200">juliol 212</text><text x="596" y="200">novembre 334</text>
+      <text x="382" y="222">abril 120</text><text x="484" y="222">agost 243</text><text x="596" y="222">desembre 365</text>
+    </g>
+    <text x="382" y="250" font-size="11.5" fill="#5a5580" font-style="italic">Exemple de lectura: el dia 353 és 353 − 334 = 19 dies</text>
+    <text x="382" y="266" font-size="11.5" fill="#5a5580" font-style="italic">després d'acabar el novembre → 19 de desembre.</text>
+    <text x="382" y="286" font-size="11.5" fill="#8a6410" font-weight="700">Big Bang: 0 dies transcorreguts → 0 + 1 = dia 1</text>
+    <text x="382" y="300" font-size="11.5" fill="#8a6410" font-weight="700">= 1 de gener. L'últim dia, el 31, dura 37,8 Ma.</text>
+  </g>
+
+  <!-- worked example -->
+  <rect x="24" y="322" width="672" height="132" rx="10" fill="#fdf6e6" stroke="#B0821F" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="40" y="344" font-size="12.5" font-weight="700" fill="#8a6410">EXEMPLE RESOLT · una fita que NO és cap de les targetes que has d'enganxar</text>
+  <text x="40" y="366" font-size="13" fill="#1a2027" font-style="italic">«Les primeres plantes van colonitzar la terra ferma fa 470 milions d'anys.»</text>
+  <g font-size="12.5" fill="#4a3b12">
+    <text x="40" y="388">Pas 2 ·  13.800 − 470 = 13.330 milions d'anys des del Big Bang</text>
+    <text x="40" y="408">Pas 3 ·  13.330 ÷ 37,8 = 352,6 dies transcorreguts  →  352 + 1 = dia 353</text>
+    <text x="40" y="428">Pas 4 ·  353 − 334 (dies acumulats en acabar el novembre) = 19</text>
+    <text x="40" y="448" font-weight="700" fill="#37306B">Data còsmica: 19 de desembre</text>
+  </g>
+  <rect x="24" y="466" width="672" height="86" rx="9" fill="#f1effa" stroke="#37306B" stroke-width="1.6"/>
+  <text x="40" y="486" font-size="12" font-weight="700" fill="#37306B">PAS 5 · només per a una fita molt recent, que cau DINS de l'últim dia</text>
+  <text x="40" y="504" font-size="12" fill="#33404b">Si la divisió et passa de 365, no busquis cap dia nou: la fita és dins del 31 de desembre.</text>
+  <text x="40" y="522" font-size="12" fill="#33404b">Calcula quant queda per a les 24:00: (edat) ÷ 37,8 = fracció de dia; × 24 h; × 60 = minuts.</text>
+  <text x="40" y="540" font-size="12" fill="#5a5580" font-style="italic">37,8 és un valor arrodonit: per això la divisió pot passar una mica de 365.</text>
+</svg>
