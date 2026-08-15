@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 382" width="760" height="382" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+<rect width="760" height="382" fill="#ffffff"/>
+<text x="380" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#241F4A">Es pot posar a prova? El camí de decisió</text>
+<text x="380" y="44" text-anchor="middle" font-size="12.5" fill="#5a5580">El mètode, amb un exemple que no té res a veure amb l'origen de la vida</text>
+
+<!-- PAS 1 -->
+<rect x="24" y="62" width="330" height="52" rx="8" fill="#f1effa" stroke="#37306B" stroke-width="1.8"/>
+<text x="189" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#241F4A">1 · Agafa l'afirmació i pregunta't:</text>
+<text x="189" y="102" text-anchor="middle" font-size="12.5" fill="#33404b">què hauríem d'observar si fos CERTA?</text>
+
+<line x1="189" y1="114" x2="189" y2="134" stroke="#37306B" stroke-width="2"/>
+<polygon points="189,134 184,124 194,124" fill="#37306B"/>
+
+<!-- PAS 2 -->
+<rect x="24" y="134" width="330" height="52" rx="8" fill="#f1effa" stroke="#37306B" stroke-width="1.8"/>
+<text x="189" y="154" text-anchor="middle" font-size="13" font-weight="700" fill="#241F4A">2 · I ara la pregunta decisiva:</text>
+<text x="189" y="174" text-anchor="middle" font-size="12.5" fill="#33404b">què hauríem d'observar si fos FALSA?</text>
+
+<line x1="189" y1="186" x2="189" y2="206" stroke="#37306B" stroke-width="2"/>
+<polygon points="189,206 184,196 194,196" fill="#37306B"/>
+<line x1="104" y1="206" x2="274" y2="206" stroke="#37306B" stroke-width="2"/>
+<line x1="104" y1="206" x2="104" y2="226" stroke="#37306B" stroke-width="2"/>
+<polygon points="104,226 99,216 109,216" fill="#37306B"/>
+<line x1="274" y1="206" x2="274" y2="226" stroke="#37306B" stroke-width="2"/>
+<polygon points="274,226 269,216 279,216" fill="#37306B"/>
+
+<!-- SORTIDA A -->
+<rect x="24" y="226" width="160" height="100" rx="8" fill="#dff0e6" stroke="#3f8a63" stroke-width="1.8"/>
+<text x="104" y="246" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f5c3d">SÍ que hi ha resposta</text>
+<text x="104" y="268" text-anchor="middle" font-size="12" fill="#26533c">És una hipòtesi</text>
+<text x="104" y="284" text-anchor="middle" font-size="12" fill="#26533c">científica: es pot</text>
+<text x="104" y="300" text-anchor="middle" font-size="12" fill="#26533c">posar a prova</text>
+<text x="104" y="318" text-anchor="middle" font-size="11.5" fill="#1f5c3d">(certa o falsa, ja es veurà)</text>
+
+<!-- SORTIDA B -->
+<rect x="194" y="226" width="160" height="100" rx="8" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.8"/>
+<text x="274" y="246" text-anchor="middle" font-size="12.5" font-weight="700" fill="#7a5800">NO hi ha resposta</text>
+<text x="274" y="268" text-anchor="middle" font-size="12" fill="#7a5800">Cap observació no la</text>
+<text x="274" y="284" text-anchor="middle" font-size="12" fill="#7a5800">podria contradir mai:</text>
+<text x="274" y="300" text-anchor="middle" font-size="12" fill="#7a5800">queda fora de la ciència</text>
+<text x="274" y="318" text-anchor="middle" font-size="11.5" font-weight="700" fill="#7a5800">Fora ≠ falsa</text>
+
+<!-- EXEMPLE -->
+<rect x="378" y="62" width="362" height="286" rx="9" fill="#fdfefe" stroke="#bdb7d6" stroke-width="1.6"/>
+<rect x="378" y="62" width="362" height="30" rx="9" fill="#8f8ab0"/>
+<rect x="378" y="82" width="362" height="10" fill="#8f8ab0"/>
+<text x="559" y="83" text-anchor="middle" font-size="13.5" font-weight="700" fill="#ffffff">Un exemple resolt, de tema ben diferent</text>
+
+<rect x="392" y="104" width="334" height="46" rx="7" fill="#eaf0f9" stroke="#4a6fa5" stroke-width="1.4"/>
+<text x="402" y="122" font-size="12" font-weight="700" fill="#2b4a75">Afirmació A:</text>
+<text x="402" y="140" font-size="12" fill="#33404b">«Tots els cignes d'aquest llac són blancs.»</text>
+<text x="402" y="168" font-size="12" fill="#33404b">Si fos certa: en mirem cent i tots són blancs.</text>
+<text x="402" y="186" font-size="12" fill="#33404b">Si fos falsa: en trobem un que no ho és.</text>
+<text x="402" y="206" font-size="12" font-weight="700" fill="#1f5c3d">→ Hi ha resposta a les dues: és científica.</text>
+
+<line x1="392" y1="218" x2="726" y2="218" stroke="#e0dcee" stroke-width="1.4"/>
+
+<rect x="392" y="228" width="334" height="46" rx="7" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.4"/>
+<text x="402" y="246" font-size="12" font-weight="700" fill="#7a5800">Afirmació B:</text>
+<text x="402" y="264" font-size="12" fill="#33404b">«Al llac hi viu un cigne invisible i intocable.»</text>
+<text x="402" y="292" font-size="12" fill="#33404b">Si fos certa: no observaríem res especial.</text>
+<text x="402" y="310" font-size="12" fill="#33404b">Si fos falsa: tampoc no observaríem res.</text>
+<text x="402" y="330" font-size="12" font-weight="700" fill="#7a5800">→ La segona pregunta no té resposta: queda fora.</text>
+</svg>

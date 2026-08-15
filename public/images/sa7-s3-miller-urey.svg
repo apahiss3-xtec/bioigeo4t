@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+<rect width="760" height="420" fill="#ffffff"/>
+<text x="380" y="26" text-anchor="middle" font-size="17" font-weight="700" fill="#241F4A">L'aparell de Miller-Urey (1953)</text>
+<text x="380" y="44" text-anchor="middle" font-size="12.5" fill="#5a5580">Tot és de vidre i està tancat: dins no hi entra ni en surt res, ni cap ésser viu</text>
+
+<!-- ─ TUBS ─ -->
+<path d="M 120 330 L 120 150 L 190 150" fill="none" stroke="#37306B" stroke-width="2.4"/>
+<polygon points="192,150 180,144 180,156" fill="#37306B"/>
+<path d="M 310 150 L 450 150 L 450 206" fill="none" stroke="#37306B" stroke-width="2.4"/>
+<path d="M 450 282 L 450 302 L 246 302" fill="none" stroke="#37306B" stroke-width="2.4"/>
+<polygon points="244,302 256,296 256,308" fill="#37306B"/>
+
+<!-- ─ BALÓ SUPERIOR ─ -->
+<circle cx="250" cy="150" r="60" fill="#eef3fb" stroke="#37306B" stroke-width="2.4"/>
+<text x="250" y="112" text-anchor="middle" font-size="13" font-weight="700" fill="#241F4A">gasos</text>
+<text x="250" y="130" text-anchor="middle" font-size="12" fill="#33404b">metà · amoníac</text>
+<text x="250" y="146" text-anchor="middle" font-size="12" fill="#33404b">hidrogen</text>
+<text x="250" y="162" text-anchor="middle" font-size="12" fill="#33404b">+ vapor d'aigua</text>
+<line x1="206" y1="182" x2="226" y2="186" stroke="#7c8a96" stroke-width="3"/>
+<line x1="294" y1="182" x2="274" y2="186" stroke="#7c8a96" stroke-width="3"/>
+<polyline points="226,186 238,180 232,190 244,184 238,194 250,188 244,197 258,190 266,193 274,186" fill="none" stroke="#E3B04B" stroke-width="2.6"/>
+
+<text x="250" y="238" text-anchor="middle" font-size="12.5" font-weight="700" fill="#8a6410">descàrregues elèctriques</text>
+<text x="250" y="254" text-anchor="middle" font-size="12" fill="#8a6410">imiten els llamps · durant una setmana</text>
+
+<text x="66" y="222" font-size="12" fill="#4a6fa5">el vapor</text>
+<text x="66" y="238" font-size="12" fill="#4a6fa5">puja</text>
+
+<!-- ─ REFREDADOR ─ -->
+<rect x="430" y="206" width="40" height="76" rx="8" fill="#eaf0f9" stroke="#4a6fa5" stroke-width="2"/>
+<path d="M 435 220 h 30 M 435 234 h 30 M 435 248 h 30 M 435 262 h 30" stroke="#4a6fa5" stroke-width="1.4"/>
+<text x="484" y="228" font-size="12.5" font-weight="700" fill="#2b4a75">refredador</text>
+<text x="484" y="245" font-size="12" fill="#2b4a75">el vapor es torna</text>
+<text x="484" y="260" font-size="12" fill="#2b4a75">líquid altra vegada</text>
+
+<!-- ─ BALÓ INFERIOR ─ -->
+<circle cx="200" cy="330" r="46" fill="#ffffff" stroke="#37306B" stroke-width="2.4"/>
+<path d="M 155 340 a 46 46 0 0 0 90 0 z" fill="#cfe0f2" stroke="none"/>
+<text x="200" y="360" text-anchor="middle" font-size="12" font-weight="700" fill="#2b4a75">aigua que bull</text>
+<path d="M 193 386 q 7 -14 14 0 q -7 8 -14 0" fill="#E3B04B" stroke="#B0821F" stroke-width="1.2"/>
+<text x="128" y="392" text-anchor="middle" font-size="12" fill="#8a6410">font de calor</text>
+
+<!-- ─ MOSTRA ─ -->
+<path d="M 250 330 L 508 330" fill="none" stroke="#7c8a96" stroke-width="1.6" stroke-dasharray="5 4"/>
+<polygon points="510,330 498,325 498,335" fill="#7c8a96"/>
+<text x="378" y="322" text-anchor="middle" font-size="12" fill="#5a5580">al cap d'una setmana se'n treu una mostra</text>
+
+<rect x="516" y="300" width="228" height="72" rx="9" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.8"/>
+<text x="630" y="322" text-anchor="middle" font-size="13" font-weight="700" fill="#7a5800">QUÈ HI HA AQUÍ DINS?</text>
+<text x="630" y="341" text-anchor="middle" font-size="12" fill="#7a5800">El líquid s'ha tornat marró.</text>
+<text x="630" y="358" text-anchor="middle" font-size="12" fill="#7a5800">Què vol dir això, ho escrius tu (1a).</text>
+
+<!-- ─ LLEGENDA ─ -->
+<rect x="560" y="70" width="184" height="140" rx="9" fill="#f1effa" stroke="#bdb7d6" stroke-width="1.4"/>
+<text x="652" y="92" text-anchor="middle" font-size="12.5" font-weight="700" fill="#241F4A">El circuit, en 4 passos</text>
+<text x="574" y="114" font-size="12" fill="#33404b">1 · L'aigua de baix bull</text>
+<text x="574" y="134" font-size="12" fill="#33404b">2 · El vapor puja al baló</text>
+<text x="586" y="150" font-size="12" fill="#33404b">dels gasos</text>
+<text x="574" y="170" font-size="12" fill="#33404b">3 · Hi salten les espurnes</text>
+<text x="574" y="190" font-size="12" fill="#33404b">4 · Es refreda i torna a baix</text>
+</svg>
