@@ -1,151 +1,187 @@
 export const sa7s4 = {
-  id: "s4", saId: "sa7",
-  title: "Llegir el paisatge: la Terra com a arxiu",
-  sessionNumber: 4, biome: "sa7", duration: "2h",
-  engageImage: "/images/sa7-s4-paisatge.jpg",
+  id: "s4",
+  saId: "sa7",
+  title: "Val la pena buscar vida fora?",
+  sessionNumber: 4,
+  biome: "sa7",
+  duration: "2h",
+  engageImage: "/images/sa7-s4-portada.jpg",
 
-  engageQuestion: "Montserrat és de conglomerat erosionat. La Garrotxa és de basalt volcànic. El Delta de l'Ebre és de sediment fluvial en formació activa. El Pirineu és la cicatriu d'una col·lisió de continents. Cada paisatge de Catalunya explica una historia geológica diferent. Avui llegirem el paisatge i resoldrem l'enigma.",
-  engageContext: "El docent mostra 6 fotografies emblemàtiques del paisatge de Catalunya amb la pregunta: 'Per quina raó cada lloc és com és?' (Montserrat, Garrotxa, Delta de l'Ebre, Pirineus, Costa Brava, Cardona). Treball inicial individual: cada alumne escull una fotografia i escriu la seva hipòtesi sobre el procés geológic que l'ha format. Posada en comú. Connexió: avui completem la resolució de l'enigma de les Preses (1428).",
+  // ── ENGANXA (hook) ───────────────────────────────────────
+  engageChallenge: "El telescopi espacial James Webb, el mateix que a la primera sessió d'aquesta situació mirava un planeta a més de cent anys llum, va costar al voltant de deu mil milions de dòlars i va tenir més de vint anys de retards abans d'enlairar-se. Amb aquells diners s'hi hauria pogut fer una altra cosa: hospitals, escoles, recerca contra el càncer, protecció del delta. Aquesta comparació no té resposta científica. La ciència et pot dir amb precisió què costa una missió, quina probabilitat té de trobar el que busca i què n'aprendríem si la trobés; el que no et pot dir és si val més la pena això o allò. Aquesta última part no la decideix cap dada: la decidim les persones. I decidir-ho bé, amb les dades a la mà i sabent quan has deixat de parlar de dades, és exactament el que has estat entrenant tot el curs.",
+  engageQuestion: "Abans que comenci res, escriu en una frase la teva postura: hauríem d'invertir diners públics a buscar vida fora de la Terra? I ara la part difícil, que et servirà tota la sessió: escriu al costat quina dada concreta et faria canviar d'opinió. Si no en trobes cap, para't a pensar-hi —vol dir que la teva postura no descansa sobre dades sinó sobre valors, i això no és cap defecte, però convé que ho sàpigues abans d'obrir la boca al debat.",
+  engageContext: "Aquesta és la darrera sessió de la situació i del curs, i té tres parts ben diferents. Primer un debat de veritat, amb torns i regles, sobre una qüestió que barreja ciència i valors; enmig hi ha un torn en què hauràs de defensar la postura contrària a la teva. Després tanquem el curs sencer: recuperaràs l'escala de certeses de la primera situació i miraràs com ha canviat, al llarg de l'any, la teva manera de decidir que una cosa és veritat. I al final hi ha la prova escrita del curs, que no és de memòria: és una situació nova on hauràs de fer servir alhora coses de situacions diferents.",
 
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
     A: [
-      "Construeixo una pàgina completa de la guia geológica amb: nom del lloc, situació geológica (quin tipus de roca predomina i com es va formar), procés geológic principal (amb dates aproximades en Ma), recurs geológic (si n'hi ha), impacte humà sobre el paisatge, i 1 repte de conservació. Argumento per quina raó el coneixement geológic és necessari per a la planificació territorial.",
-      "Resolc l'enigma completament amb argumentació geológica: explico per separat el mecanisme dels terratrèmols al Pirineu (col·lisió alpina + falles actives heretades) i el mecanisme del vulcanisme de la Garrotxa (rift postalpí = extensió litosférica), i argumento per quina raó son dos processos oposats (convergència vs divergència) que van succeir seqüencialment a la mateixa zona.",
-      "Relaciono la geologia de Catalunya amb la historia humana: per quina raó el Pirineu va ser una frontera natural entre Hispania i Francia? Per quina raó els pobles pirinencs usen pissarra a les teulades? Per quina raó Cardona té un castell sobre un turó de sal? Per quina raó el Delta de l'Ebre s'allarga cap al mar però les platges de Tarragona s'erosionen?",
-      "Faig una síntesi de la SA: quines connexions existeixen entre SA7 i les SAs anteriors? (SA1: minerals en la cèl·lula; SA2: minerals en la sang = Fe de la hemoglobina; SA5: el cicle del N i del C connecta amb els minerals; SA6: combustibles fòssils i cicle del carboni geológic)."
+      "Construeixo la meva postura sobre una qüestió sociocientífica separant amb precisió la part que descansa en dades de la part que descansa en valors, i ho faig també amb els arguments dels altres.",
+      "Defenso amb rigor una postura que no és la meva, sense caricaturitzar-la, i n'identifico el punt més fort.",
+      "Dic quina dada concreta em faria canviar d'opinió i explico per què aquesta i no una altra; si no n'hi ha cap de possible, ho reconec i n'extrec la conseqüència.",
+      "Argumento com el coneixement científic sobre altres planetes ha acabat canviant la manera com cuidem aquest, amb un exemple concret i comprovable.",
+      "Reviso el meu perfil epistèmic del curs: explico amb quin tipus de raó em conformava al setembre i amb quin em conformo ara, i poso un exemple d'una idea que he canviat pel camí i què m'ho va fer canviar.",
+      "Resolc una situació-problema nova connectant sabers de situacions diferents del curs i justifico cada pas amb la prova en què em baso."
     ],
     B: [
-      "Completo la resolució de l'enigma: explico per quina raó hi ha terratrèmols al Pirineu (col·lisió alpina, falles heretades) i per quina raó la Garrotxa té volcans (rift postalpí, no subducció).",
-      "Identifico el procés geológic principal que explica almenys 4 dels paisatges de Catalunya (Montserrat, Garrotxa, Delta de l'Ebre, Pirineus, Costa Brava) i el relaciono amb els sabers de la SA.",
-      "Contribueixo de forma significativa a la guia geológica del grup: aporto el tipus de roca, el procés de formació i l'ús humà de l'indret que hem estudiat.",
-      "Faig almenys 2 connexions entre la geologia de la SA7 i continguts d'altres SAs del curs."
-    ],
-    C: [
-      "Completo la resolució de l'enigma: els terratrèmols del Pirineu es produeixen perquè fa milions d'anys les plaques ___ i ___ van col·lisionar, i les falles que van crear el Pirineu ancora son ___. Els volcans de la Garrotxa existeixen perquè la litosfera es va ___ (estirar/comprimir) creant un rift i permetent que el mantell ___.",
-      "Completo per a l'indret del meu grup: el paisatge de ___ és de roques de tipus ___ (ígni/sedimentari/metamòrfic), que es van formar fa aproximadament ___ Ma per ___.",
-      "Aporto almenys 1 dada o 1 il·lustració a la guia geológica del grup.",
-      "Completo 1 connexió entre SA7 i una altra SA del curs: 'A SA___ vam aprendre que ___. A SA7 hem après que ___. La connexió és que ___'."
+      "Distingeixo, en un argument, la part que és una dada (es podria comprovar) de la part que és un valor (diu què hauria de ser).",
+      "Participo al debat respectant els torns, responent l'argument que m'han fet de veritat i citant d'on trec les dades que dic.",
+      "Defenso durant un torn la postura contrària a la meva i anoto el millor argument que he sentit de l'altra banda.",
+      "Dic quina dada em faria canviar d'opinió.",
+      "Explico un exemple de coneixement obtingut mirant altres planetes que ha servit per cuidar millor la Terra.",
+      "Recupero l'escala de certeses de la primera situació i la faig servir per dir com ha canviat la meva manera de justificar que una cosa és certa.",
+      "Resolc una situació-problema nova aplicant-hi sabers de més d'una situació del curs."
     ]
   },
 
+  // ── BASTIMENT/REPTE PER APARTAT segons el nivell ────────
+  // scaffoldFade: "cap" — última sessió del curs. Cap bastida de mètode: l'alumnat ja
+  // porta l'any sencer de vocabulari i de procediments. Només reptes per al nivell A.
+  scaffoldFade: "cap",
   apartatExtras: {
+    "1": {
+      challenge:
+        "Agafa un dels teus quatre arguments i porta'l al límit: escriu-lo primer sencer, tal com et va sortir, i després parteix-lo en les dues frases que hi ha amagades a dins —la que es podria comprovar i la que diu què hauria de ser. Quan les tinguis separades, mira la frase de la dada i pregunta't una cosa incòmoda: si aquesta dada resultés ser falsa, l'argument cauria del tot o continuaria dret gràcies a l'altra meitat?"
+    },
     "2": {
-      scaffold: "Omple la fitxa de l'indret del teu grup per a la guia: nom de l'indret / municipi i comarca / tipus de roca predominant / família de la roca (ígnia/sedimentaria/metamòrfica) / procés de formació (en paraules simples) / edat aproximada (en Ma o any) / ús humà del recurs / 1 impacte ambiental visible.",
-      challenge: "El Delta de l'Ebre avança ≈5 m/any cap al mar per deposició de sediments del riu, però des de la construcció del pantà de Mequinença (1964) la deposició de sediments ha disminuït un 90% i el delta s'erosiona. A més, el canvi climàtic preveu una pujada del nivell del mar de 30-60 cm el 2100. Modelitza quin serà l'estat del delta el 2100 si no es prenen mesures (fes un càlcul estimatiu de la regressió en km² usant dades publicades) i proposa 2 mesures de gestió possibles."
+      challenge:
+        "Al torn del canvi de cadira no n'hi ha prou de dir el que creus que dirien els altres. La feina és una altra: has de construir la versió més forta possible de la postura contrària, la que a tu et costaria més de respondre. Escriu-la i, tot seguit, escriu com la respondries si tornessis a la teva cadira. Si la teva resposta és fluixa, ho has fet bé: vol dir que has trobat un argument de debò."
     },
     "3": {
-      scaffold: "Per a la resolució de l'enigma, omple els espais: 1) Els terratrèmols del Pirineu es deuen a: la col·lisió de les plaques ___ i ___ fa ___-___ Ma. Aquesta col·lisió va crear falles que ___ (son/no son) actives avui. 2) Els volcans de la Garrotxa es deuen a: un procés de ___ (rift/subducció) postalpí que va estirar la litosfera i va permetre que el mantell pujés i generés magma ___. El darrer volcà va erupcionar fa ≈___ anys.",
-      challenge: "Consulta el Catàleg Sísmic d'Espanya (IGN) o el Servei Geológic de Catalunya per trobar el darrer terratrèmol significatiu (M≥3,0) a Catalunya. Anota: data, magnitud, epicentre, profunditat, danys (si n'hi va haver). Explica per quina raó es va produir allà on es va produir usant el model de tectònica de plaques que has après."
+      challenge:
+        "Amb el mapa ple, busca la situació on la prova era més indirecta de totes —on el que afirmem queda més lluny del que hem pogut observar de debò— i explica per què, tot i això, la conclusió es continua sostenint. I si et queda temps: busca dues situacions que facin servir la mateixa mena de prova per a coses que no s'assemblen gens, i digues què tenen en comú aquells dos raonaments."
+    },
+    "4": {
+      challenge:
+        "Quan acabis, torna enrere i tria la pregunta de què t'has quedat menys segur. Escriu al marge quina dada concreta t'hauria fet falta per estar-ne segur, o quin pas del teu raonament és el que et fa dubtar. Això no baixa la valoració: assenyalar amb precisió on s'acaba el que saps és part del que s'avalua."
     }
   },
 
+  // ── APARTAT 0 · IDEES PRÈVIES / REPÀS ─────────────────────
   ideesPrevies: {
-    startPoint: "Avui és l'última sessió de SA7 i del curs de geologia. Observeu les 6 fotografies del paisatge de Catalunya. Quin paisatge us crida més l'atenció? Per quina raó creus que és com és? Escriu la teva hipòtesi inicial.",
+    startPoint:
+      "Dues frases abans de començar. No es corregeixen, però hi tornaràs al final del curs.",
     prompts: [
       {
         kind: "write",
-        text: "Ara que hem estudiat les tres famílies de roques i la tectònica de plaques, escull una de les 6 fotografies i intenta explicar quin procés geológic l'ha format. No cal que sigui perfecte — usa el que has après.",
-        starter: "He escollit la fotografia de ___ perquè... Crec que el procés geológic és... perquè la roca..."
-      },
-      {
-        kind: "write",
-        text: "Creus que ara ja pots respondre l'enigma de les Preses (1428)? Escriu el que recordes: per quina raó hi ha terratrèmols al Pirineu i per quina raó hi ha volcans a la Garrotxa? Quines pistes has recollit a S1, S2 i S3?",
-        starter: "Crec que els terratrèmols del Pirineu es deuen a... Els volcans de la Garrotxa existeixen perquè..."
-      },
-      {
-        kind: "write",
-        text: "Quina ha estat la connexió que t'ha semblat més sorprenent entre la geologia i alguna altra SA del curs? Per quina raó?",
-        starter: "La connexió que m'ha semblat més sorprenent és... perquè..."
+        text: "Hauríem d'invertir diners públics a buscar vida fora de la Terra? Escriu la teva postura en una frase i, al costat, quina dada concreta et faria canviar d'opinió.",
+        starter: "Jo crec que... i canviaria d'opinió si es demostrés que..."
       }
     ]
   },
 
+  // ── EXPLORA (debat SSI amb canvi de cadira) ──────────────
+  exploreActivity: {
+    what: "Debat de tot el grup, dividit en dues bandes assignades pel docent —no per preferència—, amb cinc torns cronometrats. Cada banda obre amb un argument de dades i un de valors; després hi ha vuit minuts de rèplica creuada en què només val respondre el que l'altra banda ha dit de veritat; i al quart torn es fa el canvi de cadira: cada banda ha de defensar la postura contrària durant cinc minuts. Es tanca dient en veu alta què t'ha fet dubtar. Dins de cada banda hi ha dos encàrrecs (portaveu i rellotge) i, alhora, tothom va omplint a la seva fitxa les dues taules d'escolta: la de les dades que se citen i la dels valors que apareixen.",
+    who: { mode: "grup", label: "Dues bandes; dos encàrrecs dins de cada una" },
+    time: 22,
+    note: "Demostració a l'aula: la banda assignada no depèn del que penses. El torn del canvi de cadira és el que es mira amb més atenció, perquè no es pot preparar a casa ni delegar: cal haver escoltat de veritat el que ha dit l'altra banda durant els catorze minuts anteriors.",
+    materials: "La feina de casa de la sessió anterior (dos arguments a favor i dos en contra, dient en què es basa cadascun), la fitxa de la sessió, un cronòmetre per banda. Les dues taules d'escolta (dades i valors) ja són a la fitxa: no cal cap full a part."
+  },
   exploreInstructions: [
-    "Producte final: Guia geológica de l'entorn (en grups de 3-4). Cada grup rep un indret de l'entorn proper (del barri, de la comarca o de Catalunya) i construeix una pàgina per a la guia col·lectiva",
-    "La pàgina de la guia inclou (fitxa format A5): nom de l'indret / foto o il·lustració / tipus de roca predominant / procés geológic que l'ha format / edat aproximada / recurs humà (si n'hi ha) / 1 impacte ambiental + 1 mesura de conservació",
-    "Pas 1 (15 min): recerca i construcció de la pàgina. Useu la teoria de S1-S3 i la fitxa de referència",
-    "Pas 2 (10 min): cada grup presenta la seva pàgina al grup classe (màx. 2 min per grup). Les pàgines s'uneixen formant la guia col·lectiva",
-    "Pas 3 (5 min): Formulari Google de síntesi individual (accés via QR o enllaç) — 10 preguntes autocorrectives couvrant S1-S4 + resolució de l'enigma"
+    "Trieu qui fa de portaveu i qui de rellotge abans que comenci el primer torn",
+    "Al torn d'obertura heu de dir exactament un argument de dades i un de valors, no dos del mateix tipus",
+    "A la rèplica, repetiu l'argument de l'altra banda abans de contestar-lo: si no el sabeu repetir, no l'heu entès",
+    "Cada dada que digueu ha d'anar amb la font; si no la recordeu, digueu-ho en veu alta",
+    "Al canvi de cadira, construïu la versió més forta de la postura contrària, no la més fàcil de tombar",
+    "Al tancament, cadascú ha de dir una cosa concreta que l'hagi fet dubtar"
   ],
-  exploreDuration: "30 min",
-  exploreMaterials: ["Fitxa format A5 per a la pàgina de la guia (1 per grup)", "Accés al formulari Google de síntesi (QR)", "Projector: galeria de paisatges de Catalunya + context geológic de cada un"],
+  exploreDuration: "22 min",
+  appSrc: null,
+  exploreNote: "Aquest debat no s'assembla al de l'edició genètica de la tercera situació: allà discutíeu si una tècnica que ja existeix s'hauria d'utilitzar, i aquí discutiu on posar uns diners que són limitats. Aquesta diferència canvia la forma dels arguments que hi funcionen, i és una de les coses que heu de descobrir vosaltres abans del torn 3.",
 
+  // ── EXPLICA ──────────────────────────────────────────────
   theoryPoints: [
     {
       id: "t1",
-      apartat: "2",
-      heading: "Llegir el ==paisatge==: geologia i forma del relleu",
-      text: "El ==relleu== que veiem és el resultat de dos tipus de forces en competència: ==forces internes|r== (tectònica: empent les roques cap amunt, crea muntanyes i volcans) i ==forces externes|b== (erosió: vent, aigua, glaceres escullen les roques). La fórmula: ==procés geológic → roca → erosió → relleu → paisatge|g==. Dos paisatges completament diferents poden tenir la mateixa roca si l'erosió ha actuat de forma diferent. Exemples a Catalunya: el ==granit|o== del Cap de Creus (Costa Brava) i el granit dels Pirineus centrals son el mateix tipus de roca, però l'erosió marina ha creat un paisatge de cales i esculls mentre l'erosió glacial i fluvial ha creat valls en U i pics aguts. El ==conglomerat de Montserrat|o== (sedimentari) ha estat esculpit per l'erosió diferencial en les característiques 'boles' i 'agulles'.",
+      apartat: "1",
+      heading: "Una pregunta, dues menes de ==raons==",
+      text: "Les preguntes com la d'avui es diuen ==sociocientífiques== perquè tenen sempre dues capes barrejades. A sota hi ha les ==dades==: quant costa una missió, quantes possibilitats hi ha de trobar el que es busca, què s'ha trobat fins ara. Aquestes es poden comprovar, i per tant es poden discutir amb proves i es poden equivocar. A sobre hi ha els ==valors==: què és més urgent, què és més just, què li deu una generació a la següent. Aquests no es mesuren, i això no vol dir que valguin menys ni que tot valgui igual —un valor també es defensa amb raons—, però vol dir que si tu i jo tenim la mateixa dada i valors diferents, podem arribar a conclusions diferents sense que cap dels dos s'equivoqui en els números. La Fig.1 et dona les dues preguntes per separar-les, amb un exemple resolt que no té res a veure amb el tema d'avui. El que has de saber fer amb això és doble: separar-ho en els teus arguments i, sobretot, ==reconèixer-ho== en els dels altres, perquè la majoria de discussions que no avancen és perquè un parla de dades i l'altre de valors sense adonar-se'n.",
       type: "concept"
     },
     {
       id: "t2",
       apartat: "2",
-      heading: "El paisatge de ==Catalunya== llegit en geologia",
-      text: "Cada zona de Catalunya té la seva «signatura geológica»: 1) ==Pirineus|b==: col·lisió alpina (55-35 Ma) entre plaques Ibèrica i Euràsia. Roques: granits i gneis al Pirineu axial (hercínics, 300 Ma) + calcàries i pissarres als Pre-pirineus (Mesozoic). 2) ==Garrotxa|r==: camp volcànic de rift postalpí. 40 cons volcànics i 20 colades de basalt. Darrera erupció ≈11.500 anys AP. ==Volcà actiu latent|r==. 3) ==Montserrat|o==: conglomerat cretaci (≈60 Ma) erosionat de forma espectacular per l'agua → formes «inselberg». 4) ==Delta de l'Ebre|g==: sediments al·luvials en deposició activa. S'allarga cap al mar ≈5 m/any, però la construcció de pantans n'ha reduït el sediment. 5) ==Cardona|o== (Bages): diapir de sal (evaporita del Triàsic, ≈230 Ma) → la Muntanya de Sal. 6) ==Costa Brava|b==: granits hercínics erosionats per la mar Mediterrània → cales, illes i esculls.",
+      heading: "Què hi guanyem ==aquí baix==",
+      text: "Hi ha un argument que apareix sempre en aquests debats i que has de tenir ben entès abans de fer-lo servir o de respondre'l: el de dir que mirar altres mons ha acabat servint per cuidar millor aquest. No és un argument buit i té casos concrets al darrere, però els casos els has de posar tu: en tens dos de treballats aquest mateix curs, i has de ser tu qui els recordi i triï el que expliqui millor la idea. A la fitxa se't demana un cas concret i, després, la part difícil: ==fins on arriba== aquest argument. Perquè tot argument en té, de límit, i el d'aquest no és evident. Pensa-hi abans de fer-lo servir al debat, perquè si el dius sense el límit te'l poden tombar en una frase; i, sobretot, saber fins on arriba un argument que t'agrada és tan important com saber respondre'n un que no.",
       type: "concept"
     },
     {
       id: "t3",
       apartat: "3",
-      heading: "==Resolució de l'enigma==: el terratrèmol de les Preses (1428)",
-      text: "Resposta completa a les dues preguntes de l'enigma: 1) ==Per quina raó hi ha terratrèmols al Pirineu?|r== El Pirineu és el resultat de la ==col·lisió de les plaques Ibèrica i Euràsia|b== (límit convergent continental) iniciada fa ≈55 Ma i finalitzada fa ≈35 Ma. Durant la col·lisió es van generar grans ==sistemes de falles|r== (fractures de la litosfera). Avui la col·lisió ja no aixeca muntanyes, però les falles ancora estan actives i acumulen tensió. Quan la tensió s'allibera → ==terratrèmol|r==. L'alt Empordà, la Val d'Aran i el Pirineu lleidatà son les zones de major sismicitat de Catalunya per la densitat de falles actives. 2) ==Per quina raó hi ha volcans a la Garrotxa?|b== No és vulcanisme de ==subducció|r== (no hi ha cap fossa oceànica a prop). És ==vulcanisme de rift postalpí|b==: després de la compressió alpina, la litosfera de la zona va patir extensió (estirament). Quan la litosfera s'estira, el mantell puja, baixa la pressió → ==fusió parcial del mantell|g== → ==magma basàltic|r== erupciona a la superfície. El darrer volcà actiu (volcà del Croscat, Garrotxa) va erupcionar fa ≈11.500 anys. Conclusió: ==dos processos oposats en la mateixa zona|o== (primer compressió → Pirineu; després extensió → Garrotxa).",
-      type: "concept",
-      badge: "✅ Resolució de l'enigma"
+      heading: "El teu ==perfil epistèmic==, un any després",
+      text: "La primera sessió del curs et va demanar que ordenessis unes afirmacions de més a menys certa i que diguessis quina ==garantia== feies servir per decidir-ho: si t'ho creies perquè ho deia algú que en sap, perquè hi havia dades, perquè encaixava amb un model que ja funciona, perquè sempre ho has sentit dir o perquè ho diu la gent com tu. Allò era el teu perfil epistèmic de partida. Avui el tornes a mirar, però amb una diferència: entremig has passat per set situacions on les coses es justificaven de maneres que no s'assemblen gens entre elles, i el mapa de la Fig.3 et demana precisament que recordis quina mena de prova hi havia darrere de cada una. La pregunta de tancament del curs no és quina nota has tret, sinó aquesta: ha canviat la mena de raó amb què et conformes? I n'hi ha una altra que la completa: hi ha alguna idea que tenies al setembre que hagis canviat, i saps dir ==què== t'ho va fer canviar? Poder respondre aquesta segona pregunta és, probablement, la cosa més útil que et pots endur d'aquesta matèria.",
+      type: "epistemic",
+      badge: "🧭 Naturalesa de la ciència"
     },
     {
       id: "t4",
-      apartat: "3",
-      heading: "Síntesi del curs: connexions entre geologia i vida",
-      text: "La geologia no és un tema aïllat: connecta amb tot el curs. ==SA1 (cèl·lula)==: els minerals (ferro, calci, fòsfor) son imprescindibles per a les cèl·lules. L'hemoglobina conté ==ferro|r== — un mineral geológic. ==SA2 (cos humà)==: el ==calci dels ossos|o== prové del calcari i de la cadena alimentàra. L'anèmia ferropènica (enigma SA2) és un dèficit del mineral ferro. ==SA5 (ecologia)==: el ==cicle del carboni|g== té una component geológica (CO₂ atmosfèric → closques CaCO₃ → calcari → erosió → CO₂) i una component biológica (fotosíntesi ↔ respiració). ==SA6 (canvi climàtic)==: la crema de ==combustibles fòssils|r== retorna a l'atmosfera en 200 anys el carboni fixat en roques fa milions d'anys, desequilibrant el ==cicle del carboni geológic|g==. La geologia és la memoria de la Terra — i ara en saps llegir una mica.",
-      type: "epistemic"
+      apartat: "4",
+      heading: "Una prova que no és de ==memòria==",
+      text: "La prova final del curs és una ==situació-problema==: un cas nou que no has vist mai, amb dades a la mà, on has d'anar fent servir coses que has après en situacions diferents. No es puntua: es mira, per a cada objectiu, si ho has assolit i fins a quin nivell, exactament com s'ha fet tot l'any. El que s'hi valora no és recordar definicions, sinó tres coses: que triïs bé quina eina va a cada pregunta, que ==justifiquis== cada pas amb la dada concreta en què et bases i que, quan una cosa no es pugui saber amb les dades que tens, ho ==diguis== en lloc d'inventar-t'ho. Aquesta última és la que la gent falla més, i és la que has treballat des del primer dia: dir «amb aquestes dades no es pot decidir» és una resposta correcta si va acompanyada de què faria falta per decidir-ho.",
+      type: "concept"
     }
   ],
 
   graphicResources: [
-    { id: "G1", apartat: "2", title: "Mapa geológic simplificat de Catalunya", src: "/images/sa7-g7-mapa-geologic-cat.svg", note: "Mapa de Catalunya amb zones geológiques: Pirineu axial (granit i gneis, hercínic), Pre-pirineus (calcàries mesozoiques), Depressió central (sediments terciaris), Serralada Costanera (granits + calcàries), Delta de l'Ebre (sediments actius), Garrotxa (basalts volcànics). Llegenda de colors per edat i tipus de roca." },
-    { id: "G2", apartat: "3", title: "Resolució de l'enigma: terratrèmols i volcans de Catalunya", src: "/images/sa7-g8-enigma-resolucio.svg", note: "Diagrama de dos blocs: 1) Col·lisió alpina (55-35 Ma): plaques Ibèrica + Euràsia → Pirineu + falles actives → terratrèmols actuals. 2) Rift postalpí (11.500-100.000 anys AP): extensió litosférica → mantell puja → basalt → volcans de la Garrotxa. Fletxes de compressió (→←) per al Pirineu i fletxes d'extensió (←→) per a la Garrotxa." }
+    { id: "Fig.1", apartat: "1", before: true, title: "Dades o valors? Les dues preguntes", src: "/images/sa7-s4-dades-valors.svg", note: "El mètode per separar les dues capes d'un argument. L'exemple resolt és d'un altre tema expressament, perquè el puguis aplicar tu sol al d'avui." },
+    { id: "Fig.2", apartat: "2", before: true, title: "L'estructura del debat", src: "/images/sa7-s4-debat.svg", note: "Els cinc torns amb els seus minuts, qui fa què i les tres regles. Mira-t'ho abans de començar: no hi ha temps per rellegir-ho enmig." },
+    { id: "Fig.3", apartat: "3", before: true, title: "El mapa del curs, en blanc", src: "/images/sa7-s4-mapa-curs-alumne.svg", note: "Una fila per situació, amb dues caselles buides. La llista de menes de prova que hi ha a sota no està ordenada i no en va una a cada fila: n'hi ha que es repeteixen." }
   ],
 
-  fitxaUrl: "/fitxes/sa7-s4-fitxa.pdf", teoriaPdfUrl: null,
+  // ── ELABORA ──────────────────────────────────────────────
+  fitxaUrl: "/fitxes/sa7-s4-fitxa.pdf",
+  teoriaPdfUrl: null,
+  elaborateNote: "El producte de la situació és un assaig argumentatiu individual que escriuràs després d'aquesta sessió, amb els fulls de dades i de valors del debat al davant. No és un resum del debat: és la teva postura, amb la millor objecció que has sentit i la teva resposta. Al final hi ha d'haver una frase que la gent s'oblida sempre de posar i que aquí és obligatòria: quina dada et faria canviar d'opinió.",
 
+  // ── GUIA DE LA FITXA ─────────────────────────────────────
   fitxaGuide: {
-    fitxaName: "Fitxa S4 — Llegir el paisatge i resolució de l'enigma",
+    fitxaName: "Fitxa S29 — Val la pena buscar vida fora?",
     steps: [
-      { apartat: "0", title: "Idees prèvies: hipòtesi inicial sobre el paisatge", time: "5 min", phase: "engage", instruction: "Apartat 0: escull una fotografia del paisatge de Catalunya i escriu la teva hipòtesi del procés geológic que l'ha format. Anota el que recordes de les pistes 1, 2 i 3 de l'enigma.", hints: [] },
-      { apartat: "1", title: "Guia geológica del vostre indret (producte final)", time: "30 min", phase: "explore", instruction: "Apartat 1: construeix la pàgina de la guia geológica del vostre indret. Segueix el format de la fitxa A5: roca / procés / edat / ús / impacte / conservació. Presenteu-la al grup classe.", hints: [
-        "Si no trobes la informació de l'indret, usa la teoria de S1-S3 com a base. Identifica primer el tipus de roca → busca el procés geológic que genera aquell tipus de roca en aquella zona.",
-        "Els Pirineus = granit (ígni intrusiu, hercínic) + calcàries (sedimentàries, mesozoiques) + pissarres (metamòrfiques). La Garrotxa = basalt (ígni extrusiu, molt recent). El Delta = sediments al·luvials (sedimentaris actuals)."
-      ] },
-      { apartat: "2", title: "Paisatge de Catalunya i lectura geológica", time: "10 min", phase: "explica", instruction: "Apartat 2: completa la taula dels 6 paisatges de Catalunya (G1): indret / roca predominant / procés geológic / edat aproximada. Per a cada paisatge, respon en 1 frase per quina raó és com és.", hints: [
-        "Montserrat = conglomerat (sedimentari del Cretaci) erosionat diferencialment per l'agua → boles i agulles. Costa Brava = granit hercínic (300 Ma) erosionat per la mar → cales. Cardona = evaporita triàsica (sal gemma, 230 Ma) → diapir de sal."
-      ] },
-      { apartat: "3", title: "Resolució de l'enigma + formulari Google de síntesi", time: "15 min", phase: "explica", instruction: "Apartat 3: escriu la resolució completa de l'enigma (terratrèmols Pirineu + volcans Garrotxa) amb 3-4 frases per a cada part. Després, respon el formulari Google de síntesi (QR a la pissarra) — 10 preguntes autocorrectives.", hints: [
-        "Pirineu: col·lisió alpina (55-35 Ma) placa Ibèrica + Euràsia → falles actives → terratrèmols. Garrotxa: rift postalpí (extensió) → mantell puja → basalt → volcans. Dos processos oposats (compressió → extensió) a la mateixa zona.",
-        "Clau per recordar: PIRINEUS = col·lisió (convergència) = terratrèmols SENSE volcans. GARROTXA = rift (divergència) = volcans de basalt SENSE terratrèmols significatius."
-      ] }
+      { apartat: "0", title: "D'on partim", time: "4 min", phase: "engage", instruction: "Escriu la teva postura en una frase i quina dada et faria canviar d'opinió. No es corregeix.", hints: [] },
+      { apartat: "1", title: "Dades i valors: prepara't", time: "10 min", phase: "explain", instruction: "Passa els quatre arguments que portes de casa per les dues preguntes de la Fig.1 i classifica'ls. Després mira quina banda t'ha tocat i tria amb quins dos obriràs.", hints: ["Què has de fer amb un argument que respon que sí a totes dues preguntes? Decideix-ho abans de classificar-lo.", "Comprova si les dades que portes tenen font; les que no en tinguin, no les diguis com a dades."] },
+      { apartat: "2", title: "El debat", time: "22 min", phase: "explore", instruction: "Cinc torns amb els temps de la Fig.2. Al torn 4 es defensa la postura contrària. Els dos fulls d'anotació han de quedar plens.", hints: ["Repeteix l'argument de l'altra banda abans de respondre'l.", "Al canvi de cadira, la versió forta de la postura contrària és la que et costaria respondre a tu."] },
+      { apartat: "3", title: "El curs sencer: el teu perfil epistèmic", time: "12 min", phase: "elabora", instruction: "Omple el mapa del curs de la Fig.3 i respon les preguntes de tancament sobre com ha canviat la teva manera de justificar que una cosa és certa.", hints: ["Per a cada situació, pensa primer què havies de saber i després com ho vas arribar a saber.", "La mateixa mena de prova pot anar a més d'una fila."] },
+      { apartat: "4", title: "Prova escrita final del curs", time: "50 min", phase: "evaluate", instruction: "Full a part: 5 minuts per llegir la situació i les dades, i 45 per respondre les sis preguntes. Individual i sense apunts, tret del que el docent autoritzi.", hints: [] },
+      { apartat: "5", title: "Tancament del curs", time: "5 min", phase: "evaluate", instruction: "Torna a l'apartat 0 i tanca el curs: què t'endús i quina pregunta te'n vas amb tu sense respondre.", hints: [] }
     ]
   },
 
-  exitTicketType: "formulari",
-  exitTicketUrl: "https://forms.gle/sa7-sintesi",
+  // ── EXIT TIQUET ──────────────────────────────────────────
+  // A S29 l'exit tiquet no és un full a part: la q1 és l'última pregunta de
+  // l'apartat 5 de la fitxa (tancament del curs) i la q2 és el torn 5 del debat
+  // (2c a la versió A, 2e a la B). L'instrument avaluable de la sessió és la
+  // prova escrita final, que va en un document independent.
+  exitTicketType: "paper",
   exitTicketQuestions: [
-    { id: "q1", type: "open", text: "Explica en 4-5 frases la resolució completa de l'enigma: per quina raó hi ha terratrèmols al Pirineu i per quina raó hi ha volcans a la Garrotxa? Usa els conceptes: col·lisió, plaques, falles, rift, extensió, basalt.", hint: "Pirineu: col·lisió alpina (55-35 Ma) → falles actives → terratrèmols. Garrotxa: rift postalpí (extensió) → mantell puja → fusió parcial → basalt volcànic → erupcions (darrera fa 11.500 anys). Dos processos oposats: compressió (Pirineu) + extensió posterior (Garrotxa)." },
-    { id: "q2", type: "open", text: "Fes una síntesi de SA7 esmentant 3 connexions amb SAs anteriors del curs. Per quina raó la geologia és rellevant per entendre la biologia, l'ecologia o el canvi climàtic?", hint: "Connexions: SA2 (ferro = mineral geológic en l'hemoglobina), SA5 (cicle del carboni geológic: CaCO₃ → CO₂ atmosfèric), SA6 (combustibles fòssils = roca geológica; ciment = 8% emissions globals). La geologia proveeix els materials i l'energia que fa funcionar la vida i l'economia." },
-    { id: "q3", type: "multiple", text: "Per quina raó el darrer volcà actiu de la Garrotxa (fa ≈11.500 anys) no és un volcà de subducció com els del Japó o els Andes?", options: ["Perquè la Garrotxa és a l'interior del continent, on no arriben les ones sísmiques", "Perquè és un volcà de rift (extensió litosférica postalpina), no de subducció — no hi ha fossa oceànica ni placa que s'enfonsi a prop", "Perquè és massa petit per ser un volcà de subducció — els volcans de subducció sempre son molt grans", "Perquè és un volcà extinat — els volcans actius de subducció mai s'acaben d'extingir"], correct: 1 }
+    { id: "q1", type: "open", text: "Escriu una afirmació que al setembre t'hauries cregut sense comprovar-la i que ara no et creuries sense comprovar-la. Digues què comprovaries i com.", hint: "Pensa en un titular, un anunci o una cosa que et van dir." },
+    { id: "q2", type: "open", text: "Al debat d'avui, quina cosa concreta t'ha fet dubtar? Digues si era una dada o un valor, i què has fet amb aquell dubte.", hint: "Val a dir que has canviat d'opinió, i val a dir que no; el que no val és no haver dubtat de res." }
   ],
 
-  homework: {
-    description: "Porta la guia geológica col·lectiva de la classe a casa i comparteix-la amb algú de la família. Explica-li en 5 minuts l'enigma de les Preses (1428): per quina raó hi va haver aquell terratrèmol i per quina raó la Garrotxa té volcans. Anota la reacció de la persona: sabia alguna d'aquestes coses? S'ha sorprès?",
-    note: "Activitat de comunicació científica informal: explicar la ciència a algú no especialista.",
-    deadline: "2026-06-XX"
+  // ── METACOGNICIÓ ─────────────────────────────────────────
+  metacognition: {
+    prompt: "Es tanca el curs. Torna a llegir la frase que has escrit a l'apartat 0 i digues si continua sent la teva. Després, dues coses més: què t'endús d'aquesta matèria que et servirà encara que no tornis a estudiar biologia mai més, i quina pregunta te'n vas amb tu sense haver-la respost. Aquesta última escriu-la bé, perquè és la que et durà a la següent.",
+    type: "reflection"
   },
+
+  // ── FEINA A CASA ─────────────────────────────────────────
+  homework: {
+    description: "Assaig argumentatiu individual (producte final de la situació): la teva postura sobre si s'ha d'invertir a buscar vida fora de la Terra, en un full. Ha de portar, per aquest ordre: la teva postura; un argument teu basat en dades, amb la font; un argument teu basat en valors, dit com a tal; la millor objecció que vas sentir al debat, escrita amb honestedat; la teva resposta a aquella objecció; i una última frase amb quina dada et faria canviar d'opinió.",
+    deadline: "Es lliura al Classroom durant la setmana següent",
+    secondTask: null,
+    note: "Escriu-lo amb els dos fulls del debat al davant, el de dades i el de valors. No és un resum del que va passar a classe: és el teu argument. I la millor objecció no és la més fàcil de respondre, és la que et va costar."
+  },
+
+  // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
-    "Llegeix la teoria d'aquesta pàgina (paisatge de Catalunya, resolució de l'enigma, connexions SA)",
-    "Completa la taula dels 6 paisatges de Catalunya (G1): roca / procés / edat",
-    "Escriu la resolució de l'enigma: 3 frases sobre terratrèmols al Pirineu + 3 frases sobre volcans a la Garrotxa",
-    "Respon el formulari Google de síntesi (QR o enllaç a la pàgina web de la sessió)",
-    "Llegeix la síntesi de connexions entre SA7 i les SAs anteriors (t4)"
+    "Llegeix l'apartat EXPLICA sencer: la diferència entre dades i valors, què hi guanyem aquí baix de mirar altres planetes, i les dues preguntes de tancament del curs",
+    "Mira la Fig.1 i aplica les dues preguntes als quatre arguments de la feina de casa de la sessió anterior",
+    "Omple el mapa del curs de la Fig.3 tu sol: una pregunta i una mena de prova per a cada situació",
+    "Demana hora al docent per fer la prova final del curs: és una situació-problema nova i no es pot recuperar amb apunts",
+    "Escriu igualment l'assaig argumentatiu i entrega'l al Classroom: és el producte final de la situació"
   ],
-  oaLinks: ["OA4", "OA2"], competencies: ["CE1", "CE6"]
+
+  // ── COMPETÈNCIES ─────────────────────────────────────────
+  oaLinks: ["OA1", "OA2", "OA3", "OA4"],
+  competencies: ["CE1", "CE2", "CE4", "CE5"],
+  criterisAvaluacio: ["1.1", "1.2", "2.2", "4.1", "4.2", "5.4", "6.5"]
 }

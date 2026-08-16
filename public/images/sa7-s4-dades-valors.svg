@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+<rect width="760" height="470" fill="#ffffff"/>
+<rect x="0" y="0" width="760" height="34" fill="#37306B"/>
+<text x="16" y="23" fill="#ffffff" font-size="16" font-weight="700">Aquest argument, en què es basa?</text>
+<text x="600" y="23" fill="#E3B04B" font-size="12">mètode, no resposta</text>
+
+<rect x="24" y="52" width="330" height="66" rx="8" fill="#f1effa" stroke="#37306B" stroke-width="1.6"/>
+<text x="38" y="72" font-size="13" font-weight="700" fill="#241F4A">PREGUNTA 1</text>
+<text x="38" y="91" font-size="13" fill="#1a2027">Es podria comprovar amb una mesura,</text>
+<text x="38" y="108" font-size="13" fill="#1a2027">un recompte o una observació?</text>
+
+<rect x="406" y="52" width="330" height="66" rx="8" fill="#fdf7e2" stroke="#c8960a" stroke-width="1.6"/>
+<text x="420" y="72" font-size="13" font-weight="700" fill="#7a5800">PREGUNTA 2</text>
+<text x="420" y="91" font-size="13" fill="#1a2027">Diu el que <tspan font-weight="700">hauria de ser</tspan>, què és més</text>
+<text x="420" y="108" font-size="13" fill="#1a2027">important o què és just?</text>
+
+<path d="M189 118 L189 150" stroke="#37306B" stroke-width="2" marker-end="url(#a1)"/>
+<path d="M571 118 L571 150" stroke="#c8960a" stroke-width="2" marker-end="url(#a2)"/>
+<defs>
+<marker id="a1" markerWidth="9" markerHeight="9" refX="5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#37306B"/></marker>
+<marker id="a2" markerWidth="9" markerHeight="9" refX="5" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c8960a"/></marker>
+</defs>
+
+<rect x="24" y="150" width="330" height="50" rx="8" fill="#37306B"/>
+<text x="189" y="172" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle">SI SÍ &#8594; és una DADA</text>
+<text x="189" y="191" font-size="12" fill="#d9d4ef" text-anchor="middle">es pot verificar, i es pot equivocar</text>
+
+<rect x="406" y="150" width="330" height="50" rx="8" fill="#c8960a"/>
+<text x="571" y="172" font-size="17" font-weight="900" fill="#ffffff" text-anchor="middle">SI SÍ &#8594; és un VALOR</text>
+<text x="571" y="191" font-size="12" fill="#fdf3d4" text-anchor="middle">no es mesura; es discuteix i es justifica</text>
+
+<rect x="24" y="216" width="712" height="54" rx="8" fill="#eaf0f9" stroke="#4a6fa5" stroke-width="1.6"/>
+<text x="40" y="237" font-size="13" font-weight="700" fill="#31527e">Compte: molts arguments responen SÍ a les dues preguntes.</text>
+<text x="40" y="256" font-size="13" fill="#1a2027">Quan passi, no triïs: separa'l en dues frases, una amb la dada i una altra amb el valor.</text>
+
+<rect x="24" y="288" width="712" height="160" rx="8" fill="#fdfefe" stroke="#bdb7d6" stroke-width="1.6"/>
+<text x="40" y="310" font-size="13" font-weight="900" fill="#241F4A">EXEMPLE RESOLT (no té res a veure amb el tema d'avui)</text>
+<text x="40" y="330" font-size="13" font-style="italic" fill="#33404b">Discussió: s'haurien de prohibir els patinets elèctrics al centre del poble?</text>
+
+<rect x="40" y="342" width="330" height="44" rx="6" fill="#f1effa" stroke="#bdb7d6"/>
+<text x="52" y="360" font-size="12.5" fill="#1a2027">&#171;Els accidents amb patinet han pujat</text>
+<text x="52" y="377" font-size="12.5" fill="#1a2027">un 40 % en dos anys.&#187;</text>
+<rect x="390" y="342" width="120" height="44" rx="6" fill="#37306B"/>
+<text x="450" y="370" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">DADA</text>
+<text x="524" y="360" font-size="11.5" fill="#5a5580">es pot comptar;</text>
+<text x="524" y="377" font-size="11.5" fill="#5a5580">podria ser falsa i comprovar-ho</text>
+
+<rect x="40" y="392" width="330" height="44" rx="6" fill="#fdf7e2" stroke="#e0d3a6"/>
+<text x="52" y="410" font-size="12.5" fill="#1a2027">&#171;El carrer ha de ser primer de qui hi</text>
+<text x="52" y="427" font-size="12.5" fill="#1a2027">camina.&#187;</text>
+<rect x="390" y="392" width="120" height="44" rx="6" fill="#c8960a"/>
+<text x="450" y="420" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">VALOR</text>
+<text x="524" y="410" font-size="11.5" fill="#5a5580">cap mesura no el confirma;</text>
+<text x="524" y="427" font-size="11.5" fill="#5a5580">es defensa amb raons, no amb dades</text>
+</svg>
