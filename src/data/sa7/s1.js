@@ -131,7 +131,8 @@ export const sa7s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa7-s1-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa7-s1-fitxa-A.html", B: "/fitxes/sa7-s1-fitxa-B.html" },
+  retallablesUrl: "/fitxes/sa7-s1-retallables.html",
   teoriaPdfUrl: null,
   elaborateNote: "Construeix la teva línia del temps còsmica: retalla les targetes de fites del full de retallables i enganxa-les al lloc que els correspon de la línia, calculant abans on van. Al costat de cada fita, escriu en poques paraules quina mena de prova ens permet saber-ho. Aquesta línia del temps és la primera peça del producte final de la situació.",
 

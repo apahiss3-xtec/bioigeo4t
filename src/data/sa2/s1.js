@@ -140,7 +140,7 @@ export const sa2s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa2-s1-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa2-s1-fitxa-A.html", B: "/fitxes/sa2-s1-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a l'informe de la biòpsia del principi i, amb el que has après, escriu en 4-5 línies què li està passant a aquelles cèl·lules i per què és perillós.",
 
@@ -217,10 +217,10 @@ export const sa2s1 = {
       type: "multiple",
       text: "En una preparació d'arrel de ceba trobes 80 cèl·lules en interfase i molt poques en cada fase de la mitosi. Què vol dir això?",
       options: [
-        "Que la interfase és la fase que dura més temps",
-        "Que la ceba està malalta",
-        "Que la mitosi no s'ha produït mai",
-        "Que hi ha un error a la preparació"
+        "Que la interfase és la fase del cicle que dura més temps",
+        "Que la ceba està malalta i les seves cèl·lules no es divideixen",
+        "Que la interfase és la fase més fàcil de veure i per això n'has comptat més",
+        "Que hi ha hagut un error en preparar i tenyir la mostra"
       ],
       correct: 0
     },

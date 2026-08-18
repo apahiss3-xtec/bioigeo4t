@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA1 · S1 · Retallables — Escala de certeses</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;600;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2A6F7F;--teal-ink:#1c4a55;--teal-light:#9ccad2;--teal-tint:#eaf4f6;--ink:#14201f;--muted:#6b7a7e;--rule-dark:#b6ccd0}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);padding:52px 20px 40px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);height:44px;display:flex;align-items:center;gap:12px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.75);flex:1}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;background:var(--teal);color:#fff}
+.page{width:794px;margin:0 auto;background:#fff;box-shadow:0 2px 30px rgba(0,0,0,.22);padding:26px 30px 34px}
+.doc-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--teal);padding-bottom:8px;margin-bottom:6px}
+.doc-title{font-size:20px;font-weight:900;color:var(--teal-ink)}
+.doc-sa{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:auto}
+.doc-note{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.doc-note strong{color:var(--teal-ink)}
+/* 2 columnes de jocs → 4 jocs (4 alumnes) per A4 */
+.sheet{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.joc{border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 8px 10px;break-inside:avoid}
+.joc-head{font-size:11px;font-weight:700;color:var(--teal-ink);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.joc-name{flex:1;border-bottom:1px solid var(--rule-dark);min-height:14px}
+/* Tira retallable: amplada = amplada del joc (≈ columna «Afirmació» de la fitxa) */
+.strip{display:flex;align-items:center;gap:6px;border:1.3px dashed var(--teal);border-radius:4px;background:var(--teal-tint);
+  padding:5px 8px;margin:4px 0;font-size:12px;font-weight:600;line-height:1.2;min-height:26px}
+.strip .sc{font-size:11px;color:var(--teal);flex-shrink:0}
+.strip .tx{flex:1}
+@media print{
+  @page{size:A4;margin:9mm 11mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar{display:none!important}
+  .page{box-shadow:none;width:100%;padding:0}
+  .joc{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · aquest full serveix per a 4 alumnes · retalla per les línies puntejades</span>
+  <button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
+</div>
+
+<div class="page">
+  <div class="doc-head">
+    <div class="doc-title">Retallables — Escala de certeses</div>
+    <div class="doc-sa">SA1 · Ciència i Pseudociència · S1</div>
+  </div>
+  <div class="doc-note">
+    Cada <strong>joc</strong> conté les 10 afirmacions per a UN alumne. Aquest full en porta <strong>4</strong> (imprimeix-ne 1 cada 4 alumnes).
+    Les tires tenen l'amplada de la columna <strong>«Afirmació»</strong> de la fitxa, per encaixar-hi en enganxar-les.
+    Retalla primer entre jocs i després cada tira per la línia puntejada.
+  </div>
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<script>
+const AFIRMACIONS = [
+  "Demà sortirà el Sol",
+  "Les aspirines treuen el mal de cap",
+  "Si tiro una moneda, sortirà cara",
+  "Pujarà el preu del petroli",
+  "Els trens compliran avui el seu horari",
+  "Treure bones notes depèn de l'esforç",
+  "El Barça guanyarà la lliga",
+  "Existeix vida extraterrestre",
+  "Si en compro, em tocarà la loteria",
+  "Viuré per sempre"
+];
+const N_JOCS = 4;
+const sheet = document.getElementById('sheet');
+for (let j = 1; j <= N_JOCS; j++) {
+  const joc = document.createElement('div');
+  joc.className = 'joc';
+  joc.innerHTML = '<div class="joc-head">Joc ' + j + ' · Nom: <span class="joc-name"></span></div>' +
+    AFIRMACIONS.map(a => '<div class="strip"><span class="sc">✂️</span><span class="tx">' + a + '</span></div>').join('');
+  sheet.appendChild(joc);
+}
+</script>
+</body>
+</html>

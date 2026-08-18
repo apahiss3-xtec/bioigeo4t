@@ -132,7 +132,7 @@ export const sa3s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa3-s2-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa3-s2-fitxa-A.html", B: "/fitxes/sa3-s2-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: dissenya l'experiment «cal el sabó?» amb VI, VD, hipòtesi amb direcció i control negatiu, i respon a la pregunta clau: has vist l'ADN o una massa blanca que dedueixes que és ADN?",
 
@@ -204,9 +204,9 @@ export const sa3s2 = {
       text: "Per què fem servir sabó (detergent) en l'extracció d'ADN?",
       options: [
         "Perquè dissol el greix de les membranes i així s'obren les cèl·lules i el nucli",
-        "Perquè fa precipitar l'ADN i el fa visible",
-        "Perquè neteja el material i el desinfecta",
-        "Perquè dissol l'ADN dins l'aigua"
+        "Perquè fa precipitar l'ADN i el separa de l'aigua, i així es pot veure a ull nu",
+        "Perquè neteja i desinfecta el material, i evita que hi caigui ADN d'altres mostres",
+        "Perquè dissol l'ADN dins l'aigua i el reparteix bé per tot el got de precipitats"
       ],
       correct: 0
     },

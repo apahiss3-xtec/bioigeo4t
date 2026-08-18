@@ -5,7 +5,7 @@ export const sa7 = {
   biome: "sa7",
   color: { primary: '#37306B', accent: '#E3B04B' },
   sessions: 4,
-  portadaImage: "/images/sa7-portada.jpg",
+  portadaImage: "/images/sa7-s1-portada.jpg",
   description: "L'última situació del curs fa la pregunta més gran de totes: d'on ve tot això. Reconstruiràs la història de l'univers des del Big Bang fins avui, entendràs com es va formar la Terra i per què va acabar sent un planeta on hi cabia la vida, i compararàs les hipòtesis que expliquen com va aparèixer la primera cèl·lula. Però el fil que ho lliga tot no és el contingut, sinó la pregunta epistèmica que has anat treballant tot el curs: com pot la ciència dir alguna cosa sobre un passat que ningú no va veure? La resposta són les proves —la llum de les galàxies llunyanes, la radioactivitat de les roques, el registre fòssil— i saber distingir el que està ben establert del que només s'explora.",
   product: "Debat argumentat d'astrobiologia («hauríem d'invertir a buscar vida fora de la Terra?») amb assaig individual, més una línia del temps còsmica de grup on cada fita va acompanyada de la prova que la sosté. Tanca amb la prova escrita final del curs (situació-problema integradora).",
   enigmas: [

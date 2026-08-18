@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA7 &middot; S28 &middot; D'on va sortir la vida? (A)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#37306B; --teal-ink:#241F4A; --teal-light:#b3aed0; --teal-tint:#f1effa;
+  --ink:#1a2027; --ink-2:#33404b; --muted:#7c8a96; --surface:#fdfefe;
+  --rule:#e0dcee; --rule-dark:#bdb7d6;
+  --orange:#B0821F; --orange-tint:#fdf6e6;
+  --aqua:#4a6fa5; --aqua-tint:#eaf0f9;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#7a6aa8; --purple-tint:#f0edf6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(30,26,56,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,48,107,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(220,214,240,.75);flex:1}
+.tb-tip strong{color:#e3dcf5}
+.tb-sep{width:1px;height:20px;background:rgba(55,48,107,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(55,48,107,.2);border:1px solid rgba(55,48,107,.4);color:#ded9f2;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(55,48,107,.2);border:1px solid rgba(55,48,107,.4);color:#ded9f2;font-size:12px}
+.tb-undo{background:rgba(192,135,46,.2);border:1px solid rgba(192,135,46,.4);color:#f0dcae;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #a49ec4;pointer-events:none;z-index:10}
+.page-break-label{position:absolute;right:10px;top:-11px;background:#a49ec4;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(55,48,107,.08);box-shadow:0 0 0 2px rgba(55,48,107,.3)}
+[contenteditable]:focus{background:rgba(55,48,107,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+.wline{display:block;width:100%;min-height:74px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(55,48,107,.04)}
+.wline.tall{min-height:120px}
+.wline.xtall{min-height:152px}
+.wline.xxtall{min-height:200px}
+.wline.short{min-height:52px}
+.wline.huge{min-height:340px}
+.fill-cell.xbig{min-height:112px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(55,48,107,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#241F4A 0%,#4b4290 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#f1effa,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#31527e;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
+.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#8a6410;margin-bottom:2px}
+.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:64px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
+.fill-cell.small{min-height:38px}
+.fill-cell.big{min-height:96px}
+.fill-cell:focus{background:rgba(55,48,107,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.paste-cell{display:block;width:100%;min-height:88px;border:1.6px dashed var(--teal-light);border-radius:6px;background:repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(55,48,107,.035) 7px,rgba(55,48,107,.035) 14px);position:relative}
+.paste-cell::after{content:'enganxa aqu\00ED  la targeta';position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-size:10px;color:#c3bedb;letter-spacing:.04em;pointer-events:none}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#8a6410;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.abp-note{background:#fdf6e6;border-left:4px solid #B0821F;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0;font-size:11.5px;color:#33404b}
+.frase-box{background:#fbeceb;border:1.5px solid #b4463c;border-radius:8px;padding:9px 12px;margin:8px 0;font-size:12.5px;font-style:italic;color:#4a201d}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(55,48,107,.05) 6px,rgba(55,48,107,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+.figcap{font-size:10.5px;color:#5a5580;font-style:italic;text-align:center;margin:0 0 8px}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.page-break-line,.del-btn{display:none!important}
+  .page-footer-bar{display:flex!important}
+  .footer{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .wline{background:transparent;padding:0}
+  .fill-cell{background:transparent;outline:none}
+  .spacer-block{background:transparent!important;border:none!important}
+  .spacer-label{display:none!important}
+  .fig,.data-table,.scaffold-box,.challenge-box,.epist-box,.abp-note,.paste-cell{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head><body>
+<div id="toolbar">
+  <span class="tb-tip">&#9998; Clica per editar &middot; <strong>Ctrl+B</strong> negreta &middot; <strong>&times;</strong> rosa elimina &middot; <strong>Ctrl+Z</strong> desf&eacute;s</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">&#8617; Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">&#65291; Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">&#128424;&#65039; Imprimir / PDF</button>
+</div><div class="page-wrap" id="doc"><div class="header-band deletable">
+<div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">&#129514;</div></div>
+<div class="header-main">
+<div class="header-sa" contenteditable="true">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 3 de 4</div>
+<div class="header-title" contenteditable="true">D'on va sortir la vida?</div>
+<div class="header-subtitle" contenteditable="true">Comit&egrave; avaluador: quatre propostes, un dossier de proves i un dictamen</div>
+</div>
+<div class="header-right">
+<div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+<div class="header-meta" contenteditable="true">Biologia i Geologia &middot; 4t ESO<br>IE Temple</div>
+</div>
+</div>
+<div class="nivell-strip deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<span class="nivell-label" contenteditable="true">Versi&oacute; d'aprofundiment</span>
+<span class="temps-badge" contenteditable="true">&#9201;&#65039; 2h</span>
+<div class="nom-field">Nom:&nbsp;<span class="input-span" contenteditable="true"></span>&nbsp;&nbsp;Equip:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;<span class="nivell-badge-small" title="Versi&oacute; A">A</span></div></div>
+<div class="oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="oa-title">Qu&egrave; vull que s&agrave;pigues fer en acabar</div><ul class="oa-list">
+<li>Comparo les hip&ograve;tesis sobre l'origen de la vida distingint els <b>tres problemes</b> que han de resoldre (compartiment, energia i informaci&oacute; que es copia) i argumento quina proposta ataca quin.</li>
+<li>Argumento per qu&egrave; dues hip&ograve;tesis poden <b>no ser excloents</b> i quina mena de prova caldria per decidir entre dues que s&iacute; que ho s&oacute;n.</li>
+<li>Avaluo la <b>fonamentaci&oacute;</b> de cada hip&ograve;tesi i formulo una observaci&oacute; o un experiment concret que la faria pujar o baixar de nivell de certesa.</li>
+<li>Justifico per qu&egrave; una afirmaci&oacute; que <b>cap observaci&oacute; no podria contradir</b> queda fora de la ci&egrave;ncia, i explico per qu&egrave; aix&ograve; no equival a dir que sigui falsa.</li>
+<li>Analitzo cr&iacute;ticament la <b>font</b> que he fet servir a casa (autoria, instituci&oacute;, intenci&oacute;, verificabilitat) i la cito correctament.</li>
+</ul></div>
+<div class="content">
+<div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="epist-title">&#128218; Vocabulari de la sessi&oacute;</div><div class="epist-text"><b>Mol&egrave;cula org&agrave;nica:</b> mol&egrave;cula amb un esquelet d'&agrave;toms de carboni; s&oacute;n les que formen els &eacute;ssers vius &middot; <b>Aminoàcid</b> (pe&ccedil;a de les prote&iuml;nes) &middot; <b>Met&agrave; i amon&iacute;ac:</b> dos gasos; en una atmosfera amb aquests gasos les reaccions van d'una manera i en una de di&ograve;xid de carboni i nitrogen van d'una altra &middot; <b>ARN</b> (SA3) &middot; <b>Ribozim:</b> ARN que, a m&eacute;s de guardar informaci&oacute;, actua com una eina i talla o uneix altres mol&egrave;cules &middot; <b>Fumarola hidrotermal:</b> xemeneia del fons del mar per on surt aigua escalfada per dins de la Terra &middot; <b>Alcal&iacute;</b> (contrari d'&agrave;cid) &middot; <b>Pansp&egrave;rmia:</b> proposta que diu que les mol&egrave;cules de la vida, o la vida mateixa, van arribar de l'espai &middot; <b>Astrobiologia</b> &middot; <b>Ma</b> (milions d'anys).</div></div></div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#8f8ab0">0</div><div><span class="stitle">D'on partim</span><span class="temps">5 min</span><div class="sdesc">Idees pr&egrave;vies &middot; no es corregeix</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 3px">Damunt d'una taula hi ha totes les <b>peces</b> d'una bicicleta, escampades. No tens una bicicleta. Doncs b&eacute;: <b>qu&egrave; li falta a un mont&oacute; de mol&egrave;cules escampades</b> per poder dir que all&ograve; ja &eacute;s un &eacute;sser viu? Escriu-ho amb la m&agrave;xima precisi&oacute; que puguis.</p><div class="wline tall" contenteditable="true"></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#37306B">1</div><div><span class="stitle">Miller-Urey: el resultat i el titular</span><span class="temps">14 min</span><div class="sdesc">Individual</div></div></div><div class="divider"></div>
+<img class="fig" src="../images/sa7-s3-miller-urey.svg" alt="L'aparell de Miller-Urey" style="margin:4px 0"><p class="figcap">Fig.1 &middot; L'aparell tancat de 1953: nom&eacute;s aigua i gasos, cap &eacute;sser viu a dins.</p>
+<p style="font-size:11.5px;color:#5a5580;font-style:italic;margin:6px 0 6px">Dada que necessites i que la figura no et dona: al cap d'una setmana, el l&iacute;quid marr&oacute; contenia <b>aminoàcids</b>, les pe&ccedil;es amb qu&egrave; es fabriquen les prote&iuml;nes de tots els &eacute;ssers vius.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>1a.</b> Els diaris de l'&egrave;poca van titular <i>&laquo;creen vida al laboratori&raquo;</i>. Escriu qu&egrave; va demostrar realment l'experiment i <b>on &eacute;s exactament el salt</b> que van fer els titulars. Fes servir la teva resposta de l'apartat 0.</p><div class="wline xtall" contenteditable="true"></div>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#127919; Repte</div><div class="challenge-text">Avui s'accepta que l'atmosfera primitiva no era la que Miller va posar a l'aparell (tenia sobretot di&ograve;xid de carboni i nitrogen). Davant d'aix&ograve; hi ha tres reaccions possibles: <b>llen&ccedil;ar</b> la hip&ograve;tesi, <b>ignorar</b> l'objecci&oacute; o <b>modificar-la</b>.</div></div></div>
+<p style="font-size:11.5px;color:#5a5580;font-style:italic;margin:6px 0 4px">Per respondre 1b tens una eina: el cam&iacute; de decisi&oacute; de la <b>Fig.4</b> (apartat 4). Passa-hi la hip&ograve;tesi <b>abans</b> i <b>despr&eacute;s</b> de modificar-la i mira qu&egrave; passa amb la segona pregunta.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>1b.</b> Decideix quina reacci&oacute; &eacute;s la correcta i, sobretot, respon la pregunta dif&iacute;cil: <b>quin criteri</b> fa que modificar una hip&ograve;tesi sigui <b>honest</b> en un cas i una <b>trampa</b> en un altre?</p><div class="wline xtall" contenteditable="true"></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#241F4A">2</div><div><span class="stitle">El comit&egrave;: col&middot;loqueu les proves</span><span class="temps">26 min</span><div class="sdesc">En equip &middot; dossier retallable</div></div></div><div class="divider"></div>
+<p style="font-size:11.5px;color:#5a5580;font-style:italic;margin:6px 0 4px">&#9986; Les targetes s&oacute;n al full a part <b>&laquo;Dossier de proves &middot; targetes per retallar&raquo;</b> (un full per a dos equips). Cada targeta t&eacute; <b>un sol dest&iacute;</b>; una de les nou no parla de cap de les quatre propostes. Quan una targeta parli d'una mol&egrave;cula, fixeu-vos en <b>on</b> s'ha format, no nom&eacute;s en el fet que s'hagi format. No enganxeu res fins que tot l'equip hi estigui d'acord.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>2a.</b> Col&middot;loqueu les nou targetes a la graella.</p>
+<table class="data-table"><tr><th style="width:26%">Proposta</th><th style="width:37%">Prova a favor</th><th style="width:37%">El que encara no explica</th></tr>
+<tr><td class="label-cell">1 &middot; <b>Sopa primordial</b><br><span style="font-weight:400;font-size:11px;color:#5a5580">basses, gasos i llamps</span></td><td><div class="paste-cell"></div></td><td><div class="paste-cell"></div></td></tr>
+<tr><td class="label-cell">2 &middot; <b>M&oacute;n ARN</b><br><span style="font-weight:400;font-size:11px;color:#5a5580">una mol&egrave;cula que es copia</span></td><td><div class="paste-cell"></div></td><td><div class="paste-cell"></div></td></tr>
+<tr><td class="label-cell">3 &middot; <b>Fumaroles</b><br><span style="font-weight:400;font-size:11px;color:#5a5580">xemeneies del fons del mar</span></td><td><div class="paste-cell"></div></td><td><div class="paste-cell"></div></td></tr>
+<tr><td class="label-cell">4 &middot; <b>Pansp&egrave;rmia</b><br><span style="font-weight:400;font-size:11px;color:#5a5580">va arribar de l'espai</span></td><td><div class="paste-cell"></div></td><td><div class="paste-cell"></div></td></tr></table>
+<div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div style="flex:1"><div class="epist-title">&#129517; Aquesta targeta no encaixa en cap de les quatre</div><div class="paste-cell" style="margin-top:6px"></div></div></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>2b.</b> La graella nom&eacute;s t&eacute; dues columnes, i un comit&egrave; de veritat en necessita una tercera. Per a cada proposta, escriviu <b>quina prova nova demanaríeu</b> a l'equip que la defensa perqu&egrave; el dictamen pogu&eacute;s canviar.</p>
+<table class="data-table"><tr><th style="width:26%">Proposta</th><th style="width:74%">Quina prova nova demanaríem</th></tr>
+<tr><td class="label-cell">Sopa primordial</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">M&oacute;n ARN</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">Fumaroles</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">Pansp&egrave;rmia</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#127919; Repte</div><div class="challenge-text">Quan tingueu la graella sencera, mireu-la de lluny i responeu dues coses que no hi s&oacute;n escrites.</div></div></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>2c.</b> Hi ha alguna proposta que hagi quedat <b>sense forat</b>? Qu&egrave; vol dir aix&ograve; exactament: que &eacute;s la bona, o que encara no l'hem provada prou?</p><div class="wline tall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>2d.</b> Agafeu <b>dues</b> propostes qualssevol i decidiu si s&oacute;n <b>incompatibles</b> (si una &eacute;s certa, l'altra ha de ser falsa) o si podrien ser <b>dos cap&iacute;tols de la mateixa hist&ograve;ria</b>. Justifiqueu-ho.</p><div class="wline tall" contenteditable="true"></div>
+<div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128483;&#65039; Prepara la resposta oral.</b> El docent triar&agrave; <b>una</b> targeta i l'equip haur&agrave; d'explicar per qu&egrave; l'ha posada all&agrave; i per qu&egrave; <b>no va</b> a cap altre lloc.<div class="wline short" contenteditable="true"></div></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#4a6fa5">3</div><div><span class="stitle">Tres problemes, tres escenaris</span><span class="temps">22 min</span><div class="sdesc">Individual</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 6px">&laquo;L'origen de la vida&raquo; sembla una pregunta sola, per&ograve; en s&oacute;n <b>tres</b>: com apareix un <b>compartiment</b> que separi un dins d'un fora; d'on surt l'<b>energia</b> que mant&eacute; les reaccions en marxa; i com apareix una mol&egrave;cula que guardi <b>informaci&oacute;</b> i en pugui fer <b>c&ograve;pies</b>.</p>
+<img class="fig" src="../images/sa7-s3-tres-escenaris.svg" alt="Els tres escenaris" style="margin:4px 0"><p class="figcap">Fig.2 &middot; Nom&eacute;s l'escena de cadascun.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>3a.</b> Per a cada escenari: quin problema (o quins) resol <b>millor</b>, quin <b>no</b> resol, i amb quin detall concret del dibuix o de les targetes ho justifiques.</p>
+<table class="data-table"><tr><th style="width:20%">Escenari</th><th style="width:22%">Resol millor</th><th style="width:22%">NO resol</th><th style="width:36%">El detall que t'ho fa dir</th></tr>
+<tr><td class="label-cell">Sopa primordial</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">M&oacute;n ARN</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">Fumaroles</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#127919; Repte</div><div class="challenge-text">A les teves c&egrave;l&middot;lules, l'ADN no es pot copiar sense prote&iuml;nes i les prote&iuml;nes no es poden fabricar sense ADN: cadascuna necessita l'altra.</div></div></div>
+<p style="font-size:11.5px;color:#5a5580;font-style:italic;margin:6px 0 4px">Dada que et dono: la m&agrave;quina que fabrica les prote&iuml;nes dins de les teves c&egrave;l&middot;lules t&eacute;, al centre, una mol&egrave;cula d'ARN i no cap prote&iuml;na.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> Explica quin problema resol una mol&egrave;cula que fa alhora de <b>recepta i de cuiner</b>, i que no resol un sistema on la informaci&oacute; la guarda una mol&egrave;cula i la feina la fa una altra. Fes servir la dada de sobre com a prova.</p><div class="wline xtall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>3c.</b> La pansp&egrave;rmia no ataca cap dels tres problemes. Qu&egrave; fa, en lloc de respondre la pregunta? I malgrat aix&ograve;, per qu&egrave; la targeta del meteorit continua sent una prova interessant?</p><div class="wline tall" contenteditable="true"></div>
+<img class="fig" src="../images/sa7-s3-finestra-temps.svg" alt="La finestra de temps" style="margin:4px 0"><p class="figcap">Fig.3 &middot; Amb les dades de la sessi&oacute; passada.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>3d.</b> Calcula quants milions d'anys dura la <b>finestra verda</b>, de 3.900 Ma als <b>primers</b> indicis (escriu la resta) i compara-la amb l'edat de la Terra. Qu&egrave; li exigeix, una finestra tan curta, a qualsevol de les quatre propostes?</p><div class="wline tall" contenteditable="true"></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#B0821F">4</div><div><span class="stitle">El dictamen del comit&egrave;</span><span class="temps">22 min</span><div class="sdesc">En equip &middot; document avaluable</div></div></div><div class="divider"></div>
+<img class="fig" src="../images/sa7-s3-contrastable.svg" alt="Es pot posar a prova?" style="margin:4px 0"><p class="figcap">Fig.4 &middot; El cam&iacute; que has d'aplicar a la cinquena proposta (l'exemple dels cignes no hi t&eacute; res a veure).</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>4a.</b> Escriu el <b>dictamen</b> com si l'haguessis d'enviar de veritat, en quatre blocs.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>(1)</b> L'ordre de les quatre propostes, de m&eacute;s a menys ben fonamentada, i <b>amb quin criteri</b> l'heu decidit.</p><div class="wline tall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>(2)</b> Les <b>raons</b>, amb proves i forats concrets &mdash; dient de cada forat si &eacute;s dels que ja s'estan investigant o dels que ho farien impossible tot.</p><div class="wline huge" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>(3)</b> Quina <b>observaci&oacute; o experiment</b> confirmaria o descartaria la que heu posat primera.</p><div class="wline tall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>(4)</b> Per qu&egrave; la cinquena proposta <b>no entra ni tan sols a la llista</b>, sense dir en cap moment que sigui falsa.</p><div class="wline tall" contenteditable="true"></div>
+<div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="epist-title">&#129517; Naturalesa de la ci&egrave;ncia</div><div class="epist-text">Cap de les quatre propostes no est&agrave; demostrada, i aix&ograve; no &eacute;s cap esc&agrave;ndol: &eacute;s l'estat normal d'una pregunta oberta. L'<b>astrobiologia</b> treballa exactament aix&iacute;: <b>explora</b> escenaris, hi busca proves i diu clarament fins on arriba.</div></div></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#7a6aa8">5</div><div><span class="stitle">Posada en com&uacute; i fonts</span><span class="temps">8 min</span><div class="sdesc">Tota la classe</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>5a.</b> Escriu la <b>prova que has portat de casa</b>, digues d'on l'has treta i <b>avalua la font</b>: qui ho signa, quina instituci&oacute; hi ha al darrere, amb quina intenci&oacute; ho publiquen i si es pot verificar en una altra banda.</p><div class="wline xtall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>5b.</b> Anota <b>una idea d'un altre equip</b> que t'hagi fet dubtar del teu ordre, i qu&egrave; hi respondries.</p><div class="wline tall" contenteditable="true"></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#c8960a">6</div><div><span class="stitle">Exit tiquet i metacognici&oacute;</span><span class="temps">13 min</span><div class="sdesc">Individual &middot; es lliura</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>6a.</b> Un titular diu: <i>&laquo;Un experiment demostra que la vida es va crear a partir de gasos i llamps&raquo;</i>. Reescriu-lo perqu&egrave; digui exactament el que l'experiment de 1953 va demostrar, ni m&eacute;s ni menys.</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>6b.</b> Per qu&egrave; el m&oacute;n ARN va cridar tant l'atenci&oacute; dels cient&iacute;fics? Respon-ho en dues l&iacute;nies, sense fer servir la paraula <i>ribozim</i>.</p><div class="wline short" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>6c.</b> Un equip publica que, en condicions com les d'una fumarola, s'hi podrien formar cadenes curtes d'ARN, i diu exactament quines condicions caldria muntar al laboratori per comprovar-ho. Digues si aix&ograve; es pot tractar com una hip&ograve;tesi cient&iacute;fica i <b>per qu&egrave;</b>, fent servir les dues preguntes de la Fig.4.</p><div class="wline tall" contenteditable="true"></div>
+<div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="meta-oa-title">Metacognici&oacute;</div>
+<p style="font-size:12px;margin-bottom:3px">Torna a l'apartat 0. Qu&egrave; hi afegiries ara?</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:6px 0 3px">Hi ha alguna proposta que t'agrad&eacute;s m&eacute;s <b>abans</b> de mirar les proves i que hagi baixat de lloc despr&eacute;s? Qu&egrave; et diu aix&ograve; sobre com decidies fins ara?</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:6px 0 3px">Com et fa sentir tancar una sessi&oacute; <b>sense</b> saber la resposta: inc&ograve;mode, o &eacute;s una altra cosa? Explica-ho.</p><div class="wline" contenteditable="true"></div></div>
+</div>
+<div class="tasca-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="tasca-title">&#127968; Feina per a casa</div>
+<div class="tasca-item"><div class="tasca-num">1</div><div>Prepara la teva postura per al <b>debat</b> de la propera sessi&oacute;: <i>hauríem d'invertir diners p&uacute;blics a buscar vida fora de la Terra?</i> Escriu <b>dos arguments a favor i dos en contra</b> &mdash; tots quatre, encara que tu nom&eacute;s n'estiguis d'acord amb dos.</div></div>
+<div class="tasca-item"><div class="tasca-num">2</div><div>Per a cada argument, digues en qu&egrave; es basa: en <b>dades</b>, en <b>valors</b> o en les dues coses. Marca quin dels quatre et sembla <b>m&eacute;s dif&iacute;cil de respondre</b>.</div></div>
+<div class="tasca-item"><div class="tasca-num">3</div><div>Repassa <b>tota la SA7</b> per a la prova final: Big Bang i les seves proves, condicions de la Terra, semivida i les dues menes de dataci&oacute;, i les hip&ograve;tesis d'avui.</div></div></div>
+<div class="footer"><div class="footer-l">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 3 &middot; Versi&oacute; A &middot; IE Temple &middot; Biologia i Geologia 4t ESO</div><div class="footer-r">&#129514;</div></div>
+    <div class="attrib">Adaptat per Albert Pahissa de l&#39;original de Jordi Dom&egrave;nech. Llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a> (Reconeixement&ndash;NoComercial&ndash;CompartirIgual).</div>
+    </div></div>
+<script>
+const delStack=[];
+function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});const u=document.getElementById('btn-undo');if(u)u.classList.add('active')}
+function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);const u=document.getElementById('btn-undo');if(u&&!delStack.length)u.classList.remove('active');updatePageBreaks()}
+function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
+document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
+const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
+function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='Pàgina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple · Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
+function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
+window.addEventListener('load',updatePageBreaks);
+const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+</script>
+</body>
+</html>

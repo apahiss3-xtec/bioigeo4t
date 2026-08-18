@@ -131,7 +131,7 @@ export const sa3s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa3-s1-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa3-s1-fitxa-A.html", B: "/fitxes/sa3-s1-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a la teva postura de l'apartat 1 i, ara que ja tens la visió gen → proteïna → característica, reescriu-la millorada, separant l'argument científic de l'ètic.",
 
@@ -209,9 +209,9 @@ export const sa3s1 = {
       text: "Un company diu: «Si es pot editar l'ADN d'un embrió, ja n'hi ha prou raó per fer-ho sempre». Quin problema té aquest argument?",
       options: [
         "Confon «es pot fer» (ciència) amb «s'hauria de fer» (ètica)",
-        "Cap: si es pot fer, s'ha de fer",
-        "Que l'ADN no es pot editar de cap manera",
-        "Que les proteïnes no tenen res a veure amb l'ADN"
+        "És un argument d'autoritat: només valdria si ho digués un científic reconegut",
+        "No diu quin gen s'edita, i sense saber-ho no es pot valorar res",
+        "No cita cap font fiable, i per tant no es pot verificar el que afirma"
       ],
       correct: 0
     },

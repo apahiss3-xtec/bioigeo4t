@@ -17,9 +17,8 @@ import NivellSelector from '../components/NivellSelector.jsx'
 import { useNivell, pickLevel } from '../nivell/NivellContext.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
 
-// Fitxes/rúbriques ja convertides a PDF i presents a public/fitxes/.
-// Mentre estigui buida, es mostra "Fitxa disponible a classe".
-const DOWNLOADABLE_FILES = []
+// Fitxes reals (HTML, nivells A/B) a public/fitxes/. fitxaUrl és { A, B }
+// i es tria segons el nivell seleccionat (mateix mecanisme que pickLevel).
 
 const SectionTitle = ({ children }) => (
   <h2 className="section-bar mb-6" style={{ background: 'var(--biome)' }}>
@@ -106,7 +105,8 @@ export default function SessionPage() {
   const prev = sa.sessionsData[idx - 1]
   const next = sa.sessionsData[idx + 1]
 
-  const fileAvailable = (url) => url && DOWNLOADABLE_FILES.includes(url)
+  // Fitxa del nivell actiu (A = ampliació, B = estàndard).
+  const fitxaUrl = pickLevel(session.fitxaUrl, nivell)
 
   // ── Apartats numerats com al full ───────────────────────────
   // Títol/temps de cada apartat surten de la guia del full (font única).
@@ -464,34 +464,39 @@ export default function SessionPage() {
 
           <div className="card p-6">
             <div className="flex flex-wrap gap-3">
-              {session.fitxaUrl &&
-                (fileAvailable(session.fitxaUrl) ? (
-                  <a
-                    href={asset(session.fitxaUrl)}
-                    className="rounded-xl bg-[var(--purple-ink)] px-5 py-2.5 font-display font-semibold text-white hover:bg-[var(--purple-deep)] transition-colors"
-                    download
-                  >
-                    ⬇ {t('session.downloadFitxa')}
-                  </a>
-                ) : (
-                  <span className="rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 text-[var(--muted)]">
-                    📄 {t('session.fitxaAtClass')}
-                  </span>
-                ))}
-              {session.rubricUrl &&
-                (fileAvailable(session.rubricUrl) ? (
-                  <a
-                    href={asset(session.rubricUrl)}
-                    className="rounded-xl bg-[var(--purple-ink)] px-5 py-2.5 font-display font-semibold text-white hover:bg-[var(--purple-deep)] transition-colors"
-                    download
-                  >
-                    ⬇ {t('session.downloadRubrica')}
-                  </a>
-                ) : (
-                  <span className="rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 text-[var(--muted)]">
-                    📋 {t('session.downloadRubrica')} — {t('session.fitxaAtClass').toLowerCase()}
-                  </span>
-                ))}
+              {fitxaUrl ? (
+                <a
+                  href={asset(fitxaUrl)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl bg-[var(--purple-ink)] px-5 py-2.5 font-display font-semibold text-white hover:bg-[var(--purple-deep)] transition-colors"
+                >
+                  📄 {t('session.downloadFitxa')} (Nivell {nivell})
+                </a>
+              ) : (
+                <span className="rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 text-[var(--muted)]">
+                  📄 {t('session.fitxaAtClass')}
+                </span>
+              )}
+              {session.retallablesUrl && (
+                <a
+                  href={asset(session.retallablesUrl)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 font-display font-semibold hover:bg-[var(--paper-2)] transition-colors"
+                >
+                  ✂️ Retallables
+                </a>
+              )}
+              {session.rubricUrl && (
+                <a
+                  href={asset(session.rubricUrl)}
+                  className="rounded-xl bg-[var(--purple-ink)] px-5 py-2.5 font-display font-semibold text-white hover:bg-[var(--purple-deep)] transition-colors"
+                  download
+                >
+                  ⬇ {t('session.downloadRubrica')}
+                </a>
+              )}
               {session.teoriaPdfUrl ? (
                 <a
                   href={asset(session.teoriaPdfUrl)}

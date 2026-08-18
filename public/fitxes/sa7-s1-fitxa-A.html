@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA7 &middot; S26 &middot; Estem sols? (A)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#37306B; --teal-ink:#241F4A; --teal-light:#b3aed0; --teal-tint:#f1effa;
+  --ink:#1a2027; --ink-2:#33404b; --muted:#7c8a96; --surface:#fdfefe;
+  --rule:#e0dcee; --rule-dark:#bdb7d6;
+  --orange:#B0821F; --orange-tint:#fdf6e6;
+  --aqua:#4a6fa5; --aqua-tint:#eaf0f9;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#7a6aa8; --purple-tint:#f0edf6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba:(20,30,40,.94);background:rgba(30,26,56,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,48,107,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(220,214,240,.75);flex:1}
+.tb-tip strong{color:#e3dcf5}
+.tb-sep{width:1px;height:20px;background:rgba(55,48,107,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(55,48,107,.2);border:1px solid rgba(55,48,107,.4);color:#ded9f2;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(55,48,107,.2);border:1px solid rgba(55,48,107,.4);color:#ded9f2;font-size:12px}
+.tb-undo{background:rgba(192,135,46,.2);border:1px solid rgba(192,135,46,.4);color:#f0dcae;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #a49ec4;pointer-events:none;z-index:10}
+.page-break-label{position:absolute;right:10px;top:-11px;background:#a49ec4;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(55,48,107,.08);box-shadow:0 0 0 2px rgba(55,48,107,.3)}
+[contenteditable]:focus{background:rgba(55,48,107,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+.wline{display:block;width:100%;min-height:52px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(55,48,107,.04)}
+.wline.tall{min-height:104px}
+.wline.xtall{min-height:128px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(55,48,107,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#241F4A 0%,#4b4290 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#f1effa,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 13px}
+.previ-box p{font-size:12.5px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#31527e;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
+.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#8a6410;margin-bottom:2px}
+.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:56px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
+.fill-cell:focus{background:rgba(55,48,107,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#8a6410;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(55,48,107,.05) 6px,rgba(55,48,107,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.page-break-line,.del-btn{display:none!important}
+  .page-footer-bar{display:flex!important}
+  .footer{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .wline{background:transparent;padding:0}
+  .fill-cell{background:transparent;outline:none}
+  .spacer-block{background:transparent!important;border:none!important}
+  .spacer-label{display:none!important}
+}
+</style>
+<style>
+.wline{min-height:72px}
+.wline.tall{min-height:118px}
+.wline.xtall{min-height:150px}
+.wline.xxtall{min-height:210px}
+.fill-cell{min-height:62px}
+.princ-strip{display:flex;gap:8px;flex-wrap:wrap;background:#f1effa;border:1.5px solid #b3aed0;border-radius:8px;padding:7px 12px;margin:8px 0}
+.princ-strip b{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#241F4A;align-self:center}
+.princ-chip{font-size:11.5px;font-weight:700;color:#241F4A;background:#fff;border:1px solid #b3aed0;border-radius:9999px;padding:2px 10px}
+.abp-note{background:#fdf6e6;border-left:4px solid #B0821F;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0;font-size:11.5px;color:#33404b}
+</style>
+<style>
+.wline{min-height:74px}
+.wline.tall{min-height:120px}
+.wline.xtall{min-height:152px}
+.fill-cell{min-height:64px}
+.fill-cell.big{min-height:96px}
+.fill-cell.xbig{min-height:112px}
+.wline.xxtall{min-height:200px}
+@media print{.fig,.data-table,.scaffold-box,.challenge-box,.epist-box,.abp-note{break-inside:avoid;page-break-inside:avoid}}
+.abp-note{background:#fdf6e6;border-left:4px solid #B0821F;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0;font-size:11.5px;color:#33404b}
+.frase-box{background:#fbeceb;border:1.5px solid #b4463c;border-radius:8px;padding:9px 12px;margin:8px 0;font-size:12.5px;font-style:italic;color:#4a201d}
+</style>
+</head><body>
+<div id="toolbar">
+  <span class="tb-tip">&#9998; Clica per editar &middot; <strong>Ctrl+B</strong> negreta &middot; <strong>&times;</strong> rosa elimina &middot; <strong>Ctrl+Z</strong> desf&eacute;s</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">&#8617; Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">&#65291; Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">&#128424;&#65039; Imprimir / PDF</button>
+</div><div class="page-wrap" id="doc"><div class="header-band deletable">
+<div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">&#128301;</div></div>
+<div class="header-main">
+<div class="header-sa" contenteditable="true">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 1 de 4</div>
+<div class="header-title" contenteditable="true">Estem sols?</div>
+<div class="header-subtitle" contenteditable="true">Comit&egrave; editorial: qu&egrave; se sap, qu&egrave; se suposa i qu&egrave; no es pot saber</div>
+</div>
+<div class="header-right">
+<div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+<div class="header-meta" contenteditable="true">Biologia i Geologia &middot; 4t ESO<br>IE Temple</div>
+</div>
+</div>
+<div class="nivell-strip deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<span class="nivell-label" contenteditable="true">Versi&oacute; amb reptes</span>
+<span class="temps-badge" contenteditable="true">&#9201;&#65039; 2h</span>
+<div class="nom-field">Nom:&nbsp;<span class="input-span" contenteditable="true"></span>&nbsp;&nbsp;Equip:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;<span class="nivell-badge-small" title="Versi&oacute; A">A</span></div></div>
+<div class="oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="oa-title">Qu&egrave; vull que s&agrave;pigues fer en acabar</div><ul class="oa-list"><li>Classifico afirmacions reals segons el <b>grau de certesa</b>, justifico cada decisi&oacute; amb el <b>tipus de prova</b> que la sost&eacute; i dic quina prova concreta faria pujar de nivell una afirmaci&oacute;.</li><li>Argumento per qu&egrave; les <b>tres proves</b> del Big Bang el sostenen millor juntes que per separat, i corregeixo la idea que va ser una explosi&oacute; dins de l'espai.</li><li>Relaciono la formaci&oacute; del sistema solar amb un mateix n&uacute;vol de gas i pols i explico per qu&egrave; els planetes interiors i els exteriors van sortir diferents.</li><li>Faig servir el fet que la <b>llum triga a arribar</b> per explicar per qu&egrave; observar l'univers lluny&agrave; &eacute;s observar el passat, i n'extrec una conseq&uuml;&egrave;ncia sobre els <b>l&iacute;mits</b> del que podem saber.</li></ul></div>
+<div class="content">
+<div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="epist-title">&#128218; Paraules noves</div><div class="epist-text"><b>Ma:</b> abreviatura de <i>milions d'anys</i> (13.800 Ma = 13.800 milions d'anys). &middot; <b>Any llum:</b> la dist&agrave;ncia que recorre la llum en un any; no &eacute;s temps, &eacute;s dist&agrave;ncia. &middot; <b>Exoplaneta:</b> planeta que gira al voltant d'una altra estrella, no del Sol. &middot; <b>Radiaci&oacute; c&ograve;smica de fons:</b> una llum molt d&egrave;bil, en forma de microones, que arriba de totes direccions per igual i que correspon a un univers que ara est&agrave; a &minus;270 &deg;C. &middot; <b>Datació radiom&egrave;trica:</b> mesurar l'edat d'una roca a partir d'&agrave;toms que es transformen a un ritme conegut (ho farem a la propera sessi&oacute;, amb daus). &middot; <b>Fusi&oacute; nuclear:</b> reacci&oacute; que uneix &agrave;toms molt lleugers i allibera moltíssima energia; &eacute;s el que fa brillar el Sol. &middot; <b>Fumarola hidrotermal:</b> esquerda del fons mar&iacute; per on surt aigua molt calenta carregada de minerals. &middot; <b>No aviaris:</b> tots els dinosaures excepte el grup que va donar lloc als ocells (els ocells s&oacute;n dinosaures). &middot; <b>Biofirma:</b> senyal (per exemple una mol&egrave;cula) que podria indicar que hi ha vida, per&ograve; que no la demostra tota sola.</div></div></div>
+<div class="section"><div class="section-header"><div class="snum" style="background:#8f8ab0">0</div><div><span class="stitle">D'on partim</span><span class="temps">6 min</span><div class="sdesc">Idees pr&egrave;vies &middot; no es corregeix</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 3px">Escriu una afirmaci&oacute; sobre l'origen de l'univers, de la Terra o de la vida que consideris <b>ben establerta</b>, i digues quina observaci&oacute; la <b>desmentiria</b> si es fes.</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px">Com decideixes, en general, si una cosa se sap o nom&eacute;s se suposa? Escriu el teu criteri en dues o tres frases.</p><div class="wline tall" contenteditable="true"></div>
+</div>
+<div class="section"><div class="section-header"><div class="snum" style="background:#37306B">1</div><div><span class="stitle">El comit&egrave; editorial</span><span class="temps">25 min</span><div class="sdesc">En equip &middot; feu de revista de divulgaci&oacute;</div></div></div><div class="divider"></div>
+<img class="fig" src="../images/sa7-s1-escala-certeses.svg" alt="L'escala de certeses" style="margin:4px 0;max-width:100%" onerror="this.style.display='none'"><p style="font-size:10.5px;color:#5a5580;font-style:italic;text-align:center;margin:0 0 8px">Fig.1 &middot; Els quatre nivells de la SA1 i un exemple resolt d'un tema que no surt a la taula. La pregunta que decideix el nivell: quina observaci&oacute; la sost&eacute; i quina la desmentiria?</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>1a.</b> Per a cada afirmaci&oacute;: nivell + la prova concreta en qu&egrave; us baseu (o la que hi <b>faltaria</b>).</p>
+<table class="data-table"><tr><th style="width:5%">N.</th><th style="width:45%">Afirmaci&oacute;</th><th style="width:16%">Nivell de certesa</th><th style="width:34%">En quina prova em baso</th></tr><tr><td class="label-cell" style="text-align:center">1</td><td style="font-size:12px">L'univers s'expandeix: fa uns 13.800 Ma tot el que existeix estava molt m&eacute;s junt, m&eacute;s dens i m&eacute;s calent que ara.</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">2</td><td style="font-size:12px"><b>Titular:</b> &laquo;Detecten a Mart un gas que a la Terra fabriquen sobretot &eacute;ssers vius&raquo;.<br><span style="font-weight:400;font-size:11px;color:#5a5580">La not&iacute;cia explica que un robot de la NASA ha mesurat pet<!-- -->ites quantitats de <b>met&agrave;</b> a l'atmosfera de Mart que pugen i baixen segons l'&egrave;poca de l'any. A la Terra, la major part del met&agrave; el fan &eacute;ssers vius, per&ograve; tamb&eacute; se'n forma en reaccions entre roca i aigua, sense cap &eacute;sser viu.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">3</td><td style="font-size:12px">La Terra t&eacute; uns 4.600 Ma d'edat.<br><span style="font-weight:400;font-size:11px;color:#5a5580">Es dedueix de la datació radiom&egrave;trica de meteorits i de les roques m&eacute;s antigues, feta per laboratoris diferents amb elements diferents.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">4</td><td style="font-size:12px">La vida a la Terra va comen&ccedil;ar a prop de fumaroles hidrotermals del fons mar&iacute;.<br><span style="font-weight:400;font-size:11px;color:#5a5580">Al voltant d'aquestes fumaroles hi ha avui comunitats senceres d'&eacute;ssers vius sense llum del sol, i al laboratori s'hi han format mol&egrave;cules de la vida; per&ograve; no &eacute;s l'&uacute;nica hip&ograve;tesi que hi ha.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">5</td><td style="font-size:12px">Hi ha civilitzacions molt avan&ccedil;ades que ens visiten, per&ograve; que esborren qualsevol rastre que els nostres instruments puguin detectar.</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">6</td><td style="font-size:12px">Si algun dia trobem vida sota el gel d'Enc&egrave;lad, una lluna de Saturn, s'assemblar&agrave; als bacteris de les fumaroles de la Terra.<br><span style="font-weight:400;font-size:11px;color:#5a5580">D'Enc&egrave;lad se'n sap que t&eacute; un oce&agrave; d'aigua l&iacute;quida sota el gel i que expulsa vapor amb mol&egrave;cules amb carboni. De vida, no se n'hi ha detectat cap senyal.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">7</td><td style="font-size:12px">L'univers va ser creat fa 6.000 anys exactament tal com &eacute;s ara, i totes les proves que indiquen una edat molt m&eacute;s gran hi van ser posades perqu&egrave; ho semblessin.</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">8</td><td style="font-size:12px"><b>Titular:</b> &laquo;La gal&agrave;xia &eacute;s plena de planetes com la Terra&raquo;.<br><span style="font-weight:400;font-size:11px;color:#5a5580">La not&iacute;cia diu que a la nostra gal&agrave;xia hi ha <b>molts</b> planetes rocosos amb aigua l&iacute;quida a la superf&iacute;cie. S'han confirmat m&eacute;s de 5.000 exoplanetes i alguns s&oacute;n rocosos i estan a la dist&agrave;ncia adequada de la seva estrella. La paraula &laquo;molts&raquo; surt d'estimar, a partir dels que hem trobat, quants n'hi deu haver que no hem mirat.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell big" contenteditable="true"></span></td></tr></table>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#9889; Repte</div><div class="challenge-text">A la taula hi ha, com a m&iacute;nim, dos problemes ben diferents: alguna afirmaci&oacute; est&agrave; <b>blindada</b> (est&agrave; escrita de manera que cap observaci&oacute; la podria desmentir mai) i alguna altra <b>diu m&eacute;s del que la prova sost&eacute;</b>. Compte: anar <b>contra</b> proves s&ograve;lides &eacute;s encara un tercer problema, diferent dels dos anteriors.</div></div></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>1b.</b> Tria les <b>dues</b> que us hagin costat m&eacute;s de situar. Per a cadascuna, quina observaci&oacute; concreta hauria de fer un telescopi o un laboratori perqu&egrave; <b>pug&eacute;s de nivell</b>?</p>
+<table class="data-table"><tr><th style="width:8%">N.</th><th style="width:34%">Per qu&egrave; us ha costat</th><th style="width:58%">Observaci&oacute; concreta que la faria pujar de nivell</th></tr><tr><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
+<p style="font-size:12px;margin:8px 0 3px"><b>1c.</b> Per qu&egrave; una afirmaci&oacute; que <b>ning&uacute; no pot desmentir mai</b> &eacute;s m&eacute;s <b>feble</b>, i no m&eacute;s forta, que una que es podria desmentir dem&agrave;?</p><div class="wline tall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>1d.</b> Reescriu el titular de les dues afirmacions que diuen m&eacute;s del que la prova sost&eacute;, sense fer-lo avorrit.</p><div class="wline xtall" contenteditable="true"></div>
+<div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128483;&#65039; Prepara la resposta oral.</b> <b>(8 min al final de l'apartat.)</b> Un membre de l'equip triat a l'<b>atzar</b> defensar&agrave; <b>sense paper</b> una de les afirmacions que us hagi costat m&eacute;s: en quin nivell l'heu posada, per quina prova, i quina observaci&oacute; la faria pujar de nivell. Escriviu-ne una l&iacute;nia:<div class="wline" contenteditable="true"></div></div>
+</div>
+<div class="section"><div class="section-header"><div class="snum" style="background:#241F4A">2</div><div><span class="stitle">El Big Bang i les seves proves</span><span class="temps">20 min</span><div class="sdesc">Individual &middot; primer tu, despr&egrave;s l'explicaci&oacute;</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 3px">Ompl<!-- -->e la figura <b>abans</b> de l&#39;explicaci&oacute; de classe i despr&eacute;s corregeix-la amb un bol&iacute;grafi d&#39;un altre color.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>2a.</b> Omple les tres caselles grogues de la figura: qu&egrave; se&#39;n <b>dedueix</b> sobre el passat de l&#39;univers?</p>
+<img class="fig" src="../images/sa7-s1-bigbang-alumne.svg" alt="Les tres proves del Big Bang, per completar" style="margin:4px 0;max-width:100%" onerror="this.style.display='none'"><p style="font-size:10.5px;color:#5a5580;font-style:italic;text-align:center;margin:0 0 8px">Fig.2 &middot; Les tres observacions ja les tens escrites. Les caselles grogues les omples tu.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>2b.</b> Imagina que nom&eacute;s tingu&eacute;ssim la <b>primera</b> prova. Quina objecci&oacute; s'hi podria posar? I com la tanquen les altres dues?</p><div class="wline tall" contenteditable="true"></div>
+<div class="frase-box">&laquo;El Big Bang va ser una explosi&oacute; gegant que va lla&ccedil;ar la mat&egrave;ria cap enfora des d&#39;un punt de l&#39;espai.&raquo;</div>
+<p style="font-size:12px;margin:8px 0 3px"><b>2c.</b> Digues exactament qu&egrave; hi ha de fals en aquesta frase i escriu-la com la dirieu vosaltres.</p><div class="wline tall" contenteditable="true"></div>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#9889; Repte</div><div class="challenge-text">Dades: la llum del Sol triga uns <b>8 minuts</b> a arribar-nos; la de l'estrella m&eacute;s propera, uns <b>4 anys</b>; la de les gal&agrave;xies m&eacute;s llunyanes que veu el telescopi James Webb, m&eacute;s de <b>13.000 milions d'anys</b>. El planeta K2-18b del principi de la sessi&oacute; &eacute;s a 124 anys llum.</div></div></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>2d.</b> Explica per qu&egrave; observar l'univers lluny&agrave; &eacute;s observar el <b>passat</b>. Despr&eacute;s treu-ne una conseq&uuml;&egrave;ncia sobre els <b>l&iacute;mits</b> del que podem arribar a saber: hi ha alguna cosa que no puguem observar mai, per lluny que hi arribem?</p><div class="wline tall" contenteditable="true"></div>
+</div>
+<div class="section"><div class="section-header"><div class="snum" style="background:#4a6fa5">3</div><div><span class="stitle">Com es va fer la Terra</span><span class="temps">8 min</span><div class="sdesc">Individual</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>3a.</b> Explica com es passa d'un n&uacute;vol de gas i pols al Sol i als planetes. Fes servir les paraules <b>gravetat</b>, <b>disc</b> i <b>fusi&oacute; nuclear</b>.</p><div class="wline tall" contenteditable="true"></div>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#9889; Repte</div><div class="challenge-text">Al disc que envoltava el Sol, la temperatura no era igual a tot arreu: a prop feia molta calor i lluny feia molt fred. El gel i els gasos lleugers nom&eacute;s es poden condensar per sota d'una certa temperatura.</div></div></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> A partir d'aix&ograve;, proposa una explicaci&oacute; de per qu&egrave; a prop del Sol hi ha planetes petits i rocosos i lluny n'hi ha de gegants i gasosos.</p><div class="wline tall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>3c.</b> Si tots els planetes es van formar alhora, per qu&egrave; costa tant de datar la Terra amb les roques de la seva pr&ograve;pia superf&iacute;cie? (Pensa en qu&egrave; li passa contin&uacute;ament, a la superf&iacute;cie de la Terra.)</p><div class="wline tall" contenteditable="true"></div>
+</div>
+<div class="section"><div class="section-header"><div class="snum" style="background:#B0821F">4</div><div><span class="stitle">La l&iacute;nia del temps c&ograve;smica</span><span class="temps">30 min</span><div class="sdesc">Individual &middot; amb el full de retallables</div></div></div><div class="divider"></div>
+<img class="fig" src="../images/sa7-s1-calendari.svg" alt="Com es calcula una data del calendari c&ograve;smic" style="margin:4px 0;max-width:100%" onerror="this.style.display='none'"><p style="font-size:10.5px;color:#5a5580;font-style:italic;text-align:center;margin:0 0 8px">Fig.3 &middot; El m&egrave;tode i un exemple resolt que <b>no</b> &eacute;s cap de les set fites de la taula. L'escala: 13.800 Ma = 1 any &rarr; 37,8 Ma per dia.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>4a.</b> Calcula la data c&ograve;smica de cada fita i deixa el c&agrave;lcul escrit. <b>Regla:</b> dia de l&#39;any = resultat de la divisi&oacute; arrodonit cap <b>avall</b> + 1. La fita 7 cau <b>dins</b> de l&#39;&uacute;ltim dia: dona&#39;n l&#39;<b>hora</b> del 31 de desembre.</p>
+<table class="data-table"><tr><th style="width:5%">N.</th><th style="width:31%">Fita</th><th style="width:11%">Fa (Ma)</th><th style="width:34%">C&agrave;lcul complet (resta &divide; 37,8 &rarr; dia)</th><th style="width:19%">Data c&ograve;smica</th></tr><tr><td class="label-cell" style="text-align:center">1</td><td style="font-size:12px">Big Bang</td><td class="label-cell" style="text-align:center">13.800</td><td><span class="fill-cell xbig" contenteditable="true"></span></td><td><span class="fill-cell xbig" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">2</td><td style="font-size:12px">Formaci&oacute; del sistema solar i de la Terra</td><td class="label-cell" style="text-align:center">4.600</td><td><span class="fill-cell xbig" contenteditable="true"></span></td><td><span class="fill-cell xbig" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">3</td><td style="font-size:12px">Primers &eacute;ssers vius</td><td class="label-cell" style="text-align:center">3.800</td><td><span class="fill-cell xbig" contenteditable="true"></span></td><td><span class="fill-cell xbig" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">4</td><td style="font-size:12px">Gran Oxidaci&oacute; (l'atmosfera s'omple d'oxigen)</td><td class="label-cell" style="text-align:center">2.400</td><td><span class="fill-cell xbig" contenteditable="true"></span></td><td><span class="fill-cell xbig" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">5</td><td style="font-size:12px">Primers animals</td><td class="label-cell" style="text-align:center">600</td><td><span class="fill-cell xbig" contenteditable="true"></span></td><td><span class="fill-cell xbig" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">6</td><td style="font-size:12px">Extinci&oacute; dels dinosaures no aviaris</td><td class="label-cell" style="text-align:center">66</td><td><span class="fill-cell xbig" contenteditable="true"></span></td><td><span class="fill-cell xbig" contenteditable="true"></span></td></tr><tr><td class="label-cell" style="text-align:center">7</td><td style="font-size:12px"><i>Homo sapiens</i></td><td class="label-cell" style="text-align:center">0,3</td><td><span class="fill-cell xbig" contenteditable="true"></span></td><td><span class="fill-cell xbig" contenteditable="true"></span></td></tr></table>
+<p style="font-size:12px;margin:8px 0 3px"><b>4b.</b> Marca cada fita a la l&iacute;nia i enganxa-hi la targeta del <b>full de retallables</b>. La l&iacute;nia B &eacute;s un <b>zoom del desembre</b>: digues, en una l&iacute;nia al costat, per qu&egrave; ha calgut fer-lo.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>4b bis.</b> Per qu&egrave; ha calgut fer un zoom del mes de desembre? Qu&egrave; hauria passat sense ell?</p><div class="wline" contenteditable="true"></div>
+<img class="fig" src="../images/sa7-s1-linia-temps-alumne.svg" alt="L&iacute;nia del temps c&ograve;smica per completar" style="margin:4px 0;max-width:100%" onerror="this.style.display='none'"><p style="font-size:10.5px;color:#5a5580;font-style:italic;text-align:center;margin:0 0 8px">Fig.4 &middot; A dalt, l'any c&ograve;smic sencer (1 mes &asymp; 1.150 Ma). A baix, el <b>zoom del mes de desembre</b> (1 dia &asymp; 37,8 Ma). Cada tram t&eacute; dues files per enganxar-hi targetes.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>4c.</b> <i>(posada en com&uacute; oral)</i> Tria <b>dues</b> fites i digues quina mena de prova ens permet saber quan van passar.</p>
+<table class="data-table"><tr><th style="width:34%">Fita (tria'n dues)</th><th style="width:66%">Quina mena de prova ens permet saber-ho</th></tr><tr><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#9889; Repte</div><div class="challenge-text">El calendari c&ograve;smic amaga una trampa: comprimir el temps fa que sembli que la vida va apar&egrave;ixer &laquo;de seguida&raquo; despr&eacute;s de formar-se la Terra i que despr&eacute;s no va passar gaireb&eacute; res durant molt de temps.</div></div></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>4d.</b> Digues per qu&egrave; aquestes dues lectures s&oacute;n enganyoses. Fes servir n&uacute;meros: quants milions d'anys hi ha de debò darrere de cada &laquo;dia&raquo; i de cada &laquo;setmana&raquo;?</p><div class="wline tall" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>4e.</b> <i>(si et sobra temps)</i> Proposa una manera diferent de representar aquests 13.800 Ma que no tingui aquest problema, i digues qu&egrave; hi guanyes i qu&egrave; hi perds.</p><div class="wline tall" contenteditable="true"></div>
+<div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="meta-oa-title">Metacognici&oacute;</div>
+<p style="font-size:12px;margin-bottom:3px">Torna a llegir el que has escrit a l'apartat 0. Canviaries alguna cosa ara? Qu&egrave;, i per qu&egrave;?</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:6px 0 3px">Quina de les vuit afirmacions t'ha fet dubtar m&eacute;s, i qu&egrave; has necessitat per decidir-te?</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:6px 0 3px">Una pregunta que t'endus a casa despr&eacute;s d'una sessi&oacute; sobre 13.800 milions d'anys:</p><div class="wline" contenteditable="true"></div></div>
+</div>
+<div class="tasca-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="tasca-title">&#127968; Feina per a casa</div><div class="tasca-item"><div class="tasca-num">&#8212;</div><div>Aquesta setmana <b>no hi ha feina per a casa</b>. A la propera sessi&oacute; farem la simulaci&oacute; de la <b>semivida amb daus</b> per entendre com es data l'edat de la Terra, i el material es reparteix a classe. Si vols avan&ccedil;ar, guarda la not&iacute;cia sobre l'exploraci&oacute; de l'espai que vas portar: la farem servir.</div></div></div>
+<div class="footer"><div class="footer-l">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 1 &middot; Versi&oacute; A &middot; IE Temple &middot; Biologia i Geologia 4t ESO</div><div class="footer-r">&#128301;</div></div>
+    <div class="attrib">Adaptat per Albert Pahissa de l&#39;original de Jordi Dom&egrave;nech. Llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a> (Reconeixement&ndash;NoComercial&ndash;CompartirIgual).</div>
+    </div></div>
+<script>
+const delStack=[];
+function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});const u=document.getElementById('btn-undo');if(u)u.classList.add('active')}
+function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);const u=document.getElementById('btn-undo');if(u&&!delStack.length)u.classList.remove('active');updatePageBreaks()}
+function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
+document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
+const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
+function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='P\u00e0gina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple \u00b7 Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
+function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
+window.addEventListener('load',updatePageBreaks);
+const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+</script>
+</body>
+</html>

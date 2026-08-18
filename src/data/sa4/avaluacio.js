@@ -1,89 +1,103 @@
-// Avaluació SA4: checklist d'estudi + test de transferència amb la Núria
-// (context NOU, diferent de l'enigma de la Laia que vertebra la SA).
+// Material d'autoavaluació de SA4 (Herència): checklist d'estudi + test de
+// transferència amb un cas NOU —una consulta de consell genètic sobre la
+// distròfia muscular de Duchenne i els grups sanguinis ABO d'una família—
+// diferent dels casos de les sessions (caràcter familiar propi a S1, Punnett
+// amb monedes/llavors a S2, flors/grups sanguinis com a exemple genèric a
+// S3, daltonisme/hemofília a S4), per comprovar si l'alumne sap APLICAR el
+// vocabulari de l'herència, els quadres de Punnett, la codominància i
+// l'herència lligada al sexe a un cas real que ningú no li ha triat.
+//
+// Revisió 2026-08-17 (revisió agent-alumne): resposta correcta repartida
+// entre les quatre posicions i opcions d'una llargada semblant (abans la
+// correcta era sempre la primera i la més llarga). A més: t4 estava marcada
+// com a OA1 quan el seu contingut és consell genètic i ètica (OA4), i cap
+// pregunta cobria OA1 → t1 passa a ser una pregunta de lectura de pedigrí
+// (OA1) i la pregunta sobre portadores es manté dins de t2 (OA4).
 export const sa4Avaluacio = {
   checklist: [
-    { id: 'c1', oa: 'OA1', text: "Sé situar l'ésser humà com a única espècie vivent del gènere Homo i justificar-ho amb caràcters compartits i les funcions vitals (nutrició, relació, reproducció)." },
-    { id: 'c2', oa: 'OA1', text: "Sé per quina raó les classificacions científiques (cladogrames) son provisionals i poden canviar amb noves proves, com l'ADN." },
-    { id: 'c3', oa: 'OA2', text: "Sé identificar les 4 fases del cicle menstrual (menstruació, fol·licular, ovulació, lútea) i les hormones principals de cadascuna (FSH, LH, estrògens, progesterona)." },
-    { id: 'c4', oa: 'OA2', text: "Puc calcular el dia d'ovulació aproximat d'un cicle de qualsevol durada (fórmula: dies del cicle − 14) i sé per quina raó el 'dia 14' no és universal." },
-    { id: 'c5', oa: 'OA2', text: "Sé identificar les estructures principals de l'aparell reproductor masculí (testicles, epidídim, conducte deferent) i femení (ovaris, trompes, úter, endometri) i n'explico la funció." },
-    { id: 'c6', oa: 'OA3', text: "Sé explicar per quina raó els gàmetes tenen 23 cromosomes (meiosi, SA1) i el zigot en té 46 (fecundació), i per quina raó aquest nombre es manté constant cada generació." },
-    { id: 'c7', oa: 'OA3', text: "Sé distingir embrió (0-8 setmanes) de fetus i identifico les fites clau de cada trimestre (cor batega S4, fetus S9, viabilitat S22-24)." },
-    { id: 'c8', oa: 'OA3', text: "Sé explicar la diferència entre bessons univitel·lins (1 zigot dividit → mateixa genètica → mateix sexe biològic) i bivitel·lins (2 fecundacions → genètica diferent → poden ser sexes distints)." },
-    { id: 'c9', oa: 'OA4', text: "Distingeixo el preservatiu (doble protecció: embaràs + ISTs) dels mètodes hormonals (embaràs, NO ISTs) i sé per quina raó la diferència és crítica per a la salut." },
-    { id: 'c10', oa: 'OA4', text: "Sé explicar el mecanisme de la píndola (inhibició de l'ovulació per hormones sintètiques) i puc matisar el mite 'la píndola engreixa' amb evidència." },
-    { id: 'c11', oa: 'OA4', text: "Identifico les ISTs principals (VIH, HPV, herpes, clamidia), la via de transmissió principal i si son bacterianes (tractables amb antibiòtic) o víriques." },
-    { id: 'c12', oa: 'OA4', text: "Sé explicar per quina raó el mètode del calendari és poc fiable: variació del dia d'ovulació (±3-5 dies) + supervivència dels espermatozoides 3-5 dies." }
+    { id: 'c1', oa: 'OA1', text: "Uso correctament gen, al·lel, genotip i fenotip, homozigot i heterozigot, dominant i recessiu." },
+    { id: 'c2', oa: 'OA1', text: "Llegeixo un pedigrí (arbre genealògic) i explico per què un caràcter recessiu pot «saltar» una generació sense desaparèixer." },
+    { id: 'c3', oa: 'OA2', text: "Aplico un quadre de Punnett per predir les proporcions genotípiques i fenotípiques d'un encreuament." },
+    { id: 'c4', oa: 'OA2', text: "Distingeixo la proporció esperada (tendència estadística, p. ex. 3:1) del resultat concret d'una família (atzar): una proporció no és una garantia per a cada fill individual." },
+    { id: 'c5', oa: 'OA3', text: "Reconec i resolc un cas de codominància (els dos al·lels s'expressen alhora, com el grup sanguini AB) i el distingeixo de la dominància simple." },
+    { id: 'c6', oa: 'OA3', text: "Reconec i resolc un cas de dominància incompleta (el fenotip és una barreja intermèdia) i un cas d'al·lelisme múltiple (més de dos al·lels possibles per a un gen, com els grups sanguinis ABO)." },
+    { id: 'c7', oa: 'OA3', text: "Identifico els límits del model mendelià davant caràcters poligènics o multifactorials (p. ex. l'alçada), on molts gens i l'ambient hi influeixen alhora." },
+    { id: 'c8', oa: 'OA4', text: "Explico com es determina genèticament el sexe (XX/XY) i què vol dir que un caràcter estigui «lligat al sexe»." },
+    { id: 'c9', oa: 'OA4', text: "Resolc un cas d'herència lligada al cromosoma X i explico per quina raó aquests caràcters afecten més sovint els homes." },
+    { id: 'c10', oa: 'OA4', text: "Valoro amb criteri ètic una decisió de consell genètic, sense jutjar les persones implicades i distingint el que diu la genètica (probabilitats) del que ha de decidir cada família (valors)." }
   ],
 
-  // Cas-fil NOU: la Núria i la Sandra — context diferent de l'enigma de la Laia.
-  // Toca els 3 OA: cicle i aparells (OA1), cromosomes i determinació de sexe (OA2), mètodes i ISTs (OA3).
+  // Cas-fil NOU: una consulta real de consell genètic — distròfia muscular
+  // de Duchenne (herència lligada al X) i grups sanguinis ABO (al·lelisme
+  // múltiple + codominància) en la mateixa família. Context real i diferent
+  // dels quatre casos de les sessions, per mesurar transferència: pedigrí,
+  // Punnett, codominància/al·lelisme múltiple, i herència lligada al sexe.
   test: {
     context:
-      "La Núria té 16 anys i un cicle regular de 28 dies. Un company li diu que si pren la píndola quedarà estèril per sempre. Una altra li diu que ha d'esperar fins al dia 14 exacte per saber quan pot quedar-se embarassada. Al mateix temps, la seva amiga Sandra ha tingut una relació sexual sense preservatiu i li pregunta si el VIH es pot contagiar per via oral i quin és el risc.",
+      "Una parella espera el seu segon fill i acut a consell genètic. En el seu primer fill, un nen, es va diagnosticar distròfia muscular de Duchenne (DMD), una malaltia greu causada per un al·lel recessiu situat al cromosoma X que afecta la força muscular. Ni el pare ni la mare tenen símptomes de la malaltia; un germà de la mare, però, també la va patir. A més, com que el naixement serà en un hospital petit, els metges volen preveure el grup sanguini del nadó per si calgués una transfusió d'urgència: el pare és del grup sanguini A i la mare del grup B; el primer fill va néixer del grup 0.",
     questions: [
       {
         id: 't1',
-        oa: 'OA2',
-        text: "Si el cicle de la Núria dura 28 dies, quin és el seu dia d'ovulació aproximat? I si un mes, per l'estrès dels exàmens, el cicle s'allarga a 35 dies — quan seria l'ovulació aquell mes?",
+        oa: 'OA1',
+        text: "Al pedigrí d'aquesta família, la DMD apareix al germà de la mare i al fill de la parella, però en cap dels dos pares. Què ens diu aquest «salt» d'una generació sobre l'al·lel de la malaltia?",
         options: [
-          "Cicle 28 dies: ovulació dia 14 (28−14). Cicle 35 dies: ovulació dia 21 (35−14). L'ovulació canvia perquè la fase fol·licular varia; la fase lútea és sempre ≈14 dies",
-          "Sempre dia 14, independentment de la durada del cicle",
-          "Cicle 28: dia 7 (la meitat del cicle). Cicle 35: dia 17",
-          "No es pot saber sense una ecografia hormonal"
+          "Que l'al·lel és dominant, perquè apareix en dues generacions de la mateixa família.",
+          "Que l'al·lel de la malaltia va desaparèixer del tot i ha tornat a aparèixer per una mutació nova i independent a cada cas.",
+          "Que és un al·lel recessiu que la mare porta sense manifestar-lo, perquè el seu altre al·lel és el normal.",
+          "Que la malaltia només es pot transmetre de germà a nebot, saltant sempre els pares."
         ],
-        correct: 0,
+        correct: 2,
         feedback: {
-          correct: "Exacte. La fórmula és: dia ovulació ≈ durada cicle − 14. La fase lútea (de l'ovulació a la menstruació) sempre dura ≈14 dies; el que varia és la fase fol·licular. En cicles llargs, l'ovulació s'endarrereix.",
-          wrong: "Recorda la fórmula: dia d'ovulació ≈ dies del cicle − 14. El 'dia 14' és vàlid únicament per a cicles de 28 dies. En un cicle de 35 dies: 35 − 14 = dia 21."
+          correct: "Exacte. Un al·lel recessiu pot travessar generacions «amagat» dins de persones sanes: qui té l'al·lel normal i el de la malaltia no en té símptomes, però el pot passar. Per això al pedigrí sembla que el caràcter «salti».",
+          wrong: "Torna al pedigrí de S1: si els pares no tenen la malaltia però el fill sí, l'al·lel no pot ser dominant (es veuria en qui el té). Ha de ser recessiu i viatjar amagat en una persona sana, que el transmet."
         }
       },
       {
         id: 't2',
-        oa: 'OA3',
-        text: "El company li ha dit a la Núria que la píndola la faria estèril per sempre. És correcte? Explica el mecanisme real de la píndola.",
+        oa: 'OA4',
+        text: "Ni el pare ni la mare tenen símptomes de DMD, però el seu primer fill sí. Per què aquesta malaltia afecta molt més sovint els nens que les nenes?",
         options: [
-          "Fals. La píndola conté estrògens i progesterona sintètics que inhibeixen la FSH i la LH → no hi ha ovulació. En deixar de prendre-la, el cicle es recupera normalment (generalment en 1-3 cicles)",
-          "Correcte: la píndola altera els ovaris de forma permanent i irreversible",
-          "Parcialment cert: la píndola afecta la fertilitat durant 2 anys després de deixar-la",
-          "Fals: la píndola no té cap efecte hormonal, actua únicament com a barrera química"
+          "Perquè un nen només té un cromosoma X: si el que rep porta l'al·lel, no en té cap altre que ho compensi.",
+          "Perquè és el pare qui li transmet la malaltia a través del cromosoma Y, que només dona als fills mascles i no a les filles.",
+          "Perquè les nenes no arriben a rebre mai l'al·lel de la malaltia de la seva mare.",
+          "Perquè una malaltia genètica només es manifesta si tots dos pares en tenen símptomes."
         ],
         correct: 0,
         feedback: {
-          correct: "Correcte. La píndola actua inhibint temporalment l'ovulació mentre es pren. En deixar-la, els nivells de FSH i LH es recuperen i el cicle torna a la normalitat. No causa esterilitat permanent.",
-          wrong: "La píndola inhibeix l'ovulació mentre es pren, però no causa esterilitat permanent. Actua bloqueig la secreció de FSH i LH. En deixar-la, el cicle es recupera."
+          correct: "Exacte. És el mateix raonament del daltonisme i l'hemofília a S4: els homes (XY) tenen una sola còpia del cromosoma X, així que un únic al·lel recessiu ja s'expressa. Una noia (XX) amb un al·lel normal queda sana, encara que sigui portadora.",
+          wrong: "Repassa l'herència lligada al X: la malaltia està al cromosoma X, no al Y (per tant no ve del pare als fills mascles). Les noies tenen dos X i el normal pot «tapar» el de la malaltia; els nois, amb un sol X, no tenen aquesta possibilitat."
         }
       },
       {
         id: 't3',
-        oa: 'OA4',
-        text: "La Sandra vol saber el risc de transmissió del VIH per via oral i quina és la millor prevenció. Quina és la resposta correcta?",
+        oa: 'OA2',
+        text: "La mare és portadora (Xᴰ Xᵈ) i el pare no és afectat (Xᴰ Y). Fes el quadre de Punnett: dels fills que neixin NENS, quina proporció tindrà la malaltia?",
         options: [
-          "El risc de transmissió oral del VIH és molt baix però no zero. Les vies principals son sanguínia (xeringues compartides) i de fluids sexuals. El preservatiu és la prevenció més eficaç",
-          "El VIH es transmet fàcilment per via oral (saliva) com qualsevol altre virus respiratori",
-          "El VIH no es transmet per cap via sexual, únicament per transfusions sanguínies",
-          "El VIH és un bacteri i es pot curar amb antibiòtics si es detecta aviat"
+          "Cap: si el pare no és afectat, cap fill seu no pot ser-ho.",
+          "Tots: si la mare és portadora, tots els fills que siguin nens naixeran amb la malaltia.",
+          "Un de cada quatre fills en total, si comptem alhora els nens i les nenes del quadre.",
+          "La meitat: dels dos genotips possibles de nen (XᴰY i XᵈY), un és afectat."
         ],
-        correct: 0,
+        correct: 3,
         feedback: {
-          correct: "Resposta matisada i correcta. La transmissió oral és molt baixa (concentracions mínimes a la saliva). Les vies principals son sanguínia i de fluids sexuals (semen, secrecions vaginals). A la lactància, la mare pot transmetre el VIH al nadó. El preservatiu és la millor prevenció.",
-          wrong: "El VIH és un virus (retrovirus RNA) que ataca els limfòcits T. Les vies de transmissió son sanguínia, de fluids sexuals i de mare a fill (no per aire ni saliva en condicions normals). No es tracta amb antibiòtics (és un virus, no un bacteri)."
+          correct: "Correcte. El quadre dona quatre caselles: Xᴰ Xᴰ i Xᴰ Xᵈ (filles, cap afectada) i Xᴰ Y i Xᵈ Y (nens). Entre els nens, un dels dos genotips és el de la malaltia: 50 % dels nens. Sobre el total de fills seria el 25 %, però la pregunta demana només els nens.",
+          wrong: "Fes el quadre: mare Xᴰ Xᵈ × pare Xᴰ Y. Surten quatre caselles. Ara mira NOMÉS les que reben la Y del pare (són els nens): quantes d'aquestes porten l'al·lel Xᵈ de la mare?"
         }
       },
       {
         id: 't4',
-        oa: 'OA4',
-        text: "Connecta SA3 i SA4: per quina raó el VIH és tan perillós per al sistema immunitari? Quines cèl·lules destrueix i quines conseqüències té?",
+        oa: 'OA3',
+        text: "El pare és del grup A, la mare del grup B i el primer fill va néixer del grup 0. Els grups ABO tenen tres al·lels (Iᴬ, Iᴮ, i): Iᴬ i Iᴮ són codominants entre ells i tots dos dominants sobre i. Quins genotips han de tenir els pares?",
         options: [
-          "El VIH destrueix els limfòcits T CD4+ (T auxiliars), que coordinen tota la resposta immunitària adaptativa. Sense ells, el cos no pot fabricar anticossos ni destruir cèl·lules infectades → vulnerable a infeccions oportunistes (pneumònies, fongs) que normalment no afecten persones immunocompetents",
-          "El VIH destrueix els macrò-fags, que son la primera línia de defensa innata",
-          "El VIH destrueix els eritròcits, causant una anèmia greu similar a la del Marc Fontana (SA2)",
-          "El VIH no afecta el SI directament, sinó que causa una febre molt alta que mata les cèl·lules immunitàries"
+          "Pare Iᴬ i i mare Iᴮ i: un fill de grup 0 és ii, i cada progenitor hi ha d'aportar un al·lel i.",
+          "Pare Iᴬ Iᴬ i mare Iᴮ Iᴮ, perquè el grup 0 surt quan es troben dos al·lels dominants diferents i cap dels dos no s'imposa a l'altre.",
+          "És impossible: uns pares A i B no poden tenir un fill de grup 0 i hi ha d'haver un error.",
+          "Qualsevol genotip: el grup sanguini del fill no depèn dels al·lels que tenen els pares."
         ],
         correct: 0,
         feedback: {
-          correct: "Exacte. El VIH infecta i destrueix específicament els limfòcits T CD4+ (T auxiliars). De SA3: els limfòcits T coordinen la resposta adaptativa (activen limfòcits B per fer anticossos i T citotòxics per destruir cèl·lules infectades). Sense ells, el SI adaptatiu col·lapsa → SIDA = immunodeficiència adquirida.",
-          wrong: "Connecta amb SA3: els limfòcits T son els 'directors' de la immunitat adaptativa. El VIH ataca específicament els T CD4+ (auxiliars). Si desapareixen, qui organitza la producció d'anticossos? Resultat: el cos queda indefens davant infeccions que normalment hauria de controlar sense problema."
+          correct: "Exacte. És al·lelisme múltiple: hi ha tres al·lels possibles, però cada persona només en té dos. Com que i és recessiu, tant el pare (A) com la mare (B) el porten amagat, i el fill que rep els dos al·lels i és del grup 0. Si es trobessin Iᴬ i Iᴮ, en canvi, el fill seria AB: això és la codominància.",
+          wrong: "Pensa a l'inrevés: el fill de grup 0 té el genotip ii, i cada al·lel li ve d'un progenitor. Per tant tots dos pares han de portar un al·lel i, encara que el seu fenotip sigui A i B, perquè Iᴬ i Iᴮ dominen sobre i i el tapen."
         }
       }
     ]

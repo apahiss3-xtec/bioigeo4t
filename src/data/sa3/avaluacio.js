@@ -1,89 +1,104 @@
-// Material d'autoavaluació de SA3: checklist d'estudi + test de
-// transferència amb un context NOU (un alumne nouvingut amb carnet de vacunes incomplet,
-// diferent dels casos "grip de novembre" i "article anti-vacunes" que vertebren la SA).
+// Material d'autoavaluació de SA3 (El codi de la vida): checklist d'estudi
+// (el que cal saber per tancar la SA) + test de transferència amb un cas NOU
+// —la prova del taló a un nadó i un possible cas de fenilcetonúria (PKU)—
+// diferent dels casos treballats a les sessions (dogma central genèric a S1,
+// extracció d'ADN a S2, anèmia falciforme a S3, debat CRISPR/bessones
+// editades a S4), per comprovar si l'alumne sap APLICAR l'estructura de
+// l'ADN, la transcripció/traducció, les mutacions i la distinció
+// somàtica/germinal a un cas que ningú no li ha triat.
+//
+// Revisió 2026-08-17 (revisió agent-alumne): la posició de la resposta
+// correcta s'ha repartit entre les quatre opcions i totes les opcions d'una
+// mateixa pregunta tenen una llargada semblant, perquè abans la correcta era
+// sempre la primera i la més llarga i el test es podia encertar sencer sense
+// haver llegit res. També s'ha corregit que la PKU és recessiva (calen les
+// DUES còpies del gen mutades) i s'han reescrit t2 i t4, que regalaven la
+// resposta dins l'enunciat o preguntaven per coses no treballades a la SA.
 export const sa3Avaluacio = {
   checklist: [
-    { id: 'c1', oa: 'OA1', text: "Sé distingir bacteris (procariotes) de virus (no cèl·lules) i explicar per quina raó els antibiòtics no funcionen contra la grip." },
-    { id: 'c2', oa: 'OA1', text: "Puc interpretar el R₀ d'una malaltia i dir si una epidèmia s'estén (R₀>1) o s'extingeix (R₀<1)." },
-    { id: 'c3', oa: 'OA1', text: "Conec les vies de transmissió principals (aèria, contacte, fecal-oral, vectorial) i una mesura preventiva per a cadascuna." },
-    { id: 'c4', oa: 'OA2', text: "Sé explicar la seqüència immunitat innata (hores, inespecífica) → adaptativa (dies, específica, amb memòria)." },
-    { id: 'c5', oa: 'OA2', text: "Puc explicar el mecanisme antigen-anticòs (clau-pany) i per quina raó un anticòs contra la grip no protegeix contra la varicel·la." },
-    { id: 'c6', oa: 'OA2', text: "Entenc per quina raó la memòria immunològica impedeix una segona infecció i per quina raó la grip pot infectar-te cada any (el virus muta)." },
-    { id: 'c7', oa: 'OA3', text: "Puc explicar el mecanisme d'acció de les vacunes (antigen atenuat → resposta adaptativa → memòria) i el concepte d'immunitat de grup." },
-    { id: 'c8', oa: 'OA3', text: "Sé aplicar els 4 criteris de qualitat d'una font (revisió per parells, mida de la mostra, conflicte d'interès, replicació) a qualsevol afirmació sobre salut." },
-    { id: 'c9', oa: 'OA4', text: "Sé distingir antibiòtics (bacteris), antivirals (virus) i analgèsics (símptomes), i explicar per quina raó l'automedicació amb antibiòtics és perillosa." },
-    { id: 'c10', oa: 'OA4', text: "Entenc per quina raó les drogues causen addicció: activen la via de la dopamina de forma artificial → tolerància → comportament compulsiu." }
+    { id: 'c1', oa: 'OA1', text: "Sé descriure el model simplificat de l'ADN: doble cadena, complementarietat A-T i G-C, i explico per què aquesta complementarietat permet copiar-lo i llegir-lo." },
+    { id: 'c2', oa: 'OA1', text: "Distingeixo l'ADN de l'ARN (cadena doble/simple, desoxiribosa/ribosa, T/U) i explico el paper de cada un: guardar la informació vs. transportar-la fins al ribosoma." },
+    { id: 'c3', oa: 'OA2', text: "Explico el camí complet gen → ARNm (transcripció, al nucli) → proteïna (traducció, al ribosoma) → característica observable." },
+    { id: 'c4', oa: 'OA2', text: "Sé llegir una taula de codons per traduir una seqüència de nucleòtids a una cadena d'aminoàcids." },
+    { id: 'c5', oa: 'OA2', text: "Distingeixo genotip (la seqüència que tens) de fenotip (com es manifesta), i dono un exemple propi." },
+    { id: 'c6', oa: 'OA3', text: "Predic com un canvi d'una sola lletra (mutació puntual) pot alterar la proteïna resultant, i explico per què no totes les mutacions tenen efecte: hi ha codons diferents que donen el mateix aminoàcid (mutació silenciosa)." },
+    { id: 'c7', oa: 'OA3', text: "Relaciono les mutacions amb l'origen de la variabilitat genètica sobre la qual actua la selecció natural." },
+    { id: 'c8', oa: 'OA4', text: "Distingeixo l'edició genètica somàtica (no s'hereta, afecta només la persona tractada) de la germinal (s'hereta per sempre a la descendència)." },
+    { id: 'c9', oa: 'OA4', text: "Contrasto la fiabilitat de fonts sobre CRISPR aplicant la graella de fonts fiables (SA1) i distingeixo «què es pot fer» (ciència) de «què s'hauria de fer» (valors)." },
+    { id: 'c10', oa: 'OA1', text: "Puc explicar el paper de Rosalind Franklin en el descobriment de l'estructura de l'ADN i per què és un exemple de biaix de gènere en la ciència." }
   ],
 
-  // Cas-fil NOU: Kemal, alumne nouvingut de Turquia, té el carnet de vacunes incomplet.
-  // Context diferent dels casos "grip de novembre" i "article anti-vacunes" de la SA.
-  // Toca els 4 OA: patògens (OA1), SI i memòria (OA2), vacunes i fonts (OA3), antibiòtics (OA4).
+  // Cas-fil NOU: la prova del taló d'un nadó detecta un possible cas de
+  // fenilcetonúria (PKU), una malaltia genètica real i coneguda a Catalunya
+  // (cribratge neonatal). Context real i diferent dels quatre casos de les
+  // sessions, per mesurar transferència: estructura ADN/ARN, transcripció/
+  // traducció, mutació→proteïna→fenotip, i somàtic/germinal + ètica.
   test: {
     context:
-      "El Kemal acaba d'arribar de Turquia a la classe. Porta el carnet de vacunes però li falten les dosis de reforç del xarampió (2a dosi). El primer dia alguns companys li diuen que no cal vacunar-se perquè 'el xarampió ja ha desaparegut a Europa' i que 'les vacunes sobrecàrreguen el SI'. Al cap d'una setmana, un company de la classe (no vacunat) té xarampió (R₀=15).",
+      "A totes les maternitats de Catalunya es fa la «prova del taló»: unes gotes de sang d'un nadó de pocs dies serveixen per detectar diverses malalties genètiques abans que donin cap símptoma. Un dels resultats possibles és la fenilcetonúria (PKU). Els nadons amb PKU tenen mutades les DUES còpies del gen PAH —la del pare i la de la mare—, el gen que conté les instruccions per fabricar l'enzim PAH, encarregat de transformar l'aminoàcid fenilalanina en un altre aminoàcid. Qui només en té una de mutada està sa. Sense enzim funcional, la fenilalanina s'acumula i pot fer molt de mal al cervell en desenvolupament. Si es detecta a temps, el tractament és senzill: una dieta molt baixa en fenilalanina durant els primers anys de vida. Els investigadors també estudien si, en el futur, una teràpia gènica (afegir una còpia correcta del gen PAH a les cèl·lules del fetge del pacient, no als seus òvuls o espermatozoides) podria evitar la dieta de per vida.",
     questions: [
       {
         id: 't1',
-        oa: 'OA1',
-        text: "Si el company amb xarampió ha estat a classe amb 28 alumnes durant 3 dies sense saber-ho, quants alumnes poden haver-se infectat si el R₀=15? Explica per quina raó el xarampió es propaga tan ràpid.",
+        oa: 'OA2',
+        text: "L'enzim PAH és una proteïna. Quin és el camí complet, des del gen fins al símptoma, que fa que una mutació al gen PAH acabi provocant l'acumulació de fenilalanina?",
         options: [
-          "Fins a 15 companys nous en 1 generació; el R₀ alt es deu a la via de transmissió aèria molt eficient i al llarg període de contagiositat (2 dies abans dels símptomes)",
-          "Cap, perquè el xarampió ja ha desaparegut a Europa",
-          "1 o 2, perquè cal contacte directe amb sang infectada",
-          "Tots 28, però només si no s'han rentat les mans"
+          "El gen PAH fabrica directament fenilalanina, i el gen mutat en fabrica molta més del compte.",
+          "El gen mutat es transcriu a ARNm i es tradueix en un enzim PAH alterat, que ja no transforma la fenilalanina i la deixa acumular.",
+          "La mutació altera directament la molècula de fenilalanina de la sang, que és el que està espatllat en aquests nadons i el que detecta la prova del taló.",
+          "L'ARNm del gen PAH es queda retingut al nucli i és ell qui va acumulant la fenilalanina de la sang."
         ],
-        correct: 0,
+        correct: 1,
         feedback: {
-          correct: "Exacte. R₀=15 vol dir que cada cas genera fins a 15 nous en condicions normals (sense vacunació). La via aèria i la contagiositat presimptomàtica expliquen la propagació ràpida.",
-          wrong: "Recorda que R₀ és el nombre mig de contagis per cas. R₀=15 és dels més alts que existeixen. La via de transmissió del xarampió és aèria — molt eficient en espais tancats com una aula."
+          correct: "Exacte. És el mateix camí que vas treballar amb la mutació falciforme a S3: gen → ARNm (transcripció) → proteïna (traducció) → caràcter observable. Si el gen PAH surt alterat, l'enzim que fabrica no fa la seva feina.",
+          wrong: "Recorda el camí de S3 (dogma central): gen → ARNm → proteïna → caràcter. La mutació és al gen (ADN); el símptoma apareix perquè la PROTEÏNA que hauria de processar la fenilalanina surt alterada, no perquè la fenilalanina mateixa estigui «mutada»."
         }
       },
       {
         id: 't2',
-        oa: 'OA2',
-        text: "El Kemal va tenir xarampió de petit (als 3 anys). Ara, als 14, s'exposa al company infectat. Per quina raó probablement no agafarà el xarampió?",
+        oa: 'OA3',
+        text: "Dos nadons tenen mutacions diferents al gen PAH. El primer té un canvi que impedeix fabricar l'enzim i emmalalteix. El segon té un canvi d'una sola lletra que converteix el codó GAA en GAG: consultant la taula de codons, tots dos codons codifiquen el mateix aminoàcid. Per què el segon nadó pot no tenir cap símptoma?",
         options: [
-          "Perquè el seu SI té memòria immunològica del xarampió: limfòcits de memòria → resposta secundària ràpida que destrueix el virus abans que causi malaltia",
-          "Perquè el xarampió no infecta persones majors de 10 anys",
-          "Perquè té els antibiòtics actius al cos",
-          "Perquè el xarampió és un bacteri i el SI innata el pot matar en hores"
+          "Perquè les mutacions no comencen a tenir efecte fins als primers anys de vida del nadó.",
+          "Perquè el seu enzim PAH surt una mica alterat, però el cos en fabrica molta més quantitat per compensar-ho i la fenilalanina no s'arriba a acumular.",
+          "Perquè l'enzim li surt exactament igual: si l'aminoàcid no canvia, la proteïna funciona (mutació silenciosa).",
+          "Perquè el seu canvi és a l'ARNm i no a l'ADN, i l'ARNm es destrueix al cap de poca estona."
         ],
-        correct: 0,
+        correct: 2,
         feedback: {
-          correct: "Correcte. La memòria immunològica del xarampió de petit persisteix dècades. Quan el patogen torna, la resposta secundària és tan ràpida (hores) que el virus queda destruït abans de causar símptomes.",
-          wrong: "Pensa en la memòria immunològica: limfòcits de memòria que queden anys després de la primera infecció. Per al xarampió, la memòria és pràcticament permanent (a diferència de la grip, que muta)."
+          correct: "Correcte. Si el codó canviat encara codifica el mateix aminoàcid, la cadena d'aminoàcids surt idèntica i l'enzim funciona igual: és una mutació silenciosa. No tot canvi al gen es nota al fenotip.",
+          wrong: "Torna a la taula de codons: hi ha codons diferents que codifiquen el mateix aminoàcid. Si després del canvi de lletra el codó encara dona el mateix aminoàcid, la proteïna final és exactament la mateixa — i una proteïna igual funciona igual."
         }
       },
       {
         id: 't3',
-        oa: 'OA3',
-        text: "Un company li mostra al Kemal un vídeo de YouTube (sense fonts citades) que diu que 'les vacunes contenen substàncies tòxiques que sobrecàrreguen el SI'. Aplica els 4 criteris de qualitat: quin criteri falla primer i de forma més evident?",
+        oa: 'OA4',
+        text: "Els investigadors estudien afegir una còpia correcta del gen PAH a les cèl·lules del FETGE del pacient (no als seus òvuls ni espermatozoides). Si aquesta teràpia funcionés, el fill d'aquest pacient també naixeria amb el gen corregit?",
         options: [
-          "Revisió per parells: un vídeo de YouTube no és una font revisada per la comunitat científica — no té revisor ni editorial científica",
-          "Conflicte d'interès: el creador del vídeo probablement ven productes alternatius",
-          "Mida de la mostra: el vídeo no cita cap estudi",
-          "Tots tres fallen igualment"
+          "Sí: qualsevol canvi genètic fet a un pacient acaba passant als seus fills.",
+          "Depèn de l'edat: si es fa abans de tenir fills, el canvi ja hi és als gàmetes.",
+          "Sí, perquè les cèl·lules del fetge del pacient són també les encarregades de fabricar els seus gàmetes.",
+          "No: és una edició somàtica, no arriba als gàmetes, i el fill pot heretar igualment la mutació."
         ],
-        correct: 0,
+        correct: 3,
         feedback: {
-          correct: "El primer criteri que cal verificar és si la font ha passat per revisió per parells. Un vídeo de YouTube, per definició, no ho ha fet. Els altres criteris (conflicte d'interès, mida de la mostra) tampoc es compleixen, però el primer filtre és el tipus de font.",
-          wrong: "Tots els criteris fallen, però hi ha un ordre lògic: primer comproves si la font és revisada per parells. Si no ho és, no cal analitzar els altres criteris perquè la font queda descartada des del principi."
+          correct: "Així és. Igual que al debat CRISPR de S4: editar cèl·lules somàtiques (aquí, del fetge) no toca els gàmetes, així que el canvi mor amb el pacient. Només l'edició germinal (òvuls, espermatozoides, embrions) es transmetria a la descendència — i per això el debat ètic hi és molt més fort.",
+          wrong: "Repassa S4: somàtica (cèl·lules del cos, NO s'hereta) vs. germinal (òvuls/espermatozoides/embrions, SÍ s'hereta). Els gàmetes no es fabriquen al fetge, i el moment de la vida en què es faci el tractament no hi canvia res."
         }
       },
       {
         id: 't4',
-        oa: 'OA4',
-        text: "El Kemal té faringitis. El metge li diu que és bacteriana i li prescriu amoxicil·lina (antibiòtic) durant 7 dies. Als 4 dies se sent bé i vol deixar-lo. Per quina raó el metge li insisteix que ha d'acabar els 7 dies?",
+        oa: 'OA1',
+        text: "Abans que una cèl·lula del nadó es divideixi, ha de copiar tot el seu ADN, també el gen PAH. Quin paper hi fa la complementarietat A-T i G-C?",
         options: [
-          "Si para als 4 dies, els bacteris més resistents han sobreviscut i es reproduiran; acabar el tractament assegura eliminar-los tots i evitar resistències",
-          "Perquè l'amoxicil·lina necessita 7 dies per fabricar anticossos",
-          "Perquè els antibiòtics actuen lentament i els primers 4 dies no han servit de res",
-          "Per garantir els beneficis econòmics de la farmàcia"
+          "Cada cadena fa de motlle: davant d'una A només hi encaixa una T, i això fixa la seqüència de la còpia.",
+          "Serveix per mantenir l'ADN ben plegat dins del nucli, però no intervé en la còpia.",
+          "Fa que les dues cadenes acabin tenint exactament la mateixa seqüència, i per això n'hi ha prou de copiar-ne una de les dues.",
+          "Permet que l'ARN substitueixi l'ADN mentre dura la còpia, perquè és de cadena simple."
         ],
         correct: 0,
         feedback: {
-          correct: "Exacte. Als 4 dies, els bacteris més febles ja han mort (per això se sent millor). Però els més resistents poden seguir vius. Si para el tractament, els resistents es reproduiran i la infecció tornarà amb bacteris difícils de matar — i potencialment transmetrà bacteris resistents a d'altres.",
-          wrong: "Pensa en la selecció natural: els primers a morir amb l'antibiòtic son els bacteris més sensibles. Qui queda als 4 dies? Els més resistents. Si pares el tractament, els que queden s'adaptaran i es reproduiran. Acabar el tractament complert elimina fins i tot els més resistents."
+          correct: "Exacte. Com que davant de cada base només n'hi encaixa una de concreta (A-T, G-C), una cadena determina completament l'altra: per això l'ADN es pot copiar amb tanta fidelitat abans de cada divisió.",
+          wrong: "Compte amb una confusió freqüent: les dues cadenes no són iguals, són COMPLEMENTÀRIES (A davant de T, G davant de C). Justament per això cada cadena serveix de motlle i la còpia surt sense errors."
         }
       }
     ]

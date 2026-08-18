@@ -136,7 +136,8 @@ export const sa7s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa7-s3-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa7-s3-fitxa-A.html", B: "/fitxes/sa7-s3-fitxa-B.html" },
+  retallablesUrl: "/fitxes/sa7-s3-retallables.html",
   teoriaPdfUrl: null,
   elaborateNote: "El comitè ha d'emetre un dictamen escrit sobre les quatre propostes i sobre la cinquena. La fitxa us diu quins punts ha de contenir; el que no us diu ningú és amb quin criteri es decideix que una proposta està més ben fonamentada que una altra. Aquesta part la construïu vosaltres, i l'haureu de defensar davant dels altres equips.",
 

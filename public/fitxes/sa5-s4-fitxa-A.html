@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA5 · S20 · El museu evolutiu del pati (A)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#9C4A2F; --teal-ink:#7E3A24; --teal-light:#e0b49f; --teal-tint:#f7ece6;
+  --ink:#1d1622; --ink-2:#3a3340; --muted:#8a7a70; --surface:#fffdfb;
+  --rule:#e8d3c7; --rule-dark:#d3b2a0;
+  --orange:#c96f3e; --orange-tint:#f6ece8;
+  --aqua:#2f9aa0; --aqua-tint:#e6f5f5;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#8a5a9e; --purple-tint:#f1eaf4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#d8bfae;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(45,25,18,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(156,74,47,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(230,205,190,.75);flex:1}
+.tb-tip strong{color:#f0d3c2}
+.tb-sep{width:1px;height:20px;background:rgba(156,74,47,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(156,74,47,.2);border:1px solid rgba(156,74,47,.4);color:#f0cdb8;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(156,74,47,.2);border:1px solid rgba(156,74,47,.4);color:#f0cdb8;font-size:12px}
+.tb-undo{background:rgba(201,111,62,.2);border:1px solid rgba(201,111,62,.4);color:#f0bfa5;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #c79a80;pointer-events:none;z-index:10}
+.page-break-label{position:absolute;right:10px;top:-11px;background:#c79a80;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(156,74,47,.08);box-shadow:0 0 0 2px rgba(156,74,47,.3)}
+[contenteditable]:focus{background:rgba(156,74,47,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+.wline{display:block;width:100%;min-height:52px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(156,74,47,.04)}
+.wline.tall{min-height:104px}
+.wline.xtall{min-height:120px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(156,74,47,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#7E3A24 0%,#B4603A 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#f7ece6,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 13px}
+.previ-box p{font-size:12.5px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
+.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
+.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:56px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
+.fill-cell:focus{background:rgba(156,74,47,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(156,74,47,.05) 6px,rgba(156,74,47,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.page-break-line,.del-btn{display:none!important}
+  .page-footer-bar{display:flex!important}
+  .footer{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .wline{background:transparent;padding:0}
+  .fill-cell{background:transparent;outline:none}
+  .spacer-block{background:transparent!important;border:none!important}
+  .spacer-label{display:none!important}
+}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <span class="tb-tip">✎ Clica per editar · <strong>Ctrl+B</strong> negreta · <strong>×</strong> rosa elimina · <strong>Ctrl+Z</strong> desfés</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">↩ Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">＋ Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+</div>
+<div class="page-wrap" id="doc"><div class="header-band deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🏛️</div></div>
+    <div class="header-main">
+      <div class="header-sa" contenteditable="true">SA5 · El pati, un museu de l'evolució · Sessió 4 de 4</div>
+      <div class="header-title" contenteditable="true">El museu evolutiu del pati</div>
+      <div class="header-subtitle" contenteditable="true">Síntesi i avaluació: targeta-cas, coavaluació i exercici tipus PAU</div>
+    </div>
+    <div class="header-right">
+      <div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+      <div class="header-meta" contenteditable="true">Biologia i Geologia · 4t ESO<br>IE Temple</div>
+    </div>
+  </div>
+<div class="nivell-strip deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <span class="nivell-label" contenteditable="true">Tancament de la SA5 i del segon trimestre</span>
+    <span class="temps-badge" contenteditable="true">⏱️ 2h total</span>
+    <div class="nom-field">Nom:&nbsp;<span class="input-span" contenteditable="true"></span>&nbsp;&nbsp;Equip:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;<span class="nivell-badge-small" title="Versió A">A</span></div>
+  </div>
+<div class="oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="oa-title">Què vull que sàpigues fer en acabar</div><ul class="oa-list"><li>Sintetitzo en una targeta-cas un organisme real del pati integrant el tret observat, l'adaptació (estructura → funció → ambient), la prova de l'evolució i la comparació Lamarck vs neodarwinisme, i el defenso oralment.</li><li>Coavaluo els estands amb la rúbrica, justifico la valoració amb criteris i proposo a cada equip una millora concreta.</li><li>Resolc sol un exercici tipus PAU analitzant un cas nou des de les quatre teories i corregeixo l'error lamarckià.</li><li>Valoro, en la metacognició de tancament, què he après a tota la situació sobre com i per què evolucionen els éssers vius.</li></ul></div><div class="content"><div class="section"><div class="section-header"><div class="snum" style="background:#d3a488">0</div><div><span class="stitle">L'enigma de la situació</span><span class="temps">5 min</span><div class="sdesc">Què deies al principi? No es corregeix.</div></div></div><div class="divider"></div><p style="font-size:12px;margin-bottom:4px"><b>Recorda l'enigma amb què vam obrir la SA5: al pati, quins organismes són com són per obra de la NATURA i quins per obra NOSTRA (perquè els hi hem posat o els hem domesticat)? Escriu un exemple de cada.</b></p><p style="font-size:12px;margin:2px 0">Per obra de la natura: <span class="input-span" contenteditable="true" style="min-width:230px"></span></p><p style="font-size:12px;margin:2px 0">Per obra nostra: <span class="input-span" contenteditable="true" style="min-width:250px"></span></p></div><div class="section"><div class="section-header"><div class="snum" style="background:#9C4A2F">1</div><div><span class="stitle">La teva targeta-cas del museu</span><span class="temps">35 min</span><div class="sdesc">Síntesi de tota la situació · en equip</div></div></div><div class="divider"></div><div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="challenge-title">🚀 Repte</div><div class="challenge-text">Munta la targeta-cas del teu organisme de manera que un visitant que <b>no</b> hagi vingut a classe l'entengui sol. Afegeix-hi una dada o comparació que sorprengui (l'avantpassat salvatge del teu organisme, o un altre organisme del pati que resolgui el mateix problema d'una altra manera). Prepara una <b>defensa oral de 45 segons</b> sense llegir la targeta.</div></div></div><img class="fig" src="../images/sa5-s4-targeta-cas.svg" alt="Targeta-cas resolta: la gallina del pati" style="margin:4px 0" onerror="this.style.display='none'"><p style="font-size:10.5px;color:#6b4a3a;font-style:italic;text-align:center;margin:0 0 8px">Fig.1 · Model RESOLT (la gallina del pati). Fes tu la targeta del teu organisme.</p><p style="font-size:12px;margin:6px 0 3px"><b>1.</b> Completa la targeta-cas del <b>teu</b> organisme del pati:</p><p style="font-size:12px;margin:2px 0 4px">El meu organisme: <span class="input-span" contenteditable="true" style="min-width:230px"></span>&nbsp;&nbsp;Nom científic (si el saps): <span class="input-span" contenteditable="true" style="min-width:150px"></span></p><table class="data-table"><tr><th style="width:34%">Eix de la targeta</th><th style="width:66%">El teu organisme</th></tr><tr><td class="label-cell">1 · Tret observat</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">2 · Adaptació<br><span style="font-size:10px;font-weight:400">estructura → funció → ambient</span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">3 · Prova de l'evolució<br><span style="font-size:10px;font-weight:400">homologia / analogia / vestigial / adaptació / selecció artificial</span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">4 · Lamarck (fals) vs neodarwinisme</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table><p style="font-size:12px;margin:6px 0 3px"><b>Defensa oral (45 s):</b> qui parla, què destaca i com respon si algú pregunta «i això com ho saps?»</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="section-header"><div class="snum" style="background:#7E3A24">2</div><div><span class="stitle">Coavaluació dels estands</span><span class="temps">20 min</span><div class="sdesc">Visita els altres i puntua'ls amb criteri</div></div></div><div class="divider"></div><div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="challenge-title">🚀 Repte</div><div class="challenge-text">Coavalua <b>dos</b> estands diferents. Per a cadascun, detecta si hi ha algun <b>error científic amagat</b> (una prova mal triada, o una explicació que en realitat és lamarckiana disfressada de neodarwiniana) i proposa com corregir-lo. Sigues exigent i just alhora.</div></div></div><p style="font-size:12px;margin:6px 0 3px">Estand avaluat (organisme): <span class="input-span" contenteditable="true" style="min-width:230px"></span></p><table class="data-table"><tr><th>Criteri</th><th style="width:10%">Encara no</th><th style="width:10%">Amb ajuda</th><th style="width:9%">Bé</th><th style="width:11%">Molt bé</th></tr><tr><td class="label-cell" style="width:60%">Hi són els quatre eixos (tret, adaptació, prova, Lamarck/neodarwinisme)</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td></tr><tr><td class="label-cell" style="width:60%">L'adaptació connecta de veritat estructura → funció → ambient</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td></tr><tr><td class="label-cell" style="width:60%">La prova de l'evolució està ben triada i justificada</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td></tr><tr><td class="label-cell" style="width:60%">La comparació deixa clar per què l'explicació de Lamarck és falsa</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td></tr><tr><td class="label-cell" style="width:60%">La defensa oral és clara i responen bé a les preguntes</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td></tr></table><p style="font-size:12px;margin:6px 0 3px"><b>Una cosa que fan bé:</b></p><div class="wline" contenteditable="true"></div><p style="font-size:12px;margin:6px 0 3px"><b>Una millora concreta</b> («Podríeu... perquè...»):</p><div class="wline" contenteditable="true"></div><p style="font-size:10.5px;color:#6b4a3a;font-style:italic;margin:6px 0 0">Has de coavaluar <b>dos</b> estands: repeteix aquesta graella per al segon en el requadre extra («＋ Espai») o al revers del full.</p></div><div class="section"><div class="section-header"><div class="snum" style="background:#C08A2E">3</div><div><span class="stitle">Exercici individual tipus PAU</span><span class="temps">25 min</span><div class="sdesc">Sol · un cas nou des de les quatre teories</div></div></div><div class="divider"></div><div class="previ-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><p style="font-size:12px"><b>El cas:</b> el peix globus és molt tòxic (té tetrodotoxina), però hi ha una serp que se'l menja sense morir: amb els anys, poblacions senceres de la serp s'han fet <b>resistents al verí</b>.</p></div><p style="font-size:12px;margin:6px 0 3px"><b>3a.</b> Explica el cas amb la cadena <b>mutació → variabilitat → selecció → canvi</b>. Assenyala quin pas és a l'<b>atzar</b> i quin depèn de l'<b>ambient</b>.</p><div class="wline tall" contenteditable="true"></div><p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> Analitza el cas des de les <b>quatre teories</b>:</p><table class="data-table"><tr><th style="width:30%">Teoria</th><th style="width:70%">Què diria sobre aquest cas</th></tr><tr><td class="label-cell">Fixisme</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">Lamarckisme (fals)</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">Darwinisme</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">Neodarwinisme</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table><p style="font-size:12px;margin:8px 0 3px"><b>3c.</b> Escriu com explicaria (malament) aquest cas el <b>lamarckisme</b> i digues quina <b>prova concreta</b> descartaria aquesta explicació.</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="section-header"><div class="snum" style="background:#8a5a9e">4</div><div><span class="stitle">Metacognició de tancament</span><span class="temps">10 min</span><div class="sdesc">Tanquem la SA i el trimestre</div></div></div><div class="divider"></div><div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="challenge-title">🚀 Repte</div><div class="challenge-text">Escriu una reflexió de tancament de la situació i del trimestre: quina idea t'ha canviat més la manera de mirar els éssers vius, quin moment (una prova, la simulació, un estand) t'ha fet fer un salt, i què t'agradaria entendre millor sobre l'evolució.</div></div></div><div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="meta-oa-title">Torna a l'enigma inicial</div><p style="font-size:12px;margin-bottom:4px">El respondries igual que a l'apartat 0? Quina idea de tota la situació t'ha canviat més la manera de mirar els éssers vius, i quin moment concret t'ha fet fer el salt? Què et falta encara per entendre bé?</p><div class="wline xtall" contenteditable="true"></div></div></div><div class="tasca-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-title">🏠 Feina per a casa</div><div class="tasca-item"><div class="tasca-num">✓</div><div>Cap tasca nova: la situació es tanca avui. Repassa la graella de les <b>quatre teories</b> i les <b>proves de l'evolució</b> de cara a la prova d'avaluació del trimestre.</div></div></div><div class="footer"><div class="footer-l">SA5 · El pati, un museu de l'evolució · Sessió 4 · Versió A · IE Temple · Biologia i Geologia 4t ESO</div><div class="footer-r">🏛️</div></div>
+    <div class="attrib">Adaptat per Albert Pahissa de l'original de Jordi Domènech. Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a> (Reconeixement–NoComercial–CompartirIgual).</div>
+    </div></div>
+<script>
+const delStack=[];
+function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});const u=document.getElementById('btn-undo');if(u)u.classList.add('active')}
+function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);const u=document.getElementById('btn-undo');if(u&&!delStack.length)u.classList.remove('active');updatePageBreaks()}
+function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
+document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
+const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
+function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='Pàgina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple · Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
+function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
+window.addEventListener('load',updatePageBreaks);
+const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+</script>
+</body>
+</html>

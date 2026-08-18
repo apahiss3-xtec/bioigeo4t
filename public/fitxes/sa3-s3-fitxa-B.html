@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA3 · S3 · De l’ADN a la proteïna</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2E4A9E; --teal-ink:#22357A; --teal-light:#b7c4ec; --teal-tint:#e9eefb;
+  --ink:#1d1622; --ink-2:#3a3340; --muted:#78707e; --surface:#fefdff;
+  --rule:#dbe2f4; --rule-dark:#b0bde3;
+  --orange:#c96f3e; --orange-tint:#f6ece8;
+  --aqua:#2f9aa0; --aqua-tint:#e6f5f5;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#8a5a9e; --purple-tint:#f1eaf4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#aeb9dc;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(35,20,45,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,79,174,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(215,195,225,.75);flex:1}
+.tb-tip strong{color:#e0c8ec}
+.tb-sep{width:1px;height:20px;background:rgba(139,79,174,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(139,79,174,.2);border:1px solid rgba(139,79,174,.4);color:#e6cdf2;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(139,79,174,.2);border:1px solid rgba(139,79,174,.4);color:#e6cdf2;font-size:12px}
+.tb-undo{background:rgba(201,111,62,.2);border:1px solid rgba(201,111,62,.4);color:#f0bfa5;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #8ea0d4;pointer-events:none;z-index:10}
+.page-break-label{position:absolute;right:10px;top:-11px;background:#8ea0d4;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(139,79,174,.08);box-shadow:0 0 0 2px rgba(139,79,174,.3)}
+[contenteditable]:focus{background:rgba(139,79,174,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+/* Caps d'escriptura GRANS (4t: respostes obertes, paràgrafs) */
+.wline{display:block;width:100%;min-height:52px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(139,79,174,.04)}
+.wline.tall{min-height:82px}
+.wline.xtall{min-height:120px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(139,79,174,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#22357A 0%,#3E5BC0 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#f4ecfa,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 13px}
+.previ-box p{font-size:12.5px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
+.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
+.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:44px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
+.fill-cell:focus{background:rgba(139,79,174,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.ph-num{width:30px;text-align:center;font-weight:900;color:var(--teal-ink);font-size:15px}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;margin-bottom:4px;padding:2px 0}
+.meta-oa-check{width:16px;height:16px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;margin-top:1px}
+.meta-oa-text{flex:1;line-height:1.35}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-icon{font-size:18px;display:block;margin-bottom:3px}
+.meta-label{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.stars{display:flex;gap:4px;margin-top:4px}.star{font-size:18px;color:#8ea0d4}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(139,79,174,.05) 6px,rgba(139,79,174,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.page-break-line,.del-btn{display:none!important}
+  .page-footer-bar{display:flex!important}
+  .footer{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .wline{background:transparent;padding:0}
+  .fill-cell{background:transparent;outline:none}
+  .spacer-block{background:transparent!important;border:none!important}
+  .spacer-label{display:none!important}
+}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <span class="tb-tip">✎ Clica per editar · <strong>Ctrl+B</strong> negreta · <strong>×</strong> rosa elimina · <strong>Ctrl+Z</strong> desfés</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">↩ Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">＋ Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+</div>
+<div class="page-wrap" id="doc">
+<div class="header-band deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🧬</div></div><div class="header-main"><div class="header-sa" contenteditable="true">SA3 · El codi de la vida · Sessió 3 de 4</div><div class="header-title" contenteditable="true">De l’ADN a la proteïna</div><div class="header-subtitle" contenteditable="true">Del gen a la característica: transcripció, traducció i què passa quan canvia una lletra</div></div><div class="header-right"><div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div><div class="header-meta" contenteditable="true">Biologia i Geologia · 4t ESO<br>IE Temple</div></div></div>
+<div class="nivell-strip deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="nivell-label" contenteditable="true">Traducció del codi genètic i estudi d’un cas real</span><span class="temps-badge" contenteditable="true">⏱️ 2h total</span><div class="nom-field">Nom:&nbsp;<span class="input-span" contenteditable="true"></span>&nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;<span class="nivell-badge-small" title="Versió B">B</span></div></div>
+<div class="oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="oa-title">Què vull que sàpigues fer en acabar</div><ul class="oa-list"><li>Ordeno els passos gen → ARNm → proteïna → característica i dic que la transcripció passa al nucli i la traducció al ribosoma.</li><li>Amb la taula de codons, tradueixo una seqüència curta d’ADN a ARNm i a aminoàcids, i dic que cada codó (3 lletres) és un aminoàcid.</li><li>Explico amb un exemple que l’ordre de les lletres de l’ADN determina la característica (genotip → fenotip).</li><li>Identifico, a l’anèmia falciforme, quina lletra ha canviat i quin aminoàcid queda diferent.</li></ul></div>
+<div class="content"><div class="section"><div class="section-header"><div class="snum" style="background:#8ea0d4">0</div><div><span class="stitle">Idees prèvies</span><span class="temps">6 min</span><div class="sdesc">Recupera el que saps. No es corregeix.</div></div></div><div class="divider"></div><p style="font-size:12px;margin:0px 0 3px"><b>La informació de l’ADN, per a què serveix?</b> Què fabrica la cèl·lula seguint-la?</p><div class="wline tall" contenteditable="true"></div><p style="font-size:12px;margin:8px 0 3px"><b>L’ADN es queda al nucli</b>, però les proteïnes es fabriquen fora. Com creus que el missatge arriba fins a la fàbrica de proteïnes?</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="section-header"><div class="snum" style="background:#2E4A9E">1</div><div><span class="stitle">El camí: transcripció i traducció</span><span class="temps">20 min</span><div class="sdesc">Del gen a la característica</div></div></div><div class="divider"></div><img class="fig" src="../images/sa3-s3-dogma-detall.svg" alt="El camí de l’ADN a la proteïna" style="margin-bottom:8px" onerror="this.style.display='none'"><div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="scaffold-title">🪜 Ajuda</div><div class="scaffold-text">Pensa-hi com una recepta. L’ADN és el llibre de receptes original de la biblioteca, que NO surt d’allà (no surt del nucli). Per cuinar (fabricar la proteïna) a la cuina (el citoplasma), en fas una FOTOCÒPIA d’una recepta: l’ARN missatger. Copiar la recepta = <b>transcripció</b> (al nucli). Cuinar seguint la còpia = <b>traducció</b> (al ribosoma).</div></div></div><p style="font-size:12px;margin:8px 0 3px"><b>Completa el camí</b> i digues on passa cada pas:</p><p style="font-size:13px;text-align:center;margin:8px 0;font-weight:700;color:#22357A;letter-spacing:1px">GEN (ADN) &nbsp;—[ <span class="input-span" contenteditable="true" style="min-width:90px"></span> ]→&nbsp; ARNm &nbsp;—[ <span class="input-span" contenteditable="true" style="min-width:90px"></span> ]→&nbsp; PROTEÏNA →  CARACTERÍSTICA</p><p style="font-size:12px;margin:6px 0 3px"><b>Recorda:</b> la còpia de l’ADN a ARNm la fa una màquina, l’<b>ARN polimerasa</b>; la proteïna es fabrica al <b>ribosoma</b>.</p><p style="font-size:12px;margin:8px 0 3px"><b>On passa cada pas?</b> Transcripció: ______________ · Traducció: ______________</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="section-header"><div class="snum" style="background:#2E7D57">2</div><div><span class="stitle">Tradueix el codi genètic</span><span class="temps">25 min</span><div class="sdesc">Fragment del gen de l’hemoglobina · en parelles</div></div></div><div class="divider"></div><div class="previ-box deletable" style="margin:6px 0"><div class="del-btn" onclick="deleteEl(this)">✕</div><p style="font-size:11.5px;margin:0 0 4px"><b>Taula de codons de l’ARNm</b> (fragment). Cada codó = 3 lletres = 1 aminoàcid:</p><div style="font-size:11.5px;line-height:1.7;columns:2;column-gap:24px"><b>AUG</b> → Met <i>(inici)</i><br><b>GUG</b> → Val<br><b>CAC</b> → His<br><b>CUG</b> → Leu<br><b>ACU</b> → Thr<br><b>CCU</b> → Pro<br><b>GAG</b> / <b>GAA</b> → Glu<br><b>UGA</b> / <b>UAA</b> / <b>UAG</b> → STOP</div><p style="font-size:11px;margin:5px 0 0;color:#555"><b>Glu</b> = glutamat · <b>Val</b> = valina · <b>His</b> = histidina · <b>Met</b> = metionina · <b>Leu</b> = leucina · <b>Thr</b> = treonina · <b>Pro</b> = prolina. Fixa’t que el <b>Glu</b> té DOS codons (GAG i GAA): dos codons poden donar el mateix aminoàcid.</p></div><div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="scaffold-title">🪜 Ajuda</div><div class="scaffold-text">Ves pas a pas. (1) <b>ADN → ARNm</b>: la cadena codificant té les mateixes lletres que l’ARNm, però cada <b>T</b> es torna <b>U</b>. (2) Separa l’ARNm de <b>3 en 3</b> (codons). (3) Busca cada codó a la taula i escriu l’aminoàcid.</div></div></div><p style="font-size:12px;margin:8px 0 3px"><b>Cadena codificant de l’ADN</b> (còpia-la a ARNm canviant T→U):</p><p style="font-size:14px;text-align:center;margin:6px 0;font-weight:700;color:#22357A;letter-spacing:2px">ADN:&nbsp; ATG · GTG · CAC · CTG · ACT · CCT · GAG</p><table class="data-table"><tr><th style="width:22%">Pas</th><th>Escriu-ho aquí (7 codons)</th></tr><tr><td><b>ARNm</b> (U en lloc de T)</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td><b>Codons</b> (de 3 en 3)</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td><b>Aminoàcids</b> (proteïna)</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table><div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="epist-title">🧭 Idea clau</div><div class="epist-text"><b>Codó</b> = 3 lletres seguides de l’ARNm; cada codó indica 1 aminoàcid. <b>Anticodó</b> = les 3 lletres complementàries que porta l’<b>ARN de transferència (ARNt)</b>, la molècula que du cada aminoàcid al ribosoma i encaixa amb el codó per complementarietat.</div></div></div><p style="font-size:12px;margin:8px 0 3px"><b>Amb les teves paraules:</b> què és un codó i què és un anticodó?</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="section-header"><div class="snum" style="background:#B5502A">3</div><div><span class="stitle">Del genotip al fenotip</span><span class="temps">12 min</span><div class="sdesc">L’ordre de les lletres és el missatge</div></div></div><div class="divider"></div><div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="epist-title">🧭 Idea clau</div><div class="epist-text"><b>Genotip</b> = la informació escrita a l’ADN (l’ordre de les lletres). <b>Fenotip</b> = la característica que es veu o es mesura. El camí: ordre de lletres → ordre d’aminoàcids → forma de la proteïna → si funciona bé → característica. Com a <b>A-D-N-A</b> i <b>N-A-D-A</b>: mateixes lletres, ordre diferent, significat diferent.</div></div></div><div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="scaffold-title">🪜 Ajuda</div><div class="scaffold-text">Fixa’t en l’exemple A-D-N-A / N-A-D-A: les mateixes 4 lletres, però en un altre ordre, volen dir coses diferents. Amb l’ADN passa igual: el que compta és l’ORDRE.</div></div></div><p style="font-size:12px;margin:8px 0 3px"><b>Per què diem que la informació és l’ORDRE de les lletres i no les lletres soltes?</b> Explica-ho amb un exemple.</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="section-header"><div class="snum" style="background:#7B3F9E">4</div><div><span class="stitle">Una lletra ho canvia tot: la mutació</span><span class="temps">17 min</span><div class="sdesc">El cas de l’anèmia falciforme</div></div></div><div class="divider"></div><img class="fig" src="../images/sa3-s3-falciforme.svg" alt="Una lletra canviada: l’anèmia falciforme" style="margin-bottom:8px" onerror="this.style.display='none'"><p style="font-size:12px;margin:4px 0 3px"><b>El mateix gen, amb una sola lletra diferent.</b> Tradueix el gen MUTAT i compara’l amb el normal de l’apartat 2:</p><p style="font-size:14px;text-align:center;margin:6px 0;font-weight:700;color:#7B3F9E;letter-spacing:2px">ADN mutat (codificant):&nbsp; ATG · GTG · CAC · CTG · ACT · CCT · <span style="background:#f3d9ff">GTG</span></p><table class="data-table"><tr><th style="width:34%">Pregunta</th><th>Resposta</th></tr><tr><td>Quin <b>codó</b> de l’ARNm canvia?</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td>Quin <b>aminoàcid</b> hi havia i quin hi va ara?</td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td>Quin <b>efecte</b> té sobre el glòbul vermell?</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table><div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div><div class="scaffold-title">🪜 Ajuda</div><div class="scaffold-text">Segueix el camí que ja saps: una lletra → un codó nou → un aminoàcid diferent (glutamat passa a valina) → la proteïna canvia de forma → el glòbul vermell es torna una falç → la persona té anèmia.</div></div></div><p style="font-size:12px;margin:8px 0 3px"><b>Explica el camí complet de la mutació</b> (lletra → codó → aminoàcid → proteïna → cèl·lula → persona):</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="section-header"><div class="snum" style="background:#22357A">★</div><div><span class="stitle">Exit tiquet</span><span class="temps">8 min</span><div class="sdesc">Ho comprovem abans de marxar</div></div></div><div class="divider"></div><p style="font-size:12px;margin:6px 0 3px"><b>1.</b> Quina diferència hi ha entre transcripció i traducció? <i>(marca)</i></p><div style="font-size:12px;line-height:1.9;margin-left:6px">☐ &nbsp;La transcripció fabrica la proteïna llegint l'ADN (al nucli); la traducció la copia a ARNm (al ribosoma)<br>☐ &nbsp;La transcripció fabrica l'ARNm a partir de l'ADN i la traducció torna a copiar aquest ARNm en ADN nou<br>☐ &nbsp;La transcripció copia l'ADN a ARNm (al nucli); la traducció fabrica la proteïna llegint l'ARNm (al ribosoma)<br>☐ &nbsp;Totes dues passen al nucli, però la traducció només es fa quan la cèl·lula està a punt de dividir-se</div><p style="font-size:12px;margin:8px 0 3px"><b>2.</b> Un ARNm és AUG-GUG-CAC (AUG=Met, GUG=Val, CAC=His). Escriu els aminoàcids i digues què és un codó.</p><div class="wline tall" contenteditable="true"></div><p style="font-size:12px;margin:8px 0 3px"><b>3.</b> A l’anèmia falciforme canvia una sola lletra. Explica, pas a pas, com un canvi tan petit pot fer emmalaltir una persona.</p><div class="wline tall" contenteditable="true"></div></div><div class="section"><div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="meta-oa-title">Metacognició</div><p style="font-size:12px;margin-bottom:4px">Què t’ha semblat més difícil: fer la traducció amb la taula de codons o entendre com una lletra pot canviar tota una persona? Ara ja pots respondre la pregunta de l’inici: com pot ser que canviar una sola lletra ho canviï tot?</p><div class="wline tall" contenteditable="true"></div></div></div><div class="tasca-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-title">🏠 Feina per a casa</div><div class="tasca-item"><div class="tasca-num">1</div><div>Prepara el <b>debat CRISPR</b> de la propera sessió: pensa <b>2 arguments a favor</b> i <b>2 en contra</b> d’editar el genoma d’un embrió humà. Anota d’on has tret la informació (recorda la graella de fonts fiables de SA1).</div></div></div><div class="footer"><div class="footer-l">SA3 · El codi de la vida · Sessió 3 · Versió B · IE Temple · Biologia i Geologia 4t ESO</div><div class="footer-r">🧬</div></div><div class="attrib">Adaptat per Albert Pahissa de l’original de Jordi Domènech. Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a> (Reconeixement–NoComercial–CompartirIgual).</div></div>
+</div>
+<script>
+const delStack=[];
+function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});document.getElementById('btn-undo').classList.add('active')}
+function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);if(!delStack.length)document.getElementById('btn-undo').classList.remove('active');updatePageBreaks()}
+function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
+document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
+const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
+function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='Pàgina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple · Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
+function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
+window.addEventListener('load',updatePageBreaks);
+const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+</script>
+</body>
+</html>

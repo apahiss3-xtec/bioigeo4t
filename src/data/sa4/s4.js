@@ -127,7 +127,7 @@ export const sa4s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa4-s4-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa4-s4-fitxa-A.html", B: "/fitxes/sa4-s4-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a la família del hook (avi hemofílic, néts afectats) i explica amb els genotips per què la malaltia va saltar la generació dels fills i va reaparèixer en els néts. Després, tanca l'informe de consell genètic separant clarament el risc dels fills i el de les filles.",
 
@@ -187,10 +187,10 @@ export const sa4s4 = {
       type: "multiple",
       text: "Per què l'hemofília (recessiva, lligada al X) afecta molt més els homes que les dones?",
       options: [
-        "Perquè l'home només té una X: n'hi ha prou amb una còpia de l'al·lel malalt per patir-la",
-        "Perquè els homes tenen la sang més dèbil que les dones",
-        "Perquè el gen de l'hemofília està al cromosoma Y",
-        "Perquè les dones no poden transmetre mai la malaltia"
+        "Perquè l'home només té una còpia del cromosoma X: amb un sol al·lel malalt ja pateix la malaltia",
+        "Perquè el gen de l'hemofília és al cromosoma Y, que només tenen els homes i que passa de pare a fill",
+        "Perquè les dones no poden portar mai aquest al·lel: és una malaltia que només existeix en els homes",
+        "Perquè els homes hereten el cromosoma X del pare, i és el pare qui els passa sempre l'al·lel malalt"
       ],
       correct: 0
     },

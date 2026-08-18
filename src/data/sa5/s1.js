@@ -131,7 +131,7 @@ export const sa5s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa5-s1-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa5-s1-fitxa-A.html", B: "/fitxes/sa5-s1-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a la pregunta d'inici (per què cada ésser viu del pati és com és?) i respon-la ara amb el vocabulari nou (adaptació, estructura-funció-ambient, selecció natural vs artificial), fent servir un organisme que hagis observat.",
 
@@ -151,7 +151,7 @@ export const sa5s1 = {
   exitTicketType: "paper",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica què és una ADAPTACIÓ amb un exemple del pati, unint una estructura que has vist, la seva funció i l'ambient on viu l'organisme.", hint: "Estructura (què veig) → funció (per a què serveix) → ambient (on viu)." },
-    { id: "q2", type: "multiple", text: "Les gallines del pati tenen les ales petites i amb prou feines volen, tot i que el seu avantpassat salvatge sí que volava. Quina és la millor explicació?", options: ["Els humans han criat durant segles les gallines més tranquil·les i productives, no les millors voladores: és selecció artificial (domesticació)", "Les gallines van decidir deixar de volar perquè els feia mandra", "Totes les aus perden la capacitat de volar amb el temps de manera automàtica", "Les ales petites no tenen res a veure amb l'evolució ni amb els humans"], correct: 0 },
+    { id: "q2", type: "multiple", text: "Les gallines del pati tenen les ales petites i amb prou feines volen, tot i que el seu avantpassat salvatge sí que volava. Quina és la millor explicació?", options: ["Els humans han criat durant segles les gallines més tranquil·les i productives, no les millors voladores: és selecció artificial", "De tant estar-se al galliner sense volar, les ales se'ls van anar atrofiant durant la vida i aquesta pèrdua va passar als pollets", "Totes les aus perden el vol amb el pas del temps de manera automàtica, visquin on visquin i les criï qui les criï", "Tenir les ales petites és una casualitat de cada gallina i no hi tenen res a veure ni els humans ni cap procés evolutiu"], correct: 0 },
     { id: "q3", type: "open", text: "Un company diu: «he vist que el pardal té el bec fort, per tant és una adaptació per menjar llavors». Què d'aquesta frase és una OBSERVACIÓ (dada) i què és una INFERÈNCIA (interpretació)? Com podríeu comprovar la part inferida?", hint: "El que es veu amb els ulls és dada; el «per tant serveix per...» és interpretació que cal justificar." }
   ],
 

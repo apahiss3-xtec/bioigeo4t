@@ -131,7 +131,8 @@ export const sa6s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa6-s3-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa6-s3-fitxa-A.html", B: "/fitxes/sa6-s3-fitxa-B.html" },
+  retallablesUrl: "/fitxes/sa6-s3-retallables.html",
   teoriaPdfUrl: null,
   elaborateNote: "A la fitxa reconstruiràs la història d'un paisatge concret: primer el tall del teu planeta i després un cas real i proper, el dels Ports i el delta de l'Ebre. Aquesta és exactament la feina que hauràs de mostrar al vídeo divulgatiu «Gondwana Tales»: explicar què va passar i, sobretot, com ho saps.",
 

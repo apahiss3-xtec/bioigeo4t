@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { t } from '../t.js'
 import T from '../translate/T.jsx'
 import Hint from './Hint.jsx'
+import { permutacioEstable } from '../utils.js'
 
 // Construeix l'URL de composició de Gmail amb les respostes.
 // Cap dada surt del navegador fins que l'alumne envia el correu manualment.
@@ -33,6 +34,21 @@ export default function ExitTicketForm({ session }) {
   const [autoavaluacio, setAutoavaluacio] = useState('')
   const [respostes, setRespostes] = useState({})
   const [status, setStatus] = useState(null) // null | 'error' | 'sent'
+
+  // Ordre de presentació de les opcions de cada pregunta de resposta
+  // múltiple (vegeu `permutacioEstable` a utils.js). Aquí la resposta viatja
+  // per correu com a TEXT de l'opció triada, no com a índex, així que
+  // barrejar l'ordre no afecta ni el correu que rep el professorat ni cap
+  // altra part del formulari: és estrictament l'ordre en què es veuen.
+  const ordres = useMemo(() => {
+    const m = {}
+    for (const q of session.exitTicketQuestions ?? []) {
+      if (q.type === 'multiple' && q.options?.length) {
+        m[q.id] = permutacioEstable(q.id + '|' + (q.text ?? ''), q.options.length)
+      }
+    }
+    return m
+  }, [session])
 
   const setResposta = (qid, value) =>
     setRespostes((prev) => ({ ...prev, [qid]: value }))
@@ -104,7 +120,9 @@ export default function ExitTicketForm({ session }) {
           </p>
           {q.type === 'multiple' ? (
             <div className="space-y-2 ps-12">
-              {q.options.map((opt, oi) => (
+              {(ordres[q.id] ?? q.options.map((_, k) => k)).map((oi) => {
+                const opt = q.options[oi]
+                return (
                 <label
                   key={oi}
                   className="flex items-start gap-3 cursor-pointer rounded-lg border border-[var(--rule)] px-3 py-2 hover:border-[var(--purple-deep)] transition-colors"
@@ -119,7 +137,8 @@ export default function ExitTicketForm({ session }) {
                   />
                   <span>{opt}</span>
                 </label>
-              ))}
+                )
+              })}
             </div>
           ) : (
             <textarea

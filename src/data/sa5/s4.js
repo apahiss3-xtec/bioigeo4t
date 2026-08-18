@@ -128,7 +128,7 @@ export const sa5s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa5-s4-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa5-s4-fitxa-A.html", B: "/fitxes/sa5-s4-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la situació: torna a l'enigma inicial (natura o nosaltres) i respon-lo ara amb el vocabulari de tota la SA (adaptació, prova de l'evolució, selecció natural vs artificial, les quatre teories). El museu i l'exercici PAU són la demostració que ja saps mirar qualsevol ésser viu amb ulls d'evolucionista.",
 
@@ -148,7 +148,7 @@ export const sa5s4 = {
   exitTicketType: "paper",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "El peix globus és molt tòxic (té tetrodotoxina), però hi ha una serp que se'l menja sense morir: amb els anys, poblacions senceres de la serp s'han fet resistents al verí. Explica aquest cas amb la cadena mutació → variabilitat → selecció → canvi, assenyalant quin pas és a l'atzar i quin depèn de l'ambient.", hint: "La mutació de resistència apareix a l'atzar; el verí del peix globus (ambient) selecciona les serps que ja la tenien." },
-    { id: "q2", type: "multiple", text: "Molts humans adults poden digerir la llet (persistència de la lactasa) perquè els seus avantpassats eren ramaders. Quina explicació és correcta segons el neodarwinisme?", options: ["Ja hi havia persones amb una mutació que mantenia la lactasa activa d'adults; en poblacions ramaderes tenien avantatge, sobrevivien i es reproduïen més, i van transmetre el gen", "Els avantpassats van beure tanta llet que el seu cos es va acostumar i van passar aquesta capacitat als fills", "Tots els humans van decidir alhora poder digerir la llet perquè els convenia", "La capacitat de digerir la llet no té res a veure amb l'evolució"], correct: 0 },
+    { id: "q2", type: "multiple", text: "Molts humans adults poden digerir la llet (persistència de la lactasa) perquè els seus avantpassats eren ramaders. Quina explicació és correcta segons el neodarwinisme?", options: ["Ja hi havia persones amb una mutació que mantenia la lactasa activa d'adults; en poblacions ramaderes es reproduïen més i van transmetre el gen", "Els avantpassats van beure tanta llet que el seu cos es va acostumar a fabricar lactasa, i van passar als fills aquesta capacitat adquirida", "Les poblacions ramaderes necessitaven digerir la llet i, com que els feia falta, el seu cos va acabar produint la mutació que els convenia", "Digerir la llet és un costum que s'aprèn de petit bevent-ne cada dia: no hi intervé cap gen ni cap procés evolutiu de la població"], correct: 0 },
     { id: "q3", type: "open", text: "En un dels dos casos anteriors, escriu com l'explicaria (malament) el lamarckisme i digues quina prova concreta descartaria aquesta explicació lamarckiana.", hint: "Lamarck diria que l'ús/l'esforç desenvolupa el tret i es transmet; la prova: els caràcters adquirits durant la vida no passen als fills pels gens." }
   ],
 

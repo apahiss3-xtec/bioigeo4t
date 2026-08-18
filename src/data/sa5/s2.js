@@ -131,7 +131,7 @@ export const sa5s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa5-s2-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa5-s2-fitxa-A.html", B: "/fitxes/sa5-s2-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament: torna a la pregunta d'inici (l'ala d'ocell i la d'insecte, són el mateix invent?) i respon-la ara amb el vocabulari nou (homologia, analogia, convergència/divergència), explicant quina de les dues semblances demostra parentiu i per què.",
 
@@ -151,7 +151,7 @@ export const sa5s2 = {
   exitTicketType: "paper",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica amb les teves paraules la diferència entre HOMOLOGIA i ANALOGIA, i digues quina de les dues demostra que dos éssers vius són parents. Posa un exemple de cada.", hint: "Homologia = mateixa estructura interna; analogia = mateixa funció, estructura diferent." },
-    { id: "q2", type: "multiple", text: "L'ala d'un ratpenat i l'aleta d'una balena tenen els mateixos ossos (húmer, radi, cúbit) tot i que una vola i l'altra neda. Què en podem concloure?", options: ["Són òrgans homòlegs: comparteixen un avantpassat comú (són parents)", "Són òrgans anàlegs: no tenen res a veure evolutivament", "Que volar i nedar són la mateixa cosa", "Que el ratpenat i la balena són la mateixa espècie"], correct: 0 },
+    { id: "q2", type: "multiple", text: "L'ala d'un ratpenat i l'aleta d'una balena tenen els mateixos ossos (húmer, radi, cúbit) tot i que una vola i l'altra neda. Què en podem concloure?", options: ["Són òrgans homòlegs: comparteixen un avantpassat comú (són parents)", "Són òrgans anàlegs: s'assemblen perquè totes dues línies s'han adaptat a desplaçar-se, no per parentiu", "Són òrgans vestigials: conserven ossos d'un avantpassat que ja no serveixen per a la funció actual", "No es pot dir res: uns mateixos ossos poden aparèixer per casualitat en dos animals qualssevol"], correct: 0 },
     { id: "q3", type: "open", text: "A l'arbre de la Fig.3, el pardal i el ratpenat s'assemblen molt per fora (tots dos volen). Per què l'arbre situa el ratpenat més a prop de la balena que del pardal? Quina prova pesa més que el «semblar-se per fora»?", hint: "Mira quin node comparteixen; recorda que la funció (volar) no prova parentiu." }
   ],
 

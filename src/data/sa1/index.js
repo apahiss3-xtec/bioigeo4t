@@ -5,7 +5,7 @@ export const sa1 = {
   biome: "sa1",
   color: { primary: "#2A6F7F", accent: "#38A3A5" },
   sessions: 4,
-  portadaImage: "/images/sa1-portada.png",
+  portadaImage: "/images/sa1-s1-portada.jpg",
   description: "Abans de fer biologia, aprendràs a pensar com un científic: a mesurar la teva certesa, a reconèixer en què bases els teus arguments (les garanties) i a distingir la ciència de la pseudociència. És l'eina que faràs servir tot el curs.",
   product: "Un «detector de pseudociència»: defensa oral d'un cas real caçat per l'alumnat, argumentant amb el vocabulari de les garanties i el mètode científic.",
   objectives: [

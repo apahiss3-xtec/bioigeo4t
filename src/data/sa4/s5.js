@@ -128,7 +128,7 @@ export const sa4s5 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa4-s5-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa4-s5-fitxa-A.html", B: "/fitxes/sa4-s5-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "La prova de problemes és la part d'elaboració: apliques tot el mètode de la SA a casos nous i individuals. Recorda deduir primer el model d'herència, escriure els genotips i comprovar amb el quadre de Punnett, separant fills i filles quan calgui.",
 

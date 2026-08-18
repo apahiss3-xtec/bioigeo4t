@@ -1,87 +1,108 @@
-// Avaluació SA6: checklist d'estudi + test de transferència (La sequera a Catalunya)
-// Cas NOU: diferent de l'enigma del bocadillo — context de gestió hídrica i canvi climàtic local.
+// Material d'autoavaluació de SA6 (Un planeta viu i inquiet): checklist
+// d'estudi + test de transferència amb un cas NOU —la muntanya de sal de
+// Cardona— diferent dels casos de les sessions (planeta fictici Gondwana
+// Tales a S1-S3, Terres de l'Ebre genèric a S4, vídeo divulgatiu a S5), per
+// comprovar si l'alumne sap APLICAR la tectònica de plaques, la
+// reconstrucció del passat geològic i l'anàlisi de riscos naturals a un
+// indret real de Catalunya que ningú no li ha explicat directament a classe.
+//
+// Revisió 2026-08-17 (revisió agent-alumne). Canvis de fons:
+// 1) El context REGALAVA les respostes de t1 (deia literalment que la
+//    col·lisió Ibèrica-Euroasiàtica que va aixecar el Pirineu va plegar la
+//    sal) i de t3 (deia que la pluja dissol la sal i afebleix el sostre de
+//    les galeries). Ara el context només dona els FETS observables i la
+//    cadena causal l'ha de construir l'alumne.
+// 2) La resposta correcta ja no és sempre la primera opció ni la més llarga.
+// 3) t2 preguntava «com saben que es van formar fa 37 M.a.» però la resposta
+//    explicava l'AMBIENT de formació, no l'edat: enunciat corregit.
+// 4) t3 demanava dues coses alhora (causa + mesura); ara només la causa.
+// 5) c4, c7 i c9 no recollien intersecció ni el marc perillositat/exposició/
+//    vulnerabilitat ni predicció/prevenció/correcció, que sí que es treballen.
 export const sa6Avaluacio = {
   checklist: [
-    { id: 'c1', oa: 'OA1', text: "Sé explicar el mecanisme de l'efecte hivernacle natural i com l'activitat humana l'ha amplificat des de la Revolució Industrial (+1,1 °C global fins al 2023)." },
-    { id: 'c2', oa: 'OA1', text: "Identifico els tres principals gasos d'efecte hivernacle (CO₂, CH₄, N₂O), la seva font principal i per quina raó s'expressen en CO₂ equivalent (CO₂eq)." },
-    { id: 'c3', oa: 'OA1', text: "Llisto almenys 4 conseqüències observables del canvi climàtic amb dades concretes (temperatura, glaceres, nivell del mar, acidificació, fenòmens extrems)." },
-    { id: 'c4', oa: 'OA2', text: "Distingeixo les fonts d'energia renovables de les no renovables, enumero almenys 4 de cada tipus i explico per quina raó les renovables son 'netes' des del punt de vista climàtic (però no des del punt de vista de la fabricació)." },
-    { id: 'c5', oa: 'OA2', text: "Explico els tres pilars de la transició energètica (descarbonitzar l'electricitat, electrificar l'ús final, millorar l'eficiència) i l'objectiu climàtic dels Acords de París (+1,5 °C màxim)." },
-    { id: 'c6', oa: 'OA3', text: "Sé calcular la petjada de carboni d'un aliment (gCO₂eq per ingredient) usant una taula de referència i interpreto per quina raó els aliments d'origen animal tenen generalment una petjada molt major que els vegetals." },
-    { id: 'c7', oa: 'OA3', text: "Explico les 3R per ordre de prioritat ecológica (Reducció → Reutilització → Reciclatge) i argumento per quina raó la reducció és sempre la primera opció." },
-    { id: 'c8', oa: 'OA3', text: "Sé interpretar la petjada ecológica (hectàrees globals per habitant) i la comparo amb la biocapacitat disponible per habitant (1,8 hag). Argumento quin canvi d'hàbit personal tindria l'impacte més gran." },
-    { id: 'c9', oa: 'OA4', text: "Identifico almenys 3 tàctiques de greenwashing (afirmació vaga, compensació parcial, segell inventat, irrelevàncies) en exemples reals i aplico els 4 criteris CE2 (autoria, evidència, transparència, consens) per avaluar una afirmació ambiental." },
-    { id: 'c10', oa: 'OA4', text: "Explico la resolució de l'enigma del bocadillo de pernil: les 4 fonts d'emissió que fan que emeti 5× més CO₂eq que el de formatge fresc i per quina raó les decisions alimentàries son de les accions individuals amb major impacte climàtic." }
+    { id: 'c1', oa: 'OA1', text: "Explico la deriva continental de Wegener i almenys dues proves que la sostenen (encaix de continents, fòssils guia en continents separats, continuïtat de roques i serralades)." },
+    { id: 'c2', oa: 'OA1', text: "Descric els tres tipus de límits de plaques (divergent, convergent, transformant) i el fenomen associat a cada un." },
+    { id: 'c3', oa: 'OA1', text: "Explico el motor de la tectònica de plaques: la convecció del mantell." },
+    { id: 'c4', oa: 'OA2', text: "Aplico els principis geològics bàsics (horitzontalitat, superposició, intersecció —el que talla és més jove— i actualisme) per deduir l'ordre dels esdeveniments en una successió de capes." },
+    { id: 'c5', oa: 'OA2', text: "Utilitzo fòssils guia per datar i relacionar capes de roca, fins i tot en indrets separats." },
+    { id: 'c6', oa: 'OA2', text: "Explico el cicle de Wilson (obertura i tancament d'un oceà) i el relaciono amb la formació de serralades." },
+    { id: 'c7', oa: 'OA3', text: "Identifico els principals riscos geològics d'un indret real (sísmic, volcànic, inundacions, esllavissades) a partir de la seva litologia, relleu i vegetació, i descomponc el risc en perillositat, exposició i vulnerabilitat." },
+    { id: 'c8', oa: 'OA3', text: "Explico com l'acció humana i l'escalfament global poden intensificar un risc natural que ja existia (riscos induïts)." },
+    { id: 'c9', oa: 'OA3', text: "Proposo mesures raonables per a un risc geològic concret i dic si són de predicció, de prevenció o de correcció." },
+    { id: 'c10', oa: 'OA4', text: "Comunico una reconstrucció geològica o una anàlisi de riscos de manera clara, argumentant les conclusions a partir de dades i utilitzant amb precisió el lèxic geològic." }
   ],
 
-  // Cas de transferència: la sequera a Catalunya — context nou, diferent de l'enigma del bocadillo.
-  // Cobreix OA1 (canvi climàtic), OA2 (fonts d'energia), OA3 (consum responsable), OA4 (avaluació crítica).
+  // Cas-fil NOU: la muntanya de sal de Cardona — indret real de Catalunya,
+  // diferent del planeta fictici Gondwana Tales i del cas genèric de Terres
+  // de l'Ebre, per mesurar transferència: tectònica (orogènia pirinenca),
+  // reconstrucció del passat (principis geològics, mar antic) i riscos
+  // (subsidència minera intensificada per la pluja).
   test: {
     context:
-      "El 2024, Catalunya va viure la pitjor sequera en 100 anys. L'embassament de la Mina (proveïdor principal de l'àrea metropolitana de Barcelona) va baixar al 16% de la seva capacitat. El govern va decretar restriccions d'ús de l'aigua. Al mateix temps, una empresa d'embotellament d'aigua mineral va llançar una campanya afirmant que el seu producte era 'la solució sostenible per a un futur amb escassetat d'aigua'. Les restriccions van generar debat: per quina raó, en un context de sequera, les granges porcines (que usen milers de litres d'aigua al dia) no patien les mateixes restriccions que els municipis?",
+      "A Cardona (Bages) hi ha una muntanya feta gairebé tota de sal: la Muntanya de Sal, un jaciment de roques de sal i de guix que arriba a tenir centenars de metres de gruix. La sal gemma és una roca tova que es dissol amb l'aigua. Aquestes capes de sal es van dipositar fa uns 37 milions d'anys, planes i horitzontals, i s'alternen amb capes primes d'altres sediments. Cardona és a la conca de l'Ebre, just al sud del Pirineu. Avui les capes de la muntanya no són planes: apareixen molt inclinades i replegades, i emergeixen per sobre del terreny del voltant. Cardona va tenir mines de sal en explotació fins al 1990; part del poble té els carrers construïts damunt d'antigues galeries mineres. Des que les mines es van tancar, alguns d'aquests carrers han patit esfondraments sobtats, sobretot després d'episodis de pluja forta.",
     questions: [
       {
         id: 't1',
         oa: 'OA1',
-        text: "La sequera de 2024 a Catalunya s'ha relacionat amb el canvi climàtic. Explica el mecanisme: com afecta l'augment de temperatura global el cicle hidrològic i la disponibilitat d'aigua? Anomena almenys 2 evidències científiques que relacionen el canvi climàtic amb l'augment de les sequeres a la Mediterrània.",
+        text: "Les capes de sal es van dipositar planes al fons d'un mar i avui apareixen inclinades i replegades. Quin procés tectònic ho explica millor, tenint en compte on és Cardona?",
         options: [
-          "L'augment de temperatura accelera l'evaporació de l'aigua (dels rius, embassaments i sòl), incrementa l'evapotranspiració de les plantes i fa que les precipitacions siguin més irregulars (pluges torrencials curtes vs. períodes secs llargs). Evidències: reducció del 10-20% de les precipitacions a la conca mediterrània en els darrers 50 anys (IPCC AR6); augment del 30% de la freqüència de sequeres extremes al sud d'Europa des del 1980; reducció del 20% del flux dels rius catalans en els darrers 30 anys (Agència Catalana de l'Aigua)",
-          "El canvi climàtic augmenta les precipitacions arreu del planeta. Si plou més, no hi hauria sequera. La relació entre canvi climàtic i sequera és una hipòtesi controvertida sense consens científic",
-          "Les sequeres a Catalunya son fenòmens naturals cíclics sense relació amb el canvi climàtic. El clima de la Mediterrània sempre ha tingut episodis de sequera cada 30-40 anys",
-          "L'augment de temperatura afecta les precipitacions de forma uniforme: redueix les precipitacions arreu del planeta. L'única solució és dessalar l'aigua del mar"
+          "Un límit divergent: les plaques es van separar i les capes es van enfonsar cap avall.",
+          "L'erosió del vent i de la pluja, que amb milions d'anys acaba doblegant qualsevol capa.",
+          "La compressió d'un límit convergent: la col·lisió que va aixecar el Pirineu, al costat mateix.",
+          "Una propietat pròpia de la sal, que la fa plegar sola sense cap relació amb el moviment de les plaques."
         ],
-        correct: 0,
+        correct: 2,
         feedback: {
-          correct: "Correcte. El canvi climàtic afecta el cicle hidrològic de forma complexa: no redueix necessàriament la pluja total, sinó que la fa més irregular (pluges torrencials concentrades + sequeres prolongades). A la Mediterrània, l'efecte és especialment clar: l'IPCC AR6 (2021) preveu una reducció del 10-20% de les precipitacions anuals al sud d'Europa per al final del segle. L'evaporació augmentada per les temperatures més altes agreuja l'efecte sobre els embassaments.",
-          wrong: "Recorda el mecanisme: temperatura alta → evaporació accelerada → menys humitat al sòl → menys recàrrega d'aqüífers i embassaments. A la Mediterrània, el canvi climàtic provoca un patró de 'més extrem en tots dos sentits': pluges torrencials més freqüents però separades per períodes de sequera més llargs. Busca 'Mediterrani com a hotspot del canvi climàtic' als informes de l'IPCC."
+          correct: "Exacte. Cardona és al peu del Pirineu, que es va formar per col·lisió (límit convergent). Aquella compressió també va afectar les capes de la conca: com que la sal és molt tova, en comptes de trencar-se es plega i fins i tot pot pujar cap a la superfície. (Aquest ascens de la sal té nom propi, diapirisme, però no cal que el recordis.)",
+          wrong: "Repassa els tres límits: divergent (separació), convergent (col·lisió, forma serralades) i transformant (lliscament lateral). Unes capes plegades i comprimides just al costat d'una serralada jove apunten a un mateix procés. I compte: l'erosió desgasta les roques, no les plega."
         }
       },
       {
         id: 't2',
         oa: 'OA2',
-        text: "Per dessalar l'aigua del mar (una de les solucions proposades per garantir el subministrament a Barcelona), calen grans quantitats d'energia elèctrica. Explica per quina raó la transició cap a energies renovables és essencial perquè la dessalació sigui una solució 'climàticament neutral'. Quin seria l'impacte climàtic de dessalar amb electricitat de carbó vs. amb solar fotovoltaica?",
+        text: "Els geòlegs afirmen que aquestes sals es van formar en un mar poc profund que s'evaporava una vegada i una altra. Quin raonament els permet dir en quin AMBIENT es va formar una roca que ningú no va veure formar-se?",
         options: [
-          "La dessalació per osmosi inversa requereix ≈3-4 kWh per m³ d'aigua produïda. Si l'electricitat ve de carbó (≈820 gCO₂/kWh), 1 m³ d'aigua dessalada genera ≈2,5-3,3 kg CO₂. Si ve d'energia solar (≈20-50 gCO₂/kWh en cicle de vida), 1 m³ genera ≈60-200 gCO₂ — entre 13 i 40 vegades menys. Per tant, dessalar amb renovables és viable climàticament; dessalar amb fòssils agreuja el problema que origina la sequera",
-          "La dessalació és sempre sostenible independentment de la font d'energia, perquè produeix un recurs essencial (l'aigua). L'impacte climàtic de l'energia usada és marginal",
-          "La dessalació solar no funciona de nit ni en dies ennuvolats. Per tant, la transició energètica no és possible per a instal·lacions de dessalació que han de funcionar 24h",
-          "Tots els tipus d'electricitat emeten la mateixa quantitat de CO₂ perquè els electrons no saben d'on venen"
+          "L'actualisme: avui veiem llacunes salades que s'evaporen i deixen sal, i aquí les capes es repeteixen.",
+          "El principi d'horitzontalitat, que és l'únic que es pot aplicar a les roques de sal.",
+          "La superposició: com que les capes de sal són a sota de les altres, ja sabem en quin ambient es van formar.",
+          "No hi ha cap manera de saber en quin ambient es va formar una roca sense haver-hi estat."
         ],
         correct: 0,
         feedback: {
-          correct: "Perfecte. El raonament és clau: la dessalació per osmosi inversa és energèticament intensiva. Si funciona amb carbó, el procés que resol la manca d'aigua (causada en part pel canvi climàtic) agreuja la causa del problema (emissions de CO₂). Amb solar fotovoltaica, l'empremta de carboni és 40 vegades menor. Això il·lustra per quina raó la transició energètica no és tan sols un tema de 'energia': afecta la viabilitat de totes les solucions d'adaptació climàtica.",
-          wrong: "Recorda la cadena: font d'energia → emissions per kWh → emissions totals per m³ d'aigua dessalada. Carbó ≈820 gCO₂/kWh × 3,5 kWh/m³ = ≈2.870 gCO₂ per m³. Solar fotovoltaica ≈35 gCO₂/kWh × 3,5 kWh/m³ = ≈120 gCO₂ per m³. La diferència és enorme. A més, les plantes de dessalació modernes usen bateries o emmagatzematge per funcionar les 24h — la intermitència solar no és un obstacle insuperable."
+          correct: "Correcte: «el present és la clau del passat». Com que avui podem observar què deixa una llacuna salada quan s'evapora, podem reconèixer el mateix procés en unes capes de fa 37 milions d'anys. I la repetició de capes indica que el cicle es va repetir moltes vegades.",
+          wrong: "Torna als principis de S3 i mira què fa cadascun. L'horitzontalitat diu com es dipositen les capes i la superposició diu quina és més antiga: cap de les dues no diu res de l'AMBIENT. El que permet parlar d'ambient és comparar la roca amb un procés que puguem observar funcionant avui."
         }
       },
       {
         id: 't3',
-        oa: 'OA4',
-        text: "L'empresa d'embotellament afirma que el seu producte és 'la solució sostenible per a un futur amb escassetat d'aigua'. Aplica els 4 criteris CE2 (autoria, evidència, transparència, consens) per avaluar aquesta afirmació i determina si és greenwashing o un compromís ambiental creïble.",
+        oa: 'OA3',
+        text: "Dels esfondraments dels carrers de Cardona se'n diu que són un risc INDUÏT: ni del tot natural, ni del tot humà. Quina explicació ho justifica millor?",
         options: [
-          "Autoria: l'empresa embotelladora és directament interessada en vendre el producte → credibilitat baixa. Evidència: l'afirmació no aporta dades sobre la petjada de carboni de la producció, transport i embalatge de l'ampolla → falta d'evidència. Transparència: no declara l'impacte total (plàstic, transport, extracció de l'aqüífer) → ocultació. Consens: envassar aigua en plàstic d'un aqüífer en sequera NO és la solució recomanada pels experts en gestió hídrica → contradiu el consens. Veredicte: greenwashing clar (afirmació vaga + irrelevàncies)",
-          "L'empresa té raó: l'aigua embotellada és més segura que la de l'aixeta, i en una situació d'emergència hídrica, qualsevol solució és bona. La credibilitat és alta perquè l'empresa té interessos en el sector de l'aigua",
-          "No es pot avaluar l'afirmació sense veure el balanç complet de l'empresa. Totes les afirmacions empresarials son sospitoses per defecte",
-          "L'empresa és fiable perquè les aigües minerals estan regulades per llei i les fonts naturals no s'esgoten mai"
+          "És un risc del tot natural: la sal s'hauria dissolt igual encara que no s'hi hagués minat mai.",
+          "És un risc del tot humà: sense mines no hi hauria cap perill al poble, passés el que passés amb el clima i amb la pluja.",
+          "No és cap risc real, perquè afecta els carrers i no directament les persones que hi viuen.",
+          "El procés natural (la pluja dissol la sal) actua sobre unes galeries buides que hi ha perquè les hem excavat nosaltres."
         ],
-        correct: 0,
+        correct: 3,
         feedback: {
-          correct: "Excel·lent aplicació dels 4 criteris. L'anàlisi és completa: l'empresa té un interès directe (autoria ✗), no aporta dades de petjada de carboni de les ampolles de plàstic (evidència ✗), no declara quant extreu dels aqüífers (transparència ✗) i la proposta contradiu les recomanacions dels experts en gestió hídrica en context de sequera (consens ✗). A més, és un exemple de 'compensació parcial': proposar l'ampolla de plàstic com a 'solució' a la sequera en un context on els experts recomanen reduir el consum hídric industrial i millorar la xarxa de distribució.",
-          wrong: "Aplica els 4 criteris sistemàticament: 1) Autoria: és la pròpia empresa → interès directe. 2) Evidència: quin impacte té la producció, transport i embalatge de l'ampolla? 3) Transparència: declara quanta aigua extreu de l'aqüífer en context de sequera? 4) Consens: els experts en gestió hídrica recomanen les ampolles de plàstic com a solució a la sequera? (no). Resposta: greenwashing per afirmació vaga i contradicció del consens expert."
+          correct: "Exacte, i és el patró de S4: hi ha un procés natural que existiria igualment (l'aigua dissol la sal), però l'obra humana el converteix en un perill per a les cases perquè ha deixat buits just sota el poble. Ni una cosa ni l'altra sola no explicaria els esfondraments.",
+          wrong: "Fixa't que calen els DOS factors alhora, i que per tant cap dels dos extrems no serveix: dir que és «del tot natural» ignora que els buits els hem fet nosaltres, i dir que és «del tot humà» ignora que sense una roca que es dissol amb l'aigua les galeries no cedirien. Això és exactament un risc induït."
         }
       },
       {
         id: 't4',
-        oa: 'OA3',
-        text: "El debat sobre les granges porcines a Catalunya durant la sequera posa de manifest la diferència entre la petjada hídrica individual i la sistèmica. Una granja porcina de 5.000 porcs pot consumir ≈1.000 m³ d'aigua al dia (incloent el bestiar i la neteja). Si el govern aplica les mateixes restriccions a les granges que als municipis (reducció del 25%), quina reducció d'emissions en kg CO₂eq aconseguiria si l'estalvi d'aigüa es traduís en menys producció de pernil? Argumenta si creus que les restriccions han de ser iguals per als particulars i per a la indústria.",
+        oa: 'OA2',
+        text: "Un company diu: «que hi hagi sal marina de fa 37 milions d'anys ens diu que allò era mar, però no ens diu res sobre QUAN es va deformar tot això». Què li respondries?",
         options: [
-          "Reducció del 25% de la producció d'una granja de 5.000 porcs = 1.250 porcs menys/cicle (6 mesos). 1 porc ≈ 250 kg de carn → 1.250 porcs = 312.500 kg menys de carn de porc. Petjada de porc ≈ 6 kg CO₂eq/kg → estalvi ≈1.875.000 kg CO₂eq (1.875 tones CO₂eq) per cicle. Argument: les restriccions haurien de ser proporcionals a l'impacte hídric, no iguals en %. La indústria usa molt més volum total d'aigua que els particulars, però les restriccions iguals en % redueixen menys en termes absoluts la seva responsabilitat proporcional",
-          "Les restriccions han de ser iguals per a particulars i indústria perquè la llei ha de tractar tothom per igual. La indústria ja paga per l'aigua que usa, de manera que no cal cap restricció addicional",
-          "Les restriccions a les granges porcines no tindrien cap efecte en les emissions de CO₂ perquè la petjada de carboni de la carn és independent de la quantitat d'agua usada per produir-la",
-          "La reducció de la producció de pernil augmentaria les emissions de CO₂ perquè si els consumidors no troben pernil compraran vedella, que emet 4 vegades més CO₂"
+          "Té raó: l'edat d'una capa i el moment en què es deforma no es poden relacionar mai.",
+          "Que li falta una deducció: si la capa de 37 M.a. apareix plegada, el plegament és posterior a la capa.",
+          "Que s'equivoca del revés: la sal sempre es diposita a sobre de roques que ja estaven plegades des d'abans.",
+          "Que per saber-ho caldria datar el plegament amb radioactivitat, perquè no hi ha cap altra via."
         ],
-        correct: 0,
+        correct: 1,
         feedback: {
-          correct: "Excellent raonament. El càlcul demostra que l'impacte sistèmic (restriccions a les granges) pot superar en diversos ordres de magnitud l'impacte individual (restriccions als municipis). Però l'argument sobre les restriccions és el punt clau: aplicar un 25% igual de restricció a una granja de 1.000 m³/dia i a un habitatge de 0,2 m³/dia és matemàticament igual en % però molt diferent en impacte absolut. La qüestió de la proporcionalitat i la justícia ambiental és un debat real en política pública.",
-          wrong: "Aplica la cadena lògica: restricció hídrica → menys producció de porc → menys kg de carn → menys emissions de CO₂eq. El càlcul: 25% × 5.000 porcs = 1.250 porcs menys. 1.250 porcs × 250 kg/porc × 6 kg CO₂eq/kg ≈ 1.875 tones CO₂eq per cicle de 6 mesos. Sobre l'argument: la qüestió no és si la llei tracta tothom igual, sinó si el % igual d'estalvi és just quan el volum absolut és tan diferent."
+          correct: "Exacte. És el mateix raonament que amb una esquerda que talla una capa (principi d'intersecció): allò que afecta una capa ha de ser POSTERIOR a aquesta capa. Per tant, el plegament no pot ser més antic de 37 milions d'anys, encara que no en sapiguem la data exacta.",
+          wrong: "Pensa-hi com amb una esquerda que talla capes: el que deforma una capa ha d'haver passat DESPRÉS que la capa existís. Això ja et dona una fita d'edat relativa per al plegament, sense necessitat de cap datació absoluta."
         }
       }
     ]

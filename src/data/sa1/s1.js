@@ -157,7 +157,8 @@ export const sa1s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa1-s1-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa1-s1-fitxa-A.html", B: "/fitxes/sa1-s1-fitxa-B.html" },
+  retallablesUrl: "/fitxes/sa1-s1-retallables.html",
   teoriaPdfUrl: null,
   elaborateNote: "Pregunta central de la fitxa: 'Tria una creença molt estesa (horòscop, homeopatia, un número de la sort...) i argumenta, amb el vocabulari de les garanties, per què no la considerem científica.'",
 

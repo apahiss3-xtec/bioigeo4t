@@ -133,7 +133,7 @@ export const sa4s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa4-s3-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa4-s3-fitxa-A.html", B: "/fitxes/sa4-s3-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna als tres casos del hook (flors rosa, fills de grup AB, alçada contínua) i etiqueta cadascun amb el seu tipus d'herència, explicant en una frase quina evidència t'ho ha fet decidir.",
 
@@ -202,12 +202,12 @@ export const sa4s3 = {
     {
       id: "q1",
       type: "multiple",
-      text: "Creues una flor vermella (VV) amb una de blanca (BB) i TOTS els fills surten rosa. Quin tipus d'herència és?",
+      text: "Creues una flor vermella (VV) amb una de blanca (BB) i TOTS els fills surten rosa. Si després creues dues d'aquestes flors rosa entre elles, en surten 1 vermella : 2 roses : 1 blanca. Quin tipus d'herència és?",
       options: [
-        "Dominància incompleta (l'heterozigot és una barreja intermèdia)",
-        "Dominància simple (el vermell domina)",
-        "Codominància (es veuen els dos colors per separat)",
-        "Al·lelisme múltiple (hi ha tres al·lels)"
+        "Dominància incompleta",
+        "Dominància simple",
+        "Codominància",
+        "Al·lelisme múltiple"
       ],
       correct: 0
     },

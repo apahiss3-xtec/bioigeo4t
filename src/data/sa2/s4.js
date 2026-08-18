@@ -8,7 +8,7 @@ export const sa2s4 = {
   engageImage: "/images/sa2-s1-portada.jpg",
 
   // ── ENGANXA (hook de síntesi) ─────────────────────────────
-  engageChallenge: "Tres informes arriben avui al mateix laboratori: (1) una ferida a la pell que es tanca sola en una setmana; (2) una biòpsia amb un índex mitòtic del 35%; (3) una parella que no aconsegueix tenir fills perquè, segons l'anàlisi, els espermatozoides de l'home tenen 46 cromosomes en comptes de 23. Cap dels tres parla del mateix procés. Quin explica cada cas: mitosi normal, mitosi descontrolada (càncer) o un error en la meiosi?",
+  engageChallenge: "Tres informes arriben avui al mateix laboratori: (1) una ferida a la pell que es tanca sola en una setmana; (2) una biòpsia de teixit muscular amb un índex mitòtic del 35%; (3) una parella que no aconsegueix tenir fills perquè, segons l'anàlisi, els espermatozoides de l'home tenen 46 cromosomes en comptes de 23. Cap dels tres parla del mateix procés. Quin explica cada cas: mitosi normal, mitosi descontrolada (càncer) o un error en la meiosi?",
   engageQuestion: "Durant tres sessions heu treballat tres peces d'un mateix trencaclosques: com es divideix una cèl·lula (S1), per què n'hi ha dues maneres de fer-ho (S2) i com es detecta quan una divisió es descontrola (S3). Avui les heu de fer servir TOTES tres alhora, com un laboratori de diagnòstic que ha de triar quina eina fer servir a cada cas.",
   engageContext: "Sou l'equip de diagnòstic d'un centre mèdic. Us arriben tres informes de pacients diferents i, en parella, heu de decidir quin dels tres processos (mitosi normal, mitosi sense control, o un error de meiosi) explica cada cas, justificant-ho amb el vocabulari i els números de les tres darreres sessions. És la sessió de repàs i preparació per a la prova de La cèl·lula.",
 
@@ -85,7 +85,7 @@ export const sa2s4 = {
 
   // ── EXPLORA (ABP · informe de diagnòstic amb 3 casos) ─────
   exploreActivity: {
-    what: "En parella, rebeu els tres informes de pacients (ferida que cicatritza, biòpsia amb índex mitòtic alt, i espermatozoide amb 46 cromosomes). Per a cada un, decidiu quin dels tres processos l'explica (mitosi normal / mitosi descontrolada / error de meiosi) i redacteu la justificació amb el vocabulari i els números apresos a S1-S3. Al final, prepareu-vos per defensar el vostre informe complet davant d'una altra parella.",
+    what: "En parella, rebeu els tres informes de pacients (ferida que cicatritza, biòpsia de teixit muscular amb índex mitòtic alt, i espermatozoide amb 46 cromosomes). Per a cada un, decidiu quin dels tres processos l'explica (mitosi normal / mitosi descontrolada / error de meiosi) i redacteu la justificació amb el vocabulari i els números apresos a S1-S3. Al final, prepareu-vos per defensar el vostre informe complet davant d'una altra parella.",
     who: { mode: "grup", label: "Parelles de diagnòstic" },
     time: 35,
     note: "No n'hi ha prou dient la paraula correcta: cal explicar PER QUÈ (el mecanisme) i per què no és cap dels altres dos. És la mateixa lògica de detectiu de S3, ara amb tres sospitosos en comptes d'un."
@@ -149,7 +149,7 @@ export const sa2s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa2-s4-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa2-s4-fitxa-A.html", B: "/fitxes/sa2-s4-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la SA2: torna a les tres frases inicials (apartat 0) i reescriu-les si cal amb el que has après avui. Aquesta sessió prepara directament la prova de La cèl·lula.",
 
@@ -227,8 +227,8 @@ export const sa2s4 = {
     {
       id: "q2",
       type: "open",
-      text: "Una biòpsia de pell dona un índex mitòtic del 4% i una altra de còlon dona un 28%. Quina et fa sospitar més d'un procés cancerós? Raona-ho amb el llindar que vas aprendre a S3.",
-      hint: "El llindar de sospita és al voltant del 10%. Compara els dos números amb aquest valor."
+      text: "Una biòpsia de teixit nerviós dona un índex mitòtic del 12% i una de mucosa intestinal dona un 28%. Quina et fa sospitar més d'un procés cancerós? Raona-ho amb el que vas aprendre a S3.",
+      hint: "El ~10% és una referència general, però el llindar depèn del teixit: pregunta't primer quant s'hauria de dividir CADA un dels dos. Quin dels dos gairebé no s'hauria de dividir mai?"
     },
     {
       id: "q3",

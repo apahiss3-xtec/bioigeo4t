@@ -135,7 +135,7 @@ export const sa7s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa7-s2-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa7-s2-fitxa-A.html", B: "/fitxes/sa7-s2-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Actua com un laboratori de datació: rebràs tres mostres —quatre, a la versió A— amb el percentatge d'element de partida que hi queda i hauràs de decidir, per a cadascuna, quin rellotge hi serveix, quina edat en resulta i què no pots afirmar amb aquesta dada. Una de les mostres no es pot datar directament de cap manera: dir-ho i explicar què dataries en lloc seu és la resposta correcta, no un fracàs.",
 

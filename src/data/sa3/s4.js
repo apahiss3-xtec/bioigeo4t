@@ -132,7 +132,7 @@ export const sa3s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa3-s4-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa3-s4-fitxa-A.html", B: "/fitxes/sa3-s4-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa i de la SA: amb el marc PODEM/HAURIEM, la distinció somàtica/germinal i la graella de fonts, planifica el teu assaig argumentatiu (postura, argument a favor, contraargument rebatut i conclusió). L'assaig és el producte que avalua tota la SA3.",
 
@@ -204,9 +204,9 @@ export const sa3s4 = {
       text: "Quina és la diferència entre l'edició somàtica i la germinal?",
       options: [
         "La somàtica edita cèl·lules del cos i no s'hereta; la germinal edita embrions o gàmetes i passa als descendents",
-        "La somàtica passa als fills i la germinal no",
-        "Són el mateix procés amb dos noms diferents",
-        "La somàtica només es fa en plantes i la germinal en animals"
+        "La somàtica edita embrions o gàmetes i passa als descendents; la germinal edita cèl·lules del cos i no s'hereta",
+        "Totes dues s'hereten igual; l'única diferència és que la somàtica es fa de petit i la germinal, d'adult",
+        "La somàtica edita un sol gen i la germinal edita el genoma sencer, però cap de les dues no s'hereta"
       ],
       correct: 0
     },

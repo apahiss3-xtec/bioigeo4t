@@ -5,7 +5,7 @@ export const sa6 = {
   biome: "sa6",
   color: { primary: '#3A5266', accent: '#C0872E' },
   sessions: 5,
-  portadaImage: "/images/sa6-portada.jpg",
+  portadaImage: "/images/sa6-s1-portada.jpg",
   description: "Actuaràs com a geòleg o geòloga d'un planeta molt semblant a la Terra i n'hauràs de reconstruir la història. A partir de proves —l'encaix dels continents, els fòssils guia, les roques, les serralades i els terratrèmols— entendràs que la superfície del planeta es mou, que les roques guarden memòria del passat i que llegir aquesta memòria permet deduir què va passar fa milions d'anys. En paral·lel, analitzaràs els riscos naturals reals del teu propi territori, les Terres de l'Ebre, i proposaràs mesures per reduir-los.",
   product: "Vídeo divulgatiu «Gondwana Tales»: reconstrucció de la història geològica del planeta analitzat, justificada amb dades i amb el lèxic geològic (dorsal, límit transformant, fossa de subducció, cicle de Wilson…). Coavaluat per rúbrica. A més, un informe individual de riscos naturals d'un indret real.",
   enigmas: [

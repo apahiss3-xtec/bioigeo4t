@@ -40,13 +40,13 @@ export const sa2s3 = {
     },
     "2": {
       scaffold:
-        "Recorda la clau de la Fig.1: INTERFASE = nucli difús, sense fils → NO compta. EN DIVISIÓ = cromosomes condensats visibles → SÍ compta. El llindar: per sobre d'un índex del ~10% hi ha risc de procés cancerós. Compara els teus dos números amb aquest 10%.",
+        "Recorda la clau de la Fig.1: INTERFASE = nucli difús, sense fils → NO compta. EN DIVISIÓ = cromosomes condensats visibles → SÍ compta. El llindar de referència: per sobre d'un índex del ~10% hi ha risc de procés cancerós (referència general: el valor normal depèn del teixit, vegeu el punt «el llindar depèn del teixit»). Compara els teus dos números amb aquest 10%.",
       challenge:
-        "L'índex mitòtic d'un teixit sa de pell o d'intestí també és alt (es regeneren molt). Aleshores, per què un índex alt en aquest teixit del ratolí SÍ que és sospitós? Pista: pensa de quin teixit ve la mostra i si allà s'hi hauria de dividir tant."
+        "Ara que saps que el llindar depèn del teixit: com decidiries quin és el valor «normal» d'un teixit que no has vist mai? Quina dada demanaries abans de dir que una biòpsia és sospitosa, i a qui l'hauries de demanar?"
     },
     "3": {
       scaffold:
-        "Per decidir si el fàrmac funciona, respon en ordre: 1) L'índex INICIAL estava per sobre del 10%? (teixit amb càncer, sí/no). 2) L'índex FINAL és més ALT, IGUAL o més BAIX que l'inicial? 3) Conclusió: si baixa clarament → el fàrmac frena la divisió → FUNCIONA. Si puja o es manté → no funciona (o fins i tot empitjora).",
+        "Per decidir si el fàrmac funciona, respon en ordre: 1) L'índex INICIAL estava molt per sobre del que toca en aquell teixit? (sospita, sí/no). 2) L'índex FINAL és més ALT, IGUAL o més BAIX que l'inicial? 3) Conclusió: si baixa clarament → el fàrmac frena la divisió → FUNCIONA. Si puja o es manté → no funciona (o fins i tot empitjora).",
       challenge:
         "El teu company d'un altre equip ha provat el mateix fàrmac a una DOSI més baixa i li ha baixat menys l'índex. Què li diries sobre la relació dosi–efecte? I si a un tercer equip l'índex ha baixat però el ratolí ha mort: com interpretaries això (pensa en la toxicitat i en què més fa el fàrmac a banda de frenar el tumor)?"
     },
@@ -104,6 +104,13 @@ export const sa2s3 = {
       type: "concept"
     },
     {
+      id: "t1b",
+      apartat: "2",
+      heading: "Compte: el llindar depèn del ==teixit==",
+      text: "El ~10% és una ==referència general==, no una llei per a tots els teixits. N'hi ha que es ==renoven cada dia== —la ==pell==, l'==intestí==— i on un índex alt és el ==normal==; i n'hi ha que gairebé ==no es divideixen mai== —el teixit ==nerviós==, el ==muscular==— i on un índex baix ja fa sospitar. El que compta de debò són dues coses: que l'índex estigui molt per sobre del que toca ==EN AQUELL teixit==, o que la divisió ==no s'aturi== quan el teixit ja està refet.",
+      type: "concept"
+    },
+    {
       id: "t2",
       apartat: "2",
       heading: "Com distingir una cèl·lula ==en divisió==",
@@ -141,7 +148,7 @@ export const sa2s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa2-s3-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa2-s3-fitxa-A.html", B: "/fitxes/sa2-s3-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament: torna a la pregunta del principi (què compta el laboratori) i respon-la amb el que has calculat, i digues en una frase per què el càncer és una divisió sense control.",
 

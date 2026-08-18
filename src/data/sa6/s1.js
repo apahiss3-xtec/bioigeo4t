@@ -128,7 +128,7 @@ export const sa6s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa6-s1-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa6-s1-fitxa-A.html", B: "/fitxes/sa6-s1-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Torna al mapa del teu planeta amb tot el que has après: marca-hi els tipus de límits que hi reconeixes i dibuixa fletxes amb la direcció en què es mouran els continents si els moviments actuals continuen. Justifica cada fletxa amb el límit que la provoca. Aquesta predicció és el primer pas del vídeo divulgatiu que farem al final de la situació.",
 

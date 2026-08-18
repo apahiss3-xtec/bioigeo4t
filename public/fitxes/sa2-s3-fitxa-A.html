@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA2 · S3 · El laboratori d'oncologia · A</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#7B3F9E; --teal-ink:#5A2E77; --teal-light:#cbaede; --teal-tint:#f3e8fa;
+  --ink:#1d1622; --ink-2:#3a3340; --muted:#78707e; --surface:#fefdff;
+  --rule:#e7dcef; --rule-dark:#c9b3da;
+  --orange:#c96f3e; --orange-tint:#f6ece8;
+  --aqua:#2f9aa0; --aqua-tint:#e6f5f5;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#8a5a9e; --purple-tint:#f1eaf4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c3b0d4;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(35,20,45,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,79,174,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(215,195,225,.75);flex:1}
+.tb-tip strong{color:#e0c8ec}
+.tb-sep{width:1px;height:20px;background:rgba(139,79,174,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(139,79,174,.2);border:1px solid rgba(139,79,174,.4);color:#e6cdf2;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(139,79,174,.2);border:1px solid rgba(139,79,174,.4);color:#e6cdf2;font-size:12px}
+.tb-undo{background:rgba(201,111,62,.2);border:1px solid rgba(201,111,62,.4);color:#f0bfa5;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #a88bc0;pointer-events:none;z-index:10}
+.page-break-label{position:absolute;right:10px;top:-11px;background:#a88bc0;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(139,79,174,.08);box-shadow:0 0 0 2px rgba(139,79,174,.3)}
+[contenteditable]:focus{background:rgba(139,79,174,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+.wline{display:block;width:100%;min-height:52px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(139,79,174,.04)}
+.wline.tall{min-height:82px}
+.wline.xtall{min-height:120px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(139,79,174,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#5A2E77 0%,#8B4FAE 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#f4ecfa,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 13px}
+.previ-box p{font-size:12.5px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
+.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
+.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:44px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
+.fill-cell:focus{background:rgba(139,79,174,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.fill-cell.calc{min-height:30px;text-align:center;font-weight:700}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.draw-box{border:1.5px dashed var(--teal-light);border-radius:8px;min-height:150px;background:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(139,79,174,.03) 8px,rgba(139,79,174,.03) 16px);position:relative}
+.draw-tag{position:absolute;top:6px;left:8px;font-size:9.5px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink)}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;margin-bottom:4px;padding:2px 0}
+.meta-oa-check{width:16px;height:16px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;margin-top:1px}
+.meta-oa-text{flex:1;line-height:1.35}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-icon{font-size:18px;display:block;margin-bottom:3px}
+.meta-label{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.stars{display:flex;gap:4px;margin-top:4px}.star{font-size:18px;color:#a88bc0}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(139,79,174,.05) 6px,rgba(139,79,174,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+.formula-note{font-size:11px;color:var(--teal-ink);background:var(--teal-tint);border-radius:6px;padding:5px 9px;margin-bottom:6px}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.page-break-line,.del-btn{display:none!important}
+  .page-footer-bar{display:flex!important}
+  .footer{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .wline{background:transparent;padding:0}
+  .fill-cell{background:transparent;outline:none}
+  .spacer-block{background:transparent!important;border:none!important}
+  .spacer-label{display:none!important}
+}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <span class="tb-tip">&#9998; Clica per editar &middot; <strong>Ctrl+B</strong> negreta &middot; <strong>&times;</strong> rosa elimina &middot; <strong>Ctrl+Z</strong> desf&eacute;s</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">&#8617; Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">&#65291; Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">&#128424;&#65039; Imprimir / PDF</button>
+</div>
+
+<div class="page-wrap" id="doc">
+
+  <div class="header-band deletable">
+    <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">&#128300;</div></div>
+    <div class="header-main">
+      <div class="header-sa" contenteditable="true">SA2 &middot; La c&egrave;l&middot;lula &middot; Sessi&oacute; 3 de 4</div>
+      <div class="header-title" contenteditable="true">El laboratori d'oncologia</div>
+      <div class="header-subtitle" contenteditable="true">&Iacute;ndex mit&ograve;tic: comptar per diagnosticar</div>
+    </div>
+    <div class="header-right">
+      <div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+      <div class="header-meta" contenteditable="true">Biologia i Geologia &middot; 4t ESO<br>IE Temple</div>
+    </div>
+  </div>
+
+  <div class="nivell-strip deletable">
+    <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+    <span class="nivell-label" contenteditable="true">Laboratori de recompte i decisi&oacute; amb dades</span>
+    <span class="temps-badge" contenteditable="true">&#9201;&#65039; 2h total</span>
+    <div class="nom-field">
+      Nom:&nbsp;<span class="input-span" contenteditable="true"></span>
+      &nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>
+      &nbsp;<span class="nivell-badge-small" title="Versi&oacute; A">A</span>
+    </div>
+  </div>
+
+  <div class="oa-box deletable">
+    <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+    <div class="oa-title">&#127919; Objectius d'aprenentatge d'avui</div>
+    <ul class="oa-list">
+      <li contenteditable="true">Calculo l'<strong>&iacute;ndex mit&ograve;tic</strong> d'una bi&ograve;psia i argumento, amb el n&uacute;mero, si el teixit t&eacute; un proc&eacute;s cancer&oacute;s.</li>
+      <li contenteditable="true">Comparo l'&iacute;ndex abans i despr&eacute;s i <strong>dedueixo amb dades</strong> si el f&agrave;rmac &eacute;s efica&ccedil;, t&ograve;xic o in&uacute;til.</li>
+      <li contenteditable="true">Explico per qu&egrave; el <strong>c&agrave;ncer</strong> &eacute;s una p&egrave;rdua de control del cicle i com un f&agrave;rmac el pot frenar.</li>
+      <li contenteditable="true">Raono per qu&egrave; un assaig es fa <strong>a cegues</strong> i amb molts casos, i quin error de recompte &eacute;s m&eacute;s perill&oacute;s.</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--muted)">0</div>
+        <div><div class="stitle">Idees pr&egrave;vies <span class="temps">&#9201;&#65039; 10 min</span></div>
+        <div class="sdesc" contenteditable="true">Posem en com&uacute; els deures. No es corregeix</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="previ-box">
+        <p>&#9999;&#65039; <span contenteditable="true"><strong>1.</strong> Dels deures: en una frase pr&ograve;pia, per qu&egrave; la meiosi &eacute;s imprescindible per a la reproducci&oacute;?</span></p>
+        <div class="wline tall" contenteditable="true"></div>
+        <p style="margin-top:10px">&#9999;&#65039; <span contenteditable="true"><strong>2.</strong> Un metge que mira teixits al microscopi (un <strong>pat&ograve;leg</strong>) vol saber si hi ha c&agrave;ncer. Qu&egrave; creus que busca? Qu&egrave; veuria de diferent en un teixit malalt?</span></p>
+        <div class="wline tall" contenteditable="true"></div>
+      </div>
+    </div>
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--aqua)">1</div>
+        <div><div class="stitle" contenteditable="true">Compta i calcula els dos &iacute;ndexs <span class="temps">&#9201;&#65039; 40 min</span></div>
+        <div class="sdesc" contenteditable="true">Sou el laboratori: mesureu abans i despr&eacute;s</div></div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:12px;margin-bottom:8px" contenteditable="true">Cada equip rep una <strong>fitxa de pacient</strong> diferent (un ratol&iacute; amb el seu f&agrave;rmac, dosi i temps) amb dues <strong>bi&ograve;psies</strong> (trossets de teixit) reals: una <strong>abans</strong> del tractament i una <strong>despr&eacute;s</strong>. Compteu-hi i calculeu l'&iacute;ndex mit&ograve;tic de cadascuna. La Fig.2 mostra un <strong>exemple</strong> del tipus d'imatge.</p>
+      <figure class="deletable" style="margin:6px 0 10px;position:relative"><div class="del-btn" onclick="deleteEl(this)">&times;</div>
+        <img class="fig" src="../images/sa2-s3-com-distingir.svg" alt="Com distingir una c&egrave;l&middot;lula en divisi&oacute;" style="max-height:250px" onerror="this.style.display='none'">
+        <figcaption style="font-size:9.5px;color:var(--muted);text-align:center;margin-top:3px">Fig.1 &middot; Interfase (no compta) vs en divisi&oacute; (s&iacute; compta) + la f&oacute;rmula de l'&iacute;ndex mit&ograve;tic.</figcaption>
+      </figure>
+      <figure class="deletable" style="margin:6px 0 10px;position:relative"><div class="del-btn" onclick="deleteEl(this)">&times;</div>
+        <img class="fig" src="../images/sa2-s3-biopsia-exemple.png" alt="Exemple de fitxa de pacient: bi&ograve;psia inicial i final" style="max-height:270px" onerror="this.style.display='none'">
+        <figcaption style="font-size:9.5px;color:var(--muted);text-align:center;margin-top:3px">Fig.2 &middot; Exemple de fitxa de pacient. Compta a la <strong>teva</strong> (cada equip en t&eacute; una de diferent).</figcaption>
+      </figure>
+      <table class="data-table">
+        <thead><tr><th style="width:40%">Recompte</th><th>Bi&ograve;psia INICIAL</th><th>Bi&ograve;psia FINAL</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell">Total de c&egrave;l&middot;lules del camp</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">C&egrave;l&middot;lules en divisi&oacute; (fils foscos)</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">&Iacute;ndex mit&ograve;tic = (divisi&oacute; &divide; total) &times; 100</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+        </tbody>
+      </table>
+      <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">A m&eacute;s de l'&iacute;ndex total, classifica les c&egrave;l&middot;lules en divisi&oacute; per <strong>fase</strong> (profase, metafase, anafase, telofase), com a la S1. Si el f&agrave;rmac atura la divisi&oacute;, en quina fase creus que s'acumularien les c&egrave;l&middot;lules? Justifica-ho amb el que has comptat.</div></div></div>
+      <p style="font-size:12px;margin-top:4px" contenteditable="true">&#128483;&#65039; <strong>Demostraci&oacute; a l'aula:</strong> prepara com defensar&agrave;s el vostre veredicte davant d'una altra parella, ensenyant els n&uacute;meros que l'aguanten.</p>
+    </div>
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--teal)">2</div>
+        <div><div class="stitle" contenteditable="true">Interpreta els n&uacute;meros <span class="temps">&#9201;&#65039; 20 min</span></div>
+        <div class="sdesc" contenteditable="true">Qu&egrave; vol dir cada &iacute;ndex?</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="formula-note"><strong>Llindar de sospita:</strong> un &iacute;ndex mit&ograve;tic per sobre del ~10% fa pensar en un proc&eacute;s cancer&oacute;s.</div>
+      <p style="font-size:12px;margin-bottom:4px" contenteditable="true">&#9999;&#65039; Quin dels dos &iacute;ndexs supera el 10%? Qu&egrave; indica cadascun sobre l'estat del teixit?</p>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">Un teixit sa de pell o d'intest&iacute; tamb&eacute; t&eacute; l'&iacute;ndex alt (es regeneren molt). Aleshores, per qu&egrave; un &iacute;ndex alt en aquest teixit del ratol&iacute; S&Iacute; que &eacute;s sospit&oacute;s? Pista: pensa de quin teixit ve la mostra i si all&agrave; s'hi hauria de dividir tant.</div></div></div>
+    </div>
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--purple)">3</div>
+        <div><div class="stitle" contenteditable="true">Veredicte: funciona el f&agrave;rmac? <span class="temps">&#9201;&#65039; 25 min</span></div>
+        <div class="sdesc" contenteditable="true">La conclusi&oacute; de l'equip, amb dades</div></div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:12px;margin-bottom:4px" contenteditable="true">&#9999;&#65039; Escriu el veredicte de l'equip. <strong>Acompanya'l SEMPRE dels dos n&uacute;meros</strong> (&iacute;ndex inicial i final).</p>
+      <div class="wline xtall" contenteditable="true"></div>
+      <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">Un altre equip ha provat el mateix f&agrave;rmac a una DOSI m&eacute;s baixa i l'&iacute;ndex li ha baixat menys. Qu&egrave; li diries sobre la relaci&oacute; dosi&ndash;efecte? I si a un tercer equip l'&iacute;ndex ha baixat per&ograve; el ratol&iacute; ha mort: com ho interpretaries (pensa en la <strong>toxicitat</strong>)?</div></div></div>
+    </div>
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--orange)">4</div>
+        <div><div class="stitle" contenteditable="true">Per qu&egrave; el c&agrave;ncer no para + torna al principi <span class="temps">&#9201;&#65039; 15 min</span></div>
+        <div class="sdesc" contenteditable="true">Aplica-ho i respon la pregunta d'entrada</div></div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:12px;margin-bottom:4px" contenteditable="true">&#9999;&#65039; Per qu&egrave; el c&agrave;ncer &eacute;s una <strong>divisi&oacute; sense control</strong>? I per qu&egrave; la quimioter&agrave;pia t&eacute; efectes secundaris? (Respon les dues coses.)</p>
+      <div class="wline xtall" contenteditable="true"></div>
+      <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">Els f&agrave;rmacs contra el c&agrave;ncer ataquen les c&egrave;l&middot;lules que es divideixen molt de pressa. Per qu&egrave; provoquen efectes secundaris com la caiguda del cabell, les n&agrave;usees o l'an&egrave;mia? Connecta-ho amb quins teixits SANS del cos tamb&eacute; fan molta mitosi (recorda els deures de la S2).</div></div></div>
+      <div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:22px">&#129517;</div><div><div class="epist-title">&Egrave;tica i ci&egrave;ncia</div><div class="epist-text" contenteditable="true">Un sol ratol&iacute; no demostra res: els assajos es fan amb <strong>molts casos</strong> i sovint <strong>a cegues</strong> (qui compta no sap quin tractament ha rebut la mostra) per no enganyar-se. Decidir si un f&agrave;rmac serveix afecta <strong>vides reals</strong>.</div></div></div>
+      <p style="font-size:12px;margin:10px 0 4px" contenteditable="true">&#128300; <strong>Torna al principi:</strong> qu&egrave; compta exactament el laboratori per saber si un f&agrave;rmac funciona? Respon en 3-4 l&iacute;nies amb el que has calculat avui.</p>
+      <div class="wline xtall" contenteditable="true"></div>
+    </div>
+    <div class="section deletable" style="margin-top:14px">
+      <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+      <p style="font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px">&#129504; Metacognici&oacute; &mdash; 3 min</p>
+      <div class="meta-oa-box deletable" style="margin-bottom:8px"><div class="del-btn" onclick="deleteEl(this)">&times;</div>
+        <div class="meta-oa-title">&#127919; Torna als objectius &mdash; marca el que has apr&egrave;s avui:</div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">S&eacute; argumentar amb el <strong>n&uacute;mero</strong> si un teixit t&eacute; un proc&eacute;s cancer&oacute;s.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">S&eacute; deduir amb dades si un f&agrave;rmac &eacute;s efica&ccedil;, t&ograve;xic o in&uacute;til.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Entenc que el c&agrave;ncer &eacute;s una p&egrave;rdua de <strong>control</strong> del cicle.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">S&eacute; per qu&egrave; un assaig es fa a cegues i amb molts casos.</div></div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><span class="meta-icon">&#10067;</span><div class="meta-label">Encara em pregunto&hellip;</div><div class="wline" contenteditable="true"></div></div>
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><span class="meta-icon">&#11088;</span><div class="meta-label">Puntuaci&oacute; de la sessi&oacute;</div><div class="stars"><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span></div><div style="font-size:9.5px;color:var(--muted);margin-top:4px">Encercla les estrelles</div></div>
+      </div>
+    </div>
+    <div class="tasca-box deletable">
+      <div class="del-btn" onclick="deleteEl(this)">&times;</div>
+      <div class="tasca-title">&#128218; Feina per a casa &mdash; per a la Sessi&oacute; 4</div>
+      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div class="tasca-num">1</div>
+        <div contenteditable="true"><strong>&#128203; Mini-informe</strong> de 4-5 l&iacute;nies, com la conclusi&oacute; d'un article cient&iacute;fic: qu&egrave; heu mesurat, quins n&uacute;meros abans i despr&eacute;s, i el vostre veredicte sobre el f&agrave;rmac. Ha de poder-se defensar nom&eacute;s amb les dades.</div></div>
+    </div>
+    <div class="footer">
+      <div class="footer-l">SA2 &middot; La c&egrave;l&middot;lula &middot; Sessi&oacute; 3 &middot; Versi&oacute; A &middot; IE Temple &middot; Biologia i Geologia 4t ESO</div>
+      <div class="footer-r">CC BY-NC-SA</div>
+    </div>
+    <div class="attrib">
+      Adaptat per Albert Pahissa de l'original de Jordi Dom&egrave;nech. Llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a> (Reconeixement&ndash;NoComercial&ndash;CompartirIgual).
+    </div>
+
+  </div>
+</div>
+
+<script>
+const delStack=[];
+function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});document.getElementById('btn-undo').classList.add('active')}
+function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);if(!delStack.length)document.getElementById('btn-undo').classList.remove('active');updatePageBreaks()}
+function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
+document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
+const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
+function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='Pàgina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple · Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
+function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
+window.addEventListener('load',updatePageBreaks);
+const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+</script>
+</body>
+</html>

@@ -132,7 +132,7 @@ export const sa3s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa3-s3-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa3-s3-fitxa-A.html", B: "/fitxes/sa3-s3-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: després de traduir el gen normal i el mutat, respon per què una sola lletra canviada pot causar una malaltia i quan, en canvi, un canvi de lletra no té cap efecte (mutació silenciosa).",
 
@@ -204,9 +204,9 @@ export const sa3s3 = {
       text: "Quina diferència hi ha entre transcripció i traducció?",
       options: [
         "La transcripció copia l'ADN a ARNm (al nucli); la traducció fabrica la proteïna llegint l'ARNm (al ribosoma)",
-        "La transcripció fabrica la proteïna i la traducció copia l'ADN",
-        "Són el mateix procés amb dos noms diferents",
-        "La transcripció passa al ribosoma i la traducció al nucli"
+        "La transcripció fabrica la proteïna llegint l'ADN (al nucli); la traducció la copia a ARNm (al ribosoma)",
+        "Totes dues passen al nucli, però la traducció només es fa quan la cèl·lula està a punt de dividir-se",
+        "La transcripció fabrica l'ARNm a partir de l'ADN i la traducció torna a copiar aquest ARNm en ADN nou"
       ],
       correct: 0
     },

@@ -125,7 +125,7 @@ export const sa1s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa1-s3-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa1-s3-fitxa-A.html", B: "/fitxes/sa1-s3-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Producte de la sessió: la teva defensa oral d'1 minut (demostració de comprensió presencial) + el mural del detector col·lectiu de la classe. Res d'això s'entrega per escrit: es fa i es defensa a l'aula.",
 

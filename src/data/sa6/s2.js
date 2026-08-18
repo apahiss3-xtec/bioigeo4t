@@ -112,7 +112,7 @@ export const sa6s2 = {
       id: "t3",
       apartat: "3",
       heading: "El ==cicle de Wilson==: els oceans neixen, creixen i moren",
-      text: "Els oceans tenen una ==vida==. ==Neixen== quan un continent es ==trenca== i s'hi obre una dorsal (com el ==Rift== de l'Àfrica oriental avui). ==Creixen== mentre la dorsal fabrica escorça nova a banda i banda (com l'==Atlàntic==). Es ==tanquen== quan als seus marges comença la ==subducció== i l'escorça oceànica s'enfonsa més ràpid del que es crea (com el ==Pacífic==, que s'encongeix). I ==desapareixen== quan els dos continents que hi havia als costats ==xoquen== i aixequen una serralada (com quan es va tancar l'oceà de Tetis i es va formar l'==Himàlaia==). Aquest recorregut és el ==cicle de Wilson==: explica per què un oceà pot néixer i, centenars de milions d'anys després, ja no existir.",
+      text: "Els oceans tenen una ==vida==. ==Neixen== quan un continent es ==trenca== i s'hi obre una dorsal (com el ==Rift== de l'Àfrica oriental avui). ==Creixen== mentre la dorsal fabrica escorça nova a banda i banda (com l'==Atlàntic==). Es ==tanquen== quan als seus marges comença la ==subducció== i l'escorça oceànica s'enfonsa més ràpid del que es crea (com el ==Pacífic==, que s'encongeix). I ==desapareixen== quan els dos continents que hi havia als costats ==xoquen== i aixequen una serralada (com quan es va tancar l'oceà de Tetis i es va formar l'==Himàlaia==). La diferència entre ==néixer== i ==créixer== és l'==edat== i l'==amplada==: un oceà que acaba de trencar el continent encara és una ==franja estreta== dins d'una vall; un que fa desenes de milions d'anys que fabrica escorça ja és ==ample==. Aquest recorregut és el ==cicle de Wilson==: explica per què un oceà pot néixer i, centenars de milions d'anys després, ja no existir.",
       type: "concept"
     },
     {
@@ -131,7 +131,7 @@ export const sa6s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa6-s2-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa6-s2-fitxa-A.html", B: "/fitxes/sa6-s2-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "A la fitxa ordenaràs els esdeveniments d'una columna d'estrats aplicant la superposició (el que és a sota és més antic) i explicaràs la història que expliquen les roques. Aquesta habilitat de reconstruir el passat a partir de proves és la que faràs servir en el vídeo divulgatiu «Gondwana Tales» per explicar la història del teu planeta.",
 
@@ -151,7 +151,7 @@ export const sa6s2 = {
   exitTicketType: "paper",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Al teu model, l'aigua calenta amb colorant pujava, s'escampava per dalt i tornava a baixar pels costats. Com relaciones aquest moviment amb el que fa el mantell sota les plaques? Digues què representava cada part del model.", hint: "L'aigua = mantell; el colorant fa visible el corrent de convecció; la superfície = les plaques que el corrent arrossega. El calent puja (dorsal) i el fred baixa (subducció)." },
-    { id: "q2", type: "multiple", text: "Segons el cicle de Wilson, un oceà com el Pacífic, que té zones de subducció als seus marges i s'encongeix, es troba en fase de:", options: ["Naixement (un continent s'acaba de trencar)", "Creixement (la dorsal fabrica escorça i l'oceà s'eixampla)", "Tancament (la subducció destrueix escorça més ràpid del que se'n crea)", "Encara no ha començat a formar-se"], correct: 2 },
+    { id: "q2", type: "multiple", text: "Al planeta de Gondwana Tales, una vall llarga i estreta parteix un continent pel mig: el terreny s'esquerda i se separa, hi ha volcans i terratrèmols alineats al fons de la vall, i el mar tot just ha començat a entrar-hi per un extrem. Fa 20 milions d'anys allà no hi havia ni vall ni mar: era continent sencer. En quina fase del cicle de Wilson es troba?", options: ["Naixement", "Creixement", "Tancament", "Desaparició"], correct: 0 },
     { id: "q3", type: "open", text: "En una columna d'estrats trobes, de baix a dalt: (1) una capa amb fòssils marins, (2) una capa de sorra de riu, (3) una capa de cendra volcànica. Quin esdeveniment va passar primer i quin darrer? Amb quin principi ho decideixes?", hint: "Primer el mar (capa de sota, més antiga), després el riu, i finalment el volcà (capa de dalt, més recent). Principi de superposició." }
   ],
 

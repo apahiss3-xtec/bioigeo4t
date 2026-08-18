@@ -133,7 +133,7 @@ export const sa5s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa5-s3-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa5-s3-fitxa-A.html", B: "/fitxes/sa5-s3-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament: torna a les teves idees prèvies (el bacteri resistent i la girafa) i reescriu-les ara amb el vocabulari correcte (mutació a l'atzar, variabilitat, selecció natural, herència de gens), assenyalant on abans donaves una explicació lamarckiana i corregint-la des del neodarwinisme.",
 
@@ -153,7 +153,7 @@ export const sa5s3 = {
   exitTicketType: "paper",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica amb la cadena mutació → variabilitat → selecció → canvi per què, després d'anys usant un antibiòtic, tota una població de bacteris pot acabar sent resistent. Assenyala quin pas és a l'atzar i quin depèn de l'ambient.", hint: "La mutació apareix a l'atzar; l'antibiòtic (ambient) selecciona els que ja eren resistents." },
-    { id: "q2", type: "multiple", text: "Una girafa estira el coll tota la vida per arribar a les fulles altes. Quina afirmació és correcta segons la ciència actual (neodarwinisme)?", options: ["El seu esforç NO passa als fills; les girafes de coll llarg sobreviuen més perquè ja tenien gens per a un coll llarg, i els transmeten", "Els seus fills naixeran amb el coll una mica més llarg perquè ella l'ha estirat tota la vida", "Les girafes van decidir totes alhora tenir el coll més llarg", "El coll de la girafa no té res a veure amb l'evolució"], correct: 0 },
+    { id: "q2", type: "multiple", text: "Una girafa estira el coll tota la vida per arribar a les fulles altes. Quina afirmació és correcta segons la ciència actual (neodarwinisme)?", options: ["El seu esforç NO passa als fills: sobreviuen i es reprodueixen més les girafes que ja tenien gens de coll llarg, i són elles qui els transmeten", "Els seus fills naixeran amb el coll una mica més llarg, perquè l'estirament que ella ha fet durant tota la vida es transmet als descendents", "Les girafes de la població van anar allargant totes alhora el coll perquè el necessitaven per arribar a les fulles altes dels arbres", "El coll llarg depèn només de com creix cada girafa segons el que menja: no es transmet als fills ni té res a veure amb els gens"], correct: 0 },
     { id: "q3", type: "open", text: "Un company diu: «Lamarck era ximple perquè es va equivocar». Estàs d'acord? Explica què va encertar Lamarck i què va corregir el neodarwinisme, i què ens diu això sobre com funciona la ciència.", hint: "Lamarck va encertar que les espècies canvien; es va equivocar en el mecanisme (herència de l'esforç). La ciència es revisa amb noves proves." }
   ],
 

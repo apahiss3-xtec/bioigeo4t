@@ -131,7 +131,7 @@ export const sa4s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa4-s1-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa4-s1-fitxa-A.html", B: "/fitxes/sa4-s1-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna al cas de la CTNNB1 de l'apartat 1 i reescriu la teva explicació ara amb el vocabulari nou (al·lel, portador, homozigot/heterozigot), fent servir genotips.",
 
@@ -209,9 +209,9 @@ export const sa4s1 = {
       text: "Una parella, tots dos sans, tenen una filla amb una malaltia genètica recessiva. Quina és la millor explicació?",
       options: [
         "Els dos pares són portadors sans (Aa) i la filla ha rebut l'al·lel recessiu (a) de tots dos: és aa",
-        "La filla va agafar la malaltia després de néixer",
-        "És impossible: si els pares estan sans, els fills també ho estan sempre",
-        "Un dels pares va mutar el gen expressament"
+        "N'hi ha prou que un dels dos pares sigui portador (Aa): la filla en rep l'al·lel a i ja manifesta la malaltia",
+        "Els dos pares són AA i, tot i així, la filla pot ser aa: els al·lels recessius apareixen de nou en algun fill",
+        "La filla ha rebut els dos al·lels recessius de la mare, perquè l'òvul aporta més material que l'espermatozoide"
       ],
       correct: 0
     },

@@ -1,87 +1,106 @@
-// Avaluació SA5: checklist d'estudi + test de transferència (El bosc dels Ports de Tortosa)
-// Cas NOU: diferent de l'enigma de la cotorra — context de bosc mediterrani pertorbat.
+// Material d'autoavaluació de SA5 (El pati, un museu de l'evolució):
+// checklist d'estudi + test de transferència amb un cas NOU —els elefants
+// sense ullals del Parc Nacional de Gorongosa (Moçambic) després de la
+// guerra civil— diferent dels casos de les sessions (organismes del pati a
+// S1, ala de pollastre a S2, resistència a antibiòtics/pesticides a S3,
+// targetes-cas del museu a S4).
+//
+// Revisió 2026-08-17 (revisió agent-alumne). Tres canvis de fons:
+// 1) El cas anterior (arnes del bedoll i melanisme industrial) NO era nou:
+//    s5/s3.js el proposa literalment com a exemple a l'alumnat. Substituït
+//    pels elefants de Gorongosa, que no apareix enlloc del material.
+// 2) La pregunta t3 demanava classificar el cas com a «observació directa de
+//    selecció natural», una categoria que S2 no ensenya (S2 treballa
+//    homologia, analogia i vestigis). Ara t3 pregunta per la distinció
+//    selecció natural / selecció artificial, que sí que és de la SA (c5).
+// 3) La pregunta t4 es justificava amb el criteri reproductiu d'espècie, que
+//    no s'ha treballat. Ara demana relacionar estructura → funció → ambient.
+// A més, la resposta correcta ja no és sempre la primera opció ni la més
+// llarga: abans el test s'encertava sencer sense haver llegit res.
 export const sa5Avaluacio = {
   checklist: [
-    { id: 'c1', oa: 'OA1', text: "Sé distingir els components biòtics (éssers vius) i abiòtics (factors físics) d'un ecosistema i poso exemples concrets de l'entorn de l'escola." },
-    { id: 'c2', oa: 'OA1', text: "Sé diferenciar individu, població, comunitat i ecosistema i aplico correctament els 4 nivells a un exemple real." },
-    { id: 'c3', oa: 'OA1', text: "Classific els organismes en productors, consumidors de 1r/2n/3r ordre i descomponedors, i explico la funció tròfica de cada grup." },
-    { id: 'c4', oa: 'OA2', text: "Construeixo una cadena tròfica correcta de 4 eslabons i la transformo en una xarxa tròfica afegint ramificacions realistes." },
-    { id: 'c5', oa: 'OA2', text: "Aplico la regla del 10% per calcular l'energia disponible en cada nivell tròfic i explico per quina raó les cadenes rarament superen 4-5 eslabons." },
-    { id: 'c6', oa: 'OA2', text: "Sé interpretar una piràmide d'energia i explico per quina raó sempre té forma de piràmide (mai invertida), a diferència de les de nombre o biomassa." },
-    { id: 'c7', oa: 'OA3', text: "Classifico les relacions interespecífiques (depredació, parasitisme, mutualisme, comensalisme, competència) indicant el signe +/−/0 per a cada participant." },
-    { id: 'c8', oa: 'OA3', text: "Explico el cicle del carboni: els 4 reservoris (atmosfera, éssers vius, sòl, oceans) i els 4 fluxos principals (fotosíntesi, respiració, descomposició, combustió)." },
-    { id: 'c9', oa: 'OA4', text: "Identifico les 5 amenaces principals a la biodiversitat (HIPPO) i les relaciono amb exemples reals de Catalunya." },
-    { id: 'c10', oa: 'OA4', text: "Explico el mecanisme de l'èxit invasor de la cotorra argentina (4 factors: nínxol, exclusió competitiva, avantatges estructurals, absència de depredadors) i proposo mesures de gestió." }
+    { id: 'c1', oa: 'OA1', text: "Descric amb precisió els trets observables d'un organisme i aplico criteris de classificació i la nomenclatura binomial (gènere + espècie)." },
+    { id: 'c2', oa: 'OA1', text: "Identifico una adaptació relacionant una estructura concreta amb la seva funció i amb l'ambient on viu l'organisme." },
+    { id: 'c3', oa: 'OA2', text: "Distingeixo homologia (mateix origen evolutiu, com el braç humà i l'ala de pollastre) d'analogia (mateixa funció, origen diferent, com l'ala d'insecte i l'ala d'ocell)." },
+    { id: 'c4', oa: 'OA2', text: "Reconec les estructures vestigials com a prova de l'evolució i explico per quina raó hi són encara, encara que ja no serveixin per a res." },
+    { id: 'c5', oa: 'OA2', text: "Distingeixo la selecció natural (la fa el propi ambient) de la selecció artificial o domesticació (la fa l'ésser humà escollint quins individus es reprodueixen)." },
+    { id: 'c6', oa: 'OA2', text: "Interpreto un arbre de semblances (filogènia) ja construït i identifico quins organismes són més o menys emparentats." },
+    { id: 'c7', oa: 'OA3', text: "Explico la cadena mutació → variabilitat → selecció natural: la mutació no «apareix perquè cal», sorgeix a l'atzar i és l'ambient qui selecciona." },
+    { id: 'c8', oa: 'OA3', text: "Defineixo variable independent, variable dependent, control i rèpliques en el disseny d'una simulació de selecció natural." },
+    { id: 'c9', oa: 'OA4', text: "Contraposo les quatre teories —creacionisme/fixisme, lamarckisme, darwinisme i neodarwinisme— i explico la diferència clau entre cada una." },
+    { id: 'c10', oa: 'OA4', text: "Analitzo un mateix cas des de les quatre teories amb una graella d'anàlisi i valoro cada teoria en el seu context històric, sense jutjar-la amb els coneixements d'avui." }
   ],
 
-  // Cas de transferència: el bosc dels Ports de Tortosa — context nou, diferent de l'enigma de la SA.
-  // Cobreix OA1 (ecosistema), OA2 (xarxa tròfica + energia), OA3 (relacions + cicle carboni), OA4 (biodiversitat).
+  // Cas-fil NOU: els elefants sense ullals del Parc Nacional de Gorongosa
+  // (Moçambic). Cas real i documentat amb dades, i no treballat a cap
+  // sessió de la SA, per mesurar transferència: mutació→variabilitat→
+  // selecció, les quatre teories, natural vs. artificial i adaptació.
   test: {
     context:
-      "Els Ports de Tortosa-Beseit son un dels boscos de pi negre i alzina més ben conservats de Catalunya. El 2023, un incendi va cremar el 15% de la superfície. Dos anys després, investigadors del CREAF observen que: la població de conills ha augmentat un 40% (menys depredadors i menys vegetació alta = més visibilitat per als depredadors = paradoxa). Les àguiles cuabarrades (depredadores de 3r ordre) han abandonat la zona. Els bolets (descomponedors) s'han multiplicat als troncs cremats. La regeneració de l'alzina és molt lenta.",
+      "Al Parc Nacional de Gorongosa (Moçambic), la majoria d'elefants africans (Loxodonta africana) tenen ullals: dues dents llarguíssimes que fan servir per pelar l'escorça dels arbres, cavar el terra buscant aigua i sals minerals, i defensar-se. Sempre hi ha hagut, però, algunes femelles que neixen sense ullals, un tret que les seves filles solen heretar. Durant la guerra civil de Moçambic (1977-1992), la caça furtiva per vendre l'ivori va matar aproximadament nou de cada deu elefants del parc: els caçadors buscaven els ullals, i els elefants que en tenien de grossos eren els primers a caure. Abans de la guerra, unes 18 de cada 100 femelles naixien sense ullals. Entre les femelles nascudes just després de la guerra, n'eren aproximadament la meitat. Avui, amb la caça furtiva molt reduïda, els biòlegs segueixen el parc any rere any per veure què passa amb aquesta proporció.",
     questions: [
       {
         id: 't1',
-        oa: 'OA1',
-        text: "L'incendi ha modificat els components abiòtics del bosc. Esmenta 3 factors abiòtics que han canviat amb l'incendi i explica com cadascun afecta els éssers vius del bosc.",
+        oa: 'OA3',
+        text: "Ja abans de la guerra hi havia femelles sense ullals, encara que fossin poques. Segons la cadena mutació → variabilitat → selecció, d'on venia aquesta variant i per què no calia que aparegués «just quan feia falta»?",
         options: [
-          "Temperatura del sòl (augmenta → mata llavors i bacteris del sòl), llum disponible al sòl (augmenta → afavoreix plantes pioneres helèofites), composició química del sòl (augmenta minerals minerals per la cendra → fertilització temporal però pèrdua de matèria orgànica)",
-          "Només canvia la temperatura; els altres factors abiòtics son independents del foc",
-          "L'incendi no afecta factors abiòtics, únicament els éssers vius (components biòtics)",
-          "Canvia la llum i la humitat, però la composició química del sòl és immutable"
+          "Els elefants van deixar de fer créixer els ullals per no cridar l'atenció dels caçadors.",
+          "La variant va sorgir com a resposta de l'espècie al perill, just quan va començar la caça furtiva dins del parc.",
+          "Ja existia a l'atzar dins la població; la caça només va fer que passés a ser un avantatge.",
+          "És una simple coincidència: sense caça, la proporció hauria pujat exactament igual."
         ],
-        correct: 0,
+        correct: 2,
         feedback: {
-          correct: "Excellent. L'incendi modifica profundament el medi abiòtic: temperatura del sòl (fins a 300°C → mata microorganismes del sòl), llum solar disponible a nivell de terra (augmenta molt → avantatge per a plantes pioneres), composició química del sòl (la cendra aporta minerals però elimina la matèria orgànica que dona estructura al sòl).",
-          wrong: "Recorda que els factors abiòtics inclouen tots els factors físics: llum, temperatura, humitat, composició del sòl, pH, vent. L'incendi els altera tots simultàniament. Per exemple: el sòl nu perd humitat molt més ràpidament (sense la coberta vegetal que la retenia)."
+          correct: "Exacte, i aquest és el nucli del neodarwinisme: la variant hi era abans i per atzar, sense cap relació amb si seria útil. El que va canviar va ser l'ambient (uns caçadors que buscaven ullals), i llavors un tret que abans era un inconvenient va passar a salvar la vida.",
+          wrong: "Repassa la cadena mutació → variabilitat → selecció: la mutació NO apareix perquè faci falta, ja hi és abans que canviï res. Un elefant tampoc no pot decidir deixar de fer-se créixer els ullals. El que canvia amb la caça és quina variant sobreviu i deixa més descendència."
         }
       },
       {
         id: 't2',
-        oa: 'OA2',
-        text: "Construeix una cadena tròfica de 4 eslabons per al bosc dels Ports i calcula l'energia disponible a cada nivell si els productors capturen 100.000 kcal/any. Per quina raó l'àguila cuabarrada (superdepredadora) és la primera en abandonar la zona?",
+        oa: 'OA4',
+        text: "Quina de les explicacions següents del que va passar a Gorongosa és una explicació LAMARCKIANA?",
         options: [
-          "Alzina (100.000 kcal) → Conill (10.000 kcal, 10%) → Guineu (1.000 kcal, 10%) → Àguila (100 kcal, 10%). L'àguila és la primera a patir perquè al 4t nivell tròfic l'energia disponible és ínfima (100 kcal); qualsevol reducció als nivells inferiors provoca la insuficiència d'aliment per mantenir-la",
-          "L'àguila abandona per raons de comportament, no per manca d'energia: les àguiles son sensibles al soroll de l'incendi",
-          "L'àguila és la primera a patir perquè és la que menys es reprodueix. La regla del 10% no s'aplica als superdepredadors",
-          "Al 4t nivell hi ha 50.000 kcal perquè l'energia s'acumula en pujant la cadena"
+          "Les femelles sense ullals van sobreviure més temps i van tenir més cries, que també naixien sense ullals.",
+          "Els elefants van anar reduint els ullals per no fer-los servir tant, i van passar-ho a les cries.",
+          "Els elefants amb ullals grossos van ser eliminats pels caçadors abans de poder-se reproduir.",
+          "La proporció de femelles sense ullals va canviar perquè va canviar qui arribava a tenir cries."
         ],
-        correct: 0,
+        correct: 1,
         feedback: {
-          correct: "Perfecte. Regla del 10%: 100.000 → 10.000 → 1.000 → 100 kcal. L'àguila al 4t nivell tròfic ja depèn d'una quantitat d'energia molt petita. Si l'incendi redueix la vegetació (menys productors), la reducció es multiplica en cascada: 50% menys d'alzines → 50% menys de conills → 50% menys de guineus → 50% menys d'energia per a les àguiles. Amb tan poc marge, les àguiles no poden mantenir la seva població i emigren.",
-          wrong: "Aplica la regla del 10%: en cada transferència tròfica es perd el 90% de l'energia. Per tant: productors (100.000) → C1 (10.000) → C2 (1.000) → C3 (100 kcal). L'àguila, al 4t nivell, parteix d'una energia ja molt reduïda — qualsevol pertorbació als nivells inferiors la afecta de forma desproporcionada."
+          correct: "Correcte. La marca del lamarckisme és que un canvi que li passa al cos d'un individu durant la seva vida (per l'ús o el desús d'un òrgan) es transmet als fills. Les altres tres opcions són la mateixa explicació per selecció natural (darwinista/neodarwinista) dita de tres maneres.",
+          wrong: "Busca l'explicació on l'individu CANVIA durant la seva vida i després passa aquest canvi als fills: això és el lamarckisme. Les explicacions que parlen de qui sobreviu i qui es reprodueix són darwinistes/neodarwinistes, no lamarckianes."
         }
       },
       {
         id: 't3',
-        oa: 'OA3',
-        text: "Per quina raó els bolets (descomponedors) s'han multiplicat als troncs cremats? Quina funció fan en el cicle del carboni del bosc en recuperació?",
+        oa: 'OA2',
+        text: "Els que van provocar el canvi van ser persones (els caçadors furtius). Vol dir això que el cas de Gorongosa és un exemple de selecció artificial, com la domesticació del gos o del blat?",
         options: [
-          "Els bolets s'han multiplicat perquè hi ha una abundància molt gran de matèria orgànica morta (troncs i arrels cremades) que constitueix el seu aliment. Funció en el cicle del carboni: descomponen la matèria orgànica en CO₂ (retorna a l'atmosfera) i minerals (resten al sòl disponibles per als nous productors). Son imprescindibles per a la regeneració forestal",
-          "Els bolets s'han multiplicat perquè l'incendi ha elevat la temperatura, i els bolets necessiten calor per créixer",
-          "Els bolets fan fotosíntesi igual que les plantes, de manera que aprofiten la major llum disponible per créixer",
-          "El cicle del carboni no implica els descomponedors: els bolets utilitzen el nitrogen, no el carboni"
+          "Sí: sempre que la causa última d'un canvi evolutiu són les persones, es tracta de selecció artificial.",
+          "Sí, perquè els caçadors buscaven un tret concret, i això és exactament el que fa un ramader.",
+          "No, perquè per parlar de selecció artificial cal que el canvi es noti en una sola generació.",
+          "No: ningú no triava quins elefants havien de criar; els caçadors van actuar com un factor més de l'ambient."
         ],
-        correct: 0,
+        correct: 3,
         feedback: {
-          correct: "Correcte. Els bolets son heteròtrofs descomponedors: obtenen energia i carboni degradant la matèria orgànica morta. Amb tants troncs cremats disponibles, el seu substrat d'alimentació és abundant. Rol en el cicle del carboni: converteixen la matèria orgànica → CO₂ (retorna a l'atmosfera, disponible per a la fotosíntesi dels nous arbres) + minerals inorgànics (nutrients per al sòl). Son l'engranatge que tanca el cicle i permet la regeneració del bosc.",
-          wrong: "Recorda: els bolets son descomponedors, no productors (no fan fotosíntesi). S'alimenten de matèria orgànica morta (fusta, fulles, cadàvers). En el cicle del carboni, els descomponedors converteixen la matèria orgànica en CO₂ (alliberat a l'atmosfera) i minerals (alliberats al sòl). Sense ells, la biomassa morta s'acumularia i els nutrients no tornarien al sistema."
+          correct: "Exacte, i és una distinció fina. A la selecció artificial l'ésser humà tria quins individus es reprodueixen per obtenir un tret (gossos, blat, vaques lleteres). A Gorongosa ningú no criava elefants: els caçadors van fer de factor de mortalitat, com ho faria un depredador o una sequera. La causa és humana, però el mecanisme és selecció natural.",
+          wrong: "Torna a la definició de S1 (l'activitat «Natura o nosaltres?»): hi ha selecció artificial quan les persones ESCULLEN quins individus es reprodueixen. Els caçadors no criaven elefants ni triaven parelles; simplement en mataven uns més que uns altres, que és el que fa qualsevol factor de l'ambient."
         }
       },
       {
         id: 't4',
-        oa: 'OA4',
-        text: "L'incendi és una pertorbació natural que ha afectat la biodiversitat dels Ports. Identifica 2 de les amenaces HIPPO presents en aquest cas i proposa 2 mesures de gestió post-incendi que millorarien la recuperació de la biodiversitat.",
+        oa: 'OA1',
+        text: "Ara que la caça furtiva ha baixat molt, els biòlegs esperen que la proporció de femelles sense ullals torni a caure amb els anys. Quina raó ho explica millor, pensant en per a què serveixen els ullals?",
         options: [
-          "Amenaces: Hàbitat loss (destrucció temporal de l'hàbitat forestal) i potencialment Invasive species (les zones obertes post-incendi son colonitzades ràpidament per plantes invasores com l'ailant). Mesures: reintroducció de plantes autòctones pioneres (accelera la recuperació de la xarxa tròfica) + control d'espècies invasores a les zones obertes (evita que monopolitzin el sòl nu)",
-          "L'incendi no entra a cap categoria HIPPO perquè és un fenomen natural. Les mesures han de ser únicament esperar la regeneració espontània",
-          "Amenaces: únicament Pollution (el fum de l'incendi). Mesures: apagar l'incendi i plantar arbres exòtics de creixement ràpid (eucaliptus) per recuperar la cobertura vegetal ràpidament",
-          "L'única amenaça és la sobreexplotació (Overexploitation) perquè els animals han perdut el seu aliment"
+          "Perquè els ullals sempre tornen a créixer si l'animal creix en un ambient tranquil i sense cap mena de perill.",
+          "Perquè sense ullals costa més pelar escorça i cavar buscant aigua, i sense caçadors això torna a pesar.",
+          "Perquè les femelles sense ullals no poden tenir cries i la variant desapareix tota sola.",
+          "Perquè l'espècie tendeix per si mateixa a recuperar l'aspecte que tenia originalment."
         ],
-        correct: 0,
+        correct: 1,
         feedback: {
-          correct: "Excel·lent anàlisi. L'incendi activa especialment Habitat loss (la destrucció de l'hàbitat, tot i que temporal, és una de les 5 amenaces HIPPO). Les zones obertes post-incendi son un terreny abonable per a espècies invasores (Invasive species), ja que les autòctones triguen més a regenerar-se. Les mesures proposades son ecològicament sòlides: afavorir les plantes autòctones pioneres (jara, romaní, garriga) permet que la xarxa tròfica es reconstrueixi de baix a dalt; controlar les invasores evita que bloquegin la regeneració del bosc climàcic (alzinar).",
-          wrong: "Recorda el marc HIPPO: Habitat loss / Invasive species / Pollution / Population (sobreexplotació) / Overexploitation. Un incendi que destrueix l'hàbitat forestal entra clarament a Habitat loss. A més, les zones obertes post-incendi son molt vulnerables a la colonització per espècies invasores (Invasive species) com l'ailant (Ailanthus altissima), molt competitiu en sòls pertorbats. Les mesures no han de ser plantar arbres exòtics de creixement ràpid (empitjorarien la biodiversitat a llarg termini) sinó restaurar l'ecosistema autòcton."
+          correct: "Exacte. Els ullals són una adaptació: una estructura amb una funció (pelar escorça, cavar buscant aigua, defensar-se) dins d'un ambient concret. Mentre hi havia caçadors, el cost de no tenir-ne compensava; sense caçadors, torna a manar l'avantatge de tenir-ne. La mateixa estructura pot ser un avantatge o un inconvenient segons l'ambient.",
+          wrong: "Pensa en estructura → funció → ambient: els ullals serveixen per menjar, per trobar aigua i per defensar-se. Sense caçadors, qui no en té continua tenint aquesta feina més difícil — i és això, no cap tendència de l'espècie a «tornar enrere», el que fa baixar la proporció."
         }
       }
     ]

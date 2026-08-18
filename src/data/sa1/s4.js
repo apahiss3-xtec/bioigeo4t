@@ -119,7 +119,7 @@ export const sa1s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa1-s4-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa1-s4-fitxa-A.html", B: "/fitxes/sa1-s4-fitxa-B.html" },
   teoriaPdfUrl: null,
   rubricUrl: null,
   elaborateNote: "Producte final de la SA: l'anàlisi del teu cas real (graella + veredicte classificat) i la seva presentació a la fira de casos, més l'autoavaluació honesta del teu aprenentatge. Tot es fa i es defensa a l'aula.",

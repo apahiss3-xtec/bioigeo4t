@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA7 &middot; S28 &middot; Dossier de proves (retallables)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#37306B; --teal-ink:#241F4A; --teal-light:#b3aed0; --teal-tint:#f1effa;
+  --ink:#1a2027; --ink-2:#33404b; --muted:#7c8a96; --surface:#fdfefe;
+  --rule:#e0dcee; --rule-dark:#bdb7d6;
+  --orange:#B0821F; --orange-tint:#fdf6e6;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(30,26,56,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,48,107,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(220,214,240,.75);flex:1}
+.tb-tip strong{color:#e3dcf5}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(55,48,107,.2);border:1px solid rgba(55,48,107,.4);color:#ded9f2;font-size:14px;font-weight:900;padding:4px 11px}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(55,48,107,.08);box-shadow:0 0 0 2px rgba(55,48,107,.3)}
+[contenteditable]:focus{background:rgba(55,48,107,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52}
+.deletable:hover>.del-btn{display:flex}
+.header-band{background:linear-gradient(135deg,#241F4A 0%,#4b4290 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.content{padding:14px 24px 24px}
+.instr{background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin-bottom:12px;font-size:12px;color:var(--ink-2)}
+.instr b{color:var(--amber-ink)}
+.jocs{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.joc{padding:0 8px;display:flex;flex-direction:column;align-items:center}
+.joc-title{font-family:'Inter',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-ink);text-align:center;margin-bottom:6px}
+.cut-col{border-left:2px dashed var(--rule-dark)}
+.card{width:250px;border:1.6px dashed var(--teal-light);border-radius:6px;padding:7px 9px 7px 9px;margin-bottom:7px;background:#fff;position:relative;min-height:62px}
+.card-scissors{position:absolute;top:-8px;left:6px;background:#fff;font-size:10px;color:var(--teal-light);padding:0 3px}
+.card-code{font-family:'Inter',sans-serif;font-size:8.5px;font-weight:700;color:var(--teal-light);letter-spacing:.1em;margin-bottom:2px}
+.card-text{font-size:11.8px;line-height:1.42;color:var(--ink)}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.del-btn{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .card{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head><body>
+<div id="toolbar">
+  <span class="tb-tip">&#9998; Clica per editar &middot; <strong>&times;</strong> rosa elimina &middot; imprimeix en A4</span>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-print" onclick="window.print()">&#128424;&#65039; Imprimir / PDF</button>
+</div>
+<div class="page-wrap" id="doc">
+<div class="header-band deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<div><div class="header-emoji-box" contenteditable="true">&#9986;</div></div>
+<div>
+<div class="header-sa" contenteditable="true">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 3 de 4</div>
+<div class="header-title" contenteditable="true">Dossier de proves &middot; targetes per retallar</div>
+<div class="header-subtitle" contenteditable="true">Comit&egrave; avaluador &middot; d'on va sortir la vida?</div>
+</div>
+<div class="header-right">
+<div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+<div class="header-meta" contenteditable="true">Biologia i Geologia &middot; 4t ESO<br>IE Temple</div>
+</div>
+</div>
+<div class="content">
+<div class="instr deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<b>Aquest full serveix per a 2 equips.</b> Talleu primer per la l&iacute;nia vertical del mig (cada meitat &eacute;s un joc complet de 9 targetes per a un equip) i despr&eacute;s targeta per targeta. Les targetes ja tenen l'amplada de les caselles de la graella de la fitxa: talleu just per la vora puntejada i hi encaixaran.<br>
+<b>Compte:</b> cada targeta t&eacute; <b>un sol dest&iacute;</b>. Vuit parlen d'una de les quatre propostes (i hi juguen a favor o li fan un forat); n'hi ha <b>una</b> que no encaixa en cap de les quatre i va a la casella de baix de tot. <b>No enganxeu res</b> fins que tot l'equip hi estigui d'acord.
+</div>
+
+<div class="jocs">
+<div class="joc">
+<div class="joc-title">Joc 1 &middot; equip ____</div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 1</div>
+<div class="card-text" contenteditable="true">El 1953, un experiment amb aigua i els gasos que es creia que formaven l'atmosfera primitiva, amb desc&agrave;rregues el&egrave;ctriques, va produir <b>aminoàcids</b> en una setmana.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 2</div>
+<div class="card-text" contenteditable="true">L'an&agrave;lisi de roques molt antigues indica que <b>l'atmosfera primitiva</b> tenia sobretot di&ograve;xid de carboni i nitrogen, i molt poc met&agrave; i amon&iacute;ac.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 3</div>
+<div class="card-text" contenteditable="true">S'han trobat mol&egrave;cules d'<b>ARN</b> que tallen i uneixen altres mol&egrave;cules sense cap prote&iuml;na: guarden informaci&oacute; i fan d'eina alhora.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 4</div>
+<div class="card-text" contenteditable="true">L'<b>ARN</b> es trenca amb molta facilitat, i al laboratori encara no s'ha aconseguit que se'n formin cadenes llargues soles, sense ajuda.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 5</div>
+<div class="card-text" contenteditable="true">Al <b>fons del mar</b> s'han explorat xemeneies de roca plenes de porus microsc&ograve;pics, i s'hi han reprodu&iuml;t al laboratori reaccions que formen mol&egrave;cules org&agrave;niques sense gens de llum.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 6</div>
+<div class="card-text" contenteditable="true">A les <b>xemeneies del fons del mar</b> ning&uacute; no ha aconseguit encara que cap mol&egrave;cula s'hi copi&iuml; sola.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 7</div>
+<div class="card-text" contenteditable="true">El <b>meteorit</b> que va caure a Murchison (Austr&agrave;lia) el 1969 cont&eacute; m&eacute;s de setanta aminoàcids diferents, formats sense cap &eacute;sser viu.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 8</div>
+<div class="card-text" contenteditable="true">Encara que la vida hagu&eacute;s <b>arribat de fora</b>, continuar&iacute;em havent d'explicar com va apar&egrave;ixer en aquell altre lloc.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 9</div>
+<div class="card-text" contenteditable="true">Una <b>for&ccedil;a vital</b> va animar la mat&egrave;ria; aquesta for&ccedil;a no deixa cap rastre i cap aparell no la pot mesurar.</div></div>
+</div>
+
+<div class="joc cut-col">
+<div class="joc-title">Joc 2 &middot; equip ____</div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 1</div>
+<div class="card-text" contenteditable="true">El 1953, un experiment amb aigua i els gasos que es creia que formaven l'atmosfera primitiva, amb desc&agrave;rregues el&egrave;ctriques, va produir <b>aminoàcids</b> en una setmana.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 2</div>
+<div class="card-text" contenteditable="true">L'an&agrave;lisi de roques molt antigues indica que <b>l'atmosfera primitiva</b> tenia sobretot di&ograve;xid de carboni i nitrogen, i molt poc met&agrave; i amon&iacute;ac.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 3</div>
+<div class="card-text" contenteditable="true">S'han trobat mol&egrave;cules d'<b>ARN</b> que tallen i uneixen altres mol&egrave;cules sense cap prote&iuml;na: guarden informaci&oacute; i fan d'eina alhora.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 4</div>
+<div class="card-text" contenteditable="true">L'<b>ARN</b> es trenca amb molta facilitat, i al laboratori encara no s'ha aconseguit que se'n formin cadenes llargues soles, sense ajuda.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 5</div>
+<div class="card-text" contenteditable="true">Al <b>fons del mar</b> s'han explorat xemeneies de roca plenes de porus microsc&ograve;pics, i s'hi han reprodu&iuml;t al laboratori reaccions que formen mol&egrave;cules org&agrave;niques sense gens de llum.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 6</div>
+<div class="card-text" contenteditable="true">A les <b>xemeneies del fons del mar</b> ning&uacute; no ha aconseguit encara que cap mol&egrave;cula s'hi copi&iuml; sola.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 7</div>
+<div class="card-text" contenteditable="true">El <b>meteorit</b> que va caure a Murchison (Austr&agrave;lia) el 1969 cont&eacute; m&eacute;s de setanta aminoàcids diferents, formats sense cap &eacute;sser viu.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 8</div>
+<div class="card-text" contenteditable="true">Encara que la vida hagu&eacute;s <b>arribat de fora</b>, continuar&iacute;em havent d'explicar com va apar&egrave;ixer en aquell altre lloc.</div></div>
+
+<div class="card deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="card-scissors">&#9986;</span>
+<div class="card-code">TARGETA 9</div>
+<div class="card-text" contenteditable="true">Una <b>for&ccedil;a vital</b> va animar la mat&egrave;ria; aquesta for&ccedil;a no deixa cap rastre i cap aparell no la pot mesurar.</div></div>
+</div>
+</div>
+
+<div class="footer"><div class="footer-l">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 3 &middot; Retallables &middot; IE Temple &middot; Biologia i Geologia 4t ESO</div><div class="footer-r">&#9986;</div></div>
+<div class="attrib">Adaptat per Albert Pahissa de l&#39;original de Jordi Dom&egrave;nech. Llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a> (Reconeixement&ndash;NoComercial&ndash;CompartirIgual).</div>
+</div></div>
+<script>
+function deleteEl(btn){const t=btn.closest('.deletable');if(t)t.remove()}
+</script>
+</body>
+</html>

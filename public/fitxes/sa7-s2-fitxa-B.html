@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA7 &middot; S27 &middot; Una Terra que ho tenia tot (B)</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#37306B; --teal-ink:#241F4A; --teal-light:#b3aed0; --teal-tint:#f1effa;
+  --ink:#1a2027; --ink-2:#33404b; --muted:#7c8a96; --surface:#fdfefe;
+  --rule:#e0dcee; --rule-dark:#bdb7d6;
+  --orange:#B0821F; --orange-tint:#fdf6e6;
+  --aqua:#4a6fa5; --aqua-tint:#eaf0f9;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#7a6aa8; --purple-tint:#f0edf6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(30,26,56,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(55,48,107,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(220,214,240,.75);flex:1}
+.tb-tip strong{color:#e3dcf5}
+.tb-sep{width:1px;height:20px;background:rgba(55,48,107,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(55,48,107,.2);border:1px solid rgba(55,48,107,.4);color:#ded9f2;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(55,48,107,.2);border:1px solid rgba(55,48,107,.4);color:#ded9f2;font-size:12px}
+.tb-undo{background:rgba(192,135,46,.2);border:1px solid rgba(192,135,46,.4);color:#f0dcae;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #a49ec4;pointer-events:none;z-index:10}
+.page-break-label{position:absolute;right:10px;top:-11px;background:#a49ec4;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(55,48,107,.08);box-shadow:0 0 0 2px rgba(55,48,107,.3)}
+[contenteditable]:focus{background:rgba(55,48,107,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+.wline{display:block;width:100%;min-height:74px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(55,48,107,.04)}
+.wline.tall{min-height:120px}
+.wline.xtall{min-height:152px}
+.wline.xxtall{min-height:200px}
+.wline.short{min-height:52px}
+.wline.huge{min-height:340px}
+.fill-cell.xbig{min-height:112px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(55,48,107,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#241F4A 0%,#4b4290 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#f1effa,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#31527e;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
+.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#8a6410;margin-bottom:2px}
+.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:64px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
+.fill-cell.small{min-height:38px}
+.fill-cell.big{min-height:96px}
+.fill-cell:focus{background:rgba(55,48,107,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#8a6410;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.abp-note{background:#fdf6e6;border-left:4px solid #B0821F;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0;font-size:11.5px;color:#33404b}
+.frase-box{background:#fbeceb;border:1.5px solid #b4463c;border-radius:8px;padding:9px 12px;margin:8px 0;font-size:12.5px;font-style:italic;color:#4a201d}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(55,48,107,.05) 6px,rgba(55,48,107,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+.figcap{font-size:10.5px;color:#5a5580;font-style:italic;text-align:center;margin:0 0 8px}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.page-break-line,.del-btn{display:none!important}
+  .page-footer-bar{display:flex!important}
+  .footer{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .wline{background:transparent;padding:0}
+  .fill-cell{background:transparent;outline:none}
+  .spacer-block{background:transparent!important;border:none!important}
+  .spacer-label{display:none!important}
+  .fig,.data-table,.scaffold-box,.challenge-box,.epist-box,.abp-note{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head><body>
+<div id="toolbar">
+  <span class="tb-tip">&#9998; Clica per editar &middot; <strong>Ctrl+B</strong> negreta &middot; <strong>&times;</strong> rosa elimina &middot; <strong>Ctrl+Z</strong> desf&eacute;s</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">&#8617; Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">&#65291; Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">&#128424;&#65039; Imprimir / PDF</button>
+</div><div class="page-wrap" id="doc"><div class="header-band deletable">
+<div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">&#9203;</div></div>
+<div class="header-main">
+<div class="header-sa" contenteditable="true">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 2 de 4</div>
+<div class="header-title" contenteditable="true">Una Terra que ho tenia tot</div>
+<div class="header-subtitle" contenteditable="true">Laboratori de dataci&oacute;: com es posa un n&uacute;mero d'anys a una pedra</div>
+</div>
+<div class="header-right">
+<div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+<div class="header-meta" contenteditable="true">Biologia i Geologia &middot; 4t ESO<br>IE Temple</div>
+</div>
+</div>
+<div class="nivell-strip deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div>
+<span class="nivell-label" contenteditable="true">Versi&oacute; amb bastida</span>
+<span class="temps-badge" contenteditable="true">&#9201;&#65039; 2h</span>
+<div class="nom-field">Nom:&nbsp;<span class="input-span" contenteditable="true"></span>&nbsp;&nbsp;Equip:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>&nbsp;<span class="nivell-badge-small" title="Versi&oacute; B">B</span></div></div>
+<div class="oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="oa-title">Qu&egrave; vull que s&agrave;pigues fer en acabar</div><ul class="oa-list">
+<li>Explico qu&egrave; representa la <b>simulaci&oacute; dels daus</b> (cada dau &eacute;s un &agrave;tom, cada tirada un interval de temps) i llegeixo al gr&agrave;fic quantes tirades calen perqu&egrave; en quedi la <b>meitat</b>.</li>
+<li>Defineixo <b>semivida</b> i calculo l'edat d'una mostra a partir de la fracci&oacute; que hi queda, partint per la meitat tantes vegades com calgui.</li>
+<li>Trio el <b>rellotge adequat</b> per a una mostra i explico per qu&egrave; el carboni-14 no serveix per a un os de dinosaure.</li>
+<li>Distingeixo <b>dataci&oacute; relativa</b> (dona l'ordre) de <b>dataci&oacute; absoluta</b> (dona el n&uacute;mero) i acoto entre dues dates l'edat d'una resta situada entre dues capes de cendra.</li>
+<li>Anomeno tres condicions de la Terra que van fer possible l'aigua l&iacute;quida i la vida, i explico que estar a la dist&agrave;ncia adequada <b>no ho garanteix</b>.</li>
+</ul></div>
+<div class="content">
+<div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="epist-title">&#128218; Paraules noves</div><div class="epist-text"><b>Element inestable:</b> element els &agrave;toms del qual es transformen sols en &agrave;toms d'un altre element, sense que res no els hi obligui. &middot; <b>Semivida:</b> temps que ha de passar perqu&egrave; se n'hagi transformat la meitat. &middot; <b>Dataci&oacute; absoluta:</b> posar un n&uacute;mero d'anys a una mostra. &middot; <b>Dataci&oacute; relativa:</b> dir quina cosa &eacute;s m&eacute;s antiga i quina m&eacute;s moderna, sense n&uacute;meros (ho vas fer a la SA6). &middot; <b>Ma:</b> abreviatura de <i>milions d'anys</i>. &middot; <b>R&egrave;plica:</b> repetir la mateixa mesura o el mateix assaig moltes vegades. &middot; <b>Camp magn&egrave;tic:</b> escut invisible que envolta alguns planetes i desvia les part&iacute;cules que hi arriben de l'estrella. &middot; <b>Meteorit:</b> tros de roca vinguda de l'espai que ha caigut a la Terra; molts s&oacute;n restes del material amb qu&egrave; es van formar els planetes. &middot; <b>Desintegrar-se:</b> transformar-se en un &agrave;tom d'un altre element; el conjunt d'aquestes transformacions s'anomena <b>radioactivitat</b>. &middot; <b>El n&uacute;mero despr&eacute;s del nom (carboni-14, potassi-40, urani-238):</b> indica una <b>variant</b> de l'element. Variants diferents del mateix element es transformen a ritmes molt diferents, i per aix&ograve; l'urani-235 i l'urani-238 no tenen la mateixa semivida. &middot; <b>Semivida... i el 100 % de partida:</b> el laboratori sap quant n'hi havia al principi perqu&egrave; mesura tamb&eacute; l'element en qu&egrave; s'ha convertit; la suma dels dos dona el 100 % inicial. &middot; <b>Estromat&ograve;lit:</b> estructura de roca feta per capes de microorganismes, que encara avui es forma en algunes badies.</div></div></div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#8f8ab0">0</div><div><span class="stitle">D'on partim</span><span class="temps">5 min</span><div class="sdesc">Idees pr&egrave;vies &middot; no es corregeix</div></div></div><div class="divider"></div>
+<p style="font-size:12px;margin:8px 0 3px">Tens una pedra a la m&agrave; i vols saber quants anys t&eacute;. <b>Qu&egrave; hauria de contenir a dins</b> perqu&egrave;, mesurant-la, en poguessis deduir l'edat?</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px">Creus que es pot saber l'edat exacta d'un <b>os de dinosaure</b>? Digues per qu&egrave; s&iacute; o per qu&egrave; no.</p><div class="wline" contenteditable="true"></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#37306B">1</div><div><span class="stitle">Qu&egrave; fa la Terra especial</span><span class="temps">10 min</span><div class="sdesc">Individual</div></div></div><div class="divider"></div>
+<div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="scaffold-title">&#129681; Bastida</div><div class="scaffold-text">Perqu&egrave; hi hagi <b>aigua l&iacute;quida</b> a la superf&iacute;cie d'un planeta calen com a m&iacute;nim quatre coses alhora: (1) una <b>dist&agrave;ncia</b> a l'estrella que no faci ni massa calor ni massa fred &mdash; &eacute;s la faixa verda de la Fig.1; (2) prou <b>massa</b> perqu&egrave; la gravetat retingui l'atmosfera; (3) una <b>atmosfera</b> que faci d'abric; (4) un <b>camp magn&egrave;tic</b> que desvi&iuml; les part&iacute;cules que arriben de l'estrella i que, si no, van arrencant l'atmosfera. La Terra les t&eacute; totes quatre.</div></div></div>
+<img class="fig" src="../images/sa7-s2-zona-habitable.svg" alt="On pot haver-hi aigua l&iacute;quida" style="margin:4px 0"><p class="figcap">Fig.1 &middot; La faixa verda diu on l'aigua l&iacute;quida &eacute;s <b>possible</b>, no on &eacute;s segura.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>1a.</b> Per a cada condici&oacute;, escriu <b>qu&egrave; li passaria a l'aigua l&iacute;quida si aquella condici&oacute; falt&eacute;s</b>. No repeteixis la condici&oacute;: digues la conseq&uuml;&egrave;ncia.</p>
+<table class="data-table"><tr><th style="width:34%">Condici&oacute;</th><th style="width:66%">Qu&egrave; passaria si falt&eacute;s</th></tr>
+<tr><td class="label-cell">Estar a la dist&agrave;ncia adequada</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">Tenir prou massa</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">Tenir camp magn&egrave;tic</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
+<p style="font-size:12px;margin:8px 0 3px"><b>1b.</b> Mart <b>&eacute;s</b> dins la faixa verda i, tot i aix&ograve;, no t&eacute; aigua l&iacute;quida a la superf&iacute;cie. Qu&egrave; ens diu aix&ograve; sobre la faixa: n'hi ha prou d'estar-hi a dins?</p><div class="wline tall" contenteditable="true"></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#241F4A">2</div><div><span class="stitle">La simulaci&oacute; dels daus</span><span class="temps">28 min</span><div class="sdesc">En equip &middot; laboratori de simulaci&oacute;</div></div></div><div class="divider"></div>
+<div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="scaffold-title">&#129681; Bastida</div><div class="scaffold-text">Cada dau del got &eacute;s un <b>&agrave;tom</b> que encara no s'ha transformat; cada tirada &eacute;s un <b>interval de temps</b> sempre igual. Un dau que treu un 6 s'ha desintegrat: s'aparta i <b>no torna mai m&eacute;s</b>. La probabilitat de treure un 6 &eacute;s <b>sempre la mateixa</b>, tant a la primera tirada com a l&#39;&uacute;ltima: els daus no es cansen ni recorden res. Per passar a percentatge: divideix els daus que queden pels que hi havia al principi i multiplica per 100.</div></div></div>
+<p style="font-size:11.5px;color:#5a5580;font-style:italic;margin:6px 0 4px">&#128295; Material: un got amb uns <b>40 daus</b> i una <b>safata o capsa</b> per abocar-los sense que caiguin a terra. Si no hi ha prou daus, es fa amb <b>monedes</b> (es desintegra el que surti creu) i n'hi ha prou amb 3 o 4 tirades.</p>
+<img class="fig" src="../images/sa7-s2-protocol-daus.svg" alt="Protocol de la simulaci&oacute;" style="margin:4px 0"><p class="figcap">Fig.2 &middot; Els quatre passos. Aqu&iacute; no hi ha cap resultat: els n&uacute;meros els genereu vosaltres.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>2a.</b> <b>Abans de tirar cap dau</b>, escriu una predicci&oacute; amb un n&uacute;mero: quantes tirades creus que caldran perqu&egrave; en quedi la meitat, i per qu&egrave;.</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>2b.</b> Anota les dades. La columna de la classe s'omple al final, quan sumem els daus de tots els equips.</p>
+<table class="data-table"><tr><th style="width:16%">Tirada</th><th style="width:28%">Daus que queden (el meu equip)</th><th style="width:28%">% que queda (el meu equip)</th><th style="width:28%">% que queda (tota la classe)</th></tr>
+<tr><td class="label-cell" style="text-align:center">0</td><td><span class="fill-cell small" contenteditable="true"></span></td><td class="label-cell" style="text-align:center">100 %</td><td class="label-cell" style="text-align:center">100 %</td></tr>
+<tr><td class="label-cell" style="text-align:center">1</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell" style="text-align:center">2</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell" style="text-align:center">3</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell" style="text-align:center">4</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell" style="text-align:center">5</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell" style="text-align:center">6</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+
+</table>
+<p style="font-size:12px;margin:8px 0 3px"><b>2c.</b> Dibuixa les <b>dues corbes</b> a la graella: primer la del teu equip, despr&eacute;s la de tota la classe amb un altre color.</p>
+<img class="fig" src="../images/sa7-s2-grafic-buit.svg" alt="Graella per al gr&agrave;fic" style="margin:4px 0"><p class="figcap">Fig.3 &middot; La l&iacute;nia taronja del 50 % &eacute;s la que et deixar&agrave; llegir la resposta de 2d.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>2d.</b> Mirant el gr&agrave;fic: quantes tirades han calgut perqu&egrave; en qued&eacute;s la <b>meitat</b>? Digues tamb&eacute; <b>com ho has llegit</b>.</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>2e.</b> Quina de les dues corbes &eacute;s m&eacute;s <b>irregular</b>? Explica per qu&egrave; ho &eacute;s, si la probabilitat de cada dau &eacute;s exactament la mateixa en tots dos casos. Al final, digues per a qu&egrave; han servit les <b>r&egrave;pliques</b> (les dades de tots els equips juntes).</p><div class="wline tall" contenteditable="true"></div>
+<div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128483;&#65039; Prepara la resposta oral.</b> Un membre de l'equip triat a l'<b>atzar</b> haur&agrave; de dir, <b>mirant nom&eacute;s el gr&agrave;fic</b>, quantes tirades han calgut perqu&egrave; en qued&eacute;s la meitat i com ho ha llegit. Escriviu-ne una l&iacute;nia:<div class="wline short" contenteditable="true"></div></div>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#4a6fa5">3</div><div><span class="stitle">Semivida i les dues datacions</span><span class="temps">12 min</span><div class="sdesc">Individual</div></div></div><div class="divider"></div>
+<div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="scaffold-title">&#129681; Bastida</div><div class="scaffold-text">La <b>semivida</b> &eacute;s el temps que ha de passar perqu&egrave; se n'hagi transformat la <b>meitat</b>. Compte amb el nom: <b>no</b> vol dir la meitat de la vida del conjunt. Cada semivida es menja la meitat <b>del que queda en aquell moment</b>, i per aix&ograve; la corba no arriba mai del tot a zero. Per calcular una edat: compta quantes vegades has hagut de <b>partir per la meitat</b> per arribar a la fracci&oacute; que queda, i multiplica aquest nombre per la semivida.</div></div></div>
+<img class="fig" src="../images/sa7-s2-semivida-exemple.svg" alt="Com es llegeix una semivida" style="margin:4px 0"><p class="figcap">Fig.4 &middot; Exemple resolt amb urani-235, que <b>no</b> &eacute;s cap de les mostres de l'apartat 4.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>3a.</b> Practica el c&agrave;lcul amb un element inventat que tingu&eacute;s una semivida de <b>40 anys</b>.</p>
+<table class="data-table"><tr><th style="width:34%">Queda...</th><th style="width:33%">Quantes semivides han passat</th><th style="width:33%">Quants anys han passat</th></tr>
+<tr><td class="label-cell">el 50 %</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">el 12,5 %</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">el 6,25 %</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr></table>
+<p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> A la SA6 vas datar capes <b>sense</b> cap n&uacute;mero d'anys. Escriu quina pregunta respon cada mena de dataci&oacute; i quina <b>no</b> pot respondre.</p>
+<table class="data-table"><tr><th style="width:24%">Mena de dataci&oacute;</th><th style="width:38%">Quina pregunta respon</th><th style="width:38%">Qu&egrave; NO pot dir</th></tr>
+<tr><td class="label-cell">Relativa<br><span style="font-weight:400;font-size:11px;color:#5a5580">principis geol&ograve;gics</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td class="label-cell">Absoluta<br><span style="font-weight:400;font-size:11px;color:#5a5580">semivida</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
+</div>
+
+<div class="section"><div class="section-header"><div class="snum" style="background:#B0821F">4</div><div><span class="stitle">El laboratori de dataci&oacute;</span><span class="temps">28 min</span><div class="sdesc">En equip &middot; feu d'informe de laboratori</div></div></div><div class="divider"></div>
+<div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="scaffold-title">&#129681; Bastida</div><div class="scaffold-text">Per a cada mostra, sempre els mateixos tres passos. <b>Un:</b> mira quina mena de material &eacute;s i quina edat s'hi espera, i tria el rellotge de la Fig.5 comprovant que aquella edat cau dins la franja on el rellotge serveix. <b>Dos:</b> compta quantes vegades has de partir per la meitat per arribar a la fracci&oacute; que queda i multiplica per la semivida. <b>Tres:</b> escriu tamb&eacute; qu&egrave; <b>no</b> pots afirmar amb aquesta dada. Si m&eacute;s d'un rellotge compleix la regla dels anys, mana la <b>columna del material</b> i l'edat que esperes trobar. I si cap rellotge no serveix, la resposta correcta <b>no &eacute;s inventar-se un n&uacute;mero</b>: &eacute;s dir qu&egrave; dataries en lloc seu.</div></div></div>
+<img class="fig" src="../images/sa7-s2-rellotges.svg" alt="Els rellotges del laboratori" style="margin:4px 0"><p class="figcap">Fig.5 &middot; Les dades que necessites. Llegeix la regla del requadre blau abans de triar cap rellotge.</p>
+<p style="font-size:12px;margin:8px 0 3px"><b>4a.</b> Omple l'informe de les tres mostres.</p>
+<table class="data-table"><tr><th style="width:27%">Mostra</th><th style="width:14%">Rellotge triat</th><th style="width:11%">Semivides</th><th style="width:13%">Edat</th><th style="width:35%">Qu&egrave; NO puc afirmar amb aquesta dada</th></tr>
+<tr><td style="font-size:12px"><b>A.</b> Fragment de <b>meteorit</b>.<br><span style="font-size:11px;color:#5a5580">Es vol comprovar si &eacute;s tan antic com el sistema solar.</span><br><span style="font-size:11px;color:#5a5580">Hi queda el <b>50 %</b> de l'element de partida.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td style="font-size:12px"><b>B.</b> <b>Carb&oacute;</b> d'una foguera trobada en una cova.<br><span style="font-size:11px;color:#5a5580">Hi queda el <b>25 %</b> de l'element de partida.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
+<tr><td style="font-size:12px"><b>C.</b> <b>Os de dinosaure</b> (fa uns <b>66 Ma</b>), trobat en un tall de terreny que veur&agrave;s a 4b.<br><span style="font-size:11px;color:#5a5580">Un company proposa fer servir el carboni-14.</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
+<p style="font-size:12px;margin:8px 0 3px"><b>4b.</b> La mostra C no es pot datar directament. Fes servir el terreny per acotar-ne l'edat: completa les frases.</p>
+<img class="fig" src="../images/sa7-s2-datacio-creuada.svg" alt="Tall amb dues capes de cendra datades" style="margin:4px 0"><p class="figcap">Fig.6 &middot; Les dues cendres estan datades. L'os, no.</p>
+<table class="data-table"><tr><th style="width:50%">Frase per completar</th><th style="width:50%">La teva resposta</th></tr>
+<tr><td style="font-size:12px">L'os &eacute;s <b>m&eacute;s jove</b> que la cendra ______ , datada fa ______ Ma</td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td style="font-size:12px">L'os &eacute;s <b>m&eacute;s vell</b> que la cendra ______ , datada fa ______ Ma</td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td style="font-size:12px">Per tant, l'os t&eacute; entre... i... milions d'anys</td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
+<tr><td style="font-size:12px">El principi geol&ograve;gic que ho justifica &eacute;s...</td><td><span class="fill-cell small" contenteditable="true"></span></td></tr></table>
+<p style="font-size:12px;margin:8px 0 3px"><b>4c.</b> Per qu&egrave; el resultat de 4b &eacute;s un <b>interval</b> i no un n&uacute;mero exacte?</p><div class="wline" contenteditable="true"></div>
+<div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="epist-title">&#129517; Naturalesa de la ci&egrave;ncia</div><div class="epist-text">Amb aquests rellotges, els laboratoris situen la formaci&oacute; de la Terra fa uns <b>4.600 Ma</b> i els <b>primers indicis de vida</b> entre 3.800 i 3.500 Ma: restes de carboni d'origen probablement biol&ograve;gic i <b>estromat&ograve;lits</b>. Fixa't com s'ha de dir aix&ograve;: la prova no diu que la vida <i>va apar&egrave;ixer</i> en aquell moment exacte.</div></div></div>
+<p style="font-size:12px;margin:8px 0 3px"><b>4d.</b> Amb aquestes proves, qu&egrave; podem afirmar: que la vida <b>va apar&egrave;ixer</b> fa 3.500 Ma, o nom&eacute;s que <b>ja n'hi havia</b>? Explica la difer&egrave;ncia entre les dues frases.</p><div class="wline tall" contenteditable="true"></div>
+<div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128172; Posada en com&uacute; de la classe (10 min).</b> Abans de tancar la fitxa comparem els informes de laboratori dels equips i decidim junts qu&egrave; es fa amb la mostra que no es pot datar.</div>
+<div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="meta-oa-title">Metacognici&oacute; &middot; 5 min</div>
+<p style="font-size:12px;margin-bottom:3px">Torna a llegir el que has escrit a l'apartat 0. Qu&egrave; hi canviaries ara?</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:6px 0 3px">Qu&egrave; t'ha costat m&eacute;s d'acceptar: que <b>no</b> es pugui saber qu&egrave; far&agrave; un &agrave;tom concret, o que <b>s&iacute;</b> es pugui saber qu&egrave; faran tots junts?</p><div class="wline" contenteditable="true"></div>
+<p style="font-size:12px;margin:6px 0 3px">Despr&eacute;s d'escriure &laquo;aquesta mostra no la puc datar&raquo;, l'informe et sembla m&eacute;s fluix o m&eacute;s s&ograve;lid? Per qu&egrave;?</p><div class="wline" contenteditable="true"></div></div>
+</div>
+<div class="tasca-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="tasca-title">&#127968; Feina per a casa</div><div class="tasca-item"><div class="tasca-num">1</div><div>Busca <b>dues hip&ograve;tesis diferents</b> sobre com va apar&egrave;ixer la vida a la Terra.</div></div><div class="tasca-item"><div class="tasca-num">2</div><div>Per a cadascuna, escriu <b>una prova concreta</b> que hi juga a favor i <b>una cosa que encara no explica</b>. Curt, per&ograve; ha de ser teu: a la propera sessi&oacute; ho haur&agrave;s de defensar en veu alta.</div></div></div>
+<div class="footer"><div class="footer-l">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 2 &middot; Versi&oacute; B &middot; IE Temple &middot; Biologia i Geologia 4t ESO</div><div class="footer-r">&#9203;</div></div>
+    <div class="attrib">Adaptat per Albert Pahissa de l&#39;original de Jordi Dom&egrave;nech. Llic&egrave;ncia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a> (Reconeixement&ndash;NoComercial&ndash;CompartirIgual).</div>
+    </div></div>
+<script>
+const delStack=[];
+function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});const u=document.getElementById('btn-undo');if(u)u.classList.add('active')}
+function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);const u=document.getElementById('btn-undo');if(u&&!delStack.length)u.classList.remove('active');updatePageBreaks()}
+function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">&#10005;</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
+document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
+const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
+function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='Pàgina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple · Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
+function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
+window.addEventListener('load',updatePageBreaks);
+const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+</script>
+</body>
+</html>

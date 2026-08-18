@@ -132,7 +132,7 @@ export const sa4s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa4-s2-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa4-s2-fitxa-A.html", B: "/fitxes/sa4-s2-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a la pregunta del consell genètic de l'apartat 1 i respon-la ara amb un número (la probabilitat que un fill tingui la malaltia) i una frase que expliqui per què és una probabilitat i no una certesa.",
 

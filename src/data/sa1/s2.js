@@ -99,7 +99,7 @@ export const sa1s2 = {
       id: "t2",
       apartat: "2",
       heading: "El ==detector de pseudociència==: 5 senyals d'alerta",
-      text: "Tota pseudociència sol repetir els mateixos trucs. En destaquem ==5 senyals==: (1) ==no es pot comprovar== amb experiments fiables; (2) ==no admet crítica== ni es corregeix mai; (3) es basa en ==autoritat== o testimonis, no en dades; (4) ==sona científica== (fa servir paraules com «quàntic», «energia», «natural»); (5) ==apel·la al que vols creure== (desitjos, valors, identitat). Amb un sol senyal ja pots sospitar; com més senyals, més clar.",
+      text: "Tota pseudociència sol repetir els mateixos trucs. En destaquem ==5 senyals==: (1) ==no es pot comprovar== amb experiments fiables; (2) ==no admet crítica== ni es corregeix mai; (3) es basa en ==autoritat== o testimonis, no en dades; (4) ==sona científica== (fa servir paraules com «quàntic», «energia», «natural»); (5) ==apel·la al que vols creure== (desitjos, valors, identitat). Amb un sol senyal ja pots sospitar; com més senyals, més clar. I compte amb el senyal 5: aquestes ganes no només et fan acceptar la promesa, també et poden fer ==NOTAR una millora que no hi és==. Per això, quan es vol comprovar de debò si una cosa funciona, la prova s'ha de muntar de manera que ==ningú sàpiga== qui rep el producte de veritat i qui no.",
       type: "concept"
     },
     {
@@ -126,7 +126,7 @@ export const sa1s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa1-s2-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa1-s2-fitxa-A.html", B: "/fitxes/sa1-s2-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Producte de la sessió: apliques el detector al teu cas caçat i prepares una defensa oral d'1 minut que anticipa l'objecció de qui hi creu. La demostració de comprensió és PRESENCIAL (defensa a l'aula), no s'entrega per escrit.",
 

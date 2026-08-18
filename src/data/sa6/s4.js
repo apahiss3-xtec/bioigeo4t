@@ -133,7 +133,7 @@ export const sa6s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa6-s4-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa6-s4-fitxa-A.html", B: "/fitxes/sa6-s4-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "A la fitxa faràs l'informe de riscos d'un indret real de les Terres de l'Ebre: identificar-ne els riscos a partir de la roca, el relleu i la vegetació, separar què hi ha posat la natura i què hi hem posat nosaltres, i proposar mesures dient sobre quin factor del risc actuen. Aquest informe és una de les dues peces avaluables de la SA, juntament amb el vídeo divulgatiu «Gondwana Tales».",
 

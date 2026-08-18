@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA1 · S1 · Com decideixes què és cert? · B</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2A6F7F; --teal-ink:#1c4a55; --teal-light:#9ccad2; --teal-tint:#eaf4f6;
+  --ink:#14201f; --ink-2:#334; --muted:#6b7a7e; --surface:#fdfefe;
+  --rule:#dce9eb; --rule-dark:#b6ccd0;
+  --orange:#c96f3e; --orange-tint:#f6ece8;
+  --aqua:#38a3a5; --aqua-tint:#e6f5f5;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#8a5a9e; --purple-tint:#f1eaf4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(56,163,165,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.7);flex:1}
+.tb-tip strong{color:#9de0e2}
+.tb-sep{width:1px;height:20px;background:rgba(56,163,165,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(56,163,165,.2);border:1px solid rgba(56,163,165,.4);color:#bfe6e8;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(56,163,165,.2);border:1px solid rgba(56,163,165,.4);color:#bfe6e8;font-size:12px}
+.tb-undo{background:rgba(201,111,62,.2);border:1px solid rgba(201,111,62,.4);color:#f0bfa5;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
+.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #7fa8b0;pointer-events:none;z-index:10}
+.page-break-label{position:absolute;right:10px;top:-11px;background:#7fa8b0;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(56,163,165,.08);box-shadow:0 0 0 2px rgba(56,163,165,.3)}
+[contenteditable]:focus{background:rgba(56,163,165,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+/* Caps d'escriptura GRANS (4t: respostes obertes, paràgrafs) */
+.wline{display:block;width:100%;min-height:46px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(56,163,165,.04)}
+.wline.tall{min-height:70px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(56,163,165,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#1c4a55 0%,#2f7f8a 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.75;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.6;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#eef7f8,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'○';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 13px}
+.previ-box p{font-size:12.5px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table th small{font-size:8.5px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.8;display:block;margin-top:1px}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:34px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.6}
+.fill-cell:focus{background:rgba(56,163,165,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.cut-card{border:1.5px dashed var(--teal-light);border-radius:6px;padding:6px 9px;font-size:12px;background:#fff}
+.cut-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+.scale-table td{vertical-align:middle}
+.scale-num{width:34px;text-align:center;font-weight:900;color:var(--teal-ink);font-size:15px}
+.chk{width:14px;height:14px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;display:inline-block;vertical-align:middle}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;margin-bottom:4px;padding:2px 0}
+.meta-oa-check{width:16px;height:16px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;margin-top:1px}
+.meta-oa-text{flex:1;line-height:1.35}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-icon{font-size:18px;display:block;margin-bottom:3px}
+.meta-label{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.stars{display:flex;gap:4px;margin-top:4px}.star{font-size:18px;color:#7fa8b0}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(56,163,165,.05) 6px,rgba(56,163,165,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+@media print{
+  @page{size:A4;margin:10mm 12mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar,.page-break-line,.del-btn{display:none!important}
+  .page-footer-bar{display:flex!important}
+  .footer{display:none!important}
+  .page-wrap{box-shadow:none;width:100%}
+  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
+  .wline{background:transparent;padding:0}
+  .fill-cell{background:transparent;outline:none}
+  .spacer-block{background:transparent!important;border:none!important}
+  .spacer-label{display:none!important}
+}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <span class="tb-tip">✎ Clica per editar · <strong>Ctrl+B</strong> negreta · <strong>×</strong> rosa elimina · <strong>Ctrl+Z</strong> desfés</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">↩ Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">＋ Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+</div>
+
+<div class="page-wrap" id="doc">
+
+  <div class="header-band deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🔬</div></div>
+    <div class="header-main">
+      <div class="header-sa" contenteditable="true">SA1 · Ciència i Pseudociència · Sessió 1 de 4</div>
+      <div class="header-title" contenteditable="true">Com decideixes què és cert?</div>
+      <div class="header-subtitle" contenteditable="true">Escala de certeses, garanties i mètode científic</div>
+    </div>
+    <div class="header-right">
+      <div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+      <div class="header-meta" contenteditable="true">Biologia i Geologia · 4t ESO<br>IE Temple</div>
+    </div>
+  </div>
+
+  <div class="nivell-strip deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <span class="nivell-label" contenteditable="true">Treball a l'aula i autònom</span>
+    <span class="temps-badge" contenteditable="true">⏱️ 2h total</span>
+    <div class="nom-field">
+      Nom:&nbsp;<span class="input-span" contenteditable="true"></span>
+      &nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>
+      &nbsp;<span class="nivell-badge-small" title="Versió B">B</span>
+    </div>
+  </div>
+
+  <div class="oa-box deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <div class="oa-title">🎯 Objectius d'aprenentatge d'avui</div>
+    <ul class="oa-list">
+      <li contenteditable="true">Ordeno afirmacions de <strong>més certa a menys certa</strong> i explico per què.</li>
+      <li contenteditable="true">Identifico els <strong>5 tipus de garanties</strong> (dades, models, hàbits, autoritat, identitat/valors).</li>
+      <li contenteditable="true">Compto quines garanties faig servir més i dibuixo el meu <strong>perfil epistèmic</strong>.</li>
+      <li contenteditable="true">Distingeixo <strong>ciència de pseudociència</strong> segons si es fa servir el mètode científic.</li>
+    </ul>
+  </div>
+
+  <div class="content">
+
+    <!-- Secció 0 -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--muted)">0</div>
+        <div><div class="stitle">Idees prèvies <span class="temps">⏱️ 10 min</span></div>
+        <div class="sdesc" contenteditable="true">Sigues sincer/a: no hi ha respostes que restin</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="previ-box">
+        <p>✏️ <span contenteditable="true"><strong>1.</strong> Escriu una cosa de la qual estiguis MOLT segur/a i una de la qual estiguis MOLT poc segur/a. Què fa que una sigui més certa que l'altra?</span></p>
+        <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
+          <div><div class="scaffold-title">Ajuda per començar</div>
+          <div class="scaffold-text" contenteditable="true">«Estic molt segur/a que… i poc segur/a que… La diferència és…»</div></div></div>
+        <div class="wline tall" contenteditable="true"></div>
+        <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>2.</strong> Quan vols convèncer algú que tens raó, en què t'acostumes a basar?</span></p>
+        <div class="wline" contenteditable="true"></div>
+        <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>3.</strong> Què vol dir per a tu que una cosa sigui «científica»?</span></p>
+        <div class="wline" contenteditable="true"></div>
+      </div>
+    </div>
+
+    <!-- Secció 1: escala de certeses -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--aqua)">1</div>
+        <div><div class="stitle" contenteditable="true">Escala de certeses <span class="temps">⏱️ 40 min</span></div>
+        <div class="sdesc" contenteditable="true">Ordena de més certa (10) a menys certa (1)</div></div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Agafa el teu <strong>joc de retallables</strong> (full a part), retalla les 10 afirmacions i <strong>enganxa-les</strong> a la columna «Afirmació», de <strong>més certa (10)</strong> a <strong>menys certa (1)</strong>. Escriu a cada fila per què li dones aquesta certesa.</p>
+
+      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">✂️</div>
+        <div><div class="scaffold-title">Retallables</div>
+        <div class="scaffold-text" contenteditable="true">Les tires són al full <em>«Retallables — Escala de certeses»</em> (1 joc per alumne). Tenen l'amplada d'aquesta columna per encaixar-hi.</div></div></div>
+
+      <table class="data-table scale-table">
+        <thead><tr><th style="width:36px">Cert.</th><th>Afirmació</th><th>Penso que és molt/poc certa perquè…</th></tr></thead>
+        <tbody>
+          <tr><td class="scale-num">10</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">9</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">8</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">7</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">6</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">5</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">4</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">3</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">2</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="scale-num">1</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+        </tbody>
+      </table>
+      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
+        <div><div class="scaffold-title">Pista per justificar</div>
+        <div class="scaffold-text" contenteditable="true">Fes servir paraules com: <em>segur, probable, depèn de, no hi ha proves, tothom ho diu, és impossible</em>. Fixa't sobretot en <strong>si es pot comprovar</strong>.</div></div></div>
+      <p style="font-size:12px;margin-top:6px" contenteditable="true">🗣️ <strong>Consens de grup:</strong> discutiu fins a acordar un ordre comú. NO canviïs el teu full: marca amb <strong>fletxes vermelles</strong> els canvis que estàs disposat/da a acceptar.</p>
+    </div>
+
+    <!-- Secció 2: garanties -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--teal)">2</div>
+        <div><div class="stitle" contenteditable="true">Tipus d'arguments: les garanties <span class="temps">⏱️ 25 min</span></div>
+        <div class="sdesc" contenteditable="true">Amb què justifiquem que una cosa és certa?</div></div>
+      </div>
+      <div class="divider"></div>
+      <figure class="deletable" style="margin:6px 0 10px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <img class="fig" src="../images/sa1-s1-garanties.svg" alt="Els 5 tipus de garanties" style="max-height:260px" onerror="this.style.display='none'">
+      </figure>
+      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Algú afirma que <strong>plourà</strong> i dona diferents raons. Classifica cada argument segons el tipus de garantia.</p>
+      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
+        <div><div class="scaffold-title">Com classificar</div>
+        <div class="scaffold-text" contenteditable="true">Números/mesures → <strong>DADES</strong> · com funciona un sistema → <strong>MODELS</strong> · «sempre ha estat així» → <strong>HÀBITS</strong> · «ho diu X» → <strong>AUTORITAT</strong> · el que vols o creus → <strong>IDENTITAT i VALORS</strong>.</div></div></div>
+      <table class="data-table">
+        <thead><tr><th>Argument («Plourà perquè…»)</th><th style="width:200px">Tipus de garantia</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell" contenteditable="true">…ho diu la persona del temps de la tele</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell" contenteditable="true">…hi ha núvols</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell" contenteditable="true">…som a la tardor i a la tardor sol ploure</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell" contenteditable="true">…tinc ganes de llegir mentre plou</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell" contenteditable="true">…aquí hi plou 225 de cada 365 dies</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell" contenteditable="true">…la humitat és del 95%</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Secció 3: perfil epistèmic -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--purple)">3</div>
+        <div><div class="stitle" contenteditable="true">El meu perfil epistèmic <span class="temps">⏱️ 20 min</span></div>
+        <div class="sdesc" contenteditable="true">Conèixer com penso per no deixar-me enganyar</div></div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Posa una nota de certesa (1–10) a cada afirmació i marca en quina garantia et bases. Després compta quantes vegades has fet servir cada tipus.</p>
+      <table class="data-table">
+        <thead><tr><th>Afirmació</th><th style="width:44px">Cert.</th><th style="width:56px">Dades</th><th style="width:56px">Models</th><th style="width:56px">Hàbits</th><th style="width:64px">Autor.</th><th style="width:72px">Ident./Val.</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell" contenteditable="true">Les vacunes funcionen</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Els horòscops prediuen el futur</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Els productes homeopàtics funcionen</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Hi ha números que donen sort</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">La radiació del Wi-Fi és segura</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Les plantes medicinals funcionen</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;margin-top:4px" contenteditable="true">✏️ Quina garantia has fet servir més? I menys? Què vol dir això sobre com penses? Compara-ho amb un company.</p>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:22px">🧠</div>
+        <div><div class="epist-title">Cognició epistèmica</div>
+        <div class="epist-text" contenteditable="true">No totes les garanties valen igual per decidir què és cert: basar-se en <strong>dades i models</strong> dona més seguretat que fer-ho només per <strong>autoritat, hàbits o identitat</strong>. Fiar-se sempre d'un sol tipus és perillós.</div></div></div>
+    </div>
+
+    <!-- Secció 4: ciència vs pseudociència -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--orange)">4</div>
+        <div><div class="stitle" contenteditable="true">Ciència o pseudociència? <span class="temps">⏱️ 25 min</span></div>
+        <div class="sdesc" contenteditable="true">Té mètode? Es comprova? Admet crítica?</div></div>
+      </div>
+      <div class="divider"></div>
+      <figure class="deletable" style="margin:6px 0 10px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <img class="fig" src="../images/sa1-s1-ciencia-pseudo.svg" alt="Ciència vs pseudociència" style="max-height:260px" onerror="this.style.display='none'">
+      </figure>
+      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Llegeix cada descripció i escriu si és <strong>ciència</strong> o <strong>pseudociència</strong>.</p>
+      <table class="data-table">
+        <thead><tr><th style="width:120px">Nom</th><th>Descripció</th><th style="width:130px">Ciència / Pseudo.</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell">Astrologia</td><td style="font-size:11px" contenteditable="true">Creu que la posició dels estels influeix en el caràcter i el futur</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Biologia</td><td style="font-size:11px" contenteditable="true">Estudia els éssers vius: com funcionen, es relacionen i evolucionen</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Homeopatia</td><td style="font-size:11px" contenteditable="true">Gotes molt diluïdes que diuen curar, sense proves científiques</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Geologia</td><td style="font-size:11px" contenteditable="true">Estudia la Terra: roques, volcans, terratrèmols i la seva història</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Ufologia</td><td style="font-size:11px" contenteditable="true">Estudi d'ovnis i extraterrestres sense proves verificables</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Reiki</td><td style="font-size:11px" contenteditable="true">Diu curar amb l'energia de les mans, sense evidència que ho avali</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;margin-top:4px" contenteditable="true">✏️ Tria UNA pseudociència i explica, amb el vocabulari d'avui, per què no la considerem científica.</p>
+      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
+        <div><div class="scaffold-title">Ajuda per redactar</div>
+        <div class="scaffold-text" contenteditable="true">«___ no és ciència perquè no es comprova amb ___, no admet ___ i es basa en ___ (garantia: ___).»</div></div></div>
+      <div class="wline tall" contenteditable="true"></div>
+    </div>
+
+    <!-- Metacognició -->
+    <div class="section deletable" style="margin-top:14px">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <p style="font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px">🧠 Metacognició — 3 min</p>
+      <div class="meta-oa-box deletable" style="margin-bottom:8px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="meta-oa-title">🎯 Torna als objectius — marca el que has après avui:</div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé ordenar afirmacions per grau de certesa i explicar-ho.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Reconec els 5 tipus de garanties.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé llegir el meu perfil epistèmic.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Distingeixo ciència de pseudociència amb criteris.</div></div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">❓</span><div class="meta-label">Encara em pregunto…</div><div class="wline" contenteditable="true"></div></div>
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la sessió</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:9.5px;color:var(--muted);margin-top:4px">Encercla les estrelles</div></div>
+      </div>
+    </div>
+
+    <!-- Tasca casa -->
+    <div class="tasca-box deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="tasca-title">📚 Feina per a casa — per a la Sessió 2</div>
+      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">1</div>
+        <div contenteditable="true"><strong>🕵️ Caça una pseudociència:</strong> busca UN producte, notícia o anunci que prometi alguna cosa «científica» sospitosa (polsera magnètica, detox, horòscop, aliment «que cura»…). Retalla'l o fes-ne una foto.</div></div>
+      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">2</div>
+        <div contenteditable="true"><strong>🗣️ Prepara la defensa oral (1 minut):</strong> per què creus que és pseudociència i amb quines garanties intenta convèncer? Ho defensaràs a l'aula: és la teva demostració de comprensió.</div></div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-l">SA1 · Ciència i Pseudociència · Sessió 1 · Versió B · IE Temple · Biologia i Geologia 4t ESO</div>
+      <div class="footer-r">©2025–2026</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const delStack=[];
+function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});document.getElementById('btn-undo').classList.add('active')}
+function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);if(!delStack.length)document.getElementById('btn-undo').classList.remove('active');updatePageBreaks()}
+function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
+document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
+const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
+function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='Pàgina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple · Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
+function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
+window.addEventListener('load',updatePageBreaks);
+const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+</script>
+</body>
+</html>

@@ -129,7 +129,7 @@ export const sa7s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: "/fitxes/sa7-s4-fitxa.pdf",
+  fitxaUrl: { A: "/fitxes/sa7-s4-fitxa-A.html", B: "/fitxes/sa7-s4-fitxa-B.html" },
   teoriaPdfUrl: null,
   elaborateNote: "El producte de la situació és un assaig argumentatiu individual que escriuràs després d'aquesta sessió, amb els fulls de dades i de valors del debat al davant. No és un resum del debat: és la teva postura, amb la millor objecció que has sentit i la teva resposta. Al final hi ha d'haver una frase que la gent s'oblida sempre de posar i que aquí és obligatòria: quina dada et faria canviar d'opinió.",
 
