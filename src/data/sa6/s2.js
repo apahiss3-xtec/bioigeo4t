@@ -148,7 +148,7 @@ export const sa6s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Al teu model, l'aigua calenta amb colorant pujava, s'escampava per dalt i tornava a baixar pels costats. Com relaciones aquest moviment amb el que fa el mantell sota les plaques? Digues què representava cada part del model.", hint: "L'aigua = mantell; el colorant fa visible el corrent de convecció; la superfície = les plaques que el corrent arrossega. El calent puja (dorsal) i el fred baixa (subducció)." },
     { id: "q2", type: "multiple", text: "Al planeta de Gondwana Tales, una vall llarga i estreta parteix un continent pel mig: el terreny s'esquerda i se separa, hi ha volcans i terratrèmols alineats al fons de la vall, i el mar tot just ha començat a entrar-hi per un extrem. Fa 20 milions d'anys allà no hi havia ni vall ni mar: era continent sencer. En quina fase del cicle de Wilson es troba?", options: ["Naixement", "Creixement", "Tancament", "Desaparició"], correct: 0 },

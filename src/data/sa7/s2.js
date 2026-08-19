@@ -154,7 +154,7 @@ export const sa7s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Una roca volcànica conté el 25 % del potassi-40 que tenia quan es va formar. Sabent que la semivida del potassi-40 és de 1.300 milions d'anys, quina edat té la roca? Escriu el raonament, no només el número.", hint: "Compta quantes vegades has hagut de partir per la meitat per passar del 100 % al 25 %." },
     { id: "q2", type: "multiple", text: "Què vol dir exactament que un element té una semivida de 5.000 anys?", options: ["Que al cap de 5.000 anys s'haurà transformat tot", "Que al cap de 5.000 anys se n'haurà transformat la meitat, i al cap de 10.000 no en quedarà res", "Que al cap de 5.000 anys se n'haurà transformat la meitat, i al cap de 10.000 en quedarà una quarta part", "Que cada àtom concret dura exactament 5.000 anys abans de transformar-se"], correct: 2 },

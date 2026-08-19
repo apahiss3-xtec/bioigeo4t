@@ -29,8 +29,14 @@
     "objectivesHint": "Tria el teu nivell: canvien els objectius i el suport de la sessió.",
     "challenge": "Repte d'ampliació",
     "scaffold": "Amb suport",
-    "A": { "short": "", "help": "Nivell A: més autonomia, raonaments oberts i menys pistes." },
-    "B": { "short": "", "help": "Nivell B: la versió amb més acompanyament." }
+    "A": {
+      "short": "",
+      "help": "Nivell A: més autonomia, raonaments oberts i menys pistes."
+    },
+    "B": {
+      "short": "",
+      "help": "Nivell B: la versió amb més acompanyament."
+    }
   },
   "activity": {
     "what": "Què farem",
@@ -55,7 +61,7 @@
     "exitTicket": "Exit tiquet",
     "homework": "Feina a casa",
     "recovery": "Has faltat a classe?",
-    "recoveryIntro": "A classe, l'exit tiquet i les activitats es fan en paper. Si has faltat, aquí tens com recuperar la sessió pel teu compte i fer l'exit tiquet online.",
+    "recoveryIntro": "A classe l'exit tiquet es fa en paper o en aquesta mateixa pàgina, segons la sessió. Si has faltat, aquí tens com recuperar-la pel teu compte i fer l'exit tiquet online.",
     "exitOnlineAccordion": "🎟️ Fes l'exit tiquet online (només si has faltat)",
     "closingTitle": "Per tancar la sessió",
     "closingNote": "A la fitxa impresa: fes l'exit tiquet i la metacognició (torna als objectius del principi i marca què has après).",
@@ -80,7 +86,9 @@
     "roleB": "Rol B",
     "prevSession": "Sessió anterior",
     "nextSession": "Sessió següent",
-    "backToSA": "Torna a la SA"
+    "backToSA": "Torna a la SA",
+    "criteriNum": "criteri",
+    "criteriOfficial": "Text oficial del currículum (llenguatge de professorat)"
   },
   "exitForm": {
     "nom": "Nom",
@@ -95,9 +103,12 @@
     },
     "answerPlaceholder": "Escriu la teva resposta aquí…",
     "send": "Obre Gmail amb les respostes",
-    "sent": "S'ha obert Gmail amb el teu exit tiquet preparat. Comprova que tot és correcte i clica Enviar dins de Gmail.",
+    "sent": "Encara NO està enviat. S'ha obert el teu Gmail amb l'exit tiquet preparat: comprova que tot és correcte i clica Enviar allà. Les teves respostes segueixen escrites en aquesta pàgina; no la tanquis fins que l'hagis enviat.",
     "requiredFields": "Cal omplir nom, cognom i grup abans d'enviar.",
-    "gdprNote": "Les teves respostes no es guarden enlloc: només s'obren a Gmail perquè les enviïs tu."
+    "gdprNote": "Les teves respostes no es guarden enlloc: només s'obren a Gmail perquè les enviïs tu.",
+    "blocked": "El navegador ha bloquejat la finestra de Gmail, així que l'exit tiquet ENCARA NO s'ha enviat.",
+    "blockedLink": "Obre'l tu aquí",
+    "reopenLink": "No s'ha obert? Obre'l tu aquí"
   },
   "homework": {
     "deadline": "Data límit",
@@ -120,7 +131,7 @@
     "yourName": "El teu nom (per al PDF)",
     "checklistTitle": "Què he d'estudiar abans de la prova",
     "checklistIntro": "Per a cada punt, sigues sincer/a amb tu mateix/a: marca «No ho sé», «Ho sé» o «Ho sé i ho sabria explicar a un company/a».",
-    "exitIntro": "Posa la nota que vas treure a cada exit tiquet (els tens en paper). El gràfic et dirà com vas per cada objectiu.",
+    "exitIntro": "Posa la nota que vas treure a cada exit tiquet (al full que et van tornar, o al correu que vas enviar). El gràfic et dirà com vas per cada objectiu.",
     "testTitle": "Test: un cas nou per posar-te a prova",
     "testIntro": "Un cas diferent del de classe. No es tracta de recordar, sinó d'aplicar el que has après a una situació nova. Tindràs feedback després de cada resposta.",
     "homeworkSection": "Deures",

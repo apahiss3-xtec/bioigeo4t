@@ -5,7 +5,7 @@ export const sa1s4 = {
   sessionNumber: 4,
   biome: "sa1",
   duration: "2h",
-  engageImage: "/images/sa1-s2-detector.svg",
+  engageImage: "/images/sa1-s4-portada.jpg",
   isFinalSession: true,
 
   // ── ENGANXA (hook) ───────────────────────────────────────
@@ -173,7 +173,7 @@ export const sa1s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -221,10 +221,15 @@ export const sa1s4 = {
     "Mira la Fig.1 (detector, 5 senyals) i la Fig.2 (ciència vs pseudociència)",
     "Tria un cas real teu (anunci, notícia, consell de salut) i passa'l tu sol/a per la graella de la fitxa S4",
     "Completa l'autoavaluació de la SA a la fitxa: marca què domines i què has de repassar",
-    "Fes l'exit tiquet en paper a classe quan tornis, o online aquí (apartat EXIT TIQUET)"
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────
   oaLinks: ["OA1", "OA2", "OA3", "OA4"],
-  competencies: ["CE1", "CE2", "CE3", "CE4"]
+  competencies: ["CE1", "CE2", "CE3", "CE4"],
+  // 2.1 s'ha retirat (revisió agent-alumne 19/08): exigeix citar les fonts i
+  // comparar-ne diverses, i ni la sessió ni la fitxa demanen enlloc d'on s'ha
+  // tret el cas. Si algun dia s'hi afegeix una casella «d'on l'he tret (font)»,
+  // 2.1 hi tornaria a encaixar.
+  criterisAvaluacio: ["1.1", "1.3", "2.2", "4.2"]
 }

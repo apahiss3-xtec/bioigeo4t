@@ -5,7 +5,7 @@ export const sa2s4 = {
   sessionNumber: 4,
   biome: "sa2",
   duration: "2h",
-  engageImage: "/images/sa2-s1-portada.jpg",
+  engageImage: "/images/sa2-s4-portada.jpg",
 
   // ── ENGANXA (hook de síntesi) ─────────────────────────────
   engageChallenge: "Tres informes arriben avui al mateix laboratori: (1) una ferida a la pell que es tanca sola en una setmana; (2) una biòpsia de teixit muscular amb un índex mitòtic del 35%; (3) una parella que no aconsegueix tenir fills perquè, segons l'anàlisi, els espermatozoides de l'home tenen 46 cromosomes en comptes de 23. Cap dels tres parla del mateix procés. Quin explica cada cas: mitosi normal, mitosi descontrolada (càncer) o un error en la meiosi?",
@@ -215,7 +215,7 @@ export const sa2s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -257,7 +257,7 @@ export const sa2s4 = {
     "Llegeix l'apartat EXPLICA d'avui: connecta els tres processos en un sol mapa",
     "Descarrega la fitxa S4 i resol els tres casos de diagnòstic amb el vocabulari de les tres sessions anteriors",
     "Fes la taula comparativa dels deures (Mitosi / Meiosi / Càncer) com a preparació per a la prova",
-    "L'exit tiquet en paper el trobaràs a classe o fes-lo online aquí"
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

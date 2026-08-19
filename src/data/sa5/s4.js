@@ -145,7 +145,7 @@ export const sa5s4 = {
   },
 
   // ── EXIT TIQUET (= exercici individual tipus PAU) ─────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "El peix globus és molt tòxic (té tetrodotoxina), però hi ha una serp que se'l menja sense morir: amb els anys, poblacions senceres de la serp s'han fet resistents al verí. Explica aquest cas amb la cadena mutació → variabilitat → selecció → canvi, assenyalant quin pas és a l'atzar i quin depèn de l'ambient.", hint: "La mutació de resistència apareix a l'atzar; el verí del peix globus (ambient) selecciona les serps que ja la tenien." },
     { id: "q2", type: "multiple", text: "Molts humans adults poden digerir la llet (persistència de la lactasa) perquè els seus avantpassats eren ramaders. Quina explicació és correcta segons el neodarwinisme?", options: ["Ja hi havia persones amb una mutació que mantenia la lactasa activa d'adults; en poblacions ramaderes es reproduïen més i van transmetre el gen", "Els avantpassats van beure tanta llet que el seu cos es va acostumar a fabricar lactasa, i van passar als fills aquesta capacitat adquirida", "Les poblacions ramaderes necessitaven digerir la llet i, com que els feia falta, el seu cos va acabar produint la mutació que els convenia", "Digerir la llet és un costum que s'aprèn de petit bevent-ne cada dia: no hi intervé cap gen ni cap procés evolutiu de la població"], correct: 0 },

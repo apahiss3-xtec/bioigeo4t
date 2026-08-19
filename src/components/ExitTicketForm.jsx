@@ -33,7 +33,11 @@ export default function ExitTicketForm({ session }) {
   const [grup, setGrup] = useState('')
   const [autoavaluacio, setAutoavaluacio] = useState('')
   const [respostes, setRespostes] = useState({})
-  const [status, setStatus] = useState(null) // null | 'error' | 'sent'
+  const [status, setStatus] = useState(null) // null | 'error' | 'sent' | 'blocat'
+  // Si el navegador bloqueja la finestra emergent, guardem l'enllaç perquè
+  // l'alumne el pugui obrir a mà: si no, es quedaria amb un «ja està enviat»
+  // que no és cert i el professorat no rebria res.
+  const [urlPendent, setUrlPendent] = useState(null)
 
   // Ordre de presentació de les opcions de cada pregunta de resposta
   // múltiple (vegeu `permutacioEstable` a utils.js). Aquí la resposta viatja
@@ -66,8 +70,12 @@ export default function ExitTicketForm({ session }) {
       autoavaluacio,
       respostes
     })
-    window.open(url, '_blank')
-    setStatus('sent')
+    const finestra = window.open(url, '_blank')
+    // L'enllaç es guarda SEMPRE, tant si la finestra s'ha obert com si no: si
+    // s'obre en segon pla o hi salta el login de Google, l'alumne ha de poder
+    // tornar-hi sense haver de reomplir res.
+    setUrlPendent(url)
+    setStatus(finestra ? 'sent' : 'blocat')
   }
 
   const inputCls =
@@ -201,9 +209,30 @@ export default function ExitTicketForm({ session }) {
         {status === 'error' && (
           <p className="text-[var(--orange)] font-semibold">{t('exitForm.requiredFields')}</p>
         )}
-        {status === 'sent' && (
+        {status === 'sent' && urlPendent && (
           <p className="rounded-xl border border-[var(--rule-strong)] bg-[var(--surface-2)] p-4">
-            ✅ {t('exitForm.sent')}
+            📨 {t('exitForm.sent')}{' '}
+            <a
+              href={urlPendent}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-[var(--purple)] underline"
+            >
+              {t('exitForm.reopenLink')}
+            </a>
+          </p>
+        )}
+        {status === 'blocat' && urlPendent && (
+          <p className="rounded-xl border border-[var(--orange)] bg-[var(--surface-2)] p-4">
+            ⚠️ {t('exitForm.blocked')}{' '}
+            <a
+              href={urlPendent}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-[var(--purple)] underline"
+            >
+              {t('exitForm.blockedLink')}
+            </a>
           </p>
         )}
         <p className="text-sm text-[var(--muted)]">{t('exitForm.gdprNote')}</p>

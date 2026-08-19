@@ -5,7 +5,7 @@ export const sa1s1 = {
   sessionNumber: 1,
   biome: "sa1",
   duration: "2h",
-  engageImage: "/images/sa1-s1-garanties.svg",
+  engageImage: "/images/sa1-s1-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
   // Repte oral curt, fenomenològic: partim de creences reals molt esteses.
@@ -222,7 +222,7 @@ export const sa1s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -269,10 +269,13 @@ export const sa1s1 = {
     "Mira la Fig.1 (els 5 tipus de garanties) i la Fig.2 (ciència vs pseudociència)",
     "Descarrega la fitxa S1 i ordena tu sol/a l'escala de certeses (retallables a part) i marca les garanties",
     "Caça un cas de pseudociència a casa i anota què promet i amb quina garantia et vol convèncer",
-    "L'exit tiquet en paper el trobaràs a classe, o fes-lo online aquí (apartat EXIT TIQUET)"
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────
   oaLinks: ["OA1", "OA2", "OA3"],
-  competencies: ["CE2", "CE1", "CE3"]
+  competencies: ["CE2", "CE1", "CE3"],
+  // 3.1 s'ha retirat (revisió agent-alumne 19/08): parla d'experimentació i
+  // presa de dades, i aquesta sessió és retallables + debat, sense cap experiment.
+  criterisAvaluacio: ["1.1", "2.2"]
 }

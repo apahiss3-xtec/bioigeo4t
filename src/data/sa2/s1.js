@@ -5,7 +5,7 @@ export const sa2s1 = {
   sessionNumber: 1,
   biome: "sa2",
   duration: "2h",
-  engageImage: "/images/sa2-s1-portada.jpg",
+  engageImage: "/images/sa2-s1-portada-v2.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Un familiar rep un informe mèdic. Hi apareix una frase: «s'observen cèl·lules que es divideixen sense control». Espera... i les cèl·lules normals, també es divideixen? Doncs sí: ara mateix, mentre llegeixes això, milions de cèl·lules teves s'estan dividint per curar una ferida o fer-te créixer. Aleshores, quina diferència hi ha entre una divisió normal i una de tumoral?",
@@ -204,7 +204,7 @@ export const sa2s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -251,7 +251,7 @@ export const sa2s1 = {
     "Mira la Fig.1 (el cicle de la mitosi) i la Fig.2 (cèl·lules reals d'arrel de ceba) i intenta ordenar tu les fases",
     "Descarrega la fitxa S1 i completa l'observació i el recompte amb les imatges de la Fig.2",
     "A casa, busca un teixit que es regeneri de pressa i un que no, i anota per què",
-    "L'exit tiquet en paper el trobaràs a classe, o fes-lo online aquí (apartat EXIT TIQUET)"
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

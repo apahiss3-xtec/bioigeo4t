@@ -150,7 +150,7 @@ export const sa6s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "Un poble decideix prohibir construir cases noves a la plana inundable del barranc. Sobre quin factor del risc actua aquesta mesura?", options: ["Sobre la perillositat: el barranc es desbordarà menys sovint", "Sobre l'exposició: hi haurà menys coses i persones al lloc on arriba l'aigua", "Sobre la vulnerabilitat: les cases que ja hi ha seran més resistents", "Sobre cap dels tres: és només una mesura administrativa"], correct: 1 },
     { id: "q2", type: "open", text: "Dos vessants dels Ports tenen la mateixa roca i el mateix pendent, però un va cremar l'estiu passat i l'altre té bosc. Quin dels dos té més risc d'esllavissada i, sobretot, quin factor del risc ha canviat l'incendi? Justifica-ho.", hint: "Compara els dos vessants element per element: què ha quedat igual (roca, pendent, el que hi ha a sota) i què ha desaparegut. El factor que ha canviat és el que et diu si el procés és ara més probable o si només hi ha més coses per rebre el cop." },

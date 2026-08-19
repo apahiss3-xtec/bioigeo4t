@@ -5,7 +5,7 @@ export const sa2s3 = {
   sessionNumber: 3,
   biome: "sa2",
   duration: "2h",
-  engageImage: "/images/sa2-s1-portada.jpg",
+  engageImage: "/images/sa2-s3-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Un laboratori de recerca prova un fàrmac nou contra el càncer. Injecten a ratolins un tumor i després els tracten amb el fàrmac. Per saber si funciona NO obren el ratolí per veure si el tumor és més petit: agafen un trosset de teixit (una biòpsia), el miren al microscopi i compten una sola cosa. Què creus que compten, si un càncer és, precisament, cèl·lules que es divideixen sense control?",
@@ -212,7 +212,7 @@ export const sa2s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -254,7 +254,8 @@ export const sa2s3 = {
     "Amb la Fig.2, compta el total i les cèl·lules en divisió de cada biòpsia i calcula els dos índexs mitòtics",
     "Llegeix l'apartat EXPLICA (índex mitòtic, provar un fàrmac abans/després, el càncer com a cicle sense control)",
     "Descarrega la fitxa S3 i completa el recompte, la interpretació i el veredicte",
-    "A casa, redacta el mini-informe de conclusió amb els teus números; l'exit tiquet en paper el trobaràs a classe o fes-lo online aquí"
+    "Redacta el mini-informe de conclusió amb els teus números",
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

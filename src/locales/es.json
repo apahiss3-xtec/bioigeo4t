@@ -52,7 +52,9 @@
     "roleB": "Rol B",
     "prevSession": "Sesión anterior",
     "nextSession": "Sesión siguiente",
-    "backToSA": "Volver a la SA"
+    "backToSA": "Volver a la SA",
+    "criteriNum": "criterio",
+    "criteriOfficial": "Texto oficial del currículum (lenguaje de profesorado)"
   },
   "exitForm": {
     "nom": "Nombre",
@@ -67,9 +69,12 @@
     },
     "answerPlaceholder": "Escribe tu respuesta aquí…",
     "send": "Abrir Gmail con las respuestas",
-    "sent": "Se ha abierto Gmail con tu exit ticket preparado. Comprueba que todo es correcto y haz clic en Enviar dentro de Gmail.",
+    "sent": "Todavía NO está enviado. Se ha abierto tu Gmail con el exit ticket preparado: comprueba que todo es correcto y pulsa Enviar allí. Tus respuestas siguen escritas en esta página; no la cierres hasta que lo hayas enviado.",
     "requiredFields": "Hay que rellenar nombre, apellido y grupo antes de enviar.",
-    "gdprNote": "Tus respuestas no se guardan en ningún sitio: solo se abren en Gmail para que las envíes tú."
+    "gdprNote": "Tus respuestas no se guardan en ningún sitio: solo se abren en Gmail para que las envíes tú.",
+    "blocked": "El navegador ha bloqueado la ventana de Gmail, así que el exit ticket TODAVÍA NO se ha enviado.",
+    "blockedLink": "Ábrelo tú aquí",
+    "reopenLink": "¿No se ha abierto? Ábrelo tú aquí"
   },
   "homework": {
     "deadline": "Fecha límite",
@@ -82,12 +87,12 @@
   },
   "deures": {
     "title": "Deberes y plazos",
-    "intro": "Todas las tareas de casa de las sesiones publicadas, en orden de sesión.",
+    "intro": "Todas las tareas para casa de las sesiones publicadas, por orden de sesión.",
     "noDeadline": "Sin fecha límite fijada"
   },
   "auto": {
     "title": "Autoevaluación pre-examen",
-    "intro": "Marca lo que has entregado y las notas de tus exit tickets (los tienes en papel). El gráfico te dirá cómo vas en cada objetivo de aprendizaje. No se guarda nada: al salir de la página, todo desaparece.",
+    "intro": "Comprueba si vas preparado/a para la prueba. Marca lo que ya sabes, pon las notas de tus exit tickets (en la hoja que te devolvieron, o en el correo que enviaste) y resuelve el caso práctico nuevo. No se guarda nada: al salir de la página, todo desaparece.",
     "selectSA": "Elige la situación de aprendizaje",
     "yourName": "Tu nombre (para el PDF)",
     "homeworkSection": "Deberes",

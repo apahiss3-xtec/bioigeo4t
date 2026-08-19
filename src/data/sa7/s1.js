@@ -149,7 +149,7 @@ export const sa7s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Un titular diu: «Un telescopi troba vida en un planeta llunyà». La notícia explica que s'ha detectat un senyal feble d'una molècula que a la Terra produeixen sobretot éssers vius, i que cal confirmar-lo. En quin nivell de certesa situaries l'afirmació del titular i quina observació concreta la faria pujar de nivell?", hint: "Separa primer què s'ha observat de debò i què hi afegeix el titular; després pensa quina observació nova caldria." },
     { id: "q2", type: "multiple", text: "Quina de les quatre frases descriu millor què diu el model del Big Bang?", options: ["Una explosió va llançar la matèria cap enfora des d'un punt concret de l'espai", "L'espai mateix s'expandeix des d'un estat molt dens i calent, i per això no hi ha cap centre", "L'univers sempre ha tingut la mida que té ara, però s'ha anat refredant", "La matèria va aparèixer de cop al centre de la nostra galàxia i s'ha anat escampant"], correct: 1 },

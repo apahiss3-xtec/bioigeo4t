@@ -5,7 +5,7 @@ export const sa2s2 = {
   sessionNumber: 2,
   biome: "sa2",
   duration: "2h",
-  engageImage: "/images/sa2-s1-portada.jpg",
+  engageImage: "/images/sa2-s2-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Tens 46 cromosomes a gairebé totes les cèl·lules del cos. La teva mare també. El teu pare també. I tu vas començar quan UNA cèl·lula de la teva mare (l'òvul) es va fusionar amb UNA cèl·lula del teu pare (l'espermatozoide). Si l'òvul en portés 46 i l'espermatozoide 46, tu en tindries 92... i el teu fill 184. Però tots en tenim 46. On han anat a parar la meitat?",
@@ -204,7 +204,7 @@ export const sa2s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -251,7 +251,7 @@ export const sa2s2 = {
     "Mira la Fig.1 (mitosi vs meiosi) i la Fig.2 (fecundació) i intenta reconstruir tu els dos processos amb un dibuix",
     "Descarrega la fitxa S2 i completa la comparació i el càlcul dels cromosomes de l'òvul",
     "A casa, fes l'esquema-resum de comparació mitosi/meiosi de quatre columnes",
-    "L'exit tiquet en paper el trobaràs a classe, o fes-lo online aquí (apartat EXIT TIQUET)"
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

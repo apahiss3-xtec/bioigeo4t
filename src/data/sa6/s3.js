@@ -149,7 +149,7 @@ export const sa6s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "En un tall hi ha tres capes horitzontals (A a baix, B al mig, C a dalt) i una falla que talla A i B però NO arriba a C. Quin és l'ordre correcte?", options: ["Primer la falla, després A, B i C", "Primer A i B, després la falla, i finalment C", "Primer A, B i C, i la falla al final de tot", "No es pot saber amb els principis geològics"], correct: 1 },
     { id: "q2", type: "open", text: "Trobes la mateixa espècie de fòssil de rèptil terrestre en una capa del Brasil i en una de Namíbia, a l'altre costat de l'Atlàntic. Quines dues coses en pots deduir? Digues quina és la deducció sobre l'EDAT i quina sobre la POSICIÓ dels continents.", hint: "Sobre l'edat: les dues capes es van formar en el mateix moment (correlació amb fòssil guia). Sobre la posició: un rèptil terrestre no travessa un oceà, així que aquells dos continents havien d'estar units quan aquell animal hi vivia." },

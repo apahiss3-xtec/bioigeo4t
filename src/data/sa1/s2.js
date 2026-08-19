@@ -5,7 +5,7 @@ export const sa1s2 = {
   sessionNumber: 2,
   biome: "sa1",
   duration: "2h",
-  engageImage: "/images/sa1-s2-detector.svg",
+  engageImage: "/images/sa1-s2-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Posada en comú ràpida: cadascú ensenya la pseudociència que ha caçat (polsera magnètica, detox, horòscop, un aliment «que cura»...). En 1 minut: què promet i amb quines garanties intenta convèncer-te? Anem apuntant a la pissarra els trucs que es repeteixen.",
@@ -179,7 +179,7 @@ export const sa1s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -226,7 +226,7 @@ export const sa1s2 = {
     "Mira la Fig.1 (garanties) i la Fig.2 (detector de pseudociència)",
     "Descarrega la fitxa S2 i fes tu sol/a la taula «Posicionem-nos» (apartat 1) i completa el detector (apartat 2)",
     "Caça un cas i aplica-hi el detector (apartat 3); prepara la defensa oral d'1 minut per a la propera sessió",
-    "L'exit tiquet en paper el trobaràs a classe, o fes-lo online aquí (apartat EXIT TIQUET)"
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES I CRITERIS D'AVALUACIÓ ──────────────────

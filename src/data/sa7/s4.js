@@ -151,7 +151,7 @@ export const sa7s4 = {
   // l'apartat 5 de la fitxa (tancament del curs) i la q2 és el torn 5 del debat
   // (2c a la versió A, 2e a la B). L'instrument avaluable de la sessió és la
   // prova escrita final, que va en un document independent.
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Escriu una afirmació que al setembre t'hauries cregut sense comprovar-la i que ara no et creuries sense comprovar-la. Digues què comprovaries i com.", hint: "Pensa en un titular, un anunci o una cosa que et van dir." },
     { id: "q2", type: "open", text: "Al debat d'avui, quina cosa concreta t'ha fet dubtar? Digues si era una dada o un valor, i què has fet amb aquell dubte.", hint: "Val a dir que has canviat d'opinió, i val a dir que no; el que no val és no haver dubtat de res." }

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { t } from '../t.js'
 import { getSA, getSession } from '../data/sas.js'
 import { getCompetency } from '../data/competencies.js'
+import { getCriteri, ceDeCriteri, ordenaCriteris } from '../data/criteris.js'
 import { asset } from '../utils.js'
 import T from '../translate/T.jsx'
 import BiomeImage from '../components/BiomeImage.jsx'
@@ -632,6 +633,45 @@ export default function SessionPage() {
             </ol>
           </Accordion>
         </section>
+
+        {/* ── QUÈ S'AVALUA · criteris oficials (text literal del currículum) ── */}
+        {session.criterisAvaluacio?.length > 0 && (
+          <section className="pb-6">
+            <Accordion title="📋 Què s'avalua d'aquesta sessió" defaultOpen={false}>
+              <p className="mb-5">
+                <T>
+                  {"Això és allò de què t'avaluaran en aquesta sessió. La feina que has de fer avui són els objectius del teu nivell, de més amunt: aquesta llista només diu com es mirarà. No cal que te l'aprenguis."}
+                </T>
+              </p>
+              <ul className="space-y-5">
+                {ordenaCriteris(session.criterisAvaluacio).map((codi) => {
+                  const c = getCriteri(codi)
+                  if (!c) return null
+                  const ce = getCompetency(ceDeCriteri(codi))
+                  return (
+                    <li key={codi}>
+                      <p className="kicker mb-1" style={{ color: 'var(--biome-accent)' }}>
+                        {ce.emoji} {ceDeCriteri(codi)} <T>{ce.name}</T> · {t('session.criteriNum')}{' '}
+                        {codi}
+                      </p>
+                      <p className="mb-1">
+                        <T>{c.resum}</T>
+                      </p>
+                      <details className="text-xs text-[var(--muted)]">
+                        <summary className="cursor-pointer">
+                          {t('session.criteriOfficial')}
+                        </summary>
+                        <p className="mt-1 leading-relaxed" lang="ca">
+                          {c.oficial}
+                        </p>
+                      </details>
+                    </li>
+                  )
+                })}
+              </ul>
+            </Accordion>
+          </section>
+        )}
 
         {/* Competències i OA de la sessió */}
         <section className="pb-10 flex flex-wrap gap-2">

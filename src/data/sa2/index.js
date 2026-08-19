@@ -5,7 +5,7 @@ export const sa2 = {
   biome: "sa2",
   color: { primary: "#7B3F9E", accent: "#A66BC9" },
   sessions: 4,
-  portadaImage: "/images/sa2-s1-portada.jpg",
+  portadaImage: "/images/sa2-s1-portada-v2.jpg",
   description: "Totes les cèl·lules del teu cos venen d'una sola cèl·lula que s'ha dividit una vegada i una altra. Investigaràs com es divideix una cèl·lula (mitosi), per què els gàmetes es fan d'una altra manera (meiosi) i què passa quan una cèl·lula perd el control i no para de dividir-se. Faràs de laboratori d'anàlisi de biòpsies.",
   product: "Maqueta del cicle cel·lular + un informe diagnòstic: comptar les fases de la mitosi en preparacions reals i explicar, amb dades, per què una cèl·lula tumoral no s'atura.",
   objectives: [

@@ -5,7 +5,7 @@ export const sa1s3 = {
   sessionNumber: 3,
   biome: "sa1",
   duration: "2h",
-  engageImage: "/images/sa1-s2-detector.svg",
+  engageImage: "/images/sa1-s3-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Rondes de defensa: cadascú surt 1 minut i defensa el veredicte del seu cas caçat fent servir el detector. La resta escolta amb el detector a la mà i, en acabar, aixeca targeta: CIÈNCIA · PSEUDOCIÈNCIA · ENCARA NO COMPROVAT. Si no coincidim, ho discutim.",
@@ -189,7 +189,7 @@ export const sa1s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  exitTicketType: "paper",
+  exitTicketType: "web",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -236,10 +236,16 @@ export const sa1s3 = {
     "Mira la Fig.1 (detector, 5 senyals) i la Fig.2 (ciència vs pseudociència)",
     "Descarrega la fitxa S3 i fes tu sol/a l'exercici de classificació de les 8 disciplines (apartat 3)",
     "Prepara la defensa oral del teu cas i grava-la o assaja-la; l'hauràs de defensar a classe quan tornis",
-    "L'exit tiquet en paper el trobaràs a classe, o fes-lo online aquí (apartat EXIT TIQUET)"
+    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────
   oaLinks: ["OA2", "OA3", "OA4"],
-  competencies: ["CE2", "CE3", "CE4"]
+  competencies: ["CE2", "CE3", "CE4"],
+  // 3.5 s'ha retirat (revisió agent-alumne 19/08): demana presentar resultats
+  // d'experimentació i d'observació de camp amb taules, gràfics i eines
+  // digitals, i aquesta sessió és una defensa oral d'1 minut sense pantalles
+  // i sense res escrit. El substitueix 1.3, que sí que és argumentar la
+  // validesa d'una solució davant d'una situació real.
+  criterisAvaluacio: ["1.3", "2.2", "4.2"]
 }
