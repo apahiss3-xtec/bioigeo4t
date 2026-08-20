@@ -80,7 +80,7 @@ export const sa4s3 = {
   exploreActivity: {
     what: "En equip feu de servei de genètica d'un hospital. Rebeu tres casos reals que no encaixen amb el «dominant-recessiu» simple: (1) un viver que obté flors roses creuant vermelles i blanques; (2) una parella (pare grup A, mare grup B) que ha tingut fills dels quatre grups sanguinis i vol saber com és possible; (3) un estudi d'alçada d'una població amb tots els valors intermedis. Per a cada cas heu de decidir QUIN tipus d'herència explica el que s'observa i justificar-ho, i resoldre amb un quadre de Punnett el cas dels grups sanguinis.",
     who: { mode: "grup", label: "Equips de 3 (servei de genètica)" },
-    time: 45,
+    time: 28,
     note: "Indagació: la clau no és memoritzar noms, sinó ADONAR-SE que el fenotip de l'heterozigot (barreja? els dos alhora? intermedi continu?) és la pista que revela el tipus d'herència. Cada equip ha de defensar la seva classificació davant d'un altre amb l'evidència del cas.",
   },
   exploreInstructions: [
@@ -89,7 +89,7 @@ export const sa4s3 = {
     "Cas alçada: la variació és a saltes o contínua? Decidiu si és mendeliana simple o poligènica/multifactorial i justifiqueu-ho",
     "Prepareu la defensa: per a cada cas, quina EVIDÈNCIA concreta us fa triar aquell tipus d'herència i no un altre"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "28 min",
   appSrc: null,
   exploreNote: "Demostració a l'aula: cada equip presenta un dels tres casos a un altre equip i ha de convèncer-lo del tipus d'herència fent servir el fenotip de l'heterozigot com a prova. Si els dos equips discrepen, han d'acordar quina dada addicional els trauria el dubte.",
 
@@ -144,7 +144,7 @@ export const sa4s3 = {
       {
         apartat: "0",
         title: "Idees prèvies",
-        time: "8 min",
+        time: "6 min",
         phase: "engage",
         instruction: "Omple l'apartat 0: de quin color esperes els fills de vermell × blanc, i per què l'alçada té tants valors intermedis. No es corregeix.",
         hints: []
@@ -163,7 +163,7 @@ export const sa4s3 = {
       {
         apartat: "2",
         title: "Codominància i grups sanguinis",
-        time: "35 min",
+        time: "29 min",
         phase: "explica",
         instruction: "Aprèn les regles de l'ABO (tres al·lels; I^A i I^B codominants, i recessiu). Resol el cas pare A × mare B i digues quins grups poden tenir els fills.",
         hints: [

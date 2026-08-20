@@ -74,7 +74,7 @@ export const sa4s5 = {
   exploreActivity: {
     what: "La sessió té dos moments. PRIMER, congrés Heredity ID: cada equip penja el seu pòster i el presenta breument (2–3 min) a la resta; els altres equips fan de públic crític (pregunten) i coavaluen amb la rúbrica. SEGON, prova individual de problemes de genètica: cada alumne/a resol, sol/a, una sèrie de problemes que cobreixen tota la SA (deducció del tipus d'herència a partir d'un pedigrí, dominància simple amb Punnett, herència lligada al X, grups sanguinis ABO i —al nivell A— un sistema de sexe ZW). La prova és la demostració individual que has entès el que el pòster demostra en equip.",
     who: { mode: "grup", label: "Congrés en equips + prova individual" },
-    time: 55,
+    time: 25,
     note: "Demostració en directe (política d'ús de la IA d'Albert): el pòster es defensa oralment i es responen preguntes a l'aula, i la prova és individual i sense ajuda. Així la comprensió es demostra en viu, no en un lliurament que es podria delegar. La coavaluació es fa amb la mateixa rúbrica del pòster (CoRubrics), que fa transparents els criteris.",
   },
   exploreInstructions: [
@@ -83,7 +83,7 @@ export const sa4s5 = {
     "Coavalueu amb la rúbrica: marqueu el nivell de cada criteri i escriviu un comentari de millora concret",
     "Prova individual: resoleu els problemes de genètica separant sempre, quan calgui, fills i filles i justificant amb els genotips"
   ],
-  exploreDuration: "55 min",
+  exploreDuration: "25 min",
   appSrc: null,
   exploreNote: "El congrés fa visible que comunicar ciència és part de fer ciència: no n'hi ha prou d'arribar a una conclusió, s'ha de poder defensar davant d'altres i acceptar la crítica. La prova, en canvi, comprova el raonament individual amb casos nous.",
 

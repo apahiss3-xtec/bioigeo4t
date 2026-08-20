@@ -79,7 +79,7 @@ export const sa5s2 = {
   exploreActivity: {
     what: "Observació de l'esquelet d'una ala de pollastre (neta i bullida, portada de casa o preparada a l'aula). En equip, localitzeu els ossos i compareu-los amb el vostre propi braç i amb la figura de tetràpodes: húmer (un os llarg), radi i cúbit (dos ossos junts) i els ossets de la mà. Després relacioneu cada organisme del pati amb un tipus de prova de l'evolució.",
     who: { mode: "grup", label: "Equips de 3-4 (detectius de l'evolució)" },
-    time: 40,
+    time: 32,
     note: "Manipulatiu segur i assequible: substitueix els cranis d'homínids (no disponibles). L'ala de pollastre és homòloga del braç humà; palpar els mateixos ossos en un animal tan diferent és la millor manera d'entendre l'homologia."
   },
   exploreInstructions: [
@@ -88,7 +88,7 @@ export const sa5s2 = {
     "Compareu ara l'ala d'un ocell amb l'ala d'un insecte (imatge): fan la mateixa funció, però per dins s'assemblen?",
     "Ompliu la graella de proves: relacioneu cada organisme del pati amb el tipus de prova que millor explicaria el seu parentiu"
   ],
-  exploreDuration: "40 min",
+  exploreDuration: "32 min",
   appSrc: null,
   exploreNote: "Demostració a l'aula: cada equip ensenya a un altre on són l'húmer, el radi i el cúbit a l'ala de pollastre i explica per què això prova el parentiu amb els humans. Recordeu: la mateixa FUNCIÓ no prova parentiu; la mateixa ESTRUCTURA interna, sí.",
 
@@ -139,10 +139,10 @@ export const sa5s2 = {
   fitxaGuide: {
     fitxaName: "Fitxa S18 — Les proves de l'evolució",
     steps: [
-      { apartat: "0", title: "Idees prèvies", time: "8 min", phase: "engage", instruction: "Omple l'apartat 0: el dofí i el tauró són parents? Quina prova buscaries per demostrar un parentiu? No es corregeix.", hints: [] },
-      { apartat: "1", title: "Homologia: l'ala de pollastre", time: "35 min", phase: "explore", instruction: "Amb l'ala de pollastre a la mà i la Fig.1, localitza l'húmer, el radi i el cúbit i compara'ls amb el teu braç. Pinta del mateix color els ossos que són iguals a les quatre extremitats.", hints: ["Els mateixos ossos, canviats de mida = homologia = parentiu.", "Un os llarg (húmer), dos ossos junts (radi i cúbit), ossets de la mà."] },
+      { apartat: "0", title: "Idees prèvies", time: "6 min", phase: "engage", instruction: "Omple l'apartat 0: el dofí i el tauró són parents? Quina prova buscaries per demostrar un parentiu? No es corregeix.", hints: [] },
+      { apartat: "1", title: "Homologia: l'ala de pollastre", time: "32 min", phase: "explore", instruction: "Amb l'ala de pollastre a la mà i la Fig.1, localitza l'húmer, el radi i el cúbit i compara'ls amb el teu braç. Pinta del mateix color els ossos que són iguals a les quatre extremitats.", hints: ["Els mateixos ossos, canviats de mida = homologia = parentiu.", "Un os llarg (húmer), dos ossos junts (radi i cúbit), ossets de la mà."] },
       { apartat: "2", title: "Analogia", time: "20 min", phase: "explica", instruction: "Compara l'ala d'ocell amb l'ala d'insecte. Fan la mateixa funció? S'assemblen per dins? Decideix si és homologia o analogia.", hints: ["Mateixa funció + estructura diferent = analogia = convergència.", "L'analogia NO prova parentiu."] },
-      { apartat: "3", title: "Vestigis i graella de proves", time: "25 min", phase: "elabora", instruction: "Explica què és una estructura vestigial amb un exemple i omple la graella relacionant organismes del pati amb el tipus de prova.", hints: ["Vestigi = òrgan que va perdre la funció (apèndix, queixals del seny, còccix).", "Tipus de prova: anatòmica, bioquímica, paleontològica, biogeogràfica."] },
+      { apartat: "3", title: "Vestigis i graella de proves", time: "22 min", phase: "elabora", instruction: "Explica què és una estructura vestigial amb un exemple i omple la graella relacionant organismes del pati amb el tipus de prova.", hints: ["Vestigi = òrgan que va perdre la funció (apèndix, queixals del seny, còccix).", "Tipus de prova: anatòmica, bioquímica, paleontològica, biogeogràfica."] },
       { apartat: "4", title: "Interpretar l'arbre", time: "20 min", phase: "elabora", instruction: "Amb la Fig.3, respon les preguntes d'interpretació: quines espècies comparteixen l'avantpassat comú més recent i quines estan menys emparentades.", hints: ["Node = avantpassat comú; eix vertical = temps.", "Com més a prop el node compartit, més emparentades."] }
     ]
   },

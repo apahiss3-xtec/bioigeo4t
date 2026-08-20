@@ -74,7 +74,7 @@ export const sa1s4 = {
   exploreActivity: {
     what: "Repte final individual: cada alumne analitza el SEU cas real amb tot el kit de la SA (escala de certeses + garanties + 5 senyals del detector) i n'obté un veredicte classificat (ciència / pseudociència / encara no comprovat). Després, fira de casos: en parelles rotatives (2 min per cas), cadascú presenta el seu cas i rep una pregunta de l'altre. Tanquem amb l'autoavaluació de la SA.",
     who: { mode: "grup", label: "Anàlisi individual + fira de casos en parelles rotatives" },
-    time: 45,
+    time: 20,
     note: "Aquesta és la DEMOSTRACIÓ DE COMPRENSIÓ presencial i final de la SA: s'avalua com apliques el detector a un cas nou triat per tu, no si el cas ens agrada. La feina es fa i es defensa a l'aula."
   },
   exploreInstructions: [
@@ -83,7 +83,7 @@ export const sa1s4 = {
     "Fira de casos: presenta el teu cas a un company en 2 min i fes-li tu una pregunta al seu",
     "Torna al teu lloc i completa l'autoavaluació de la SA (què domines, què has de repassar)"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "20 min",
   appSrc: null,
   exploreNote: "Sense pantalles obligatòries: l'important és aplicar el detector a un cas nou. Si el cas és un vídeo o un anunci, el pots ensenyar al mòbil al teu company durant la fira.",
 

@@ -10,7 +10,7 @@ export const sa5s1 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Surt al pati i mira al teu voltant. Les gallines que graten el terra, els plataners retallats en fila, les moreres, els pardals que roben molles, els insectes sota una pedra... Sembla que sempre hagin estat allà, però cadascun té una història. Les gallines vénen d'un ocell salvatge asiàtic que dorm dalt dels arbres perquè hi vola cada nit; les nostres amb prou feines s'aixequen. Els plataners no creixen així de sols: algú els poda cada any. El repte d'avui és sortir com a biòlegs de camp i llegir el pati com un museu: observar amb atenció, descriure trets sense inventar-los i començar a distingir què és obra de la natura i què és obra nostra.",
   engageQuestion: "Per què cada ésser viu del pati té la forma que té? Quins hi són «per natura» i quins perquè els humans els hem triat i posat allà (gallines domesticades, plataners podats, moreres plantades)?",
-  engageContext: "Avui obres la situació «El pati, un museu de l'evolució». Sortiràs al pati amb una fitxa de camp per observar 5-6 organismes reals, aprendràs a descriure'ls amb precisió, a classificar-los per trets compartits i a anomenar-los amb la nomenclatura binomial dels científics. També faràs la primera pregunta gran del tema: què és una adaptació? No cal memoritzar res: avui construïm la mirada de biòleg de camp que faràs servir tota la situació, fins al museu evolutiu del pati.",
+  engageContext: "Avui obres la situació «El pati, un museu de l'evolució». Sortiràs al pati amb una fitxa de camp per observar quatre organismes reals, aprendràs a descriure'ls amb precisió, a classificar-los per trets compartits i a anomenar-los amb la nomenclatura binomial dels científics. També faràs la primera pregunta gran del tema: què és una adaptació? No cal memoritzar res: avui construïm la mirada de biòleg de camp que faràs servir tota la situació, fins al museu evolutiu del pati.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -78,18 +78,18 @@ export const sa5s1 = {
 
   // ── EXPLORA (ABP · sortida de camp) ─────────
   exploreActivity: {
-    what: "Sortida al pati com a biòlegs de camp. En equip, observeu 5-6 organismes reals (gallines, moreres, plataners, pardals o altres ocells, insectes, males herbes) i documenteu-ne els trets observables amb la fitxa de camp, separant sempre el que veieu del que interpreteu. En tornar a l'aula, agrupareu els organismes per trets compartits.",
+    what: "Sortida al pati com a biòlegs de camp. En equip, observeu quatre organismes reals (gallina, morera o plataner, un ocell i un insecte) i documenteu-ne els trets observables amb la fitxa de camp, separant sempre el que veieu del que interpreteu. En tornar a l'aula, agrupareu els organismes per trets compartits.",
     who: { mode: "grup", label: "Equips de 3-4 (biòlegs de camp)" },
-    time: 50,
+    time: 40,
     note: "Aquesta observació és la matèria primera de tota la SA5: l'organisme que observeu millor avui podria ser el que presenteu al museu evolutiu del pati (S20). Observeu amb rigor i respecte pels animals i les plantes."
   },
   exploreInstructions: [
-    "Repartiu-vos 5-6 organismes del pati i, per a cadascun, ompliu la taula d'observació separant «Observo» (el que veig) de «Penso» (què interpreto)",
+    "Repartiu-vos els quatre organismes del pati i, per a cadascun, ompliu la taula d'observació separant «Observo» (el que veig) de «Penso» (què interpreto)",
     "Anoteu per a cada organisme almenys tres trets observables amb precisió (color, forma, mida, parts del cos)",
     "De tornada a l'aula, trieu UN criteri de trets compartits i agrupeu els organismes en dos grups (per semblances, no un arbre evolutiu)",
     "Escriviu el nom científic (Gènere espècie, en cursiva) de cada organisme seguint el model donat"
   ],
-  exploreDuration: "50 min",
+  exploreDuration: "40 min",
   appSrc: null,
   exploreNote: "Indagació amb organismes reals: la demostració a l'aula és presentar a un altre equip com heu agrupat els organismes i justificar el criteri que heu triat (per què aquest tret i no un altre). Recordeu: agrupar per semblances NO és encara dibuixar un arbre evolutiu.",
 
@@ -139,11 +139,11 @@ export const sa5s1 = {
   fitxaGuide: {
     fitxaName: "Fitxa S17 — Safari evolutiu al pati",
     steps: [
-      { apartat: "0", title: "Idees prèvies", time: "10 min", phase: "engage", instruction: "Omple l'apartat 0: per què creus que els éssers vius tenen la forma que tenen i si han canviat amb el temps. No es corregeix; ho compararàs al final de la situació.", hints: [] },
-      { apartat: "1", title: "Safari: observació de camp", time: "50 min", phase: "explore", instruction: "Al pati, omple la taula d'observació de 5-6 organismes separant «Observo» (el que veig) de «Penso» (què interpreto). Anota almenys tres trets precisos de cada organisme.", hints: ["A «Observo» hi va NOMÉS el que es veu: color, forma, mida, parts del cos.", "A «Penso» hi va la teva interpretació: per a què creus que serveix cada tret."] },
-      { apartat: "2", title: "Classificar i anomenar", time: "25 min", phase: "explica", instruction: "Amb la teoria i la Fig.1, tria un criteri de trets compartits i agrupa els organismes. Escriu el nom científic de cadascun (Gènere espècie, en cursiva).", hints: ["Classificar = agrupar per semblances segons un criteri que triïs.", "Nom científic: dues paraules en llatí, gènere en majúscula, espècie en minúscula, en cursiva."] },
+      { apartat: "0", title: "Idees prèvies", time: "6 min", phase: "engage", instruction: "Omple l'apartat 0: per què creus que els éssers vius tenen la forma que tenen i si han canviat amb el temps. No es corregeix; ho compararàs al final de la situació.", hints: [] },
+      { apartat: "1", title: "Safari: observació de camp", time: "40 min", phase: "explore", instruction: "Al pati, omple la taula d'observació dels quatre organismes separant «Observo» (el que veig) de «Penso» (què interpreto). Anota almenys tres trets precisos de cada organisme.", hints: ["A «Observo» hi va NOMÉS el que es veu: color, forma, mida, parts del cos.", "A «Penso» hi va la teva interpretació: per a què creus que serveix cada tret."] },
+      { apartat: "2", title: "Classificar i anomenar", time: "22 min", phase: "explica", instruction: "Amb la teoria i la Fig.1, tria un criteri de trets compartits i agrupa els organismes. Escriu el nom científic de cadascun (Gènere espècie, en cursiva).", hints: ["Classificar = agrupar per semblances segons un criteri que triïs.", "Nom científic: dues paraules en llatí, gènere en majúscula, espècie en minúscula, en cursiva."] },
       { apartat: "3", title: "Què és una adaptació", time: "20 min", phase: "elabora", instruction: "Tria un tret d'un organisme i explica'l com una cadena estructura → funció → ambient. És una adaptació?", hints: ["Uneix tres coses: què veus, per a què serveix, on viu.", "Una adaptació ho és per a un ambient concret."] },
-      { apartat: "4", title: "Natura o nosaltres?", time: "15 min", phase: "elabora", instruction: "Separa els organismes del pati en «triats pels humans» (domesticats) i «hi són per natura», i justifica un cas de cada tipus amb un tret concret.", hints: ["Selecció artificial = els humans trien qui es reprodueix (domesticació).", "Selecció natural = l'ambient «tria» sense ningú al darrere."] }
+      { apartat: "4", title: "Natura o nosaltres?", time: "12 min", phase: "elabora", instruction: "Separa els organismes del pati en «triats pels humans» (domesticats) i «hi són per natura», i justifica un cas de cada tipus amb un tret concret.", hints: ["Selecció artificial = els humans trien qui es reprodueix (domesticació).", "Selecció natural = l'ambient «tria» sense ningú al darrere."] }
     ]
   },
 

@@ -75,7 +75,7 @@ export const sa6s3 = {
   exploreActivity: {
     what: "En equip, sou l'equip de datació de la missió Gondwana Tales. Rebeu un TALL GEOLÒGIC complet del planeta —amb capes inclinades, una falla, un dic de magma i una superfície d'erosió— i un joc de FITXES DE FÒSSILS GUIA amb una nota de camp que descriu la roca on es va trobar cadascuna. La vostra feina té dues parts. Primera: reconstruir l'ordre complet dels esdeveniments del tall, justificant cada pas amb el principi geològic que el sosté. Segona: agafar dues columnes de dos continents del planeta que avui estan separats per un oceà i, col·locant-hi les fitxes de fòssils guia, demostrar quines capes tenen la mateixa edat. Si les mateixes espècies terrestres apareixen als dos costats, teniu una prova independent que aquells continents van estar units —la mateixa prova que va fer servir Wegener.",
     who: { mode: "grup", label: "Equips de 3-4 (equip de datació)" },
-    time: 45,
+    time: 60,
     note: "No busqueu la resposta bona a la primera: busqueu poder DEFENSAR-LA. Cada afirmació d'ordre ha d'anar acompanyada del principi que la justifica. Un ordre sense argument no val res en geologia.",
   },
   exploreInstructions: [
@@ -87,7 +87,7 @@ export const sa6s3 = {
     "Correlacioneu: quines capes dels dos continents tenen la mateixa edat? Quina prova en treieu sobre la posició d'aquells continents en el passat?",
     "Escriviu la història completa del tall en 5-6 frases ordenades, cadascuna amb el principi que la justifica"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "60 min",
   exploreMaterials: ["Tall geològic del planeta (a la fitxa)", "Full de retallables: fitxes de fòssils guia", "Tisores i cola de barra", "Regle"],
   exploreNote: "Demostració a l'aula: cada equip presenta la seva seqüència d'esdeveniments davant del tall projectat i ha de justificar amb quin principi ha decidit cada pas. Si dos equips discrepen en un pas, es discuteix amb els principis a la mà, no per votació.",
 

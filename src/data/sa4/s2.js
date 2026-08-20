@@ -80,7 +80,7 @@ export const sa4s2 = {
   exploreActivity: {
     what: "En equip, simuleu l'herència d'un creuament Aa × Aa amb dues monedes: cada moneda és un progenitor (cara = passa A, creu = passa a). Abans de començar, cada equip escriu la proporció que ESPERA (hipòtesi amb direcció). Feu una tanda curta (10 tirades) i una de llarga (40 tirades acumulades a tot l'equip), apunteu els genotips que surten i compareu l'observat amb l'esperat. Al final, apliqueu el quadre de Punnett al caràcter del vostre projecte Heredity ID.",
     who: { mode: "grup", label: "Equips de 3 (consell genètic)" },
-    time: 45,
+    time: 35,
     note: "Indagació: la clau no és que surti exactament 3:1, sinó ADONAR-SE que amb poques tirades la proporció balla i amb moltes s'acosta a l'esperat. Aquesta és la diferència entre l'atzar de cada fill i la tendència del conjunt."
   },
   exploreInstructions: [
@@ -89,7 +89,7 @@ export const sa4s2 = {
     "Ajunteu les tirades de tot l'equip fins a 40 i torneu a calcular la proporció: s'acosta més a l'esperat o menys?",
     "Apliqueu el quadre de Punnett al caràcter del vostre Heredity ID i escriviu la predicció per a una família de portadors"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "35 min",
   appSrc: null,
   exploreNote: "Demostració a l'aula: cada equip defensa davant d'un altre per què la seva proporció observada NO és exactament 3:1 però s'hi acosta, fent servir la idea de tendència. Qui té més tirades, més s'hi acosta: és una prova experimental de la llei, no un error.",
 
@@ -143,7 +143,7 @@ export const sa4s2 = {
       {
         apartat: "0",
         title: "Idees prèvies",
-        time: "8 min",
+        time: "6 min",
         phase: "engage",
         instruction: "Omple l'apartat 0: quants fills afectats esperes de dos portadors i si és segur; i si 4 tirades de moneda donen sempre 2 i 2. No es corregeix.",
         hints: []
@@ -162,7 +162,7 @@ export const sa4s2 = {
       {
         apartat: "2",
         title: "El quadre de Punnett",
-        time: "30 min",
+        time: "24 min",
         phase: "explica",
         instruction: "Omple el quadre de Punnett d'un creuament Aa × Aa, compta les caselles i escriu la proporció de genotips (1:2:1) i de fenotips (3:1). Després aplica'l al teu caràcter.",
         hints: [
@@ -184,7 +184,7 @@ export const sa4s2 = {
       {
         apartat: "4",
         title: "Problemes de predicció",
-        time: "17 min",
+        time: "15 min",
         phase: "elabora",
         instruction: "Resol els problemes graduats seguint els passos: genotips dels pares → quadre → comptar → respondre amb un número.",
         hints: [

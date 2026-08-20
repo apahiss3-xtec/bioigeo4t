@@ -34,7 +34,7 @@ export const sa3s1 = {
   apartatExtras: {
     "1": {
       scaffold:
-        "Per respondre les preguntes de la notícia, ves per ordre de dificultat: primer les LITERALS (la resposta és al text: busca-la i copia-la amb les teves paraules), després les INFERENCIALS (no ho diu directament, però es dedueix), després les AVALUATIVES (què en penses i per què) i finalment les ÈTIQUES (què estaria bé o malament fer). No barregis nivells: una pregunta literal no es respon amb una opinió.",
+        "Per respondre les preguntes de la notícia, ves per ordre de dificultat: primer les LITERALS (la resposta és al text: busca-la i copia-la amb les teves paraules), després les INFERENCIALS (no ho diu directament, però es dedueix), després les AVALUATIVES (què en penses i per què). No barregis nivells: una pregunta literal no es respon amb una opinió. La pregunta ÈTICA de fons —què estaria bé o malament fer— no es respon aquí: l'acordareu com a postura d'equip al final de l'apartat i la treballareu a fons a l'apartat 4, quan ja sapigueu com un gen arriba a ser una característica.",
       challenge:
         "Redacta les teves respostes com UN SOL text amb sentit (no una llista), enllaçant les idees amb connectors (d'altra banda, tot i així, a més a més, en conseqüència…). Acaba amb la teva postura sobre el cas i la millor objecció que li faria algú que pensés el contrari."
     },
@@ -80,16 +80,16 @@ export const sa3s1 = {
   exploreActivity: {
     what: "Feu de comitè d'assessorament científic. Llegiu el cas real dels «bebès editats» (2018) i responeu, en equip, una escala de preguntes que va de les més fàcils (què diu la notícia) a les més difícils (hauríem de permetre-ho?). Després us posicioneu: permetre-ho, prohibir-ho o permetre-ho amb condicions, i per què.",
     who: { mode: "grup", label: "Equips de 3-4 (comitè)" },
-    time: 45,
+    time: 34,
     note: "La gràcia NO és encertar una resposta, sinó raonar: cada pregunta puja de dificultat. Haureu de defensar la vostra postura davant d'un altre equip que potser pensa diferent."
   },
   exploreInstructions: [
     "Llegiu el cas dels «bebès editats» que teniu a la fitxa (qui, què, quan, per a què)",
-    "Responeu les preguntes per ordre: literals → inferencials → avaluatives → ètiques (no barregeu nivells)",
+    "Responeu les preguntes per ordre: literals → inferencials → avaluatives (no barregeu nivells; la pregunta ètica és a l'apartat 4)",
     "Poseu-vos d'acord en una postura d'equip: permetre / prohibir / permetre amb condicions, i almenys dos motius",
     "Prepareu-vos per defensar-la davant d'un altre equip i per escoltar la seva millor objecció"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "34 min",
   appSrc: null,
   exploreNote: "Indagació ètica i epistèmica: no hi ha una única resposta correcta, però sí arguments millors i pitjors. La demostració a l'aula és defensar la postura en veu alta i respondre l'objecció de l'altre equip amb un argument, no amb un «perquè sí».",
 
@@ -142,7 +142,7 @@ export const sa3s1 = {
       {
         apartat: "0",
         title: "Idees prèvies",
-        time: "10 min",
+        time: "6 min",
         phase: "engage",
         instruction: "Omple l'apartat 0: què creus que són l'ADN i un gen, i si un canvi petit pot canviar un ésser viu. No es corregeix; ho compararàs al final de la SA.",
         hints: []
@@ -150,18 +150,18 @@ export const sa3s1 = {
       {
         apartat: "1",
         title: "Comitè: llegeix el cas i posiciona't",
-        time: "45 min",
+        time: "34 min",
         phase: "explore",
-        instruction: "Llegeix el cas dels «bebès editats» i respon les preguntes per ordre de dificultat (literals → inferencials → avaluatives → ètiques). Acorda amb l'equip una postura i dos motius.",
+        instruction: "Llegeix el cas dels «bebès editats» i respon les preguntes per ordre de dificultat (literals → inferencials → avaluatives). Acorda amb l'equip una postura i dos motius; l'anàlisi ètica a fons la faràs a l'apartat 4.",
         hints: [
-          "Les preguntes literals tenen la resposta AL text; les ètiques no: demanen què estaria bé o malament fer.",
+          "Les preguntes literals tenen la resposta AL text; les avaluatives no: demanen què en penses i per què.",
           "Una bona postura admet la millor objecció del bàndol contrari abans de respondre-la."
         ]
       },
       {
         apartat: "2",
         title: "L'ADN, els gens i el camí a la proteïna",
-        time: "25 min",
+        time: "22 min",
         phase: "explica",
         instruction: "Amb la Fig.1, completa el camí ADN → ARN → proteïna → característica i explica què és un gen. Fes servir una comparació teva (recepta, codi, pla…).",
         hints: [
@@ -172,7 +172,7 @@ export const sa3s1 = {
       {
         apartat: "3",
         title: "Quan canvia una lletra: mutació i CRISPR",
-        time: "20 min",
+        time: "18 min",
         phase: "explica",
         instruction: "Explica què és una mutació i com un canvi al gen pot canviar una característica. Digues què fa CRISPR en el cas dels bebès editats.",
         hints: [

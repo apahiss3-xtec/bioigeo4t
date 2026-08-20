@@ -80,7 +80,7 @@ export const sa3s4 = {
   exploreActivity: {
     what: "Debat argumentat en gran grup sobre l'edició genètica d'embrions humans, a partir del cas real de les bessones editades (2018). Primer, en equips, analitzeu un petit dossier de fonts diverses sobre CRISPR (una notícia rigorosa, un titular sensacionalista, la web d'una empresa, una font científica) i decidiu de quines us fieu i per què. Després us posicioneu i debateu, distingint sempre QUÈ ES POT fer (ciència) de QUÈ S'HAURIA de fer (ètica). El debat és la preparació de l'assaig argumentatiu individual, el producte que avalua la SA.",
     who: { mode: "grup", label: "Equips de 3-4 → debat en gran grup" },
-    time: 55,
+    time: 16,
     note: "No es tracta de «guanyar» el debat ni d'imposar una postura. Es tracta de construir arguments fonamentats, escoltar l'altra banda i decidir amb criteri propi. La qualitat d'un argument no depèn de si estàs a favor o en contra, sinó de com el sostens."
   },
   exploreInstructions: [
@@ -90,7 +90,7 @@ export const sa3s4 = {
     "Cada equip prepara UN argument a favor i UN en contra, ben sostinguts (postura + raó + prova/valor)",
     "Debat en gran grup: distingiu sempre «què es pot» de «què s'hauria de fer»; anoteu els millors arguments de les dues bandes per a l'assaig"
   ],
-  exploreDuration: "55 min",
+  exploreDuration: "16 min",
   appSrc: null,
   exploreNote: "Itinerari amb suport decreixent: es dona la graella de fonts i el marc PODEM/HAURIEM, però els arguments i la postura els construïu vosaltres. És una qüestió sociocientífica (SSI): ni la ciència sola ni l'opinió sola hi donen resposta.",
 

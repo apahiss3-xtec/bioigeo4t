@@ -36,7 +36,7 @@ export const sa3s2 = {
       scaffold:
         "No comencis pel «què fem primer». Comença per l'OBSTACLE: per què l'ADN no es veu? N'hi ha tres. (1) És dins de cèl·lules i teixit compacte. (2) Està tancat per membranes fetes de greix (la de la cèl·lula i la del nucli). (3) Un cop fora, queda dissolt a l'aigua i segueix invisible. Per a cada obstacle, busca a la llista de materials quin el pot resoldre i escriu PER QUÈ. Quan tinguis les tres funcions, l'ordre dels passos surt gairebé sol.",
       challenge:
-        "Dissenya el protocol complet en 5 passos SENSE la taula d'ajuda, escrivint al costat de cada pas la frase «aquest pas serveix per…». Justifica per què l'ordre no es pot alterar (per exemple: per què l'alcohol va l'últim i no el primer?). Afegeix una predicció: quin dels passos creus que és el més decisiu per veure l'ADN, i per què."
+        "Dissenya el protocol complet en 4 passos SENSE la taula d'ajuda, escrivint al costat de cada pas la frase «aquest pas serveix per…». Justifica per què l'ordre no es pot alterar (per exemple: per què l'alcohol va l'últim i no el primer?). Afegeix una predicció: quin dels passos creus que és el més decisiu per veure l'ADN, i per què."
     },
     "2": {
       scaffold:
@@ -80,7 +80,7 @@ export const sa3s2 = {
   exploreActivity: {
     what: "Laboratori real d'extracció d'ADN, però AL REVÉS: primer heu de deduir el protocol. Amb la mostra i el material sobre la taula (i sense instruccions), relacioneu cada obstacle (per què l'ADN no es veu) amb el material que el resol i per què. Dissenyeu la seqüència, la poseu a prova i, si tot va bé, recolliu l'ADN amb el pal de fusta.",
     who: { mode: "grup", label: "Equips de 3-4 (laboratori)" },
-    time: 55,
+    time: 47,
     note: "La gràcia NO és seguir una recepta, sinó JUSTIFICAR cada pas. Un equip que treu l'ADN però no sap dir per què funciona cada material no ha resolt el repte. La demostració a l'aula és explicar el vostre protocol raonat a un altre equip."
   },
   exploreInstructions: [
@@ -90,7 +90,7 @@ export const sa3s2 = {
     "Munteu l'experiment i comproveu-ho: apareix la massa blanca? Recolliu-la amb el pal de fusta",
     "Prepareu-vos per explicar a un altre equip QUÈ fa cada material i per què l'ordre no es pot canviar"
   ],
-  exploreDuration: "55 min",
+  exploreDuration: "47 min",
   appSrc: null,
   exploreNote: "Indagació guiada tirant a oberta (l'alumnat dedueix el mètode). Itinerari explorador: el docent dona la pregunta i el material, però el mètode el raoneu vosaltres. No es dona el protocol fet.",
 
@@ -143,7 +143,7 @@ export const sa3s2 = {
       {
         apartat: "0",
         title: "Idees prèvies",
-        time: "8 min",
+        time: "6 min",
         phase: "engage",
         instruction: "Omple l'apartat 0: què vol dir «extreure l'ADN» i quin material creus que serà el més important. No es corregeix; ho compararàs amb el que passi.",
         hints: []
@@ -151,7 +151,7 @@ export const sa3s2 = {
       {
         apartat: "1",
         title: "Laboratori: dedueix i dissenya el protocol",
-        time: "55 min",
+        time: "47 min",
         phase: "explore",
         instruction: "Identifica els tres obstacles, empleneu la taula obstacle → material → per què, i dissenyeu la seqüència de passos. Munteu-ho i recolliu l'ADN.",
         hints: [

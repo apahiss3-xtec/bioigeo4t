@@ -80,7 +80,7 @@ export const sa5s3 = {
   exploreActivity: {
     what: "Dissenyeu i feu una simulació de selecció natural. Sou un depredador (per exemple, amb pinces o els dits) que ha de «caçar» preses (paperets, llegums o fitxes de colors) escampades sobre un fons d'un color determinat, amb pocs segons per ronda. Les preses que no captureu «sobreviuen» i es «reprodueixen» per a la ronda següent. Definiu la variable independent (el color del fons), la dependent (quines preses sobreviuen), un control i el nombre de rèpliques (rondes), i registreu com canvia la població de colors ronda rere ronda.",
     who: { mode: "grup", label: "Equips de 3-4 (un fa de depredador, els altres registren)" },
-    time: 45,
+    time: 40,
     note: "És una indagació oberta: no us donem el protocol tancat, el decidiu vosaltres. El que importa no és «guanyar», sinó veure amb dades pròpies com un ambient (el fons) fa canviar una població sense que ningú «vulgui» canviar."
   },
   exploreInstructions: [
@@ -90,7 +90,7 @@ export const sa5s3 = {
     "Registreu en una taula quantes preses de cada color queden després de cada ronda i observeu cap a quin color «evoluciona» la població",
     "Repetiu amb un fons de color diferent i compareu: què canvia i per què?"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "40 min",
   appSrc: null,
   exploreNote: "Indagació oberta amb dades pròpies: la demostració a l'aula és presentar a un altre equip la vostra taula de resultats i defensar quina era la VI, la VD i el control, i explicar per què el color que sobreviu depèn del fons i no de la «voluntat» de les preses.",
 
@@ -141,10 +141,10 @@ export const sa5s3 = {
   fitxaGuide: {
     fitxaName: "Fitxa S19 — Per què canvien els éssers vius?",
     steps: [
-      { apartat: "0", title: "Idees prèvies", time: "10 min", phase: "engage", instruction: "Omple l'apartat 0: què creus que passa quan un bacteri es fa resistent i si l'esforç de la girafa es transmet als fills. No es corregeix; ho compararàs al final.", hints: [] },
-      { apartat: "1", title: "Disseny i simulació de selecció natural", time: "45 min", phase: "explore", instruction: "Dissenya i fes la simulació: defineix la variable independent (fons), la dependent (supervivents), el control i les rèpliques (rondes). Registra els resultats a la taula i escriu la hipòtesi amb direcció abans de començar.", hints: ["VI = el que tu canvies (el color del fons). VD = el que mesures (quins colors sobreviuen).", "Rèpliques = repetir rondes perquè l'atzar no t'enganyi: una sola ronda no demostra res."] },
+      { apartat: "0", title: "Idees prèvies", time: "6 min", phase: "engage", instruction: "Omple l'apartat 0: què creus que passa quan un bacteri es fa resistent i si l'esforç de la girafa es transmet als fills. No es corregeix; ho compararàs al final.", hints: [] },
+      { apartat: "1", title: "Disseny i simulació de selecció natural", time: "40 min", phase: "explore", instruction: "Dissenya i fes la simulació: defineix la variable independent (fons), la dependent (supervivents), el control i les rèpliques (rondes). Registra els resultats a la taula i escriu la hipòtesi amb direcció abans de començar.", hints: ["VI = el que tu canvies (el color del fons). VD = el que mesures (quins colors sobreviuen).", "Rèpliques = repetir rondes perquè l'atzar no t'enganyi: una sola ronda no demostra res."] },
       { apartat: "2", title: "La cadena del canvi", time: "20 min", phase: "explica", instruction: "Amb la teoria i la teva simulació, ordena i explica la cadena mutació → variabilitat → selecció → canvi en un cas real. Marca què és atzar i què depèn de l'ambient.", hints: ["La mutació és a l'atzar; la selecció la dirigeix l'ambient.", "«L'organisme va voler canviar» és sempre incorrecte."] },
-      { apartat: "3", title: "Graella de les 4 teories", time: "25 min", phase: "elabora", instruction: "Omple la graella d'anàlisi (Fig.2) amb un cas nou (resistència a un antibiòtic): què en diu cada teoria? Explica per què el lamarckisme és fals i quina prova el descarta.", hints: ["Segueix el model resolt del coll de la girafa.", "Lamarckisme = «l'esforç/ús es transmet» → fals: s'hereten els gens, no el que fas amb el cos."] },
+      { apartat: "3", title: "Graella de les 4 teories", time: "24 min", phase: "elabora", instruction: "Omple la graella d'anàlisi (Fig.2) amb un cas nou (resistència a un antibiòtic): què en diu cada teoria? Explica per què el lamarckisme és fals i quina prova el descarta.", hints: ["Segueix el model resolt del coll de la girafa.", "Lamarckisme = «l'esforç/ús es transmet» → fals: s'hereten els gens, no el que fas amb el cos."] },
       { apartat: "4", title: "La ciència es revisa", time: "10 min", phase: "elabora", instruction: "Explica per què cada teoria va tenir sentit en el seu context i què va aportar Lamarck que encara conservem. Com mostra que la ciència es corregeix amb el temps?", hints: ["Lamarck: primer a dir que les espècies canvien (idea encertada, mecanisme erroni).", "La ciència és col·lectiva i es revisa amb noves proves."] }
     ]
   },

@@ -75,7 +75,7 @@ export const sa6s2 = {
   exploreActivity: {
     what: "En equip, dissenyareu i muntareu un MODEL d'indagació per posar a prova la vostra hipòtesi sobre el motor de les plaques. L'opció principal és la CONVECCIÓ: en un recipient transparent amb aigua, escalfeu-la per un punt i deixeu-hi caure colorant per fer visible com es mou el fluid quan hi ha una diferència de temperatura. Opcionalment, podeu muntar un model d'ESTRATIFICACIÓ: barregeu sorra i aigua en un pot, agiteu i deixeu decantar per veure com es dipositen les capes (com els sediments al fons del mar). Abans d'observar res, heu de decidir què representa cada part del model i què esperaríeu veure si la vostra hipòtesi és certa. Després, comparareu el model amb el simulador tectonic-explorer.concord.org, que us deixa obrir i tancar oceans i veure el cicle de Wilson accelerat.",
     who: { mode: "grup", label: "Equips de 3-4 (geòlegs modelitzadors)" },
-    time: 45,
+    time: 35,
     note: "Indagació oberta: vosaltres decidiu la hipòtesi, el muntatge i què mirareu. Un model no és la realitat, però un bon model us deixa veure el mecanisme. El simulador complementa el model físic: mostra el cicle de Wilson que no cabria en una taula."
   },
   exploreInstructions: [
@@ -86,7 +86,7 @@ export const sa6s2 = {
     "Obriu el simulador tectonic-explorer.concord.org i proveu d'obrir i tancar un oceà: relacioneu el que veieu amb el vostre model de convecció",
     "Concloeu: què confirma o desmenteix el vostre model sobre el motor de les plaques? Quines limitacions té?"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "35 min",
   exploreMaterials: ["Recipient transparent (got alt o cubeta)", "Aigua i una font de calor segura (aigua molt calenta d'una tetera, o placa)", "Colorant alimentari o tinta", "Pot amb tapa, sorra fina i aigua (model d'estratificació, opcional)", "Ordinador/tauleta amb tectonic-explorer.concord.org", "Fitxa de registre (hipòtesi, dibuix, conclusió)"],
   appSrc: "https://tectonic-explorer.concord.org",
   exploreNote: "Demostració a l'aula: cada equip ensenya el seu model, explica què representa cada part i què ha observat, i defensa si la seva hipòtesi sobre el motor s'aguanta. Seguretat: l'aigua calenta la manipula el docent o amb molta cura; no cal que bulli.",

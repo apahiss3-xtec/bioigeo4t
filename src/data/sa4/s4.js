@@ -74,7 +74,7 @@ export const sa4s4 = {
   exploreActivity: {
     what: "En equip feu d'assessors d'un servei de consell genètic. Rebeu el cas d'una parella que espera tenir fills i té antecedents d'hemofília a la família de la dona (l'avi matern la patia). Heu de: (1) construir/interpretar el pedigrí de la família; (2) deduir si la dona pot ser portadora i amb quina probabilitat; (3) fer el quadre de Punnett del creuament amb la seva parella (home sa); (4) informar la parella del risc per als fills i per a les filles, separadament. Important: doneu INFORMACIÓ (probabilitats i el que signifiquen), no una recomanació del que han de fer.",
     who: { mode: "grup", label: "Equips de 3 (servei de consell genètic)" },
-    time: 45,
+    time: 25,
     note: "Indagació + argumentació: la clau no és memoritzar, sinó ADONAR-SE que en un caràcter lligat al X el sexe canvia completament el risc, i saber-ho comunicar amb honestedat (probabilitat, no certesa; informació, no ordre). Cada equip presenta el seu informe a un altre equip, que fa de «família» i pot demanar aclariments.",
   },
   exploreInstructions: [
@@ -83,7 +83,7 @@ export const sa4s4 = {
     "Feu el quadre de Punnett del creuament dona (possible portadora) × home sa i separeu el resultat en fills (XY) i filles (XX)",
     "Redacteu l'informe: quin risc té un fill de ser afectat? i una filla? què vol dir «portadora»? Doneu probabilitats, no ordres"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "25 min",
   appSrc: null,
   exploreNote: "Demostració a l'aula: cada equip presenta el seu informe de consell genètic a un altre equip, que fa de família i ha de decidir si l'informe és clar i honest (dona probabilitats, distingeix fills i filles, no els diu què han de fer). Si la «família» no ho entén, l'informe no és prou bo.",
 

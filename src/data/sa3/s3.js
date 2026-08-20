@@ -80,7 +80,7 @@ export const sa3s3 = {
   exploreActivity: {
     what: "Feu de traductors del codi genètic. A partir d'un fragment del gen de l'hemoglobina, recorreu tot el camí: copieu l'ADN a ARNm (transcripció), talleu l'ARNm en codons de 3 lletres i, amb la taula de codons, obteniu la seqüència d'aminoàcids de la proteïna (traducció). Després repetiu el procés amb la versió MUTADA del gen (anèmia falciforme) i comparеu: quina lletra ha canviat, quin aminoàcid queda diferent i per què això canvia la persona.",
     who: { mode: "grup", label: "Parelles o equips de 3" },
-    time: 50,
+    time: 25,
     note: "La gràcia no és «encertar les lletres», sinó veure com un canvi minúscul a l'inici (una lletra) es propaga fins a un efecte enorme al final (una malaltia). Compareu sempre la versió normal amb la mutada, l'una al costat de l'altra."
   },
   exploreInstructions: [
@@ -90,7 +90,7 @@ export const sa3s3 = {
     "Repetiu-ho amb el gen MUTAT (anèmia falciforme) i marqueu la lletra que ha canviat",
     "Compareu les dues proteïnes: quin aminoàcid és diferent i on? Relacioneu-ho amb la forma de falç del glòbul vermell"
   ],
-  exploreDuration: "50 min",
+  exploreDuration: "25 min",
   appSrc: null,
   exploreNote: "Itinerari guiat: la taula de codons i la seqüència es donen, però la traducció i la interpretació del canvi les feu vosaltres. És un exercici de resolució de problemes (mètode preferent a 4t).",
 

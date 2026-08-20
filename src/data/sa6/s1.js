@@ -75,7 +75,7 @@ export const sa6s1 = {
   exploreActivity: {
     what: "Rebeu el mapa mut del vostre planeta amb els continents retallats i un joc de fitxes de fòssils guia. En equip, intenteu encaixar els continents com un trencaclosques i, després, comproveu-ho amb les proves: on apareix cada fòssil guia? Si un mateix fòssil terrestre apareix a dues costes ara separades per un oceà, què vol dir? Amb l'encaix i els fòssils, proposeu quins continents estaven junts i formuleu una primera explicació de com era el planeta al passat. No busqueu la resposta «bona»: busqueu una explicació que les proves aguantin.",
     who: { mode: "grup", label: "Equips de 3-4 (geòlegs del planeta)" },
-    time: 40,
+    time: 30,
     note: "Indagació: sou vosaltres qui proposeu l'explicació a partir de les proves, com va fer Wegener. Una prova sola pot ser casualitat; la força ve de fer coincidir proves diferents (encaix + fòssils + roques)."
   },
   exploreInstructions: [
@@ -85,7 +85,7 @@ export const sa6s1 = {
     "Comproveu si alguna serralada o tipus de roca sembla continuar d'un continent a un altre",
     "Proposeu quins continents estaven junts i escriviu una primera explicació de com era el planeta al passat, justificada amb les proves"
   ],
-  exploreDuration: "40 min",
+  exploreDuration: "30 min",
   appSrc: null,
   exploreNote: "Demostració a l'aula: cada equip ensenya el seu encaix i defensa amb quines proves concretes (quins fòssils, quines costes, quines serralades) sosté que dos continents van estar units.",
 

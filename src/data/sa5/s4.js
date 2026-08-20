@@ -75,7 +75,7 @@ export const sa5s4 = {
   exploreActivity: {
     what: "Inaugureu el museu evolutiu del pati. Cada equip munta el seu estand amb la targeta-cas d'UN organisme real del pati i el defensa oralment (uns 45 segons) davant els companys que el visiten. Després feu de visitants: recorreu els altres estands, els coavalueu amb la rúbrica i deixeu a cada equip una millora concreta. El museu és el producte final de la situació: demostra que sabeu observar, buscar proves, explicar el canvi evolutiu i contrastar les teories, tot alhora i sobre un organisme tangible i vostre.",
     who: { mode: "grup", label: "Equips de 3-4 (munten l'estand i el defensen; després visiten i coavaluen)" },
-    time: 45,
+    time: 55,
     note: "Càrrega cognitiva baixa i tangible: no és una exposició llarga, és UNA targeta ben feta i ben defensada. El valor és que integra tota la situació en un organisme real que heu triat vosaltres."
   },
   exploreInstructions: [
@@ -85,7 +85,7 @@ export const sa5s4 = {
     "Coavalueu cada estand amb la rúbrica: marqueu el nivell de cada criteri i escriviu una cosa que fan bé i una millora concreta",
     "Detecteu si algun estand té un error científic amagat (prova mal triada o explicació lamarckiana disfressada) i proposeu com corregir-lo"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "55 min",
   appSrc: null,
   exploreNote: "Demostració a l'aula: la defensa oral de 45 segons de la vostra targeta i, com a visitants, la rúbrica de coavaluació emplenada amb una millora argumentada per a cada estand visitat.",
 

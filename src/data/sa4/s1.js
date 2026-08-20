@@ -80,7 +80,7 @@ export const sa4s1 = {
   exploreActivity: {
     what: "En dos moments. Primer, en equip, comenteu el cas real de la malaltia CTNNB1 (una nena la pateix, els pares no) i mireu d'explicar com pot ser. Després, decidiu quin caràcter hereditari investigareu al projecte Heredity ID i dissenyeu com recollireu les dades de tres generacions d'una família.",
     who: { mode: "grup", label: "Equips de 3 (consell genètic)" },
-    time: 45,
+    time: 20,
     note: "El projecte Heredity ID vertebra tota la situació: el caràcter que trieu avui és el que analitzareu amb les lleis de Mendel (S2), classificareu (S3) i presentareu al pòster final (S5). Trieu-lo bé."
   },
   exploreInstructions: [
@@ -89,7 +89,7 @@ export const sa4s1 = {
     "Decidiu el caràcter que investigareu: ha de ser observable, tenir dues varietats clares i ser divers al vostre voltant",
     "Repartiu-vos: cada membre recollirà l'arbre d'una família diferent (mínim 3 generacions), protegint sempre la intimitat"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "20 min",
   appSrc: null,
   exploreNote: "Indagació amb dades reals: la demostració a l'aula és defensar davant d'un altre equip per què el caràcter que heu triat és bo per investigar (compleix les tres condicions) i com garantireu la intimitat de les persones.",
 
