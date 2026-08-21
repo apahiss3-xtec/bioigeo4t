@@ -188,7 +188,7 @@ export const sa1s1 = {
       {
         apartat: "2",
         title: "Identifiquem tipus d'arguments",
-        time: "25 min",
+        time: "20 min",
         phase: "explica",
         instruction: "Classifica els arguments de l'apartat 2 segons la garantia: dades, models, hàbits, autoritat o identitat/valors. Fixa't en la Fig.1.",
         hints: [
@@ -210,7 +210,7 @@ export const sa1s1 = {
       {
         apartat: "4",
         title: "Ciència o pseudociència?",
-        time: "25 min",
+        time: "20 min",
         phase: "explica",
         instruction: "Llegeix cada descripció (astrologia, biologia, homeopatia, ufologia...) i escriu si és ciència o pseudociència, justificant-ho amb els criteris de la Fig.2.",
         hints: [

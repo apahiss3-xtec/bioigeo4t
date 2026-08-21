@@ -55,10 +55,37 @@ const normalizeWord = (w) => {
   return s
 }
 
-// Busca una entrada per a una paraula sola (amb fallback de plural simple)
+// Regles de plural català: del plural que apareix al text, al singular
+// que hi ha al glossari. Es proven en ordre i només "encerten" si la
+// forma resultant existeix realment al glossari, o sigui que una regla
+// massa golafre no pot inventar-se una traducció.
+//   gens → gen · riscos → risc · cèl·lules → cèl·lula
+//   plaques → placa · mutacions → mutació · camins → camí
+// ⚠️ Si algun dia s'afegeixen al glossari les entrades «mà» o «fi»,
+// aquestes regles faran que «mans» i «fins» hi caiguin per error.
+// L'antídot és sempre el mateix: donar d'alta la paraula sencera al
+// glossari (com s'ha fet amb «mesures», «marques» i «plaça»), perquè
+// lookupWord mira primer la coincidència exacta.
+const PLURALS = [
+  [/s$/, ''],
+  [/os$/, ''],
+  [/ques$/, 'ca'],
+  [/gues$/, 'ga'],
+  [/ces$/, 'ça'],
+  [/es$/, 'a'],
+  [/ons$/, 'ó'],
+  [/ins$/, 'í'],
+  [/ans$/, 'à']
+]
+
+// Busca una entrada per a una paraula sola (amb fallback de plurals)
 const lookupWord = (norm) => {
   if (WORDS.has(norm)) return WORDS.get(norm)
-  if (norm.endsWith('s') && WORDS.has(norm.slice(0, -1))) return WORDS.get(norm.slice(0, -1))
+  for (const [re, rep] of PLURALS) {
+    if (!re.test(norm)) continue
+    const sing = norm.replace(re, rep)
+    if (sing !== norm && WORDS.has(sing)) return WORDS.get(sing)
+  }
   return null
 }
 

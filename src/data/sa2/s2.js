@@ -170,7 +170,7 @@ export const sa2s2 = {
       {
         apartat: "2",
         title: "Mitosi vs meiosi: el resultat",
-        time: "25 min",
+        time: "20 min",
         phase: "explica",
         instruction: "Amb la Fig.1, completa la comparació: nombre de cèl·lules i quantitat de material genètic de cada divisió. Marca quina fa cèl·lules idèntiques.",
         hints: [
@@ -181,7 +181,7 @@ export const sa2s2 = {
       {
         apartat: "3",
         title: "Per què la meitat + per què no som clons",
-        time: "25 min",
+        time: "20 min",
         phase: "explica",
         instruction: "Amb la Fig.2, explica per què els gàmetes tenen la meitat dels cromosomes i digues quants n'ha de tenir un òvul humà. Després explica per què dos germans no són idèntics.",
         hints: [

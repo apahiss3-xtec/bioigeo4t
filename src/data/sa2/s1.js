@@ -170,7 +170,7 @@ export const sa2s1 = {
       {
         apartat: "2",
         title: "El cicle i les 4 fases",
-        time: "25 min",
+        time: "20 min",
         phase: "explica",
         instruction: "Amb la Fig.1, comprova el teu ordre i completa el nom de cada fase i què hi passa. Marca on és la interfase.",
         hints: [
@@ -181,7 +181,7 @@ export const sa2s1 = {
       {
         apartat: "3",
         title: "Per què dividir-se? I quan es perd el control",
-        time: "25 min",
+        time: "20 min",
         phase: "explica",
         instruction: "Explica dos motius pels quals el cos divideix cèl·lules i què diferencia una divisió normal d'una tumoral.",
         hints: [
