@@ -8,7 +8,7 @@ export const sa2s4 = {
   engageImage: "/images/sa2-s4-portada.jpg",
 
   // ── ENGANXA (hook de síntesi) ─────────────────────────────
-  engageChallenge: "Tres informes arriben avui al mateix laboratori: (1) una ferida a la pell que es tanca sola en una setmana; (2) una biòpsia de teixit muscular amb un índex mitòtic del 35%; (3) una parella que no aconsegueix tenir fills perquè, segons l'anàlisi, els espermatozoides de l'home tenen 46 cromosomes en comptes de 23. Cap dels tres parla del mateix procés. Quin explica cada cas: mitosi normal, mitosi descontrolada (càncer) o un error en la meiosi?",
+  engageChallenge: "Tres informes arriben avui al mateix laboratori: (1) una ferida a la pell que es tanca sola en una setmana; (2) una biòpsia de teixit muscular on, de 80 cèl·lules comptades, 28 estaven en divisió; (3) una parella que no aconsegueix tenir fills perquè, segons l'anàlisi, els espermatozoides de l'home tenen 46 cromosomes en comptes de 23. Cap dels tres parla del mateix procés. Quin explica cada cas: mitosi normal, mitosi descontrolada (càncer) o un error en la meiosi?",
   engageQuestion: "Durant tres sessions heu treballat tres peces d'un mateix trencaclosques: com es divideix una cèl·lula (S1), per què n'hi ha dues maneres de fer-ho (S2) i com es detecta quan una divisió es descontrola (S3). Avui les heu de fer servir TOTES tres alhora, com un laboratori de diagnòstic que ha de triar quina eina fer servir a cada cas.",
   engageContext: "Sou l'equip de diagnòstic d'un centre mèdic. Us arriben tres informes de pacients diferents i, en parella, heu de decidir quin dels tres processos (mitosi normal, mitosi sense control, o un error de meiosi) explica cada cas, justificant-ho amb el vocabulari i els números de les tres darreres sessions. És la sessió de repàs i preparació per a la prova de La cèl·lula.",
 
@@ -115,7 +115,7 @@ export const sa2s4 = {
       id: "t2",
       apartat: "2",
       heading: "Repàs: quan el cicle ==perd el control==",
-      text: "El ==càncer|r== no és un tercer tipus de divisió: és ==mitosi normal que ha perdut el control== (S3). Es detecta amb l'==índex mitòtic|p== (cèl·lules en divisió ÷ total × 100): per sobre del ~10% fa sospitar. La diferència amb una mitosi sana no és el TIPUS de divisió, sinó que ==no s'atura quan toca==.",
+      text: "El ==càncer|r== no és un tercer tipus de divisió: és ==mitosi normal que ha perdut el control== (S3). Es detecta amb l'==índex mitòtic|p== (cèl·lules en divisió ÷ total × 100), sempre comparat amb el que és ==normal en aquell teixit==. La diferència amb una mitosi sana no és el TIPUS de divisió, sinó que ==no s'atura quan toca==.",
       type: "concept"
     },
     {
@@ -174,8 +174,8 @@ export const sa2s4 = {
         hints: [
           "Recorda: a vegades la meiosi falla i un gàmeta queda amb el nombre complet (2n) en lloc de la meitat (n) — és un error de meiosi.",
           "Per a cada cas pregunta't: cèl·lules iguals o a la meitat? hi ha senyal de pèrdua de control?",
-          "El cas 2 té un índex mitòtic: compara'l amb el llindar del ~10% que vas fer servir a S3.",
-          "El cas 3 parla de cromosomes en un gàmeta: recorda que un gàmeta hauria de tenir la meitat (n), no el nombre complet (2n)."
+          "El cas 2 té un índex mitòtic: pregunta't quant s'hauria de dividir aquell teixit en condicions normals, com vas fer a S3.",
+          "El cas 3 parla de cromosomes en un gàmeta: quants n'hauria de tenir? Compara aquesta xifra amb la que dona l'anàlisi i mira en quin procés es fa aquest repartiment."
         ]
       },
       {

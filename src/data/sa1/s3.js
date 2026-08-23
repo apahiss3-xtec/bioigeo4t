@@ -33,21 +33,21 @@ export const sa1s3 = {
   apartatExtras: {
     "1": {
       scaffold:
-        "Per defensar, segueix el guió: «El meu cas és ___. Promet ___. Al detector hi trobo els senyals ___. Veredicte: ___ perquè ___. Si algú em diu «a mi em funciona», jo responc ___». Assaja-ho una vegada abans de sortir. Parla a poc a poc: 1 minut dona per a 4-5 frases.",
+        "Per defensar, segueix el guió: «El meu cas és ___. Promet ___. Al detector hi trobo els senyals ___. Veredicte: ___ perquè ___. Si algú em diu «a mi em funciona», jo responc ___». Assaja-ho una vegada abans de sortir. Parla a poc a poc: 1 minut dona per a 4-5 frases. I quan escoltis els companys, no anotis només «bé» o «malament»: fixa't si han dit (a) què promet el cas, (b) quins senyals del detector hi ha i (c) el veredicte amb un perquè.",
       challenge:
-        "Prepara la defensa per al públic MÉS difícil: anticipa DUES objeccions que facin servir garanties diferents (per exemple «a mi em funciona» → identitat/valors, i «ho diu un metge» → autoritat). Per a cadascuna, escriu una rèplica que ataqui l'argument, no la persona, i explica per què aquella garantia concreta no n'hi ha prou per estar-ne segur."
+        "Prepara la defensa per al públic MÉS difícil: anticipa DUES objeccions que facin servir garanties diferents (per exemple «a mi em funciona» → identitat/valors, i «ho diu un metge» → autoritat). Per a cadascuna, escriu una rèplica que ataqui l'argument, no la persona, i explica per què aquella garantia concreta no n'hi ha prou per estar-ne segur. En escoltar els companys, proposa a cadascun UNA millora concreta («la teva defensa milloraria si...»)."
     },
     "2": {
       scaffold:
-        "Per avaluar un company, no diguis només «bé» o «malament». Fixa't en si ha dit: (a) què promet el cas, (b) quins senyals del detector hi ha, (c) el veredicte amb un perquè. Marca'ls i, si en falta un, digues-l'hi amb amabilitat.",
+        "Per classificar, fes-ho en dos passos i no vagis directe al veredicte. Primer escriu SÍ o NO a cada pregunta, una per una: (1) es pot posar a prova amb experiments fiables? (2) admet que la corregeixin? Només quan tinguis les dues respostes escrites, decideix: dos SÍ → ciència; dos NO → pseudociència; es pot provar però no s'ha fet → encara no comprovat.",
       challenge:
-        "Fes de crítica constructiva: després d'escoltar una defensa, proposa UNA millora concreta («la teva defensa milloraria si...») que faci l'argument més fort. Evita desqualificar; ataca l'argument, no la persona."
+        "Després de classificar les disciplines de la taula, inventa TU un cas nou de frontera (una afirmació que costi de classificar) i explica per què és difícil: quins senyals l'acosten a la pseudociència i quins la mantenen dins d'allò «encara no comprovat»?"
     },
     "3": {
       scaffold:
-        "Per classificar, pregunta't dues coses: es pot posar a prova amb experiments? i admet que la corregeixin? Si a totes dues és SÍ → ciència. Si a totes dues és NO → pseudociència. Recorda que biologia, física, geologia i química són ciències.",
+        "Per al detector col·lectiu, no repeteixis un senyal que ja hi hagi al mural: mira'l abans d'escriure. Si el teu cas fa servir un truc que encara no hi és, afegeix-lo amb l'exemple concret al costat.",
       challenge:
-        "Després de classificar les 8 disciplines, inventa TU un cas nou de frontera (una afirmació que costi de classificar) i explica per què és difícil: quins senyals l'acosten a la pseudociència i quins la mantenen dins d'allò «encara no comprovat»?"
+        "Mira el mural sencer de la classe: hi falta o hi sobra algun senyal? Proposa una millora del detector justificada amb almenys dos casos reals que hagis sentit avui."
     }
   },
 
@@ -97,14 +97,14 @@ export const sa1s3 = {
     },
     {
       id: "t2",
-      apartat: "3",
+      apartat: "2",
       heading: "==Ciència== o ==pseudociència==: la prova de foc",
-      text: "Per classificar qualsevol disciplina, fes-li dues preguntes: es pot ==posar a prova== amb experiments fiables? i ==admet== que la corregeixin? La ==biologia, la física, la geologia i la química== responen SÍ a totes dues: són ciències. L'==astrologia, l'homeopatia, la ufologia i el reiki== responen NO: prometen coses que no es comproven i no admeten crítica. Aquesta és la frontera, no el nom que sona més «científic».",
+      text: "Per classificar qualsevol disciplina, fes-li dues preguntes: es pot ==posar a prova== amb experiments fiables? i ==admet== que la corregeixin? ==Dos SÍ== → ciència. ==Dos NO== → pseudociència. Si es POT provar però encara no s'ha fet, és una hipòtesi ==encara no comprovada==. El que decideix és la resposta a aquestes dues preguntes, no el nom que sona més «científic» ni el prestigi de qui ho diu.",
       type: "concept"
     },
     {
       id: "t3",
-      apartat: "3",
+      apartat: "2",
       heading: "Ni ciència ni pseudociència: allò ==encara no comprovat==",
       text: "Alerta amb els casos de frontera. «Hi ha vida en altres planetes» no és pseudociència: és una ==hipòtesi contrastable== que encara no s'ha pogut comprovar. La diferència amb la pseudociència és l'==actitud==: la ciència ==vol== ser comprovada i acceptaria la resposta sigui quina sigui; la pseudociència ==es tanca== a tota prova en contra.",
       type: "epistemic",
@@ -112,7 +112,7 @@ export const sa1s3 = {
     },
     {
       id: "t4",
-      apartat: "4",
+      apartat: "3",
       heading: "El ==detector col·lectiu== de la classe",
       text: "Amb els senyals i exemples que han sortit a les defenses, construïm ==un sol detector== per a tota la classe: un mural amb els senyals d'alerta i, sota cada un, els millors exemples reals caçats per l'alumnat. Aquest detector és l'==eina de la classe per a tot el curs==: hi tornarem cada cop que una afirmació ens vulgui colar una promesa sense proves.",
       type: "concept"
@@ -121,7 +121,7 @@ export const sa1s3 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "1", before: true, title: "El detector: els 5 senyals d'alerta", src: "/images/sa1-s2-detector.svg", note: "Tingues-lo a la mà mentre defenses i mentre escoltes els companys." },
-    { id: "Fig.2", apartat: "3", before: true, title: "Ciència vs pseudociència", src: "/images/sa1-s1-ciencia-pseudo.svg", note: "Les dues preguntes clau: es pot posar a prova? admet crítica?" }
+    { id: "Fig.2", apartat: "2", before: true, title: "Ciència vs pseudociència", src: "/images/sa1-s1-ciencia-pseudo-fitxa.svg", note: "Les dues preguntes clau: es pot posar a prova? admet crítica?" }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -146,36 +146,26 @@ export const sa1s3 = {
         title: "Rondes de defensa",
         time: "40 min",
         phase: "explore",
-        instruction: "Defensa el teu cas en 1 minut amb el detector. Quan escoltis els altres, marca quins senyals fan servir i vota amb la targeta.",
+        instruction: "Defensa el teu cas en 1 minut amb el detector. Quan escoltis els altres, marca quins senyals fan servir, apunta un punt fort i una millora, i vota amb la targeta.",
         hints: [
           "Parla a poc a poc: 1 minut són 4-5 frases ben dites, no un munt de coses de pressa.",
-          "Anticipa l'objecció de qui hi creu i respon a la garantia que fa servir, no a la persona."
+          "Anticipa l'objecció de qui hi creu i respon a la garantia que fa servir, no a la persona.",
+          "En avaluar: crítica constructiva («la teva defensa milloraria si...»), i ataca l'argument, mai la persona."
         ]
       },
       {
         apartat: "2",
-        title: "Avaluo els companys",
-        time: "durant les rondes",
-        phase: "explica",
-        instruction: "Per cada defensa que escoltis, apunta un punt fort i una millora. Fixa't si han dit la promesa, els senyals i el veredicte amb un perquè.",
+        title: "Ciència o pseudociència?",
+        time: "20 min",
+        phase: "elabora",
+        instruction: "Classifica les disciplines de la taula com a ciència o pseudociència i escriu el motiu. Fes servir les dues preguntes clau de la Fig.2.",
         hints: [
-          "Crítica constructiva: «la teva defensa milloraria si...», no «està malament».",
-          "Ataca l'argument, mai la persona."
+          "Escriu primer SÍ o NO a cada una de les dues preguntes, i només després decideix el veredicte.",
+          "Recorda que hi ha un tercer calaix: una cosa que es podria comprovar però encara no s'ha comprovat no és pseudociència."
         ]
       },
       {
         apartat: "3",
-        title: "Ciència o pseudociència?",
-        time: "20 min",
-        phase: "elabora",
-        instruction: "Classifica les 8 disciplines com a ciència o pseudociència i escriu el motiu. Fes servir les dues preguntes clau de la Fig.2.",
-        hints: [
-          "Es pot posar a prova amb experiments? i admet que la corregeixin? Dos SÍ → ciència; dos NO → pseudociència.",
-          "Recorda: allò «encara no comprovat» (vida extraterrestre) NO és pseudociència."
-        ]
-      },
-      {
-        apartat: "4",
         title: "El detector col·lectiu",
         time: "12 min",
         phase: "elabora",
@@ -213,7 +203,7 @@ export const sa1s3 = {
       id: "q3",
       type: "open",
       text: "Per què «pot haver-hi vida en altres planetes» NO és pseudociència, encara que no estigui demostrat?",
-      hint: "Pensa en l'actitud: aquesta afirmació es pot posar a prova i acceptaria la resposta? La pseudociència ho fa?"
+      hint: "Torna als tres calaixos i mira quina de les dues preguntes clau falla, i quina no."
     }
   ],
 
@@ -234,7 +224,7 @@ export const sa1s3 = {
   recoveryInstructions: [
     "Llegeix l'apartat EXPLICA: què fa una bona defensa, la prova de foc ciència/pseudociència i el detector col·lectiu",
     "Mira la Fig.1 (detector, 5 senyals) i la Fig.2 (ciència vs pseudociència)",
-    "Descarrega la fitxa S3 i fes tu sol/a l'exercici de classificació de les 8 disciplines (apartat 3)",
+    "Descarrega la fitxa S3 i fes tu sol/a l'exercici de classificació de les disciplines (apartat 2)",
     "Prepara la defensa oral del teu cas i grava-la o assaja-la; l'hauràs de defensar a classe quan tornis",
     "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
   ],

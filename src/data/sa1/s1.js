@@ -145,7 +145,7 @@ export const sa1s1 = {
       id: "t6",
       apartat: "4",
       heading: "La ciència és revisable (i això és una virtut)",
-      text: "Que la ciència canviï els seus models NO és una debilitat: és el que la fa fiable. Una idea que no es pot posar mai a prova ni corregir no és ciència. Per això l'astronomia és ciència i l'astrologia no ho és, encara que van néixer juntes fa segles.",
+      text: "Que la ciència canviï els seus models NO és una debilitat: és el que la fa fiable. Una idea que no es pot posar mai a prova ni corregir no és ciència, per antiga que sigui i per molt que hagi nascut al costat d'una que sí que ho és.",
       type: "epistemic",
       badge: "🔬 Com funciona la ciència"
     }
@@ -153,7 +153,7 @@ export const sa1s1 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "2", before: true, title: "Els 5 tipus de garanties", src: "/images/sa1-s1-garanties.svg", note: "Dades, models, hàbits, autoritat i identitat/valors. Fes-la servir per classificar els arguments que heu usat a l'escala de certeses." },
-    { id: "Fig.2", apartat: "4", title: "Ciència vs. pseudociència", src: "/images/sa1-s1-ciencia-pseudo.svg", note: "Els criteris que distingeixen la ciència: mètode, comprovació, obertura a la crítica. Fixa-t'hi abans de classificar els exemples de la fitxa." }
+    { id: "Fig.2", apartat: "4", title: "Ciència vs. pseudociència", src: "/images/sa1-s1-ciencia-pseudo-fitxa.svg", note: "Els criteris que distingeixen la ciència: mètode, comprovació, obertura a la crítica. Fixa-t'hi abans de classificar els exemples de la fitxa." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -182,7 +182,7 @@ export const sa1s1 = {
         instruction: "Retalla les 10 afirmacions, ordena-les de més certa a menys certa i justifica cada posició. Després arribeu a un consens de grup marcant amb fletxes els canvis que acceptes.",
         hints: [
           "No et fixis només en si la cosa t'agrada: fixa't en si hi ha manera de comprovar-la.",
-          "«Demà sortirà el Sol» i «Si en compro, em tocarà la loteria»: quina de les dues pots preveure amb un model? Aquesta és més certa."
+          "Per cada tira, pregunta't dues coses abans de decidir on va: hi ha alguna manera de comprovar-ho? i qui ho podria comprovar, i com?"
         ]
       },
       {
@@ -204,7 +204,7 @@ export const sa1s1 = {
         instruction: "Compta quantes vegades has fet servir cada garantia i dibuixa el teu perfil epistèmic. Compara'l amb un company.",
         hints: [
           "No hi ha un perfil «bo» o «dolent», però pensa: fiar-te només d'un tipus de garantia et fa més fàcil d'enganyar?",
-          "Si abuses de la identitat/valors, potser creus coses perquè VOLS que siguin certes."
+          "Mira quina garantia t'ha sortit repetida més vegades. Què et diu això sobre la manera com decideixes què és cert?"
         ]
       },
       {

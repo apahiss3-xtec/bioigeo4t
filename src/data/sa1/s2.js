@@ -185,7 +185,7 @@ export const sa1s2 = {
       id: "q1",
       type: "open",
       text: "Explica dos dels cinc senyals del detector de pseudociència i posa un exemple real de cadascun.",
-      hint: "Els senyals: no es comprova, no admet crítica, es basa en autoritat, sona científica, apel·la al que vols creure."
+      hint: "Tria exemples que NO s'hagin dit a classe: han de ser casos teus."
     },
     {
       id: "q2",

@@ -21,7 +21,7 @@ export const sa2s1 = {
       "Relaciono la divisió sense control amb el càncer i argumento per què és perillós, connectant-ho amb el cas de la biòpsia."
     ],
     B: [
-      "Reconec i anomeno les fases de la mitosi (interfase, profase, metafase, anafase, telofase) en imatges de cèl·lules reals.",
+      "Reconec la interfase i anomeno les quatre fases de la mitosi (profase, metafase, anafase, telofase) en imatges de cèl·lules reals.",
       "Explico amb les meves paraules per què el cos necessita dividir cèl·lules (reparar ferides, créixer).",
       "Compto quantes cèl·lules hi ha en cada fase i dic quina fase és més freqüent.",
       "Explico què vol dir que una cèl·lula es divideixi «sense control» i per què això és el que passa en un tumor."
@@ -34,7 +34,7 @@ export const sa2s1 = {
   apartatExtras: {
     "1": {
       scaffold:
-        "Per identificar cada fase, fixa't NOMÉS en com està l'ADN (la part fosca): està escampat i difús? → interfase. Es veuen fils gruixuts i separats? → profase. Estan tots alineats al mig? → metafase. S'estan separant cap als dos costats? → anafase. Ja hi ha dos grups clarament separats? → telofase.",
+        "Per agrupar-les, fixa't NOMÉS en com està l'ADN (la part fosca) i no en res més. Pregunta't, per cada cèl·lula: està escampat o compactat? Els fils estan escampats per tot arreu, tots junts al mig, o repartits en dos grups? Fes tants grups com aspectes clarament diferents trobis, i després decideix quin ordre té sentit. El NOM de cada grup el posaràs a la Secció 2.",
       challenge:
         "Sense mirar encara la solució (Fig.1): ordena tu els deu quadres només pel que veus. Quina pista visual fa MÉS fàcil distingir la cèl·lula amb l'ADN alineat al centre de la que el té separant-se cap als dos costats? Escriu-la com si l'expliquessis a un company que s'hi encalla."
     },
@@ -52,7 +52,7 @@ export const sa2s1 = {
     },
     "4": {
       scaffold:
-        "Si en una preparació hi ha moltes més cèl·lules en interfase que en qualsevol altra fase, vol dir que la interfase és la que dura MÉS temps (com una foto d'una carretera: on hi ha més cotxes és on van més a poc a poc). Compta i compara.",
+        "Pensa en una foto d'una carretera: si en un tram hi surten molts més cotxes que en un altre, és perquè en aquell tram van més a poc a poc i hi passen més estona. Amb les cèl·lules passa igual: la proporció que en trobes en un estat et diu quant DURA aquell estat. Compta quantes n'hi ha de cada grup i aplica-hi aquesta idea.",
       challenge:
         "Un investigador troba una mostra amb MOLTES cèl·lules en fase de divisió (mitosi) i molt poques en interfase, comparada amb un teixit sa. Què li fa sospitar això sobre la mostra? Connecta-ho amb l'índex mitòtic i el càncer."
     }
@@ -127,7 +127,7 @@ export const sa2s1 = {
       id: "t5",
       apartat: "4",
       heading: "Comptar cèl·lules ens diu quina fase ==dura més==",
-      text: "En una preparació veus una ==foto congelada==: com més cèl·lules trobis en una fase, més temps dura aquesta fase. Per això sempre hi ha moltíssimes cèl·lules en interfase (és la més llarga). Comptar les cèl·lules de cada fase i calcular quina proporció representa la divisió és el que fan servir els laboratoris: és l'==índex mitòtic==.",
+      text: "En una preparació veus una ==foto congelada==: com més cèl·lules trobis en un estat, més temps dura aquell estat. Aquesta regla és la que et permet respondre la Secció 4 amb els teus propis recomptes. Comptar les cèl·lules de cada fase i calcular quina proporció representa la divisió és el que fan servir els laboratoris: és l'==índex mitòtic==.",
       type: "epistemic",
       badge: "🔬 Com es mesura al laboratori"
     }
@@ -172,7 +172,7 @@ export const sa2s1 = {
         title: "El cicle i les 4 fases",
         time: "20 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, comprova el teu ordre i completa el nom de cada fase i què hi passa. Marca on és la interfase.",
+        instruction: "Amb la Fig.1, comprova el teu ordre i completa el nom de cada fase i què hi passa. Després encercla la part del cicle que NO és mitosi.",
         hints: [
           "La interfase no és part de la mitosi: és quan la cèl·lula copia el seu ADN abans de repartir-lo.",
           "Recorda l'ordre amb: In - Pro - Meta - Ana - Telo."
@@ -186,7 +186,7 @@ export const sa2s1 = {
         instruction: "Explica dos motius pels quals el cos divideix cèl·lules i què diferencia una divisió normal d'una tumoral.",
         hints: [
           "Pensa en una ferida que es cura i en un nen que creix: què fan les cèl·lules en tots dos casos?",
-          "La cèl·lula tumoral no és que es divideixi «malament»: és que no s'atura quan hauria de fer-ho."
+          "Una cèl·lula sana rep ordres d'aturar-se quan ja n'hi ha prou. Què hauria de passar amb aquestes ordres perquè no s'aturés mai?"
         ]
       },
       {
@@ -197,7 +197,7 @@ export const sa2s1 = {
         instruction: "A partir del teu recompte, digues quina fase dura més i per què. Després torna a l'informe de la biòpsia i explica, amb el que has après, què li passa a aquelles cèl·lules.",
         hints: [
           "On hi ha més cèl·lules acumulades, més dura aquella fase (com els cotxes en un embús).",
-          "A la biòpsia, «sense control» vol dir que la mitosi ha perdut els senyals que la fan aturar."
+          "Torna a la biòpsia: quina diferència hauries de veure entre un teixit que es repara i un que no para mai de créixer?"
         ]
       }
     ]
@@ -248,7 +248,7 @@ export const sa2s1 = {
   // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
     "Llegeix l'apartat EXPLICA: el cicle cel·lular, les 4 fases de la mitosi, per què el cos divideix cèl·lules i què és el càncer",
-    "Mira la Fig.1 (el cicle de la mitosi) i la Fig.2 (cèl·lules reals d'arrel de ceba) i intenta ordenar tu les fases",
+    "Mira la Fig.1 (el cicle de la mitosi) i la Fig.3 (cèl·lules reals d'arrel de ceba) i intenta ordenar tu les fases",
     "Descarrega la fitxa S1 i completa l'observació i el recompte amb les imatges de la Fig.2",
     "A casa, busca un teixit que es regeneri de pressa i un que no, i anota per què",
     "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"

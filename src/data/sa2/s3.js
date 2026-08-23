@@ -40,7 +40,7 @@ export const sa2s3 = {
     },
     "2": {
       scaffold:
-        "Recorda la clau de la Fig.1: INTERFASE = nucli difús, sense fils → NO compta. EN DIVISIÓ = cromosomes condensats visibles → SÍ compta. El llindar de referència: per sobre d'un índex del ~10% hi ha risc de procés cancerós (referència general: el valor normal depèn del teixit, vegeu el punt «el llindar depèn del teixit»). Compara els teus dos números amb aquest 10%.",
+        "Recorda la clau de la Fig.1: INTERFASE = nucli difús, sense fils → NO compta. EN DIVISIÓ = cromosomes condensats visibles → SÍ compta. Un cop tinguis els dos percentatges, no els comparis amb cap número fix: compara'ls ENTRE ELLS i amb el que seria normal en aquell teixit.",
       challenge:
         "Ara que saps que el llindar depèn del teixit: com decidiries quin és el valor «normal» d'un teixit que no has vist mai? Quina dada demanaries abans de dir que una biòpsia és sospitosa, i a qui l'hauries de demanar?"
     },
@@ -100,7 +100,7 @@ export const sa2s3 = {
       id: "t1",
       apartat: "2",
       heading: "L'==índex mitòtic==: comptar per diagnosticar",
-      text: "L'==índex mitòtic|p== és el ==percentatge== de cèl·lules d'un teixit que estan ==en divisió== en un moment donat: (cèl·lules en mitosi ÷ total) × 100. És una eina de ==diagnòstic==: com que un ==tumor|r== són cèl·lules que es divideixen sense parar, un teixit amb un índex mitòtic ==alt== (per sobre del ~10%) fa ==sospitar== d'un procés cancerós.",
+      text: "L'==índex mitòtic|p== és el ==percentatge== de cèl·lules d'un teixit que estan ==en divisió== en un moment donat: (cèl·lules en mitosi ÷ total) × 100. És una eina de ==diagnòstic==: com que un ==tumor|r== són cèl·lules que es divideixen sense parar, un índex mitòtic ==més alt del que toca en aquell teixit== fa ==sospitar== d'un procés cancerós.",
       type: "concept"
     },
     {
@@ -143,7 +143,7 @@ export const sa2s3 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: true, title: "Com distingir una cèl·lula en divisió", src: "/images/sa2-s3-com-distingir.svg", note: "Interfase (nucli difús) NO compta; en divisió (cromosomes visibles) SÍ. A sota, la fórmula de l'índex mitòtic i el llindar de sospita (~10%)." },
+    { id: "Fig.1", apartat: "1", before: true, title: "Com distingir una cèl·lula en divisió", src: "/images/sa2-s3-com-distingir.svg", note: "Interfase (nucli difús) NO compta; en divisió (cromosomes visibles) SÍ. A sota, la fórmula de l'índex mitòtic i quan un índex ha de fer sospitar." },
     { id: "Fig.2", apartat: "1", before: true, title: "Exemple de fitxa de pacient", src: "/images/sa2-s3-biopsia-exemple.png", note: "Aquest és el TIPUS d'imatge que compteu. Cada equip rep una fitxa de pacient diferent (amb el seu fàrmac, dosi i temps) amb la seva biòpsia inicial i final." }
   ],
 
@@ -180,10 +180,10 @@ export const sa2s3 = {
         title: "Interpreta els números",
         time: "20 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, decideix si cada índex indica un teixit sospitós. Marca quin dels dos supera el llindar del ~10%.",
+        instruction: "Amb la Fig.1, compara cada índex amb el que seria normal EN AQUELL teixit i decideix si fa sospitar. Si et falta alguna dada per decidir-ho, digues quina.",
         hints: [
           "Interfase = nucli difús (no compta). En divisió = cromosomes visibles (sí compta).",
-          "Per sobre del ~10% → sospita de procés cancerós."
+          "No hi ha cap número màgic igual per a tot el cos: el que compta és si l'índex és molt més alt del que toca en aquell teixit, o si no baixa quan ja hauria de baixar."
         ]
       },
       {
@@ -225,7 +225,7 @@ export const sa2s3 = {
       id: "q2",
       type: "open",
       text: "En un altre ratolí, l'índex mitòtic passa del 30% al 9% després del tractament. El fàrmac funciona? Justifica-ho amb els números.",
-      hint: "Fixa't si l'índex baixa i si el final queda per sota del llindar del ~10%."
+      hint: "Compara els dos números. Quin canvi hauries d'esperar veure si el fàrmac frena la divisió?"
     },
     {
       id: "q3",

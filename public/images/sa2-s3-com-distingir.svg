@@ -14,7 +14,8 @@
 <line x1="540" y1="142" x2="708" y2="142" stroke="#5A2E77" stroke-width="1.6"/>
 <text x="624" y="162" font-size="15" fill="#5A2E77" text-anchor="middle">total de cèl·lules</text>
 <text x="624" y="188" font-size="15" font-weight="700" fill="#7B3F9E" text-anchor="middle">× 100</text>
-<text x="624" y="224" font-size="12.5" fill="#C0392B" text-anchor="middle" font-weight="700">Per sobre de ~10%:</text>
-<text x="624" y="242" font-size="12.5" fill="#C0392B" text-anchor="middle">risc de procés cancerós</text>
+<text x="624" y="222" font-size="11.5" fill="#C0392B" text-anchor="middle" font-weight="700">Sospitós només si supera molt</text>
+<text x="624" y="237" font-size="11.5" fill="#C0392B" text-anchor="middle">el normal d'AQUELL teixit,</text>
+<text x="624" y="252" font-size="11.5" fill="#C0392B" text-anchor="middle">o si no baixa quan ja s'ha refet.</text>
 <text x="380.0" y="300" font-size="13.5" fill="#5A2E77" text-anchor="middle">Un fàrmac funciona si, després del tractament, l'índex mitòtic BAIXA respecte a l'inicial.</text>
 </svg>

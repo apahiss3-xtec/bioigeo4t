@@ -197,7 +197,7 @@ export const sa1s4 = {
       id: "q3",
       type: "open",
       text: "Compara com decidies què és cert el primer dia de la SA amb com ho decideixes ara. Quina és la diferència més gran?",
-      hint: "Pensa en les garanties: abans potser confiaves més en l'autoritat o els hàbits; i ara?"
+      hint: "Torna al teu perfil de la S1: quina garantia hi sortia més? Ha canviat res des de llavors?"
     }
   ],
   exitTicketNote: "Exit tiquet de tancament de SA: barreja una comprovació ràpida (q2) amb la reflexió metacognitiva sobre el propi canvi (q1, q3).",
