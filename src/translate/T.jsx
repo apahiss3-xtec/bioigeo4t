@@ -61,11 +61,14 @@ const normalizeWord = (w) => {
 // massa golafre no pot inventar-se una traducció.
 //   gens → gen · riscos → risc · cèl·lules → cèl·lula
 //   plaques → placa · mutacions → mutació · camins → camí
-// ⚠️ Si algun dia s'afegeixen al glossari les entrades «mà» o «fi»,
-// aquestes regles faran que «mans» i «fins» hi caiguin per error.
+// ⚠️ Avís corregit el 2026-08-24: la versió antiga deia que donar d'alta
+// «mà» faria caure «mans» per error, i això és inexacte — la regla
+// -ans→à converteix «mans» en «mà», que és justament el correcte (per
+// això «mà» ja hi és donada d'alta). L'única regla realment golafre és
+// la primera, /s$/ → '', que pot fer coincidir formes que no toquen.
 // L'antídot és sempre el mateix: donar d'alta la paraula sencera al
-// glossari (com s'ha fet amb «mesures», «marques» i «plaça»), perquè
-// lookupWord mira primer la coincidència exacta.
+// glossari (com s'ha fet amb «mesures», «marques», «plaça», «saltes» i
+// «tires»), perquè lookupWord mira primer la coincidència exacta.
 const PLURALS = [
   [/s$/, ''],
   [/os$/, ''],

@@ -78,7 +78,7 @@ export const sa3s3 = {
 
   // ── EXPLORA (ABP · traducció del codi genètic) ───────────
   exploreActivity: {
-    what: "Feu de traductors del codi genètic. A partir d'un fragment del gen de l'hemoglobina, recorreu tot el camí: copieu l'ADN a ARNm (transcripció), talleu l'ARNm en codons de 3 lletres i, amb la taula de codons, obteniu la seqüència d'aminoàcids de la proteïna (traducció). Després repetiu el procés amb la versió MUTADA del gen (anèmia falciforme) i comparеu: quina lletra ha canviat, quin aminoàcid queda diferent i per què això canvia la persona.",
+    what: "Feu de traductors del codi genètic. A partir d'un fragment del gen de l'hemoglobina, recorreu tot el camí: copieu l'ADN a ARNm (transcripció), talleu l'ARNm en codons de 3 lletres i, amb la taula de codons, obteniu la seqüència d'aminoàcids de la proteïna (traducció). Després repetiu el procés amb la versió MUTADA del gen (anèmia falciforme) i compareu: quina lletra ha canviat, quin aminoàcid queda diferent i per què això canvia la persona.",
     who: { mode: "grup", label: "Parelles o equips de 3" },
     time: 25,
     note: "La gràcia no és «encertar les lletres», sinó veure com un canvi minúscul a l'inici (una lletra) es propaga fins a un efecte enorme al final (una malaltia). Compareu sempre la versió normal amb la mutada, l'una al costat de l'altra."
@@ -164,7 +164,7 @@ export const sa3s3 = {
         title: "Tradueix el codi genètic",
         time: "25 min",
         phase: "explore",
-        instruction: "Passa la seqüència d'ADN a ARNm (U en lloc de T), sepаra-la en codons de 3 lletres i, amb la taula de codons, escriu la proteïna.",
+        instruction: "Passa la seqüència d'ADN a ARNm (U en lloc de T), separa-la en codons de 3 lletres i, amb la taula de codons, escriu la proteïna.",
         hints: [
           "Recorda la complementarietat i que l'ARN fa servir U en lloc de T.",
           "Cada 3 lletres (codó) = 1 aminoàcid. Comença per AUG (inici)."
