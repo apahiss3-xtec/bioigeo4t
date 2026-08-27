@@ -15,9 +15,9 @@ export const sa2s1 = {
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
     A: [
-      "Identifico les fases de la mitosi en una preparació real i argumento en quin ordre passen a partir del que observo, no de memòria.",
+      "Justifico un criteri propi per agrupar cèl·lules pel que observo, i el corregeixo si em barreja dos estats.",
       "Explico per quina raó una cèl·lula ha de dividir-se de manera que les dues filles siguin idèntiques, i què significa perdre el control d'aquest procés.",
-      "Estimo quina fase dura més a partir de la proporció de cèl·lules que hi ha en cada fase i justifico el raonament.",
+      "Calculo quantes hores dura cada fase a partir de la proporció de cèl·lules i dic fins a quin punt em puc refiar del número.",
       "Relaciono la divisió sense control amb el càncer i argumento per què és perillós, connectant-ho amb el cas de la biòpsia."
     ],
     B: [
@@ -36,13 +36,13 @@ export const sa2s1 = {
       scaffold:
         "Per agrupar-les, fixa't NOMÉS en com està l'ADN (la part fosca) i no en res més. Pregunta't, per cada cèl·lula: està escampat o compactat? Els fils estan escampats per tot arreu, tots junts al mig, o repartits en dos grups? Fes tants grups com aspectes clarament diferents trobis, i després decideix quin ordre té sentit. El NOM de cada grup el posaràs a la Secció 2.",
       challenge:
-        "Sense mirar encara la solució (Fig.1): ordena tu els deu quadres només pel que veus. Quina pista visual fa MÉS fàcil distingir la cèl·lula amb l'ADN alineat al centre de la que el té separant-se cap als dos costats? Escriu-la com si l'expliquessis a un company que s'hi encalla."
+        "A la teva fitxa no se't diu quants grups hi ha: primer has d'escriure el criteri visual amb què decidiràs que dues cèl·lules són del mateix grup, i només després agrupar, ordenar i comptar. A la posada en comú compara el teu criteri amb el d'una altra parella: si us han sortit un nombre de grups diferent, discutiu quin dels dos criteris separa millor i per què."
     },
     "2": {
       scaffold:
         "La interfase no és una fase de la mitosi, és el temps ENTRE divisions: la cèl·lula creix i copia el seu ADN. Per això després pot repartir una còpia completa a cada cèl·lula filla. Recorda l'ordre amb: In-Pro-Meta-Ana-Telo.",
       challenge:
-        "Per què és imprescindible que l'ADN es copiï SENCER a la interfase, ABANS de començar a repartir-lo? Què passaria si una cèl·lula comencés a dividir-se amb l'ADN copiat només a mitges?"
+        "A la teva fitxa els noms de les fases no hi són: els has de posar tu a partir de la Fig.1, i has d'indicar quin dels TEUS grups de la Secció 1 correspon a cadascuna. Si algun grup teu no encaixa amb cap fase, o si dues fases t'havien quedat barrejades en un mateix grup, això no és un error a amagar: és el que has de comentar quan revisis el teu criteri. A més: per què és imprescindible que l'ADN es copiï SENCER a la interfase, ABANS de començar a repartir-lo?"
     },
     "3": {
       scaffold:
@@ -54,7 +54,7 @@ export const sa2s1 = {
       scaffold:
         "Pensa en una foto d'una carretera: si en un tram hi surten molts més cotxes que en un altre, és perquè en aquell tram van més a poc a poc i hi passen més estona. Amb les cèl·lules passa igual: la proporció que en trobes en un estat et diu quant DURA aquell estat. Compta quantes n'hi ha de cada grup i aplica-hi aquesta idea.",
       challenge:
-        "Un investigador troba una mostra amb MOLTES cèl·lules en fase de divisió (mitosi) i molt poques en interfase, comparada amb un teixit sa. Què li fa sospitar això sobre la mostra? Connecta-ho amb l'índex mitòtic i el càncer."
+        "No et quedis en «aquesta dura més»: posa-hi un número. Sabent que el cicle sencer dura 24 hores, la teva fitxa et demana calcular quantes hores ocupa cada fase a partir del teu recompte, i després dir quina confiança mereix aquest número havent mirat només 10 cèl·lules. Al repte final hauràs de refer el càlcul per a una mostra amb moltes més cèl·lules en divisió i explicar què hi ha canviat, al cicle d'aquelles cèl·lules, perquè els números surtin així."
     }
   },
 
@@ -85,7 +85,8 @@ export const sa2s1 = {
   },
   exploreInstructions: [
     "Observeu la preparació al microscopi (o les imatges de la Fig.2) i busqueu cèl·lules que NO es vegin totes iguals per dins",
-    "Agrupeu-les segons com està l'ADN: escampat, en fils, alineat al centre, separant-se, o en dos grups",
+    "Decidiu primer el CRITERI visual amb què direu que dues cèl·lules són del mateix grup, i escriviu-lo abans d'agrupar res",
+    "Agrupeu-les aplicant el vostre criteri: el nombre de grups el decidiu vosaltres",
     "Poseu els grups en l'ordre que creieu que passa la divisió i justifiqueu per què aquest ordre",
     "Compteu quantes cèl·lules hi ha de cada grup: quin és el més nombrós?"
   ],
@@ -106,7 +107,7 @@ export const sa2s1 = {
       id: "t2",
       apartat: "2",
       heading: "La ==mitosi==: quatre fases per repartir l'ADN",
-      text: "La mitosi reparteix l'ADN copiat en dues cèl·lules idèntiques, en 4 fases: ==profase|g== (els cromosomes es fan visibles), ==metafase|r== (s'alineen al centre), ==anafase|b== (les dues còpies se separen cap als extrems) i ==telofase|p== (es formen dos nuclis i la cèl·lula es parteix en dues). Ordre: In → Pro → Meta → Ana → Telo.",
+      text: "La mitosi reparteix l'ADN copiat en dues cèl·lules idèntiques, i ho fa en 4 fases: ==profase|g==, ==metafase|r==, ==anafase|b== i ==telofase|p==. Què passa exactament a cadascuna i en quin ordre van, ho has de deduir tu de la Fig.1 i escriure-ho a la fitxa: aquí no ho trobaràs resolt.",
       type: "concept"
     },
     {
@@ -161,10 +162,10 @@ export const sa2s1 = {
         title: "Laboratori: observa i ordena les fases",
         time: "40 min",
         phase: "explore",
-        instruction: "Mira els deu quadres de la Fig.2 (o el microscopi), agrupa les cèl·lules segons com es veu l'ADN, posa-les en l'ordre que creguis i compta quantes n'hi ha de cada grup.",
+        instruction: "Mira els deu quadres de la Fig.2 (o el microscopi). Escriu primer el criteri amb què agruparàs, després agrupa, ordena i compta. Ningú no et diu quants grups hi ha.",
         hints: [
           "No busquis colors ni noms: fixa't només en la FORMA de la part fosca (l'ADN) de cada cèl·lula.",
-          "La cèl·lula amb l'ADN alineat en una fila al centre va JUST abans de la que el té separant-se cap als dos costats."
+          "Un criteri serveix si, aplicant-lo, dues persones diferents fan els mateixos grups. Prova'l amb un company abans d'omplir la taula."
         ]
       },
       {
@@ -172,10 +173,10 @@ export const sa2s1 = {
         title: "El cicle i les 4 fases",
         time: "20 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, comprova el teu ordre i completa el nom de cada fase i què hi passa. Després encercla la part del cicle que NO és mitosi.",
+        instruction: "Amb la Fig.1, comprova el teu ordre, posa-hi tu el nom de cada fase i digues quin dels TEUS grups és cadascuna. Després encercla la part del cicle que NO és mitosi. Al final, torna al criteri que havies escrit i digues si el mantindries.",
         hints: [
           "La interfase no és part de la mitosi: és quan la cèl·lula copia el seu ADN abans de repartir-lo.",
-          "Recorda l'ordre amb: In - Pro - Meta - Ana - Telo."
+          "Els noms de les quatre fases són profase, metafase, anafase i telofase; quin va a cada lloc, ho diu la Fig.1."
         ]
       },
       {
@@ -191,7 +192,7 @@ export const sa2s1 = {
       },
       {
         apartat: "4",
-        title: "Quina fase dura més? + torna a la biòpsia",
+        title: "Quantes hores dura cada fase? + l'informe del laboratori",
         time: "20 min",
         phase: "explica",
         instruction: "A partir del teu recompte, digues quina fase dura més i per què. Després torna a l'informe de la biòpsia i explica, amb el que has après, què li passa a aquelles cèl·lules.",

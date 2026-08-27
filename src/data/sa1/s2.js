@@ -35,13 +35,13 @@ export const sa1s2 = {
       scaffold:
         "Per posar la nota de certesa, pregunta't: hi ha estudis o dades que ho mesurin? → nota alta. Només ho diu la gent o em fa sentir bé? → nota baixa. Per marcar la garantia, recorda: números o mesures → DADES; com funciona una cosa → MODELS; «sempre s'ha fet» → HÀBITS; «ho diu X» → AUTORITAT; el que vull creure → IDENTITAT i VALORS.",
       challenge:
-        "Tria les 3 afirmacions on la teva nota de certesa s'allunya més del que creu la majoria de la societat. Per què creus que molta gent hi confia (o hi desconfia) més que tu? Quina garantia mou la creença social en cada cas?"
+        "A la teva taula cada afirmació porta DUES notes: la teva (JO) i la que creus que hi posaria la majoria de la gent (MAJORIA). Omple-les totes dues abans de mirar res més. Després tria les 3 files on la distància entre les dues columnes és més gran i, per a cadascuna, esbrina quina garantia mou la creença de la majoria."
     },
     "2": {
       scaffold:
         "El detector té 5 senyals. Per cada un, escriu-hi un exemple curt dels casos que heu caçat: «aquest anunci fa servir el senyal ___ perquè ___». Amb un sol senyal ja pots sospitar; com més senyals encaixen, més clar és.",
       challenge:
-        "Cap detector és perfecte. Pensa un cas on una idea SÍ que era ciència però al principi semblava sospitosa (per exemple, una teoria nova que ningú creia). Quin senyal del detector podria fer-nos rebutjar per error una bona idea? Com ho evitaries?"
+        "A la teva fitxa el detector ve amb els noms dels 5 senyals però SENSE la seva definició: què vol dir cadascun ho escrius tu, amb les teves paraules, a partir del que surti a la posada en comú — i hi afegeixes la pregunta que li faries a una afirmació per saber si té aquest senyal. Al repte: cap detector és perfecte; pensa un cas on una idea SÍ que era ciència però al principi semblava sospitosa, i digues quin senyal ens la faria rebutjar per error."
     },
     "3": {
       scaffold:
@@ -122,7 +122,7 @@ export const sa1s2 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "1", before: true, title: "Recordatori: els 5 tipus de garanties", src: "/images/sa1-s1-garanties.svg", note: "Torna-hi per decidir en quina garantia et bases a l'hora de puntuar cada afirmació." },
-    { id: "Fig.2", apartat: "2", before: true, title: "El detector de pseudociència", src: "/images/sa1-s2-detector.svg", note: "Els 5 senyals d'alerta. Fes-lo servir per analitzar el cas que has caçat i per preparar la defensa oral." }
+    { id: "Fig.2", apartat: "2", before: true, title: "El detector de pseudociència (per construir)", src: "/images/sa1-s2-detector-alumne.svg", note: "Els noms dels 5 senyals. Què vol dir cadascun surt de la posada en comú de la classe: aquesta sessió el detector el construïu vosaltres, no es copia. A partir de la S3 el tindràs complet per fer-lo servir." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -147,7 +147,7 @@ export const sa1s2 = {
         title: "Posicionem-nos: 15 afirmacions",
         time: "35 min",
         phase: "explore",
-        instruction: "Posa una nota de certesa (1–10) a cada afirmació i marca la garantia en què et bases. Després compara amb el grup on més discrepeu.",
+        instruction: "Posa una nota de certesa (1–10) a cada afirmació i marca la garantia en què et bases. Al nivell A hi ha una segona columna de nota: la que creus que hi posaria la majoria de la gent. Després compara amb el grup on més discrepeu.",
         hints: [
           "La nota no és «correcta» o «incorrecta»: el que compta és que la sàpigues justificar amb la garantia.",
           "Fixa't en la Fig.1: números o mesures → Dades; «ho diu X» → Autoritat; el que vull creure → Identitat i valors."
@@ -158,7 +158,7 @@ export const sa1s2 = {
         title: "Construïm el detector",
         time: "25 min",
         phase: "explica",
-        instruction: "A partir dels trucs que heu apuntat, completa els 5 senyals d'alerta del detector amb un exemple de cada, agafat dels casos caçats. Fixa't en la Fig.2.",
+        instruction: "A partir dels trucs que heu apuntat, completeu entre tots els 5 senyals d'alerta i poseu-hi un exemple de cada, agafat dels casos caçats. Al nivell B la definició de cada senyal ja hi és; al nivell A l'escrius tu amb les teves paraules i hi afegeixes la pregunta que faries per detectar-lo.",
         hints: [
           "Amb un sol senyal ja pots sospitar; com més senyals encaixen, més clar és que és pseudociència.",
           "El senyal més fort és si es pot comprovar i si admet crítica (senyals 1 i 2)."

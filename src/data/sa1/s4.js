@@ -36,7 +36,7 @@ export const sa1s4 = {
       scaffold:
         "Analitza el teu cas amb aquesta graella: (a) Què promet exactament? (b) Nota de certesa de l'1 al 10. (c) En quina garantia es basa qui hi creu (dades, models, hàbits, autoritat, identitat/valors)? (d) Quins dels 5 senyals del detector hi apareixen? Omple-la abans de decidir el veredicte.",
       challenge:
-        "No et quedis en el veredicte fàcil. Busca la part MÉS defensable del teu cas (allò que fa que la gent s'ho cregui) i explica per què, tot i semblar convincent, no n'hi ha prou. Fes servir les garanties per mostrar exactament on falla l'argument."
+        "La teva graella té dues files més que la de nivell B: (e) quina prova concreta et faria canviar de veredicte, i (f) què vol dir sobre l'afirmació que no n'existeixi cap. I el veredicte no el pots escriure com una sentència: l'has d'escriure com un argument sencer, en aquest ordre — la dada o el fet en què et fixes, la garantia que hi ha al darrere i què val, i només llavors la conclusió. Busca també la part MÉS defensable del teu cas i explica per què, tot i semblar convincent, no n'hi ha prou."
     },
     "2": {
       scaffold:
@@ -101,7 +101,7 @@ export const sa1s4 = {
       id: "t2",
       apartat: "2",
       heading: "Tres calaixos, no dos: ==ciència==, ==pseudociència== i ==encara no comprovat==",
-      text: "L'error més fàcil és tirar-ho tot al calaix de «pseudociència». Recorda els tres calaixos: la ==ciència== es pot provar i admet crítica; la ==pseudociència== promet sense proves i es tanca a la crítica; allò ==encara no comprovat== es POT provar però encara no s'ha fet, i acceptaria la resposta. La diferència clau no és el tema, és l'==actitud davant la prova==.",
+      text: "L'error més fàcil és tirar-ho tot al calaix de «pseudociència». Recorda els tres calaixos: la ==ciència== es pot provar i admet crítica; la ==pseudociència== promet sense proves —o malgrat les proves en contra— i es tanca a la crítica; allò ==encara no comprovat== es POT provar però encara no s'ha fet, i acceptaria la resposta. La diferència clau no és el tema, és l'==actitud davant la prova==.",
       type: "epistemic"
     },
     {
@@ -115,7 +115,7 @@ export const sa1s4 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "1", before: true, title: "El detector: els 5 senyals d'alerta", src: "/images/sa1-s2-detector.svg", note: "Passa-hi el teu cas real, senyal per senyal." },
-    { id: "Fig.2", apartat: "2", before: true, title: "Ciència vs pseudociència", src: "/images/sa1-s1-ciencia-pseudo.svg", note: "Les dues preguntes clau per triar el calaix del teu cas." }
+    { id: "Fig.2", apartat: "2", before: true, title: "Ciència vs pseudociència", src: "/images/sa1-s1-ciencia-pseudo-fitxa.svg", note: "Les dues preguntes clau per triar el calaix del teu cas." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -141,7 +141,7 @@ export const sa1s4 = {
         title: "Passo el cas pel detector",
         time: "20 min",
         phase: "explore",
-        instruction: "Omple la graella del teu cas: promesa, nota de certesa, garantia de qui hi creu i senyals del detector. Després escriu el veredicte amb un perquè.",
+        instruction: "Omple la graella del teu cas: promesa, nota de certesa, garantia de qui hi creu i senyals del detector. Al nivell A la graella té dues files més, sobre quina prova et faria canviar d'opinió, i el veredicte s'ha d'escriure com un argument sencer (dada → garantia → conclusió).",
         hints: [
           "Comença per la promesa: què diu exactament que passarà o que és cert?",
           "Mira la Fig.1: recorre els 5 senyals un per un i marca només els que hi siguin de veritat."

@@ -36,7 +36,7 @@ export const sa2s3 = {
       scaffold:
         "Fes-ho en dos passos per a cada camp del microscopi. PAS 1: compta TOTES les cèl·lules del cercle (les difuses i les que tenen fils foscos). PAS 2: compta només les que estan EN DIVISIÓ (fils foscos = cromosomes visibles). Índex mitòtic = (en divisió / total) × 100. Fes-ho primer amb la biòpsia INICIAL i després amb la FINAL.",
       challenge:
-        "A més de l'índex mitòtic total, classifica les cèl·lules en divisió per fase (profase, metafase, anafase, telofase) fent servir el que vas aprendre a la S1. Si el fàrmac atura la divisió, en quina fase creus que s'acumularien les cèl·lules? Justifica-ho amb el que has comptat."
+        "La teva taula té una columna més que la del nivell B: el CONTROL, un ratolí tractat igual que el teu però sense fàrmac. Aquesta columna no la comptes tu: la recolliràs a la posada en comú. I si resulta que a l'aula no hi ha cap ratolí sense fàrmac, això també l'has d'anotar, perquè condiciona el que després podràs concloure. A més: classifica les cèl·lules en divisió per fase (profase, metafase, anafase, telofase) a les DUES biòpsies, perquè el que informa no és cap perfil sol sinó si ha canviat."
     },
     "2": {
       scaffold:
@@ -46,9 +46,9 @@ export const sa2s3 = {
     },
     "3": {
       scaffold:
-        "Per decidir si el fàrmac funciona, respon en ordre: 1) L'índex INICIAL estava molt per sobre del que toca en aquell teixit? (sospita, sí/no). 2) L'índex FINAL és més ALT, IGUAL o més BAIX que l'inicial? 3) Conclusió: si baixa clarament → el fàrmac frena la divisió → FUNCIONA. Si puja o es manté → no funciona (o fins i tot empitjora).",
+        "Per decidir si el fàrmac funciona, respon en ordre: 1) L'índex INICIAL estava molt per sobre del que toca en aquell teixit? (sospita, sí/no). 2) L'índex FINAL és més ALT, IGUAL o més BAIX que l'inicial? 3) Conclusió: si baixa clarament, sospita que el fàrmac frena la divisió. Si es manté, sospita que no fa res. I si PUJA, no concloguis encara que ha fallat: mira'n abans el perfil per fases, perquè hi ha fàrmacs que encallen les cèl·lules enmig de la divisió i llavors l'índex puja justament perquè estan fent efecte.",
       challenge:
-        "El teu company d'un altre equip ha provat el mateix fàrmac a una DOSI més baixa i li ha baixat menys l'índex. Què li diries sobre la relació dosi–efecte? I si a un tercer equip l'índex ha baixat però el ratolí ha mort: com interpretaries això (pensa en la toxicitat i en què més fa el fàrmac a banda de frenar el tumor)?"
+        "El teu veredicte no pot ser «funciona» o «no funciona»: has de triar entre EFICAÇ, INÚTIL, TÒXIC i NO CONCLOENT, i sostenir-ho amb els números (inicial, final i els del control). Després has d'escriure fins on arriba aquest veredicte: has mesurat un sol ratolí i un sol camp de microscopi, així que hi ha coses que no pots afirmar; digues quines i què hauria de tenir l'assaig per poder-les afirmar."
     },
     "4": {
       scaffold:
@@ -92,7 +92,7 @@ export const sa2s3 = {
   ],
   exploreDuration: "40 min",
   exploreMaterials: ["Fitxa de pacient assignada (biòpsia inicial + final, un cas diferent per equip)", "Calculadora o full de càlcul a mà"],
-  exploreNote: "Recompte i decisió basada en dades (ABP). Si compteu un parell de cèl·lules amunt o avall no passa res: el que importa és la TENDÈNCIA (baixa l'índex o no). Com que cada equip té un fàrmac/dosi/temps diferent, a la posada en comú (seminari de laboratori) es comparen tots els casos a la pissarra: quins fàrmacs frenen la divisió, quins no i quins són tòxics.",
+  exploreNote: "Recompte i decisió basada en dades (ABP). Compteu amb cura: a la fitxa del nivell A veureu que tres cèl·lules mal comptades ja poden moure el veredicte. Com que cada equip té un fàrmac/dosi/temps diferent, a la posada en comú (seminari de laboratori) es comparen tots els casos a la pissarra: quins fàrmacs frenen la divisió, quins no i quins són tòxics.",
 
   // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [
@@ -194,7 +194,8 @@ export const sa2s3 = {
         instruction: "Compara l'índex inicial i el final i escriu el veredicte de l'equip amb les dades que l'aguanten. Prepara com el defensaràs.",
         hints: [
           "Si l'índex baixa clarament → el fàrmac frena la divisió → funciona.",
-          "No diguis només 'sí funciona': acompanya-ho sempre dels dos números."
+          "No diguis només 'sí funciona': acompanya-ho sempre dels números que has mesurat (dos al nivell B; tres al nivell A, perquè hi entra el control).",
+          "Al nivell A el veredicte no és de dues opcions sinó de quatre (eficaç / inútil / tòxic / no concloent): mira la taula de la teva fitxa abans de triar-ne una."
         ]
       },
       {

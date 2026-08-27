@@ -28,6 +28,12 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
   padding:5px 8px;margin:4px 0;font-size:12px;font-weight:600;line-height:1.2;min-height:26px}
 .strip .sc{font-size:11px;color:var(--teal);flex-shrink:0}
 .strip .tx{flex:1}
+.strip.buida{background:#fff;border-style:dashed;border-color:var(--orange,#c96f3e)}
+.strip.buida .sc{color:var(--orange,#c96f3e)}
+.strip.buida .tx{border-bottom:1px solid var(--rule-dark);min-height:20px}
+.bloc-head{font-size:13px;font-weight:900;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.06em;
+  border-left:4px solid var(--teal);padding:3px 0 3px 9px;margin:14px 0 8px}
+.bloc-head.bloc-a{border-left-color:#c96f3e;color:#a24e24;break-before:page}
 @media print{
   @page{size:A4;margin:9mm 11mm}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -40,7 +46,7 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 </head>
 <body>
 <div id="toolbar">
-  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · aquest full serveix per a 4 alumnes · retalla per les línies puntejades</span>
+  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · 2 pàgines: 4 jocs de nivell B + 4 jocs de nivell A · retalla per les línies puntejades</span>
   <button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
 </div>
 
@@ -50,11 +56,20 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
     <div class="doc-sa">SA1 · Ciència i Pseudociència · S1</div>
   </div>
   <div class="doc-note">
-    Cada <strong>joc</strong> conté les 10 afirmacions per a UN alumne. Aquest full en porta <strong>4</strong> (imprimeix-ne 1 cada 4 alumnes).
-    Les tires tenen l'amplada de la columna <strong>«Afirmació»</strong> de la fitxa, per encaixar-hi en enganxar-les.
+    <strong>Aquest full té dos blocs, i no són iguals.</strong> El <strong>bloc B</strong> (a sota) porta jocs de
+    <strong>10 tires</strong>: l'alumne només ha d'ordenar-les. El <strong>bloc A</strong> (segona pàgina) porta jocs de
+    <strong>7 tires escrites + 3 tires en blanc</strong>: l'alumne primer escriu tres afirmacions seves a la seva fitxa
+    (una de molt certa, una de certesa mitjana i una de molt poc certa) i després les copia a les tires en blanc, <strong>sense
+    indicar-hi quina és quina</strong> — a la fitxa se les intercanvia amb un company perquè les col·loqui a cegues.
+    Dona a cada alumne el joc del seu nivell.<br>
+    Cada bloc porta <strong>4 jocs</strong> (1 joc = 1 alumne). Les tires tenen l'amplada de la columna
+    <strong>«Afirmació»</strong> de la fitxa, per encaixar-hi en enganxar-les.
     Retalla primer entre jocs i després cada tira per la línia puntejada.
   </div>
-  <div class="sheet" id="sheet"></div>
+  <div class="bloc-head">Bloc B · jocs de 10 tires escrites</div>
+  <div class="sheet" id="sheet-b"></div>
+  <div class="bloc-head bloc-a">Bloc A · jocs de 7 tires escrites + 3 en blanc</div>
+  <div class="sheet" id="sheet-a"></div>
   <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);border-top:1px solid var(--muted);margin-top:10px;padding-top:5px">
     <div>SA1 · Ciència i Pseudociència · Sessió 1 · Retallables · IE Temple · Biologia i Geologia 4t ESO</div>
     <div>CC BY-NC-SA</div>
@@ -65,7 +80,8 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 </div>
 
 <script>
-const AFIRMACIONS = [
+// Bloc B: les 10 afirmacions ja escrites — la tasca és ORDENAR-LES.
+const AFIRMACIONS_B = [
   "Demà sortirà el Sol",
   "Les aspirines treuen el mal de cap",
   "Si tiro una moneda, sortirà cara",
@@ -77,15 +93,39 @@ const AFIRMACIONS = [
   "Si en compro, em tocarà la loteria",
   "Viuré per sempre"
 ];
+// Bloc A: només 7 escrites — la tasca és ESCRIURE'N 3 i després ordenar-les totes 10.
+const AFIRMACIONS_A = [
+  "Demà sortirà el Sol",
+  "Les aspirines treuen el mal de cap",
+  "Si tiro una moneda, sortirà cara",
+  "Treure bones notes depèn de l'esforç",
+  "El Barça guanyarà la lliga",
+  "Existeix vida extraterrestre",
+  "Viuré per sempre"
+];
+// Tires en blanc SENSE etiqueta: si hi digués «MOLT certa», la posició ja estaria
+// decidida abans d'ordenar-les i el company que les ha de col·locar la llegiria.
+// Quina és quina l'alumne ho escriu a la seva fitxa, no a la tira.
+const BUIDES_A = ["", "", ""];
 const N_JOCS = 4;
-const sheet = document.getElementById('sheet');
-for (let j = 1; j <= N_JOCS; j++) {
-  const joc = document.createElement('div');
-  joc.className = 'joc';
-  joc.innerHTML = '<div class="joc-head">Joc ' + j + ' · Nom: <span class="joc-name"></span></div>' +
-    AFIRMACIONS.map(a => '<div class="strip"><span class="sc">✂️</span><span class="tx">' + a + '</span></div>').join('');
-  sheet.appendChild(joc);
+
+function strip(text, buida){
+  return '<div class="strip' + (buida ? ' buida' : '') + '"><span class="sc">✂️</span>' +
+         '<span class="tx">' + text + '</span></div>';
 }
+function omple(idSheet, llista, buides, etiqueta){
+  const sheet = document.getElementById(idSheet);
+  for (let j = 1; j <= N_JOCS; j++) {
+    const joc = document.createElement('div');
+    joc.className = 'joc';
+    joc.innerHTML = '<div class="joc-head">Joc ' + etiqueta + j + ' · Nom: <span class="joc-name"></span></div>' +
+      llista.map(a => strip(a, false)).join('') +
+      buides.map(a => strip(a, true)).join('');
+    sheet.appendChild(joc);
+  }
+}
+omple('sheet-b', AFIRMACIONS_B, [], 'B');
+omple('sheet-a', AFIRMACIONS_A, BUIDES_A, 'A');
 </script>
 </body>
 </html>

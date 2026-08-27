@@ -181,9 +181,9 @@ span[contenteditable]{display:inline-block}
     <div class="oa-title">&#127919; Objectius d'aprenentatge d'avui</div>
     <ul class="oa-list">
       <li contenteditable="true">Calculo l'<strong>&iacute;ndex mit&ograve;tic</strong> d'una bi&ograve;psia i argumento, amb el n&uacute;mero, si el teixit t&eacute; un proc&eacute;s cancer&oacute;s.</li>
-      <li contenteditable="true">Comparo l'&iacute;ndex abans i despr&eacute;s i <strong>dedueixo amb dades</strong> si el f&agrave;rmac &eacute;s efica&ccedil;, t&ograve;xic o in&uacute;til.</li>
+      <li contenteditable="true">Comparo l'&iacute;ndex abans i despr&eacute;s i <strong>dedueixo amb dades</strong> si el f&agrave;rmac &eacute;s efica&ccedil;, in&uacute;til o t&ograve;xic &mdash; o si les dades no permeten decidir-ho.</li>
       <li contenteditable="true">Explico per qu&egrave; el <strong>c&agrave;ncer</strong> &eacute;s una p&egrave;rdua de control del cicle i com un f&agrave;rmac el pot frenar.</li>
-      <li contenteditable="true">Raono per qu&egrave; un assaig es fa <strong>a cegues</strong> i amb molts casos, i quin error de recompte &eacute;s m&eacute;s perill&oacute;s.</li>
+      <li contenteditable="true">Raono per qu&egrave; un assaig es fa <strong>a cegues</strong> (qui compta no sap quin ratol&iacute; ha rebut el f&agrave;rmac) i amb molts casos, i quin error de recompte &eacute;s m&eacute;s perill&oacute;s.</li>
     </ul>
   </div>
 
@@ -192,7 +192,7 @@ span[contenteditable]{display:inline-block}
       <div class="del-btn" onclick="deleteEl(this)">&times;</div>
       <div class="section-header">
         <div class="snum" style="background:var(--muted)">0</div>
-        <div><div class="stitle">Idees pr&egrave;vies <span class="temps">&#9201;&#65039; 10 min</span></div>
+        <div><div class="stitle">Idees pr&egrave;vies <span class="temps">&#9201;&#65039; 8 min</span></div>
         <div class="sdesc" contenteditable="true">Posem en com&uacute; els deures. No es corregeix</div></div>
       </div>
       <div class="divider"></div>
@@ -207,7 +207,7 @@ span[contenteditable]{display:inline-block}
       <div class="del-btn" onclick="deleteEl(this)">&times;</div>
       <div class="section-header">
         <div class="snum" style="background:var(--aqua)">1</div>
-        <div><div class="stitle" contenteditable="true">Compta i calcula els dos &iacute;ndexs <span class="temps">&#9201;&#65039; 40 min</span></div>
+        <div><div class="stitle" contenteditable="true">Compta i calcula els dos &iacute;ndexs <span class="temps">&#9201;&#65039; 44 min</span></div>
         <div class="sdesc" contenteditable="true">Sou el laboratori: mesureu abans i despr&eacute;s</div></div>
       </div>
       <div class="divider"></div>
@@ -221,26 +221,39 @@ span[contenteditable]{display:inline-block}
         <figcaption style="font-size:9.5px;color:var(--muted);text-align:center;margin-top:3px">Fig.2 &middot; Exemple de fitxa de pacient. Compta a la <strong>teva</strong> (cada equip en t&eacute; una de diferent).</figcaption>
       </figure>
       <table class="data-table">
-        <thead><tr><th style="width:40%">Recompte</th><th>Bi&ograve;psia INICIAL</th><th>Bi&ograve;psia FINAL</th></tr></thead>
+        <thead><tr><th style="width:33%">Recompte</th><th>Bi&ograve;psia INICIAL</th><th>Bi&ograve;psia FINAL</th><th style="width:14%">CONTROL<br><span style="font-weight:400;font-size:10px">inicial</span></th><th style="width:14%">CONTROL<br><span style="font-weight:400;font-size:10px">final</span></th></tr></thead>
         <tbody>
-          <tr><td class="label-cell">Total de c&egrave;l&middot;lules del camp</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell">C&egrave;l&middot;lules en divisi&oacute; (fils foscos)</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell">&Iacute;ndex mit&ograve;tic = (divisi&oacute; &divide; total) &times; 100</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Total de c&egrave;l&middot;lules del camp</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">C&egrave;l&middot;lules en divisi&oacute; (fils foscos)</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">&Iacute;ndex mit&ograve;tic = (divisi&oacute; &divide; total) &times; 100</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
         </tbody>
       </table>
-      <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">A m&eacute;s de l'&iacute;ndex total, classifica les c&egrave;l&middot;lules en divisi&oacute; per <strong>fase</strong> (profase, metafase, anafase, telofase), com a la S1. Molts f&agrave;rmacs contra el c&agrave;ncer bloquegen l'aparell que estira els cromosomes cap als dos costats. Si aquest aparell no funciona, en quina fase et sembla que quedarien encallades les c&egrave;l&middot;lules? Justifica-ho amb el que has comptat.</div><div class="wline tall" contenteditable="true"></div></div></div>
+      <p style="font-size:12px;margin:8px 0 4px;padding:5px 9px;background:var(--orange-tint);border-radius:6px" contenteditable="true">&#9888;&#65039; <strong>L'&uacute;ltima columna no la comptes tu.</strong> El <strong>control</strong> &eacute;s un ratol&iacute; tractat exactament igual que el teu <em>per&ograve; sense f&agrave;rmac</em>: serveix per saber si el que has vist &eacute;s cosa del f&agrave;rmac o hauria passat igualment. Demana-la a la posada en com&uacute; de la classe. <strong>Si a l'aula no hi ha cap ratol&iacute; sense f&agrave;rmac, escriu-ho aqu&iacute;</strong> &mdash; que falti el control tamb&eacute; &eacute;s un resultat, i afecta el que podr&agrave;s concloure.</p>
+      <div class="wline tall" contenteditable="true"></div>
+      <p style="font-size:12px;margin:10px 0 4px" contenteditable="true">&#9999;&#65039; <strong>Ara mira-t'ho per fases.</strong> No has de tornar a comptar res: agafa les c&egrave;l&middot;lules que ja has marcat com a «en divisi&oacute;» i reparteix-les entre les quatre fases de la mitosi que vas aprendre a la S1: profase, metafase, anafase i telofase. Fes-ho a les <strong>dues</strong> bi&ograve;psies: el que informa no &eacute;s cap dels dos perfils sol, sin&oacute; <strong>si ha canviat</strong>. Si no recordes com es distingeixen, tingues la fitxa de la S1 a m&agrave;.</p>
+      <table class="data-table">
+        <thead><tr><th style="width:30%">Fase de la mitosi</th><th>INICIAL: quantes?</th><th>INICIAL: %</th><th>FINAL: quantes?</th><th>FINAL: %</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell">Profase</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Metafase</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Anafase</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell">Telofase</td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+          <tr><td class="label-cell" style="font-style:italic">TOTAL <span style="font-weight:400;font-size:10px">(ha de coincidir amb la fila «en divisió» de dalt)</span></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td><td><div class="fill-cell calc" contenteditable="true"></div></td></tr>
+        </tbody>
+      </table>
+      <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">Molts f&agrave;rmacs contra el c&agrave;ncer bloquegen l'aparell de fils que estira els cromosomes cap als dos costats de la c&egrave;l&middot;lula. Si aquest aparell no funciona, <strong>en quina fase</strong> quedarien encallades les c&egrave;l&middot;lules? I ara la part inc&ograve;moda: una c&egrave;l&middot;lula encallada <strong>segueix comptant com a «en divisi&oacute;»</strong>. Qu&egrave; li passaria, doncs, a l'&iacute;ndex mit&ograve;tic d'un teixit tractat amb aquest f&agrave;rmac: pujaria o baixaria? Aix&ograve; vol dir que l'&iacute;ndex sol <strong>no n'hi ha prou</strong> per dir si un f&agrave;rmac funciona: qu&egrave; m&eacute;s hauries de mirar? (Ho necessitar&agrave;s a la Secci&oacute; 3.)</div><div class="wline tall" contenteditable="true"></div></div></div>
       <p style="font-size:12px;margin-top:4px" contenteditable="true">&#128483;&#65039; <strong>Demostraci&oacute; a l'aula:</strong> prepara com defensar&agrave;s el vostre veredicte davant d'una altra parella, ensenyant els n&uacute;meros que l'aguanten.</p>
     </div>
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">&times;</div>
       <div class="section-header">
         <div class="snum" style="background:var(--teal)">2</div>
-        <div><div class="stitle" contenteditable="true">Interpreta els n&uacute;meros <span class="temps">&#9201;&#65039; 20 min</span></div>
+        <div><div class="stitle" contenteditable="true">Interpreta els n&uacute;meros <span class="temps">&#9201;&#65039; 15 min</span></div>
         <div class="sdesc" contenteditable="true">Qu&egrave; vol dir cada &iacute;ndex?</div></div>
       </div>
       <div class="divider"></div>
-      <div class="formula-note"><strong>Com es llegeix un &iacute;ndex mit&ograve;tic:</strong> no hi ha un n&uacute;mero m&agrave;gic igual per a tot el cos. Un &iacute;ndex alt nom&eacute;s &eacute;s sospit&oacute;s si &eacute;s <strong>molt superior al normal d'AQUELL teixit</strong> (la pell, l'intestí i la medul&middot;la dels ossos (que fabrica la sang) el tenen alt de manera sana, perqu&egrave; es renoven cada dia) o si <strong>no baixa</strong> quan el teixit ja hauria d'estar refet. El ~10% &eacute;s nom&eacute;s una refer&egrave;ncia general per a teixits que es divideixen poc.</div>
-      <p style="font-size:12px;margin-bottom:4px" contenteditable="true">&#9999;&#65039; Compara els dos &iacute;ndexs. Qu&egrave; indica cadascun sobre l'estat del teixit, i quina dada m&eacute;s necessitaries per estar-ne segur/a?</p>
+      <div class="formula-note"><strong>Com es llegeix un &iacute;ndex mit&ograve;tic:</strong> no hi ha un n&uacute;mero m&agrave;gic igual per a tot el cos. Un &iacute;ndex alt nom&eacute;s &eacute;s sospit&oacute;s si &eacute;s <strong>molt superior al normal d'AQUELL teixit</strong> (la pell, l'intestí i la medul&middot;la dels ossos (que fabrica la sang) el tenen alt de manera sana, perqu&egrave; es renoven cada dia) o si <strong>no baixa</strong> quan el teixit ja hauria d'estar refet. Sentir&agrave;s a dir que un 10% ja &eacute;s sospit&oacute;s: aix&ograve; &eacute;s nom&eacute;s una refer&egrave;ncia general per a teixits que es divideixen poc.</div>
+      <p style="font-size:12px;margin-bottom:4px" contenteditable="true">&#9999;&#65039; Compara l&#39;&iacute;ndex inicial amb el final (i, si en tens, amb els del control). Qu&egrave; indica cadascun sobre l'estat del teixit, i quina dada m&eacute;s necessitaries per estar-ne segur/a?</p>
       <div class="wline tall" contenteditable="true"></div>
       <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">Un teixit sa de pell o d'intest&iacute; tamb&eacute; t&eacute; l'&iacute;ndex alt (es regeneren molt). Aleshores, per qu&egrave; un &iacute;ndex alt en aquest teixit del ratol&iacute; S&Iacute; que &eacute;s sospit&oacute;s? Pista: pensa de quin teixit ve la mostra i si all&agrave; s'hi hauria de dividir tant. Si la fitxa de pacient no diu de quin teixit &eacute;s, aquesta tamb&eacute; &eacute;s una resposta v&agrave;lida: digues quina dada et falta.</div><div class="wline tall" contenteditable="true"></div></div></div>
     </div>
@@ -248,19 +261,34 @@ span[contenteditable]{display:inline-block}
       <div class="del-btn" onclick="deleteEl(this)">&times;</div>
       <div class="section-header">
         <div class="snum" style="background:var(--purple)">3</div>
-        <div><div class="stitle" contenteditable="true">Veredicte: funciona el f&agrave;rmac? <span class="temps">&#9201;&#65039; 25 min</span></div>
+        <div><div class="stitle" contenteditable="true">Veredicte: funciona el f&agrave;rmac? <span class="temps">&#9201;&#65039; 27 min</span></div>
         <div class="sdesc" contenteditable="true">La conclusi&oacute; de l'equip, amb dades</div></div>
       </div>
       <div class="divider"></div>
-      <p style="font-size:12px;margin-bottom:4px" contenteditable="true">&#9999;&#65039; Escriu el veredicte de l'equip. <strong>Acompanya'l SEMPRE dels dos n&uacute;meros</strong> (&iacute;ndex inicial i final).</p>
+      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">&#9999;&#65039; Escriu el veredicte de l'equip. No en tens prou amb dir «funciona»: tria <strong>una</strong> d'aquestes quatre i defensa-la. I si et surt <strong>NO CONCLOENT</strong>, aix&ograve; <em>no</em> &eacute;s haver fracassat: &eacute;s el resultat honest, i llavors hauràs de dir qu&egrave; et faltava.</p>
+      <table class="data-table" style="margin-bottom:8px">
+        <thead><tr><th style="width:24%">Veredicte</th><th>Quan el pots defensar</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell">EFICA&Ccedil;</td><td style="font-size:11.5px">L'&iacute;ndex final baixa clarament <strong>m&eacute;s</strong> que el del control &mdash; <em>o b&eacute;</em> puja per&ograve; les c&egrave;l&middot;lules s'acumulen gaireb&eacute; totes en <strong>una sola fase</strong> (queden encallades i no acaben la divisi&oacute;).</td></tr>
+          <tr><td class="label-cell">IN&Uacute;TIL</td><td style="font-size:11.5px">L'&iacute;ndex final s'assembla al del control, i el perfil per fases tampoc no ha canviat.</td></tr>
+          <tr><td class="label-cell">T&Ograve;XIC</td><td style="font-size:11.5px">Frena la divisi&oacute;, per&ograve; la fitxa de pacient diu que l'animal ha empitjorat o ha mort.</td></tr>
+          <tr><td class="label-cell">NO CONCLOENT</td><td style="font-size:11.5px">No tens control, o la fitxa no diu de quin teixit &eacute;s la mostra: no pots separar l'efecte del f&agrave;rmac del que hauria passat igualment.</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:12px;margin:0 0 4px" contenteditable="true">Estat de l'animal segons la fitxa de pacient:&nbsp;<span class="input-span" contenteditable="true" style="min-width:230px"></span>&nbsp; <span style="font-size:10.5px;color:var(--muted)">(si no hi consta, escriu-hi «no consta»)</span></p>
+      <p style="font-size:12px;margin:6px 0 4px" contenteditable="true">&#9999;&#65039; <strong>Veredicte, amb els n&uacute;meros al davant</strong> (inicial, final i control &mdash; i el perfil per fases si el fas servir):</p>
       <div class="wline xtall" contenteditable="true"></div>
+      <p style="font-size:12px;margin:8px 0 4px" contenteditable="true">&#9999;&#65039; <strong>Fins on arriba el teu veredicte?</strong> Has mesurat <strong>un</strong> ratol&iacute; i <strong>un</strong> camp del microscopi. Escriu qu&egrave; <em>no</em> pots afirmar amb aquestes dades, i qu&egrave; hauria de tenir l'assaig per poder-ho afirmar.</p>
+      <div class="wline tall" contenteditable="true"></div>
+      <p style="font-size:12px;margin:8px 0 4px" contenteditable="true">&#9999;&#65039; <strong>I els teus errors de recompte?</strong> Imagina que t'has comptat de m&eacute;s tres c&egrave;l&middot;lules «en divisi&oacute;» a la bi&ograve;psia final. Cap a on se t'esbiaixaria el veredicte? I si te'n comptaves tres de menys? <strong>Quin dels dos errors t&eacute; pitjors conseq&uuml;&egrave;ncies per a un pacient</strong>, i per qu&egrave;? (Per aix&ograve; els assajos es fan <strong>a cegues</strong>: qui compta no sap quin ratol&iacute; ha rebut el f&agrave;rmac.)</p>
+      <div class="wline tall" contenteditable="true"></div>
       <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&times;</div><div style="font-size:20px">&#128293;</div><div><div class="challenge-title">Repte</div><div class="challenge-text" contenteditable="true">Un altre equip ha provat el mateix f&agrave;rmac a una DOSI m&eacute;s baixa i l'&iacute;ndex li ha baixat menys. Qu&egrave; li diries sobre la relaci&oacute; dosi&ndash;efecte? I si a un tercer equip l'&iacute;ndex ha baixat per&ograve; el ratol&iacute; ha mort: com ho interpretaries (pensa en la <strong>toxicitat</strong>)?</div><div class="wline tall" contenteditable="true"></div></div></div>
     </div>
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">&times;</div>
       <div class="section-header">
         <div class="snum" style="background:var(--orange)">4</div>
-        <div><div class="stitle" contenteditable="true">Per qu&egrave; el c&agrave;ncer no para + torna al principi <span class="temps">&#9201;&#65039; 15 min</span></div>
+        <div><div class="stitle" contenteditable="true">Per qu&egrave; el c&agrave;ncer no para + torna al principi <span class="temps">&#9201;&#65039; 13 min</span></div>
         <div class="sdesc" contenteditable="true">Aplica-ho i respon la pregunta d'entrada</div></div>
       </div>
       <div class="divider"></div>
@@ -277,7 +305,7 @@ span[contenteditable]{display:inline-block}
       <div class="meta-oa-box deletable" style="margin-bottom:8px"><div class="del-btn" onclick="deleteEl(this)">&times;</div>
         <div class="meta-oa-title">&#127919; Torna als objectius &mdash; marca el que has apr&egrave;s avui:</div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">S&eacute; argumentar amb el <strong>n&uacute;mero</strong> si un teixit t&eacute; un proc&eacute;s cancer&oacute;s.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">S&eacute; deduir amb dades si un f&agrave;rmac &eacute;s efica&ccedil;, t&ograve;xic o in&uacute;til.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">S&eacute; deduir amb dades si un f&agrave;rmac &eacute;s efica&ccedil;, in&uacute;til, t&ograve;xic o encara no concloent.</div></div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Entenc que el c&agrave;ncer &eacute;s una p&egrave;rdua de <strong>control</strong> del cicle.</div></div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">S&eacute; per qu&egrave; un assaig es fa a cegues i amb molts casos.</div></div>
       </div>

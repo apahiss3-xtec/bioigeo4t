@@ -41,25 +41,25 @@ export const sa1s1 = {
       scaffold:
         "Per justificar cada posició, completa: «Poso aquesta afirmació al nivell ___ perquè ___». Fes servir paraules com: segur, probable, depèn de, no hi ha proves, tothom ho diu.",
       challenge:
-        "Tria les 2 afirmacions on el teu grup ha discutit més. Per quina raó costa posar-vos d'acord? Quin tipus d'informació us caldria per decidir-ho de manera objectiva?"
+        "El teu joc de retallables porta 7 afirmacions escrites i 3 tires en blanc. Primer escrius a la fitxa tres afirmacions teves —una de molt certa, una de mitjana i una de molt poc certa— i les copies a les tires SENSE indicar-hi quina és quina. Després les passes a un company perquè les col·loqui a cegues i mireu on no coincidiu. Per acabar, tries les 3 files on més has dubtat i dius quina prova o quina dada faria pujar o baixar cada afirmació de lloc."
     },
     "2": {
       scaffold:
         "Fes servir aquesta pista per classificar cada argument: si parla de números o mesures → DADES; si explica com funciona una cosa → MODELS; si diu «sempre ha estat així» → HÀBITS; si diu «ho diu X» → AUTORITAT; si parla del que vols o creus → IDENTITAT i VALORS.",
       challenge:
-        "Creus que totes les garanties valen igual per decidir què és cert? Ordena els 5 tipus de la que dona MÉS certesa a la que en dona menys, i defensa el teu ordre amb un exemple de cada."
+        "A la teva taula, a més del tipus de garantia has de dir per què aquella garantia, tota sola, no decideix la qüestió. Després escrius tu dos arguments del contrari («No plourà perquè…»), un de dades i un d'autoritat, i has de dir de tots els arguments de la pàgina quin és el més fort i quin el més feble, justificant-ho pel tipus de garantia i no pel nombre. I al repte: hi ha alguna situació en què l'única garantia que tinguis sigui una de les febles? Què fas llavors?"
     },
     "3": {
       scaffold:
         "Per llegir el teu perfil, respon: quina garantia has fet servir més cops? I quina menys? Compara-ho amb un company i completa: «Jo faig servir molt ___, i això vol dir que ___».",
       challenge:
-        "Què passa quan algú decideix gairebé tot per Identitat i Valors o per Autoritat? Posa un exemple real (una notícia, un producte, una creença) on aquest biaix porti a error."
+        "Dues de les sis files de la teva taula són buides: hi has de posar dues afirmacions que hagis sentit o llegit aquesta setmana, i tractar-les igual que les altres. Després tria'n una i pensa en algú que hi estigui en desacord amb tu: quina garantia faria servir aquesta persona, i què hauríeu de mirar tots dos per resoldre-ho?"
     },
     "4": {
       scaffold:
         "Per decidir ciència o pseudociència, pregunta't: hi ha experiments que ho comprovin? Admet que la puguin criticar i corregir? Si la resposta és NO a totes dues → pseudociència.",
       challenge:
-        "L'astrologia i l'astronomia van néixer juntes. Per quina raó una és ciència i l'altra no? Escriu l'argument que faries servir per convèncer algú que confia en l'horòscop."
+        "A la teva taula tres descripcions te les donem i tres les has d'escriure tu (Biologia, Geologia i Ufologia). De totes sis has de dir, a més del veredicte, quina de les dues preguntes clau el decideix i què hi respon. I al repte: l'astrologia i l'astronomia van néixer juntes — per quina raó una és ciència i l'altra no?"
     }
   },
 
@@ -88,13 +88,13 @@ export const sa1s1 = {
 
   // ── EXPLORA (ABP · estudi de cas manipulatiu) ────────────
   exploreActivity: {
-    what: "Escala de certeses: rebeu 10 afirmacions retallables (des de «Demà sortirà el Sol» fins a «Si en compro, em tocarà la loteria»). Ordeneu-les de més certa (10) a menys certa (1) i justifiqueu cada posició. Després, poseu-vos d'acord en grup sense canviar el vostre full: marqueu amb fletxes els canvis que accepteu.",
+    what: "Escala de certeses: rebeu un joc de tires retallables en un full a part (segons el nivell, algunes les heu d'escriure vosaltres). Ordeneu-les de més certa (10) a menys certa (1) i justifiqueu cada posició. Després, poseu-vos d'acord en grup sense canviar el vostre full: marqueu amb fletxes els canvis que accepteu.",
     who: { mode: "grup", label: "Individual primer, després consens en grup de 4" },
     time: 40,
     note: "El valor de l'activitat és la DISCUSSIÓ: per què li dones aquesta certesa? Escoltar els arguments dels altres és el material de la teoria d'avui."
   },
   exploreInstructions: [
-    "Retalla les 10 afirmacions de la fitxa",
+    "Retalla les tires del joc del teu nivell (full a part)",
     "Individualment, ordena-les de més certa (10) a menys certa (1) i escriu per què a cada posició",
     "En grup, discutiu fins a consensuar un ordre comú. NO canviïs el teu full: marca amb fletxes vermelles els canvis que estàs disposat/da a acceptar",
     "Aneu anotant QUINS tipus d'arguments feu servir per convèncer-vos els uns als altres"
@@ -179,7 +179,7 @@ export const sa1s1 = {
         title: "Escala de certeses",
         time: "40 min",
         phase: "explore",
-        instruction: "Retalla les 10 afirmacions, ordena-les de més certa a menys certa i justifica cada posició. Després arribeu a un consens de grup marcant amb fletxes els canvis que acceptes.",
+        instruction: "Agafa el joc de retallables del teu nivell: el bloc B porta les 10 afirmacions escrites; el bloc A en porta 7 i tres tires en blanc que has d'escriure tu. Ordena-les de més certa a menys certa i justifica cada posició. Després arribeu a un consens de grup marcant amb fletxes els canvis que acceptes.",
         hints: [
           "No et fixis només en si la cosa t'agrada: fixa't en si hi ha manera de comprovar-la.",
           "Per cada tira, pregunta't dues coses abans de decidir on va: hi ha alguna manera de comprovar-ho? i qui ho podria comprovar, i com?"
@@ -201,7 +201,7 @@ export const sa1s1 = {
         title: "Conec com penso: el meu perfil",
         time: "20 min",
         phase: "explica",
-        instruction: "Compta quantes vegades has fet servir cada garantia i dibuixa el teu perfil epistèmic. Compara'l amb un company.",
+        instruction: "Compta quantes vegades has fet servir cada garantia, interpreta què diu de tu i compara-ho amb un company.",
         hints: [
           "No hi ha un perfil «bo» o «dolent», però pensa: fiar-te només d'un tipus de garantia et fa més fàcil d'enganyar?",
           "Mira quina garantia t'ha sortit repetida més vegades. Què et diu això sobre la manera com decideixes què és cert?"
@@ -212,7 +212,7 @@ export const sa1s1 = {
         title: "Ciència o pseudociència?",
         time: "20 min",
         phase: "explica",
-        instruction: "Llegeix cada descripció (astrologia, biologia, homeopatia, ufologia...) i escriu si és ciència o pseudociència, justificant-ho amb els criteris de la Fig.2.",
+        instruction: "Decideix, per a cada disciplina de la taula, si és ciència o pseudociència i justifica-ho amb els criteris de la Fig.2. Al nivell B totes les descripcions te les donem; al nivell A n'has d'escriure tres i dir a més quina de les dues preguntes clau decideix cada cas.",
         hints: [
           "La pregunta no és si «funciona» segons algú, sinó si es comprova amb experiments fiables i admet crítica.",
           "Si una idea no es pot posar mai a prova ni corregir, no és ciència."

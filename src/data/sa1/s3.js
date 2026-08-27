@@ -23,6 +23,8 @@ export const sa1s3 = {
     B: [
       "Defenso oralment el veredicte del meu cas fent servir els 5 senyals del detector.",
       "Escolto la defensa d'un company i marco quins senyals del detector ha fet servir bé.",
+      // Nota: al nivell A la taula d'aquest apartat no són 8 disciplines sinó
+      // 3 casos fàcils + 5 casos de frontera (vegeu apartatExtras["2"].challenge).
       "Classifico 8 disciplines com a ciència o pseudociència i ho justifico amb un motiu.",
       "Ajudo a construir el detector col·lectiu de la classe amb un senyal i un exemple."
     ]
@@ -41,7 +43,7 @@ export const sa1s3 = {
       scaffold:
         "Per classificar, fes-ho en dos passos i no vagis directe al veredicte. Primer escriu SÍ o NO a cada pregunta, una per una: (1) es pot posar a prova amb experiments fiables? (2) admet que la corregeixin? Només quan tinguis les dues respostes escrites, decideix: dos SÍ → ciència; dos NO → pseudociència; es pot provar però no s'ha fet → encara no comprovat.",
       challenge:
-        "Després de classificar les disciplines de la taula, inventa TU un cas nou de frontera (una afirmació que costi de classificar) i explica per què és difícil: quins senyals l'acosten a la pseudociència i quins la mantenen dins d'allò «encara no comprovat»?"
+        "La teva taula no porta les mateixes disciplines que la de nivell B. Les tres primeres files hi són per agafar el ritme; les cinc següents són casos de frontera (acupuntura, vitamina C i refredats, plantes medicinals, pantalles i concentració, grafologia), on hi ha gent formada que discrepa. En aquests cinc, el cas es pot partir: la promesa pot anar a un calaix i l'explicació que en dona, a un altre — dir-ho és una resposta correcta, no una excusa. Després has de defensar quin dels cinc s'assembla més a la ciència per fora i què li falta per dins (hi ha més d'una resposta defensable: el que compta és l'argument), i, al cas on més hagis dubtat, escriure una observació o un experiment concret que el faria canviar de calaix."
     },
     "3": {
       scaffold:
@@ -155,13 +157,13 @@ export const sa1s3 = {
       },
       {
         apartat: "2",
-        title: "Ciència o pseudociència?",
-        time: "20 min",
+        title: "Ciència, pseudociència o encara no comprovat?",
+        time: "30 min",
         phase: "elabora",
-        instruction: "Classifica les disciplines de la taula com a ciència o pseudociència i escriu el motiu. Fes servir les dues preguntes clau de la Fig.2.",
+        instruction: "Col·loca cada cas de la taula al seu calaix i escriu el motiu. Fes servir les dues preguntes clau. Segons el teu nivell la taula és diferent: mira't la que tens a la fitxa i no la del company.",
         hints: [
           "Escriu primer SÍ o NO a cada una de les dues preguntes, i només després decideix el veredicte.",
-          "Recorda que hi ha un tercer calaix: una cosa que es podria comprovar però encara no s'ha comprovat no és pseudociència."
+          "Recorda que hi ha un tercer calaix: una cosa que es pot comprovar i acceptaria la resposta, però que encara no s'ha comprovat o no és concloent, no és pseudociència."
         ]
       },
       {

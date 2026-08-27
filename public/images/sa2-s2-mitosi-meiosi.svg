@@ -70,10 +70,10 @@
     <line class="cr-b" x1="610" y1="376" x2="610" y2="396"/>
   </g>
   <text x="570" y="440" text-anchor="middle" class="lbl" font-size="15">4 cèl·lules (gàmetes), la MEITAT</text>
-  <text x="570" y="460" text-anchor="middle" class="cnt">2 cromosomes cadascuna · totes diferents</text>
+  <text x="570" y="460" text-anchor="middle" class="cnt">2 cromosomes cadascuna · de dos en dos, dos tipus</text>
   <rect x="450" y="475" width="260" height="46" rx="8" fill="#f1eaf4" stroke="#A66BC9" stroke-width="1.5"/>
   <text x="580" y="498" text-anchor="middle" class="sub" font-weight="700">Per a què?</text>
   <text x="580" y="515" text-anchor="middle" class="sub">Fer òvuls i espermatozoides (reproducció)</text>
 
-  <text x="380" y="565" text-anchor="middle" fill="#78707e" font-size="12" font-style="italic">Les dues parteixen de la mateixa cèl·lula i copien l&#39;ADN: la diferència és quantes vegades es divideix.</text>
+  <text x="380" y="565" text-anchor="middle" fill="#78707e" font-size="12" font-style="italic">Les dues parteixen de la mateixa cèl·lula i copien l&#39;ADN una sola vegada.</text>
 </svg>

@@ -17,7 +17,7 @@ export const sa2s2 = {
     A: [
       "Modelo la mitosi i la meiosi a partir d'una mateixa cèl·lula i argumento, amb el meu model, per què una fa cèl·lules idèntiques i l'altra no.",
       "Explico per què els gàmetes han de tenir la meitat del material genètic, deduint-ho del que passaria a la fecundació si no fos així.",
-      "Relaciono la meiosi amb la variabilitat: argumento per què dos germans (que no siguin bessons idèntics) no són iguals.",
+      "Relaciono la meiosi amb la variabilitat: calculo quantes combinacions diferents de gàmetes pot donar una cèl·lula i argumento per què dos germans (que no siguin bessons idèntics) no són iguals.",
       "Justifico quan el cos fa servir cada divisió i per què les dues són imprescindibles per créixer, reparar-se i reproduir-se."
     ],
     B: [
@@ -34,15 +34,15 @@ export const sa2s2 = {
   apartatExtras: {
     "1": {
       scaffold:
-        "Parteix SEMPRE de la mateixa cèl·lula: 4 cromosomes = 2 parelles. Cada parella són els DOS del mateix color (mateixa mida i forma): un l'has heretat del pare i l'altre de la mare. Pas comú a les dues divisions: copia cada cromosoma (fes-ne un segon idèntic i enganxa'l pel centre → forma de X). MITOSI: reparteix les còpies → 2 cèl·lules amb 4 cromosomes. MEIOSI: primera divisió, separa els dos membres de cada PARELLA, un de cada color a cada banda (2 cèl·lules amb 2 cromosomes dobles); segona divisió, separa les còpies → 4 cèl·lules amb 2 cromosomes.",
+        "Parteix SEMPRE de la mateixa cèl·lula: 4 cromosomes = 2 parelles. Cada parella són els DOS del mateix color (mateixa mida i forma): un l'has heretat del pare i l'altre de la mare. Pas comú a les dues divisions: copia cada cromosoma (fes-ne un segon idèntic i enganxa'l pel centre → forma de X). MITOSI: reparteix les còpies entre dues cèl·lules i compta què et queda. MEIOSI: primera divisió, separa els dos membres de cada PARELLA, un de cada color a cada banda; segona divisió, separa les còpies de cada X. Compta el resultat de cada camí quan el tinguis fet: el número no l'has de saber abans.",
       challenge:
-        "Fes els dos models i, a sota, escriu la regla general amb els teus números: la mitosi va de ___ cromosomes a ___ per cèl·lula; la meiosi va de ___ a ___ per cèl·lula, i en surten ___ cèl·lules. Explica a un company per què la meiosi necessita DUES divisions i la mitosi només una."
+        "El teu model no parteix de 4 cromosomes sinó de 6 (3 parelles), i has de fer la meiosi DUES vegades: la segona, col·locant alguna parella girada respecte de la primera. Compara els gàmetes que t'han sortit els dos cops. A partir d'aquí, la fitxa et demana quantes combinacions diferents podria arribar a donar aquesta cèl·lula, amb el càlcul escrit, i que generalitzis la regla a una espècie amb n parelles."
     },
     "2": {
       scaffold:
         "Fixa't només en dues coses de cada resultat: QUANTES cèl·lules surten i QUANT material genètic té cadascuna. Mitosi: 2 cèl·lules, material complet (idèntiques a la mare). Meiosi: 4 cèl·lules, la meitat del material (gàmetes). Mnemotècnic: MitosiI = Idèntiques; meiosi = meitat.",
       challenge:
-        "La mitosi i la meiosi comencen igual (es copia l'ADN). Si les dues copien primer l'ADN, com és que la mitosi acaba amb cèl·lules de material complet i la meiosi amb la meitat? Quina és exactament la diferència que ho explica?"
+        "La teva taula no es queda en l'exemple humà: hi has de fer el mateix raonament per a tres espècies amb nombres de cromosomes diferents i, a l'última fila, escriure la regla general vàlida per a qualsevol espècie. Pensa-hi mentre ho fas: la mitosi i la meiosi comencen igual (totes dues copien l'ADN); quina és exactament la diferència que fa que una acabi amb material complet i l'altra amb la meitat?"
     },
     "3": {
       scaffold:
@@ -78,13 +78,13 @@ export const sa2s2 = {
 
   // ── EXPLORA (ABP · modelatge manipulatiu) ─────────────────
   exploreActivity: {
-    what: "Modeleu les dues divisions amb la MATEIXA cèl·lula de partida (4 cromosomes = 2 parelles, dos colors), amb plastilina, fils de colors o dibuixant. Primer feu la mitosi; després, des de la mateixa cèl·lula, la meiosi. Compareu els dos resultats: quantes cèl·lules surten i quant material té cadascuna.",
+    what: "Modeleu les dues divisions amb la MATEIXA cèl·lula de partida (les parelles que indiqui la vostra fitxa: 2 al nivell B, 3 al nivell A, un color per parella), amb plastilina, fils de colors o dibuixant. Primer feu la mitosi; després, des de la mateixa cèl·lula, la meiosi. Compareu els dos resultats: quantes cèl·lules surten i quant material té cadascuna. Al nivell A la meiosi es fa DUES vegades, canviant l'orientació d'alguna parella.",
     who: { mode: "grup", label: "Parelles de laboratori" },
     time: 40,
     note: "La gràcia és FER-HO vosaltres i adonar-vos, amb el model a la mà, que partint del mateix s'arriba a resultats diferents. La demostració a l'aula és ensenyar els dos models a una altra parella i defensar per què la meiosi acaba amb la meitat."
   },
   exploreInstructions: [
-    "Feu una cèl·lula de partida amb 4 cromosomes: 2 d'un color (una parella) i 2 d'un altre color (l'altra parella)",
+    "Feu una cèl·lula de partida amb les parelles que digui la vostra fitxa (2 parelles al nivell B, 3 al nivell A), amb un color per parella",
     "Copieu cada cromosoma: feu-ne un segon xurro idèntic i enganxeu-lo al primer pel centre; ara té forma de X (dues còpies unides). És el pas comú a les dues divisions",
     "MITOSI: repartiu les còpies en dues cèl·lules i compteu els cromosomes de cada filla",
     "MEIOSI: primera divisió, separeu les PARELLES; segona divisió, separeu les còpies; compteu quantes cèl·lules i quants cromosomes queden",
@@ -161,7 +161,7 @@ export const sa2s2 = {
         title: "Modela: mitosi i meiosi amb la mateixa cèl·lula",
         time: "40 min",
         phase: "explore",
-        instruction: "Amb 4 cromosomes (2 parelles, 2 colors), modela primer la mitosi i després la meiosi. Compta quantes cèl·lules surten i quants cromosomes té cadascuna.",
+        instruction: "Amb les parelles de cromosomes que indiqui la teva fitxa (un color per parella), modela primer la mitosi i després la meiosi. Compta quantes cèl·lules surten i quants cromosomes té cadascuna.",
         hints: [
           "Copia SEMPRE els cromosomes primer: aquest pas és igual a les dues divisions.",
           "La diferència clau: a la mitosi reparteixes les còpies un cop; a la meiosi divideixes DUES vegades (primer separes les parelles, després les còpies)."
