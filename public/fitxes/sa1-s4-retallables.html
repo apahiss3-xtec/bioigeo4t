@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA1 · S4 · Retallables — Fira de casos</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;600;700;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2A6F7F;--teal-ink:#1c4a55;--teal-light:#9ccad2;--teal-tint:#eaf4f6;--ink:#14201f;--muted:#6b7a7e;--rule-dark:#b6ccd0;--purple:#8a5a9e;--purple-tint:#f1eaf4;--orange:#c96f3e;--orange-tint:#f6ece8}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);padding:52px 20px 40px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);height:44px;display:flex;align-items:center;gap:12px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.75);flex:1}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;background:var(--teal);color:#fff}
+.page{width:794px;margin:0 auto;background:#fff;box-shadow:0 2px 30px rgba(0,0,0,.22);padding:26px 30px 34px}
+.doc-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--teal);padding-bottom:8px;margin-bottom:6px}
+.doc-title{font-size:20px;font-weight:900;color:var(--teal-ink)}
+.doc-sa{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:auto}
+.doc-note{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--muted);margin-bottom:14px;line-height:1.55}
+.doc-note strong{color:var(--teal-ink)}
+.bloc-head{font-size:13px;font-weight:900;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.06em;border-left:4px solid var(--teal);padding:3px 0 3px 9px;margin:14px 0 8px}
+.joc{border:1.5px solid var(--teal-light);border-radius:8px;padding:9px 10px 11px;margin-bottom:12px;break-inside:avoid}
+.joc-head{font-size:11px;font-weight:700;color:var(--teal-ink);margin-bottom:7px;display:flex;align-items:center;gap:6px}
+.joc-name{flex:1;border-bottom:1px solid var(--rule-dark);min-height:14px}
+.par{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{border:1.4px dashed var(--teal);border-radius:6px;padding:7px 9px 9px;background:#fff;break-inside:avoid}
+.card.cas{border-color:var(--orange);background:var(--orange-tint)}
+.card.nota{border-color:var(--purple);background:var(--purple-tint)}
+.card-head{font-size:10px;font-weight:900;letter-spacing:.09em;text-transform:uppercase;display:flex;align-items:center;gap:5px;margin-bottom:5px}
+.card.cas .card-head{color:#a24e24}
+.card.nota .card-head{color:#6b3f7e}
+.card-sub{font-family:'Inter',sans-serif;font-size:8.5px;color:var(--muted);margin-bottom:6px;line-height:1.4}
+.lbl{font-size:10.5px;font-weight:700;color:var(--ink);margin-top:5px}
+.wl{display:block;border-bottom:1px solid var(--rule-dark);min-height:30px;margin-top:3px}
+.wl.tall{min-height:50px}
+.foot{margin-top:16px;border-top:1px solid var(--rule-dark);padding-top:6px;font-size:8.5px;color:var(--muted);text-align:center;line-height:1.5}
+@media print{
+  @page{size:A4;margin:9mm 11mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar{display:none!important}
+  .page{box-shadow:none;width:100%;padding:0}
+  .joc{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · 2 jocs per full · cada joc porta 1 targeta de cas + 1 nota de revisió</span>
+  <button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
+</div>
+
+<div class="page">
+  <div class="doc-head">
+    <div class="doc-title">Fira de casos — targetes i notes de revisió</div>
+    <div class="doc-sa">SA1 · Sessió 4 · IE Temple</div>
+  </div>
+  <div class="doc-note">
+    <strong>Aquest full serveix per a 2 alumnes</strong> (2 jocs). Cada joc porta <strong>dues peces</strong>, i serveix tant per al nivell A com per al B.<br>
+    <strong>Com funciona la fira.</strong> Abans de començar-la, cadascú copia a la <strong>targeta del cas</strong> només <em>què és el seu cas i què promet</em> — <strong>mai el veredicte</strong>, que es queda amagat a la seva fitxa. La targeta es deixa damunt la taula i la fitxa te l'endús. Així qui revisa jutja <strong>a cegues</strong>: no pot llegir què n'ha dit l'autor.<br>
+    La <strong>nota de revisió</strong> l'escriu qui revisa i la deixa <strong>al costat de la targeta</strong>, perquè l'autor se la trobi en tornar al seu lloc.<br>
+    Retalla primer entre jocs i després cada peça per la línia puntejada.
+  </div>
+
+  <div class="bloc-head">Jocs 1 i 2 · 1 joc = 1 alumne</div>
+
+  <div class="joc">
+    <div class="joc-head">Joc 1 · Nom: <span class="joc-name"></span></div>
+    <div class="par">
+      <div class="card cas">
+        <div class="card-head">✂️ Targeta del cas</div>
+        <div class="card-sub">L'escriu qui porta el cas. Es queda damunt la taula. NO hi posis el teu veredicte.</div>
+        <div class="lbl">El meu cas és:</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">I promet que:</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">D'on l'he tret:</div><span class="wl"></span>
+      </div>
+      <div class="card nota">
+        <div class="card-head">✂️ Nota de revisió</div>
+        <div class="card-sub">L'escriu qui revisa i la deixa al costat de la targeta. Parla de l'argument, no de la persona.</div>
+        <div class="lbl">Cas revisat / revisat per:</div><span class="wl"></span>
+        <div class="lbl">Una cosa que t'ha sortit bé:</div><span class="wl tall"></span>
+        <div class="lbl">Una cosa concreta que hi afegiria:</div><span class="wl tall"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="joc">
+    <div class="joc-head">Joc 2 · Nom: <span class="joc-name"></span></div>
+    <div class="par">
+      <div class="card cas">
+        <div class="card-head">✂️ Targeta del cas</div>
+        <div class="card-sub">L'escriu qui porta el cas. Es queda damunt la taula. NO hi posis el teu veredicte.</div>
+        <div class="lbl">El meu cas és:</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">I promet que:</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">D'on l'he tret:</div><span class="wl"></span>
+      </div>
+      <div class="card nota">
+        <div class="card-head">✂️ Nota de revisió</div>
+        <div class="card-sub">L'escriu qui revisa i la deixa al costat de la targeta. Parla de l'argument, no de la persona.</div>
+        <div class="lbl">Cas revisat / revisat per:</div><span class="wl"></span>
+        <div class="lbl">Una cosa que t'ha sortit bé:</div><span class="wl tall"></span>
+        <div class="lbl">Una cosa concreta que hi afegiria:</div><span class="wl tall"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    SA1 · Ciència i Pseudociència · Sessió 4 · Retallables · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA<br>
+    Adaptat per Albert Pahissa de l'original de Jordi Dom&egrave;nech. Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" style="color:var(--teal-ink)">CC BY-NC-SA 4.0</a> (Reconeixement–NoComercial–CompartirIgual).
+  </div>
+</div>
+</body>
+</html>

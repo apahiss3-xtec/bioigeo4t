@@ -15,14 +15,14 @@ export const sa1s2 = {
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
     A: [
-      "Valoro el grau de certesa d'afirmacions polèmiques reals i argumento en quines garanties es basa la creença social, no només la meva.",
-      "Construeixo criteris propis per distingir ciència de pseudociència i els justifico més enllà d'una llista d'exemples.",
-      "Aplico el detector a un cas real caçat i preparo una defensa oral que anticipa les objeccions de qui hi creu.",
-      "Reconec quan una afirmació NO és ni ciència ni pseudociència, sinó una qüestió que encara no s'ha pogut comprovar."
+      "Valoro el grau de certesa d'afirmacions polèmiques reals, argumento en quines garanties es basa la creença social i faig una predicció que es pot equivocar sobre on discreparà la classe.",
+      "Dedueixo els senyals del detector a partir de frases reals, els converteixo en preguntes de SÍ o NO i justifico el criteri de cada grup.",
+      "Poso el detector a prova amb un control positiu i un de negatiu i el corregeixo quan dona una falsa alarma.",
+      "Aplico el detector a un cas real caçat i reconec quan una afirmació NO és ni ciència ni pseudociència, sinó una qüestió que encara no s'ha pogut comprovar."
     ],
     B: [
       "Poso una nota de certesa (1–10) a afirmacions reals i marco en quina garantia em baso.",
-      "Identifico els senyals d'alerta d'una pseudociència (no es comprova, no admet crítica, es basa en autoritat o en el que vols creure).",
+      "Identifico els senyals d'alerta d'una pseudociència que hem acordat entre tots i hi poso un exemple real.",
       "Faig servir el detector per analitzar un cas real caçat i preparo què diré a la defensa oral.",
       "Distingeixo una afirmació científica d'una pseudocientífica fixant-me si es pot posar a prova."
     ]
@@ -35,19 +35,19 @@ export const sa1s2 = {
       scaffold:
         "Per posar la nota de certesa, pregunta't: hi ha estudis o dades que ho mesurin? → nota alta. Només ho diu la gent o em fa sentir bé? → nota baixa. Per marcar la garantia, recorda: números o mesures → DADES; com funciona una cosa → MODELS; «sempre s'ha fet» → HÀBITS; «ho diu X» → AUTORITAT; el que vull creure → IDENTITAT i VALORS.",
       challenge:
-        "A la teva taula cada afirmació porta DUES notes: la teva (JO) i la que creus que hi posaria la majoria de la gent (MAJORIA). Omple-les totes dues abans de mirar res més. Després tria les 3 files on la distància entre les dues columnes és més gran i, per a cadascuna, esbrina quina garantia mou la creença de la majoria."
+        "Abans d'omplir res, fes una PREDICCIÓ que es pugui equivocar: encercla les 6 afirmacions on creus que la teva nota s'allunyarà més de la que hi posaria la majoria de la gent, i digues per què aquestes. La nota JO la poses a totes; la nota MAJORIA, només a aquestes 6. Després tria les 3 amb més distància i esbrina quina garantia mou la creença de la majoria. Al final comprova la predicció amb els teus propis números: en quantes de les 6 hi ha 3 punts o més de distància?"
     },
     "2": {
       scaffold:
-        "El detector té 5 senyals. Per cada un, escriu-hi un exemple curt dels casos que heu caçat: «aquest anunci fa servir el senyal ___ perquè ___». Amb un sol senyal ja pots sospitar; com més senyals encaixen, més clar és.",
+        "El detector el munteu entre tots a la posada en comú. Per cada senyal que hi acordeu, escriu-hi un exemple curt dels casos que heu caçat: «aquest anunci fa servir el senyal ___ perquè ___». Amb un sol senyal ja pots sospitar; com més senyals encaixen, més clar és.",
       challenge:
-        "A la teva fitxa el detector ve amb els noms dels 5 senyals però SENSE la seva definició: què vol dir cadascun ho escrius tu, amb les teves paraules, a partir del que surti a la posada en comú — i hi afegeixes la pregunta que li faries a una afirmació per saber si té aquest senyal. Al repte: cap detector és perfecte; pensa un cas on una idea SÍ que era ciència però al principi semblava sospitosa, i digues quin senyal ens la faria rebutjar per error."
+        "Tu no esperes la posada en comú: a la teva fitxa hi ha set frases reals d'anuncis i has de treure'n TU els trucs. Digues amb les teves paraules quin truc fa servir cadascuna i agrupa-les (les que facin el mateix truc, mateixa lletra). Ni el nombre de grups ni la classificació te'ls donem: el que compta és que el criteri sigui clar. Després posa nom a cada truc, escriu la pregunta de SÍ o NO que el detecta, i només llavors compara la teva llista amb el detector que acordi la classe: què t'havies perdut i què tens tu que ells no tenen."
     },
     "3": {
       scaffold:
-        "Per preparar la defensa, omple aquest guió: «El meu cas és ___. Promet ___. Els senyals del detector que hi trobo són ___. Per tant crec que és pseudociència perquè ___». Assaja-ho en veu alta amb un company abans de sortir.",
+        "Per preparar la defensa, omple aquest guió: «El meu cas és ___. Promet ___. Els senyals del detector que hi trobo són ___. Per tant crec que és [ciència / pseudociència / encara no comprovat] perquè ___». Assaja-ho en veu alta amb un company abans de sortir.",
       challenge:
-        "Prepara la defensa pensant en qui HI CREU: quina objecció et posaria («a mi em funciona», «és natural», «ho diu un metge»)? Escriu la teva resposta a aquesta objecció fent servir el vocabulari de les garanties."
+        "Abans de fiar-te del detector, passa-li els dos CONTROLS. Els dos textos te'ls donem fets a la fitxa perquè tota la classe comprovi l'eina amb el mateix material: un control positiu (un anunci que ja saps que és pseudociència: el detector s'hi ha d'encendre) i un control negatiu (el resum d'un estudi de ciència ben comprovada: NO s'hi ha d'encendre). Compta quants senyals s'encenen a cadascun. Si se t'encén al control negatiu tens una falsa alarma: decideix si el que has de corregir és el veredicte del cas o com està escrit el senyal, i reescriu el senyal perquè no s'encengui amb la ciència de debò però sí amb el control positiu."
     }
   },
 
@@ -71,7 +71,7 @@ export const sa1s2 = {
 
   // ── EXPLORA (ABP · estudi de cas) ────────────────────────
   exploreActivity: {
-    what: "Posicionem-nos davant de 15 afirmacions polèmiques reals (des de «les vacunes funcionen» fins a «hi ha números que donen sort»). Individualment, poseu a cadascuna una nota de certesa de l'1 al 10 i marqueu en quin/s tipus de garantia us baseu. Després compareu les notes en grup: no cal posar-vos d'acord, cal ENTENDRE per què discrepeu.",
+    what: "Posicionem-nos davant de 15 afirmacions polèmiques reals (des de «les vacunes funcionen» fins a «hi ha números que donen sort»). Individualment, poseu a cadascuna una nota de certesa de l'1 al 10 i marqueu en quin/s tipus de garantia us baseu. Al nivell A, abans de començar s'encerclen les 6 afirmacions on es creu que la pròpia nota s'allunyarà més de la de la majoria, i només en aquestes s'hi posa una segona nota: la que hi posaria la majoria de la gent. Després compareu les notes (columna JO) en grup: no cal posar-vos d'acord, cal ENTENDRE per què discrepeu; el nivell A, a més, comprova amb els seus números si la predicció s'ha complert.",
     who: { mode: "grup", label: "Individual primer, després contrast en grup de 4" },
     time: 35,
     note: "Aquí no hi ha una única resposta correcta a la nota: el que avaluem és si saps JUSTIFICAR la teva certesa amb la garantia adequada. La discrepància dins el grup és el material de la teoria d'avui."
@@ -98,15 +98,15 @@ export const sa1s2 = {
     {
       id: "t2",
       apartat: "2",
-      heading: "El ==detector de pseudociència==: 5 senyals d'alerta",
-      text: "Tota pseudociència sol repetir els mateixos trucs. En destaquem ==5 senyals==: (1) ==no es pot comprovar== amb experiments fiables; (2) ==no admet crítica== ni es corregeix mai; (3) es basa en ==autoritat== o testimonis, no en dades; (4) ==sona científica== (fa servir paraules com «quàntic», «energia», «natural»); (5) ==apel·la al que vols creure== (desitjos, valors, identitat). Amb un sol senyal ja pots sospitar; com més senyals, més clar. I compte amb el senyal 5: aquestes ganes no només et fan acceptar la promesa, també et poden fer ==NOTAR una millora que no hi és==. Per això, quan es vol comprovar de debò si una cosa funciona, la prova s'ha de muntar de manera que ==ningú sàpiga== qui rep el producte de veritat i qui no.",
+      heading: "El ==detector de pseudociència==: el construïu vosaltres",
+      text: "Tota pseudociència sol repetir els mateixos ==trucs==, i per això es poden llistar. Però aquesta llista ==no te la donem feta==: la treureu vosaltres dels casos reals que heu caçat i de les frases de la fitxa, i de la posada en comú en sortirà ==un sol detector== per a tota la classe (el tindràs complet a partir de la S3). Un senyal només serveix si el pots convertir en una ==pregunta de SÍ o NO== que li puguis fer a qualsevol afirmació: si no saps com comprovar-lo, no és un senyal, és una impressió. I compte amb els senyals que apel·len al que vols creure: aquestes ganes no només et fan acceptar la promesa, també et poden fer ==NOTAR una millora que no hi és==. Per això, quan es vol comprovar de debò si una cosa funciona, la prova s'ha de muntar de manera que ==ningú sàpiga== qui rep el producte de veritat i qui no.",
       type: "concept"
     },
     {
       id: "t3",
-      apartat: "2",
-      heading: "El detector no és infal·lible",
-      text: "El detector serveix per aixecar sospites, no per condemnar. Una idea nova de ciència de vegades sembla estranya al principi. La clau està en els ==senyals 1 i 2==: si una afirmació ==es pot posar a prova== i ==admet que la corregeixin==, va pel camí de la ciència, encara que ara soni rara. La pseudociència, en canvi, es tanca a tota crítica.",
+      apartat: "3",
+      heading: "El detector no és infal·lible: cal posar-lo a prova",
+      text: "El detector serveix per aixecar sospites, no per condemnar: una idea que després resulta ser ciència de vegades sona estranya al principi. Com saps si l'eina que has fabricat funciona? Igual que amb qualsevol instrument: la passes per casos on ==ja saps la resposta==, com qui comprova un termòmetre ficant-lo en aigua bullint. Un ==control positiu== és un text que ja saps que és pseudociència —el detector s'hi ==ha d'encendre==— i et diu si l'eina detecta. Un ==control negatiu== és un text de ciència ben comprovada —el detector ==no s'hi ha d'encendre==— i et diu si l'eina s'espanta sense motiu. Quan se t'encén al control negatiu tens una ==falsa alarma==, i llavors t'has de preguntar què és el que falla. Ho decidiràs tu a la fitxa.",
       type: "epistemic",
       badge: "🧠 Pensament crític"
     },
@@ -122,7 +122,7 @@ export const sa1s2 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "1", before: true, title: "Recordatori: els 5 tipus de garanties", src: "/images/sa1-s1-garanties.svg", note: "Torna-hi per decidir en quina garantia et bases a l'hora de puntuar cada afirmació." },
-    { id: "Fig.2", apartat: "2", before: true, title: "El detector de pseudociència (per construir)", src: "/images/sa1-s2-detector-alumne.svg", note: "Els noms dels 5 senyals. Què vol dir cadascun surt de la posada en comú de la classe: aquesta sessió el detector el construïu vosaltres, no es copia. A partir de la S3 el tindràs complet per fer-lo servir." }
+    { id: "Fig.2", apartat: "2", title: "El detector de pseudociència (encara buit)", src: "/images/sa1-s2-detector-buit.svg", note: "Ni els noms dels senyals ni quants n'hi ha venen donats: surten de la posada en comú de la classe. Al nivell B els tens ja definits a la fitxa; al nivell A els dedueixes tu a partir de set frases reals i només després els compares amb els de la classe. A partir de la S3 tindràs el detector complet per fer-lo servir." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -137,7 +137,7 @@ export const sa1s2 = {
       {
         apartat: "0",
         title: "Idees prèvies i posada en comú",
-        time: "10 min",
+        time: "10 min (8 al nivell A)",
         phase: "engage",
         instruction: "Escriu quin cas has caçat i què promet. Recupera amb les teves paraules la diferència entre ciència i pseudociència de la sessió passada.",
         hints: []
@@ -145,9 +145,9 @@ export const sa1s2 = {
       {
         apartat: "1",
         title: "Posicionem-nos: 15 afirmacions",
-        time: "35 min",
+        time: "35 min (30 al nivell A)",
         phase: "explore",
-        instruction: "Posa una nota de certesa (1–10) a cada afirmació i marca la garantia en què et bases. Al nivell A hi ha una segona columna de nota: la que creus que hi posaria la majoria de la gent. Després compara amb el grup on més discrepeu.",
+        instruction: "Posa una nota de certesa (1–10) a cada afirmació i marca la garantia en què et bases. Al nivell A, abans de res s'escriu una predicció sobre on discreparà la classe, i cada afirmació porta una segona nota: la que creus que hi posaria la majoria de la gent. Després compareu en grup on més discrepeu de debò.",
         hints: [
           "La nota no és «correcta» o «incorrecta»: el que compta és que la sàpigues justificar amb la garantia.",
           "Fixa't en la Fig.1: números o mesures → Dades; «ho diu X» → Autoritat; el que vull creure → Identitat i valors."
@@ -156,23 +156,23 @@ export const sa1s2 = {
       {
         apartat: "2",
         title: "Construïm el detector",
-        time: "25 min",
+        time: "25 min (40 al nivell A)",
         phase: "explica",
-        instruction: "A partir dels trucs que heu apuntat, completeu entre tots els 5 senyals d'alerta i poseu-hi un exemple de cada, agafat dels casos caçats. Al nivell B la definició de cada senyal ja hi és; al nivell A l'escrius tu amb les teves paraules i hi afegeixes la pregunta que faries per detectar-lo.",
+        instruction: "A partir dels trucs que heu apuntat, munteu entre tots el detector de la classe i poseu-hi un exemple de cada senyal, agafat dels casos caçats. Al nivell B els senyals venen amb la definició feta; al nivell A es dedueixen abans de la posada en comú, a partir de set frases reals d'anuncis que hi ha a la fitxa, i després es comparen amb els de la classe.",
         hints: [
           "Amb un sol senyal ja pots sospitar; com més senyals encaixen, més clar és que és pseudociència.",
-          "El senyal més fort és si es pot comprovar i si admet crítica (senyals 1 i 2)."
+          "Un senyal només val si el pots convertir en una pregunta de SÍ o NO. Si no saps com comprovar-lo, encara no és un senyal."
         ]
       },
       {
         apartat: "3",
         title: "Apliquem el detector i preparem la defensa",
-        time: "25 min",
+        time: "25 min (28 al nivell A)",
         phase: "elabora",
-        instruction: "Passa el teu cas caçat pels 5 senyals del detector i prepara la defensa oral d'1 minut. Assaja-la amb un company abans de sortir.",
+        instruction: "Passa el teu cas caçat pels senyals del detector i prepara la defensa oral d'1 minut. Al nivell A, abans de tancar-ho, el detector ha de passar dos controls: una afirmació que ja saps que és pseudociència i una que ja saps que és ciència comprovada.",
         hints: [
           "Anticipa l'objecció de qui hi creu: «a mi em funciona», «és natural»... Quina resposta hi donaries?",
-          "Fes servir el vocabulari d'avui: garanties, comprovació, admetre la crítica."
+          "Si el detector s'encén amb un text que saps que és ciència de debò: de qui és el problema, del text o de l'eina?"
         ]
       }
     ]
@@ -184,7 +184,7 @@ export const sa1s2 = {
     {
       id: "q1",
       type: "open",
-      text: "Explica dos dels cinc senyals del detector de pseudociència i posa un exemple real de cadascun.",
+      text: "Explica dos dels senyals del detector que heu acordat avui i posa un exemple real de cadascun.",
       hint: "Tria exemples que NO s'hagin dit a classe: han de ser casos teus."
     },
     {
@@ -209,20 +209,20 @@ export const sa1s2 = {
 
   // ── METACOGNICIÓ ─────────────────────────────────────────
   metacognition: {
-    prompt: "Ara que tens el detector: hi ha alguna creença teva que hagi passat pels 5 senyals i que ara veus diferent? El detector t'ha fet dubtar d'alguna cosa que donaves per segura?",
+    prompt: "Ara que tens el detector: hi ha alguna creença teva que hagi passat pels senyals del detector i que ara veus diferent? El detector t'ha fet dubtar d'alguna cosa que donaves per segura?",
     type: "reflection"
   },
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Acaba de polir la teva defensa oral d'1 minut: passa el cas caçat pels 5 senyals del detector i escriu l'objecció que et posaria qui hi creu, amb la teva resposta. La defensa es fa a l'aula la propera sessió i és la teva demostració de comprensió (no s'entrega per escrit).",
+    description: "Acaba de polir la teva defensa oral d'1 minut: passa el cas caçat pels senyals del detector que heu acordat i escriu l'objecció que et posaria qui hi creu, amb la teva resposta. La defensa es fa a l'aula la propera sessió i és la teva demostració de comprensió (no s'entrega per escrit).",
     deadline: "2026-09-XX",
     note: "Aprenentatge significatiu: no és copiar teoria, sinó aplicar el detector a un cas real i preparar-te per defensar-lo davant els companys."
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
-    "Llegeix l'apartat EXPLICA: la certesa social, els 5 senyals del detector i la diferència entre pseudociència i allò encara no comprovat",
+    "Llegeix l'apartat EXPLICA: la certesa social, com es construeix el detector i la diferència entre pseudociència i allò encara no comprovat",
     "Mira la Fig.1 (garanties) i la Fig.2 (detector de pseudociència)",
     "Descarrega la fitxa S2 i fes tu sol/a la taula «Posicionem-nos» (apartat 1) i completa el detector (apartat 2)",
     "Caça un cas i aplica-hi el detector (apartat 3); prepara la defensa oral d'1 minut per a la propera sessió",
@@ -230,7 +230,7 @@ export const sa1s2 = {
   ],
 
   // ── COMPETÈNCIES I CRITERIS D'AVALUACIÓ ──────────────────
-  oaLinks: ["OA1", "OA2", "OA4"],
+  oaLinks: ["OA1", "OA2", "OA3", "OA4"],
   competencies: ["CE2", "CE3", "CE1"],
   criterisAvaluacio: ["2.2", "3.1", "1.1"]
 }
