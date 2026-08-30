@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+  <rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+  <rect x="10" y="10" width="740" height="380" rx="12" fill="#f7fbfc" stroke="#9ccad2" stroke-width="2"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7fa9b2"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c98a4b"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="44" text-anchor="middle" font-size="23" font-weight="900" fill="#1c4a55">El camí de les tres preguntes</text>
+  <text x="380" y="66" text-anchor="middle" font-size="13.5" fill="#6b7a7e">Els tres finals els escrius tu. Compte: l'1 i el 3 s'assemblen molt i no són el mateix.</text>
+
+  <rect x="266" y="82" width="228" height="32" rx="16" fill="#e7eef0" stroke="#7fa9b2" stroke-width="1.6"/>
+  <text x="380" y="104" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1c4a55">Una afirmació qualsevol</text>
+  <path d="M380 114 L380 128" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="206" y="130" width="348" height="40" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="2"/>
+  <text x="380" y="147" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1c4a55">1. Pots dir QUIN resultat la faria caure?</text>
+  <text x="380" y="163" text-anchor="middle" font-size="12" fill="#6b7a7e">Un resultat concret, dit per endavant</text>
+
+  <path d="M206 150 L124 150 L124 306" stroke="#c98a4b" stroke-width="2" marker-end="url(#aro)" fill="none"/>
+  <text x="166" y="144" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a24e24">NO</text>
+  <path d="M380 170 L380 190" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="396" y="185" font-size="12.5" font-weight="800" fill="#2e7d7f">SÍ</text>
+
+  <rect x="206" y="192" width="348" height="40" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="2"/>
+  <text x="380" y="209" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1c4a55">2. Qui la defensa, acceptaria aquest resultat?</text>
+  <text x="380" y="225" text-anchor="middle" font-size="12" fill="#6b7a7e">O es buscaria una sortida per salvar-la?</text>
+
+  <path d="M206 212 L124 212" stroke="#c98a4b" stroke-width="2" marker-end="url(#aro)" fill="none"/>
+  <text x="166" y="206" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a24e24">NO</text>
+  <path d="M380 232 L380 252" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="396" y="247" font-size="12.5" font-weight="800" fill="#2e7d7f">SÍ</text>
+
+  <rect x="206" y="254" width="348" height="40" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="2"/>
+  <text x="380" y="271" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1c4a55">3. La prova ja s'ha fet, i és clara?</text>
+  <text x="380" y="287" text-anchor="middle" font-size="12" fill="#6b7a7e">Feta i sense discussió, o encara pendent</text>
+
+  <path d="M554 274 L636 274 L636 306" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)" fill="none"/>
+  <text x="602" y="268" text-anchor="middle" font-size="12" font-weight="800" fill="#2e7d7f">ENCARA NO</text>
+  <path d="M380 294 L380 306" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="396" y="304" font-size="12.5" font-weight="800" fill="#2e7d7f">SÍ</text>
+
+  <rect x="26" y="314" width="196" height="66" rx="8" fill="#ffffff" stroke="#c98a4b" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <circle cx="40" cy="314" r="12" fill="#fdf1e6" stroke="#c98a4b" stroke-width="1.6"/>
+  <text x="40" y="320" text-anchor="middle" font-size="14" font-weight="800" fill="#a24e24">1</text>
+
+  <rect x="282" y="314" width="196" height="66" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <circle cx="296" cy="314" r="12" fill="#eef6f2" stroke="#4d8a96" stroke-width="1.6"/>
+  <text x="296" y="320" text-anchor="middle" font-size="14" font-weight="800" fill="#1c4a55">2</text>
+
+  <rect x="538" y="314" width="196" height="66" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <circle cx="552" cy="314" r="12" fill="#eef6f2" stroke="#4d8a96" stroke-width="1.6"/>
+  <text x="552" y="320" text-anchor="middle" font-size="14" font-weight="800" fill="#1c4a55">3</text>
+
+</svg>

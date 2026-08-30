@@ -160,7 +160,7 @@ span[contenteditable]{display:inline-block}
       <div class="header-subtitle" contenteditable="true">Defensa oral, veredicte i el detector col·lectiu de la classe</div>
     </div>
     <div class="header-right">
-      <div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+      <div class="logo-box"><img src="/images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
       <div class="header-meta" contenteditable="true">Biologia i Geologia · 4t ESO<br>IE Temple</div>
     </div>
   </div>
@@ -182,8 +182,9 @@ span[contenteditable]{display:inline-block}
     <ul class="oa-list">
       <li contenteditable="true">Defenso oralment el veredicte del meu cas fent servir els <strong>5 senyals</strong> del detector.</li>
       <li contenteditable="true">Escolto la defensa d'un company i marco quins <strong>senyals</strong> ha fet servir bé.</li>
-      <li contenteditable="true">Classifico 8 disciplines com a <strong>ciència o pseudociència</strong> i ho justifico.</li>
-      <li contenteditable="true">Ajudo a construir el <strong>detector col·lectiu</strong> de la classe.</li>
+      <li contenteditable="true">Classifico afirmacions concretes en <strong>tres calaixos</strong> (ciència · pseudociència · encara no comprovat) i ho justifico.</li>
+      <li contenteditable="true">Escric <strong>quina prova concreta faria caure</strong> una afirmació i la <strong>frase</strong> que diria qui la defensa per salvar-la.</li>
+      <li contenteditable="true">Recullo el <strong>detector col·lectiu</strong> que acorda la classe i hi poso el millor exemple real de cada senyal.</li>
     </ul>
   </div>
 
@@ -204,6 +205,10 @@ span[contenteditable]{display:inline-block}
         <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>2.</strong> Objecció que em posaria qui hi creu, i la meva resposta:</span></p>
         <div class="wline tall" contenteditable="true"></div>
       </div>
+      <figure class="deletable" style="margin:8px 0 4px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <img class="fig" src="/images/sa1-s1-ciencia-pseudo-fitxa.svg" alt="Recordatori de la S1: les dues preguntes clau" style="max-height:190px" onerror="this.style.display='none'">
+        <figcaption style="font-size:10.5px;color:var(--muted);text-align:center;margin-top:2px" contenteditable="true">Recordatori de la S1. Compte: avui els calaixos són <strong>tres</strong>, no dos.</figcaption>
+      </figure>
       <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">Guió de la defensa (1 min)</div><div class="scaffold-text" contenteditable="true">«El meu cas és ___. Promet ___. Al detector hi trobo els senyals ___. Veredicte: ___ perquè ___. Si em diuen «a mi em funciona», jo responc ___.» Assaja-ho <strong>una vegada</strong> abans de sortir.</div></div></div>
     </div>
 
@@ -212,27 +217,28 @@ span[contenteditable]{display:inline-block}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--aqua)">1</div>
-        <div><div class="stitle" contenteditable="true">Rondes de defensa <span class="temps">⏱️ 40 min</span></div>
+        <div><div class="stitle" contenteditable="true">Rondes de defensa <span class="temps">⏱️ 35 min</span></div>
         <div class="sdesc" contenteditable="true">Defenso 1 minut i escolto amb el detector a la mà</div></div>
       </div>
       <div class="divider"></div>
       <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <img class="fig" src="../images/sa1-s2-detector.svg" alt="Detector: 5 senyals" style="max-height:230px" onerror="this.style.display='none'">
+        <img class="fig" src="/images/sa1-s2-detector.svg" alt="Detector: 5 senyals" style="max-height:230px" onerror="this.style.display='none'">
       </figure>
       <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">Com escoltar i avaluar</div><div class="scaffold-text" contenteditable="true">Per cada company, mira si ha dit: (a) què <strong>promet</strong> el cas, (b) quins <strong>senyals</strong> del detector hi ha, (c) el <strong>veredicte amb un perquè</strong>. Si en falta un, digues-l’hi amb amabilitat.</div></div></div>
       <div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">📐</div><div><div class="epist-title">Recordatori: les 5 garanties</div><div class="epist-text" contenteditable="true"><strong>Dades</strong> (números/mesures) · <strong>Models</strong> (com funciona) · <strong>Hàbits</strong> («sempre s'ha fet») · <strong>Autoritat</strong> («ho diu X») · <strong>Identitat i valors</strong> (el que vull creure). Una bona defensa diu <em>en quina garantia</em> es basa qui hi creu.</div></div></div>
-      <p style="font-size:12px;margin:8px 0 6px" contenteditable="true">🗣️ Mentre escoltes els companys, anota <strong>quins senyals</strong> fan servir, el teu <strong>vot</strong> (C·P·NC) i <strong>un punt fort + una millora</strong>:</p>
+      <p style="font-size:11.5px;margin:6px 0;padding:5px 9px;background:var(--teal-tint);border-radius:6px" contenteditable="true">🗣️ <strong>Com es fa:</strong> les rondes es fan en <strong>grups d'unes 8 persones alhora</strong>, no davant de tota la classe: així tothom defensa i tothom escolta de prop. Anota una fila per cada company del teu grup. <strong>Aquest full es recull al final de la sessió</strong>: és l'única prova de com has escoltat.</p>
+      <p style="font-size:12px;margin:8px 0 6px" contenteditable="true">Mentre escoltes els companys, anota <strong>quins senyals</strong> fan servir, el teu <strong>vot</strong> (C·P·NC) i <strong>un punt fort + una millora</strong>:</p>
       <table class="data-table">
-        <thead><tr><th>Company i cas · senyals que fa servir</th><th style="width:92px">El meu vot<br><small>C=ciència · P=pseudo · NC=no comprovat</small></th><th style="width:240px">Punt fort + millora</th></tr></thead>
+        <thead><tr><th>Company i cas · senyals que fa servir<br><small>i la garantia en què es basa qui hi creu</small></th><th style="width:80px">El meu vot<br><small>C · P · NC</small></th><th style="width:230px">Punt fort + millora</th></tr></thead>
         <tbody>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
-<tr><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:28px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
+<tr><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td><td style="text-align:center;font-size:11px" contenteditable="true">C · P · NC</td><td><div class="fill-cell" style="min-height:46px" contenteditable="true"></div></td></tr>
 
         </tbody>
       </table>
@@ -243,49 +249,78 @@ span[contenteditable]{display:inline-block}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--orange)">2</div>
-        <div><div class="stitle" contenteditable="true">Ciència o pseudociència? <span class="temps">⏱️ 20 min</span></div>
-        <div class="sdesc" contenteditable="true">Classifica i justifica amb un motiu</div></div>
+        <div><div class="stitle" contenteditable="true">Ciència, pseudociència o encara no comprovat? <span class="temps">⏱️ 24 min</span></div>
+        <div class="sdesc" contenteditable="true">Ara no són disciplines senceres: són afirmacions concretes, i els calaixos són tres</div></div>
       </div>
       <div class="divider"></div>
-      <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <img class="fig" src="../images/sa1-s1-ciencia-pseudo-fitxa.svg" alt="Ciència vs pseudociència" style="max-height:210px" onerror="this.style.display='none'">
-      </figure>
-      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">Les dues preguntes clau</div><div class="scaffold-text" contenteditable="true">Es pot posar a prova amb experiments? i admet que la corregeixin? <strong>Dos SÍ → ciència</strong>. <strong>Dos NO → pseudociència</strong>. Es podria provar però encara no s'ha fet → <strong>encara no comprovat</strong>. Escriu SÍ o NO a cada pregunta abans de decidir el veredicte.</div></div></div>
+      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">A la <strong>Sessió 1</strong> vas classificar <em>disciplines senceres</em> (la biologia, l'astrologia…) en dos calaixos. Avui la feina és diferent i més fina: classifiques <strong>afirmacions concretes</strong> i tens <strong>tres calaixos</strong>. Una mateixa ciència pot fer afirmacions ben comprovades i afirmacions que encara no ho estan.</p>
+      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">Les dues preguntes clau i els tres calaixos</div><div class="scaffold-text" contenteditable="true">Escriu <strong>SÍ o NO</strong> a cada pregunta <em>abans</em> de decidir res: <strong>(1)</strong> es pot posar a prova amb experiments? <strong>(2)</strong> qui la defensa admet que la corregeixin? &nbsp;→&nbsp; <strong>(1) SÍ i (2) SÍ, i la prova ja està feta i és clara → CIÈNCIA</strong>. <strong>(1) SÍ i (2) SÍ, però la prova encara no s'ha fet o els resultats no coincideixen → ENCARA NO COMPROVAT</strong>. <strong>(1) NO o (2) NO → PSEUDOCIÈNCIA</strong>: si no pots ni dir què la faria caure, o si qui la defensa no acceptaria mai cap resultat en contra, ja no hi ha res a comprovar. La decisió surt del que diu la <em>cursiva</em> de cada fila, no del que et sembli a tu.</div></div></div>
       <table class="data-table">
-        <thead><tr><th style="width:96px">Disciplina</th><th>Descripció</th><th style="width:120px">Ciència o pseudociència?</th><th style="width:150px">Per què?</th></tr></thead>
+        <thead><tr><th style="width:250px">Afirmació · <small>i el que se'n sap ara mateix</small></th><th style="width:74px">(1) Es pot<br>provar?</th><th style="width:74px">(2) Admet<br>crítica?</th><th style="width:96px">Quin calaix?</th><th>Per què?</th></tr></thead>
         <tbody>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Astrologia</strong></td><td style="font-size:11px" contenteditable="true">Creença que la posició dels estels i planetes influeix en el caràcter i el futur de les persones.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Biologia</strong></td><td style="font-size:11px" contenteditable="true">Estudia els éssers vius: com funcionen, com es relacionen i com evolucionen.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Homeopatia</strong></td><td style="font-size:11px" contenteditable="true">Tractaments amb gotes molt diluïdes que asseguren curar malalties.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Física</strong></td><td style="font-size:11px" contenteditable="true">Estudia la matèria, l'energia i les forces que hi actuen.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Ufologia</strong></td><td style="font-size:11px" contenteditable="true">Estudi dels objectes voladors no identificats i dels suposats visitants extraterrestres.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Geologia</strong></td><td style="font-size:11px" contenteditable="true">Estudia la Terra: les roques, els volcans, els terratrèmols i la seva història.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Reiki</strong></td><td style="font-size:11px" contenteditable="true">Pràctica que assegura curar canalitzant energia amb les mans.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
-<tr><td class="label-cell" style="width:92px;font-size:12px" contenteditable="true"><strong>Química</strong></td><td style="font-size:11px" contenteditable="true">Estudia de què estan fets els materials i com reaccionen entre ells.</td><td><div class="fill-cell" style="min-height:34px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:52px" contenteditable="true"></div></td></tr>
+<tr><td style="font-size:11px" contenteditable="true"><strong>«Beure aigua de mar en dejú neteja el cos de toxines.»</strong><br><em>No hi ha cap estudi que ho hagi mesurat. Qui ho ven diu que, si et trobes malament després de prendre-la, és perquè «el cos s'està netejant».</em></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="font-size:11px" contenteditable="true"><strong>«Menjar molta sal fa pujar la pressió arterial.»</strong><br><em>S'ha mesurat en milers de persones durant anys: qui menja menys sal té la pressió més baixa, i quan a una persona se li redueix la sal, li baixa. Quan han aparegut estudis que no encaixaven, els equips els han publicat igualment i han precisat la conclusió (a qui ja té la pressió bé, li canvia poc).</em></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="font-size:11px" contenteditable="true"><strong>«Els animals noten els terratrèmols hores abans que passin.»</strong><br><em>S'ha intentat comprovar diverses vegades: alguns registres apunten que sí i d'altres que no. Els equips ho segueixen mesurant i diuen que pot sortir que no.</em></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="font-size:11px" contenteditable="true"><strong>«Cada persona té un color de la sort segons el mes en què va néixer.»</strong><br><em>Si aquell dia et va bé, el color ha funcionat; si et va malament, «no era el teu dia». No diu enlloc què hauria de passar perquè sabéssim que és fals.</em></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="font-size:11px" contenteditable="true"><strong>«Un grup concret de bacteris de l'intestí influeix en l'estat d'ànim.»</strong><br><em>Hi ha resultats en ratolins i primers assajos en persones, encara pocs i que no coincideixen entre ells. Els equips accepten que pot acabar sortint que no.</em></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="font-size:11px" contenteditable="true"><strong>«Una piga que canvia de forma i de color pot ser un senyal de càncer de pell.»</strong><br><em>S'ha comprovat comparant milers de pigues fotografiades amb el que després es va trobar en analitzar-les al laboratori. La llista de senyals d'alerta s'ha corregit dues vegades, perquè amb dades noves es va veure que en deixava passar alguns.</em></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
 
         </tbody>
       </table>
+    </div>
+
+    <!-- Secció 3: Què la faria caure? (NOVA) -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--purple)">3</div>
+        <div><div class="stitle" contenteditable="true">Què la faria caure? <span class="temps">⏱️ 25 min</span></div>
+        <div class="sdesc" contenteditable="true">La pregunta que decideix el calaix de veritat</div></div>
+      </div>
+      <div class="divider"></div>
+      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Les dues preguntes de l'apartat anterior es poden reordenar en un <strong>camí de tres passos</strong>, i el primer és el que ho decideix gairebé tot: <strong>quin resultat concret faria que abandonéssim aquesta afirmació?</strong></p>
+      <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <img class="fig" src="/images/sa1-s3-canviar-idea.svg" alt="El camí de les tres preguntes" style="max-height:250px" onerror="this.style.display='none'">
+      </figure>
+      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">Exemple resolt (d'un altre tema)</div><div class="scaffold-text" contenteditable="true"><strong>Afirmació:</strong> «aquest adob fa créixer més les tomaqueres». &nbsp;<strong>Resultat que la faria caure:</strong> planto dos grups de tomaqueres iguals, un amb adob i un sense, i al cap d'un mes les de l'adob <em>no</em> han crescut més. &nbsp;<strong>Ho acceptaria qui ho defensa?</strong> Si diu que sí i canvia d'idea quan surt aquest resultat, el tracte està ben fet. Fixa't que una prova concreta diu <strong>qui es compara amb qui</strong> i <strong>què es mesura</strong>: «fer un estudi» no és una prova concreta.</div></div></div>
+      <p style="font-size:12px;margin:8px 0 6px" contenteditable="true">Fes-ho amb aquestes <strong>dues</strong> afirmacions de l'apartat anterior. A la segona columna, la prova que la <em>tombaria</em>. A la tercera, la <strong>sortida d'emergència</strong>: si el resultat sortís en contra, qui la defensa gairebé mai no calla — diu una frase que la salva. Escriu-la. (Torna a mirar la cursiva de l'apartat 2: allà hi ha la pista.)</p>
+      <table class="data-table">
+        <thead><tr><th style="width:180px">Afirmació</th><th>Quin resultat concret la faria caure?</th><th style="width:190px">Si el resultat surt en contra, quina frase diria qui la defensa per salvar-la?</th></tr></thead>
+        <tbody>
+<tr><td class="label-cell" style="font-size:11px" contenteditable="true"><strong>«Els animals noten els terratrèmols hores abans que passin.»</strong></td><td><div class="fill-cell" style="min-height:66px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:66px" contenteditable="true"></div></td></tr>
+<tr><td class="label-cell" style="font-size:11px" contenteditable="true"><strong>«Cada persona té un color de la sort segons el mes en què va néixer.»</strong></td><td><div class="fill-cell" style="min-height:66px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:66px" contenteditable="true"></div></td></tr>
+
+        </tbody>
+      </table>
+      <div class="scaffold-box deletable" style="margin-top:8px"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">Si et quedes encallat/da en alguna</div><div class="scaffold-text" contenteditable="true">No busquis la prova que la <em>confirmaria</em>: busca la que la <strong>tombaria</strong>. I si en alguna fila no se t'acut cap resultat que la pugui tombar, <strong>no la deixis en blanc</strong>: escriu «no en trobo cap» i per què. Això és una resposta, i de les bones.</div></div></div>
+      <p style="font-size:12px;margin:10px 0 4px" contenteditable="true">✏️ <strong>Tancament 1.</strong> Torna al <strong>veredicte del teu cas</strong> de l'apartat 0. Quin resultat te'l faria canviar? Si no en trobes cap, escriu-ho igualment.</p>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline tall" contenteditable="true"></div>
+      <p style="font-size:12px;margin:10px 0 4px" contenteditable="true">✏️ <strong>Tancament 2.</strong> De les proves que has escrit avui, <strong>n'hi ha alguna que poguéssiu fer vosaltres a l'aula</strong>, encara que fos en petit? Quina, i com?</p>
+      <div class="wline tall" contenteditable="true"></div>
     </div>
 
     <!-- Secció 4: Detector col·lectiu -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
-        <div class="snum" style="background:var(--teal)">3</div>
-        <div><div class="stitle" contenteditable="true">El detector col·lectiu de la classe <span class="temps">⏱️ 12 min</span></div>
+        <div class="snum" style="background:var(--teal)">4</div>
+        <div><div class="stitle" contenteditable="true">El detector col·lectiu de la classe <span class="temps">⏱️ 15 min</span></div>
         <div class="sdesc" contenteditable="true">Copia el detector final consensuat entre tots</div></div>
       </div>
       <div class="divider"></div>
       <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Per a cada senyal, copia el <strong>millor exemple real</strong> que hagi sortit a les defenses de la classe.</p>
-      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">El millor exemple</div><div class="scaffold-text" contenteditable="true">El millor exemple d’un senyal és el <strong>més clar</strong>, no el més estrany. Que el detector quedi entenedor: hi tornarem tot el curs.</div></div></div>
+      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div><div><div class="scaffold-title">El millor exemple</div><div class="scaffold-text" contenteditable="true">Si la classe acorda algun senyal que no és a la llista, escriu-lo a les <strong>files 6 i 7</strong>, que són buides a posta. El millor exemple d’un senyal és el <strong>més clar</strong>, no el més estrany. Que el detector quedi entenedor: hi tornarem tot el curs.</div></div></div>
       <table class="data-table">
         <thead><tr><th style="width:34px">#</th><th style="width:170px">Senyal d'alerta</th><th>Millor exemple de la classe</th></tr></thead>
         <tbody>
-<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">1</td><td class="label-cell" style="width:170px;font-size:12px"><strong>No es pot comprovar</strong></td><td><div class="fill-cell" style="min-height:36px" contenteditable="true"></div></td></tr>
-<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">2</td><td class="label-cell" style="width:170px;font-size:12px"><strong>No admet crítica</strong></td><td><div class="fill-cell" style="min-height:36px" contenteditable="true"></div></td></tr>
-<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">3</td><td class="label-cell" style="width:170px;font-size:12px"><strong>Es basa en autoritat</strong></td><td><div class="fill-cell" style="min-height:36px" contenteditable="true"></div></td></tr>
-<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">4</td><td class="label-cell" style="width:170px;font-size:12px"><strong>Sona «científica»</strong></td><td><div class="fill-cell" style="min-height:36px" contenteditable="true"></div></td></tr>
-<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">5</td><td class="label-cell" style="width:170px;font-size:12px"><strong>Apel·la al que vols creure</strong></td><td><div class="fill-cell" style="min-height:36px" contenteditable="true"></div></td></tr>
+<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">1</td><td class="label-cell" style="width:170px;font-size:12px"><strong>No es pot comprovar</strong></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">2</td><td class="label-cell" style="width:170px;font-size:12px"><strong>No admet crítica</strong></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">3</td><td class="label-cell" style="width:170px;font-size:12px"><strong>Es basa en autoritat</strong></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">4</td><td class="label-cell" style="width:170px;font-size:12px"><strong>Sona «científica»</strong></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="text-align:center;font-weight:900;color:#a24e24;font-size:15px">5</td><td class="label-cell" style="width:170px;font-size:12px"><strong>Apel·la al que vols creure</strong></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="text-align:center;font-weight:900;color:#c9a58a;font-size:15px">6</td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
+<tr><td style="text-align:center;font-weight:900;color:#c9a58a;font-size:15px">7</td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td><td><div class="fill-cell" style="min-height:44px" contenteditable="true"></div></td></tr>
 
         </tbody>
       </table>
@@ -299,8 +334,9 @@ span[contenteditable]{display:inline-block}
         <div class="meta-oa-title">🎯 Torna als objectius — marca el que has aconseguit avui:</div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Defenso el meu cas amb els 5 senyals.</div></div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Marco els senyals que fan servir els companys.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Classifico ciència / pseudociència.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Aporto un senyal al detector col·lectiu.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Classifico afirmacions en els tres calaixos.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Escric la prova que faria caure una afirmació i la frase que la salva.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Recullo el detector col·lectiu amb un bon exemple a cada senyal.</div></div>
       </div>
       <div class="meta-grid">
         <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">💡</span><div class="meta-label">Defensar en veu alta m'ha fet veure…</div><div class="wline" contenteditable="true"></div></div>

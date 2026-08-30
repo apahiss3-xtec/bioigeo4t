@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" font-family="Fira Sans Extra Condensed, Arial, sans-serif">
+  <rect x="0" y="0" width="760" height="400" fill="#ffffff"/>
+  <rect x="10" y="10" width="740" height="380" rx="12" fill="#f7fbfc" stroke="#9ccad2" stroke-width="2"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7fa9b2"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#c98a4b"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="44" text-anchor="middle" font-size="23" font-weight="900" fill="#1c4a55">El camí de les tres preguntes</text>
+  <text x="380" y="66" text-anchor="middle" font-size="13.5" fill="#6b7a7e">L'ordre importa: no vagis directe al calaix. Cap pregunta no es contesta «depèn».</text>
+
+  <rect x="266" y="82" width="228" height="32" rx="16" fill="#e7eef0" stroke="#7fa9b2" stroke-width="1.6"/>
+  <text x="380" y="104" text-anchor="middle" font-size="15.5" font-weight="700" fill="#1c4a55">Una afirmació qualsevol</text>
+  <path d="M380 114 L380 128" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="206" y="130" width="348" height="40" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="2"/>
+  <text x="380" y="147" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1c4a55">1. Pots dir QUIN resultat la faria caure?</text>
+  <text x="380" y="163" text-anchor="middle" font-size="12" fill="#6b7a7e">Un resultat concret, dit per endavant</text>
+
+  <path d="M206 150 L110 150 L110 292" stroke="#c98a4b" stroke-width="2" marker-end="url(#aro)" fill="none"/>
+  <text x="156" y="144" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a24e24">NO</text>
+  <path d="M380 170 L380 190" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="396" y="185" font-size="12.5" font-weight="800" fill="#2e7d7f">SÍ</text>
+
+  <rect x="206" y="192" width="348" height="40" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="2"/>
+  <text x="380" y="209" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1c4a55">2. Qui la defensa, acceptaria aquest resultat?</text>
+  <text x="380" y="225" text-anchor="middle" font-size="12" fill="#6b7a7e">O es buscaria una sortida per salvar-la?</text>
+
+  <path d="M206 212 L110 212" stroke="#c98a4b" stroke-width="2" marker-end="url(#aro)" fill="none"/>
+  <text x="158" y="206" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a24e24">NO</text>
+  <path d="M380 232 L380 252" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="396" y="247" font-size="12.5" font-weight="800" fill="#2e7d7f">SÍ</text>
+
+  <rect x="206" y="254" width="348" height="40" rx="8" fill="#ffffff" stroke="#4d8a96" stroke-width="2"/>
+  <text x="380" y="271" text-anchor="middle" font-size="14.5" font-weight="800" fill="#1c4a55">3. La prova ja s'ha fet, i és clara?</text>
+  <text x="380" y="287" text-anchor="middle" font-size="12" fill="#6b7a7e">Feta i sense discussió, o encara pendent</text>
+
+  <path d="M554 274 L650 274 L650 316" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)" fill="none"/>
+  <text x="602" y="268" text-anchor="middle" font-size="12" font-weight="800" fill="#2e7d7f">ENCARA NO</text>
+  <path d="M380 294 L380 316" stroke="#7fa9b2" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="396" y="311" font-size="12.5" font-weight="800" fill="#2e7d7f">SÍ</text>
+
+  <rect x="40" y="294" width="140" height="50" rx="8" fill="#fdf1e6" stroke="#c98a4b" stroke-width="1.8"/>
+  <text x="110" y="315" text-anchor="middle" font-size="14" font-weight="800" fill="#a24e24">PSEUDOCIÈNCIA</text>
+  <text x="110" y="333" text-anchor="middle" font-size="11.5" fill="#a24e24">no es pot tombar mai</text>
+
+  <rect x="292" y="318" width="176" height="50" rx="8" fill="#eef6f2" stroke="#4d8a96" stroke-width="1.8"/>
+  <text x="380" y="339" text-anchor="middle" font-size="14" font-weight="800" fill="#1c4a55">CIÈNCIA</text>
+  <text x="380" y="357" text-anchor="middle" font-size="11" fill="#3c6f75">i es revisarà si surten dades noves</text>
+
+  <rect x="580" y="318" width="140" height="50" rx="8" fill="#eef6f2" stroke="#4d8a96" stroke-width="1.8"/>
+  <text x="650" y="338" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1c4a55">ENCARA NO</text>
+  <text x="650" y="355" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1c4a55">COMPROVAT</text>
+
+  <text x="380" y="384" text-anchor="middle" font-size="11.5" fill="#6b7a7e">Les dues sortides de l'esquerra i de la dreta s'assemblen, però no són el mateix: mira per quina pregunta hi has arribat.</text>
+</svg>
