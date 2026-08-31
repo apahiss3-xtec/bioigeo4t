@@ -3,7 +3,10 @@ import { useEffect, useRef, useState } from 'react'
 // Temporitzador d'aula: es fixa en el moment (min/seg o presets),
 // botó per començar el compte enrere i una petita musiqueta en acabar.
 // Tot client-side, sense dependències externes (Web Audio API).
-const PRESETS = [5, 10, 15, 20, 30]
+// Hi ha activitats d'ABP de 45, 50, 55 i 60 min (fira de casos, coavaluació,
+// laboratori): sense presets llargs, clicar-ne un feia perdre el temps fixat
+// per l'activitat i s'havia de tornar a pujar de minut en minut.
+const PRESETS = [5, 10, 15, 20, 30, 45, 60]
 
 const pad = (n) => String(n).padStart(2, '0')
 
@@ -42,6 +45,17 @@ export default function Timer({ minutes = 10 }) {
   const [running, setRunning] = useState(false)
   const [done, setDone] = useState(false)
   const ref = useRef(null)
+
+  // Si canvia el temps de l'activitat (p. ex. en canviar de nivell A/B, que
+  // a algunes sessions dura més o menys), el rellotge s'ha de refixar sol:
+  // sense això la capçalera deia 47 min i el cronòmetre es quedava a 40:00
+  // fins que es recarregava la pàgina.
+  useEffect(() => {
+    setRunning(false)
+    setDone(false)
+    setTotal(initial)
+    setLeft(initial)
+  }, [initial])
 
   // Tic del compte enrere.
   useEffect(() => {

@@ -151,6 +151,7 @@ export const sa5s3 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
+  exitTicketDuration: "10 min",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica amb la cadena mutació → variabilitat → selecció → canvi per què, després d'anys usant un antibiòtic, tota una població de bacteris pot acabar sent resistent. Assenyala quin pas és a l'atzar i quin depèn de l'ambient.", hint: "La mutació apareix a l'atzar; l'antibiòtic (ambient) selecciona els que ja eren resistents." },
     { id: "q2", type: "multiple", text: "Una girafa estira el coll tota la vida per arribar a les fulles altes. Quina afirmació és correcta segons la ciència actual (neodarwinisme)?", options: ["El seu esforç NO passa als fills: sobreviuen i es reprodueixen més les girafes que ja tenien gens de coll llarg, i són elles qui els transmeten", "Els seus fills naixeran amb el coll una mica més llarg, perquè l'estirament que ella ha fet durant tota la vida es transmet als descendents", "Les girafes de la població van anar allargant totes alhora el coll perquè el necessitaven per arribar a les fulles altes dels arbres", "El coll llarg depèn només de com creix cada girafa segons el que menja: no es transmet als fills ni té res a veure amb els gens"], correct: 0 },

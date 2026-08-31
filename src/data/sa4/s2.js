@@ -197,6 +197,7 @@ export const sa4s2 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
+  exitTicketDuration: "10 min",
   exitTicketQuestions: [
     {
       id: "q1",

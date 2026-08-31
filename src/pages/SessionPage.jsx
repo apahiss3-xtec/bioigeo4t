@@ -4,7 +4,8 @@ import { t } from '../t.js'
 import { getSA, getSession } from '../data/sas.js'
 import { getCompetency } from '../data/competencies.js'
 import { getCriteri, ceDeCriteri, ordenaCriteris } from '../data/criteris.js'
-import { asset } from '../utils.js'
+import { asset, tempsNivell } from '../utils.js'
+import { phaseLabel } from '../phases.js'
 import T from '../translate/T.jsx'
 import BiomeImage from '../components/BiomeImage.jsx'
 import AppFrame from '../components/AppFrame.jsx'
@@ -27,11 +28,7 @@ const SectionTitle = ({ children }) => (
   </h2>
 )
 
-const PHASE_LABEL = {
-  engage: 'session.engage',
-  explore: 'session.explore',
-  explica: 'session.explica'
-}
+// Les etiquetes de fase viuen a ../phases.js (compartides amb FitxaGuide).
 
 // Capçalera d'apartat numerada (mateixa lògica que el full imprès: cercle + nº).
 // Vincula cada bloc del web amb l'apartat 0/1/2/3 de la fitxa.
@@ -46,7 +43,7 @@ const ApartatHeader = ({ num, phase, title, time }) => (
     <div className="min-w-0">
       <p className="kicker" style={{ color: 'var(--biome-accent)' }}>
         {t('session.apartat')} {num}
-        {PHASE_LABEL[phase] && <> · {t(PHASE_LABEL[phase])}</>}
+        {phaseLabel(phase) && <> · {phaseLabel(phase)}</>}
         {time && <> · ⏱ {time}</>}
       </p>
       <h2 className="text-2xl md:text-3xl leading-tight">
@@ -272,7 +269,7 @@ export default function SessionPage() {
               num="0"
               phase={apartatMeta['0']?.phase || 'engage'}
               title={apartatMeta['0']?.title || t('session.ideesPrevies')}
-              time={apartatMeta['0']?.time}
+              time={tempsNivell(apartatMeta['0']?.time, nivell)}
             />
             <div className="card p-6">
               {session.ideesPrevies.startPoint && (
@@ -324,7 +321,7 @@ export default function SessionPage() {
                 num="1"
                 phase={apartatMeta['1'].phase || 'explore'}
                 title={apartatMeta['1'].title}
-                time={apartatMeta['1'].time || session.exploreDuration}
+                time={tempsNivell(apartatMeta['1'].time || session.exploreDuration, nivell)}
               />
             ) : (
               <SectionTitle>{t('session.explore')}</SectionTitle>
@@ -403,7 +400,7 @@ export default function SessionPage() {
                 num={num}
                 phase={apartatMeta[num]?.phase || 'explica'}
                 title={apartatMeta[num]?.title || t('session.explica')}
-                time={apartatMeta[num]?.time}
+                time={tempsNivell(apartatMeta[num]?.time, nivell)}
               />
               {graphicsBefore(num).length > 0 && (
                 <div className="mb-8 grid gap-6">
@@ -522,7 +519,22 @@ export default function SessionPage() {
 
         {/* ── SECCIÓ 5 · EXIT TIQUET ───────────────────────── */}
         <section className="pb-12">
-          <SectionTitle>{t('session.exitTicket')}</SectionTitle>
+          <SectionTitle>
+            {t('session.exitTicket')}
+            {/* On es fa i quants minuts ocupa. Els de paper són un apartat ★ del
+                full amb el seu temps; sense això la guia web declarava menys
+                minuts que el full i no es veia on s'havia d'escriure. */}
+            {session.exitTicketWhere ? (
+              // Sessions on l'exit tiquet no és ni un full a part ni un formulari:
+              // les preguntes ja viuen dins d'un apartat de la fitxa.
+              <> · {session.exitTicketWhere}</>
+            ) : session.exitTicketType === 'paper' ? (
+              <> · {t(session.exitTicketDuration ? 'session.exitOnPaperStar' : 'session.exitOnPaper')}</>
+            ) : (
+              <> · {t('session.exitOnWeb')}</>
+            )}
+            {session.exitTicketDuration && <> · ⏱ {session.exitTicketDuration}</>}
+          </SectionTitle>
           {session.exitTicketNote && (
             <p className="mb-4 italic text-[var(--muted)]">{session.exitTicketNote}</p>
           )}

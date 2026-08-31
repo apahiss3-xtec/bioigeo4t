@@ -74,6 +74,7 @@ export const sa7s4 = {
     what: "Debat de tot el grup, dividit en dues bandes assignades pel docent —no per preferència—, amb cinc torns cronometrats. Cada banda obre amb un argument de dades i un de valors; després hi ha vuit minuts de rèplica creuada en què només val respondre el que l'altra banda ha dit de veritat; i al quart torn es fa el canvi de cadira: cada banda ha de defensar la postura contrària durant cinc minuts. Es tanca dient en veu alta què t'ha fet dubtar. Dins de cada banda hi ha dos encàrrecs (portaveu i rellotge) i, alhora, tothom va omplint a la seva fitxa les dues taules d'escolta: la de les dades que se citen i la dels valors que apareixen.",
     who: { mode: "grup", label: "Dues bandes; dos encàrrecs dins de cada una" },
     time: 22,
+    apartats: "2",
     note: "Demostració a l'aula: la banda assignada no depèn del que penses. El torn del canvi de cadira és el que es mira amb més atenció, perquè no es pot preparar a casa ni delegar: cal haver escoltat de veritat el que ha dit l'altra banda durant els catorze minuts anteriors.",
     materials: "La feina de casa de la sessió anterior (dos arguments a favor i dos en contra, dient en què es basa cadascun), la fitxa de la sessió, un cronòmetre per banda. Les dues taules d'escolta (dades i valors) ja són a la fitxa: no cal cap full a part."
   },
@@ -141,7 +142,7 @@ export const sa7s4 = {
       { apartat: "1", title: "Dades i valors: prepara't", time: "10 min", phase: "explain", instruction: "Passa els quatre arguments que portes de casa per les dues preguntes de la Fig.1 i classifica'ls. Després mira quina banda t'ha tocat i tria amb quins dos obriràs.", hints: ["Què has de fer amb un argument que respon que sí a totes dues preguntes? Decideix-ho abans de classificar-lo.", "Comprova si les dades que portes tenen font; les que no en tinguin, no les diguis com a dades."] },
       { apartat: "2", title: "El debat", time: "22 min", phase: "explore", instruction: "Cinc torns amb els temps de la Fig.2. Al torn 4 es defensa la postura contrària. Els dos fulls d'anotació han de quedar plens.", hints: ["Repeteix l'argument de l'altra banda abans de respondre'l.", "Al canvi de cadira, la versió forta de la postura contrària és la que et costaria respondre a tu."] },
       { apartat: "3", title: "El curs sencer: el teu perfil epistèmic", time: "12 min", phase: "elabora", instruction: "Omple el mapa del curs de la Fig.3 i respon les preguntes de tancament sobre com ha canviat la teva manera de justificar que una cosa és certa.", hints: ["Per a cada situació, pensa primer què havies de saber i després com ho vas arribar a saber.", "La mateixa mena de prova pot anar a més d'una fila."] },
-      { apartat: "4", title: "Prova escrita final del curs", time: "50 min", phase: "evaluate", instruction: "Full a part: 5 minuts per llegir la situació i les dades, i 45 per respondre les sis preguntes. Individual i sense apunts, tret del que el docent autoritzi.", hints: [] },
+      { apartat: "4", title: "Prova escrita final del curs", time: "50 min", phase: "prova", instruction: "Full a part: 5 minuts per llegir la situació i les dades, i 45 per respondre les sis preguntes. Individual i sense apunts, tret del que el docent autoritzi.", hints: [] },
       { apartat: "5", title: "Tancament del curs", time: "5 min", phase: "evaluate", instruction: "Torna a l'apartat 0 i tanca el curs: què t'endús i quina pregunta te'n vas amb tu sense respondre.", hints: [] }
     ]
   },
@@ -152,6 +153,7 @@ export const sa7s4 = {
   // (2c a la versió A, 2e a la B). L'instrument avaluable de la sessió és la
   // prova escrita final, que va en un document independent.
   exitTicketType: "web",
+  exitTicketWhere: "ja el respons a la fitxa (apartat 5 i torn 5 del debat)",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Escriu una afirmació que al setembre t'hauries cregut sense comprovar-la i que ara no et creuries sense comprovar-la. Digues què comprovaries i com.", hint: "Pensa en un titular, un anunci o una cosa que et van dir." },
     { id: "q2", type: "open", text: "Al debat d'avui, quina cosa concreta t'ha fet dubtar? Digues si era una dada o un valor, i què has fet amb aquell dubte.", hint: "Val a dir que has canviat d'opinió, i val a dir que no; el que no val és no haver dubtat de res." }

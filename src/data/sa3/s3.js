@@ -81,6 +81,7 @@ export const sa3s3 = {
     what: "Feu de traductors del codi genètic. A partir d'un fragment del gen de l'hemoglobina, recorreu tot el camí: copieu l'ADN a ARNm (transcripció), talleu l'ARNm en codons de 3 lletres i, amb la taula de codons, obteniu la seqüència d'aminoàcids de la proteïna (traducció). Després repetiu el procés amb la versió MUTADA del gen (anèmia falciforme) i compareu: quina lletra ha canviat, quin aminoàcid queda diferent i per què això canvia la persona.",
     who: { mode: "grup", label: "Parelles o equips de 3" },
     time: 25,
+    apartats: "2",
     note: "La gràcia no és «encertar les lletres», sinó veure com un canvi minúscul a l'inici (una lletra) es propaga fins a un efecte enorme al final (una malaltia). Compareu sempre la versió normal amb la mutada, l'una al costat de l'altra."
   },
   exploreInstructions: [
@@ -197,6 +198,7 @@ export const sa3s3 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
+  exitTicketDuration: "8 min",
   exitTicketQuestions: [
     {
       id: "q1",

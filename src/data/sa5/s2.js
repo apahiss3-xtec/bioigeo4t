@@ -149,6 +149,7 @@ export const sa5s2 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
+  exitTicketDuration: "10 min",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica amb les teves paraules la diferència entre HOMOLOGIA i ANALOGIA, i digues quina de les dues demostra que dos éssers vius són parents. Posa un exemple de cada.", hint: "Homologia = mateixa estructura interna; analogia = mateixa funció, estructura diferent." },
     { id: "q2", type: "multiple", text: "L'ala d'un ratpenat i l'aleta d'una balena tenen els mateixos ossos (húmer, radi, cúbit) tot i que una vola i l'altra neda. Què en podem concloure?", options: ["Són òrgans homòlegs: comparteixen un avantpassat comú (són parents)", "Són òrgans anàlegs: s'assemblen perquè totes dues línies s'han adaptat a desplaçar-se, no per parentiu", "Són òrgans vestigials: conserven ossos d'un avantpassat que ja no serveixen per a la funció actual", "No es pot dir res: uns mateixos ossos poden aparèixer per casualitat en dos animals qualssevol"], correct: 0 },

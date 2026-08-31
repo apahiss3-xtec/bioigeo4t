@@ -87,7 +87,8 @@ export const sa2s4 = {
   exploreActivity: {
     what: "En parella, rebeu els informes de pacients de la vostra fitxa (tres al nivell B: ferida que cicatritza, biòpsia de teixit muscular amb índex mitòtic alt i espermatozoide amb 46 cromosomes; al nivell A n'hi ha un quart). Per a cada un, decidiu quin dels tres processos l'explica (mitosi normal / mitosi descontrolada / error de meiosi) i redacteu la justificació amb el vocabulari i els números apresos a S1-S3. Al final, prepareu-vos per defensar el vostre informe complet davant d'una altra parella.",
     who: { mode: "grup", label: "Parelles de diagnòstic" },
-    time: 40,
+    time: { A: 40, B: 35 },
+    apartats: "1",
     note: "No n'hi ha prou dient la paraula correcta: cal explicar PER QUÈ (el mecanisme) i per què no és cap dels altres dos. És la mateixa lògica de detectiu de S3, ara amb tres sospitosos possibles en comptes d'un."
   },
   exploreInstructions: [
@@ -98,7 +99,7 @@ export const sa2s4 = {
     "Poseu-vos d'acord en parella abans d'escriure la versió final",
     "Prepareu la defensa oral: per a cada cas, la frase-clau que ho demostra"
   ],
-  exploreDuration: "40 min",
+  exploreDuration: "35 min (A: 40)",
   exploreMaterials: ["Els tres informes de pacient (a la fitxa)", "Apunts de S1, S2 i S3 (repàs, no contingut nou)"],
   exploreNote: "Activitat de síntesi: no s'explica res de nou, es reconeix i s'aplica el que ja es va treballar a S1 (cicle/mitosi), S2 (meiosi) i S3 (índex mitòtic). El repte és triar l'eina correcta a cada cas, no aprendre'n una altra.",
 
@@ -168,7 +169,7 @@ export const sa2s4 = {
       {
         apartat: "1",
         title: "Diagnostica els casos de la teva fitxa",
-        time: "35 min",
+        time: "35 min (A: 40)",
         phase: "explore",
         instruction: "Llegeix els informes de pacient de la teva fitxa (tres al nivell B, quatre al nivell A) i decideix, cas per cas, quin procés l'explica (mitosi normal / mitosi descontrolada / error de meiosi). Justifica cada resposta amb el vocabulari i els números de S1-S3.",
         hints: [

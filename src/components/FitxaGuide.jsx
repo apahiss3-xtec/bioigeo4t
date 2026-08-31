@@ -1,16 +1,16 @@
 import T from '../translate/T.jsx'
 import Hint from './Hint.jsx'
+import { phaseLabel } from '../phases.js'
+import { tempsNivell } from '../utils.js'
+import { useNivell } from '../nivell/NivellContext.jsx'
 
 // Guia visual dels apartats reals del full imprès: per a cada apartat,
 // la instrucció "omple l'apartat X" i, si cal, pistes progressives.
-const PHASE_LABEL = {
-  engage: 'Per començar',
-  explore: 'Explora',
-  explica: 'La teoria',
-  elabora: 'Materials'
-}
+// Les etiquetes de fase surten de ../phases.js (compartides amb SessionPage:
+// abans n'hi havia una còpia aquí i el mateix apartat rebia dos noms).
 
 export default function FitxaGuide({ guide }) {
+  const { nivell } = useNivell()
   if (!guide?.steps?.length) return null
 
   return (
@@ -33,12 +33,12 @@ export default function FitxaGuide({ guide }) {
                 <T>{step.title}</T>
                 {step.time && (
                   <span className="ms-2 text-sm font-normal text-[var(--muted)]">
-                    ⏱ {step.time}
+                    ⏱ {tempsNivell(step.time, nivell)}
                   </span>
                 )}
-                {PHASE_LABEL[step.phase] && (
+                {phaseLabel(step.phase) && (
                   <span className="ms-2 rounded-full border border-[var(--rule-strong)] px-2 py-0.5 text-xs uppercase tracking-wide text-[var(--muted)]">
-                    {PHASE_LABEL[step.phase]}
+                    {phaseLabel(step.phase)}
                   </span>
                 )}
               </p>

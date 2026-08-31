@@ -198,6 +198,7 @@ export const sa4s3 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
+  exitTicketDuration: "10 min",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -215,7 +216,7 @@ export const sa4s3 = {
       id: "q2",
       type: "open",
       text: "Una persona de grup AB té els antígens A i B alhora als glòbuls. Per què això és codominància i NO dominància incompleta? Quina diferència hi ha amb la flor rosa?",
-      hint: "En codominància es veuen els dos trets sencers (A i B de veritat); en dominància incompleta surt una mescla intermèdia (rosa) que no és cap dels dos."
+      hint: "Mira't el fenotip i pregunta't: el que es veu és una MESCLA nova o són les dues coses alhora, cadascuna sencera? Compara-ho amb el color de la flor."
     },
     {
       id: "q3",

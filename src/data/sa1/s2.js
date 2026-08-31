@@ -73,7 +73,7 @@ export const sa1s2 = {
   exploreActivity: {
     what: "Posicionem-nos davant de 15 afirmacions polèmiques reals (des de «les vacunes funcionen» fins a «hi ha números que donen sort»). Individualment, poseu a cadascuna una nota de certesa de l'1 al 10 i marqueu en quin/s tipus de garantia us baseu. Al nivell A, abans de començar s'encerclen les 6 afirmacions on es creu que la pròpia nota s'allunyarà més de la de la majoria, i només en aquestes s'hi posa una segona nota: la que hi posaria la majoria de la gent. Després compareu les notes (columna JO) en grup: no cal posar-vos d'acord, cal ENTENDRE per què discrepeu; el nivell A, a més, comprova amb els seus números si la predicció s'ha complert.",
     who: { mode: "grup", label: "Individual primer, després contrast en grup de 4" },
-    time: 35,
+    time: { A: 30, B: 35 },
     note: "Aquí no hi ha una única resposta correcta a la nota: el que avaluem és si saps JUSTIFICAR la teva certesa amb la garantia adequada. La discrepància dins el grup és el material de la teoria d'avui."
   },
   exploreInstructions: [
@@ -137,7 +137,7 @@ export const sa1s2 = {
       {
         apartat: "0",
         title: "Idees prèvies i posada en comú",
-        time: "10 min (8 al nivell A)",
+        time: "10 min (A: 8)",
         phase: "engage",
         instruction: "Escriu quin cas has caçat i què promet. Recupera amb les teves paraules la diferència entre ciència i pseudociència de la sessió passada.",
         hints: []
@@ -145,7 +145,7 @@ export const sa1s2 = {
       {
         apartat: "1",
         title: "Posicionem-nos: 15 afirmacions",
-        time: "35 min (30 al nivell A)",
+        time: "35 min (A: 30)",
         phase: "explore",
         instruction: "Posa una nota de certesa (1–10) a cada afirmació i marca la garantia en què et bases. Al nivell A, abans de res s'escriu una predicció sobre on discreparà la classe, i cada afirmació porta una segona nota: la que creus que hi posaria la majoria de la gent. Després compareu en grup on més discrepeu de debò.",
         hints: [
@@ -156,7 +156,7 @@ export const sa1s2 = {
       {
         apartat: "2",
         title: "Construïm el detector",
-        time: "25 min (40 al nivell A)",
+        time: "25 min (A: 40)",
         phase: "explica",
         instruction: "A partir dels trucs que heu apuntat, munteu entre tots el detector de la classe i poseu-hi un exemple de cada senyal, agafat dels casos caçats. Al nivell B els senyals venen amb la definició feta; al nivell A es dedueixen abans de la posada en comú, a partir de set frases reals d'anuncis que hi ha a la fitxa, i després es comparen amb els de la classe.",
         hints: [
@@ -167,7 +167,7 @@ export const sa1s2 = {
       {
         apartat: "3",
         title: "Apliquem el detector i preparem la defensa",
-        time: "25 min (28 al nivell A)",
+        time: "25 min (A: 28)",
         phase: "elabora",
         instruction: "Passa el teu cas caçat pels senyals del detector i prepara la defensa oral d'1 minut. Al nivell A, abans de tancar-ho, el detector ha de passar dos controls: una afirmació que ja saps que és pseudociència i una que ja saps que és ciència comprovada.",
         hints: [

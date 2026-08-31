@@ -149,6 +149,7 @@ export const sa5s1 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
+  exitTicketDuration: "10 min",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica què és una ADAPTACIÓ amb un exemple del pati, unint una estructura que has vist, la seva funció i l'ambient on viu l'organisme.", hint: "Estructura (què veig) → funció (per a què serveix) → ambient (on viu)." },
     { id: "q2", type: "multiple", text: "Les gallines del pati tenen les ales petites i amb prou feines volen, tot i que el seu avantpassat salvatge sí que volava. Quina és la millor explicació?", options: ["Els humans han criat durant segles les gallines més tranquil·les i productives, no les millors voladores: és selecció artificial", "De tant estar-se al galliner sense volar, les ales se'ls van anar atrofiant durant la vida i aquesta pèrdua va passar als pollets", "Totes les aus perden el vol amb el pas del temps de manera automàtica, visquin on visquin i les criï qui les criï", "Tenir les ales petites és una casualitat de cada gallina i no hi tenen res a veure ni els humans ni cap procés evolutiu"], correct: 0 },

@@ -181,6 +181,7 @@ export const sa4s4 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketType: "paper",
+  exitTicketDuration: "10 min",
   exitTicketQuestions: [
     {
       id: "q1",
@@ -198,13 +199,13 @@ export const sa4s4 = {
       id: "q2",
       type: "open",
       text: "Una dona portadora (X^H X^h) té fills amb un home sa (X^H Y). Quina proporció de FILLS i de FILLES pot estar afectada? Per què és tan diferent?",
-      hint: "Filles: X^H X^H o X^H X^h → cap afectada (meitat portadores). Fills: X^H Y o X^h Y → meitat afectats. Diferent perquè la filla té una segona X que pot tapar l'al·lel malalt; el fill no."
+      hint: "Fes el quadre de Punnett separant filles i fills, i després compta quantes X porta cadascú. La diferència surt d'aquí: qui té una segona X i qui no."
     },
     {
       id: "q3",
       type: "open",
       text: "Un assessor de consell genètic informa una parella que el seu fill té un 50% de probabilitat de patir hemofília. La parella li demana: «I què hem de fer?». Com hauria de respondre l'assessor i per què?",
-      hint: "L'assessor dona informació (el risc i què significa), però NO decideix per la família: què fer amb aquesta informació és una decisió personal de valors, no una dada científica."
+      hint: "Torna a la distinció de la sessió: quina part de la pregunta es respon amb dades i quina part es respon amb valors. Qui li toca decidir cadascuna?"
     }
   ],
 

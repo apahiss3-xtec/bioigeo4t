@@ -170,7 +170,7 @@ export const sa4s5 = {
         apartat: "3",
         title: "Prova individual de problemes",
         time: "55 min",
-        phase: "evaluate",
+        phase: "prova",
         instruction: "Resol els problemes de la fitxa. Dedueix primer el model d'herència, escriu els genotips i comprova amb el quadre de Punnett, separant fills i filles quan el caràcter vagi lligat al sexe.",
         hints: [
           "Si el caràcter salta generacions → recessiu; si afecta molt més els homes → sospita de lligat al X.",
@@ -199,13 +199,13 @@ export const sa4s5 = {
       id: "q2",
       type: "open",
       text: "Per què la conclusió d'un pòster («aquest caràcter és lligat al X recessiu») és més sòlida si es defensa davant de preguntes crítiques que si només s'escriu al pòster?",
-      hint: "En ciència una idea val si resisteix la crítica: respondre objeccions (poques dades, models alternatius) demostra que la conclusió està realment justificada i no només afirmada."
+      hint: "Pensa què li pot passar a una conclusió escrita que ningú no ha discutit, i què hi guanya quan algú li busca el punt feble i qui la defensa hi respon."
     },
     {
       id: "q3",
       type: "open",
       text: "Quan resols un problema de genètica, per què convé deduir primer el tipus d'herència a partir del pedigrí abans d'escriure els genotips?",
-      hint: "El model d'herència (dominant/recessiu, autosòmic/lligat al sexe) determina quins genotips són possibles; si l'endevines primer, el quadre de Punnett confirma o refuta, en comptes d'anar a cegues."
+      hint: "Prova de fer-ho a l'inrevés amb un exemple teu: escriu els genotips sense saber el tipus d'herència i mira quantes opcions diferents et surten."
     }
   ],
 

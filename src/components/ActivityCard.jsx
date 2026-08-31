@@ -2,13 +2,19 @@ import T from '../translate/T.jsx'
 import Timer from './Timer.jsx'
 import WhoBadge from './WhoBadge.jsx'
 import { t } from '../t.js'
+import { useNivell, pickLevel } from '../nivell/NivellContext.jsx'
 
 // Instruccions senzilles d'una activitat d'aula: QUÈ farem, QUI ho fa
 // (individual / parelles / grups / tota la classe) i el TEMPS, amb un
 // temporitzador fixable per fer servir en directe a classe.
 export default function ActivityCard({ activity }) {
+  const { nivell } = useNivell()
   if (!activity) return null
-  const { what, who, time, note } = activity
+  const { what, who, note, apartats } = activity
+  // `time` pot ser un número (igual per als dos nivells) o { A, B }: hi ha
+  // activitats que duren diferent segons el nivell i el cronòmetre de classe
+  // ha de dir el temps de qui el mira.
+  const time = typeof activity.time === 'object' ? pickLevel(activity.time, nivell) : activity.time
 
   return (
     <div className="card p-6">
@@ -42,6 +48,16 @@ export default function ActivityCard({ activity }) {
               ⏱ {t('activity.time')}
             </p>
             <Timer minutes={time} />
+            {/* Moltes activitats d'ABP no ocupen l'apartat 1 del full, i llavors
+                el cronòmetre no quadra amb els minuts de la capçalera de dalt.
+                Aquí es diu, en una frase, a quin apartat correspon. */}
+            {apartats && (
+              <p className="mt-2 text-sm text-[var(--muted)]">
+                {t(/\bi\b|,/.test(apartats) ? 'activity.apartatsPlural' : 'activity.apartatsSingular', {
+                  apartats
+                })}
+              </p>
+            )}
           </div>
         )}
       </div>

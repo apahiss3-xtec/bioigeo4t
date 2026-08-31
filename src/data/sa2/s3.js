@@ -80,7 +80,7 @@ export const sa2s3 = {
   exploreActivity: {
     what: "Sou l'equip d'un laboratori d'oncologia. Cada equip rep una fitxa de pacient diferent (un ratolí amb un fàrmac, una dosi i un temps propis) amb dues micrografies reals: la biòpsia ABANS del tractament i la de DESPRÉS. Compteu a cada biòpsia el total de cèl·lules i quantes estan en divisió, calculeu els dos índexs mitòtics i decidiu si el vostre fàrmac funciona. Després es posen en comú tots els casos de la classe.",
     who: { mode: "grup", label: "Parelles de laboratori" },
-    time: 40,
+    time: { A: 44, B: 40 },
     note: "La gràcia és arribar VOSALTRES al veredicte a partir de les dades, no que us el diguin. La demostració a l'aula és defensar la vostra conclusió (funciona / no funciona / és tòxic) davant d'una altra parella, ensenyant els números que l'aguanten."
   },
   exploreInstructions: [
@@ -159,7 +159,7 @@ export const sa2s3 = {
       {
         apartat: "0",
         title: "Idees prèvies + posada en comú dels deures",
-        time: "10 min",
+        time: "10 min (A: 8)",
         phase: "engage",
         instruction: "Posa en comú l'esquema mitosi/meiosi dels deures i respon: què creus que busca un patòleg al microscopi per detectar un càncer. No es corregeix.",
         hints: []
@@ -167,7 +167,7 @@ export const sa2s3 = {
       {
         apartat: "1",
         title: "Compta i calcula els dos índexs mitòtics",
-        time: "40 min",
+        time: "40 min (A: 44)",
         phase: "explore",
         instruction: "A la teva fitxa de pacient, compta a cada biòpsia (inicial i final) el total de cèl·lules i les que estan en divisió, i calcula els dos índexs mitòtics. La Fig.2 mostra un exemple del tipus d'imatge.",
         hints: [
@@ -178,7 +178,7 @@ export const sa2s3 = {
       {
         apartat: "2",
         title: "Interpreta els números",
-        time: "20 min",
+        time: "20 min (A: 15)",
         phase: "explica",
         instruction: "Amb la Fig.1, compara cada índex amb el que seria normal EN AQUELL teixit i decideix si fa sospitar. Si et falta alguna dada per decidir-ho, digues quina.",
         hints: [
@@ -189,7 +189,7 @@ export const sa2s3 = {
       {
         apartat: "3",
         title: "Veredicte: funciona el fàrmac?",
-        time: "25 min",
+        time: "25 min (A: 27)",
         phase: "elabora",
         instruction: "Compara l'índex inicial i el final i escriu el veredicte de l'equip amb les dades que l'aguanten. Prepara com el defensaràs.",
         hints: [
@@ -201,7 +201,7 @@ export const sa2s3 = {
       {
         apartat: "4",
         title: "Per què el càncer no para + torna al principi",
-        time: "15 min",
+        time: "15 min (A: 13)",
         phase: "elabora",
         instruction: "Explica per què el càncer és una divisió sense control i per què la quimioteràpia té efectes secundaris. Després torna a la pregunta d'entrada i respon-la.",
         hints: [

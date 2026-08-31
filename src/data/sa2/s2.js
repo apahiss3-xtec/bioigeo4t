@@ -80,7 +80,7 @@ export const sa2s2 = {
   exploreActivity: {
     what: "Modeleu les dues divisions amb la MATEIXA cèl·lula de partida (les parelles que indiqui la vostra fitxa: 2 al nivell B, 3 al nivell A, un color per parella), amb plastilina, fils de colors o dibuixant. Primer feu la mitosi; després, des de la mateixa cèl·lula, la meiosi. Compareu els dos resultats: quantes cèl·lules surten i quant material té cadascuna. Al nivell A la meiosi es fa DUES vegades, canviant l'orientació d'alguna parella.",
     who: { mode: "grup", label: "Parelles de laboratori" },
-    time: 40,
+    time: { A: 47, B: 40 },
     note: "La gràcia és FER-HO vosaltres i adonar-vos, amb el model a la mà, que partint del mateix s'arriba a resultats diferents. La demostració a l'aula és ensenyar els dos models a una altra parella i defensar per què la meiosi acaba amb la meitat."
   },
   exploreInstructions: [
@@ -151,7 +151,7 @@ export const sa2s2 = {
       {
         apartat: "0",
         title: "Idees prèvies + posada en comú dels deures",
-        time: "10 min",
+        time: "10 min (A: 8)",
         phase: "engage",
         instruction: "Posa en comú els dos teixits dels deures i respon: d'on creus que surt la barreja que fa que un fill no sigui idèntic als pares. No es corregeix.",
         hints: []
@@ -159,7 +159,7 @@ export const sa2s2 = {
       {
         apartat: "1",
         title: "Modela: mitosi i meiosi amb la mateixa cèl·lula",
-        time: "40 min",
+        time: "40 min (A: 47)",
         phase: "explore",
         instruction: "Amb les parelles de cromosomes que indiqui la teva fitxa (un color per parella), modela primer la mitosi i després la meiosi. Compta quantes cèl·lules surten i quants cromosomes té cadascuna.",
         hints: [
@@ -174,14 +174,14 @@ export const sa2s2 = {
         phase: "explica",
         instruction: "Amb la Fig.1, completa la comparació: nombre de cèl·lules i quantitat de material genètic de cada divisió. Marca quina fa cèl·lules idèntiques.",
         hints: [
-          "Mitosi = 2 cèl·lules idèntiques, material complet. Meiosi = 4 cèl·lules, la meitat.",
-          "Mnemotècnic: mitosi → Idèntiques; meiosi → meitat."
+          "Compta al teu model: quantes cèl·lules t'han quedat per cada camí i quants cromosomes hi ha dins de cadascuna.",
+          "Per saber si són idèntiques, compara-les entre elles, no amb la cèl·lula de partida."
         ]
       },
       {
         apartat: "3",
         title: "Per què la meitat + per què no som clons",
-        time: "20 min",
+        time: "20 min (A: 15)",
         phase: "explica",
         instruction: "Amb la Fig.2, explica per què els gàmetes tenen la meitat dels cromosomes i digues quants n'ha de tenir un òvul humà. Després explica per què dos germans no són idèntics.",
         hints: [
@@ -192,12 +192,12 @@ export const sa2s2 = {
       {
         apartat: "4",
         title: "Quan fa el cos cada divisió + torna al hook",
-        time: "20 min",
+        time: "20 min (A: 16)",
         phase: "explica",
         instruction: "Digues on i per a què fa servir el cos cada divisió. Després torna a la pregunta del principi (per què no tenim 92 cromosomes) i respon-la.",
         hints: [
-          "Mitosi = tot el cos, per créixer i reparar. Meiosi = ovaris i testicles, per fer gàmetes.",
-          "Al hook: cada progenitor aporta la meitat (gràcies a la meiosi) perquè la suma torni a ser 46."
+          "Pensa en quins llocs del cos hi ha cèl·lules noves cada dia i en quins llocs se'n fabriquen només d'un tipus molt concret.",
+          "Al hook: compta quants cromosomes hi posa cada progenitor i mira què hauria de passar abans perquè la suma no es dupliqui a cada generació."
         ]
       }
     ]

@@ -81,7 +81,8 @@ export const sa1s4 = {
     what: "Repte final individual: cada alumne analitza el SEU cas real amb tot el kit de la SA (escala de certeses + garanties + senyals del detector) i n'obté un veredicte classificat (ciència / pseudociència / encara no comprovat). Després, FIRA DE CASOS (45 min): cadascú copia el seu cas i què promet a una TARGETA del full de retallables —sense el veredicte, que es queda a la seva fitxa— i la deixa al seu lloc, de manera que qui revisa jutja a cegues. El professor assigna qui revisa què (així cap cas no es queda sense revisor). Tothom en revisa una: al nivell B amb una graella guiada, al nivell A a fons i afegint de quina mena és el desacord. Després cadascú busca l'autor del cas que ha revisat, comparen els dos veredictes i li deixa una nota de revisió. Tanquem amb l'autoavaluació de la SA.",
     who: { mode: "grup", label: "Anàlisi individual + fira de casos (tota la classe circulant)" },
     time: 45,
-    note: "Aquesta és la DEMOSTRACIÓ DE COMPRENSIÓ presencial i final de la SA: s'avalua com apliques el detector a un cas nou triat per tu i com revises el d'un altre, no si el cas ens agrada. La feina es fa i es defensa a l'aula."
+    apartats: "3",
+    note: "Ordre de la sessió: apartat 0 (el teu cas, 5 min) → apartat 1 (el passes pel detector, 25 min) → apartat 2 (a quin calaix va, 15 min), tot això sol/a; després la fira de casos de l'apartat 3 (45 min) amb tota la classe alhora, que és el que compta aquest cronòmetre; i es tanca amb l'apartat 4 (autoavaluació de la SA, 15 min). Aquesta és la DEMOSTRACIÓ DE COMPRENSIÓ presencial i final de la SA: s'avalua com apliques el detector a un cas nou triat per tu i com revises el d'un altre, no si el cas ens agrada. La feina es fa i es defensa a l'aula."
   },
   exploreInstructions: [
     "Analitza el teu cas real amb la graella: promesa, nota de certesa, garantia, senyals del detector",
@@ -91,7 +92,7 @@ export const sa1s4 = {
     "Busca l'autor/a del cas que has revisat, compareu els veredictes i deixa-li la nota de revisió retallable (un punt fort + una millora concreta)",
     "Torna al teu lloc i completa l'autoavaluació de la SA (què domines, què has de repassar)"
   ],
-  exploreDuration: "45 min",
+  exploreDuration: "25 min",
   appSrc: null,
   exploreNote: "Sense pantalles obligatòries: l'important és aplicar el detector a un cas nou. Si el cas és un vídeo o un anunci, el pots ensenyar al mòbil al teu company durant la fira.",
 
@@ -190,7 +191,7 @@ export const sa1s4 = {
         apartat: "4",
         title: "Autoavaluació de la SA",
         time: "15 min",
-        phase: "elabora",
+        phase: "evaluate",
         instruction: "Per cada objectiu de la SA, marca si el domines, a mitges o l'has de repassar. Al nivell A hi ha una columna més: la prova concreta que ho demostra. Acaba amb la reflexió final i on faràs servir el detector.",
         hints: [
           "Sigues sincer/a: marcar «a mitges» amb un pla de millora val més que marcar «ho domino» sense ser-ho.",

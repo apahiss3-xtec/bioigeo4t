@@ -76,6 +76,7 @@ export const sa6s4 = {
     what: "En equip sou el gabinet d'anàlisi de riscos de les Terres de l'Ebre, i teniu dues feines. PRIMERA, el model: munteu dues safates inclinades amb el mateix sòl i el mateix pendent; una la deixeu nua i l'altra la cobriu amb vegetació (gespa, molsa, palla o retalls de planta amb arrel). Aboqueu la mateixa quantitat d'aigua des de la mateixa alçada a totes dues i recolliu el que surt per baix. Abans d'abocar cap gota, escriviu la predicció i decidiu què mesurareu. SEGONA, el cas real: cada equip rep un indret real del territori —un vessant cremat dels Ports, el delta de l'Ebre, o la costa d'Alcanar-Vinaròs amb la falla d'Amposta i el magatzem Castor— amb les seves dades de litologia, relleu, vegetació i usos humans. Heu de dir quins riscos hi ha, de quina dada els deduïu, què hi ha afegit l'acció humana i quines mesures proposeu.",
     who: { mode: "grup", label: "Equips de 3-4 (gabinet de riscos)" },
     time: 50,
+    apartats: "2 i 3",
     note: "Al model no busqueu que «surti bé»: busqueu poder dir amb honestedat què heu canviat, què heu mantingut igual i què no reprodueix el model. Al cas real, cap risc no val si no el podeu lligar a una dada concreta de la fitxa de l'indret."
   },
   exploreInstructions: [

@@ -76,6 +76,7 @@ export const sa6s5 = {
     what: "Avui l'aula és una sessió de revisió per parells. Cada equip projecta el seu vídeo divulgatiu «Gondwana Tales» (3-4 minuts). Mentre el mireu, NO feu de públic: feu d'avaluadors. Cada equip en té assignats dos per avaluar amb la rúbrica Gondwana adaptada, que té cinc criteris: la reconstrucció per períodes justificada amb proves i amb els límits de placa ben situats, l'ambientació de cada període, el tractament honest de les proves que no quadren, la predicció de com continuarà el moviment, i l'ús del lèxic geològic. Per a cada criteri poseu un nivell (NA/AS/AN/AE) i, obligatòriament, l'evidència concreta del vídeo que us ha fet decidir-lo. Al final de cada vídeo, l'equip autor respon dues preguntes: una del professor i una d'un equip avaluador.",
     who: { mode: "grup", label: "Equips de 3-4 (autors i revisors alhora)" },
     time: 50,
+    apartats: "2",
     note: "Cada equip només omple la graella dels DOS vídeos que té assignats, no de tots. La regla d'or de la revisió: cap nivell sense evidència i cap comentari sense proposta de millora. Si escriviu «molt bé» o «poc justificat» sense dir on, la coavaluació no compta. I recordeu: qui rep la crítica no la discuteix durant l'estrena, l'anota."
   },
   exploreInstructions: [

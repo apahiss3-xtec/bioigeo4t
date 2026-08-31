@@ -5,6 +5,31 @@ export const asset = (path) => {
   return import.meta.env.BASE_URL + String(path).replace(/^\//, '')
 }
 
+// Minuts d'un apartat SEGONS EL NIVELL triat.
+//
+// Els fitxers de sessió escriuen el temps del nivell B i, si el nivell A en
+// fa uns altres, els posen entre parèntesis: "25 min (A: 30)". La guia del
+// web és única per als dos nivells, i fins al 31/08/2026 ensenyava la
+// cadena sencera: qui és de B llegia un número seu i un altre etiquetat amb
+// una lletra que no és la seva, i qui és d'A havia de saber que el número
+// de fora no li tocava. Pitjor encara, el nivell A tant pot durar MÉS com
+// MENYS que el B segons l'apartat, o sigui que no hi havia cap regla que
+// es pogués deduir. Ara el selector A/B també canvia els minuts i només
+// se'n mostra un.
+//
+// Formats que NO es toquen (no porten "(A: …)"): "25 min + 8 de defensa
+// oral", "20 min a classe (s'acaba a casa)".
+export const tempsNivell = (time, nivell = 'B') => {
+  if (!time) return time
+  const m = String(time).match(/^(.*?)\s*\(A:\s*(\d+)\s*\)\s*$/)
+  if (!m) return time
+  if (nivell !== 'A') return m[1]
+  // Conserva el que hi hagi després dels minuts del nivell B
+  // ("35 min a classe (A: 30)" → "30 min a classe").
+  const sufix = m[1].replace(/^\s*\d+\s*min\s*/, '')
+  return `${m[2]} min${sufix ? ' ' + sufix : ''}`
+}
+
 // Permutació DETERMINISTA de n elements a partir d'una llavor de text.
 //
 // Serveix per barrejar les opcions de les preguntes de resposta múltiple

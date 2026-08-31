@@ -41,10 +41,18 @@
   "activity": {
     "what": "Què farem",
     "who": "Qui",
-    "time": "Temps"
+    "time": "Temps",
+    "apartatsSingular": "Aquest cronòmetre és per a l'apartat {{apartats}} del full.",
+    "apartatsPlural": "Aquest cronòmetre és per als apartats {{apartats}} del full."
   },
   "session": {
     "engage": "Per començar",
+    "phaseElabora": "Aplica-ho",
+    "phaseEvaluate": "Tanca i comprova",
+    "phaseProva": "Prova escrita",
+    "exitOnPaper": "en paper, a classe",
+    "exitOnPaperStar": "apartat ★ del full, en paper",
+    "exitOnWeb": "en aquesta pàgina",
     "comencem": "Comencem",
     "pistesTitle": "Pistes per a la fitxa",
     "pistesIntro": "Ja tens la teoria. Ara acaba d'omplir cada apartat del full. Si et quedes encallat/da, obre una pista.",
