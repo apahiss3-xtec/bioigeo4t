@@ -102,6 +102,7 @@ export const sa3s3 = {
       apartat: "1",
       heading: "El camí de la informació: ==transcripció== i ==traducció==",
       text: "L'ADN es queda al ==nucli|p==, però les proteïnes es fabriquen fora, al ==citoplasma|p==. Per això la cèl·lula fa una còpia d'un gen en forma d'==ARN missatger (ARNm)==: aquest pas es diu ==transcripció== i el fa una màquina, l'==ARN polimerasa==. L'ARNm surt del nucli i, al ==ribosoma|p==, es llegeix per fabricar la proteïna: aquest segon pas és la ==traducció==. El camí complet és ==gen → ARNm → proteïna → característica==.",
+      video: "/animacions/sa3-s3-transcripcio-traduccio.mp4",
       type: "concept"
     },
     {
