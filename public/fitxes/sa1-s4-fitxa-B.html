@@ -8,7 +8,7 @@
 <style>
 :root{
   --teal:#2A6F7F; --teal-ink:#1c4a55; --teal-light:#9ccad2; --teal-tint:#eaf4f6;
-  --ink:#14201f; --ink-2:#334; --muted:#6b7a7e; --surface:#fdfefe;
+  --ink:#14201f; --ink-2:#334; --muted:#6b7a7e; --surface:#fdfefe; --paper:#ffffff;
   --rule:#dce9eb; --rule-dark:#b6ccd0;
   --orange:#c96f3e; --orange-tint:#f6ece8;
   --aqua:#38a3a5; --aqua-tint:#e6f5f5;
@@ -27,9 +27,36 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 .tb-spacer{background:rgba(56,163,165,.2);border:1px solid rgba(56,163,165,.4);color:#bfe6e8;font-size:12px}
 .tb-undo{background:rgba(201,111,62,.2);border:1px solid rgba(201,111,62,.4);color:#f0bfa5;font-size:12px;opacity:.5;pointer-events:none}
 .tb-undo.active{opacity:1;pointer-events:auto}
-.page-wrap{width:794px;margin:0 auto;background:var(--surface);box-shadow:0 2px 30px rgba(0,0,0,.22);position:relative}
-.page-break-line{position:absolute;left:0;right:0;border-top:2px dashed #7fa8b0;pointer-events:none;z-index:10}
-.page-break-label{position:absolute;right:10px;top:-11px;background:#7fa8b0;color:#fff;font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:1px 8px;border-radius:9999px}
+.page-wrap { width:794px; margin:0 auto; position:relative; }
+#doc { display:none; }
+
+/* ── PAGINADOR A4 REAL ─────────────────────────────── */
+#sheets { display:flex; flex-direction:column; align-items:center; gap:26px; }
+.sheet { width:794px; min-height:1123px; background:var(--paper); position:relative; box-shadow:0 4px 24px rgba(60,40,110,.18); overflow:visible; }
+.sheet-body { padding:36px 46px 18px; position:relative; overflow:visible; }
+.sheet.has-head .sheet-body { padding-top:54px; }
+.sheet-head { position:absolute; left:0; right:0; top:0; height:36px; display:none; justify-content:space-between; align-items:center; padding:0 46px; border-bottom:1.5px solid var(--teal-light); background:var(--paper); }
+.sheet.has-head .sheet-head { display:flex; }
+.sheet-head-l { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--teal-ink); }
+.sheet-head-r { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); }
+.sheet-foot { position:absolute; left:0; right:0; bottom:0; height:30px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 46px; font-family:'Inter',sans-serif; font-size:7.5px; font-weight:600; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; border-top:.5px solid var(--rule); background:var(--paper); }
+.sheet-foot .fc { text-align:center; letter-spacing:.13em; color:var(--teal-ink); }
+.sheet-foot .fc a { color:inherit; text-decoration:none; }
+.sheet-foot .fl { letter-spacing:.05em; }
+/* taula partida entre fulls: la bessona reprèn la franja on la deixava */
+table.tbl-cont tr:nth-child(even) td { background:transparent; }
+table.tbl-cont tr:nth-child(odd) td { background:var(--teal-tint); }
+/* les taules son espai de resposta: cal veure on s'escriu */
+.data-table td { border-bottom:1px solid var(--rule-dark); }
+.data-table td + td { border-left:1px solid var(--rule-dark); }
+.sheet-foot .fr { text-align:right; }
+.sheet-body > .header-band { margin:-36px -46px 0; }
+.sheet-body > .nivell-strip { margin:0 -46px; }
+.sheet-body > .info-strip { margin:0 -46px; padding-left:46px; padding-right:46px; }
+.sheet-body > .oa-box { margin:12px 0 0; }
+
+
+
 [contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
 [contenteditable]:hover{background:rgba(56,163,165,.08);box-shadow:0 0 0 2px rgba(56,163,165,.3)}
 [contenteditable]:focus{background:rgba(56,163,165,.12);box-shadow:0 0 0 2.5px var(--teal)}
@@ -64,7 +91,7 @@ span[contenteditable]{display:inline-block}
 .nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
 .temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
-.oa-box{background:linear-gradient(to right,#eef7f8,var(--surface));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-box{background:linear-gradient(to right,#eef7f8,var(--paper));border-left:4px solid var(--teal);padding:10px 16px}
 .oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
 .oa-list{list-style:none;padding:0;margin:0}
 .oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
@@ -118,25 +145,34 @@ span[contenteditable]{display:inline-block}
 .tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(56,163,165,.05) 6px,rgba(56,163,165,.05) 12px);display:flex;align-items:center;justify-content:center}
 .spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
-.page-footer-bar{position:absolute;left:0;right:0;height:20px;display:none;justify-content:space-between;align-items:center;padding:0 24px;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:500;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;border-top:.5px solid var(--rule);background:var(--surface);pointer-events:none;z-index:8}
+
 .footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
 .footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
 .footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
 .fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
-@media print{
-  @page{size:A4;margin:10mm 12mm}
-  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  body{background:#fff;padding:0}
-  #toolbar,.page-break-line,.del-btn{display:none!important}
-  .page-footer-bar{display:flex!important}
-  .footer{display:none!important}
-  .page-wrap{box-shadow:none;width:100%}
-  [contenteditable]:hover,[contenteditable]:focus{background:transparent!important;box-shadow:none!important}
-  .wline{background:transparent;padding:0}
-  .fill-cell{background:transparent;outline:none}
-  .spacer-block{background:transparent!important;border:none!important}
-  .spacer-label{display:none!important}
+/* ── IMPRESSIÓ ────────────────────────────────────── */
+p>span[contenteditable]:not([class]){display:inline}
+@media print {
+  @page { size:A4; margin:0; }
+  * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body { background:#fff; padding:0; margin:0; }
+  #toolbar, .del-btn { display:none !important; }
+  #sheets { gap:0; display:block; }
+  .sheet { width:210mm; height:297mm; min-height:0; box-shadow:none; margin:0; page-break-after:always; break-after:page; overflow:hidden; }
+  .sheet:last-child { page-break-after:auto; break-after:auto; }
+  .header-emoji-box { background:var(--teal-tint) !important; }
+  [contenteditable]:hover,[contenteditable]:focus { background:transparent!important; box-shadow:none!important; }
+  .wline, .mini-line { background:transparent; padding:0; }
+  .fill-cell { background:transparent; outline:none; }
+  .input-span { border-bottom-color:var(--rule-dark); }
+  .data-table td { border-bottom-color:var(--rule-dark) !important; }
+  .data-table td + td { border-left-color:var(--rule-dark) !important; }
+  .img-placeholder { -webkit-print-color-adjust:exact; }
+  .spacer-block { background:transparent !important; border:none !important; }
+  .spacer-label { display:none !important; }
+  .nivell-badge-small { background:transparent !important; border-color:var(--rule-dark) !important; }
 }
+
 </style>
 </head>
 <body>
@@ -200,7 +236,15 @@ span[contenteditable]{display:inline-block}
       <div class="previ-box">
         <p>✏️ <span contenteditable="true"><strong>1.</strong> Quin cas real portes (anunci, notícia, consell de salut, vídeo…) i per què el vas triar?</span></p>
         <div class="wline tall" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
         <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>2.</strong> De moment, t'ho creus, no t'ho creus o no ho tens clar?</span></p>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div>
       </div>
     </div>
@@ -228,6 +272,10 @@ span[contenteditable]{display:inline-block}
       </table>
       <p style="font-size:12.5px;margin:10px 0 4px" contenteditable="true">⚖️ <strong>El meu veredicte</strong> (i el perquè, a partir de la graella):</p>
       <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
     </div>
 
     <div class="section deletable">
@@ -250,6 +298,10 @@ span[contenteditable]{display:inline-block}
       </div>
       <p style="font-size:12px;margin:8px 0 2px" contenteditable="true">✏️ Per què va en aquest calaix? (respon les dues preguntes clau):</p>
       <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
     </div>
 
     <div class="section deletable">
@@ -275,10 +327,22 @@ span[contenteditable]{display:inline-block}
       </table>
       <p style="font-size:12px;margin:10px 0 4px" contenteditable="true">✏️ <strong>1.</strong> Què t'ha costat més de decidir? Digues <strong>què et faltava saber</strong> per posar-lo en un calaix.</p>
       <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
       <p style="font-size:12px;margin:8px 0 4px" contenteditable="true">✏️ <strong>2.</strong> Coincidiu de calaix? Si no, escriu <strong>el motiu que et dona l'autor/a</strong> i si et convenç.</p>
       <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
       <p style="font-size:12px;margin:8px 0 4px" contenteditable="true">✏️ <strong>3.</strong> I la nota de revisió que <strong>has rebut tu</strong>: què hi diu?</p>
       <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
     </div>
 
     <div class="section deletable">
@@ -302,16 +366,29 @@ span[contenteditable]{display:inline-block}
       <p style="font-size:12px;margin:8px 0 2px" contenteditable="true">✏️ Què faré, i per a quin objectiu:</p>
       <div class="wline tall" contenteditable="true"></div>
       <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
       <p style="font-size:12px;margin:10px 0 2px" contenteditable="true">✏️ Situació de la meva vida on faré servir el detector aquest curs:</p>
       <div class="wline tall" contenteditable="true"></div>
       <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
     </div>
 
     <div class="section deletable" style="margin-top:14px">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <p style="font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px">🧠 Metacognició — 5 min</p>
       <div class="meta-grid">
-        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">🧰</span><div class="meta-label">L'eina de la SA que més faré servir fora de classe (i per què):</div><div class="wline" contenteditable="true"></div></div>
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">🧰</span><div class="meta-label">L'eina de la SA que més faré servir fora de classe (i per què):</div><div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div></div>
         <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la SA</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:9.5px;color:var(--muted);margin-top:4px">Encercla les estrelles</div></div>
       </div>
     </div>
@@ -329,23 +406,393 @@ span[contenteditable]{display:inline-block}
       <div class="footer-l">SA1 · Ciència i Pseudociència · Sessió 4 · Versió B · IE Temple · Biologia i Geologia 4t ESO</div>
       <div class="footer-r">CC BY-NC-SA</div>
     </div>
-    <div style="font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5">
-      Adaptat per Albert Pahissa de l'original de Jordi Domènech. Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" style="color:var(--teal-ink)">CC BY-NC-SA 4.0</a> (Reconeixement–NoComercial–CompartirIgual).
     </div>
-
-  </div>
 </div>
+<div id="sheets"></div>
+
 <script>
-const delStack=[];
-function deleteEl(btn){const t=btn.closest('.deletable');if(!t)return;const p=t.parentNode,s=t.nextSibling;t.remove();delStack.push({el:t,parent:p,sibling:s});document.getElementById('btn-undo').classList.add('active')}
-function undoDelete(){if(!delStack.length)return;const{el,parent,sibling}=delStack.pop();parent.insertBefore(el,sibling);if(!delStack.length)document.getElementById('btn-undo').classList.remove('active');updatePageBreaks()}
-function insertSpacer(){const b=document.createElement('div');b.className='spacer-block deletable';b.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">espai en blanc</span>';const c=document.querySelector('.content');c.insertBefore(b,c.querySelector('.footer'));updatePageBreaks()}
-document.addEventListener('keydown',e=>{if(e.key==='z'&&(e.ctrlKey||e.metaKey)){if(document.activeElement&&document.activeElement.contentEditable==='true')return;e.preventDefault();undoDelete()}});
-const PAGE_H=1047;let _t=null;const OPTS={childList:true,subtree:true,characterData:true};
-function updatePageBreaks(){obs.disconnect();const doc=document.getElementById('doc');doc.querySelectorAll('.page-break-line').forEach(n=>n.remove());doc.querySelectorAll('.page-footer-bar').forEach(n=>n.remove());const total=doc.scrollHeight,num=Math.ceil(total/PAGE_H);for(let p=1;p*PAGE_H<total;p++){const l=document.createElement('div');l.className='page-break-line';l.style.top=(p*PAGE_H)+'px';const lb=document.createElement('div');lb.className='page-break-label';lb.textContent='Pàgina '+(p+1);l.appendChild(lb);doc.appendChild(l)}for(let p=1;p<=num;p++){const b=document.createElement('div');b.className='page-footer-bar';b.style.top=(p*PAGE_H-22)+'px';b.innerHTML='<span>IE Temple · Biologia i Geologia 4t ESO</span><span>'+p+' / '+num+'</span>';doc.appendChild(b)}obs.observe(document.getElementById('doc'),OPTS)}
-function sched(){clearTimeout(_t);_t=setTimeout(updatePageBreaks,350)}
-window.addEventListener('load',updatePageBreaks);
-const obs=new MutationObserver(sched);obs.observe(document.getElementById('doc'),OPTS);
+
+/* ════════════════════════════════════════════════════════════
+   PAGINADOR A4 REAL — cada full es veu a pantalla tal com s'imprimira.
+   FLOW = llista ordenada dels blocs de primer nivell (la font logica).
+   Capcalera corrent a partir de la pagina 2 + peu comu amb llicencia.
+   ════════════════════════════════════════════════════════════ */
+const SA_NOM = "Ciència i Pseudociència", SESSIO = "Sessió 4 de 4";
+const SHEET_H = 1123, FOOT_H = 30, BODY_MAX = SHEET_H - FOOT_H - 8;
+let FLOW = [];
+
+function flattenDoc(){
+  const doc=document.getElementById('doc');
+  /* S4-poster: #doc > .page-wrap > .content — puja primer el .page-wrap */
+  const pw=doc.querySelector(':scope > .page-wrap');
+  if(pw){ while(pw.firstChild){ doc.insertBefore(pw.firstChild, pw); } pw.remove(); }
+  const content=doc.querySelector(':scope > .content');
+  if(content){
+    const foot=content.querySelector(':scope > .footer'); if(foot) foot.remove();
+    while(content.firstChild){ doc.insertBefore(content.firstChild, content); }
+    content.remove();
+  }
+  /* S4-poster: les seccions van dins d'un .inner que nomes hi posa padding;
+     el padding ja el dona .sheet-body, aixi que el desembolicem. */
+  const inner=doc.querySelector(':scope > .inner');
+  if(inner){ while(inner.firstChild){ doc.insertBefore(inner.firstChild, inner); } inner.remove(); }
+  const f2=doc.querySelector(':scope > .footer'); if(f2) f2.remove();
+}
+function extractFlow(){ FLOW = Array.from(document.getElementById('doc').children); }
+function topFlowBlock(el){ while(el){ if(FLOW.indexOf(el)>=0) return el; el=el.parentElement; } return null; }
+
+function saveCaret(){
+  const a=document.activeElement;
+  if(!a||!a.isContentEditable) return null;
+  const s=getSelection(); if(!s.rangeCount) return {el:a};
+  const r=s.getRangeAt(0);
+  return {el:a, sc:r.startContainer, so:r.startOffset, ec:r.endContainer, eo:r.endOffset};
+}
+function restoreCaret(d){
+  if(!d||!d.el||!document.body.contains(d.el)) return;
+  try{ d.el.focus({preventScroll:true});
+    if(d.sc && document.body.contains(d.sc)){
+      const r=document.createRange(); r.setStart(d.sc,d.so); r.setEnd(d.ec,d.eo);
+      const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+  }catch(e){}
+}
+
+function repaginate(){
+  const host=document.getElementById('sheets'); if(!host) return;
+  const caret=saveCaret();
+  _mergeTables(host);
+  host.querySelectorAll('.section[data-cont]').forEach(function(cont){
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+  });
+  FLOW = FLOW.filter(function(b){ return b; });
+  FLOW.forEach(function(b){ if(b.parentNode) b.parentNode.removeChild(b); });
+  host.innerHTML='';
+  let body=null;
+  function newSheet(){
+    const n=host.children.length;
+    const sheet=document.createElement('div'); sheet.className='sheet'+(n?' has-head':'');
+    if(n){
+      const head=document.createElement('div'); head.className='sheet-head';
+      head.innerHTML='<span class="sheet-head-l"></span><span class="sheet-head-r">Biologia i Geologia · 4t ESO</span>';
+      head.firstChild.textContent=SA_NOM+' · '+SESSIO;
+      sheet.appendChild(head);
+    }
+    body=document.createElement('div'); body.className='sheet-body';
+    const foot=document.createElement('div'); foot.className='sheet-foot';
+    foot.innerHTML='<span class="fl">Albert Pahissa · a partir de Jordi Domènech</span>'+
+                   '<span class="fc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a></span>'+
+                   '<span class="fr foot-pg"></span>';
+    sheet.appendChild(body); sheet.appendChild(foot); host.appendChild(sheet);
+  }
+  function _flowKids(sec){ return Array.prototype.slice.call(sec.children).filter(function(c){ return !c.classList.contains('del-btn'); }); }
+  function _contentKids(sec){ return _flowKids(sec).filter(function(k){ return !k.classList.contains('section-header') && !k.classList.contains('divider'); }); }
+  function _tblOf(el){ return (el && el.tagName==='TABLE' && el.tBodies[0]) ? el : null; }
+  function _tblSplit(tbl){
+    /* `tbl` es dins de `body` i sobreeixt: mou-ne les files finals a una taula
+       bessona amb el <thead> clonat i retorna-la (null si no val la pena). */
+    var tb=tbl.tBodies[0];
+    if(!tb || tb.rows.length < 4) return null;      /* menys de 4 files: no es parteix */
+    var tail=[];
+    /* Segueix traient files mentre sobreeixi I fins que la bessona en tingui
+       dues: una fila sola sota una capcalera clonada es una vidua. */
+    while((body.scrollHeight > BODY_MAX || tail.length < 2) && tb.rows.length > 2){
+      tail.unshift(tb.rows[tb.rows.length-1]); tb.deleteRow(tb.rows.length-1);
+    }
+    if(tail.length < 2 || body.scrollHeight > BODY_MAX){
+      tail.forEach(function(r){ tb.appendChild(r); });
+      return null;
+    }
+    var off=(tbl._rowOff||0) + tb.rows.length;
+    var c=document.createElement('table');
+    c.className=tbl.className.split(' ').filter(function(x){ return x && x!=='tbl-cont'; }).join(' ') + (off%2 ? ' tbl-cont' : '');
+    c.setAttribute('data-tblcont','1');
+    c._rowOff=off; c._srcTable=tbl._srcTable||tbl;
+    if(tbl.tHead) c.appendChild(tbl.tHead.cloneNode(true));
+    var nb=document.createElement('tbody');
+    tail.forEach(function(r){ nb.appendChild(r); });
+    c.appendChild(nb);
+    return c;
+  }
+  var NOPARTIR = /(challenge|case|scaffold|epist|oa|meta|info|nota|tip|alerta)-box/;
+  function _boxOf(el){
+    /* Un quadre que es pot partir: agrupa preguntes independents, no es una
+       targeta, i te prou fills perque partir-lo tingui sentit. */
+    if(!el || el.tagName!=='DIV' || NOPARTIR.test(el.className||'')) return null;
+    var k=_flowKids(el);
+    if(k.length < 4) return null;
+    var ps=0; k.forEach(function(c){ if(c.tagName==='P') ps++; });
+    return ps >= 2 ? el : null;
+  }
+  function _boxSplit(box){
+    /* Mou la cua de `box` a una bessona de la mateixa classe. Nomes talla
+       davant d'un <p>: cap pregunta no es queda separada de les seves ratlles. */
+    var k=_flowKids(box), tail=[];
+    while(body.scrollHeight > BODY_MAX && k.length){
+      var l=k.pop(); tail.unshift(l); box.removeChild(l);
+    }
+    while(k.length && tail.length && tail[0].tagName!=='P'){
+      var b=k.pop(); tail.unshift(b); box.removeChild(b);
+    }
+    if(!k.length || !tail.length || tail[0].tagName!=='P' || body.scrollHeight > BODY_MAX){
+      tail.forEach(function(c){ box.appendChild(c); });
+      return null;
+    }
+    var c=document.createElement('div');
+    c.className=box.className;
+    c.setAttribute('data-boxcont','1');
+    c._srcBox=box._srcBox||box;
+    tail.forEach(function(x){ c.appendChild(x); });
+    return c;
+  }
+  function _boxRelieve(sec, moved){
+    /* La seccio no s'ha pogut buidar prou i l'ultim que hi queda es un quadre
+       partible: parteix-lo i passa'n la cua al full seguent. */
+    if(body.scrollHeight <= BODY_MAX) return false;
+    var ck=_contentKids(sec), bx=_boxOf(ck[ck.length-1]);
+    if(!bx) return false;
+    var c=_boxSplit(bx);
+    if(c){ moved.unshift(c); return true; }
+    return false;
+  }
+  function _tblRelieve(sec, moved){
+    /* Dos casos: o la taula es l'unic que queda i encara sobreeixt, o ja cap
+       pero el primer bloc que hem mogut es una taula i al full hi queda espai
+       per a unes quantes files seves. */
+    if(body.scrollHeight > BODY_MAX){
+      var ck=_contentKids(sec), t=_tblOf(ck[ck.length-1]);
+      if(t){ var c=_tblSplit(t); if(c){ moved.unshift(c); return true; } }
+      return false;
+    }
+    if(moved.length && _tblOf(moved[0]) && BODY_MAX - body.scrollHeight > 120){
+      var t0=moved[0]; sec.appendChild(t0);
+      if(body.scrollHeight <= BODY_MAX){ moved.shift(); return true; }
+      var c0=_tblSplit(t0);
+      if(c0){ moved[0]=c0; return true; }
+      sec.removeChild(t0);
+    }
+    return false;
+  }
+  function _wlines(l){ var n=0; for(var i=0;i<l.length;i++){ if(l[i].classList && l[i].classList.contains('wline')) n++; else break; } return n; }
+  function _wlineRelieve(sec, moved){
+    /* Una sola ratlla d'escriptura al capdamunt del full seguent no es espai
+       de resposta: es una regla perduda sota la capcalera. Com amb les files
+       de taula, una tirallonga de `.wline` no es parteix si no en queden dues
+       a cada banda; si es massa curta, hi passa sencera, i amb ella l'enunciat
+       que la precedeix, que no pot quedar sol al peu del full. */
+    if(body.scrollHeight > BODY_MAX) return false;
+    if(_wlines(moved) !== 1) return false;
+    var ck=_contentKids(sec), m=0;
+    for(var i=ck.length-1;i>=0;i--){
+      if(ck[i].classList && ck[i].classList.contains('wline')) m++; else break;
+    }
+    if(m===0) return false;
+    /* No es pot buidar la seccio del tot: si no hi quedes res, el full de dalt
+       es queda en blanc i la particio no acaba mai. */
+    if(m<3 && ck.length - m - 1 < 1) return false;
+    if(m>=3){
+      var l=_contentKids(sec), e=l[l.length-1];
+      sec.removeChild(e); moved.unshift(e);
+      return true;
+    }
+    for(var j=0;j<m;j++){
+      var lj=_contentKids(sec), ej=lj[lj.length-1];
+      sec.removeChild(ej); moved.unshift(ej);
+    }
+    var lp=_contentKids(sec);
+    if(lp.length){
+      var pre=lp[lp.length-1];
+      if(!(pre.classList && pre.classList.contains('wline'))){ sec.removeChild(pre); moved.unshift(pre); }
+    }
+    return true;
+  }
+  function _promptRelieve(sec, moved){
+    /* Criteri 1: l'enunciat no es separa mai del seu espai de resposta. Si el
+       que passa al full seguent comenca amb `.wline` i el que es queda no
+       acaba amb cap ratlla, la consigna ha quedat sola al peu: baixa amb
+       elles. Nomes un pas: despres moved[0] ja no es una `.wline`. */
+    if(!moved.length) return false;
+    var _m0=moved[0];
+    var esRatlla = _m0.classList && _m0.classList.contains('wline');
+    /* Una taula per omplir tambe es espai de resposta: «completa la
+       comparacio:» al peu d'un full i la taula al seguent es exactament la
+       mateixa separacio que la d'una consigna i les seves ratlles. */
+    var esTaula = _m0.tagName === 'TABLE';
+    /* I una tira de targetes retallables tambe: «encercla el calaix del teu
+       cas» amb els tres calaixos al full seguent es la mateixa separacio.
+       Les targetes son l'espai on l'alumne respon, no una il-lustracio. */
+    var esTargetes = !!(_m0.querySelector && _m0.querySelector('.cut-card'));
+    if(!esRatlla && !esTaula && !esTargetes) return false;
+    var ck=_contentKids(sec);
+    if(ck.length <= 1 && !sec.querySelector('.section-header')) return false;
+    /* Una seccio nova si que pot quedar-se nomes amb el titol: la branca de
+       capcalera vidua de trySplitSection la baixara sencera. Una continuacio,
+       no: buidar-la del tot faria girar el bucle sense fi. */
+    var last=ck[ck.length-1];
+    if(last.classList && last.classList.contains('wline')) return false;
+    /* amb una taula nomes baixa un paragraf: baixar-hi una figura o un quadre
+       no seria acostar la consigna a la taula, seria remenar la maquetacio */
+    if((esTaula || esTargetes) && last.tagName !== 'P') return false;
+    sec.removeChild(last); moved.unshift(last);
+    return true;
+  }
+  function trySplitSection(sec){
+    if(BODY_MAX - body.scrollHeight < 150) return false;
+    body.appendChild(sec);
+    if(body.scrollHeight <= BODY_MAX) return true;
+    var moved=[];
+    while(body.scrollHeight > BODY_MAX && _contentKids(sec).length > 1){
+      var ck=_contentKids(sec); var last=ck[ck.length-1];
+      moved.unshift(last); sec.removeChild(last);
+    }
+    _tblRelieve(sec, moved) || _boxRelieve(sec, moved);
+    _wlineRelieve(sec, moved);
+    _promptRelieve(sec, moved);
+    /* Si el que queda a la pagina es nomes el titolet, no es una particio:
+       es una capcalera vidua. Val mes passar la seccio sencera al full nou. */
+    var _resta=_contentKids(sec).length, _tetitol=!!sec.querySelector('.section-header');
+    if(moved.length && (_tetitol ? _resta === 0
+                                 : (_resta <= 1 && sec.getBoundingClientRect().height < 110))){
+      moved.forEach(function(k){ sec.appendChild(k); });
+      if(sec.parentNode) sec.parentNode.removeChild(sec);
+      return false;
+    }
+    if(moved.length===0 || body.scrollHeight > BODY_MAX){
+      moved.forEach(function(k){ sec.appendChild(k); });
+      if(sec.parentNode) sec.parentNode.removeChild(sec);
+      return false;
+    }
+    var pending=moved;
+    while(pending.length){
+      newSheet();
+      var cont=document.createElement('div');
+      cont.className='section'; cont.setAttribute('data-cont','1'); cont._origin=sec;
+      body.appendChild(cont);
+      pending.forEach(function(k){ cont.appendChild(k); });
+      var rest=[];
+      while(body.scrollHeight > BODY_MAX && cont.children.length>1){
+        var l=cont.lastElementChild; rest.unshift(l); cont.removeChild(l);
+      }
+      _tblRelieve(cont, rest) || _boxRelieve(cont, rest);
+      _wlineRelieve(cont, rest);
+      _promptRelieve(cont, rest);
+      if(body.scrollHeight > BODY_MAX && cont.children.length===1 && rest.length===0){
+        break;   /* un bloc indivisible mes alt que un full: deixa'l i para */
+      }
+      pending=rest;
+    }
+    return true;
+  }
+  newSheet();
+  for(let i=0;i<FLOW.length;i++){
+    const blk=FLOW[i];
+    if(blk.classList.contains('spacer-block')){
+      blk.style.height='auto'; body.appendChild(blk);
+      const used = body.scrollHeight - blk.offsetHeight;
+      const remain = BODY_MAX - used;
+      blk.style.height = (remain>34?remain:34)+'px';
+      if(i < FLOW.length-1) newSheet();
+      continue;
+    }
+    body.appendChild(blk);
+    if(body.scrollHeight > BODY_MAX && body.children.length>1){
+      body.removeChild(blk);
+      var _ok=false;
+      if(blk.classList.contains('section')){ try{ _ok=trySplitSection(blk); }catch(e){ _ok=false; } }
+      if(!_ok){
+        newSheet();
+        var _ok2=false;
+        if(blk.classList.contains('section')){ try{ _ok2=trySplitSection(blk); }catch(e){ _ok2=false; } }
+        if(!_ok2){ body.appendChild(blk); }
+      }
+    }
+  }
+  const sheets=host.querySelectorAll('.sheet');
+  sheets.forEach(function(s,idx){ const pg=s.querySelector('.foot-pg'); if(pg) pg.textContent='Pàgina '+(idx+1)+' / '+sheets.length; });
+  restoreCaret(caret);
+}
+let _pgT=null;
+function schedulePageBreaks(){ clearTimeout(_pgT); _pgT=setTimeout(repaginate,120); }
+function updatePageBreaks(){ repaginate(); }
+document.addEventListener('focusout', function(){ schedulePageBreaks(); });
+
+/* ── eliminar / desfer / espai ─────────────────────── */
+const delStack = [];
+function _btnUndo(){ return document.getElementById('btn-undo'); }
+function _undoOn(){ const b=_btnUndo(); if(b){ b.classList.add('active'); b.disabled=false; } }
+function _undoOff(){ const b=_btnUndo(); if(b){ b.classList.remove('active'); b.disabled=true; } }
+function deleteEl(btn){
+  const el=btn.closest('.deletable'); if(!el) return;
+  const blk=topFlowBlock(el);
+  if(blk===el){ const i=FLOW.indexOf(el); delStack.push({el:el, flowIdx:i}); if(i>=0) FLOW.splice(i,1); el.remove(); }
+  else { delStack.push({el:el, parent:el.parentNode, sibling:el.nextSibling}); el.remove(); }
+  _undoOn();
+  repaginate();
+  if(typeof syncCopy==='function') setTimeout(syncCopy,0);
+}
+function undoDelete(){
+  if(!delStack.length) return;
+  const d=delStack.pop();
+  if(d.parent){ d.parent.insertBefore(d.el, d.sibling); }
+  else { FLOW.splice(Math.max(0,Math.min(d.flowIdx,FLOW.length)),0,d.el); }
+  if(!delStack.length) _undoOff();
+  repaginate();
+  if(typeof syncCopy==='function') setTimeout(syncCopy,0);
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='z' && (e.ctrlKey||e.metaKey)){
+    if(document.activeElement && document.activeElement.contentEditable==='true') return;
+    e.preventDefault(); undoDelete();
+  }
+});
+let _lastClickedBlock=null;
+document.addEventListener('click', function(e){
+  const b=topFlowBlock(e.target);
+  if(b && !b.classList.contains('spacer-block')) _lastClickedBlock=b;
+});
+function insertSpacer(){
+  const sp=document.createElement('div'); sp.className='spacer-block deletable';
+  sp.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">↕ espai en blanc</span>';
+  let idx=FLOW.length;
+  if(_lastClickedBlock){ const i=FLOW.indexOf(_lastClickedBlock); if(i>=0) idx=i+1; }
+  FLOW.splice(idx,0,sp);
+  delStack.push({el:sp, flowIdx:idx});
+  _undoOn();
+  repaginate();
+}
+function _mergeTables(root){
+  /* Torna les files de cada taula bessona i el contingut de cada quadre
+     bessó a l'original. L'ordre del document ja els dona del primer a
+     l'ultim, i tots apunten a l'arrel, de manera que es reenganxen en ordre.
+     Els quadres van primer: una taula bessona pot ser dins d'un quadre. */
+  root.querySelectorAll('div[data-boxcont]').forEach(function(c){
+    var src=c._srcBox;
+    if(src){ while(c.firstChild){ src.appendChild(c.firstChild); } }
+    if(c.parentNode) c.parentNode.removeChild(c);
+  });
+  root.querySelectorAll('table[data-tblcont]').forEach(function(c){
+    var src=c._srcTable, sb=src&&src.tBodies[0], cb=c.tBodies[0];
+    if(sb&&cb){ while(cb.rows.length) sb.appendChild(cb.rows[0]); }
+    if(c.parentNode) c.parentNode.removeChild(c);
+  });
+}
+function rebuildDocFromFlow(){
+  const doc=document.getElementById('doc');
+  _mergeTables(document);
+  document.querySelectorAll('.section[data-cont]').forEach(function(cont){
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+  });
+  FLOW.forEach(function(b){ if(b.classList.contains('spacer-block')) b.style.height=''; });
+  FLOW.forEach(function(b){ if(b.parentNode!==doc){ if(b.parentNode) b.parentNode.removeChild(b); doc.appendChild(b); } });
+  document.getElementById('sheets').innerHTML='';
+}
+window.addEventListener('load', function(){
+  flattenDoc(); extractFlow(); repaginate();
+  if(typeof syncCopy==='function') setTimeout(function(){ syncCopy(); repaginate(); }, 60);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ repaginate(); }); }
+  document.querySelectorAll('img').forEach(function(img){ if(!img.complete) img.addEventListener('load', schedulePageBreaks, {once:true}); });
+  setTimeout(repaginate, 400); setTimeout(repaginate, 1200);
+});
 </script>
 </body>
 </html>
