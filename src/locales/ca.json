@@ -35,8 +35,13 @@
     },
     "B": {
       "short": "",
-      "help": "Nivell B: la versió amb més acompanyament."
-    }
+      "help": "Nivell B: la versió de base, amb bastida que va decreixent."
+    },
+    "C": {
+      "short": "",
+      "help": "Nivell C: amb suport visual, càpsules per llegir i el mètode pas a pas."
+    },
+    "senseFitxa": "Aquesta sessió encara no té fitxa del nivell C: et descarregues la B."
   },
   "activity": {
     "what": "Què farem",

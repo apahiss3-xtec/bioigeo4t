@@ -34,6 +34,10 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 .bloc-head{font-size:13px;font-weight:900;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.06em;
   border-left:4px solid var(--teal);padding:3px 0 3px 9px;margin:14px 0 8px}
 .bloc-head.bloc-a{border-left-color:#c96f3e;color:#a24e24;break-before:page}
+.bloc-head.bloc-c{border-left-color:#38a3a5;color:#1c4a55;break-before:page}
+/* Nivell C: 6 tires per joc, lletra més gran i més aire — s'han de poder llegir i manipular */
+.joc.joc-c .strip{font-size:14px;min-height:34px;padding:7px 9px;border-width:1.6px}
+.joc.joc-c .strip .sc{font-size:13px}
 @media print{
   @page{size:A4;margin:9mm 11mm}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -46,7 +50,7 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 </head>
 <body>
 <div id="toolbar">
-  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · 2 pàgines: 4 jocs de nivell B + 4 jocs de nivell A · retalla per les línies puntejades</span>
+  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · 3 pàgines: 4 jocs de nivell B + 4 de nivell A + 4 de nivell C · retalla per les línies puntejades</span>
   <button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
 </div>
 
@@ -56,11 +60,14 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
     <div class="doc-sa">SA1 · Ciència i Pseudociència · S1</div>
   </div>
   <div class="doc-note">
-    <strong>Aquest full té dos blocs, i no són iguals.</strong> El <strong>bloc B</strong> (a sota) porta jocs de
+    <strong>Aquest full té tres blocs, i no són iguals.</strong> El <strong>bloc B</strong> (a sota) porta jocs de
     <strong>10 tires</strong>: l'alumne només ha d'ordenar-les. El <strong>bloc A</strong> (segona pàgina) porta jocs de
     <strong>7 tires escrites + 3 tires en blanc</strong>: l'alumne primer escriu tres afirmacions seves a la seva fitxa
     (una de molt certa, una de certesa mitjana i una de molt poc certa) i després les copia a les tires en blanc, <strong>sense
     indicar-hi quina és quina</strong> — a la fitxa se les intercanvia amb un company perquè les col·loqui a cegues.
+    El <strong>bloc C</strong> (tercera pàgina) porta jocs de <strong>6 tires</strong>, amb la lletra més grossa: no es tracta
+    d'ordenar-les de l'1 al 10, sinó de <strong>repartir-les en tres calaixos</strong> —<em>molt certa</em>, <em>depèn</em>,
+    <em>gens certa</em>— que ja són impresos a la fitxa C, dues tires a cada calaix.
     Dona a cada alumne el joc del seu nivell.<br>
     Cada bloc porta <strong>4 jocs</strong> (1 joc = 1 alumne). Les tires tenen l'amplada de la columna
     <strong>«Afirmació»</strong> de la fitxa, per encaixar-hi en enganxar-les.
@@ -70,6 +77,8 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
   <div class="sheet" id="sheet-b"></div>
   <div class="bloc-head bloc-a">Bloc A · jocs de 7 tires escrites + 3 en blanc</div>
   <div class="sheet" id="sheet-a"></div>
+  <div class="bloc-head bloc-c">Bloc C · jocs de 6 tires, per repartir en tres calaixos</div>
+  <div class="sheet" id="sheet-c"></div>
   <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);border-top:1px solid var(--muted);margin-top:10px;padding-top:5px">
     <div>SA1 · Ciència i Pseudociència · Sessió 1 · Retallables · IE Temple · Biologia i Geologia 4t ESO</div>
     <div>CC BY-NC-SA</div>
@@ -107,6 +116,19 @@ const AFIRMACIONS_A = [
 // decidida abans d'ordenar-les i el company que les ha de col·locar la llegiria.
 // Quina és quina l'alumne ho escriu a la seva fitxa, no a la tira.
 const BUIDES_A = ["", "", ""];
+// Bloc C: 6 tires, dues per calaix (molt certa / depèn / gens certa). L'ordre en
+// què surten impreses NO és l'ordre de la resposta: es barregen a posta perquè
+// l'alumne hagi de decidir. Cap tira no és absurda —totes són coses que algú
+// pot dir de debò— de manera que triar el calaix exigeix pensar si es pot
+// comprovar, que és el criteri de la sessió ([[Nivell C - Criteris fitxes]] §1).
+const AFIRMACIONS_C = [
+  "Si compro loteria, em tocarà",       // gens certa
+  "Demà sortirà el Sol",                // molt certa
+  "El Barça guanyarà la lliga",         // depèn
+  "Viuré per sempre",                   // gens certa
+  "Si tiro una moneda, sortirà cara",   // depèn
+  "Les aspirines treuen el mal de cap"  // molt certa
+];
 const N_JOCS = 4;
 
 function strip(text, buida){
@@ -126,6 +148,9 @@ function omple(idSheet, llista, buides, etiqueta){
 }
 omple('sheet-b', AFIRMACIONS_B, [], 'B');
 omple('sheet-a', AFIRMACIONS_A, BUIDES_A, 'A');
+omple('sheet-c', AFIRMACIONS_C, [], 'C');
+// El joc C porta la classe .joc-c perquè les tires hi surtin més grosses.
+document.querySelectorAll('#sheet-c .joc').forEach(function(j){ j.classList.add('joc-c'); });
 </script>
 </body>
 </html>

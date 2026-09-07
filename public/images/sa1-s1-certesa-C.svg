@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 270" font-family="'Fira Sans Extra Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="270" fill="#ffffff"/>
+  <text x="360" y="36" text-anchor="middle" font-size="28" font-weight="700" fill="#1c4a55">Els tres calaixos de la certesa</text>
+  <text x="360" y="60" text-anchor="middle" font-size="17" fill="#4a6b72">Res no és 100 % segur: hi ha coses més certes i coses menys certes.</text>
+
+  <g>
+    <rect x="22" y="82" width="216" height="150" rx="14" fill="#2a6f7f"/>
+    <text x="130" y="124" text-anchor="middle" font-size="36">✅</text>
+    <text x="130" y="158" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">MOLT CERTA</text>
+    <text x="130" y="186" text-anchor="middle" font-size="17" fill="#e8f3f4">Ho puc comprovar</text>
+    <text x="130" y="206" text-anchor="middle" font-size="17" fill="#e8f3f4">i sempre passa.</text>
+    <text x="130" y="226" text-anchor="middle" font-size="16" fill="#cfe6e9" font-style="italic">«Demà sortirà el Sol.»</text>
+  </g>
+
+  <g>
+    <rect x="252" y="82" width="216" height="150" rx="14" fill="#38a3a5"/>
+    <text x="360" y="124" text-anchor="middle" font-size="36">🤔</text>
+    <text x="360" y="158" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">DEPÈN</text>
+    <text x="360" y="186" text-anchor="middle" font-size="17" fill="#e8f5f5">A vegades passa</text>
+    <text x="360" y="206" text-anchor="middle" font-size="17" fill="#e8f5f5">i a vegades no.</text>
+    <text x="360" y="226" text-anchor="middle" font-size="16" fill="#d3ecec" font-style="italic">«Sortirà cara.»</text>
+  </g>
+
+  <g>
+    <rect x="482" y="82" width="216" height="150" rx="14" fill="#c96f3e"/>
+    <text x="590" y="124" text-anchor="middle" font-size="36">❌</text>
+    <text x="590" y="158" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">GENS CERTA</text>
+    <text x="590" y="186" text-anchor="middle" font-size="17" fill="#fbeae1">No hi ha cap prova</text>
+    <text x="590" y="206" text-anchor="middle" font-size="17" fill="#fbeae1">que ho digui.</text>
+    <text x="590" y="226" text-anchor="middle" font-size="16" fill="#f6d9c9" font-style="italic">«Viuré per sempre.»</text>
+  </g>
+
+  <text x="360" y="258" text-anchor="middle" font-size="17" fill="#6b7a7e">La pregunta que decideix el calaix: <tspan font-weight="700" fill="#1c4a55">es pot comprovar?</tspan></text>
+</svg>

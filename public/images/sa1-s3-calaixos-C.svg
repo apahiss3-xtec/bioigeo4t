@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="'Fira Sans Extra Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="320" fill="#ffffff"/>
+  <text x="360" y="36" text-anchor="middle" font-size="28" font-weight="700" fill="#1c4a55">Els tres calaixos</text>
+  <text x="360" y="60" text-anchor="middle" font-size="17" fill="#4a6b72">On va una afirmació? Depèn de si ja s'ha comprovat.</text>
+
+  <g>
+    <rect x="22" y="80" width="216" height="222" rx="14" fill="#eaf4f6" stroke="#2a6f7f" stroke-width="3"/>
+    <text x="130" y="128" text-anchor="middle" font-size="40">✅</text>
+    <text x="130" y="166" text-anchor="middle" font-size="24" font-weight="700" fill="#1c4a55">CIÈNCIA</text>
+    <text x="130" y="198" text-anchor="middle" font-size="18" fill="#14201f">Ja s'ha comprovat</text>
+    <text x="130" y="220" text-anchor="middle" font-size="18" fill="#14201f">i el resultat és clar.</text>
+    <text x="130" y="256" text-anchor="middle" font-size="16" fill="#2a6f7f" font-style="italic">«Menjar molta sal</text>
+    <text x="130" y="276" text-anchor="middle" font-size="16" fill="#2a6f7f" font-style="italic">puja la pressió.»</text>
+  </g>
+
+  <g>
+    <rect x="252" y="80" width="216" height="222" rx="14" fill="#fdf7e2" stroke="#c8960a" stroke-width="3"/>
+    <text x="360" y="128" text-anchor="middle" font-size="40">⏳</text>
+    <text x="360" y="162" text-anchor="middle" font-size="21" font-weight="700" fill="#7a5800">ENCARA NO</text>
+    <text x="360" y="184" text-anchor="middle" font-size="21" font-weight="700" fill="#7a5800">COMPROVAT</text>
+    <text x="360" y="214" text-anchor="middle" font-size="18" fill="#14201f">Es pot comprovar,</text>
+    <text x="360" y="236" text-anchor="middle" font-size="18" fill="#14201f">però encara no se sap.</text>
+    <text x="360" y="266" text-anchor="middle" font-size="16" fill="#7a5800" font-style="italic">«Els animals noten</text>
+    <text x="360" y="286" text-anchor="middle" font-size="16" fill="#7a5800" font-style="italic">els terratrèmols.»</text>
+  </g>
+
+  <g>
+    <rect x="482" y="80" width="216" height="222" rx="14" fill="#f6ece8" stroke="#c96f3e" stroke-width="3"/>
+    <text x="590" y="128" text-anchor="middle" font-size="40">❌</text>
+    <text x="590" y="166" text-anchor="middle" font-size="20" font-weight="700" fill="#a24e24">PSEUDOCIÈNCIA</text>
+    <text x="590" y="198" text-anchor="middle" font-size="18" fill="#14201f">No es pot comprovar</text>
+    <text x="590" y="220" text-anchor="middle" font-size="18" fill="#14201f">de cap manera.</text>
+    <text x="590" y="256" text-anchor="middle" font-size="16" fill="#a24e24" font-style="italic">«Cada persona té</text>
+    <text x="590" y="276" text-anchor="middle" font-size="16" fill="#a24e24" font-style="italic">un color de la sort.»</text>
+  </g>
+</svg>

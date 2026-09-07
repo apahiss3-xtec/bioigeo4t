@@ -13,7 +13,7 @@ export const sa1s4 = {
   engageQuestion: "El detector no és per aprovar la SA: és per no deixar-te enredar la resta de la teva vida. Avui ho demostres amb un cas TEU, del món real, que ningú t'ha triat.",
   engageContext: "Cada alumne arriba amb un cas real de la seva vida quotidiana (feina a casa de S3). El repte final és analitzar-lo amb tot el que sap la SA i defensar-lo a la fira de casos. Tanquem amb l'autoavaluació per nivells d'assoliment.",
 
-  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A, B i C) ───────
   levelObjectives: {
     A: [
       "Analitzo un cas real que he triat jo aplicant alhora l'escala de certeses, les garanties i els senyals del detector que vam acordar, i n'extrec un veredicte justificat.",
@@ -26,6 +26,14 @@ export const sa1s4 = {
       "Dic si el meu cas és ciència, pseudociència o encara no comprovat i explico un motiu.",
       "A la fira de casos analitzo el cas d'un company sense saber què n'ha dit, i després comparo el meu veredicte amb el seu.",
       "Valoro el meu aprenentatge de la SA marcant, per cada objectiu, si el domino o necessito repassar-lo, i escric una situació de la meva vida on el detector em podria servir."
+    ],
+    // C = adaptació (04/09/2026, alumnes amb DIL). NO és la B escurçada:
+    // són MENYS objectius i més concrets, perquè la tasca de la fitxa C
+    // també és pròpia. Han de coincidir amb l'oa-box de fitxa_sa1_s4_VISUAL_C.
+    C: [
+      "Passo un cas meu pel detector i li poso un veredicte.",
+      "A la fira de casos, analitzo el cas d'un company i li deixo una nota.",
+      "Dic què domino i què he de repassar de tota la SA."
     ]
   },
 
@@ -136,7 +144,7 @@ export const sa1s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa1-s4-fitxa-A.html", B: "/fitxes/sa1-s4-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa1-s4-fitxa-A.html", B: "/fitxes/sa1-s4-fitxa-B.html", C: "/fitxes/sa1-s4-fitxa-C.html" },
   retallablesUrl: "/fitxes/sa1-s4-retallables.html",
   teoriaPdfUrl: null,
   rubricUrl: null,

@@ -16,7 +16,7 @@ import Accordion from '../components/Accordion.jsx'
 import FitxaGuide from '../components/FitxaGuide.jsx'
 import ActivityCard from '../components/ActivityCard.jsx'
 import NivellSelector from '../components/NivellSelector.jsx'
-import { useNivell, pickLevel } from '../nivell/NivellContext.jsx'
+import { useNivell, pickLevel, hasLevel } from '../nivell/NivellContext.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
 
 // Fitxes reals (HTML, nivells A/B) a public/fitxes/. fitxaUrl és { A, B }
@@ -53,12 +53,15 @@ const ApartatHeader = ({ num, phase, title, time }) => (
   </div>
 )
 
-// Bastiment (B) o repte (A) d'un apartat, segons el nivell triat.
-// A 4t hi ha 2 nivells: A (ampliació, repte) i B (estàndard, bastida).
+// Bastiment (B i C) o repte (A) d'un apartat, segons el nivell triat.
+// A 4t hi ha 3 nivells: A (ampliació, repte), B (estàndard, bastida) i
+// C (adaptació, bastida visual — afegit 04/09/2026).
 // La bastida de B decreix al llarg del curs (vegeu scaffoldFade a cada sN.js).
+// El nivell C reaprofita el mateix `scaffold`: és el mínim que ha de veure a la
+// web qui treballa amb la fitxa C, i no cal duplicar-lo a cada sN.js.
 const ApartatExtra = ({ extras, nivell }) => {
   if (!extras) return null
-  if (nivell === 'B' && extras.scaffold) {
+  if ((nivell === 'B' || nivell === 'C') && extras.scaffold) {
     return (
       <div
         className="mt-5 rounded-xl border-s-4 p-4"
@@ -103,8 +106,11 @@ export default function SessionPage() {
   const prev = sa.sessionsData[idx - 1]
   const next = sa.sessionsData[idx + 1]
 
-  // Fitxa del nivell actiu (A = ampliació, B = estàndard).
+  // Fitxa del nivell actiu (A = ampliació, B = estàndard, C = adaptació).
+  // `hasLevel` distingeix la fitxa pròpia del nivell de la que arriba pel
+  // fallback: mentre no totes les SA tinguin C, el botó ho ha de dir.
   const fitxaUrl = pickLevel(session.fitxaUrl, nivell)
+  const fitxaEsDelNivell = hasLevel(session.fitxaUrl, nivell)
 
   // ── Apartats numerats com al full ───────────────────────────
   // Títol/temps de cada apartat surten de la guia del full (font única).
@@ -469,12 +475,15 @@ export default function SessionPage() {
                   rel="noopener noreferrer"
                   className="rounded-xl bg-[var(--purple-ink)] px-5 py-2.5 font-display font-semibold text-white hover:bg-[var(--purple-deep)] transition-colors"
                 >
-                  📄 {t('session.downloadFitxa')} (Nivell {nivell})
+                  📄 {t('session.downloadFitxa')} (Nivell {fitxaEsDelNivell ? nivell : 'B'})
                 </a>
               ) : (
                 <span className="rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 text-[var(--muted)]">
                   📄 {t('session.fitxaAtClass')}
                 </span>
+              )}
+              {fitxaUrl && nivell === 'C' && !fitxaEsDelNivell && (
+                <p className="w-full text-sm italic text-[var(--muted)]">{t('nivell.senseFitxa')}</p>
               )}
               {session.retallablesUrl && (
                 <a

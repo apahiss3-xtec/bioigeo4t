@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="'Fira Sans Extra Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="320" fill="#ffffff"/>
+  <text x="360" y="36" text-anchor="middle" font-size="28" font-weight="700" fill="#1c4a55">Com sé si una cosa és ciència?</text>
+  <text x="360" y="60" text-anchor="middle" font-size="17" fill="#4a6b72">Li faig UNA pregunta: es pot comprovar?</text>
+
+  <g>
+    <rect x="30" y="82" width="310" height="200" rx="14" fill="#eaf4f6" stroke="#2a6f7f" stroke-width="3"/>
+    <text x="185" y="126" text-anchor="middle" font-size="40">🔬</text>
+    <text x="185" y="162" text-anchor="middle" font-size="27" font-weight="700" fill="#1c4a55">CIÈNCIA</text>
+    <text x="185" y="194" text-anchor="middle" font-size="19" fill="#14201f">Es pot comprovar</text>
+    <text x="185" y="220" text-anchor="middle" font-size="19" fill="#14201f">amb un experiment.</text>
+    <text x="185" y="252" text-anchor="middle" font-size="18" fill="#2a6f7f">Si surt malament,</text>
+    <text x="185" y="272" text-anchor="middle" font-size="18" fill="#2a6f7f">canvia d'idea.</text>
+  </g>
+
+  <g>
+    <rect x="380" y="82" width="310" height="200" rx="14" fill="#f6ece8" stroke="#c96f3e" stroke-width="3"/>
+    <text x="535" y="126" text-anchor="middle" font-size="40">🔮</text>
+    <text x="535" y="162" text-anchor="middle" font-size="27" font-weight="700" fill="#a24e24">PSEUDOCIÈNCIA</text>
+    <text x="535" y="194" text-anchor="middle" font-size="19" fill="#14201f">No es pot comprovar</text>
+    <text x="535" y="220" text-anchor="middle" font-size="19" fill="#14201f">amb cap experiment.</text>
+    <text x="535" y="252" text-anchor="middle" font-size="18" fill="#a24e24">Encara que surti malament,</text>
+    <text x="535" y="272" text-anchor="middle" font-size="18" fill="#a24e24">no canvia mai d'idea.</text>
+  </g>
+
+  <text x="360" y="308" text-anchor="middle" font-size="17" fill="#6b7a7e">«Pseudo» vol dir <tspan font-style="italic">fals</tspan>: sembla ciència, però no ho és.</text>
+</svg>

@@ -12,7 +12,7 @@ export const sa1s3 = {
   engageQuestion: "Ja tens un veredicte del teu cas. Però un veredicte no val res si no el saps DEFENSAR davant de qui hi creu. Avui posem els casos a judici: què fa que una defensa convenci de veritat?",
   engageContext: "Cada alumne defensa el seu cas en 1 minut (demostració de comprensió PRESENCIAL). Els companys avaluen amb el detector. Després classifiquem afirmacions en TRES calaixos, i tanquem amb la pregunta que decideix el calaix de veritat —què hauria de passar perquè l'afirmació caigués?— i amb el mural col·lectiu del detector.",
 
-  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A, B i C) ───────
   levelObjectives: {
     A: [
       "Defenso oralment el veredicte d'un cas anticipant les objeccions de qui hi creu i responent-les amb el vocabulari de les garanties.",
@@ -32,6 +32,14 @@ export const sa1s3 = {
       "Classifico afirmacions concretes en tres calaixos (ciència · pseudociència · encara no comprovat) i ho justifico amb un motiu.",
       "Escric quina prova concreta faria caure una afirmació i quina frase diria qui la defensa per salvar-la si el resultat sortís en contra.",
       "Recullo el detector que la classe acorda i hi poso el millor exemple real de cada senyal."
+    ],
+    // C = adaptació (04/09/2026, alumnes amb DIL). NO és la B escurçada:
+    // són MENYS objectius i més concrets, perquè la tasca de la fitxa C
+    // també és pròpia. Han de coincidir amb l'oa-box de fitxa_sa1_s3_VISUAL_C.
+    C: [
+      "Explico el meu cas en veu alta: què promet i quin senyal hi he trobat.",
+      "Poso una afirmació al calaix que li toca: ciència, encara no comprovat o pseudociència.",
+      "Dic quina prova faria canviar d'idea sobre una afirmació."
     ]
   },
 
@@ -160,7 +168,7 @@ export const sa1s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa1-s3-fitxa-A.html", B: "/fitxes/sa1-s3-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa1-s3-fitxa-A.html", B: "/fitxes/sa1-s3-fitxa-B.html", C: "/fitxes/sa1-s3-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Producte de la sessió: la teva defensa oral d'1 minut (demostració de comprensió presencial) + el mural del detector col·lectiu de la classe. La defensa no s'entrega per escrit —es fa i s'avalua a l'aula—, però la FITXA SÍ que es recull al final de la sessió: és l'evidència de com has escoltat els companys i de les proves que has escrit a l'apartat 3.",
 

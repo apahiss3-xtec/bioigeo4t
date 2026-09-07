@@ -1,6 +1,7 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import { TranslateProvider } from './translate/TranslateContext.jsx'
 import { NivellProvider } from './nivell/NivellContext.jsx'
+import { SoundMeterProvider } from './soundmeter/SoundMeterContext.jsx'
 import Layout from './components/Layout.jsx'
 import HomePage from './pages/HomePage.jsx'
 import SAIndexPage from './pages/SAIndexPage.jsx'
@@ -12,6 +13,7 @@ export default function App() {
   return (
     <TranslateProvider>
       <NivellProvider>
+      <SoundMeterProvider>
       <HashRouter>
         <Layout>
           <Routes>
@@ -24,6 +26,7 @@ export default function App() {
           </Routes>
         </Layout>
       </HashRouter>
+      </SoundMeterProvider>
       </NivellProvider>
     </TranslateProvider>
   )

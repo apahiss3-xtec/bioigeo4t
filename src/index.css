@@ -240,6 +240,36 @@ body.simplified a {
   font-size: 1.05rem;
 }
 
+/* ──────────────────────────────────────────────────────────
+   Espai reservat a la dreta quan el sonòmetre flotant
+   (SoundMeter, ancorat a la dreta) és obert, perquè el panell
+   no es solapi amb el text de la pàgina. Es fa amb PADDING i
+   no amb translateX: així el contingut es reflueix dins del
+   viewport en comptes de desplaçar-se cap enfora.
+   ────────────────────────────────────────────────────────── */
+.content-shift {
+  padding-inline-end: 0;
+  transition: padding-inline-end 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content-shift[data-shifted='true'] {
+  padding-inline-end: 15rem;
+}
+
+/* El mesurador no existeix per sota de 768px (vegeu SoundMeterContext):
+   allà mai no cal reservar-hi espai. */
+@media (max-width: 767px) {
+  .content-shift[data-shifted='true'] {
+    padding-inline-end: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .content-shift {
+    transition: none;
+  }
+}
+
 /* Scrollbar clara discreta */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }

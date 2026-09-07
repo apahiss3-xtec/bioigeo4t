@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA1 · S1 · Com decideixes què és cert? · C</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#2A6F7F; --teal-ink:#1c4a55; --teal-light:#9ccad2; --teal-tint:#eaf4f6;
+  --ink:#14201f; --ink-2:#334; --muted:#6b7a7e; --surface:#fdfefe; --paper:#ffffff;
+  --rule:#dce9eb; --rule-dark:#b6ccd0;
+  --orange:#c96f3e; --orange-tint:#f6ece8;
+  --aqua:#38a3a5; --aqua-tint:#e6f5f5;
+  --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
+  --purple:#8a5a9e; --purple-tint:#f1eaf4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(56,163,165,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.7);flex:1}
+.tb-tip strong{color:#9de0e2}
+.tb-sep{width:1px;height:20px;background:rgba(56,163,165,.3)}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
+.tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
+.tb-bold{background:rgba(56,163,165,.2);border:1px solid rgba(56,163,165,.4);color:#bfe6e8;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(56,163,165,.2);border:1px solid rgba(56,163,165,.4);color:#bfe6e8;font-size:12px}
+.tb-undo{background:rgba(201,111,62,.2);border:1px solid rgba(201,111,62,.4);color:#f0bfa5;font-size:12px;opacity:.5;pointer-events:none}
+.tb-undo.active{opacity:1;pointer-events:auto}
+.page-wrap { width:794px; margin:0 auto; position:relative; }
+#doc { display:none; }
+
+/* ── PAGINADOR A4 REAL ─────────────────────────────── */
+#sheets { display:flex; flex-direction:column; align-items:center; gap:26px; }
+.sheet { width:794px; min-height:1123px; background:var(--paper); position:relative; box-shadow:0 4px 24px rgba(60,40,110,.18); overflow:visible; }
+.sheet-body { padding:36px 46px 18px; position:relative; overflow:visible; }
+.sheet.has-head .sheet-body { padding-top:54px; }
+.sheet-head { position:absolute; left:0; right:0; top:0; height:36px; display:none; justify-content:space-between; align-items:center; padding:0 46px; border-bottom:1.5px solid var(--teal-light); background:var(--paper); }
+.sheet.has-head .sheet-head { display:flex; }
+.sheet-head-l { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--teal-ink); }
+.sheet-head-r { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); }
+.sheet-foot { position:absolute; left:0; right:0; bottom:0; height:30px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 46px; font-family:'Inter',sans-serif; font-size:7.5px; font-weight:600; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; border-top:.5px solid var(--rule); background:var(--paper); }
+.sheet-foot .fc { text-align:center; letter-spacing:.13em; color:var(--teal-ink); }
+.sheet-foot .fc a { color:inherit; text-decoration:none; }
+.sheet-foot .fl { letter-spacing:.05em; }
+/* taula partida entre fulls: la bessona reprèn la franja on la deixava */
+table.tbl-cont tr:nth-child(even) td { background:transparent; }
+table.tbl-cont tr:nth-child(odd) td { background:var(--teal-tint); }
+/* les taules son espai de resposta: cal veure on s'escriu */
+.data-table td { border-bottom:1px solid var(--rule-dark); }
+.data-table td + td { border-left:1px solid var(--rule-dark); }
+.sheet-foot .fr { text-align:right; }
+.sheet-body > .header-band { margin:-36px -46px 0; }
+.sheet-body > .nivell-strip { margin:0 -46px; }
+.sheet-body > .info-strip { margin:0 -46px; padding-left:46px; padding-right:46px; }
+.sheet-body > .oa-box { margin:12px 0 0; }
+
+
+
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
+[contenteditable]:hover{background:rgba(56,163,165,.08);box-shadow:0 0 0 2px rgba(56,163,165,.3)}
+[contenteditable]:focus{background:rgba(56,163,165,.12);box-shadow:0 0 0 2.5px var(--teal)}
+.header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
+.header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
+span[contenteditable]{display:inline-block}
+/* Caps d'escriptura GRANS (4t: respostes obertes, paràgrafs) */
+.wline{display:block;width:100%;min-height:46px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(56,163,165,.04)}
+.wline.tall{min-height:70px}
+.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.input-span.data-span{min-width:70px}
+.input-span:focus{border-bottom-color:var(--teal)}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(56,163,165,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.deletable{position:relative}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
+.del-btn:hover{background:#a83a52;transform:scale(1.15)}
+.deletable:hover>.del-btn{display:flex}
+.deletable:has(.deletable:hover)>.del-btn{display:none}
+.header-band{background:linear-gradient(135deg,#1c4a55 0%,#2f7f8a 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+.header-emoji-col{display:flex;align-items:center;justify-content:center}
+.header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
+.header-main{min-width:0}
+.header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.75;margin-top:4px}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
+.logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
+.header-meta{font-size:9.5px;opacity:.6;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
+.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#eef7f8,var(--paper));border-left:4px solid var(--teal);padding:10px 16px}
+.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.oa-list{list-style:none;padding:0;margin:0}
+.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li:last-child{border-bottom:none}
+.oa-list li::before{content:'○';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
+.content{padding:14px 24px 24px}
+.section{margin-top:16px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
+.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 13px}
+.previ-box p{font-size:12.5px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
+.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
+.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
+.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.data-table th small{font-size:8.5px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.8;display:block;margin-top:1px}
+.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table tr:nth-child(even) td{background:var(--teal-tint)}
+.fill-cell{display:block;width:100%;min-height:34px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.6}
+.fill-cell:focus{background:rgba(56,163,165,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
+.cut-card{border:1.5px dashed var(--teal-light);border-radius:6px;padding:6px 9px;font-size:12px;background:#fff}
+.cut-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+.scale-table td{vertical-align:middle}
+.scale-num{width:34px;text-align:center;font-weight:900;color:var(--teal-ink);font-size:15px}
+.chk{width:14px;height:14px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;display:inline-block;vertical-align:middle}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
+.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;margin-bottom:4px;padding:2px 0}
+.meta-oa-check{width:16px;height:16px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;margin-top:1px}
+.meta-oa-text{flex:1;line-height:1.35}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
+.meta-icon{font-size:18px;display:block;margin-bottom:3px}
+.meta-label{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.stars{display:flex;gap:4px;margin-top:4px}.star{font-size:18px;color:#7fa8b0}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
+.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:8px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(56,163,165,.05) 6px,rgba(56,163,165,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
+
+.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
+.footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+/* ── IMPRESSIÓ ────────────────────────────────────── */
+p>span[contenteditable]:not([class]){display:inline}
+@media print {
+  @page { size:A4; margin:0; }
+  * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body { background:#fff; padding:0; margin:0; }
+  #toolbar, .del-btn { display:none !important; }
+  #sheets { gap:0; display:block; }
+  .sheet { width:210mm; height:297mm; min-height:0; box-shadow:none; margin:0; page-break-after:always; break-after:page; overflow:hidden; }
+  .sheet:last-child { page-break-after:auto; break-after:auto; }
+  .header-emoji-box { background:var(--teal-tint) !important; }
+  [contenteditable]:hover,[contenteditable]:focus { background:transparent!important; box-shadow:none!important; }
+  .wline, .mini-line { background:transparent; padding:0; }
+  .fill-cell { background:transparent; outline:none; }
+  .input-span { border-bottom-color:var(--rule-dark); }
+  .data-table td { border-bottom-color:var(--rule-dark) !important; }
+  .data-table td + td { border-left-color:var(--rule-dark) !important; }
+  .img-placeholder { -webkit-print-color-adjust:exact; }
+  .spacer-block { background:transparent !important; border:none !important; }
+  .spacer-label { display:none !important; }
+  .nivell-badge-small { background:transparent !important; border-color:var(--rule-dark) !important; }
+}
+
+
+/* tokens --c-* de la SA1 */
+:root{--c-main:var(--teal);--c-ink:var(--teal-ink);--c-light:var(--teal-light);--c-tint:var(--teal-tint);--c-accent:var(--orange);--c-read-bg:var(--amber-tint);--c-read-ink:var(--amber-ink);}
+
+/* ══════════════════════════════════════════════════════════════
+   NIVELL C — bastida visual. Afegit 04/09/2026 (3 alumnes amb DIL).
+   Criteris: ClaudeMemory\Biologia 3r ESO\_Sistema\Nivell C - Criteris fitxes.md
+   Tots els colors passen pels tokens --c-* que build_c.py mapeja a les
+   variables de cada SA (SA1 teal, SA2 porpra). Aixi aquest full no fixa cap
+   color propi i cap fitxa C no se surt del color de la seva SA.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Càpsula «📖 Per llegir»: SEMPRE abans de qualsevol pregunta ── */
+.llegir-box{display:flex;gap:10px;align-items:flex-start;background:var(--c-read-bg);
+  border:1.5px solid #e0c98a;border-radius:9px;padding:9px 12px;margin:8px 0}
+.llegir-icon{font-size:22px;line-height:1.1;flex-shrink:0}
+.llegir-title{font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--c-read-ink);margin-bottom:3px}
+.llegir-text{font-size:12px;line-height:1.5;color:var(--ink)}
+.llegir-text strong{color:var(--c-read-ink)}
+.llegir-text .gl{font-style:italic;color:var(--ink-2)}
+
+/* ── Bàner d'idea clau (mínim 2 cops per fitxa) ── */
+.clau{text-align:center;font-size:13px;font-weight:900;color:var(--c-main);background:#fff;
+  border:2px dashed var(--c-main);border-radius:9px;padding:7px 10px;margin:9px 0;line-height:1.35}
+.clau .drop{color:var(--c-accent)}
+
+/* ── Encercla: dues opcions plausibles, mai un distractor absurd ── */
+.tria{font-size:12.5px;line-height:1.9;margin:5px 0 7px}
+.opt{display:inline-block;border:1.6px solid var(--rule-dark);border-radius:9999px;
+  padding:2px 13px;margin:2px 5px 2px 0;font-weight:700;background:#fff}
+.tria-o{font-size:11px;font-weight:700;color:var(--muted);margin:0 3px}
+
+/* ── Frases per completar ── */
+.frase-completar{font-size:12.5px;line-height:2.5;margin:5px 0 7px}
+.blank{display:inline-block;border-bottom:1.6px solid var(--rule-dark);vertical-align:bottom;
+  margin:0 3px;height:1.15em}
+.blank-s{width:64px}.blank-m{width:110px}.blank-l{width:160px}.blank-xl{width:220px}
+
+/* ── Inici de frase FORA del camp d'escriptura (mai un placeholder dins) ── */
+.hint-out{font-size:11px;font-weight:700;color:var(--c-ink);margin:3px 0 2px}
+
+/* ── Mètode OBSERVO → EM PREGUNTO → CONNECTO → DEDUEIXO ── */
+.passos-box{border:2px solid var(--c-light);border-radius:11px;margin:9px 0 7px;overflow:hidden}
+.passos-cap{background:var(--c-ink);color:#fff;font-size:11px;font-weight:900;letter-spacing:.05em;
+  text-transform:uppercase;padding:6px 12px;display:flex;align-items:center;gap:8px}
+.passos-cap .cas-tag{margin-left:auto;font-size:9.5px;font-weight:700;background:rgba(255,255,255,.2);
+  border-radius:9999px;padding:2px 10px;letter-spacing:.04em;text-transform:none}
+.passos-box.exemple{border-color:#7bab7f}
+.passos-box.exemple .passos-cap{background:#4a8f57}
+.metode-strip{font-size:10.5px;font-weight:800;color:var(--c-ink);background:var(--c-tint);
+  padding:5px 12px;letter-spacing:.02em}
+.pas{display:flex;gap:9px;padding:7px 12px;border-top:1px solid var(--rule)}
+.pas-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--c-main);color:#fff;
+  font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.passos-box.exemple .pas-num{background:#4a8f57}
+.pas-cos{flex:1}
+.pas-metode{display:inline-block;font-size:9.5px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--c-main);border-radius:9999px;padding:2px 9px;margin-bottom:4px}
+.passos-box.exemple .pas-metode{background:#4a8f57}
+.pas-q{font-size:12px;font-weight:700;color:var(--ink-2);margin-bottom:5px}
+.pas-opts{display:flex;gap:16px;flex-wrap:wrap}
+.pas-opt{display:inline-flex;align-items:center;gap:6px;font-size:12px}
+.pas-box{width:15px;height:15px;border:1.8px solid var(--c-main);border-radius:4px;display:inline-block;
+  position:relative;flex-shrink:0;background:#fff}
+.pas-opt.marcat .pas-box{background:#4a8f57;border-color:#4a8f57}
+.pas-opt.marcat .pas-box::after{content:'✓';position:absolute;top:-4px;left:1px;color:#fff;font-size:13px;
+  font-weight:900;line-height:1}
+.pas-opt b{color:var(--c-ink)}
+.pas-frase{padding:8px 12px;background:var(--c-tint);border-top:1px solid var(--rule)}
+.pas-frase-lab{font-size:11px;font-weight:700;color:var(--c-ink);margin-bottom:3px}
+.pas-frase .wline{background:transparent}
+.exemple-nota{font-size:10.5px;color:#3e7a4a;font-style:italic;padding:6px 12px 8px;
+  border-top:1px solid var(--rule);background:#f2f8f3}
+
+/* ── Calaixos on s'enganxen les tires retallables ── */
+.calaix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:9px 0}
+.calaix{border:1.6px solid var(--c-light);border-radius:9px;padding:7px 6px 9px;background:#fff}
+.calaix-head{font-size:11px;font-weight:900;color:var(--c-ink);text-transform:uppercase;
+  letter-spacing:.03em;margin-bottom:6px;text-align:center;line-height:1.25}
+.calaix-cell{border:1.5px dashed var(--rule-dark);border-radius:7px;background:#fff;
+  display:flex;flex-direction:column;gap:7px;padding:7px 5px}
+.slot{height:44px;border:1.4px dashed var(--c-light);border-radius:6px;background:#fff;
+  display:flex;align-items:center;justify-content:center}
+.slot span{font-size:8.5px;color:var(--c-light);letter-spacing:.08em;text-transform:uppercase}
+
+/* ── Comptador senzill (substitueix la taula de perfil de la B) ── */
+.compta-grid{display:flex;gap:10px;margin:8px 0}
+.compta{flex:1;border:1.6px solid var(--c-light);border-radius:9px;background:#fff;padding:8px;
+  text-align:center}
+.compta-t{font-size:11.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;letter-spacing:.03em}
+.compta-s{font-size:9.5px;color:var(--muted);margin-bottom:5px;line-height:1.3}
+.compta-caixa{height:40px;border:1.5px solid var(--rule-dark);border-radius:6px;background:#fff}
+</style>
+</head>
+<body>
+<div id="toolbar">
+  <span class="tb-tip">✎ Clica per editar · <strong>Ctrl+B</strong> negreta · <strong>×</strong> rosa elimina · <strong>Ctrl+Z</strong> desfés</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">↩ Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">＋ Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+</div>
+
+<div class="page-wrap" id="doc">
+
+  <div class="header-band deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🔬</div></div>
+    <div class="header-main">
+      <div class="header-sa" contenteditable="true">SA1 · Ciència i Pseudociència · Sessió 1 de 4</div>
+      <div class="header-title" contenteditable="true">Com decideixes què és cert?</div>
+      <div class="header-subtitle" contenteditable="true">Què em fa dir que una cosa és certa — i què no</div>
+    </div>
+    <div class="header-right">
+      <div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
+      <div class="header-meta" contenteditable="true">Biologia i Geologia · 4t ESO<br>IE Temple</div>
+    </div>
+  </div>
+
+  <div class="nivell-strip deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <span class="nivell-label" contenteditable="true">Amb suport visual</span>
+    <span class="temps-badge" contenteditable="true">⏱️ 2h total</span>
+    <div class="nom-field">
+      Nom:&nbsp;<span class="input-span" contenteditable="true"></span>
+      &nbsp;&nbsp;Data:&nbsp;<span class="input-span data-span" contenteditable="true"></span>
+      &nbsp;<span class="nivell-badge-small" title="Versió C">C</span>
+    </div>
+  </div>
+
+  <div class="oa-box deletable">
+    <div class="del-btn" onclick="deleteEl(this)">✕</div>
+    <div class="oa-title">🎯 Objectius d'aprenentatge d'avui</div>
+    <ul class="oa-list">
+      <li contenteditable="true">Poso afirmacions al calaix que els toca: <strong>molt certa</strong>, <strong>depèn</strong> o <strong>gens certa</strong>.</li>
+      <li contenteditable="true">Reconec <strong>3 garanties</strong>: dades, autoritat i el que vull creure.</li>
+      <li contenteditable="true">Sé dir si una cosa és <strong>ciència</strong> o <strong>pseudociència</strong> mirant si <strong>es pot comprovar</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="content">
+
+    <!-- ═══ Secció 0 · Idees prèvies ═══ -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--muted)">0</div>
+        <div><div class="stitle">Idees prèvies <span class="temps">⏱️ 10 min</span></div>
+        <div class="sdesc" contenteditable="true">Sigues sincer/a: aquí no hi ha respostes dolentes</div></div>
+      </div>
+      <div class="divider"></div>
+      <div class="previ-box">
+        <p>✏️ <span contenteditable="true"><strong>1.</strong> Escriu una cosa de la qual estiguis <strong>molt segur/a</strong>.</span></p>
+        <div class="hint-out">Comença la frase així: «Estic molt segur/a que…»</div>
+        <div class="wline tall" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>2.</strong> I ara una cosa de la qual estiguis <strong>gens segur/a</strong>.</span></p>
+        <div class="hint-out">Comença la frase així: «No estic gens segur/a que…»</div>
+        <div class="wline tall" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>3.</strong> Quan vols convèncer algú que tens raó, en què et bases?</span></p>
+        <div class="hint-out">Comença la frase així: «Em baso en…»</div>
+        <div class="wline tall" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+      </div>
+    </div>
+
+    <!-- ═══ Secció 1 · Els tres calaixos de la certesa ═══ -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--aqua)">1</div>
+        <div><div class="stitle" contenteditable="true">Els tres calaixos de la certesa <span class="temps">⏱️ 40 min</span></div>
+        <div class="sdesc" contenteditable="true">Retalla, enganxa i explica per què</div></div>
+      </div>
+      <div class="divider"></div>
+
+      <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <img class="fig" src="../images/sa1-s1-certesa-C.svg" alt="Tres calaixos: molt certa, depèn i gens certa, amb un exemple a cadascun" style="max-height:225px" onerror="this.style.display='none'">
+      </figure>
+
+      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="llegir-icon">📖</div>
+        <div><div class="llegir-title">Per llegir abans de començar</div>
+        <div class="llegir-text" contenteditable="true">A la vida —i a la ciència— gairebé res no és segur del tot. Hi ha coses <strong>molt certes</strong>, coses que <strong>depenen</strong> i coses <strong>gens certes</strong>. Això és el que en diem la <strong>certesa</strong> <span class="gl">(certesa = com de segur estàs que una cosa és veritat)</span>.<br>Per saber a quin calaix va una frase, fes-li sempre <strong>la mateixa pregunta</strong>: <strong>es pot comprovar?</strong> Si es pot comprovar i sempre passa, va al calaix de <strong>molt certa</strong>. Si a vegades passa i a vegades no, va a <strong>depèn</strong>. Si no hi ha cap manera de comprovar-ho, va a <strong>gens certa</strong>.</div></div>
+      </div>
+
+      <div class="clau deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        🔎 Una cosa és més certa si <span class="drop">es pot COMPROVAR</span>
+      </div>
+
+      <p style="font-size:12px;margin:6px 0" contenteditable="true">Agafa el teu <strong>joc de tires retallables</strong> (full a part, <strong>bloc C</strong>). Retalla les <strong>6 tires</strong> i enganxa cadascuna al calaix que li toca. Hi caben 2 tires a cada calaix.</p>
+
+      <div class="calaix-grid deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="calaix">
+          <div class="calaix-head">✅ Molt certa</div>
+          <div class="calaix-cell">
+            <div class="slot"><span>enganxa una tira</span></div>
+            <div class="slot"><span>enganxa una tira</span></div>
+          </div>
+        </div>
+        <div class="calaix">
+          <div class="calaix-head">🤔 Depèn</div>
+          <div class="calaix-cell">
+            <div class="slot"><span>enganxa una tira</span></div>
+            <div class="slot"><span>enganxa una tira</span></div>
+          </div>
+        </div>
+        <div class="calaix">
+          <div class="calaix-head">❌ Gens certa</div>
+          <div class="calaix-cell">
+            <div class="slot"><span>enganxa una tira</span></div>
+            <div class="slot"><span>enganxa una tira</span></div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size:12px;margin:8px 0 2px" contenteditable="true">✏️ Tria <strong>una</strong> tira del calaix «molt certa» i explica per què hi va.</p>
+      <div class="hint-out">Comença la frase així: «La he posat a “molt certa” perquè es pot comprovar amb…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+
+      <p style="font-size:12px;margin:10px 0 2px" contenteditable="true">✏️ Ara tria <strong>una</strong> tira del calaix «gens certa» i explica per què hi va.</p>
+      <div class="hint-out">Comença la frase així: «La he posat a “gens certa” perquè no hi ha manera de…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+
+      <p style="font-size:12px;margin-top:10px" contenteditable="true">🗣️ <strong>En grup:</strong> compareu els calaixos. Si algú ha posat una tira en un calaix diferent del teu, <strong>escolta el seu motiu</strong> i marca aquella tira amb una <strong>estrella</strong>. No cal que canviïs res.</p>
+    </div>
+
+    <!-- ═══ Secció 2 · Les garanties ═══ -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--teal)">2</div>
+        <div><div class="stitle" contenteditable="true">En què em baso? Les garanties <span class="temps">⏱️ 20 min</span></div>
+        <div class="sdesc" contenteditable="true">Tres maneres de dir que una cosa és certa</div></div>
+      </div>
+      <div class="divider"></div>
+
+      <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <img class="fig" src="../images/sa1-s1-garanties-C.svg" alt="Tres garanties: dades, autoritat i el que vull creure" style="max-height:250px" onerror="this.style.display='none'">
+      </figure>
+
+      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="llegir-icon">📖</div>
+        <div><div class="llegir-title">Per llegir abans de començar</div>
+        <div class="llegir-text" contenteditable="true">Quan volem convèncer algú, sempre ens basem en alguna cosa. Això en què ens basem es diu <strong>garantia</strong> <span class="gl">(garantia = allò que dones perquè et creguin)</span>. Avui en faràs servir tres:<br>· <strong>DADES</strong> — números i mesures. <em>«El termòmetre marca 39 graus.»</em><br>· <strong>AUTORITAT</strong> — ho diu algú que en sap. <em>«Ho ha dit la metgessa.»</em><br>· <strong>EL QUE VULL CREURE</strong> — el que em convé o m'agrada. <em>«A mi em funciona.»</em><br>Les <strong>dades</strong> són la garantia més forta, perquè qualsevol les pot tornar a mesurar. «El que vull creure» és la més fluixa: no és cap prova.</div></div>
+      </div>
+
+      <p style="font-size:12px;margin:6px 0" contenteditable="true">Algú diu que <strong>demà plourà</strong> i dona diferents raons. <strong>Encercla</strong> en quina garantia es basa cada raó.</p>
+
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>1.</strong> «Plourà perquè <em>la humitat de l'aire és del 95 %</em>.»<br>
+        <span class="opt">DADES</span><span class="tria-o">o</span><span class="opt">AUTORITAT</span>
+      </div>
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>2.</strong> «Plourà perquè <em>ho ha dit el servei meteorològic al butlletí d'avui</em>.»<br>
+        <span class="opt">AUTORITAT</span><span class="tria-o">o</span><span class="opt">DADES</span>
+      </div>
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>3.</strong> «Plourà perquè <em>no tinc gens de ganes que es faci l'excursió de demà</em>.»<br>
+        <span class="opt">EL QUE VULL CREURE</span><span class="tria-o">o</span><span class="opt">DADES</span>
+      </div>
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>4.</strong> «Plourà perquè <em>el baròmetre ha baixat 8 punts en tres hores</em>.»<br>
+        <span class="opt">DADES</span><span class="tria-o">o</span><span class="opt">EL QUE VULL CREURE</span>
+      </div>
+
+      <div class="llegir-box deletable" style="background:#fff"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="llegir-icon">🪜</div>
+        <div><div class="llegir-title">Si dubtes</div>
+        <div class="llegir-text" contenteditable="true">Mira si a la frase hi ha <strong>un número</strong> → és <strong>DADES</strong>. Si hi ha <strong>algú que ho diu</strong> → és <strong>AUTORITAT</strong>. Si parla del que <strong>vols o no vols</strong> que passi → és <strong>EL QUE VULL CREURE</strong>.</div></div>
+      </div>
+    </div>
+
+    <!-- ═══ Secció 3 · El meu perfil ═══ -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--purple)">3</div>
+        <div><div class="stitle" contenteditable="true">En què em baso jo? <span class="temps">⏱️ 20 min</span></div>
+        <div class="sdesc" contenteditable="true">Conèixer com penso per no deixar-me enganyar</div></div>
+      </div>
+      <div class="divider"></div>
+
+      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="llegir-icon">📖</div>
+        <div><div class="llegir-title">Per llegir abans de començar</div>
+        <div class="llegir-text" contenteditable="true">Cadascú de nosaltres té una garantia que fa servir més que les altres. Saber quina és <strong>et protegeix</strong>: qui es basa sempre en el que vol creure és el més fàcil d'enganyar.<br>Ara, per a cada frase, marca <strong>una sola creueta</strong>: la garantia en què et bases <strong>tu</strong> per creure-t'ho o no creure-t'ho. No hi ha resposta correcta.</div></div>
+      </div>
+
+      <table class="data-table">
+        <thead><tr><th>Frase</th><th style="width:78px">📊 Dades</th><th style="width:88px">🎓 Autoritat</th><th style="width:112px">💭 El que vull creure</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell" contenteditable="true">Les vacunes funcionen</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Els horòscops encerten el que et passarà</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Hi ha números que donen sort</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Les plantes medicinals fan efecte</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:12px;margin:8px 0 2px" contenteditable="true">Ara <strong>compta</strong> les creuetes de cada columna i escriu el número a la caixa:</p>
+      <div class="compta-grid deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="compta"><div class="compta-t">📊 Dades</div><div class="compta-s">Quantes creuetes?</div><div class="compta-caixa"></div></div>
+        <div class="compta"><div class="compta-t">🎓 Autoritat</div><div class="compta-s">Quantes creuetes?</div><div class="compta-caixa"></div></div>
+        <div class="compta"><div class="compta-t">💭 El que vull creure</div><div class="compta-s">Quantes creuetes?</div><div class="compta-caixa"></div></div>
+      </div>
+
+      <p class="frase-completar deletable" contenteditable="true"><span class="del-btn" onclick="deleteEl(this)">✕</span>
+        Completa: la garantia que he fet servir <strong>més</strong> vegades és <span class="blank blank-l"></span>, i la que he fet servir <strong>menys</strong> és <span class="blank blank-l"></span>.</p>
+
+      <p style="font-size:12px;margin:8px 0 2px" contenteditable="true">✏️ Compara-ho amb un company. Us baseu en la mateixa garantia?</p>
+      <div class="hint-out">Comença la frase així: «Jo em baso més en… i el meu company/a es basa més en…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+    </div>
+
+    <!-- ═══ Secció 4 · Ciència o pseudociència ═══ -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--orange)">4</div>
+        <div><div class="stitle" contenteditable="true">Ciència o pseudociència? <span class="temps">⏱️ 20 min</span></div>
+        <div class="sdesc" contenteditable="true">La pregunta que ho decideix: es pot comprovar?</div></div>
+      </div>
+      <div class="divider"></div>
+
+      <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <img class="fig" src="../images/sa1-s1-ciencia-pseudo-C.svg" alt="Ciència: es pot comprovar. Pseudociència: no es pot comprovar" style="max-height:160px" onerror="this.style.display='none'">
+      </figure>
+
+      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="llegir-icon">📖</div>
+        <div><div class="llegir-title">Per llegir abans de començar</div>
+        <div class="llegir-text" contenteditable="true">La <strong>ciència</strong> mira el món, fa <strong>experiments</strong> i comprova si té raó. Si l'experiment li diu que s'equivocava, <strong>canvia d'idea</strong>.<br>La <strong>pseudociència</strong> <span class="gl">(«pseudo» vol dir <em>fals</em>: sembla ciència però no ho és)</span> promet coses que <strong>no es poden comprovar</strong> amb cap experiment, i qui les defensa <strong>no canvia mai d'idea</strong>, passi el que passi.</div></div>
+      </div>
+
+      <div class="clau deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        🔎 És ciència si <span class="drop">es pot COMPROVAR</span> amb un experiment
+      </div>
+
+      <p style="font-size:12px;margin:6px 0" contenteditable="true">Llegeix cada descripció i <strong>encercla</strong> la resposta.</p>
+
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>1. Biologia</strong> — estudia els éssers vius fent experiments al laboratori i mirant si els resultats li donen la raó.<br>
+        <span class="opt">CIÈNCIA</span><span class="tria-o">o</span><span class="opt">PSEUDOCIÈNCIA</span>
+      </div>
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>2. Astrologia</strong> — diu que la posició dels estels el dia que vas néixer decideix com ets. Si no encerta, diu que «no era el teu dia».<br>
+        <span class="opt">CIÈNCIA</span><span class="tria-o">o</span><span class="opt">PSEUDOCIÈNCIA</span>
+      </div>
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>3. Geologia</strong> — estudia les roques i els volcans mesurant-los, i corregeix els seus mapes quan troba dades noves.<br>
+        <span class="opt">CIÈNCIA</span><span class="tria-o">o</span><span class="opt">PSEUDOCIÈNCIA</span>
+      </div>
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>4. Reiki</strong> — assegura que cura passant les mans a prop del cos. Quan s'ha mesurat, no s'ha trobat cap efecte, i qui hi creu segueix dient que funciona.<br>
+        <span class="opt">CIÈNCIA</span><span class="tria-o">o</span><span class="opt">PSEUDOCIÈNCIA</span>
+      </div>
+
+      <!-- ── Pregunta d'escriptura amb el mètode · S1 = bastida ALTA ── -->
+      <div class="passos-box exemple deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="passos-cap">✅ El mètode — EXEMPLE JA FET <span class="cas-tag">La polsera magnètica</span></div>
+        <div class="metode-strip">El mètode: 👁️ Observo → ❓ Em pregunto → 🔗 Connecto → 💡 Dedueixo</div>
+        <div class="pas">
+          <div class="pas-num">1</div>
+          <div class="pas-cos">
+            <div class="pas-metode">👁️ Observo</div>
+            <div class="pas-q">Què promet la polsera magnètica?</div>
+            <div class="pas-opts">
+              <span class="pas-opt marcat"><span class="pas-box"></span> <b>Que et treu el dolor</b></span>
+              <span class="pas-opt"><span class="pas-box"></span> Que et dona l'hora</span>
+            </div>
+          </div>
+        </div>
+        <div class="pas">
+          <div class="pas-num">2</div>
+          <div class="pas-cos">
+            <div class="pas-metode">❓ Em pregunto</div>
+            <div class="pas-q">Es pot comprovar amb un experiment?</div>
+            <div class="pas-opts">
+              <span class="pas-opt marcat"><span class="pas-box"></span> <b>S'ha provat i no fa res</b></span>
+              <span class="pas-opt"><span class="pas-box"></span> S'ha provat i funciona</span>
+            </div>
+          </div>
+        </div>
+        <div class="pas-frase">
+          <div class="pas-metode">🔗 Connecto &nbsp;→&nbsp; 💡 Dedueixo</div>
+          <div class="pas-frase-lab">Qui la ven no canvia d'idea, i segueix venent-la. Frase feta: «La polsera magnètica és <strong>pseudociència</strong> perquè s'ha comprovat que no treu el dolor i, tot i així, qui la ven no canvia d'idea.»</div>
+        </div>
+        <div class="exemple-nota">💡 Aquest ja està fet. Ara el faràs tu amb un altre cas, aquí sota.</div>
+      </div>
+
+      <div class="passos-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="passos-cap">✏️ Ara ho fas tu <span class="cas-tag">L'horòscop</span></div>
+        <div class="metode-strip">El mètode: 👁️ Observo → ❓ Em pregunto → 🔗 Connecto → 💡 Dedueixo</div>
+        <div class="pas">
+          <div class="pas-num">1</div>
+          <div class="pas-cos">
+            <div class="pas-metode">👁️ Observo</div>
+            <div class="pas-q">Què promet l'horòscop?</div>
+            <div class="pas-opts">
+              <span class="pas-opt"><span class="pas-box"></span> Que et diu què et passarà</span>
+              <span class="pas-opt"><span class="pas-box"></span> Que et diu quin temps farà</span>
+            </div>
+          </div>
+        </div>
+        <div class="pas">
+          <div class="pas-num">2</div>
+          <div class="pas-cos">
+            <div class="pas-metode">❓ Em pregunto</div>
+            <div class="pas-q">Es pot comprovar? Diu una cosa prou clara per saber si ha encertat?</div>
+            <div class="pas-opts">
+              <span class="pas-opt"><span class="pas-box"></span> Sí: diu dia, hora i lloc</span>
+              <span class="pas-opt"><span class="pas-box"></span> No: diu coses que valen per a tothom</span>
+            </div>
+          </div>
+        </div>
+        <div class="pas">
+          <div class="pas-num">3</div>
+          <div class="pas-cos">
+            <div class="pas-metode">🔗 Connecto</div>
+            <div class="pas-q">Quan no encerta, qui hi creu canvia d'idea?</div>
+            <div class="pas-opts">
+              <span class="pas-opt"><span class="pas-box"></span> Sí: deixa de llegir-lo</span>
+              <span class="pas-opt"><span class="pas-box"></span> No: diu que «no era el seu dia»</span>
+            </div>
+          </div>
+        </div>
+        <div class="pas-frase">
+          <div class="pas-metode">💡 Dedueixo</div>
+          <div class="pas-frase-lab">✏️ Escriu <strong>una frase sencera</strong>. Comença-la així: «L'horòscop és pseudociència perquè…»</div>
+          <div class="wline" contenteditable="true"></div>
+          <div class="wline" contenteditable="true"></div>
+          <div class="wline" contenteditable="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ Metacognició ═══ -->
+    <div class="section deletable" style="margin-top:14px">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <p style="font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px">🧠 Metacognició — 3 min</p>
+      <div class="meta-oa-box deletable" style="margin-bottom:8px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="meta-oa-title">🎯 Torna als objectius — marca el que has après avui:</div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé posar una frase al calaix de molt certa, depèn o gens certa.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Reconec les 3 garanties: dades, autoritat i el que vull creure.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé dir si una cosa és ciència o pseudociència mirant si es pot comprovar.</div></div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">❓</span><div class="meta-label">Encara em pregunto…</div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div></div>
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la sessió</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:9.5px;color:var(--muted);margin-top:4px">Encercla les estrelles</div></div>
+      </div>
+    </div>
+
+    <!-- ═══ Tasca per a casa ═══ -->
+    <div class="tasca-box deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="tasca-title">📚 Feina per a casa — per a la Sessió 2</div>
+      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">1</div>
+        <div contenteditable="true"><strong>🕵️ Caça una pseudociència:</strong> busca <strong>un</strong> anunci o producte que prometi alguna cosa que sona científica i sospitosa (una polsera, un batut «detox», l'horòscop, un aliment «que cura»…). <strong>Retalla'l o fes-li una foto</strong> i porta'l.</div></div>
+      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">2</div>
+        <div contenteditable="true"><strong>✏️ Escriu-hi una sola frase al darrere:</strong> «Aquest producte promet que…».</div></div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-l">SA1 · Ciència i Pseudociència · Sessió 1 · Versió C · IE Temple · Biologia i Geologia 4t ESO</div>
+      <div class="footer-r">CC BY-NC-SA</div>
+    </div>
+    </div>
+</div>
+
+<div id="sheets"></div>
+
+<script>
+
+/* ════════════════════════════════════════════════════════════
+   PAGINADOR A4 REAL — cada full es veu a pantalla tal com s'imprimira.
+   FLOW = llista ordenada dels blocs de primer nivell (la font logica).
+   Capcalera corrent a partir de la pagina 2 + peu comu amb llicencia.
+   ════════════════════════════════════════════════════════════ */
+const SA_NOM = "Ciència i Pseudociència", SESSIO = "Sessió 1 de 4";
+const SHEET_H = 1123, FOOT_H = 30, BODY_MAX = SHEET_H - FOOT_H - 8;
+let FLOW = [];
+
+function flattenDoc(){
+  const doc=document.getElementById('doc');
+  /* S4-poster: #doc > .page-wrap > .content — puja primer el .page-wrap */
+  const pw=doc.querySelector(':scope > .page-wrap');
+  if(pw){ while(pw.firstChild){ doc.insertBefore(pw.firstChild, pw); } pw.remove(); }
+  const content=doc.querySelector(':scope > .content');
+  if(content){
+    const foot=content.querySelector(':scope > .footer'); if(foot) foot.remove();
+    while(content.firstChild){ doc.insertBefore(content.firstChild, content); }
+    content.remove();
+  }
+  /* S4-poster: les seccions van dins d'un .inner que nomes hi posa padding;
+     el padding ja el dona .sheet-body, aixi que el desembolicem. */
+  const inner=doc.querySelector(':scope > .inner');
+  if(inner){ while(inner.firstChild){ doc.insertBefore(inner.firstChild, inner); } inner.remove(); }
+  const f2=doc.querySelector(':scope > .footer'); if(f2) f2.remove();
+}
+function extractFlow(){ FLOW = Array.from(document.getElementById('doc').children); }
+function topFlowBlock(el){ while(el){ if(FLOW.indexOf(el)>=0) return el; el=el.parentElement; } return null; }
+
+function saveCaret(){
+  const a=document.activeElement;
+  if(!a||!a.isContentEditable) return null;
+  const s=getSelection(); if(!s.rangeCount) return {el:a};
+  const r=s.getRangeAt(0);
+  return {el:a, sc:r.startContainer, so:r.startOffset, ec:r.endContainer, eo:r.endOffset};
+}
+function restoreCaret(d){
+  if(!d||!d.el||!document.body.contains(d.el)) return;
+  try{ d.el.focus({preventScroll:true});
+    if(d.sc && document.body.contains(d.sc)){
+      const r=document.createRange(); r.setStart(d.sc,d.so); r.setEnd(d.ec,d.eo);
+      const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+  }catch(e){}
+}
+
+function repaginate(){
+  const host=document.getElementById('sheets'); if(!host) return;
+  const caret=saveCaret();
+  _mergeTables(host);
+  host.querySelectorAll('.section[data-cont]').forEach(function(cont){
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+  });
+  FLOW = FLOW.filter(function(b){ return b; });
+  FLOW.forEach(function(b){ if(b.parentNode) b.parentNode.removeChild(b); });
+  host.innerHTML='';
+  let body=null;
+  function newSheet(){
+    const n=host.children.length;
+    const sheet=document.createElement('div'); sheet.className='sheet'+(n?' has-head':'');
+    if(n){
+      const head=document.createElement('div'); head.className='sheet-head';
+      head.innerHTML='<span class="sheet-head-l"></span><span class="sheet-head-r">Biologia i Geologia · 4t ESO</span>';
+      head.firstChild.textContent=SA_NOM+' · '+SESSIO;
+      sheet.appendChild(head);
+    }
+    body=document.createElement('div'); body.className='sheet-body';
+    const foot=document.createElement('div'); foot.className='sheet-foot';
+    foot.innerHTML='<span class="fl">Albert Pahissa · a partir de Jordi Domènech</span>'+
+                   '<span class="fc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca">CC BY-NC-SA 4.0</a></span>'+
+                   '<span class="fr foot-pg"></span>';
+    sheet.appendChild(body); sheet.appendChild(foot); host.appendChild(sheet);
+  }
+  function _flowKids(sec){ return Array.prototype.slice.call(sec.children).filter(function(c){ return !c.classList.contains('del-btn'); }); }
+  function _contentKids(sec){ return _flowKids(sec).filter(function(k){ return !k.classList.contains('section-header') && !k.classList.contains('divider'); }); }
+  function _tblOf(el){ return (el && el.tagName==='TABLE' && el.tBodies[0]) ? el : null; }
+  function _tblSplit(tbl){
+    /* `tbl` es dins de `body` i sobreeixt: mou-ne les files finals a una taula
+       bessona amb el <thead> clonat i retorna-la (null si no val la pena). */
+    var tb=tbl.tBodies[0];
+    if(!tb || tb.rows.length < 4) return null;      /* menys de 4 files: no es parteix */
+    var tail=[];
+    /* Segueix traient files mentre sobreeixi I fins que la bessona en tingui
+       dues: una fila sola sota una capcalera clonada es una vidua. */
+    while((body.scrollHeight > BODY_MAX || tail.length < 2) && tb.rows.length > 2){
+      tail.unshift(tb.rows[tb.rows.length-1]); tb.deleteRow(tb.rows.length-1);
+    }
+    if(tail.length < 2 || body.scrollHeight > BODY_MAX){
+      tail.forEach(function(r){ tb.appendChild(r); });
+      return null;
+    }
+    var off=(tbl._rowOff||0) + tb.rows.length;
+    var c=document.createElement('table');
+    c.className=tbl.className.split(' ').filter(function(x){ return x && x!=='tbl-cont'; }).join(' ') + (off%2 ? ' tbl-cont' : '');
+    c.setAttribute('data-tblcont','1');
+    c._rowOff=off; c._srcTable=tbl._srcTable||tbl;
+    if(tbl.tHead) c.appendChild(tbl.tHead.cloneNode(true));
+    var nb=document.createElement('tbody');
+    tail.forEach(function(r){ nb.appendChild(r); });
+    c.appendChild(nb);
+    return c;
+  }
+  var NOPARTIR = /(challenge|case|scaffold|epist|oa|meta|info|nota|tip|alerta)-box/;
+  function _boxOf(el){
+    /* Un quadre que es pot partir: agrupa preguntes independents, no es una
+       targeta, i te prou fills perque partir-lo tingui sentit. */
+    if(!el || el.tagName!=='DIV' || NOPARTIR.test(el.className||'')) return null;
+    var k=_flowKids(el);
+    if(k.length < 4) return null;
+    var ps=0; k.forEach(function(c){ if(c.tagName==='P') ps++; });
+    return ps >= 2 ? el : null;
+  }
+  function _boxSplit(box){
+    /* Mou la cua de `box` a una bessona de la mateixa classe. Nomes talla
+       davant d'un <p>: cap pregunta no es queda separada de les seves ratlles. */
+    var k=_flowKids(box), tail=[];
+    while(body.scrollHeight > BODY_MAX && k.length){
+      var l=k.pop(); tail.unshift(l); box.removeChild(l);
+    }
+    while(k.length && tail.length && tail[0].tagName!=='P'){
+      var b=k.pop(); tail.unshift(b); box.removeChild(b);
+    }
+    if(!k.length || !tail.length || tail[0].tagName!=='P' || body.scrollHeight > BODY_MAX){
+      tail.forEach(function(c){ box.appendChild(c); });
+      return null;
+    }
+    var c=document.createElement('div');
+    c.className=box.className;
+    c.setAttribute('data-boxcont','1');
+    c._srcBox=box._srcBox||box;
+    tail.forEach(function(x){ c.appendChild(x); });
+    return c;
+  }
+  function _boxRelieve(sec, moved){
+    /* La seccio no s'ha pogut buidar prou i l'ultim que hi queda es un quadre
+       partible: parteix-lo i passa'n la cua al full seguent. */
+    if(body.scrollHeight <= BODY_MAX) return false;
+    var ck=_contentKids(sec), bx=_boxOf(ck[ck.length-1]);
+    if(!bx) return false;
+    var c=_boxSplit(bx);
+    if(c){ moved.unshift(c); return true; }
+    return false;
+  }
+  function _tblRelieve(sec, moved){
+    /* Dos casos: o la taula es l'unic que queda i encara sobreeixt, o ja cap
+       pero el primer bloc que hem mogut es una taula i al full hi queda espai
+       per a unes quantes files seves. */
+    if(body.scrollHeight > BODY_MAX){
+      var ck=_contentKids(sec), t=_tblOf(ck[ck.length-1]);
+      if(t){ var c=_tblSplit(t); if(c){ moved.unshift(c); return true; } }
+      return false;
+    }
+    if(moved.length && _tblOf(moved[0]) && BODY_MAX - body.scrollHeight > 120){
+      var t0=moved[0]; sec.appendChild(t0);
+      if(body.scrollHeight <= BODY_MAX){ moved.shift(); return true; }
+      var c0=_tblSplit(t0);
+      if(c0){ moved[0]=c0; return true; }
+      sec.removeChild(t0);
+    }
+    return false;
+  }
+  function _wlines(l){ var n=0; for(var i=0;i<l.length;i++){ if(l[i].classList && l[i].classList.contains('wline')) n++; else break; } return n; }
+  function _wlineRelieve(sec, moved){
+    /* Una sola ratlla d'escriptura al capdamunt del full seguent no es espai
+       de resposta: es una regla perduda sota la capcalera. Com amb les files
+       de taula, una tirallonga de `.wline` no es parteix si no en queden dues
+       a cada banda; si es massa curta, hi passa sencera, i amb ella l'enunciat
+       que la precedeix, que no pot quedar sol al peu del full. */
+    if(body.scrollHeight > BODY_MAX) return false;
+    if(_wlines(moved) !== 1) return false;
+    var ck=_contentKids(sec), m=0;
+    for(var i=ck.length-1;i>=0;i--){
+      if(ck[i].classList && ck[i].classList.contains('wline')) m++; else break;
+    }
+    if(m===0) return false;
+    /* No es pot buidar la seccio del tot: si no hi quedes res, el full de dalt
+       es queda en blanc i la particio no acaba mai. */
+    if(m<3 && ck.length - m - 1 < 1) return false;
+    if(m>=3){
+      var l=_contentKids(sec), e=l[l.length-1];
+      sec.removeChild(e); moved.unshift(e);
+      return true;
+    }
+    for(var j=0;j<m;j++){
+      var lj=_contentKids(sec), ej=lj[lj.length-1];
+      sec.removeChild(ej); moved.unshift(ej);
+    }
+    var lp=_contentKids(sec);
+    if(lp.length){
+      var pre=lp[lp.length-1];
+      if(!(pre.classList && pre.classList.contains('wline'))){ sec.removeChild(pre); moved.unshift(pre); }
+    }
+    return true;
+  }
+  function _promptRelieve(sec, moved){
+    /* Criteri 1: l'enunciat no es separa mai del seu espai de resposta. Si el
+       que passa al full seguent comenca amb `.wline` i el que es queda no
+       acaba amb cap ratlla, la consigna ha quedat sola al peu: baixa amb
+       elles. Nomes un pas: despres moved[0] ja no es una `.wline`. */
+    if(!moved.length) return false;
+    var _m0=moved[0];
+    var esRatlla = _m0.classList && _m0.classList.contains('wline');
+    /* Una taula per omplir tambe es espai de resposta: «completa la
+       comparacio:» al peu d'un full i la taula al seguent es exactament la
+       mateixa separacio que la d'una consigna i les seves ratlles. */
+    var esTaula = _m0.tagName === 'TABLE';
+    /* I una tira de targetes retallables tambe: «encercla el calaix del teu
+       cas» amb els tres calaixos al full seguent es la mateixa separacio.
+       Les targetes son l'espai on l'alumne respon, no una il-lustracio. */
+    var esTargetes = !!(_m0.querySelector && _m0.querySelector('.cut-card'));
+    if(!esRatlla && !esTaula && !esTargetes) return false;
+    var ck=_contentKids(sec);
+    if(ck.length <= 1 && !sec.querySelector('.section-header')) return false;
+    /* Una seccio nova si que pot quedar-se nomes amb el titol: la branca de
+       capcalera vidua de trySplitSection la baixara sencera. Una continuacio,
+       no: buidar-la del tot faria girar el bucle sense fi. */
+    var last=ck[ck.length-1];
+    if(last.classList && last.classList.contains('wline')) return false;
+    /* amb una taula nomes baixa un paragraf: baixar-hi una figura o un quadre
+       no seria acostar la consigna a la taula, seria remenar la maquetacio */
+    if((esTaula || esTargetes) && last.tagName !== 'P') return false;
+    sec.removeChild(last); moved.unshift(last);
+    return true;
+  }
+  function trySplitSection(sec){
+    if(BODY_MAX - body.scrollHeight < 150) return false;
+    body.appendChild(sec);
+    if(body.scrollHeight <= BODY_MAX) return true;
+    var moved=[];
+    while(body.scrollHeight > BODY_MAX && _contentKids(sec).length > 1){
+      var ck=_contentKids(sec); var last=ck[ck.length-1];
+      moved.unshift(last); sec.removeChild(last);
+    }
+    _tblRelieve(sec, moved) || _boxRelieve(sec, moved);
+    _wlineRelieve(sec, moved);
+    _promptRelieve(sec, moved);
+    /* Si el que queda a la pagina es nomes el titolet, no es una particio:
+       es una capcalera vidua. Val mes passar la seccio sencera al full nou. */
+    var _resta=_contentKids(sec).length, _tetitol=!!sec.querySelector('.section-header');
+    if(moved.length && (_tetitol ? _resta === 0
+                                 : (_resta <= 1 && sec.getBoundingClientRect().height < 110))){
+      moved.forEach(function(k){ sec.appendChild(k); });
+      if(sec.parentNode) sec.parentNode.removeChild(sec);
+      return false;
+    }
+    if(moved.length===0 || body.scrollHeight > BODY_MAX){
+      moved.forEach(function(k){ sec.appendChild(k); });
+      if(sec.parentNode) sec.parentNode.removeChild(sec);
+      return false;
+    }
+    var pending=moved;
+    while(pending.length){
+      newSheet();
+      var cont=document.createElement('div');
+      cont.className='section'; cont.setAttribute('data-cont','1'); cont._origin=sec;
+      body.appendChild(cont);
+      pending.forEach(function(k){ cont.appendChild(k); });
+      var rest=[];
+      while(body.scrollHeight > BODY_MAX && cont.children.length>1){
+        var l=cont.lastElementChild; rest.unshift(l); cont.removeChild(l);
+      }
+      _tblRelieve(cont, rest) || _boxRelieve(cont, rest);
+      _wlineRelieve(cont, rest);
+      _promptRelieve(cont, rest);
+      if(body.scrollHeight > BODY_MAX && cont.children.length===1 && rest.length===0){
+        break;   /* un bloc indivisible mes alt que un full: deixa'l i para */
+      }
+      pending=rest;
+    }
+    return true;
+  }
+  newSheet();
+  for(let i=0;i<FLOW.length;i++){
+    const blk=FLOW[i];
+    if(blk.classList.contains('spacer-block')){
+      blk.style.height='auto'; body.appendChild(blk);
+      const used = body.scrollHeight - blk.offsetHeight;
+      const remain = BODY_MAX - used;
+      blk.style.height = (remain>34?remain:34)+'px';
+      if(i < FLOW.length-1) newSheet();
+      continue;
+    }
+    body.appendChild(blk);
+    if(body.scrollHeight > BODY_MAX && body.children.length>1){
+      body.removeChild(blk);
+      var _ok=false;
+      if(blk.classList.contains('section')){ try{ _ok=trySplitSection(blk); }catch(e){ _ok=false; } }
+      if(!_ok){
+        newSheet();
+        var _ok2=false;
+        if(blk.classList.contains('section')){ try{ _ok2=trySplitSection(blk); }catch(e){ _ok2=false; } }
+        if(!_ok2){ body.appendChild(blk); }
+      }
+    }
+  }
+  const sheets=host.querySelectorAll('.sheet');
+  sheets.forEach(function(s,idx){ const pg=s.querySelector('.foot-pg'); if(pg) pg.textContent='Pàgina '+(idx+1)+' / '+sheets.length; });
+  restoreCaret(caret);
+}
+let _pgT=null;
+function schedulePageBreaks(){ clearTimeout(_pgT); _pgT=setTimeout(repaginate,120); }
+function updatePageBreaks(){ repaginate(); }
+document.addEventListener('focusout', function(){ schedulePageBreaks(); });
+
+/* ── eliminar / desfer / espai ─────────────────────── */
+const delStack = [];
+function _btnUndo(){ return document.getElementById('btn-undo'); }
+function _undoOn(){ const b=_btnUndo(); if(b){ b.classList.add('active'); b.disabled=false; } }
+function _undoOff(){ const b=_btnUndo(); if(b){ b.classList.remove('active'); b.disabled=true; } }
+function deleteEl(btn){
+  const el=btn.closest('.deletable'); if(!el) return;
+  const blk=topFlowBlock(el);
+  if(blk===el){ const i=FLOW.indexOf(el); delStack.push({el:el, flowIdx:i}); if(i>=0) FLOW.splice(i,1); el.remove(); }
+  else { delStack.push({el:el, parent:el.parentNode, sibling:el.nextSibling}); el.remove(); }
+  _undoOn();
+  repaginate();
+  if(typeof syncCopy==='function') setTimeout(syncCopy,0);
+}
+function undoDelete(){
+  if(!delStack.length) return;
+  const d=delStack.pop();
+  if(d.parent){ d.parent.insertBefore(d.el, d.sibling); }
+  else { FLOW.splice(Math.max(0,Math.min(d.flowIdx,FLOW.length)),0,d.el); }
+  if(!delStack.length) _undoOff();
+  repaginate();
+  if(typeof syncCopy==='function') setTimeout(syncCopy,0);
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='z' && (e.ctrlKey||e.metaKey)){
+    if(document.activeElement && document.activeElement.contentEditable==='true') return;
+    e.preventDefault(); undoDelete();
+  }
+});
+let _lastClickedBlock=null;
+document.addEventListener('click', function(e){
+  const b=topFlowBlock(e.target);
+  if(b && !b.classList.contains('spacer-block')) _lastClickedBlock=b;
+});
+function insertSpacer(){
+  const sp=document.createElement('div'); sp.className='spacer-block deletable';
+  sp.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">↕ espai en blanc</span>';
+  let idx=FLOW.length;
+  if(_lastClickedBlock){ const i=FLOW.indexOf(_lastClickedBlock); if(i>=0) idx=i+1; }
+  FLOW.splice(idx,0,sp);
+  delStack.push({el:sp, flowIdx:idx});
+  _undoOn();
+  repaginate();
+}
+function _mergeTables(root){
+  /* Torna les files de cada taula bessona i el contingut de cada quadre
+     bessó a l'original. L'ordre del document ja els dona del primer a
+     l'ultim, i tots apunten a l'arrel, de manera que es reenganxen en ordre.
+     Els quadres van primer: una taula bessona pot ser dins d'un quadre. */
+  root.querySelectorAll('div[data-boxcont]').forEach(function(c){
+    var src=c._srcBox;
+    if(src){ while(c.firstChild){ src.appendChild(c.firstChild); } }
+    if(c.parentNode) c.parentNode.removeChild(c);
+  });
+  root.querySelectorAll('table[data-tblcont]').forEach(function(c){
+    var src=c._srcTable, sb=src&&src.tBodies[0], cb=c.tBodies[0];
+    if(sb&&cb){ while(cb.rows.length) sb.appendChild(cb.rows[0]); }
+    if(c.parentNode) c.parentNode.removeChild(c);
+  });
+}
+function rebuildDocFromFlow(){
+  const doc=document.getElementById('doc');
+  _mergeTables(document);
+  document.querySelectorAll('.section[data-cont]').forEach(function(cont){
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+  });
+  FLOW.forEach(function(b){ if(b.classList.contains('spacer-block')) b.style.height=''; });
+  FLOW.forEach(function(b){ if(b.parentNode!==doc){ if(b.parentNode) b.parentNode.removeChild(b); doc.appendChild(b); } });
+  document.getElementById('sheets').innerHTML='';
+}
+window.addEventListener('load', function(){
+  flattenDoc(); extractFlow(); repaginate();
+  if(typeof syncCopy==='function') setTimeout(function(){ syncCopy(); repaginate(); }, 60);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ repaginate(); }); }
+  document.querySelectorAll('img').forEach(function(img){ if(!img.complete) img.addEventListener('load', schedulePageBreaks, {once:true}); });
+  setTimeout(repaginate, 400); setTimeout(repaginate, 1200);
+});
+</script>
+</body>
+</html>

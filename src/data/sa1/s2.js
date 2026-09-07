@@ -12,7 +12,7 @@ export const sa1s2 = {
   engageQuestion: "La sessió passada vam veure que no totes les garanties valen igual. Però quan tens una afirmació nova al davant, com decideixes de manera sistemàtica si és ciència o pseudociència? Avui construirem una eina per fer-ho: un detector.",
   engageContext: "Amb els casos que heu caçat a casa, buscarem els patrons que es repeteixen en tota pseudociència. D'aquests patrons en sortirà el «detector» que farem servir tot el curs per no deixar-nos enganyar.",
 
-  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A, B i C) ───────
   levelObjectives: {
     A: [
       "Valoro el grau de certesa d'afirmacions polèmiques reals, argumento en quines garanties es basa la creença social i faig una predicció que es pot equivocar sobre on discreparà la classe.",
@@ -25,6 +25,14 @@ export const sa1s2 = {
       "Identifico els senyals d'alerta d'una pseudociència que hem acordat entre tots i hi poso un exemple real.",
       "Faig servir el detector per analitzar un cas real caçat i preparo què diré a la defensa oral.",
       "Distingeixo una afirmació científica d'una pseudocientífica fixant-me si es pot posar a prova."
+    ],
+    // C = adaptació (04/09/2026, alumnes amb DIL). NO és la B escurçada:
+    // són MENYS objectius i més concrets, perquè la tasca de la fitxa C
+    // també és pròpia. Han de coincidir amb l'oa-box de fitxa_sa1_s2_VISUAL_C.
+    C: [
+      "Dic si em fio o no me'n fio d'una frase i en quina garantia es basa qui s'ho creu.",
+      "Reconec els 3 senyals d'alerta del detector.",
+      "Passo el meu cas caçat pel detector i dic si és pseudociència."
     ]
   },
 
@@ -126,7 +134,7 @@ export const sa1s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa1-s2-fitxa-A.html", B: "/fitxes/sa1-s2-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa1-s2-fitxa-A.html", B: "/fitxes/sa1-s2-fitxa-B.html", C: "/fitxes/sa1-s2-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Producte de la sessió: apliques el detector al teu cas caçat i prepares una defensa oral d'1 minut que anticipa l'objecció de qui hi creu. La demostració de comprensió és PRESENCIAL (defensa a l'aula), no s'entrega per escrit.",
 

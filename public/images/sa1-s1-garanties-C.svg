@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Fira Sans Extra Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="300" fill="#ffffff"/>
+  <text x="360" y="36" text-anchor="middle" font-size="28" font-weight="700" fill="#1c4a55">En què em baso per dir que és cert?</text>
+  <text x="360" y="62" text-anchor="middle" font-size="17" fill="#4a6b72">Tres maneres. Dues són fortes; una és fluixa.</text>
+
+  <g>
+    <rect x="22" y="86" width="216" height="182" rx="14" fill="#2a6f7f"/>
+    <text x="130" y="128" text-anchor="middle" font-size="42">📊</text>
+    <text x="130" y="166" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">DADES</text>
+    <text x="130" y="196" text-anchor="middle" font-size="17" fill="#e8f3f4">Números i mesures.</text>
+    <text x="130" y="220" text-anchor="middle" font-size="16" fill="#cfe6e9" font-style="italic">«S'ha mesurat i surt això.»</text>
+    <rect x="52" y="234" width="156" height="24" rx="12" fill="#ffffff" opacity="0.22"/>
+    <text x="130" y="251" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">FORTA</text>
+  </g>
+
+  <g>
+    <rect x="252" y="86" width="216" height="182" rx="14" fill="#38a3a5"/>
+    <text x="360" y="128" text-anchor="middle" font-size="42">🎓</text>
+    <text x="360" y="166" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">AUTORITAT</text>
+    <text x="360" y="196" text-anchor="middle" font-size="17" fill="#e8f5f5">Ho diu algú que en sap.</text>
+    <text x="360" y="220" text-anchor="middle" font-size="16" fill="#d3ecec" font-style="italic">«Ho diu el metge.»</text>
+    <rect x="282" y="234" width="156" height="24" rx="12" fill="#ffffff" opacity="0.22"/>
+    <text x="360" y="251" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">DEPÈN DE QUI HO DIU</text>
+  </g>
+
+  <g>
+    <rect x="482" y="86" width="216" height="182" rx="14" fill="#c96f3e"/>
+    <text x="590" y="128" text-anchor="middle" font-size="42">💭</text>
+    <text x="590" y="160" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">EL QUE VULL</text>
+    <text x="590" y="184" text-anchor="middle" font-size="24" font-weight="700" fill="#ffffff">CREURE</text>
+    <text x="590" y="208" text-anchor="middle" font-size="16" fill="#fbeae1">El que em convé o m'agrada.</text>
+    <text x="590" y="228" text-anchor="middle" font-size="15" fill="#f6d9c9" font-style="italic">«A mi em funciona.»</text>
+    <rect x="512" y="234" width="156" height="24" rx="12" fill="#ffffff" opacity="0.22"/>
+    <text x="590" y="251" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">FLUIXA</text>
+  </g>
+
+  <text x="360" y="288" text-anchor="middle" font-size="16" fill="#6b7a7e">Fiar-se només del que vull creure és la manera més fàcil d'equivocar-se.</text>
+</svg>

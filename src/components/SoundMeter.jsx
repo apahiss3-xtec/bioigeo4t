@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useSoundMeter } from '../soundmeter/SoundMeterContext.jsx'
 
 // Mesurador de so de l'aula: widget flotant amb 3 modes (cementiri / biblioteca /
 // aula en treball), cadascun amb llindars propis de verd-groc-vermell. Mostra un
@@ -36,13 +37,7 @@ function zoneFor(mode, approxDb) {
 }
 
 export default function SoundMeter() {
-  const [open, setOpen] = useState(() => {
-    try {
-      return localStorage.getItem('portal-bio-soundmeter-open') === '1'
-    } catch {
-      return false
-    }
-  })
+  const { open, setOpen } = useSoundMeter()
   const [modeId, setModeId] = useState(() => {
     try {
       return localStorage.getItem('portal-bio-soundmeter-mode') || 'aula'
@@ -66,14 +61,6 @@ export default function SoundMeter() {
   const lastUiUpdateRef = useRef(0)
   const modeRef = useRef(mode)
   modeRef.current = mode
-
-  useEffect(() => {
-    try {
-      localStorage.setItem('portal-bio-soundmeter-open', open ? '1' : '0')
-    } catch {
-      /* localStorage no disponible: ignorem */
-    }
-  }, [open])
 
   useEffect(() => {
     try {
@@ -169,7 +156,7 @@ export default function SoundMeter() {
     <div className="fixed end-4 top-1/2 z-40 -translate-y-1/2 flex flex-col items-end gap-2">
       {open && (
         <div
-          className="w-[210px] rounded-2xl border p-3 shadow-lg"
+          className="max-h-[calc(100dvh-2rem)] w-[210px] overflow-y-auto overscroll-contain rounded-2xl border p-3 shadow-lg"
           style={{ borderColor: 'var(--rule-strong)', background: 'var(--surface)' }}
         >
           <div className="flex items-center justify-between gap-2">
@@ -205,9 +192,9 @@ export default function SoundMeter() {
           </div>
 
           {/* Semàfor en viu: barra vertical + punt de color */}
-          <div className="mt-3 flex items-center justify-center gap-3">
+          <div className="mt-2.5 flex items-center justify-center gap-3">
             <div
-              className="relative h-32 w-7 overflow-hidden rounded-full"
+              className="relative h-24 w-7 overflow-hidden rounded-full"
               style={{ background: 'var(--bg-soft)', border: '1px solid var(--rule)' }}
               role="img"
               aria-label="Nivell de so en viu"

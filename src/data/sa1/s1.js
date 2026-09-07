@@ -13,9 +13,10 @@ export const sa1s1 = {
   engageQuestion: "A la vida —i a la ciència— res no és 100% segur: hi ha coses més certes i coses menys certes. Però, en què et bases per decidir quant de segura és una afirmació?",
   engageContext: "Avui no estudiem un contingut de biologia: estudiem com pensem. Aprendràs a mesurar la teva pròpia certesa i a distingir la ciència de la pseudociència. És l'eina que faràs servir tot el curs.",
 
-  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
+  // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A, B i C) ───────
   // A = ampliació (raonament obert, menys bastida) · B = base (més bastida, decreixent)
-  // Les paraules "Ampliació"/"Estàndard" NO apareixen enlloc: només la lletra.
+  // C = adaptació (bastida visual: imatge + «Per llegir» + encercla + mètode)
+  // Les paraules "Ampliació"/"Estàndard"/"Adaptació" NO apareixen enlloc: només la lletra.
   levelObjectives: {
     A: [
       "Justifico el grau de certesa d'una afirmació i argumento per què no totes les garanties valen igual per decidir què és cert.",
@@ -28,6 +29,14 @@ export const sa1s1 = {
       "Identifico els 5 tipus de garanties (dades, models, hàbits, autoritat, identitat/valors) en exemples donats.",
       "Compto quines garanties faig servir més i dibuixo el meu perfil epistèmic.",
       "Distingeixo ciència de pseudociència a partir de si es fa servir el mètode científic i s'admet la crítica."
+    ],
+    // C = adaptació (04/09/2026, alumnes amb DIL). NO és la B escurçada:
+    // són MENYS objectius i més concrets, perquè la tasca de la fitxa C
+    // també és pròpia. Han de coincidir amb l'oa-box de fitxa_sa1_s1_VISUAL_C.
+    C: [
+      "Poso afirmacions al calaix que els toca: molt certa, depèn o gens certa, i dic per què.",
+      "Reconec 3 garanties: dades, autoritat i el que vull creure.",
+      "Sé dir si una cosa és ciència o pseudociència mirant si es pot comprovar."
     ]
   },
 
@@ -157,7 +166,7 @@ export const sa1s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa1-s1-fitxa-A.html", B: "/fitxes/sa1-s1-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa1-s1-fitxa-A.html", B: "/fitxes/sa1-s1-fitxa-B.html", C: "/fitxes/sa1-s1-fitxa-C.html" },
   retallablesUrl: "/fitxes/sa1-s1-retallables.html",
   teoriaPdfUrl: null,
   elaborateNote: "Pregunta central de la fitxa: 'Tria una creença molt estesa (horòscop, homeopatia, un número de la sort...) i argumenta, amb el vocabulari de les garanties, per què no la considerem científica.'",

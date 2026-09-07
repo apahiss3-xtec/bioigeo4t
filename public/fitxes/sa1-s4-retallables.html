@@ -42,11 +42,19 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
   .page{box-shadow:none;width:100%;padding:0}
   .joc{break-inside:avoid}
 }
+
+/* ── Bloc C (afegit 04/09/2026): mateixes peces, amb inicis de frase ── */
+.bloc-head.bloc-c{border-left-color:#38a3a5;color:#1c4a55;break-before:page}
+.joc-c .card-head{background:#38a3a5}
+.joc-c .lbl{font-size:12.5px;font-weight:700;color:#1c4a55}
+.joc-c .wl{min-height:26px}
+.opts{font-size:12px;font-weight:700;color:#1c4a55;text-align:center;border:1.4px dashed #9ccad2;
+  border-radius:6px;padding:5px 4px;margin:3px 0 6px;line-height:1.5}
 </style>
 </head>
 <body>
 <div id="toolbar">
-  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · 2 jocs per full · cada joc porta 1 targeta de cas + 1 nota de revisió</span>
+  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · 2 jocs per pàgina · pàgina 1 nivells A i B · pàgina 2 nivell C</span>
   <button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
 </div>
 
@@ -56,13 +64,14 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
     <div class="doc-sa">SA1 · Sessió 4 · IE Temple</div>
   </div>
   <div class="doc-note">
-    <strong>Aquest full serveix per a 2 alumnes</strong> (2 jocs). Cada joc porta <strong>dues peces</strong>, i serveix tant per al nivell A com per al B.<br>
+    <strong>Aquest full serveix per a 2 alumnes</strong> (2 jocs). Cada joc porta <strong>dues peces</strong>, i serveix tant per al nivell A com per al B.
+    A la <strong>segona pàgina</strong> hi ha el <strong>bloc C</strong>: les mateixes dues peces, però amb els inicis de frase ja escrits i amb les opcions per encerclar.<br>
     <strong>Com funciona la fira.</strong> Abans de començar-la, cadascú copia a la <strong>targeta del cas</strong> només <em>què és el seu cas i què promet</em> — <strong>mai el veredicte</strong>, que es queda amagat a la seva fitxa. La targeta es deixa damunt la taula i la fitxa te l'endús. Així qui revisa jutja <strong>a cegues</strong>: no pot llegir què n'ha dit l'autor.<br>
     La <strong>nota de revisió</strong> l'escriu qui revisa i la deixa <strong>al costat de la targeta</strong>, perquè l'autor se la trobi en tornar al seu lloc.<br>
     Retalla primer entre jocs i després cada peça per la línia puntejada.
   </div>
 
-  <div class="bloc-head">Jocs 1 i 2 · 1 joc = 1 alumne</div>
+  <div class="bloc-head">Blocs A i B · jocs 1 i 2 · 1 joc = 1 alumne</div>
 
   <div class="joc">
     <div class="joc-head">Joc 1 · Nom: <span class="joc-name"></span></div>
@@ -100,6 +109,52 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
         <div class="lbl">Cas revisat / revisat per:</div><span class="wl"></span>
         <div class="lbl">Una cosa que t'ha sortit bé:</div><span class="wl tall"></span>
         <div class="lbl">Una cosa concreta que hi afegiria:</div><span class="wl tall"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bloc-head bloc-c">Bloc C · jocs de 2 peces, amb inicis de frase</div>
+
+  <div class="joc joc-c">
+    <div class="joc-head">Joc C1 · Nom: <span class="joc-name"></span></div>
+    <div class="par">
+      <div class="card cas">
+        <div class="card-head">✂️ Targeta del cas</div>
+        <div class="card-sub">L'escrius tu i la deixes damunt la taula. NO hi posis el veredicte: ha de jutjar a cegues qui la llegeixi.</div>
+        <div class="lbl">El meu cas és…</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">…i promet que…</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">L'he vist a…</div><span class="wl"></span>
+      </div>
+      <div class="card nota">
+        <div class="card-head">✂️ Nota de revisió</div>
+        <div class="card-sub">L'escrius quan revises el cas d'un altre i la deixes al costat de la targeta. Parla del cas, mai de la persona.</div>
+        <div class="lbl">Cas de:</div><span class="wl"></span>
+        <div class="lbl">Jo el posaria al calaix (encercla'n un):</div>
+        <div class="opts">✅ CIÈNCIA &nbsp;·&nbsp; ⏳ ENCARA NO COMPROVAT &nbsp;·&nbsp; ❌ PSEUDOCIÈNCIA</div>
+        <div class="lbl">Una cosa que has explicat molt clar és…</div><span class="wl tall"></span>
+        <div class="lbl">Hi afegiria…</div><span class="wl tall"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="joc joc-c">
+    <div class="joc-head">Joc C2 · Nom: <span class="joc-name"></span></div>
+    <div class="par">
+      <div class="card cas">
+        <div class="card-head">✂️ Targeta del cas</div>
+        <div class="card-sub">L'escrius tu i la deixes damunt la taula. NO hi posis el veredicte: ha de jutjar a cegues qui la llegeixi.</div>
+        <div class="lbl">El meu cas és…</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">…i promet que…</div><span class="wl"></span><span class="wl"></span>
+        <div class="lbl">L'he vist a…</div><span class="wl"></span>
+      </div>
+      <div class="card nota">
+        <div class="card-head">✂️ Nota de revisió</div>
+        <div class="card-sub">L'escrius quan revises el cas d'un altre i la deixes al costat de la targeta. Parla del cas, mai de la persona.</div>
+        <div class="lbl">Cas de:</div><span class="wl"></span>
+        <div class="lbl">Jo el posaria al calaix (encercla'n un):</div>
+        <div class="opts">✅ CIÈNCIA &nbsp;·&nbsp; ⏳ ENCARA NO COMPROVAT &nbsp;·&nbsp; ❌ PSEUDOCIÈNCIA</div>
+        <div class="lbl">Una cosa que has explicat molt clar és…</div><span class="wl tall"></span>
+        <div class="lbl">Hi afegiria…</div><span class="wl tall"></span>
       </div>
     </div>
   </div>
