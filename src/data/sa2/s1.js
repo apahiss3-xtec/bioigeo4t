@@ -210,24 +210,6 @@ export const sa2s1 = {
     {
       id: "q1",
       type: "open",
-      text: "Explica amb les teves paraules per què el cos necessita que les cèl·lules es divideixin, i posa un exemple concret.",
-      hint: "Pensa en reparar (una ferida) i en créixer."
-    },
-    {
-      id: "q2",
-      type: "multiple",
-      text: "En una preparació d'arrel de ceba trobes 80 cèl·lules en interfase i molt poques en cada fase de la mitosi. Què vol dir això?",
-      options: [
-        "Que la interfase és la fase del cicle que dura més temps",
-        "Que la ceba està malalta i les seves cèl·lules no es divideixen",
-        "Que la interfase és la fase més fàcil de veure i per això n'has comptat més",
-        "Que hi ha hagut un error en preparar i tenyir la mostra"
-      ],
-      correct: 0
-    },
-    {
-      id: "q3",
-      type: "open",
       text: "Torna a la frase de la biòpsia: «cèl·lules que es divideixen sense control». Amb el que has après avui, què està passant exactament i per què és perillós?",
       hint: "Relaciona-ho amb la mitosi i amb la pèrdua dels senyals que fan aturar la divisió."
     }

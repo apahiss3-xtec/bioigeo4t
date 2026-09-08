@@ -217,27 +217,8 @@ export const sa1s4 = {
       type: "open",
       text: "En una frase: quin veredicte has donat al teu cas real i quin ha estat el senyal del detector més decisiu per decidir-ho?",
       hint: "Torna a la graella de l'apartat 1: quin senyal ha pesat més?"
-    },
-    {
-      id: "q2",
-      type: "multiple",
-      text: "Un cas es POT posar a prova amb experiments i acceptaria qualsevol resultat, però encara ningú no ho ha fet. A quin calaix va?",
-      options: [
-        "Ciència ja comprovada",
-        "Pseudociència",
-        "Encara no comprovat",
-        "No es pot classificar"
-      ],
-      correct: 2
-    },
-    {
-      id: "q3",
-      type: "open",
-      text: "Compara com decidies què és cert el primer dia de la SA amb com ho decideixes ara. Quina és la diferència més gran?",
-      hint: "Torna al teu perfil de la S1: quina garantia hi sortia més? Ha canviat res des de llavors?"
     }
   ],
-  exitTicketNote: "Exit tiquet de tancament de SA: barreja una comprovació ràpida (q2) amb la reflexió metacognitiva sobre el propi canvi (q1, q3).",
 
   // ── METACOGNICIÓ ─────────────────────────────────────────
   metacognition: {

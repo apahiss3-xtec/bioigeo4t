@@ -220,19 +220,6 @@ export const sa2s4 = {
   exitTicketQuestions: [
     {
       id: "q1",
-      type: "multiple",
-      text: "La pell d'una cremada superficial es refà del tot en deu dies, amb cèl·lules noves iguals que les de sota. Quin procés és?",
-      options: ["Mitosi", "Meiosi", "Càncer", "Cap dels tres"],
-      correct: 0
-    },
-    {
-      id: "q2",
-      type: "open",
-      text: "Una biòpsia de teixit nerviós dona un índex mitòtic del 12% i una de mucosa intestinal dona un 28%. Quina et fa sospitar més d'un procés cancerós? Raona-ho amb el que vas aprendre a S3.",
-      hint: "El ~10% és una referència general, però el llindar depèn del teixit: pregunta't primer quant s'hauria de dividir CADA un dels dos. Quin dels dos gairebé no s'hauria de dividir mai?"
-    },
-    {
-      id: "q3",
       type: "open",
       text: "Explica, en 3-4 línies, per quina cosa es diferencien la mitosi, la meiosi i el càncer si totes tres parteixen del mateix cicle cel·lular.",
       hint: "Pensa en tres preguntes: quantes cèl·lules surten, amb quin material genètic, i si el procés s'atura quan toca."

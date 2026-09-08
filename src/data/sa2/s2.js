@@ -208,24 +208,6 @@ export const sa2s2 = {
   exitTicketQuestions: [
     {
       id: "q1",
-      type: "multiple",
-      text: "Una cèl·lula humana (46 cromosomes) fa MEIOSI. Quantes cèl·lules en surten i amb quants cromosomes cadascuna?",
-      options: [
-        "4 cèl·lules amb 23 cromosomes cadascuna",
-        "2 cèl·lules amb 46 cromosomes cadascuna",
-        "4 cèl·lules amb 46 cromosomes cadascuna",
-        "2 cèl·lules amb 23 cromosomes cadascuna"
-      ],
-      correct: 0
-    },
-    {
-      id: "q2",
-      type: "open",
-      text: "Explica amb les teves paraules per què els gàmetes han de tenir la meitat del material genètic. Què passaria si no fos així?",
-      hint: "Pensa en la fecundació: dues meitats que se sumen. Si fossin senceres…"
-    },
-    {
-      id: "q3",
       type: "open",
       text: "Per què dos germans dels mateixos pares no són idèntics (si no són bessons idèntics)? Relaciona-ho amb la meiosi.",
       hint: "La meiosi no fa còpies: barreja el material a l'atzar en cada gàmeta."

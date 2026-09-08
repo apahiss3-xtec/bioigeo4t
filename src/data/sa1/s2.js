@@ -192,24 +192,6 @@ export const sa1s2 = {
     {
       id: "q1",
       type: "open",
-      text: "Explica dos dels senyals del detector que heu acordat avui i posa un exemple real de cadascun.",
-      hint: "Tria exemples que NO s'hagin dit a classe: han de ser casos teus."
-    },
-    {
-      id: "q2",
-      type: "multiple",
-      text: "«Existeix vida extraterrestre.» Segons el que hem après avui, aquesta afirmació és…",
-      options: [
-        "Pseudociència, perquè no està demostrada",
-        "Una hipòtesi contrastable encara no comprovada",
-        "Ciència ja demostrada",
-        "Una garantia d'autoritat"
-      ],
-      correct: 1
-    },
-    {
-      id: "q3",
-      type: "open",
       text: "Algú et diu: «la meva polsera magnètica em treu el mal d'esquena perquè a mi em funciona». Aplica-hi el detector i respon-li amb arguments.",
       hint: "Pensa: es pot comprovar? En quina garantia es basa («a mi em funciona»)? Admet que ho posem a prova?"
     }

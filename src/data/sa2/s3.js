@@ -217,22 +217,9 @@ export const sa2s3 = {
   exitTicketQuestions: [
     {
       id: "q1",
-      type: "multiple",
-      text: "En un camp del microscopi hi ha 40 cèl·lules i 8 estan en divisió. Quin és l'índex mitòtic?",
-      options: ["20%", "8%", "32%", "40%"],
-      correct: 0
-    },
-    {
-      id: "q2",
       type: "open",
       text: "En un altre ratolí, l'índex mitòtic passa del 30% al 9% després del tractament. El fàrmac funciona? Justifica-ho amb els números.",
       hint: "Compara els dos números. Quin canvi hauries d'esperar veure si el fàrmac frena la divisió?"
-    },
-    {
-      id: "q3",
-      type: "open",
-      text: "Per què la quimioteràpia provoca efectes com la caiguda del cabell? Relaciona-ho amb la mitosi.",
-      hint: "El fàrmac atura les cèl·lules que es divideixen molt. Quins teixits SANS també ho fan?"
     }
   ],
 

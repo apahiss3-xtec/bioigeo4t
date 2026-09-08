@@ -240,24 +240,6 @@ export const sa1s3 = {
     {
       id: "q1",
       type: "open",
-      text: "Un company defensa que «els horòscops encerten». Escriu una rèplica que ataqui l'argument (no la persona) fent servir el detector i les garanties.",
-      hint: "Quins senyals hi trobes? En quina garantia es basa qui hi creu? Es pot posar a prova?"
-    },
-    {
-      id: "q2",
-      type: "multiple",
-      text: "Un amic diu: «el meu amulet em porta sort; i si algun dia no funciona, és que no hi tenia prou fe». Què li passa, a aquesta afirmació?",
-      options: [
-        "Que encara no s'ha comprovat, però es podria comprovar demà.",
-        "Que és certa mentre no aparegui cap prova clara en contra.",
-        "Que ja no hi ha cap resultat possible que la pugui fer caure.",
-        "Que li falten dades numèriques per poder ser una bona hipòtesi."
-      ],
-      correct: 2
-    },
-    {
-      id: "q3",
-      type: "open",
       text: "«Escoltar música clàssica mentre dorms fa que recordis millor el que has estudiat.» Escriu la prova concreta que faria caure aquesta afirmació i digues a quin calaix la poses ara mateix, i per què.",
       hint: "Comença per la prova: qui compararies amb qui, i què mesuraries exactament?"
     }

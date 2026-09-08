@@ -236,24 +236,6 @@ export const sa1s1 = {
     {
       id: "q1",
       type: "open",
-      text: "Explica amb les teves paraules per què diem que a la ciència res no és 100% segur, i per què això no la fa menys fiable.",
-      hint: "Pensa en la idea de graus de certesa i en que la ciència es revisa i es corregeix a si mateixa."
-    },
-    {
-      id: "q2",
-      type: "multiple",
-      text: "«Les vacunes funcionen perquè hi ha estudis amb milers de persones que ho mesuren.» Quin tipus de garantia és aquesta?",
-      options: [
-        "Dades",
-        "Autoritat",
-        "Hàbits",
-        "Identitat i valors"
-      ],
-      correct: 0
-    },
-    {
-      id: "q3",
-      type: "open",
       text: "Tria una creença molt estesa (horòscop, un número de la sort, homeopatia...). Quina garantia creus que fa que molta gent hi confiï, i quina prova et faria falta a tu per estar-ne segur?",
       hint: "Pensa en quina garantia mou la creença social (autoritat, identitat i valors, hàbits) i què hauria de passar per convèncer algú que decideix per dades."
     }
