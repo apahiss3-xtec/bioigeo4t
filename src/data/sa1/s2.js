@@ -1,7 +1,10 @@
 export const sa1s2 = {
   id: "s2",
   saId: "sa1",
-  title: "Caça a la pseudociència: construïm el detector",
+  title: "Com destapes una mentida que sembla ciència?",
+  // El text informatiu que abans anava dins el títol: el títol és el ganxo,
+  // el que cal explicar viu al Repte inicial (tasca 1, 09/09/2026).
+  repteInicial: "Amb els casos que heu caçat a casa buscarem els trucs que es repeteixen sempre. D'aquests trucs en sortirà el «detector» de pseudociències que faràs servir tot el curs.",
   sessionNumber: 2,
   biome: "sa1",
   duration: "2h",
@@ -10,7 +13,6 @@ export const sa1s2 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Posada en comú ràpida: cadascú ensenya la pseudociència que ha caçat (polsera magnètica, detox, horòscop, un aliment «que cura»...). En 1 minut: què promet i amb quines garanties intenta convèncer-te? Anem apuntant a la pissarra els trucs que es repeteixen.",
   engageQuestion: "La sessió passada vam veure que no totes les garanties valen igual. Però quan tens una afirmació nova al davant, com decideixes de manera sistemàtica si és ciència o pseudociència? Avui construirem una eina per fer-ho: un detector.",
-  engageContext: "Amb els casos que heu caçat a casa, buscarem els patrons que es repeteixen en tota pseudociència. D'aquests patrons en sortirà el «detector» que farem servir tot el curs per no deixar-nos enganyar.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A, B i C) ───────
   levelObjectives: {
@@ -187,6 +189,9 @@ export const sa1s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa1-s2-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     {
@@ -206,7 +211,7 @@ export const sa1s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Acaba de polir la teva defensa oral d'1 minut: passa el cas caçat pels senyals del detector que heu acordat i escriu l'objecció que et posaria qui hi creu, amb la teva resposta. La defensa es fa a l'aula la propera sessió i és la teva demostració de comprensió (no s'entrega per escrit).",
-    deadline: "2026-09-XX",
+    deadline: null,
     note: "Aprenentatge significatiu: no és copiar teoria, sinó aplicar el detector a un cas real i preparar-te per defensar-lo davant els companys."
   },
 

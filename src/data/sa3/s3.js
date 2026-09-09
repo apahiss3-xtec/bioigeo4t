@@ -1,7 +1,7 @@
 export const sa3s3 = {
   id: "s3",
   saId: "sa3",
-  title: "De l'ADN a la proteïna",
+  title: "Com es converteix una lletra de l'ADN en tu?",
   sessionNumber: 3,
   biome: "sa3",
   duration: "2h",

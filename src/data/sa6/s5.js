@@ -1,7 +1,7 @@
 export const sa6s5 = {
   id: "s5",
   saId: "sa6",
-  title: "Gondwana Tales: l'estrena i l'informe final",
+  title: "L'estrena: què explica el teu planeta?",
   sessionNumber: 5,
   biome: "sa6",
   duration: "2h",
@@ -10,7 +10,11 @@ export const sa6s5 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "El gener de 1912, Alfred Wegener va presentar la deriva continental davant d'una sala plena de geòlegs. Tenia l'encaix de les costes, els mateixos fòssils a continents separats, les mateixes roques i les mateixes serralades tallades pel mig. Tenia, de fet, gairebé totes les proves que has fet servir tu. I el van esbroncar. Durant quaranta anys la seva explicació va quedar arraconada, i ell va morir a Groenlàndia sense veure-la acceptada. No el van rebutjar perquè les proves fossin dolentes: el van rebutjar perquè no sabia dir quina força movia continents sencers, i perquè hi havia dades que no li quadraven i no les va saber explicar. Avui li toca a la vostra explicació passar per la mateixa sala.",
   engageQuestion: "Què fa que una explicació científica convenci? Que estigui ben explicada? Que la digui algú amb autoritat? O que cada afirmació vagi enganxada a una prova concreta? I la pregunta incòmoda: què has fet amb aquella prova del teu planeta que no acabava d'encaixar — l'has amagada o l'has explicada?",
-  engageContext: "Has reconstruït un planeta sencer. A S21 vas descobrir que els continents es mouen i vas veure les proves de Wegener. A S22 vas trobar el motor que a ell li faltava i vas seguir el cicle de Wilson. A S23 vas aprendre a llegir la història escrita a les roques i a datar-la amb fòssils guia. A S24 vas girar la mirada cap al present i cap a casa teva, i vas analitzar els riscos del teu propi territori. Avui es tanca tot: estrenem els vídeos, els coavaluem amb la rúbrica Gondwana com fa la comunitat científica de veritat, i cadascú escriu el seu informe individual de riscos. Els dos productes de la SA6, a la mateixa sessió.",
+  engageContext: "Has reconstruït un planeta sencer: com es mouen els continents, què els empeny, com es llegeix la història escrita a les roques i quins riscos amaga el teu propi territori. Avui es tanca tot: estrenem els vídeos, els coavaluem amb la rúbrica Gondwana com fa la comunitat científica de veritat, i cadascú escriu el seu informe individual de riscos.",
+
+  // NO es renderitza al web: vocabulari de programació del docent
+  // (tipologia de sessió, guió de moments). Tasca 2, 09/09/2026.
+  teacherNotes: "Sessió de síntesi: els DOS productes de la SA6 cauen a la mateixa sessió (vídeo coavaluat + informe individual). Vigilar el temps.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -52,9 +56,9 @@ export const sa6s5 = {
     },
     "4": {
       scaffold:
-        "Tancar una situació d'aprenentatge no és dir si t'ha agradat. És mirar enrere i localitzar tres coses concretes: una idea que ara entens i abans no (i com t'has adonat que l'entenies), un moment en què vas canviar d'opinió perquè una prova et va contradir, i una pregunta que et queda oberta. Recorda el fil sencer: les plaques es mouen (S21), les mou la convecció del mantell (S22), les roques en guarden la memòria i es poden datar (S23), i tot això explica quins riscos té el lloc on vius (S24).",
+        "Tancar una situació d'aprenentatge no és dir si t'ha agradat. És mirar enrere i localitzar tres coses concretes: una idea que ara entens i abans no (i com t'has adonat que l'entenies), un moment en què vas canviar d'opinió perquè una prova et va contradir, i una pregunta que et queda oberta. Recorda el fil sencer: les plaques es mouen, les mou la convecció del mantell, les roques en guarden la memòria i es poden datar, i tot això explica quins riscos té el lloc on vius.",
       challenge:
-        "Fes el tancament en clau epistèmica, com a SA1. Al llarg de la SA6 has cregut coses per raons diferents: perquè ho has deduït tu d'una prova, perquè ho has vist en un model o un simulador, perquè t'ho ha dit el professor o un vídeo. Classifica tres idees de la SA6 segons d'on ve la teva certesa i digues quina de les tres et sembla més sòlida i per què. Acaba amb la pregunta oberta que t'enduus, i digues quina mena de prova caldria per respondre-la."
+        "Pensa d'on et ve cada certesa. Al llarg d'aquesta situació has cregut coses per raons diferents: perquè ho has deduït tu d'una prova, perquè ho has vist en un model o un simulador, perquè t'ho ha dit el professor o un vídeo. Classifica tres idees de la SA6 segons d'on ve la teva certesa i digues quina de les tres et sembla més sòlida i per què. Acaba amb la pregunta oberta que t'enduus, i digues quina mena de prova caldria per respondre-la."
     }
   },
 

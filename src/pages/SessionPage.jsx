@@ -197,6 +197,17 @@ export default function SessionPage() {
               <T>{session.engageContext}</T>
             </p>
           )}
+          {/* Repte inicial: el text informatiu dens que abans anava al títol de
+              la sessió. El títol ha de ser un ganxo curt; el que cal explicar
+              viu aquí, en una targeta pròpia, i mai al títol. */}
+          {session.repteInicial && (
+            <div className="mt-6 rounded-2xl border border-[var(--rule-strong)] bg-[var(--surface)] p-5">
+              <p className="kicker mb-1" style={{ color: 'var(--biome-accent)' }}>🎯 {t('session.repteInicial')}</p>
+              <p className="text-lg">
+                <T>{session.repteInicial}</T>
+              </p>
+            </div>
+          )}
           {session.engageChallenge && (
             <div
               className="mt-6 rounded-2xl border-s-4 p-5"
@@ -546,6 +557,19 @@ export default function SessionPage() {
           </SectionTitle>
           {session.exitTicketNote && (
             <p className="mb-4 italic text-[var(--muted)]">{session.exitTicketNote}</p>
+          )}
+          {/* Full imprimible del tiquet de sortida: mig A4, dos tiquets per full
+              (es retalla per la línia de punts). Generat per
+              scripts/_exit-tickets/build_tickets.py. */}
+          {session.exitTicketUrl && (
+            <a
+              href={asset(session.exitTicketUrl)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-4 inline-block rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 font-display font-semibold hover:bg-[var(--paper-2)] transition-colors"
+            >
+              🎟️ {t('session.exitTicketSheet')}
+            </a>
           )}
           {session.exitTicketType === 'paper' ? (
             <div className="space-y-4">

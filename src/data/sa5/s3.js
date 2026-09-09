@@ -10,7 +10,11 @@ export const sa5s3 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Un antibiòtic que fa deu anys curava una infecció en tres dies, avui de vegades no fa res. No és que el medicament s'hagi fet vell: són els bacteris els que han canviat. Cada cop que prenem un antibiòtic, matem la majoria de bacteris... però algun, per pura casualitat, havia nascut amb una petita variació que el feia resistent. Aquest sobreviu, es reprodueix i omple el seu lloc de descendents resistents. En pocs anys, tota la població ha canviat. El mateix passa amb els insectes i els pesticides. Això és evolució passant DAVANT dels nostres ulls, en temps humà. Avui no ens creurem la història: la posarem a prova. Dissenyaràs i faràs una simulació de selecció natural i, amb el que observis, hauràs de decidir quina de les grans teories de l'evolució explica millor per què canvien els éssers vius.",
   engageQuestion: "Si un bacteri es fa resistent a un antibiòtic, què ha passat realment: el bacteri ha «decidit» defensar-se, s'ha «esforçat» i ho ha transmès, o hi havia atzar i l'ambient n'ha triat uns quants? Com canvien de veritat les poblacions?",
-  engageContext: "Avui és una sessió de desenvolupament amb dos moments potents. Primer faràs ciència de debò: dissenyaràs una simulació de selecció natural (depredador i preses de colors sobre diferents fons), definiràs les variables i faràs rondes per veure què sobreviu. Després faràs l'habilitat més important de tota la situació, la que et demanaran a la selectivitat: mirar un mateix cas (el coll de la girafa, la resistència a un antibiòtic) des de les QUATRE teories de l'evolució i saber per què el neodarwinisme és el model que la ciència accepta avui.",
+  engageContext: "Avui faràs ciència de debò: dissenyaràs una simulació de selecció natural (un depredador i preses de colors sobre fons diferents), definiràs les variables i faràs rondes per veure què sobreviu. Després miraràs un mateix cas —el coll de la girafa, la resistència a un antibiòtic— des de les QUATRE teories de l'evolució i entendràs per què el neodarwinisme és el model que la ciència accepta avui.",
+
+  // NO es renderitza al web: vocabulari de programació del docent
+  // (tipologia de sessió, guió de moments). Tasca 2, 09/09/2026.
+  teacherNotes: "Sessió de desenvolupament, dos moments. El segon (les quatre teories sobre un mateix cas) és l'habilitat de nivell PAU: prioritzar-lo si el temps va just.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {

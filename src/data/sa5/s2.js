@@ -1,7 +1,7 @@
 export const sa5s2 = {
   id: "s2",
   saId: "sa5",
-  title: "Les proves de l'evolució, del pati al laboratori",
+  title: "Ala de ratpenat i ala de mosca: parents o coincidència?",
   sessionNumber: 2,
   biome: "sa5",
   duration: "2h",
@@ -10,7 +10,11 @@ export const sa5s2 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "A la sessió anterior vau explicar històries sobre els organismes del pati: «la gallina amb prou feines vola perquè l'hem domesticat», «el plataner té la fulla com un auró». Però una història no és una prova. Avui passem de biòlegs de camp a detectius de l'evolució: buscarem les PROVES que confirmen (o refuten) el parentiu entre éssers vius. La primera la tens gairebé a la cuina: l'esquelet d'una ala de pollastre. Si la desmuntes, hi trobaràs un os llarg (húmer), després dos ossos junts (radi i cúbit) i uns ossets petits. Exactament els mateixos ossos que tens al teu braç. Casualitat? L'ala d'un insecte també serveix per volar, però per dins no s'assembla gens a la del pollastre. Per què unes semblances valen com a prova de parentiu i altres no?",
   engageQuestion: "L'ala d'un ocell i l'ala d'un insecte fan el mateix (volar): són «el mateix invent»? Quan una semblança entre dos éssers vius demostra que són parents, i quan només és una coincidència?",
-  engageContext: "Avui és una sessió de desenvolupament: aprendràs a distingir les proves de l'evolució. La clau és una idea potent —homologia vs analogia— i una habilitat nova: llegir un arbre de semblances ja construït per inferir qui és parent de qui. No el dibuixaràs tu; l'has de saber interpretar, com un mapa. Al final relacionaràs cada organisme del pati amb el tipus de prova que explica la seva història.",
+  engageContext: "Avui aprendràs a distingir les proves de l'evolució. La clau és una idea potent —homologia contra analogia— i una habilitat nova: llegir un arbre de semblances ja construït per inferir qui és parent de qui. No el dibuixaràs tu; l'has de saber interpretar, com un mapa. Al final relacionaràs cada organisme del pati amb el tipus de prova que explica la seva història.",
+
+  // NO es renderitza al web: vocabulari de programació del docent
+  // (tipologia de sessió, guió de moments). Tasca 2, 09/09/2026.
+  teacherNotes: "Sessió de desenvolupament. La feina fina és que l'arbre filogenètic només s'INTERPRETA, no es construeix.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {

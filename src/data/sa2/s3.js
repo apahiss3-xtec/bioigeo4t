@@ -232,7 +232,7 @@ export const sa2s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Amb els teus dos índexs mitòtics, escriu un mini-informe de 4-5 línies com si fos la conclusió d'un article científic: què heu mesurat, quins números heu obtingut abans i després, i quin és el vostre veredicte sobre el fàrmac. Ha de poder-se defensar només amb les dades. El farem servir per tancar la SA a la propera sessió.",
-    deadline: "2026-XX-XX",
+    deadline: null,
     note: "Aprenentatge significatiu: comunicar una conclusió amb dades pròpies (prepara la síntesi de la SA), no copiar una definició."
   },
 

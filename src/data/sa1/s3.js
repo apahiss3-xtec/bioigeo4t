@@ -1,7 +1,10 @@
 export const sa1s3 = {
   id: "s3",
   saId: "sa1",
-  title: "El judici als casos: defensem i classifiquem",
+  title: "Defensaries el teu veredicte davant de tota la classe?",
+  // El text informatiu que abans anava dins el títol: el títol és el ganxo,
+  // el que cal explicar viu al Repte inicial (tasca 1, 09/09/2026).
+  repteInicial: "Cadascú defensa el seu cas en un minut i la classe l'avalua amb el detector. Després reparteixes afirmacions en tres calaixos —ciència, pseudociència i encara no comprovat— i respons la pregunta que decideix el calaix de veritat: què hauria de passar perquè aquesta afirmació caigués?",
   sessionNumber: 3,
   biome: "sa1",
   duration: "2h",
@@ -10,7 +13,8 @@ export const sa1s3 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Rondes de defensa: cadascú surt 1 minut i defensa el veredicte del seu cas caçat fent servir el detector. Es fa en grups d'unes 8 persones: la resta escolta amb el detector a la mà i, en acabar, vota alçant la mà: CIÈNCIA · PSEUDOCIÈNCIA · ENCARA NO COMPROVAT. Si no coincidim, ho discutim.",
   engageQuestion: "Ja tens un veredicte del teu cas. Però un veredicte no val res si no el saps DEFENSAR davant de qui hi creu. Avui posem els casos a judici: què fa que una defensa convenci de veritat?",
-  engageContext: "Cada alumne defensa el seu cas en 1 minut (demostració de comprensió PRESENCIAL). Els companys avaluen amb el detector. Després classifiquem afirmacions en TRES calaixos, i tanquem amb la pregunta que decideix el calaix de veritat —què hauria de passar perquè l'afirmació caigués?— i amb el mural col·lectiu del detector.",
+  // NO es renderitza al web: guió del docent (tasca 2, 09/09/2026).
+  teacherNotes: "Defensa oral d'1 minut per alumne = demostració de comprensió PRESENCIAL; els companys avaluen amb el detector. Després, classificació d'afirmacions en TRES calaixos i tancament amb la pregunta de falsabilitat i el mural col·lectiu del detector.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A, B i C) ───────
   levelObjectives: {
@@ -235,6 +239,9 @@ export const sa1s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa1-s3-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     {
@@ -254,7 +261,7 @@ export const sa1s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Tanquem la SA1 la propera sessió amb el repte final. Repassa el detector col·lectiu de la classe i porta pensat un cas de la teva vida quotidiana (un anunci, una notícia, un consell de salut) on el detector t'hagi servit o et pugui servir.",
-    deadline: "2026-09-XX",
+    deadline: null,
     note: "Aprenentatge significatiu: connectar el detector amb una situació real teva, no repetir la teoria."
   },
 

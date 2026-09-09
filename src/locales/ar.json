@@ -41,6 +41,7 @@
     "teoriaSoon": "النظرية بصيغة PDF متوفرة قريباً",
     "appComingSoonTitle": "الرسوم المتحركة التفاعلية متوفرة قريباً",
     "exitPaperNote": "بطاقة الخروج هذه تُنجز ورقياً في الصف.",
+    "exitTicketSheet": "ورقة بطاقة الخروج (للطباعة)",
     "exitAbsentAccordion": "هل تغيّبت؟ أنجزها هنا عبر الإنترنت",
     "deliverables": "تسليمات هذه الحصة",
     "flippedReading": "اقرأ أولاً",
@@ -54,7 +55,8 @@
     "nextSession": "الحصة التالية",
     "backToSA": "العودة إلى الوحدة",
     "criteriNum": "معيار",
-    "criteriOfficial": "النص الرسمي للمنهاج (بلغة المعلمين)"
+    "criteriOfficial": "النص الرسمي للمنهاج (بلغة المعلمين)",
+    "repteInicial": "التحدي الأول"
   },
   "exitForm": {
     "nom": "الاسم",

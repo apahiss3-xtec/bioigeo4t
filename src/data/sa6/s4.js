@@ -10,7 +10,11 @@ export const sa6s4 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Setembre de 2013. Davant de la costa de Vinaròs, a poques milles del delta de l'Ebre, una plataforma injecta gas a pressió dins d'un antic jaciment de petroli buit: és el magatzem Castor. Al cap de pocs dies comencen els terratrèmols. No un: més de mil, en poques setmanes, el més fort de magnitud 4,3. La gent d'Alcanar, de Vinaròs i de les Cases surt de casa de matinada. Mai abans no s'hi havien notat sismes així. El magatzem es va tancar per sempre sense arribar a funcionar. Sis anys després, el gener de 2020, el temporal Gloria entrava mar endins al delta de l'Ebre fins a uns tres quilòmetres i inundava milers d'hectàrees d'arrossars amb aigua salada. Dos successos ben diferents i una mateixa pregunta: per què passen just aquí?",
   engageQuestion: "Un terratrèmol de magnitud 4,3 al mig d'un desert buit no fa cap mal. El mateix terratrèmol sota una ciutat pot ser una catàstrofe. Aleshores, què és exactament un «risc»? Depèn només de la natura, o també de nosaltres? I la segona pregunta, més incòmoda: quants dels riscos del nostre territori els hem fabricat o agreujat nosaltres mateixos?",
-  engageContext: "Fins ara has fet de geòleg del passat: has descobert que les plaques es mouen (S21), per què es mouen (S22) i com llegir la història escrita a les roques (S23). Avui gires la mirada cap al present i cap a casa teva. La mateixa geologia que explica per què el Mont Caro té fòssils marins explica també per què hi ha una falla sota el mar davant de la costa, per què el delta s'enfonsa i per què després d'un incendi als Ports la primera pluja forta s'emporta el vessant. Avui seràs analista de riscos del teu propi territori: n'identificaràs els perills, diràs de què depenen i proposaràs què s'hi pot fer.",
+  engageContext: "Fins ara has fet de geòleg del passat. Avui gires la mirada cap al present i cap a casa teva: la mateixa geologia que explica els fòssils marins del Mont Caro explica també la falla sota el mar davant de la costa, per què el delta s'enfonsa i per què després d'un incendi als Ports la primera pluja forta s'emporta el vessant. Avui seràs analista de riscos del teu propi territori: n'identificaràs els perills, diràs de què depenen i proposaràs què s'hi pot fer.",
+
+  // NO es renderitza al web: vocabulari de programació del docent
+  // (tipologia de sessió, guió de moments). Tasca 2, 09/09/2026.
+  teacherNotes: "Sessió de desenvolupament. Recupera S1 (les plaques es mouen), S2 (per què es mouen) i S3 (llegir la història de les roques) i ho aplica al territori proper.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -90,7 +94,7 @@ export const sa6s4 = {
   ],
   exploreDuration: "50 min (25 model + 25 cas real)",
   exploreMaterials: ["2 safates o mitges ampolles tallades", "Sòl o sorra (el mateix per a totes dues)", "Gespa, molsa, palla o planta amb arrel", "Regadora o ampolla amb forats", "Gots per recollir el que surt", "Fitxa de l'indret real assignat"],
-  exploreNote: "Demostració a l'aula (últims 20-25 min de la sessió, 3 min per equip): cada equip presenta el seu indret en 3 minuts davant del mapa projectat i ha de respondre dues preguntes del professor —«de quina dada surt aquest risc?» i «la teva mesura, sobre quin factor actua?»— sense llegir el paper.",
+  exploreNote: "Cada equip presenta el seu indret en 3 minuts davant del mapa projectat i ha de respondre dues preguntes —«de quina dada surt aquest risc?» i «la teva mesura, sobre quin factor actua?»— sense llegir el paper.",
 
   // ── EXPLICA ──────────────────────────────────────────────
   theoryPoints: [

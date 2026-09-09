@@ -22,7 +22,12 @@ const MODES = [
 
 const MIN_DISPLAY = 20 // dB aproximats que es mostren com a 0% de barra
 const MAX_DISPLAY = 95 // dB aproximats que es mostren com a 100% de barra
-const REFERENCE_OFFSET = 100 // calibratge aproximat dBFS → "dB" mostrats
+// Calibratge aproximat dBFS → "dB" mostrats. Abaixat respecte a l'antic 100:
+// amb 100, un ventilador suau a 2 m ja marcava 40-45 dB (fals positiu de
+// "soroll" quan l'aula està pràcticament en silenci). Segueix sent una
+// aproximació que depèn del micròfon de cada dispositiu.
+const REFERENCE_OFFSET = 88
+const SMOOTHING_WINDOW_MS = 5000 // mitjana mòbil: evita que un soroll puntual faci ballar la barra
 
 const COLORS = {
   green: '#2f9e5c',
@@ -58,6 +63,7 @@ export default function SoundMeter() {
   const analyserRef = useRef(null)
   const rafRef = useRef(null)
   const smoothedRef = useRef(MIN_DISPLAY)
+  const historyRef = useRef([]) // { t, db }[] mostres crues dels últims 5 s
   const lastUiUpdateRef = useRef(0)
   const modeRef = useRef(mode)
   modeRef.current = mode
@@ -92,16 +98,20 @@ export default function SoundMeter() {
     const dbfs = 20 * Math.log10(rms + 1e-8)
     const approxDb = Math.min(120, Math.max(0, REFERENCE_OFFSET + dbfs))
 
-    // Ballistics d'agulla de VU-metre: puja ràpid, baixa lent.
-    const prev = smoothedRef.current
-    smoothedRef.current = approxDb > prev ? prev * 0.35 + approxDb * 0.65 : prev * 0.9 + approxDb * 0.1
+    // Mitjana mòbil dels últims 5 segons (en lloc d'una agulla de VU-metre a
+    // l'instant): un soroll puntual (una cadira, un clic) ja no fa ballar la
+    // xifra ni la barra, que reflecteixen el nivell sostingut de l'aula.
+    const now = performance.now()
+    const history = historyRef.current
+    history.push({ t: now, db: approxDb })
+    while (history.length > 1 && now - history[0].t > SMOOTHING_WINDOW_MS) history.shift()
+    smoothedRef.current = history.reduce((sum, h) => sum + h.db, 0) / history.length
 
     const shown = smoothedRef.current
     const pct = Math.min(100, Math.max(0, ((shown - MIN_DISPLAY) / (MAX_DISPLAY - MIN_DISPLAY)) * 100))
     const zone = zoneFor(modeRef.current, shown)
     paint(pct, zone)
 
-    const now = performance.now()
     if (now - lastUiUpdateRef.current > 200) {
       lastUiUpdateRef.current = now
       setReadout({ db: Math.round(shown), zone })
@@ -123,6 +133,7 @@ export default function SoundMeter() {
     }
     analyserRef.current = null
     smoothedRef.current = MIN_DISPLAY
+    historyRef.current = []
     paint(0, 'green')
     setListening(false)
     setReadout({ db: null, zone: 'green' })

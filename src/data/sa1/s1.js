@@ -231,6 +231,9 @@ export const sa1s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa1-s1-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     {
@@ -250,7 +253,7 @@ export const sa1s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Caça a casa un cas de pseudociència real (un anunci, una polsera magnètica, un producte «detox», un horòscop...). Anota què promet i amb quina garantia intenta convèncer-te. El portaràs a la propera sessió per construir el detector.",
-    deadline: "2026-09-XX",
+    deadline: null,
     note: "Aprenentatge significatiu: buscar un cas real teu, no repetir la teoria."
   },
 

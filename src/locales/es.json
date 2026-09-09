@@ -41,6 +41,7 @@
     "teoriaSoon": "Teoría en PDF disponible próximamente",
     "appComingSoonTitle": "Animación interactiva disponible próximamente",
     "exitPaperNote": "Este exit ticket se hace en papel en clase.",
+    "exitTicketSheet": "Hoja del ticket (imprimible)",
     "exitAbsentAccordion": "¿Has faltado? Hazlo online aquí",
     "deliverables": "Entregas de esta sesión",
     "flippedReading": "Leer primero",
@@ -54,7 +55,8 @@
     "nextSession": "Sesión siguiente",
     "backToSA": "Volver a la SA",
     "criteriNum": "criterio",
-    "criteriOfficial": "Texto oficial del currículum (lenguaje de profesorado)"
+    "criteriOfficial": "Texto oficial del currículum (lenguaje de profesorado)",
+    "repteInicial": "Reto inicial"
   },
   "exitForm": {
     "nom": "Nombre",

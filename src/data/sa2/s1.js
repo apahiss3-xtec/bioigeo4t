@@ -224,7 +224,7 @@ export const sa2s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Busca DOS teixits del teu cos: un que es regeneri molt de pressa (la pell, l'intestí, la sang…) i un que gairebé no es regeneri (les neurones del cervell, per exemple). Anota per què creus que un fa molta mitosi i l'altre gairebé no. Ho posarem en comú a la propera sessió, on compararem mitosi i meiosi.",
-    deadline: "2026-XX-XX",
+    deadline: null,
     note: "Aprenentatge significatiu: connectar la mitosi amb casos reals del cos, no repetir la definició."
   },
 

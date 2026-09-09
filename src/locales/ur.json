@@ -41,6 +41,7 @@
     "teoriaSoon": "نظریہ PDF جلد دستیاب ہوگا",
     "appComingSoonTitle": "انٹرایکٹو اینیمیشن جلد دستیاب ہوگی",
     "exitPaperNote": "یہ ایگزٹ ٹکٹ کلاس میں کاغذ پر کیا جاتا ہے۔",
+    "exitTicketSheet": "ایگزٹ ٹکٹ شیٹ (پرنٹ کے قابل)",
     "exitAbsentAccordion": "غیر حاضر تھے؟ یہاں آن لائن کریں",
     "deliverables": "اس سیشن کی جمع کرانے والی چیزیں",
     "flippedReading": "پہلے پڑھیں",
@@ -54,7 +55,8 @@
     "nextSession": "اگلا سیشن",
     "backToSA": "یونٹ پر واپس جائیں",
     "criteriNum": "معیار",
-    "criteriOfficial": "نصاب کا سرکاری متن (اساتذہ کی زبان میں)"
+    "criteriOfficial": "نصاب کا سرکاری متن (اساتذہ کی زبان میں)",
+    "repteInicial": "ابتدائی چیلنج"
   },
   "exitForm": {
     "nom": "نام",

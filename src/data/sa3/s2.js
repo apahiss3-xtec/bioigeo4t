@@ -92,7 +92,7 @@ export const sa3s2 = {
   ],
   exploreDuration: "47 min",
   appSrc: null,
-  exploreNote: "Indagació guiada tirant a oberta (l'alumnat dedueix el mètode). Itinerari explorador: el docent dona la pregunta i el material, però el mètode el raoneu vosaltres. No es dona el protocol fet.",
+  exploreNote: "Aquí teniu la pregunta i el material, però el mètode el raoneu vosaltres: no hi ha cap protocol fet per seguir pas a pas.",
 
   // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [

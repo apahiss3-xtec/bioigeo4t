@@ -10,7 +10,11 @@ export const sa7s3 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "El 1953, un estudiant de vint-i-tres anys va tancar dins d'un aparell de vidre allò que aleshores es creia que hi havia a la Terra primitiva: aigua, tres gasos i cap ésser viu. Ho va fer bullir i hi va deixar passar descàrregues elèctriques durant una setmana, imitant els llamps. Quan va obrir l'aparell, el líquid s'havia tornat marró i, dins d'aquell fang, hi havia aminoàcids: les peces amb què estan fetes les proteïnes de tots els éssers vius, la teva inclosa. Els diaris de l'època van titular que s'havia creat vida al laboratori. Ell no va dir mai això. Avui la teva feina no és saber qui va guanyar aquella discussió, sinó una altra: aprendre a mesurar la distància que hi ha entre el que un experiment ensenya i el que la gent en llegeix.",
   engageQuestion: "Imagina que damunt d'una taula hi tens totes les peces d'una bicicleta, escampades. Tens una bicicleta? A la sessió d'avui aquesta pregunta no és cap acudit: és exactament el problema que separa l'experiment de 1953 de l'origen de la vida. Escriu, abans de començar, què creus que li falta a un munt de molècules per poder dir que allò ja és un ésser viu.",
-  engageContext: "Aquesta sessió és de desenvolupament i no acaba amb una resposta, sinó amb un rànquing raonat. Actuareu com el comitè avaluador d'un congrés d'astrobiologia: rebreu quatre propostes que expliquen d'on va sortir la vida, més una cinquena que no és una proposta científica encara que ho sembli, i un dossier de proves escampades. Haureu de posar cada prova al seu lloc, dir què explica cada hipòtesi i què encara no explica, i ordenar-les per fonamentació. La feina de casa de la sessió anterior —dues hipòtesis, amb una prova i un forat— és el vostre punt de partida i l'haureu de defensar en veu alta.",
+  engageContext: "Aquesta sessió no acaba amb una resposta, sinó amb un rànquing raonat. Actuareu com el comitè avaluador d'un congrés d'astrobiologia: rebreu quatre propostes que expliquen d'on va sortir la vida, més una cinquena que no és una proposta científica encara que ho sembli, i un dossier de proves escampades. Haureu de posar cada prova al seu lloc, dir què explica cada hipòtesi i què encara no explica, i ordenar-les per fonamentació.",
+
+  // NO es renderitza al web: vocabulari de programació del docent
+  // (tipologia de sessió, guió de moments). Tasca 2, 09/09/2026.
+  teacherNotes: "Sessió de desenvolupament. La feina de casa de S2 (dues hipòtesis, amb una prova i un forat) és el punt de partida i s'ha de defensar en veu alta.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -80,8 +84,8 @@ export const sa7s3 = {
     who: { mode: "grup", label: "Equips de 3-4 (comitè avaluador)" },
     time: 26,
     apartats: "2",
-    note: "Demostració a l'aula: en acabar, cada equip haurà de justificar en veu alta la col·locació d'UNA targeta triada pel docent, i explicar per quina raó no va a cap altre lloc. No serveix llegir la targeta: cal dir la paraula que us ha fet decidir.",
-    materials: "Un joc de 9 targetes retallades per equip (full `retallables_sa7_s28.html`, dos jocs per A4), tisores, barra d'enganxar i la fitxa de la sessió. La feina de casa de S27, damunt la taula."
+    note: "En acabar, cada equip haurà de justificar en veu alta la col·locació d'UNA targeta triada pel docent, i explicar per quina raó no va a cap altre lloc. No serveix llegir la targeta: cal dir la paraula que us ha fet decidir.",
+    materials: "Un joc de 9 targetes retallades per equip (full `retallables_sa7_s28.html`, dos jocs per A4), tisores, barra d'enganxar i la fitxa de la sessió. La feina de casa de la sessió anterior, damunt la taula."
   },
   exploreInstructions: [
     "Repartiu les nou targetes entre els membres de l'equip i llegiu-les totes en veu alta abans de moure'n cap",

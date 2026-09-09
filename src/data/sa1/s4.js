@@ -1,7 +1,10 @@
 export const sa1s4 = {
   id: "s4",
   saId: "sa1",
-  title: "Repte final: el detector al món real",
+  title: "Funciona el teu detector fora de classe?",
+  // El text informatiu que abans anava dins el títol: el títol és el ganxo,
+  // el que cal explicar viu al Repte inicial (tasca 1, 09/09/2026).
+  repteInicial: "Portes un cas real de la teva vida i l'analitzes amb tot el que sap la SA. És el repte final: si el detector només funciona amb els exemples de classe, no serveix de res.",
   sessionNumber: 4,
   biome: "sa1",
   duration: "2h",
@@ -11,7 +14,8 @@ export const sa1s4 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Treu el cas real que has portat de casa (un anunci, una notícia, un consell de salut, un vídeo). Passa'l pel detector davant del grup en 30 segons: què promet? quins senyals hi trobes? És ciència, pseudociència o encara no comprovat?",
   engageQuestion: "El detector no és per aprovar la SA: és per no deixar-te enredar la resta de la teva vida. Avui ho demostres amb un cas TEU, del món real, que ningú t'ha triat.",
-  engageContext: "Cada alumne arriba amb un cas real de la seva vida quotidiana (feina a casa de S3). El repte final és analitzar-lo amb tot el que sap la SA i defensar-lo a la fira de casos. Tanquem amb l'autoavaluació per nivells d'assoliment.",
+  // NO es renderitza al web: guió del docent (tasca 2, 09/09/2026).
+  teacherNotes: "Cada alumne arriba amb el cas real de la feina a casa de S3. Fira de casos i tancament amb l'autoavaluació per nivells d'assoliment.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (A, B i C) ───────
   levelObjectives: {
@@ -210,6 +214,9 @@ export const sa1s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa1-s4-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     {
@@ -229,7 +236,7 @@ export const sa1s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Tanquem la SA1. Durant la setmana, aplica el detector a UNA afirmació nova que et trobis (xarxes, tele, una conversa) i porta apuntat: quina era, quin veredicte li dones i quin senyal t'ha fet decidir. Ho comentarem en obrir la SA següent.",
-    deadline: "2026-09-XX",
+    deadline: null,
     note: "Aprenentatge significatiu i de transferència: fer servir el detector en una situació real nova, no repetir la teoria de classe."
   },
 

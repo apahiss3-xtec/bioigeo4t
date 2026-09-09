@@ -1,7 +1,7 @@
 export const sa4s2 = {
   id: "s2",
   saId: "sa4",
-  title: "Les lleis de Mendel com a eina de predicció",
+  title: "Pots predir com serà un fill abans que neixi?",
   sessionNumber: 2,
   biome: "sa4",
   duration: "2h",

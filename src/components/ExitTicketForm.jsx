@@ -154,7 +154,13 @@ export default function ExitTicketForm({ session }) {
               onChange={(e) => setResposta(q.id, e.target.value)}
               placeholder={t('exitForm.answerPlaceholder')}
               rows={4}
-              className={`${inputCls} ms-12 w-[calc(100%-3rem)]`}
+              // w-full (dins inputCls) i aquest w-[calc(...)] competeixen per la
+              // mateixa propietat CSS amb la mateixa especificitat: quin guanya
+              // depèn de l'ordre en què Tailwind genera les regles, que pot
+              // variar entre builds. Traiem w-full explícitament perquè el
+              // resultat no depengui d'aquest ordre (a 4t guanyava w-full i la
+              // caixa desbordava la targeta 3rem cap a la dreta).
+              className={`${inputCls.replace('w-full ', '')} ms-12 w-[calc(100%-3rem)]`}
             />
           )}
           {q.hint && (
