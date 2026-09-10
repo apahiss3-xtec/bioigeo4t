@@ -152,6 +152,9 @@ export const sa6s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa6-s2-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Al teu model, l'aigua calenta amb colorant pujava, s'escampava per dalt i tornava a baixar pels costats. Com relaciones aquest moviment amb el que fa el mantell sota les plaques? Digues què representava cada part del model.", hint: "Ves part per part del model i busca a què correspon cadascuna a la Terra: el líquid, el colorant i el que hi havia a la superfície. Després mira on pujava i on baixava." },
@@ -168,7 +171,6 @@ export const sa6s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Busca una imatge d'una columna o d'un tall geològic real (un talús de carretera, un penya-segat, una pedrera) i identifica-hi almenys tres capes diferents. Anota quina creus que és la més antiga i per què.",
-    deadline: null,
     note: "Servirà per connectar amb la propera sessió, on aprendrem a llegir la història completa a les roques amb tots els principis geològics."
   },
 

@@ -149,6 +149,9 @@ export const sa6s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa6-s1-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "El mateix fòssil d'un rèptil terrestre petit apareix a la costa d'Àfrica i a la de Sud-amèrica, separades avui per l'oceà Atlàntic. Quina explicació és més sòlida i per què: que va travessar l'oceà nedant, o que els dos continents van estar units?", hint: "Un rèptil terrestre petit no pot travessar un oceà; la prova apunta que les costes van estar juntes." },
@@ -165,7 +168,6 @@ export const sa6s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Busca una notícia recent d'un terratrèmol o una erupció volcànica al món i localitza on ha passat en un mapa. Fixa't si és a prop d'un límit de plaques i porta-la a la propera sessió.",
-    deadline: null,
     note: "Servirà per connectar la teoria d'avui amb fets reals i actuals a la propera sessió (què mou les plaques + simulador de tectònica)."
   },
 

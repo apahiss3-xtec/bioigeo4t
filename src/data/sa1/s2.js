@@ -211,7 +211,6 @@ export const sa1s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Acaba de polir la teva defensa oral d'1 minut: passa el cas caçat pels senyals del detector que heu acordat i escriu l'objecció que et posaria qui hi creu, amb la teva resposta. La defensa es fa a l'aula la propera sessió i és la teva demostració de comprensió (no s'entrega per escrit).",
-    deadline: null,
     note: "Aprenentatge significatiu: no és copiar teoria, sinó aplicar el detector a un cas real i preparar-te per defensar-lo davant els companys."
   },
 

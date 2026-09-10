@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exit Ticket · SA2 · Sessió 1 · Una cèl·lula que no s'atura</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#2A6F7F; --purple-ink:#1c4a55; --purple-light:#9ccad2; --purple-tint:#eaf4f6;
+  --ink:#14201f; --ink-2:#334455; --muted:#6b7a7e; --surface:#fdfefe; --paper:#ffffff;
+  --rule:#dce9eb; --rule-dark:#b6ccd0;
+  --orange:#c96f3e; --orange-tint:#f6ece8;
+  --teal:#38a3a5; --teal-tint:#e6f5f5;
+  --yellow:#c8960a; --yellow-ink:#7a5800; --yellow-tint:#fdf7e2;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#b6ccd0;color:var(--ink);font-size:13px;line-height:1.5;padding:52px 20px 60px;}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(20,15,40,.93);backdrop-filter:blur(10px);border-bottom:1px solid rgba(123,104,200,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px;}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(190,180,230,.65);flex:1;}
+.tb-tip strong{color:#9ccad2;}
+.tb-sep{width:1px;height:20px;background:rgba(123,104,200,.3);}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap;}
+.tb-print{background:var(--purple);color:white;}
+.tb-print:hover{opacity:.85;}
+.tb-bold{background:rgba(123,104,200,.2);border:1px solid rgba(123,104,200,.4);color:#9ccad2;font-size:14px;font-weight:900;padding:4px 11px;}
+.tb-undo{background:rgba(212,74,108,.2);border:1px solid rgba(212,74,108,.4);color:#f0a0b8;font-size:12px;opacity:.5;pointer-events:none;}
+.tb-undo.active{opacity:1;pointer-events:auto;}
+.tb-spacer{background:rgba(123,104,200,.2);border:1px solid rgba(123,104,200,.4);color:#9ccad2;font-size:12px;}
+.tb-desa{background:rgba(58,158,140,.25);border:1px solid rgba(58,158,140,.5);color:#9fd8d9;font-size:12px;}
+/* ── PÀGINA A4 VISIBLE (794×1123px ≈ A4) ── */
+.page-wrap { width:794px; margin:0 auto; position:relative; }
+#doc { display:none; }
+
+/* ── PAGINADOR A4 REAL ─────────────────────────────── */
+#sheets { display:flex; flex-direction:column; align-items:center; gap:26px; }
+.sheet { width:794px; min-height:1123px; background:var(--paper); position:relative; box-shadow:0 4px 24px rgba(60,40,110,.18); overflow:visible; }
+.sheet-body { padding:36px 46px 18px; position:relative; overflow:visible; }
+.sheet.has-head .sheet-body { padding-top:54px; }
+.sheet-head { position:absolute; left:0; right:0; top:0; height:36px; display:none; justify-content:space-between; align-items:center; padding:0 46px; border-bottom:1.5px solid var(--purple-light); background:var(--paper); }
+.sheet.has-head .sheet-head { display:flex; }
+.sheet-head-l { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--purple-ink); }
+.sheet-head-r { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:600; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); }
+.sheet-foot { position:absolute; left:0; right:0; bottom:0; height:30px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 46px; font-family:'Inter',sans-serif; font-size:7.5px; font-weight:600; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; border-top:.5px solid var(--rule); background:var(--paper); }
+.sheet-foot .fc { text-align:center; letter-spacing:.14em; color:var(--purple-ink); }
+.sheet-foot .fr { text-align:right; }
+.sheet-body > .header-band { margin:-36px -46px 0; }
+.sheet-body > .nivell-strip { margin:0 -46px; }
+.sheet-body > .oa-box { margin:12px 0 0; }
+
+
+
+[contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s;}
+[contenteditable]:hover{background:rgba(123,104,200,.08);box-shadow:0 0 0 2px rgba(123,104,200,.3);}
+[contenteditable]:focus{background:rgba(123,104,200,.12);box-shadow:0 0 0 2.5px var(--purple);}
+.exit-head [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3);}
+.exit-head [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff;}
+span[contenteditable]{display:inline-block;}
+.wline{display:block;width:100%;min-height:30px;background:white;outline:none;padding:2px 3px;border-bottom:1.5px solid #b6ccd0;word-break:break-word;cursor:text;line-height:1.45;}
+.wline:focus{border-bottom-color:var(--purple);background:rgba(123,104,200,.04);}
+.blank{display:inline-block;border-bottom:1.5px solid #b6ccd0;vertical-align:bottom;margin:0 3px;height:1.1em;}
+.blank-m{width:100px;} .blank-l{width:150px;} .blank-xl{width:210px;}
+.frase-completar{font-size:11px;line-height:2.2;margin:1px 0;}
+.input-span{display:inline-block;min-width:110px;border-bottom:1.5px solid var(--rule-dark);font-size:12px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink);}
+.input-span.data-span{min-width:66px;}
+.input-span:focus{border-bottom-color:var(--purple);}
+.deletable{position:relative;}
+.del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#d44a6c;color:white;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3);}
+.del-btn:hover{background:#b83054;transform:scale(1.15);}
+.deletable:hover>.del-btn{display:flex;}
+.deletable:has(.deletable:hover)>.del-btn{display:none;}
+.content{padding:7px 16px;}
+/* ── TIQUET (mig full — se'n posen dos per A4 i es retallen) ── */
+.exit-frame{display:flex;border:2.5px solid #2f7f8a;border-radius:10px;overflow:hidden;}
+/* ── Tija lateral (com un tiquet de veritat) ── */
+.eh-stub{flex:0 0 27px;background:linear-gradient(160deg,#1c4a55,#2f7f8a);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px 0;}
+.eh-stub .stub-ic{font-size:13px;}
+.eh-stub .stub-txt{writing-mode:vertical-rl;transform:rotate(180deg);font-size:8.5px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;font-family:'Inter',sans-serif;}
+.eh-stub .stub-min{writing-mode:vertical-rl;transform:rotate(180deg);font-size:7px;font-weight:700;letter-spacing:.08em;opacity:.7;font-family:'Inter',sans-serif;text-transform:uppercase;}
+.eh-main{flex:1;min-width:0;display:flex;flex-direction:column;}
+.eh-top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;padding:5px 12px 4px;}
+.eh-top .t-title{font-size:16px;font-weight:900;color:var(--purple-ink);line-height:1.02;}
+.eh-top .t-sa{font-size:7.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.eh-top .t-note{margin-left:auto;font-family:'Crimson Pro',serif;font-style:italic;font-size:9px;color:var(--muted);}
+/* ── BARRA D'IDENTIFICACIÓ: blanca, per escriure a mà ── */
+.id-bar{display:flex;align-items:center;gap:6px;flex-wrap:wrap;background:#fff;border-top:1.5px solid var(--rule-dark);border-bottom:1.5px solid var(--rule-dark);padding:3px 12px;font-size:10.5px;color:var(--ink-2);}
+.id-bar .lbl{font-weight:700;color:var(--purple-ink);}
+.id-bar .input-span{flex:1;min-width:80px;}
+.id-bar .input-span.data-span{flex:0 0 64px;min-width:64px;}
+.id-bar .aval{margin-left:auto;display:flex;align-items:center;gap:5px;font-size:8.5px;color:var(--muted);font-style:italic;}
+.scale-mini{font-family:'Inter',sans-serif;font-size:8px;font-weight:600;color:var(--purple-ink);background:var(--purple-tint);border:1px solid var(--purple-light);border-radius:5px;padding:2px 6px;letter-spacing:.03em;}
+.lvl-badge{font-family:'Inter',sans-serif;font-size:7.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple-ink);background:var(--purple-tint);border:1px solid var(--purple-light);border-radius:9999px;padding:1px 7px;}
+.exit-body{padding:6px 12px 7px;}
+/* ── DUA: paraules clau a un costat, definicions a l'altre ── */
+.voc-box{background:var(--teal-tint);border:1.5px solid var(--teal);border-radius:8px;padding:4px 9px;margin-bottom:6px;display:flex;gap:9px;align-items:stretch;}
+.voc-keys{flex:0 0 auto;display:flex;flex-direction:column;gap:3px;border-right:1px dashed var(--teal);padding-right:9px;}
+.vk-title,.vd-title{font-size:7px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#237072;font-family:'Inter',sans-serif;margin-bottom:1px;}
+.chip{font-size:9.5px;font-weight:700;color:#1c5a5c;background:#fff;border:1px solid var(--teal);border-radius:9999px;padding:0 8px;text-align:center;}
+.voc-defs{flex:1;min-width:0;}
+.voc{display:grid;grid-template-columns:auto 1fr;gap:1px 7px;}
+.voc dt{font-size:9.5px;font-weight:700;color:#1c5a5c;white-space:nowrap;}
+.voc dd{font-size:9px;color:var(--ink-2);line-height:1.2;}
+/* ── PREGUNTES ── */
+.q{margin-bottom:5px;}
+.q-head{display:flex;gap:7px;align-items:flex-start;margin-bottom:2px;}
+.q-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--purple);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.q-num.star{background:var(--yellow);}
+.q-text{font-size:11px;line-height:1.35;flex:1;}
+.q-text strong{color:var(--purple-ink);}
+.q-tag{display:inline-block;font-family:'Inter',sans-serif;font-size:7.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--rule-dark);border-radius:4px;padding:0 5px;vertical-align:middle;margin-left:4px;}
+.q-tag.real{color:var(--orange);border-color:var(--orange);}
+.q-tag.repte{color:var(--yellow-ink);border-color:var(--yellow);}
+/* Pista FORA del requadre d'escriptura (mai dins el wline) */
+.q-hint{font-size:9px;color:var(--muted);font-style:italic;margin:0 0 2px 27px;line-height:1.3;}
+/* 3 parts de la cèl·lula */
+.mini3{display:grid;grid-template-columns:88px 1fr;gap:4px 8px;align-items:center;margin-left:27px;}
+.mini3 .lab{font-size:10px;font-weight:700;color:var(--ink-2);}
+.mini-line{min-height:38px;border-bottom:1.5px solid #b6ccd0;background:white;outline:none;padding:1px 2px;line-height:1.35;}
+.mini-line:focus{border-bottom-color:var(--purple);background:rgba(123,104,200,.04);}
+/* ── LÍNIA DE RETALL entre els dos tiquets ── */
+.cut-line{display:flex;align-items:center;justify-content:center;gap:10px;margin:7px 0;}
+.cut-line::before,.cut-line::after{content:"";flex:1;border-top:2px dashed #9ccad2;}
+.cut-line span{font-family:'Inter',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
+
+.spacer-block{position:relative;height:36px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--purple-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(123,104,200,.05) 6px,rgba(123,104,200,.05) 12px);display:flex;align-items:center;justify-content:center;}
+.spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--purple-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none;}
+/* ── IMPRESSIÓ ────────────────────────────────────── */
+@media print {
+  @page { size:A4; margin:0; }
+  * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  html,body { background:#fff; padding:0; margin:0; }
+  #toolbar, .del-btn { display:none !important; }
+  #sheets { gap:0; display:block; }
+  .sheet { width:210mm; height:297mm; min-height:0; box-shadow:none; margin:0; page-break-after:always; break-after:page; overflow:hidden; }
+  .sheet:last-child { page-break-after:auto; break-after:auto; }
+  .header-emoji-box { background:#eaf4f6 !important; }
+  [contenteditable]:hover,[contenteditable]:focus { background:transparent!important; box-shadow:none!important; }
+  .wline, .mini-line { background:transparent; padding:0; }
+  .fill-cell { background:transparent; outline:none; }
+  .input-span { border-bottom-color:#b6ccd0; }
+  .img-placeholder { -webkit-print-color-adjust:exact; }
+  .spacer-block { background:transparent !important; border:none !important; }
+  .spacer-label { display:none !important; }
+  .nivell-badge-small { background:transparent !important; border-color:#b6ccd0 !important; }
+}
+
+</style>
+</head>
+<body>
+
+<div id="toolbar">
+  <span class="tb-tip">✎ Edita el tiquet de dalt · es copia sol a baix · <strong>Ctrl+B</strong> negreta · <strong>×</strong> elimina · <strong>Ctrl+S</strong> desa</span>
+  <div class="tb-sep"></div>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">↩ Desfer</button>
+  <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
+  <button class="tb-btn tb-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+  <button class="tb-btn tb-desa" onclick="desaFitxa()" title="Desa (Ctrl+S)">💾 Desa</button>
+</div>
+
+<div class="page-wrap" id="doc">
+  <div class="content">
+
+    <!-- ════ TIQUET MESTRE (l'editable) ════ -->
+    <div class="exit-frame deletable" id="ticket-master">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+
+      <div class="eh-stub">
+        <span class="stub-ic">🔬</span>
+        <span class="stub-txt">Exit Ticket</span>
+        <span class="stub-min">10 min · individual</span>
+      </div>
+
+      <div class="eh-main">
+
+        <div class="eh-top">
+          <span class="t-title" contenteditable="true">Què vol dir «sense control»?</span>
+          <span class="t-sa" contenteditable="true">SA2 · Sessió 1 de 4</span><span class="lvl-badge">Versió B / A</span>
+          <span class="t-note" contenteditable="true">aquest full s'entrega en sortir de classe</span>
+        </div>
+
+        <div class="id-bar deletable">
+          <div class="del-btn" onclick="deleteEl(this)">✕</div>
+          <span class="lbl">Nom:</span><span class="input-span" contenteditable="true"></span>
+          <span class="lbl">Data:</span><span class="input-span data-span" contenteditable="true"></span>
+          <span class="aval">avaluació: <span class="scale-mini">NE · NA · AS · AN · AE</span></span>
+        </div>
+
+        <div class="exit-body">
+
+          <div class="voc-box deletable">
+            <div class="del-btn" onclick="deleteEl(this)">✕</div>
+            <div class="voc-keys">
+              <span class="vk-title">🧰 Paraules que pots fer servir</span>
+              <span class="chip">mitosi</span>
+              <span class="chip">interfase</span>
+              <span class="chip">cicle cel·lular</span>
+              <span class="chip">senyal d'aturada</span>
+              <span class="chip">tumor</span>
+            </div>
+            <div class="voc-defs">
+              <span class="vd-title">Recorda què volen dir</span>
+              <dl class="voc"><dt>mitosi</dt><dd>la divisió que fa dues cèl·lules filles idèntiques.</dd><dt>sense control</dt><dd>la cèl·lula no obeeix els senyals que li diuen quan parar.</dd></dl>
+            </div>
+          </div>
+
+        <div class="q deletable" style="margin-bottom:2px">
+          <div class="del-btn" onclick="deleteEl(this)">✕</div>
+          <div class="q-head">
+            <div class="q-num">1</div>
+            <div class="q-text"><span contenteditable="true">Torna a la frase de la biòpsia: <strong>«cèl·lules que es divideixen sense control»</strong>. Amb el que has vist avui, què està passant exactament dins d'aquell teixit i <strong>per què és perillós</strong>?</span><span class="q-tag">idea central</span></div>
+          </div>
+          <div class="q-hint" contenteditable="true">Pista: la divisió no és el problema; el problema és el senyal que hauria de fer-la parar.</div>
+          <div class="wline" contenteditable="true"></div>
+          <div class="wline" contenteditable="true"></div>
+          <div class="wline" contenteditable="true"></div>
+        </div>
+
+        </div><!-- .exit-body -->
+      </div><!-- .eh-main -->
+    </div><!-- #ticket-master -->
+
+    <!-- ════ LÍNIA DE RETALL ════ -->
+    <div class="cut-line"><span>✂ retalla per aquí — un tiquet per a cada alumne</span></div>
+
+    <!-- ════ CÒPIA (es genera sola, idèntica al mestre) ════ -->
+    <div class="exit-frame" id="ticket-copy" aria-hidden="true"></div>
+
+  </div><!-- .content -->
+</div><!-- .page-wrap -->
+
+<div id="sheets"></div>
+
+<script>
+
+/* ════════════════════════════════════════════════════════════
+   PAGINADOR A4 REAL — cada full es veu a pantalla tal com s'imprimira.
+   FLOW = llista ordenada dels blocs de primer nivell (la font logica).
+   Capcalera corrent a partir de la pagina 2 + peu comu amb llicencia.
+   ════════════════════════════════════════════════════════════ */
+const SA_NOM = "La cèl·lula viva", SESSIO = "Sessió 1 de 4";
+const SHEET_H = 1123, FOOT_H = 30, BODY_MAX = SHEET_H - FOOT_H - 8;
+let FLOW = [];
+
+function flattenDoc(){
+  const doc=document.getElementById('doc');
+  /* S4-poster: #doc > .page-wrap > .content — puja primer el .page-wrap */
+  const pw=doc.querySelector(':scope > .page-wrap');
+  if(pw){ while(pw.firstChild){ doc.insertBefore(pw.firstChild, pw); } pw.remove(); }
+  const content=doc.querySelector(':scope > .content');
+  if(content){
+    const foot=content.querySelector(':scope > .footer'); if(foot) foot.remove();
+    while(content.firstChild){ doc.insertBefore(content.firstChild, content); }
+    content.remove();
+  }
+  const f2=doc.querySelector(':scope > .footer'); if(f2) f2.remove();
+}
+function extractFlow(){ FLOW = Array.from(document.getElementById('doc').children); }
+function topFlowBlock(el){ while(el){ if(FLOW.indexOf(el)>=0) return el; el=el.parentElement; } return null; }
+
+function saveCaret(){
+  const a=document.activeElement;
+  if(!a||!a.isContentEditable) return null;
+  const s=getSelection(); if(!s.rangeCount) return {el:a};
+  const r=s.getRangeAt(0);
+  return {el:a, sc:r.startContainer, so:r.startOffset, ec:r.endContainer, eo:r.endOffset};
+}
+function restoreCaret(d){
+  if(!d||!d.el||!document.body.contains(d.el)) return;
+  try{ d.el.focus({preventScroll:true});
+    if(d.sc && document.body.contains(d.sc)){
+      const r=document.createRange(); r.setStart(d.sc,d.so); r.setEnd(d.ec,d.eo);
+      const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    }
+  }catch(e){}
+}
+
+function repaginate(){
+  const host=document.getElementById('sheets'); if(!host) return;
+  const caret=saveCaret();
+  host.querySelectorAll('.section[data-cont]').forEach(function(cont){
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+  });
+  FLOW = FLOW.filter(function(b){ return b; });
+  FLOW.forEach(function(b){ if(b.parentNode) b.parentNode.removeChild(b); });
+  host.innerHTML='';
+  let body=null;
+  function newSheet(){
+    const n=host.children.length;
+    const sheet=document.createElement('div'); sheet.className='sheet'+(n?' has-head':'');
+    if(n){
+      const head=document.createElement('div'); head.className='sheet-head';
+      head.innerHTML='<span class="sheet-head-l"></span><span class="sheet-head-r">Biologia i Geologia · 4t ESO</span>';
+      head.firstChild.textContent=SA_NOM+' · '+SESSIO;
+      sheet.appendChild(head);
+    }
+    body=document.createElement('div'); body.className='sheet-body';
+    const foot=document.createElement('div'); foot.className='sheet-foot';
+    foot.innerHTML='<span class="fl">Albert Pahissa · a partir de Jordi Domènech</span>'+
+                   '<span class="fc">CC BY-NC-SA 4.0</span>'+
+                   '<span class="fr foot-pg"></span>';
+    sheet.appendChild(body); sheet.appendChild(foot); host.appendChild(sheet);
+  }
+  function _flowKids(sec){ return Array.prototype.slice.call(sec.children).filter(function(c){ return !c.classList.contains('del-btn'); }); }
+  function _contentKids(sec){ return _flowKids(sec).filter(function(k){ return !k.classList.contains('section-header') && !k.classList.contains('divider'); }); }
+  function trySplitSection(sec){
+    if(BODY_MAX - body.scrollHeight < 150) return false;
+    body.appendChild(sec);
+    if(body.scrollHeight <= BODY_MAX) return true;
+    var moved=[];
+    while(body.scrollHeight > BODY_MAX && _contentKids(sec).length > 1){
+      var ck=_contentKids(sec); var last=ck[ck.length-1];
+      moved.unshift(last); sec.removeChild(last);
+    }
+    if(moved.length===0 || body.scrollHeight > BODY_MAX){
+      moved.forEach(function(k){ sec.appendChild(k); });
+      if(sec.parentNode) sec.parentNode.removeChild(sec);
+      return false;
+    }
+    var pending=moved;
+    while(pending.length){
+      newSheet();
+      var cont=document.createElement('div');
+      cont.className='section'; cont.setAttribute('data-cont','1'); cont._origin=sec;
+      body.appendChild(cont);
+      pending.forEach(function(k){ cont.appendChild(k); });
+      var rest=[];
+      while(body.scrollHeight > BODY_MAX && cont.children.length>1){
+        var l=cont.lastElementChild; rest.unshift(l); cont.removeChild(l);
+      }
+      pending=rest;
+    }
+    return true;
+  }
+  newSheet();
+  for(let i=0;i<FLOW.length;i++){
+    const blk=FLOW[i];
+    if(blk.classList.contains('spacer-block')){
+      blk.style.height='auto'; body.appendChild(blk);
+      const used = body.scrollHeight - blk.offsetHeight;
+      const remain = BODY_MAX - used;
+      blk.style.height = (remain>34?remain:34)+'px';
+      if(i < FLOW.length-1) newSheet();
+      continue;
+    }
+    body.appendChild(blk);
+    if(body.scrollHeight > BODY_MAX && body.children.length>1){
+      body.removeChild(blk);
+      var _ok=false;
+      if(blk.classList.contains('section')){ try{ _ok=trySplitSection(blk); }catch(e){ _ok=false; } }
+      if(!_ok){
+        newSheet();
+        var _ok2=false;
+        if(blk.classList.contains('section')){ try{ _ok2=trySplitSection(blk); }catch(e){ _ok2=false; } }
+        if(!_ok2){ body.appendChild(blk); }
+      }
+    }
+  }
+  const sheets=host.querySelectorAll('.sheet');
+  sheets.forEach(function(s,idx){ const pg=s.querySelector('.foot-pg'); if(pg) pg.textContent='Pàgina '+(idx+1)+' / '+sheets.length; });
+  restoreCaret(caret);
+}
+let _pgT=null;
+function schedulePageBreaks(){ clearTimeout(_pgT); _pgT=setTimeout(repaginate,120); }
+function updatePageBreaks(){ repaginate(); }
+document.addEventListener('focusout', function(){ schedulePageBreaks(); });
+
+/* ── eliminar / desfer / espai ─────────────────────── */
+const delStack = [];
+function _btnUndo(){ return document.getElementById('btn-undo'); }
+function _undoOn(){ const b=_btnUndo(); if(b){ b.classList.add('active'); b.disabled=false; } }
+function _undoOff(){ const b=_btnUndo(); if(b){ b.classList.remove('active'); b.disabled=true; } }
+function deleteEl(btn){
+  const el=btn.closest('.deletable'); if(!el) return;
+  const blk=topFlowBlock(el);
+  if(blk===el){ const i=FLOW.indexOf(el); delStack.push({el:el, flowIdx:i}); if(i>=0) FLOW.splice(i,1); el.remove(); }
+  else { delStack.push({el:el, parent:el.parentNode, sibling:el.nextSibling}); el.remove(); }
+  _undoOn();
+  repaginate();
+  if(typeof syncCopy==='function') setTimeout(syncCopy,0);
+}
+function undoDelete(){
+  if(!delStack.length) return;
+  const d=delStack.pop();
+  if(d.parent){ d.parent.insertBefore(d.el, d.sibling); }
+  else { FLOW.splice(Math.max(0,Math.min(d.flowIdx,FLOW.length)),0,d.el); }
+  if(!delStack.length) _undoOff();
+  repaginate();
+  if(typeof syncCopy==='function') setTimeout(syncCopy,0);
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='z' && (e.ctrlKey||e.metaKey)){
+    if(document.activeElement && document.activeElement.contentEditable==='true') return;
+    e.preventDefault(); undoDelete();
+  }
+});
+let _lastClickedBlock=null;
+document.addEventListener('click', function(e){
+  const b=topFlowBlock(e.target);
+  if(b && !b.classList.contains('spacer-block')) _lastClickedBlock=b;
+});
+function insertSpacer(){
+  const sp=document.createElement('div'); sp.className='spacer-block deletable';
+  sp.innerHTML='<div class="del-btn" onclick="deleteEl(this)">✕</div><span class="spacer-label">↕ espai en blanc</span>';
+  let idx=FLOW.length;
+  if(_lastClickedBlock){ const i=FLOW.indexOf(_lastClickedBlock); if(i>=0) idx=i+1; }
+  FLOW.splice(idx,0,sp);
+  delStack.push({el:sp, flowIdx:idx});
+  _undoOn();
+  repaginate();
+}
+function rebuildDocFromFlow(){
+  const doc=document.getElementById('doc');
+  document.querySelectorAll('.section[data-cont]').forEach(function(cont){
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+  });
+  FLOW.forEach(function(b){ if(b.classList.contains('spacer-block')) b.style.height=''; });
+  FLOW.forEach(function(b){ if(b.parentNode!==doc){ if(b.parentNode) b.parentNode.removeChild(b); doc.appendChild(b); } });
+  document.getElementById('sheets').innerHTML='';
+}
+window.addEventListener('load', function(){
+  flattenDoc(); extractFlow(); repaginate();
+  if(typeof syncCopy==='function') setTimeout(function(){ syncCopy(); repaginate(); }, 60);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(function(){ repaginate(); }); }
+  document.querySelectorAll('img').forEach(function(img){ if(!img.complete) img.addEventListener('load', schedulePageBreaks, {once:true}); });
+  setTimeout(repaginate, 400); setTimeout(repaginate, 1200);
+});
+
+/* ── copia retallable del tiquet (JS propi d'aquesta fitxa) ──────────
+   Adaptat: ja no hi ha cap observador de mutacions que calgui aturar; el
+   paginador es torna a executar al final. */
+function syncCopy(){
+  const m=document.getElementById('ticket-master'), c=document.getElementById('ticket-copy');
+  if(!m||!c) return;
+  c.innerHTML=m.innerHTML;
+  c.querySelectorAll('[contenteditable]').forEach(function(n){ n.setAttribute('contenteditable','false'); });
+  c.querySelectorAll('.del-btn').forEach(function(n){ n.remove(); });
+  c.querySelectorAll('[id]').forEach(function(n){ n.removeAttribute('id'); });
+  schedulePageBreaks();
+}
+let _syncT=null;
+document.addEventListener('input', function(e){
+  if(e.target.closest && e.target.closest('#ticket-master')){
+    clearTimeout(_syncT); _syncT=setTimeout(syncCopy,300);
+  }
+});
+function _fitxaToast(msg){let t=document.getElementById('fitxa-toast');if(!t){t=document.createElement('div');t.id='fitxa-toast';t.style.cssText='position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#1c4a55;color:#fff;font-family:Inter,sans-serif;font-size:13px;font-weight:600;padding:9px 18px;border-radius:9999px;box-shadow:0 4px 18px rgba(0,0,0,.28);z-index:9999;opacity:0;transition:opacity .2s';document.body.appendChild(t);}t.textContent=msg;t.style.opacity='1';clearTimeout(t._h);t._h=setTimeout(()=>t.style.opacity='0',2200);}
+async function desaFitxa(){rebuildDocFromFlow();
+  const clone=document.documentElement.cloneNode(true);
+  extractFlow(); repaginate();
+  const _sh=clone.querySelector('#sheets'); if(_sh) _sh.innerHTML='';clone.querySelectorAll('#fitxa-toast').forEach(n=>n.remove());const cp=clone.querySelector('#ticket-copy');if(cp)cp.innerHTML='';const html='<!DOCTYPE html>\n'+clone.outerHTML;const fname=(location.pathname.split('/').pop()||'exit_ticket.html');if(window.showSaveFilePicker){try{const h=await window.showSaveFilePicker({suggestedName:fname,types:[{description:'Pàgina HTML',accept:{'text/html':['.html']}}]});const w=await h.createWritable();await w.write(html);await w.close();_fitxaToast('✓ Canvis desats al fitxer');return;}catch(e){if(e.name==='AbortError')return;}}const blob=new Blob([html],{type:'text/html'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=fname;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(a.href);_fitxaToast('✓ Fitxa descarregada (reemplaça l\'original)');}
+document.addEventListener('keydown',e=>{if(e.key==='s'&&(e.ctrlKey||e.metaKey)){e.preventDefault();desaFitxa();}});
+</script>
+</body>
+</html>

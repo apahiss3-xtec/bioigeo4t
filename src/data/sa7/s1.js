@@ -153,6 +153,9 @@ export const sa7s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa7-s1-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Un titular diu: «Un telescopi troba vida en un planeta llunyà». La notícia explica que s'ha detectat un senyal feble d'una molècula que a la Terra produeixen sobretot éssers vius, i que cal confirmar-lo. En quin nivell de certesa situaries l'afirmació del titular i quina observació concreta la faria pujar de nivell?", hint: "Separa primer què s'ha observat de debò i què hi afegeix el titular; després pensa quina observació nova caldria." },
@@ -169,7 +172,6 @@ export const sa7s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Cap.",
-    deadline: null,
     note: "Aquesta setmana no hi ha feina per a casa: a la propera sessió farem la simulació de la semivida amb daus per entendre com es data l'edat de la Terra, i tot el material es reparteix a classe. Si vols avançar, guarda la notícia sobre l'exploració de l'espai que vas portar de la sessió anterior: la farem servir."
   },
 

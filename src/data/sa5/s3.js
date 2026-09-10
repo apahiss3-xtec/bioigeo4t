@@ -154,6 +154,9 @@ export const sa5s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa5-s3-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -171,7 +174,6 @@ export const sa5s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Prepara la targeta-cas del teu organisme del pati per al museu evolutiu (S20): tria el tret que has observat, digues quina adaptació és (estructura → funció → ambient), quin tipus de prova de l'evolució el sustenta i com l'explicarien Lamarck i el neodarwinisme (una frase cadascun, deixant clar per què Lamarck s'equivoca).",
-    deadline: null,
     note: "Aprenentatge significatiu: aplicar les 4 teories a un organisme real i teu prepara la síntesi de la SA al museu del pati."
   },
 

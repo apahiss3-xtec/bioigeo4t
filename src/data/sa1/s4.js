@@ -236,7 +236,6 @@ export const sa1s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Tanquem la SA1. Durant la setmana, aplica el detector a UNA afirmació nova que et trobis (xarxes, tele, una conversa) i porta apuntat: quina era, quin veredicte li dones i quin senyal t'ha fet decidir. Ho comentarem en obrir la SA següent.",
-    deadline: null,
     note: "Aprenentatge significatiu i de transferència: fer servir el detector en una situació real nova, no repetir la teoria de classe."
   },
 

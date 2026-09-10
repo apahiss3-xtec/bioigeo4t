@@ -195,6 +195,9 @@ export const sa3s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa3-s1-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -233,7 +236,6 @@ export const sa3s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Busca UNA notícia recent sobre genètica, ADN o CRISPR (teràpies, aliments transgènics, tests d'ADN…) i porta-la (paper o captura). Anota-hi dues coses: qui la signa i amb quina intenció sembla escrita. La farem servir per practicar la fiabilitat de fonts i per preparar el debat CRISPR del final de la SA.",
-    deadline: null,
     note: "Aprenentatge significatiu: connectar el codi de la vida amb una notícia real i preparar la defensa argumentada, no repetir definicions."
   },
 

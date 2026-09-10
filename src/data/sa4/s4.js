@@ -180,6 +180,9 @@ export const sa4s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa4-s4-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -218,7 +221,6 @@ export const sa4s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Resol un problema curt de daltonisme (un altre caràcter lligat al X): a partir d'un pedigrí donat, dedueix els genotips i calcula el risc per als fills i les filles d'una parella. Després, acaba de preparar el pòster científic Heredity ID: decideix si el caràcter que has triat podria estar lligat al sexe i com ho argumentaries a partir del teu pedigrí de tres generacions.",
-    deadline: null,
     note: "Aprenentatge significatiu: apliques l'herència lligada al X a un cas nou i decideixes com encaixa (o no) en el TEU caràcter real del pòster, que hauràs de defensar en directe."
   },
 

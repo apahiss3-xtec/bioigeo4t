@@ -196,6 +196,9 @@ export const sa3s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa3-s2-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -234,7 +237,6 @@ export const sa3s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Mira un vídeo curt sobre TRANSCRIPCIÓ i TRADUCCIÓ (com l'ADN es converteix en proteïna). No cal que ho entenguis tot: anota una cosa que t'hagi quedat clara i una pregunta. Ho farem servir per començar la propera sessió, on veurem el detall del camí ADN → ARN → proteïna.",
-    deadline: null,
     note: "Aprenentatge significatiu: preparar la sessió següent connectant l'estructura de l'ADN (avui) amb com fabrica proteïnes (S3)."
   },
 

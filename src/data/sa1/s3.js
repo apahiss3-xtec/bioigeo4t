@@ -261,7 +261,6 @@ export const sa1s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Tanquem la SA1 la propera sessió amb el repte final. Repassa el detector col·lectiu de la classe i porta pensat un cas de la teva vida quotidiana (un anunci, una notícia, un consell de salut) on el detector t'hagi servit o et pugui servir.",
-    deadline: null,
     note: "Aprenentatge significatiu: connectar el detector amb una situació real teva, no repetir la teoria."
   },
 

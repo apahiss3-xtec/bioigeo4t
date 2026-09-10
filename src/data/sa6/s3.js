@@ -154,6 +154,9 @@ export const sa6s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa6-s3-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "En un tall hi ha tres capes horitzontals (A a baix, B al mig, C a dalt) i una falla que talla A i B però NO arriba a C. Quin és l'ordre correcte?", options: ["Primer la falla, després A, B i C", "Primer A i B, després la falla, i finalment C", "Primer A, B i C, i la falla al final de tot", "No es pot saber amb els principis geològics"], correct: 1 },
@@ -170,7 +173,6 @@ export const sa6s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Busca un risc natural del teu territori (les Terres de l'Ebre o la teva comarca): un terratrèmol, una inundació, una esllavissada, un incendi que va provocar esllavissades després… Anota on va passar, quan, què va provocar i, si ho trobes, per què va passar just allà.",
-    deadline: null,
     note: "Serà el punt de partida de la propera sessió, on passarem de reconstruir el passat a analitzar els riscos del present al nostre propi territori."
   },
 

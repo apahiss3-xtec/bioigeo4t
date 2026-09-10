@@ -216,6 +216,9 @@ export const sa2s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa2-s4-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     {
@@ -235,7 +238,6 @@ export const sa2s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Repassa amb els apunts de S1, S2 i S3 els tres processos i completa una taula de tres columnes (Mitosi / Meiosi / Càncer) amb: quantes cèl·lules resulten, quin material genètic tenen, i on/quan passa al cos. Porta-la a la propera sessió com a preparació directa per a la prova de La cèl·lula.",
-    deadline: null,
     note: "Aprenentatge significatiu: organitzar i comparar (no copiar definicions), preparació explícita de l'avaluació."
   },
 

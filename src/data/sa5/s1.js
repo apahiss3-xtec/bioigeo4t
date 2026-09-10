@@ -148,6 +148,9 @@ export const sa5s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa5-s1-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -165,7 +168,6 @@ export const sa5s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Tria l'organisme del pati que t'hagi cridat més l'atenció i fes-li una foto o un dibuix acurat. Anota un tret que creguis que és una adaptació i escriu una hipòtesi (cadena estructura → funció → ambient) de per què és avantatjós. A la propera sessió buscarem les PROVES que confirmen o refuten aquestes històries.",
-    deadline: null,
     note: "Aprenentatge significatiu: connectar l'evolució amb organismes reals i tangibles del teu entorn, no memoritzar definicions abstractes."
   },
 

@@ -150,6 +150,9 @@ export const sa5s4 = {
   },
 
   // ── EXIT TIQUET (= exercici individual tipus PAU) ─────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa5-s4-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "El peix globus és molt tòxic (té tetrodotoxina), però hi ha una serp que se'l menja sense morir: amb els anys, poblacions senceres de la serp s'han fet resistents al verí. Explica aquest cas amb la cadena mutació → variabilitat → selecció → canvi, assenyalant quin pas és a l'atzar i quin depèn de l'ambient.", hint: "La mutació de resistència apareix a l'atzar; el verí del peix globus (ambient) selecciona les serps que ja la tenien." },
@@ -166,7 +169,6 @@ export const sa5s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Cap tasca nova: la situació es tanca avui. Repassa la graella de les quatre teories i les proves de l'evolució de cara a la prova d'avaluació del trimestre.",
-    deadline: null,
     note: "Fi de la SA5 i del segon trimestre. La targeta-cas i l'exercici PAU d'avui són la demostració avaluable de tota la situació."
   },
 

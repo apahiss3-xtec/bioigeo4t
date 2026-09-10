@@ -155,6 +155,9 @@ export const sa6s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa6-s4-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "Un poble decideix prohibir construir cases noves a la plana inundable del barranc. Sobre quin factor del risc actua aquesta mesura?", options: ["Sobre la perillositat: el barranc es desbordarà menys sovint", "Sobre l'exposició: hi haurà menys coses i persones al lloc on arriba l'aigua", "Sobre la vulnerabilitat: les cases que ja hi ha seran més resistents", "Sobre cap dels tres: és només una mesura administrativa"], correct: 1 },
@@ -171,7 +174,6 @@ export const sa6s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Prepareu, en equip, el vídeo divulgatiu «Gondwana Tales»: guió tancat i gravació. Ha d'explicar la història geològica del planeta que heu reconstruït (S21-S23) i acabar connectant-la amb un risc real del nostre territori i una mesura que proposeu. Recordeu la regla del curs: al vídeo no n'hi ha prou de dir què va passar, heu de dir com ho sabeu.",
-    deadline: null,
     note: "La propera sessió és l'estrena i la coavaluació dels vídeos amb la rúbrica Gondwana, més l'informe individual de riscos. Porteu el vídeo ja gravat: a classe no hi haurà temps de gravar-lo."
   },
 

@@ -204,6 +204,9 @@ export const sa2s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa2-s2-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     {
@@ -223,7 +226,6 @@ export const sa2s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Fes un esquema-resum d'una sola cara comparant mitosi i meiosi amb quatre columnes: nombre de divisions, nombre de cèl·lules filles, quantitat de material genètic i per a què serveix. Afegeix-hi una frase pròpia que expliqui, sense copiar, per què la meiosi és imprescindible per a la reproducció. Ho farem servir a la propera sessió per entrar al laboratori d'anàlisi (índex mitòtic).",
-    deadline: null,
     note: "Aprenentatge significatiu: sintetitzar i comparar amb les pròpies paraules, no copiar la definició; l'esquema alimenta la demostració a l'aula."
   },
 

@@ -196,6 +196,9 @@ export const sa3s4 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa3-s4-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "8 min",
   exitTicketQuestions: [
@@ -234,7 +237,6 @@ export const sa3s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Escriu l'assaig argumentatiu individual sobre l'edició genètica d'embrions humans (producte avaluable de la SA3): una postura clara, com a mínim un argument a favor i un en contra fonamentats (postura + raó + prova/valor), l'altra banda rebatuda i una conclusió raonada. Cita les fonts que facis servir (graella de SA1). Inclou una menció a per què la ciència és una tasca col·lectiva, amb l'exemple de Rosalind Franklin.",
-    deadline: null,
     note: "L'assaig es defensa a l'aula: has de poder explicar i sostenir els teus arguments en directe, no només lliurar-los (política d'ús de la IA d'Albert)."
   },
 

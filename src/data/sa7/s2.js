@@ -157,6 +157,9 @@ export const sa7s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa7-s2-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Una roca volcànica conté el 25 % del potassi-40 que tenia quan es va formar. Sabent que la semivida del potassi-40 és de 1.300 milions d'anys, quina edat té la roca? Escriu el raonament, no només el número.", hint: "Compta quantes vegades has hagut de partir per la meitat per passar del 100 % al 25 %." },
@@ -173,7 +176,6 @@ export const sa7s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Busca dues hipòtesis diferents sobre com va aparèixer la vida a la Terra i porta, per a cadascuna, dues coses escrites: una prova concreta que hi juga a favor i una cosa que encara no explica.",
-    deadline: "Per a la propera sessió",
     note: "A la sessió següent les compararem totes juntes, i la feina servirà per decidir quina està més ben fonamentada. No cal que en facis cap resum llarg: n'hi ha prou amb la prova i el forat, però han de ser teus i els hauràs de defensar en veu alta."
   },
 

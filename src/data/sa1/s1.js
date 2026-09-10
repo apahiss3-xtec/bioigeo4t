@@ -253,7 +253,6 @@ export const sa1s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Caça a casa un cas de pseudociència real (un anunci, una polsera magnètica, un producte «detox», un horòscop...). Anota què promet i amb quina garantia intenta convèncer-te. El portaràs a la propera sessió per construir el detector.",
-    deadline: null,
     note: "Aprenentatge significatiu: buscar un cas real teu, no repetir la teoria."
   },
 

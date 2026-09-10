@@ -197,6 +197,9 @@ export const sa4s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa4-s3-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -235,7 +238,6 @@ export const sa4s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Resol una tanda curta de problemes: un de dominància incompleta (proporció de fenotips), un de grups sanguinis (grups possibles dels fills d'una parella) i una pregunta breu sobre per què un caràcter donat (p. ex. el color d'ulls o l'alçada) és poligènic. Torna a mirar el caràcter del teu projecte Heredity ID i decideix si segueix un patró mendelià simple o no: ho hauràs d'argumentar al pòster.",
-    deadline: null,
     note: "Aprenentatge significatiu: decideixes quin model d'herència explica el TEU caràcter real, cosa que hauràs de justificar al pòster científic final."
   },
 

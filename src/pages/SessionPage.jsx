@@ -11,7 +11,6 @@ import BiomeImage from '../components/BiomeImage.jsx'
 import AppFrame from '../components/AppFrame.jsx'
 import TheoryCard from '../components/TheoryCard.jsx'
 import ExitTicketForm from '../components/ExitTicketForm.jsx'
-import CountdownDays from '../components/CountdownDays.jsx'
 import Accordion from '../components/Accordion.jsx'
 import FitxaGuide from '../components/FitxaGuide.jsx'
 import ActivityCard from '../components/ActivityCard.jsx'
@@ -648,7 +647,6 @@ export default function SessionPage() {
                     ⚠️ <T>{session.homework.note}</T>
                   </p>
                 )}
-                <CountdownDays deadline={session.homework.deadline} />
               </>
             ) : (
               <p className="text-[var(--muted)]">

@@ -79,11 +79,6 @@
     "reopenLink": "¿No se ha abierto? Ábrelo tú aquí"
   },
   "homework": {
-    "deadline": "Fecha límite",
-    "daysLeft": "Quedan {{count}} días",
-    "daysLeft_one": "Queda 1 día",
-    "today": "¡Acaba hoy!",
-    "overdue": "Plazo pasado",
     "none": "No hay deberes nuevos en esta sesión.",
     "also": "También"
   },

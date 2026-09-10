@@ -154,6 +154,9 @@ export const sa6s5 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa6-s5-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "Quatre equips expliquen la mateixa escena. Quina de les frases fa divulgació científica de veritat?", options: ["Com que al mapa hi ha dinosaures dibuixats als dos continents, i sabem que eren animals grans, podem concloure que al Mesozoic aquelles terres estaven unides", "Com que trobem el mateix rèptil terrestre fòssil a les dues costes, i sabem que no podia travessar l'oceà, podem concloure que al Mesozoic les terres estaven unides", "Al Mesozoic els continents es van separar i entre ells es va obrir un oceà molt gran que encara avui continua creixent uns centímetres cada any", "Com que ho diuen els llibres de geologia i el nostre professor, i sabem que són fonts fiables, podem concloure que al Mesozoic aquelles terres estaven unides"], correct: 1 },
@@ -170,7 +173,6 @@ export const sa6s5 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Acaba l'informe de riscos si no l'has enllestit a classe. I busca una notícia recent sobre l'exploració de l'espai: una imatge del telescopi James Webb, un exoplaneta on s'hagi detectat alguna cosa a l'atmosfera, o una missió que busqui vida a Mart o a una lluna de Júpiter. Anota què diu exactament la notícia i, sobretot, distingeix què s'hi afirma amb proves i què només s'hi suggereix.",
-    deadline: null,
     note: "Obre la SA7, «L'origen de tot», on tornarem a la pregunta de la SA1 —com sabem el que sabem— però aplicada a l'univers, a l'origen de la Terra i a l'origen de la vida.",
     aiPolicy: "L'informe de riscos és individual i s'acaba en paper. Si has fet servir alguna ajuda per al vídeo, recorda que a l'estrena has de poder respondre sense paper de quina prova surt cada escena."
   },

@@ -198,6 +198,9 @@ export const sa3s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa3-s3-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "8 min",
   exitTicketQuestions: [
@@ -236,7 +239,6 @@ export const sa3s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Prepara't per al debat de la propera sessió sobre CRISPR (edició genètica): si ara ja saps que canviar una lletra de l'ADN pot curar o causar una malaltia, pensa DOS arguments a favor i DOS en contra d'editar el genoma d'un embrió humà. Anota d'on has tret la informació (recorda la graella de fonts fiables de SA1).",
-    deadline: null,
     note: "Connecta el mecanisme (avui: com una lletra canvia la proteïna) amb la decisió ètica (S4: hauríem de reescriure-la nosaltres?)."
   },
 

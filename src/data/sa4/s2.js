@@ -196,6 +196,9 @@ export const sa4s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa4-s2-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -234,7 +237,6 @@ export const sa4s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Tanda de problemes graduats de genètica (creuaments monohíbrids): per a cada un, escriu els genotips dels pares, fes el quadre de Punnett i respon amb la proporció o probabilitat demanada. Inclou un problema amb el caràcter del teu propi projecte Heredity ID: fes la predicció d'una família de portadors i deixa-la anotada per contrastar-la amb les dades reals que has recollit.",
-    deadline: null,
     note: "Aprenentatge significatiu: apliques la predicció al teu caràcter real i prepares el contrast dades observades / predicció esperada per al pòster final."
   },
 

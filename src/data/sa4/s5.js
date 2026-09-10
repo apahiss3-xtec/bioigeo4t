@@ -181,6 +181,9 @@ export const sa4s5 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa4-s5-exit-ticket.html",
   exitTicketType: "web",
   exitTicketQuestions: [
     {
@@ -218,7 +221,6 @@ export const sa4s5 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Revisa la coavaluació que has rebut del teu pòster i escriu tres millores concretes que hi faries. Prepara't per començar la SA5 (evolució): pensa en un animal o planta del pati de l'institut i pregunta't per què té la forma que té.",
-    deadline: null,
     note: "Aprenentatge significatiu: reflexionar sobre la crítica rebuda tanca el cicle del projecte i prepara la mirada evolutiva de la SA següent.",
   },
 

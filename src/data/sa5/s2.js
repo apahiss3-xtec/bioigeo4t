@@ -152,6 +152,9 @@ export const sa5s2 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa5-s2-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -169,7 +172,6 @@ export const sa5s2 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Busca (o recorda) un exemple d'estructura vestigial en el teu propi cos o en un animal que coneguis i escriu una frase explicant quina funció tenia abans. Prepara't per a la propera sessió, on veurem PER QUÈ canvien els éssers vius (mutació, variabilitat i selecció natural) amb una simulació.",
-    deadline: null,
     note: "Aprenentatge significatiu: connectar una prova de l'evolució (vestigi) amb el propi cos, no memoritzar una llista."
   },
 

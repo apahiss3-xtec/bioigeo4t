@@ -195,6 +195,9 @@ export const sa4s1 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa4-s1-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
@@ -233,7 +236,6 @@ export const sa4s1 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Comença a recollir les dades del teu caràcter Heredity ID: dibuixa l'arbre (pedigrí) d'una família amb almenys tres generacions (avis, pares, fills), marcant qui té cada varietat del caràcter amb el codi ple/buit. Recorda protegir la intimitat: tu saps de qui són les dades, però no cal que les identifiquis. A la propera sessió faràs servir aquest arbre per predir amb les lleis de Mendel.",
-    deadline: null,
     note: "Aprenentatge significatiu: connectar la genètica amb la teva família real i preparar el material que analitzaràs a S2, no repetir definicions."
   },
 

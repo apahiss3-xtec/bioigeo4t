@@ -156,6 +156,9 @@ export const sa7s4 = {
   // l'apartat 5 de la fitxa (tancament del curs) i la q2 és el torn 5 del debat
   // (2c a la versió A, 2e a la B). L'instrument avaluable de la sessió és la
   // prova escrita final, que va en un document independent.
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa7-s4-exit-ticket.html",
   exitTicketType: "web",
   exitTicketWhere: "ja el respons a la fitxa (apartat 5 i torn 5 del debat)",
   exitTicketQuestions: [
@@ -172,7 +175,6 @@ export const sa7s4 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Assaig argumentatiu individual (producte final de la situació): la teva postura sobre si s'ha d'invertir a buscar vida fora de la Terra, en un full. Ha de portar, per aquest ordre: la teva postura; un argument teu basat en dades, amb la font; un argument teu basat en valors, dit com a tal; la millor objecció que vas sentir al debat, escrita amb honestedat; la teva resposta a aquella objecció; i una última frase amb quina dada et faria canviar d'opinió.",
-    deadline: "Es lliura al Classroom durant la setmana següent",
     secondTask: null,
     note: "Escriu-lo amb els dos fulls del debat al davant, el de dades i el de valors. No és un resum del que va passar a classe: és el teu argument. I la millor objecció no és la més fàcil de respondre, és la que et va costar."
   },

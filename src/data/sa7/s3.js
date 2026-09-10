@@ -161,6 +161,9 @@ export const sa7s3 = {
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
+  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
+  // Generat per scripts/_exit-tickets/build_tickets.py.
+  exitTicketUrl: "/fitxes/sa7-s3-exit-ticket.html",
   exitTicketType: "paper",
   exitTicketWhere: "apartat 6 del full, en paper",
   exitTicketQuestions: [
@@ -178,7 +181,6 @@ export const sa7s3 = {
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
     description: "Prepara la teva postura per al debat de la propera sessió: hauríem d'invertir diners públics a buscar vida fora de la Terra? Escriu dos arguments a favor i dos en contra —tots quatre, encara que tu només n'estiguis d'acord amb dos— i, per a cadascun, digues en què es basa: en dades, en valors o en les dues coses.",
-    deadline: "Per a la propera sessió",
     secondTask: "Repassa tota la SA7 per a la prova final: Big Bang i les seves proves, condicions de la Terra, semivida i les dues menes de datació, i les hipòtesis d'avui.",
     note: "A la sessió següent es tanca la situació i el curs: hi haurà el debat i la prova final. Escriure els arguments contraris als teus no és una pèrdua de temps, és el que et permetrà respondre'ls; i separar què és una dada i què és un valor és exactament el que has anat treballant des de la primera situació del curs."
   },

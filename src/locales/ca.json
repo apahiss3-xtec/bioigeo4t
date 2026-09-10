@@ -126,11 +126,6 @@
     "reopenLink": "No s'ha obert? Obre'l tu aquí"
   },
   "homework": {
-    "deadline": "Data límit",
-    "daysLeft": "Queden {{count}} dies",
-    "daysLeft_one": "Queda 1 dia",
-    "today": "Acaba avui!",
-    "overdue": "Termini passat",
     "none": "No hi ha deures nous en aquesta sessió.",
     "also": "També"
   },
