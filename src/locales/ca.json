@@ -24,24 +24,24 @@
     "flipped": "Aula invertida"
   },
   "nivell": {
-    "label": "Nivell de la fitxa",
+    "label": "Versió de la fitxa",
     "objectives": "Objectius d'aprenentatge d'avui",
-    "objectivesHint": "Tria el teu nivell: canvien els objectius i el suport de la sessió.",
+    "objectivesHint": "Tria la teva versió: canvien els objectius i el suport de la sessió.",
     "challenge": "Repte d'ampliació",
     "scaffold": "Amb suport",
     "A": {
       "short": "",
-      "help": "Nivell A: més autonomia, raonaments oberts i menys pistes."
+      "help": "Versió A: més autonomia, raonaments oberts i menys pistes."
     },
     "B": {
       "short": "",
-      "help": "Nivell B: la versió de base, amb bastida que va decreixent."
+      "help": "Versió B: el punt de partida, amb bastida que va decreixent."
     },
     "C": {
       "short": "",
-      "help": "Nivell C: amb suport visual, càpsules per llegir i el mètode pas a pas."
+      "help": "Versió C: amb suport visual, càpsules per llegir i el mètode pas a pas."
     },
-    "senseFitxa": "Aquesta sessió encara no té fitxa del nivell C: et descarregues la B."
+    "senseFitxa": "Aquesta sessió encara no té fitxa de la versió C: et descarregues la B."
   },
   "activity": {
     "what": "Què farem",
@@ -103,7 +103,7 @@
     "nextSession": "Sessió següent",
     "backToSA": "Torna a la SA",
     "criteriNum": "criteri",
-    "criteriOfficial": "Text oficial del currículum (llenguatge de professorat)"
+    "criteriOfficial": "Text oficial del currículum"
   },
   "exitForm": {
     "nom": "Nom",

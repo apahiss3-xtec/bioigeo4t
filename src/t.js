@@ -13,7 +13,7 @@ export const t = (key, params = {}) => {
     if (one) return interpolate(one, params)
   }
   const value = resolve(key)
-  return value ? interpolate(value, params) : key
+  return value !== undefined ? interpolate(value, params) : key
 }
 
 const resolve = (key) =>
