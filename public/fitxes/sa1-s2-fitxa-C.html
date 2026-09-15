@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SA1 · S2 · Caça a la pseudociència · C</title>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --teal:#2A6F7F; --teal-ink:#1c4a55; --teal-light:#9ccad2; --teal-tint:#eaf4f6;
@@ -16,7 +16,7 @@
   --purple:#8a5a9e; --purple-tint:#f1eaf4;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);font-size:13.5px;line-height:1.5;padding:52px 20px 60px}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);font-size:14px;line-height:1.5;padding:39px 20px 45px}
 #toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(56,163,165,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
 .tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.7);flex:1}
 .tb-tip strong{color:#9de0e2}
@@ -33,8 +33,8 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 /* ── PAGINADOR A4 REAL ─────────────────────────────── */
 #sheets { display:flex; flex-direction:column; align-items:center; gap:26px; }
 .sheet { width:794px; min-height:1123px; background:var(--paper); position:relative; box-shadow:0 4px 24px rgba(60,40,110,.18); overflow:visible; }
-.sheet-body { padding:36px 46px 18px; position:relative; overflow:visible; }
-.sheet.has-head .sheet-body { padding-top:54px; }
+.sheet-body { padding:27px 46px 14px; position:relative; overflow:visible; }
+.sheet.has-head .sheet-body { padding-top:40px; }
 .sheet-head { position:absolute; left:0; right:0; top:0; height:36px; display:none; justify-content:space-between; align-items:center; padding:0 46px; border-bottom:1.5px solid var(--teal-light); background:var(--paper); }
 .sheet.has-head .sheet-head { display:flex; }
 .sheet-head-l { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--teal-ink); }
@@ -64,11 +64,11 @@ table.tbl-cont tr:nth-child(odd) td { background:var(--teal-tint); }
 .header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
 span[contenteditable]{display:inline-block}
 /* Caps d'escriptura GRANS (4t: respostes obertes, paràgrafs) */
-.wline{display:block;width:100%;min-height:46px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
+.wline{display:block;width:100%;min-height:46px;background:#fff;outline:none;padding:4px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2}
 .wline:focus{border-bottom-color:var(--teal);background:rgba(56,163,165,.04)}
 .wline.tall{min-height:70px}
-.nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
-.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
+.nom-field{margin-left:auto;font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
+.input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:13.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
 .input-span.data-span{min-width:70px}
 .input-span:focus{border-bottom-color:var(--teal)}
 .nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(56,163,165,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
@@ -88,65 +88,65 @@ span[contenteditable]{display:inline-block}
 .header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
 .logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
 .header-meta{font-size:9.5px;opacity:.6;text-align:right;line-height:1.7}
-.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:5px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.nivell-label{font-size:11.5px;color:var(--muted);font-style:italic}
-.temps-badge{font-size:10px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
-.oa-box{background:linear-gradient(to right,#eef7f8,var(--paper));border-left:4px solid var(--teal);padding:10px 16px}
-.oa-title{font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:4px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nivell-label{font-size:13.5px;color:var(--muted);font-style:normal}
+.temps-badge{font-size:11px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
+.oa-box{background:linear-gradient(to right,#eef7f8,var(--paper));border-left:4px solid var(--teal);padding:8px 16px}
+.oa-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:4px}
 .oa-list{list-style:none;padding:0;margin:0}
-.oa-list li{font-size:12px;padding:3px 0 3px 22px;position:relative;line-height:1.4;border-bottom:1px dashed var(--rule)}
+.oa-list li{font-size:14px;padding:2px 0 2px 22px;position:relative;line-height:1.5;border-bottom:1px dashed var(--rule)}
 .oa-list li:last-child{border-bottom:none}
-.oa-list li::before{content:'○';position:absolute;left:4px;top:3px;font-size:11px;color:var(--teal-light)}
-.content{padding:14px 24px 24px}
-.section{margin-top:16px}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.snum{width:26px;height:26px;border-radius:50%;font-size:13px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.stitle{font-size:15.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
-.sdesc{font-size:11px;color:var(--ink-2);font-style:italic;font-family:'Crimson Pro',serif}
-.temps{font-size:10px;color:var(--teal-ink);font-weight:700;margin-left:4px}
-.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:10px}
-.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:10px 13px}
-.previ-box p{font-size:12.5px}
-.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:9px 12px;margin:8px 0}
-.scaffold-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
-.scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
-.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
-.epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
-.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
-.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
-.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
-.epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
-.data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
-.data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
+.oa-list li::before{content:'○';position:absolute;left:4px;top:3px;font-size:13.5px;color:var(--teal-light)}
+.content{padding:10px 24px 18px}
+.section{margin-top:12px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.snum{width:26px;height:26px;border-radius:50%;font-size:14.5px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stitle{font-size:16.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
+.sdesc{font-size:13.5px;color:var(--ink-2);font-style:normal;font-family:'Crimson Pro',serif}
+.temps{font-size:11px;color:var(--teal-ink);font-weight:700;margin-left:4px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:8px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:8px 13px}
+.previ-box p{font-size:14.5px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:7px 12px;margin:6px 0}
+.scaffold-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
+.scaffold-text{font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:7px 12px;margin:6px 0}
+.epist-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:7px 12px;margin:6px 0}
+.challenge-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
+.challenge-text{font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.epist-text{font-size:13.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
+.data-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:8px}
+.data-table th{background:var(--teal-ink);color:#fff;padding:4px 9px;text-align:left;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
 .data-table th small{font-size:8.5px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.8;display:block;margin-top:1px}
-.data-table td{padding:6px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
+.data-table td{padding:4px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
 .data-table tr:nth-child(even) td{background:var(--teal-tint)}
 .fill-cell{display:block;width:100%;min-height:34px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.6}
 .fill-cell:focus{background:rgba(56,163,165,.08);outline:1px solid var(--teal-light);border-radius:2px}
-.label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
-.cut-card{border:1.5px dashed var(--teal-light);border-radius:6px;padding:6px 9px;font-size:12px;background:#fff}
-.cut-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+.label-cell{font-size:14px;font-weight:700;color:var(--ink-2)}
+.cut-card{border:1.5px dashed var(--teal-light);border-radius:6px;padding:4px 9px;font-size:14px;background:#fff}
+.cut-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}
 .scale-table td{vertical-align:middle}
-.scale-num{width:34px;text-align:center;font-weight:900;color:var(--teal-ink);font-size:15px}
+.scale-num{width:34px;text-align:center;font-weight:900;color:var(--teal-ink);font-size:16px}
 .chk{width:14px;height:14px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;display:inline-block;vertical-align:middle}
-.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
-.meta-oa-title{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px}
-.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;margin-bottom:4px;padding:2px 0}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:6px 10px}
+.meta-oa-title{font-size:11px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;margin-bottom:3px;padding:2px 0}
 .meta-oa-check{width:16px;height:16px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;margin-top:1px}
-.meta-oa-text{flex:1;line-height:1.35}
-.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
-.meta-icon{font-size:18px;display:block;margin-bottom:3px}
-.meta-label{font-size:9.5px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
-.stars{display:flex;gap:4px;margin-top:4px}.star{font-size:18px;color:#7fa8b0}
-.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:10px 14px;margin-top:14px}
-.tasca-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:8px}
-.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px}
-.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.spacer-block{position:relative;height:48px;margin:4px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(56,163,165,.05) 6px,rgba(56,163,165,.05) 12px);display:flex;align-items:center;justify-content:center}
+.meta-oa-text{flex:1;line-height:1.5}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:6px 10px}
+.meta-icon{font-size:18px;display:block;margin-bottom:2px}
+.meta-label{font-size:11px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.stars{display:flex;gap:4px;margin-top:3px}.star{font-size:18px;color:#7fa8b0}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:8px 14px;margin-top:10px}
+.tasca-title{font-size:13.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:6px}
+.tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:4px;font-size:14px}
+.tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:13.5px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:3px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(56,163,165,.05) 6px,rgba(56,163,165,.05) 12px);display:flex;align-items:center;justify-content:center}
 .spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
 
-.footer{margin-top:12px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:7px}
+.footer{margin-top:9px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:5px}
 .footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
 .footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
 .fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
@@ -187,85 +187,100 @@ p>span[contenteditable]:not([class]){display:inline}
 
 /* ── Càpsula «📖 Per llegir»: SEMPRE abans de qualsevol pregunta ── */
 .llegir-box{display:flex;gap:10px;align-items:flex-start;background:var(--c-read-bg);
-  border:1.5px solid #e0c98a;border-radius:9px;padding:9px 12px;margin:8px 0}
+  border:1.5px solid #e0c98a;border-radius:9px;padding:7px 12px;margin:6px 0}
 .llegir-icon{font-size:22px;line-height:1.1;flex-shrink:0}
-.llegir-title{font-size:11px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;
-  color:var(--c-read-ink);margin-bottom:3px}
-.llegir-text{font-size:12px;line-height:1.5;color:var(--ink)}
+.llegir-title{font-size:13.5px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--c-read-ink);margin-bottom:2px}
+.llegir-text{font-size:14px;line-height:1.5;color:var(--ink)}
 .llegir-text strong{color:var(--c-read-ink)}
 .llegir-text .gl{font-style:italic;color:var(--ink-2)}
 
 /* ── Bàner d'idea clau (mínim 2 cops per fitxa) ── */
-.clau{text-align:center;font-size:13px;font-weight:900;color:var(--c-main);background:#fff;
-  border:2px dashed var(--c-main);border-radius:9px;padding:7px 10px;margin:9px 0;line-height:1.35}
+.clau{text-align:center;font-size:14.5px;font-weight:900;color:var(--c-main);background:#fff;
+  border:2px dashed var(--c-main);border-radius:9px;padding:5px 10px;margin:7px 0;line-height:1.5}
 .clau .drop{color:var(--c-accent)}
 
 /* ── Encercla: dues opcions plausibles, mai un distractor absurd ── */
-.tria{font-size:12.5px;line-height:1.9;margin:5px 0 7px}
+.tria{font-size:14.5px;line-height:1.9;margin:4px 0 5px}
 .opt{display:inline-block;border:1.6px solid var(--rule-dark);border-radius:9999px;
   padding:2px 13px;margin:2px 5px 2px 0;font-weight:700;background:#fff}
-.tria-o{font-size:11px;font-weight:700;color:var(--muted);margin:0 3px}
+.tria-o{font-size:13.5px;font-weight:700;color:var(--muted);margin:0 3px}
 
 /* ── Frases per completar ── */
-.frase-completar{font-size:12.5px;line-height:2.5;margin:5px 0 7px}
+.frase-completar{font-size:14.5px;line-height:2.5;margin:4px 0 5px}
 .blank{display:inline-block;border-bottom:1.6px solid var(--rule-dark);vertical-align:bottom;
   margin:0 3px;height:1.15em}
 .blank-s{width:64px}.blank-m{width:110px}.blank-l{width:160px}.blank-xl{width:220px}
 
 /* ── Inici de frase FORA del camp d'escriptura (mai un placeholder dins) ── */
-.hint-out{font-size:11px;font-weight:700;color:var(--c-ink);margin:3px 0 2px}
+.hint-out{font-size:13.5px;font-weight:700;color:var(--c-ink);margin:2px 0 2px}
 
 /* ── Mètode OBSERVO → EM PREGUNTO → CONNECTO → DEDUEIXO ── */
-.passos-box{border:2px solid var(--c-light);border-radius:11px;margin:9px 0 7px;overflow:hidden}
-.passos-cap{background:var(--c-ink);color:#fff;font-size:11px;font-weight:900;letter-spacing:.05em;
-  text-transform:uppercase;padding:6px 12px;display:flex;align-items:center;gap:8px}
-.passos-cap .cas-tag{margin-left:auto;font-size:9.5px;font-weight:700;background:rgba(255,255,255,.2);
+.passos-box{border:2px solid var(--c-light);border-radius:11px;margin:7px 0 5px;overflow:hidden}
+.passos-cap{background:var(--c-ink);color:#fff;font-size:13.5px;font-weight:900;letter-spacing:.05em;
+  text-transform:uppercase;padding:4px 12px;display:flex;align-items:center;gap:8px}
+.passos-cap .cas-tag{margin-left:auto;font-size:11px;font-weight:700;background:rgba(255,255,255,.2);
   border-radius:9999px;padding:2px 10px;letter-spacing:.04em;text-transform:none}
 .passos-box.exemple{border-color:#7bab7f}
 .passos-box.exemple .passos-cap{background:#4a8f57}
-.metode-strip{font-size:10.5px;font-weight:800;color:var(--c-ink);background:var(--c-tint);
-  padding:5px 12px;letter-spacing:.02em}
-.pas{display:flex;gap:9px;padding:7px 12px;border-top:1px solid var(--rule)}
+.metode-strip{font-size:13.5px;font-weight:800;color:var(--c-ink);background:var(--c-tint);
+  padding:4px 12px;letter-spacing:.02em}
+.pas{display:flex;gap:9px;padding:5px 12px;border-top:1px solid var(--rule)}
 .pas-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--c-main);color:#fff;
-  font-size:12px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .passos-box.exemple .pas-num{background:#4a8f57}
 .pas-cos{flex:1}
-.pas-metode{display:inline-block;font-size:9.5px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
-  color:#fff;background:var(--c-main);border-radius:9999px;padding:2px 9px;margin-bottom:4px}
+.pas-metode{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
+  color:#fff;background:var(--c-main);border-radius:9999px;padding:2px 9px;margin-bottom:3px}
 .passos-box.exemple .pas-metode{background:#4a8f57}
-.pas-q{font-size:12px;font-weight:700;color:var(--ink-2);margin-bottom:5px}
+.pas-q{font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:4px}
 .pas-opts{display:flex;gap:16px;flex-wrap:wrap}
-.pas-opt{display:inline-flex;align-items:center;gap:6px;font-size:12px}
+/* El `gap` d'aquest flex separava tambe els trossos d'una MATEIXA paraula quan
+   hi ha un <span> pel mig — i n'hi ha un a cada ela geminada (.gem). Es treu
+   el gap i l'espai el posa la casella, que es l'unic que l'ha de tenir. */
+.pas-opt{display:inline-flex;align-items:center;font-size:14px}
+.pas-opt .pas-box{margin-right:6px}
 .pas-box{width:15px;height:15px;border:1.8px solid var(--c-main);border-radius:4px;display:inline-block;
   position:relative;flex-shrink:0;background:#fff}
 .pas-opt.marcat .pas-box{background:#4a8f57;border-color:#4a8f57}
-.pas-opt.marcat .pas-box::after{content:'✓';position:absolute;top:-4px;left:1px;color:#fff;font-size:13px;
+.pas-opt.marcat .pas-box::after{content:'✓';position:absolute;top:-4px;left:1px;color:#fff;font-size:14.5px;
   font-weight:900;line-height:1}
 .pas-opt b{color:var(--c-ink)}
-.pas-frase{padding:8px 12px;background:var(--c-tint);border-top:1px solid var(--rule)}
-.pas-frase-lab{font-size:11px;font-weight:700;color:var(--c-ink);margin-bottom:3px}
+.pas-frase{padding:6px 12px;background:var(--c-tint);border-top:1px solid var(--rule)}
+.pas-frase-lab{font-size:13.5px;font-weight:700;color:var(--c-ink);margin-bottom:2px}
 .pas-frase .wline{background:transparent}
-.exemple-nota{font-size:10.5px;color:#3e7a4a;font-style:italic;padding:6px 12px 8px;
+.exemple-nota{font-size:13.5px;color:#3e7a4a;font-style:normal;padding:4px 12px 6px;
   border-top:1px solid var(--rule);background:#f2f8f3}
 
 /* ── Calaixos on s'enganxen les tires retallables ── */
-.calaix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:9px 0}
-.calaix{border:1.6px solid var(--c-light);border-radius:9px;padding:7px 6px 9px;background:#fff}
-.calaix-head{font-size:11px;font-weight:900;color:var(--c-ink);text-transform:uppercase;
-  letter-spacing:.03em;margin-bottom:6px;text-align:center;line-height:1.25}
+.calaix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:7px 0}
+.calaix{border:1.6px solid var(--c-light);border-radius:9px;padding:5px 6px 7px;background:#fff}
+.calaix-head{font-size:13.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;
+  letter-spacing:.03em;margin-bottom:4px;text-align:center;line-height:1.5}
 .calaix-cell{border:1.5px dashed var(--rule-dark);border-radius:7px;background:#fff;
-  display:flex;flex-direction:column;gap:7px;padding:7px 5px}
+  display:flex;flex-direction:column;gap:7px;padding:5px 5px}
 .slot{height:44px;border:1.4px dashed var(--c-light);border-radius:6px;background:#fff;
   display:flex;align-items:center;justify-content:center}
 .slot span{font-size:8.5px;color:var(--c-light);letter-spacing:.08em;text-transform:uppercase}
 
 /* ── Comptador senzill (substitueix la taula de perfil de la B) ── */
-.compta-grid{display:flex;gap:10px;margin:8px 0}
+.compta-grid{display:flex;gap:10px;margin:6px 0}
 .compta{flex:1;border:1.6px solid var(--c-light);border-radius:9px;background:#fff;padding:8px;
   text-align:center}
-.compta-t{font-size:11.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;letter-spacing:.03em}
-.compta-s{font-size:9.5px;color:var(--muted);margin-bottom:5px;line-height:1.3}
+.compta-t{font-size:13.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;letter-spacing:.03em}
+.compta-s{font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.5}
 .compta-caixa{height:40px;border:1.5px solid var(--rule-dark);border-radius:6px;background:#fff}
+
+/* ══════════════════════════════════════════════════════════════
+   LLEGIBILITAT-C v1 — llegibilitat de la Versió C (dislèxia). 09/09/2026.
+   Cos en 'Fira Sans Condensed' (mateixa família que l'Extra Condensed
+   de la casa, però amb lletres més obertes i distingibles), interlineat
+   ample i separació de paraules. Titulars, capçalera i peu no es toquen.
+   ══════════════════════════════════════════════════════════════ */
+.sheet-body,#doc{font-family:'Fira Sans Condensed','Fira Sans Extra Condensed',sans-serif;
+  line-height:1.52;letter-spacing:.004em;word-spacing:.06em}
+.sheet-body p,#doc p,.sheet-body li,#doc li,.sheet-body td,#doc td,.sheet-body dd,#doc dd,.sheet-body .wline,#doc .wline,.sheet-body .tria,#doc .tria,.sheet-body .frase-completar,#doc .frase-completar{text-align:left;hyphens:none;-webkit-hyphens:none}
+.sheet-body .stitle,#doc .stitle,.sheet-body .snum,#doc .snum,.sheet-body .clau,#doc .clau,.sheet-body .passos-cap,#doc .passos-cap,.sheet-body .oa-title,#doc .oa-title,.sheet-body .info-head,#doc .info-head,.sheet-body .header-band,#doc .header-band,.sheet-body .nivell-strip,#doc .nivell-strip{font-family:'Fira Sans Extra Condensed',sans-serif}
 </style>
 </head>
 <body>
@@ -333,7 +348,7 @@ p>span[contenteditable]:not([class]){display:inline}
         <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div>
-        <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>2.</strong> De la sessió passada: <strong>encercla</strong> què fa que una cosa sigui ciència.</span></p>
+        <p style="margin-top:8px">✏️ <span contenteditable="true"><strong>2.</strong> De la sessió passada: <strong>encercla</strong> què fa que una cosa sigui ciència.</span></p>
       </div>
       <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
         <span class="opt">Que es pugui comprovar</span><span class="tria-o">o</span><span class="opt">Que hi cregui molta gent</span>
@@ -360,21 +375,21 @@ p>span[contenteditable]:not([class]){display:inline}
         <div class="llegir-text" contenteditable="true">Compte amb una cosa important: <strong>no tot el que la gent posa en dubte és mentida</strong>. Les vacunes o els aliments transgènics estan <strong>molt ben comprovats</strong>, i tot i així molta gent en desconfia. I al revés: hi ha coses que molta gent es creu sense que ningú les hagi comprovat mai.<br>Per això, abans de dir si t'ho creus, mira <strong>en què es basa</strong> qui ho diu: en <strong>dades</strong>, en <strong>autoritat</strong> o en <strong>el que vol creure</strong>.</div></div>
       </div>
 
-      <p style="font-size:12px;margin:6px 0" contenteditable="true">Per a cada frase, fes <strong>dues coses</strong>: <strong>(a)</strong> encercla si te'n fies molt o poc, i <strong>(b)</strong> marca amb una creueta en quina garantia es basa la gent que s'ho creu.</p>
+      <p style="font-size:14px;margin:6px 0" contenteditable="true">Per a cada frase, fes <strong>dues coses</strong>: <strong>(a)</strong> encercla si te'n fies molt o poc, i <strong>(b)</strong> marca amb una creueta en quina garantia es basa la gent que s'ho creu.</p>
 
       <table class="data-table">
         <thead><tr><th>Frase</th><th style="width:104px">(a) M'hi fio…</th><th style="width:66px">📊 Dades</th><th style="width:76px">🎓 Autoritat</th><th style="width:100px">💭 El que vull creure</th></tr></thead>
         <tbody>
-          <tr><td class="label-cell" contenteditable="true">Les vacunes funcionen</td><td style="text-align:center;font-size:11.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Els curanderos poden curar malalties</td><td style="text-align:center;font-size:11.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Hi ha objectes que porten sort</td><td style="text-align:center;font-size:11.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Beure aigua és bo per a la salut</td><td style="text-align:center;font-size:11.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Els horòscops encerten el futur</td><td style="text-align:center;font-size:11.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Una pedra pot curar el mal d'esquena</td><td style="text-align:center;font-size:11.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Les vacunes funcionen</td><td style="text-align:center;font-size:13.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Els curanderos poden curar malalties</td><td style="text-align:center;font-size:13.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Hi ha objectes que porten sort</td><td style="text-align:center;font-size:13.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Beure aigua és bo per a la salut</td><td style="text-align:center;font-size:13.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Els horòscops encerten el futur</td><td style="text-align:center;font-size:13.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Una pedra pot curar el mal d'esquena</td><td style="text-align:center;font-size:13.5px;font-weight:700">MOLT · POC</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
         </tbody>
       </table>
 
-      <p style="font-size:12px;margin:10px 0 2px" contenteditable="true">🗣️ <strong>En grup:</strong> busqueu la frase on <strong>no us poseu d'acord</strong>. Escriu quina és i què diu qui no pensa com tu.</p>
+      <p style="font-size:14px;margin:10px 0 2px" contenteditable="true">🗣️ <strong>En grup:</strong> busqueu la frase on <strong>no us poseu d'acord</strong>. Escriu quina és i què diu qui no pensa com tu.</p>
       <div class="hint-out">Comença la frase així: «No ens posem d'acord amb… El meu company/a diu que…»</div>
       <div class="wline tall" contenteditable="true"></div>
       <div class="wline" contenteditable="true"></div>
@@ -406,7 +421,7 @@ p>span[contenteditable]:not([class]){display:inline}
         🚨 Si <span class="drop">no es pot comprovar</span>, sospita
       </div>
 
-      <p style="font-size:12px;margin:6px 0" contenteditable="true">Aparella cada frase amb el senyal que li correspon: <strong>escriu el número 1, 2 o 3</strong> a la casella.</p>
+      <p style="font-size:14px;margin:6px 0" contenteditable="true">Aparella cada frase amb el senyal que li correspon: <strong>escriu el número 1, 2 o 3</strong> a la casella.</p>
 
       <table class="data-table">
         <thead><tr><th>Frase d'un anunci</th><th style="width:74px">Senyal<br><small>1, 2 o 3</small></th></tr></thead>
@@ -439,18 +454,18 @@ p>span[contenteditable]:not([class]){display:inline}
         🚨 1 · No es pot comprovar &nbsp;·&nbsp; 2 · No admet crítica &nbsp;·&nbsp; <span class="drop">3 · Sona «científica»</span>
       </div>
 
-      <p style="font-size:12px;margin:6px 0 2px" contenteditable="true"><strong>El meu cas caçat és:</strong></p>
+      <p style="font-size:14px;margin:6px 0 2px" contenteditable="true"><strong>El meu cas caçat és:</strong></p>
       <div class="wline tall" contenteditable="true"></div>
       <div class="wline" contenteditable="true"></div>
       <div class="wline" contenteditable="true"></div>
 
-      <p style="font-size:12px;margin:8px 0 4px" contenteditable="true">Marca els senyals que hi trobes i <strong>copia la frase</strong> del teu cas que t'ho fa dir:</p>
+      <p style="font-size:14px;margin:8px 0 4px" contenteditable="true">Marca els senyals que hi trobes i <strong>copia la frase</strong> del teu cas que t'ho fa dir:</p>
       <table class="data-table">
         <thead><tr><th style="width:34px">✔</th><th style="width:168px">Senyal</th><th>La frase del meu cas que m'ho fa dir</th></tr></thead>
         <tbody>
-          <tr><td style="text-align:center"><span class="chk"></span></td><td class="label-cell" style="font-size:11.5px"><strong>1 · No es pot comprovar</strong></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
-          <tr><td style="text-align:center"><span class="chk"></span></td><td class="label-cell" style="font-size:11.5px"><strong>2 · No admet crítica</strong></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
-          <tr><td style="text-align:center"><span class="chk"></span></td><td class="label-cell" style="font-size:11.5px"><strong>3 · Sona «científica»</strong></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
+          <tr><td style="text-align:center"><span class="chk"></span></td><td class="label-cell" style="font-size:13.5px"><strong>1 · No es pot comprovar</strong></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
+          <tr><td style="text-align:center"><span class="chk"></span></td><td class="label-cell" style="font-size:13.5px"><strong>2 · No admet crítica</strong></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
+          <tr><td style="text-align:center"><span class="chk"></span></td><td class="label-cell" style="font-size:13.5px"><strong>3 · Sona «científica»</strong></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
         </tbody>
       </table>
 
@@ -502,7 +517,7 @@ p>span[contenteditable]:not([class]){display:inline}
         </div>
       </div>
 
-      <p style="font-size:12px;margin:8px 0 2px" contenteditable="true">🗣️ <strong>El que diré a l'aula (1 minut).</strong> Copia aquí les tres coses que has d'explicar, i assaja-ho en veu baixa amb un company abans de sortir.</p>
+      <p style="font-size:14px;margin:8px 0 2px" contenteditable="true">🗣️ <strong>El que diré a l'aula (1 minut).</strong> Copia aquí les tres coses que has d'explicar, i assaja-ho en veu baixa amb un company abans de sortir.</p>
       <div class="hint-out">1r · «El meu cas és…» &nbsp;· &nbsp;2n · «I promet que…» &nbsp;· &nbsp;3r · «Jo crec que és pseudociència perquè…»</div>
       <div class="wline tall" contenteditable="true"></div>
       <div class="wline" contenteditable="true"></div>
@@ -515,10 +530,10 @@ p>span[contenteditable]:not([class]){display:inline}
     </div>
 
     <!-- ═══ Metacognició ═══ -->
-    <div class="section deletable" style="margin-top:14px">
+    <div class="section deletable" style="margin-top:10px">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
-      <p style="font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px">🧠 Metacognició — 3 min</p>
-      <div class="meta-oa-box deletable" style="margin-bottom:8px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <p style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:4px">🧠 Metacognició — 3 min</p>
+      <div class="meta-oa-box deletable" style="margin-bottom:6px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
         <div class="meta-oa-title">🎯 Torna als objectius — marca el que has après avui:</div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé dir si em fio d'una frase i en quina garantia es basa.</div></div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Reconec els 3 senyals d'alerta del detector.</div></div>
@@ -532,7 +547,7 @@ p>span[contenteditable]:not([class]){display:inline}
         <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div></div>
-        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la sessió</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:9.5px;color:var(--muted);margin-top:4px">Encercla les estrelles</div></div>
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la sessió</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:11px;color:var(--muted);margin-top:3px">Encercla les estrelles</div></div>
       </div>
     </div>
 

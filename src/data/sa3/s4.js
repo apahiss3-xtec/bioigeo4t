@@ -1,7 +1,7 @@
 export const sa3s4 = {
   id: "s4",
   saId: "sa3",
-  title: "Reescriure la vida? El debat CRISPR",
+  title: "Reescriure la vida?",
   sessionNumber: 4,
   biome: "sa3",
   duration: "2h",

@@ -25,6 +25,14 @@ export const sa2s4 = {
       "Recordo les diferències clau: mitosi = 2 cèl·lules idèntiques (reparar/créixer); meiosi = 4 cèl·lules amb la meitat (gàmetes); càncer = mitosi sense control.",
       "Uso l'índex mitòtic per decidir, amb els números a la mà, si un cas és sospitós o no.",
       "Distingeixo un error en el repartiment de cromosomes a un gàmeta d'un problema de mitosi."
+    ],
+    // C = adaptació (alumnes amb DIL). NO és la B escurçada: menys
+    // objectius i tasca pròpia. Han de coincidir amb l'oa-box de
+    // fitxa_sa2_s4_VISUAL_C.html.
+    C: [
+      "Davant d'un cas, dic si parla de mitosi, de meiosi o de càncer.",
+      "Recordo què fa cada un dels tres processos.",
+      "Dic què domino i què he de repassar de tota la SA."
     ]
   },
 
@@ -150,7 +158,7 @@ export const sa2s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa2-s4-fitxa-A.html", B: "/fitxes/sa2-s4-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa2-s4-fitxa-A.html", B: "/fitxes/sa2-s4-fitxa-B.html", C: "/fitxes/sa2-s4-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la SA2: torna a les tres frases inicials (apartat 0) i reescriu-les si cal amb el que has après avui. Aquesta sessió prepara directament la prova de La cèl·lula.",
 

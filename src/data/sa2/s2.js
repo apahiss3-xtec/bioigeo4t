@@ -25,6 +25,14 @@ export const sa2s2 = {
       "Explico amb les meves paraules que els gàmetes tenen la meitat de cromosomes perquè, en unir-se a la fecundació, el nombre torni a ser el normal.",
       "Dic que la meiosi barreja el material genètic i que per això els gàmetes són diferents entre ells.",
       "Indico per a què serveix cada divisió: la mitosi per créixer i reparar, la meiosi per fer gàmetes (reproducció)."
+    ],
+    // C = adaptació (alumnes amb DIL). NO és la B escurçada: menys
+    // objectius i tasca pròpia. Han de coincidir amb l'oa-box de
+    // fitxa_sa2_s2_VISUAL_C.html.
+    C: [
+      "Distingeixo la mitosi (2 cèl·lules iguals) de la meiosi (4 amb la meitat).",
+      "Dic per a què serveix cadascuna: créixer i reparar, o fer òvuls i espermatozoides.",
+      "Explico per què un fill no és idèntic a cap dels seus pares."
     ]
   },
 
@@ -140,7 +148,7 @@ export const sa2s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa2-s2-fitxa-A.html", B: "/fitxes/sa2-s2-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa2-s2-fitxa-A.html", B: "/fitxes/sa2-s2-fitxa-B.html", C: "/fitxes/sa2-s2-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a la pregunta del principi (per què no tenim 92 cromosomes) i respon-la amb el que has après sobre la meiosi i la fecundació.",
 

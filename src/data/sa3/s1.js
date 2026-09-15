@@ -1,7 +1,7 @@
 export const sa3s1 = {
   id: "s1",
   saId: "sa3",
-  title: "Reescriure la vida?",
+  title: "Quatre lletres que diuen com ets",
   sessionNumber: 1,
   biome: "sa3",
   duration: "2h",

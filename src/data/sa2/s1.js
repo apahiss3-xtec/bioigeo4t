@@ -25,6 +25,14 @@ export const sa2s1 = {
       "Explico amb les meves paraules per què el cos necessita dividir cèl·lules (reparar ferides, créixer).",
       "Compto quantes cèl·lules hi ha en cada fase i dic quina fase és més freqüent.",
       "Explico què vol dir que una cèl·lula es divideixi «sense control» i per què això és el que passa en un tumor."
+    ],
+    // C = adaptació (alumnes amb DIL). NO és la B escurçada: menys
+    // objectius i tasca pròpia. Han de coincidir amb l'oa-box de
+    // fitxa_sa2_s1_VISUAL_C.html.
+    C: [
+      "Sé dir si una cèl·lula està en repòs o es divideix mirant l'ADN.",
+      "Dic per a què serveix dividir-se: créixer i reparar.",
+      "Explico que el càncer és una divisió que no s'atura."
     ]
   },
 
@@ -141,7 +149,7 @@ export const sa2s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa2-s1-fitxa-A.html", B: "/fitxes/sa2-s1-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa2-s1-fitxa-A.html", B: "/fitxes/sa2-s1-fitxa-B.html", C: "/fitxes/sa2-s1-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a l'informe de la biòpsia del principi i, amb el que has après, escriu en 4-5 línies què li està passant a aquelles cèl·lules i per què és perillós.",
 

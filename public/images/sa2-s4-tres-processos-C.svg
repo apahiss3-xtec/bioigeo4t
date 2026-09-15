@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Fira Sans Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="300" fill="#ffffff"/>
+  <text x="360" y="34" text-anchor="middle" font-size="27" font-weight="700" fill="#5A2E77">Els tres processos de la SA2</text>
+  <text x="360" y="58" text-anchor="middle" font-size="17" fill="#6b6274">Tot comença amb una cèl·lula que es divideix.</text>
+
+  <g>
+    <rect x="22" y="78" width="216" height="200" rx="14" fill="#f3e8fa" stroke="#7B3F9E" stroke-width="3"/>
+    <text x="130" y="122" text-anchor="middle" font-size="38">&#129657;</text>
+    <text x="130" y="162" text-anchor="middle" font-size="23" font-weight="700" fill="#5A2E77">MITOSI</text>
+    <text x="130" y="194" text-anchor="middle" font-size="18" fill="#1d1622">2 cèl·lules iguals.</text>
+    <text x="130" y="224" text-anchor="middle" font-size="18" fill="#5A2E77">Per créixer</text>
+    <text x="130" y="246" text-anchor="middle" font-size="18" fill="#5A2E77">i reparar.</text>
+  </g>
+
+  <g>
+    <rect x="252" y="78" width="216" height="200" rx="14" fill="#e6f5f5" stroke="#2f9aa0" stroke-width="3"/>
+    <text x="360" y="122" text-anchor="middle" font-size="38">&#129516;</text>
+    <text x="360" y="162" text-anchor="middle" font-size="23" font-weight="700" fill="#1d6165">MEIOSI</text>
+    <text x="360" y="194" text-anchor="middle" font-size="18" fill="#1d1622">4 amb la meitat.</text>
+    <text x="360" y="224" text-anchor="middle" font-size="18" fill="#1d6165">Per fer òvuls i</text>
+    <text x="360" y="246" text-anchor="middle" font-size="18" fill="#1d6165">espermatozoides.</text>
+  </g>
+
+  <g>
+    <rect x="482" y="78" width="216" height="200" rx="14" fill="#f6ece8" stroke="#c96f3e" stroke-width="3"/>
+    <text x="590" y="122" text-anchor="middle" font-size="38">&#9888;&#65039;</text>
+    <text x="590" y="162" text-anchor="middle" font-size="23" font-weight="700" fill="#a24e24">CÀNCER</text>
+    <text x="590" y="194" text-anchor="middle" font-size="18" fill="#1d1622">Mitosi que no para.</text>
+    <text x="590" y="224" text-anchor="middle" font-size="18" fill="#a24e24">Es detecta</text>
+    <text x="590" y="246" text-anchor="middle" font-size="18" fill="#a24e24">comptant.</text>
+  </g>
+</svg>

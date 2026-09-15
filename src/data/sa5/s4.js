@@ -1,7 +1,7 @@
 export const sa5s4 = {
   id: "s4",
   saId: "sa5",
-  title: "El museu evolutiu del pati",
+  title: "Saps explicar el teu organisme en un minut?",
   sessionNumber: 4,
   biome: "sa5",
   duration: "2h",

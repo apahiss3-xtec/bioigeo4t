@@ -1,7 +1,7 @@
 export const sa5s1 = {
   id: "s1",
   saId: "sa5",
-  title: "Safari evolutiu al pati",
+  title: "Natura o mà humana?",
   sessionNumber: 1,
   biome: "sa5",
   duration: "2h",

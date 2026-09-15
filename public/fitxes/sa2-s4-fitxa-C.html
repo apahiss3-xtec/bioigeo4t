@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SA1 · S1 · Com decideixes què és cert? · C</title>
+<title>SA2 · S4 · Un cos que copia i un cos que reparteix · C</title>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --teal:#2A6F7F; --teal-ink:#1c4a55; --teal-light:#9ccad2; --teal-tint:#eaf4f6;
-  --ink:#14201f; --ink-2:#334; --muted:#6b7a7e; --surface:#fdfefe; --paper:#ffffff;
-  --rule:#dce9eb; --rule-dark:#b6ccd0;
+  --teal:#7B3F9E; --teal-ink:#5A2E77; --teal-light:#cbaede; --teal-tint:#f3e8fa;
+  --ink:#1d1622; --ink-2:#3a3340; --muted:#78707e; --surface:#fefdff; --paper:#ffffff;
+  --rule:#e7dcef; --rule-dark:#c9b3da;
   --orange:#c96f3e; --orange-tint:#f6ece8;
-  --aqua:#38a3a5; --aqua-tint:#e6f5f5;
+  --aqua:#2f9aa0; --aqua-tint:#e6f5f5;
   --amber:#c8960a; --amber-tint:#fdf7e2; --amber-ink:#7a5800;
   --purple:#8a5a9e; --purple-tint:#f1eaf4;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);font-size:14px;line-height:1.5;padding:31px 20px 36px}
-#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(56,163,165,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
-.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.7);flex:1}
-.tb-tip strong{color:#9de0e2}
-.tb-sep{width:1px;height:20px;background:rgba(56,163,165,.3)}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c3b0d4;color:var(--ink);font-size:14px;line-height:1.5;padding:39px 20px 45px}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(35,20,45,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,79,174,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(215,195,225,.75);flex:1}
+.tb-tip strong{color:#e0c8ec}
+.tb-sep{width:1px;height:20px;background:rgba(139,79,174,.3)}
 .tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;transition:opacity .15s;white-space:nowrap}
 .tb-print{background:var(--teal);color:#fff}.tb-print:hover{opacity:.85}
-.tb-bold{background:rgba(56,163,165,.2);border:1px solid rgba(56,163,165,.4);color:#bfe6e8;font-size:14px;font-weight:900;padding:4px 11px}
-.tb-spacer{background:rgba(56,163,165,.2);border:1px solid rgba(56,163,165,.4);color:#bfe6e8;font-size:12px}
+.tb-bold{background:rgba(139,79,174,.2);border:1px solid rgba(139,79,174,.4);color:#e6cdf2;font-size:14px;font-weight:900;padding:4px 11px}
+.tb-spacer{background:rgba(139,79,174,.2);border:1px solid rgba(139,79,174,.4);color:#e6cdf2;font-size:12px}
 .tb-undo{background:rgba(201,111,62,.2);border:1px solid rgba(201,111,62,.4);color:#f0bfa5;font-size:12px;opacity:.5;pointer-events:none}
 .tb-undo.active{opacity:1;pointer-events:auto}
 .page-wrap { width:794px; margin:0 auto; position:relative; }
@@ -33,8 +33,8 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 /* ── PAGINADOR A4 REAL ─────────────────────────────── */
 #sheets { display:flex; flex-direction:column; align-items:center; gap:26px; }
 .sheet { width:794px; min-height:1123px; background:var(--paper); position:relative; box-shadow:0 4px 24px rgba(60,40,110,.18); overflow:visible; }
-.sheet-body { padding:22px 46px 11px; position:relative; overflow:visible; }
-.sheet.has-head .sheet-body { padding-top:32px; }
+.sheet-body { padding:27px 46px 14px; position:relative; overflow:visible; }
+.sheet.has-head .sheet-body { padding-top:40px; }
 .sheet-head { position:absolute; left:0; right:0; top:0; height:36px; display:none; justify-content:space-between; align-items:center; padding:0 46px; border-bottom:1.5px solid var(--teal-light); background:var(--paper); }
 .sheet.has-head .sheet-head { display:flex; }
 .sheet-head-l { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--teal-ink); }
@@ -58,95 +58,102 @@ table.tbl-cont tr:nth-child(odd) td { background:var(--teal-tint); }
 
 
 [contenteditable]{outline:none;cursor:text;border-radius:3px;transition:background .12s,box-shadow .12s}
-[contenteditable]:hover{background:rgba(56,163,165,.08);box-shadow:0 0 0 2px rgba(56,163,165,.3)}
-[contenteditable]:focus{background:rgba(56,163,165,.12);box-shadow:0 0 0 2.5px var(--teal)}
+[contenteditable]:hover{background:rgba(139,79,174,.08);box-shadow:0 0 0 2px rgba(139,79,174,.3)}
+[contenteditable]:focus{background:rgba(139,79,174,.12);box-shadow:0 0 0 2.5px var(--teal)}
 .header-band [contenteditable]:hover{background:rgba(255,255,255,.15);box-shadow:0 0 0 2px rgba(255,255,255,.3)}
 .header-band [contenteditable]:focus{background:rgba(255,255,255,.2);box-shadow:0 0 0 2.5px #fff}
 span[contenteditable]{display:inline-block}
-/* Caps d'escriptura GRANS (4t: respostes obertes, paràgrafs) */
-.wline{display:block;width:100%;min-height:46px;background:#fff;outline:none;padding:3px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2}
-.wline:focus{border-bottom-color:var(--teal);background:rgba(56,163,165,.04)}
-.wline.tall{min-height:70px}
+.wline{display:block;width:100%;min-height:52px;background:#fff;outline:none;padding:4px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2}
+.wline:focus{border-bottom-color:var(--teal);background:rgba(139,79,174,.04)}
+.wline.tall{min-height:82px}
+.wline.xtall{min-height:120px}
 .nom-field{margin-left:auto;font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
 .input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:13.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
 .input-span.data-span{min-width:70px}
 .input-span:focus{border-bottom-color:var(--teal)}
-.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(56,163,165,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
+.nivell-badge-small{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:rgba(139,79,174,.14);border:1px solid var(--teal-light);font-size:10px;font-weight:900;color:var(--teal-ink);flex-shrink:0}
 .deletable{position:relative}
 .del-btn{display:none;position:absolute;top:-8px;right:-8px;width:18px;height:18px;border-radius:50%;background:#c9556f;color:#fff;border:none;cursor:pointer;align-items:center;justify-content:center;font-size:12px;font-weight:900;line-height:1;z-index:100;box-shadow:0 1px 4px rgba(0,0,0,.3)}
 .del-btn:hover{background:#a83a52;transform:scale(1.15)}
 .deletable:hover>.del-btn{display:flex}
 .deletable:has(.deletable:hover)>.del-btn{display:none}
-.header-band{background:linear-gradient(135deg,#1c4a55 0%,#2f7f8a 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
+.header-band{background:linear-gradient(135deg,#5A2E77 0%,#8B4FAE 100%);color:#fff;padding:14px 18px;display:grid;grid-template-columns:72px 1fr 178px;gap:14px;align-items:center;position:relative;overflow:hidden}
 .header-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 100% at 110% 50%,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
 .header-emoji-col{display:flex;align-items:center;justify-content:center}
 .header-emoji-box{width:62px;height:62px;border-radius:14px;background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:34px;user-select:none;flex-shrink:0}
 .header-main{min-width:0}
 .header-sa{font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:4px}
 .header-title{font-size:24px;font-weight:900;letter-spacing:-.01em;line-height:1.05}
-.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.75;margin-top:4px}
+.header-subtitle{font-family:'Crimson Pro',serif;font-style:italic;font-size:13px;opacity:.78;margin-top:4px}
 .header-right{display:flex;flex-direction:column;align-items:flex-end;gap:5px}
 .logo-box{background:rgba(255,255,255,.92);border-radius:7px;padding:5px 6px;display:inline-flex;align-items:center;justify-content:center;box-shadow:0 1px 6px rgba(0,0,0,.18)}
-.header-meta{font-size:9.5px;opacity:.6;text-align:right;line-height:1.7}
-.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:3px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.header-meta{font-size:9.5px;opacity:.62;text-align:right;line-height:1.7}
+.nivell-strip{background:var(--teal-tint);border-bottom:2px solid var(--rule);padding:4px 22px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .nivell-label{font-size:13.5px;color:var(--muted);font-style:normal}
 .temps-badge{font-size:11px;font-weight:700;color:var(--teal-ink);background:#fff;border:1.5px solid var(--teal-light);border-radius:9999px;padding:1px 8px}
-.oa-box{background:linear-gradient(to right,#eef7f8,var(--paper));border-left:4px solid var(--teal);padding:6px 16px}
+.oa-box{background:linear-gradient(to right,#f4ecfa,var(--paper));border-left:4px solid var(--teal);padding:8px 16px}
 .oa-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:4px}
 .oa-list{list-style:none;padding:0;margin:0}
 .oa-list li{font-size:14px;padding:2px 0 2px 22px;position:relative;line-height:1.5;border-bottom:1px dashed var(--rule)}
 .oa-list li:last-child{border-bottom:none}
-.oa-list li::before{content:'○';position:absolute;left:4px;top:3px;font-size:13.5px;color:var(--teal-light)}
-.content{padding:8px 24px 14px}
-.section{margin-top:10px}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:13.5px;color:var(--teal-light)}
+.content{padding:10px 24px 18px}
+.section{margin-top:12px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .snum{width:26px;height:26px;border-radius:50%;font-size:14.5px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .stitle{font-size:16.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
 .sdesc{font-size:13.5px;color:var(--ink-2);font-style:normal;font-family:'Crimson Pro',serif}
 .temps{font-size:11px;color:var(--teal-ink);font-weight:700;margin-left:4px}
-.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:6px}
-.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:6px 13px}
+.divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:8px}
+.previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:8px 13px}
 .previ-box p{font-size:14.5px}
-.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:5px 12px;margin:5px 0}
+.case-box{background:#fff;border:1.5px solid var(--rule-dark);border-radius:8px;padding:8px 13px;margin-bottom:8px}
+.case-tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--teal);border-radius:9999px;padding:2px 10px;margin-bottom:4px}
+.case-text{font-size:14px;margin-bottom:4px}
+.case-row{display:flex;align-items:center;gap:8px;font-size:13.5px;margin-bottom:3px}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:7px 12px;margin:6px 0}
 .scaffold-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
 .scaffold-text{font-size:13.5px;line-height:1.5;color:var(--ink-2)}
-.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:5px 12px;margin:5px 0}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:7px 12px;margin:6px 0}
 .epist-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:7px 12px;margin:6px 0}
+.challenge-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
+.challenge-text{font-size:13.5px;line-height:1.5;color:var(--ink-2)}
 .epist-text{font-size:13.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
-.data-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:6px}
+.data-table{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:8px}
 .data-table th{background:var(--teal-ink);color:#fff;padding:4px 9px;text-align:left;font-size:11px;letter-spacing:.05em;text-transform:uppercase}
-.data-table th small{font-size:8.5px;font-weight:400;letter-spacing:0;text-transform:none;opacity:.8;display:block;margin-top:1px}
 .data-table td{padding:4px 9px;border-bottom:1px solid var(--rule);vertical-align:middle}
 .data-table tr:nth-child(even) td{background:var(--teal-tint)}
-.fill-cell{display:block;width:100%;min-height:34px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.6}
-.fill-cell:focus{background:rgba(56,163,165,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.fill-cell{display:block;width:100%;min-height:44px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
+.fill-cell:focus{background:rgba(139,79,174,.08);outline:1px solid var(--teal-light);border-radius:2px}
+.fill-cell.calc{min-height:30px;text-align:center;font-weight:700}
 .label-cell{font-size:14px;font-weight:700;color:var(--ink-2)}
-.cut-card{border:1.5px dashed var(--teal-light);border-radius:6px;padding:4px 9px;font-size:14px;background:#fff}
-.cut-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:5px 0}
-.scale-table td{vertical-align:middle}
-.scale-num{width:34px;text-align:center;font-weight:900;color:var(--teal-ink);font-size:16px}
-.chk{width:14px;height:14px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;display:inline-block;vertical-align:middle}
-.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:5px 10px}
+.draw-box{border:1.5px dashed var(--teal-light);border-radius:8px;min-height:190px;background:repeating-linear-gradient(45deg,transparent,transparent 8px,rgba(139,79,174,.03) 8px,rgba(139,79,174,.03) 16px);position:relative}
+.draw-tag{position:absolute;top:6px;left:8px;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink)}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:6px 10px}
 .meta-oa-title{font-size:11px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
-.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;margin-bottom:2px;padding:2px 0}
+.meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;margin-bottom:3px;padding:2px 0}
 .meta-oa-check{width:16px;height:16px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;margin-top:1px}
 .meta-oa-text{flex:1;line-height:1.5}
-.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:5px}
-.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:5px 10px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:6px 10px}
 .meta-icon{font-size:18px;display:block;margin-bottom:2px}
-.meta-label{font-size:11px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px}
-.stars{display:flex;gap:4px;margin-top:2px}.star{font-size:18px;color:#7fa8b0}
-.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:6px 14px;margin-top:8px}
-.tasca-title{font-size:13.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:5px}
+.meta-label{font-size:11px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
+.stars{display:flex;gap:4px;margin-top:3px}.star{font-size:18px;color:#a88bc0}
+.tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:8px 14px;margin-top:10px}
+.tasca-title{font-size:13.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:6px}
 .tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:4px;font-size:14px}
 .tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:13.5px;font-weight:900;display:flex;align-items:center;justify-content:center}
-.spacer-block{position:relative;height:48px;margin:2px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(56,163,165,.05) 6px,rgba(56,163,165,.05) 12px);display:flex;align-items:center;justify-content:center}
+.spacer-block{position:relative;height:48px;margin:3px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(139,79,174,.05) 6px,rgba(139,79,174,.05) 12px);display:flex;align-items:center;justify-content:center}
 .spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
 
-.footer{margin-top:7px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:4px}
+.footer{margin-top:9px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:5px}
 .footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
 .footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
+.attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:4px;line-height:1.5}
+.attrib a{color:var(--teal-ink)}
 .fig{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:6px;display:block;margin:0 auto}
+.formula-note{font-size:13.5px;color:var(--teal-ink);background:var(--teal-tint);border-radius:6px;padding:4px 9px;margin-bottom:4px}
 /* ── IMPRESSIÓ ────────────────────────────────────── */
 p>span[contenteditable]:not([class]){display:inline}
 @media print {
@@ -171,7 +178,7 @@ p>span[contenteditable]:not([class]){display:inline}
 }
 
 
-/* tokens --c-* de la SA1 */
+/* tokens --c-* de la SA2 */
 :root{--c-main:var(--teal);--c-ink:var(--teal-ink);--c-light:var(--teal-light);--c-tint:var(--teal-tint);--c-accent:var(--orange);--c-read-bg:var(--amber-tint);--c-read-ink:var(--amber-ink);}
 
 /* ══════════════════════════════════════════════════════════════
@@ -184,7 +191,7 @@ p>span[contenteditable]:not([class]){display:inline}
 
 /* ── Càpsula «📖 Per llegir»: SEMPRE abans de qualsevol pregunta ── */
 .llegir-box{display:flex;gap:10px;align-items:flex-start;background:var(--c-read-bg);
-  border:1.5px solid #e0c98a;border-radius:9px;padding:5px 12px;margin:5px 0}
+  border:1.5px solid #e0c98a;border-radius:9px;padding:7px 12px;margin:6px 0}
 .llegir-icon{font-size:22px;line-height:1.1;flex-shrink:0}
 .llegir-title{font-size:13.5px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;
   color:var(--c-read-ink);margin-bottom:2px}
@@ -194,17 +201,17 @@ p>span[contenteditable]:not([class]){display:inline}
 
 /* ── Bàner d'idea clau (mínim 2 cops per fitxa) ── */
 .clau{text-align:center;font-size:14.5px;font-weight:900;color:var(--c-main);background:#fff;
-  border:2px dashed var(--c-main);border-radius:9px;padding:4px 10px;margin:5px 0;line-height:1.5}
+  border:2px dashed var(--c-main);border-radius:9px;padding:5px 10px;margin:7px 0;line-height:1.5}
 .clau .drop{color:var(--c-accent)}
 
 /* ── Encercla: dues opcions plausibles, mai un distractor absurd ── */
-.tria{font-size:14.5px;line-height:1.9;margin:3px 0 4px}
+.tria{font-size:14.5px;line-height:1.9;margin:4px 0 5px}
 .opt{display:inline-block;border:1.6px solid var(--rule-dark);border-radius:9999px;
   padding:2px 13px;margin:2px 5px 2px 0;font-weight:700;background:#fff}
 .tria-o{font-size:13.5px;font-weight:700;color:var(--muted);margin:0 3px}
 
 /* ── Frases per completar ── */
-.frase-completar{font-size:14.5px;line-height:2.5;margin:3px 0 4px}
+.frase-completar{font-size:14.5px;line-height:2.5;margin:4px 0 5px}
 .blank{display:inline-block;border-bottom:1.6px solid var(--rule-dark);vertical-align:bottom;
   margin:0 3px;height:1.15em}
 .blank-s{width:64px}.blank-m{width:110px}.blank-l{width:160px}.blank-xl{width:220px}
@@ -213,7 +220,7 @@ p>span[contenteditable]:not([class]){display:inline}
 .hint-out{font-size:13.5px;font-weight:700;color:var(--c-ink);margin:2px 0 2px}
 
 /* ── Mètode OBSERVO → EM PREGUNTO → CONNECTO → DEDUEIXO ── */
-.passos-box{border:2px solid var(--c-light);border-radius:11px;margin:5px 0 4px;overflow:hidden}
+.passos-box{border:2px solid var(--c-light);border-radius:11px;margin:7px 0 5px;overflow:hidden}
 .passos-cap{background:var(--c-ink);color:#fff;font-size:13.5px;font-weight:900;letter-spacing:.05em;
   text-transform:uppercase;padding:4px 12px;display:flex;align-items:center;gap:8px}
 .passos-cap .cas-tag{margin-left:auto;font-size:11px;font-weight:700;background:rgba(255,255,255,.2);
@@ -221,16 +228,16 @@ p>span[contenteditable]:not([class]){display:inline}
 .passos-box.exemple{border-color:#7bab7f}
 .passos-box.exemple .passos-cap{background:#4a8f57}
 .metode-strip{font-size:13.5px;font-weight:800;color:var(--c-ink);background:var(--c-tint);
-  padding:3px 12px;letter-spacing:.02em}
-.pas{display:flex;gap:9px;padding:4px 12px;border-top:1px solid var(--rule)}
+  padding:4px 12px;letter-spacing:.02em}
+.pas{display:flex;gap:9px;padding:5px 12px;border-top:1px solid var(--rule)}
 .pas-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--c-main);color:#fff;
   font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .passos-box.exemple .pas-num{background:#4a8f57}
 .pas-cos{flex:1}
 .pas-metode{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;
-  color:#fff;background:var(--c-main);border-radius:9999px;padding:2px 9px;margin-bottom:2px}
+  color:#fff;background:var(--c-main);border-radius:9999px;padding:2px 9px;margin-bottom:3px}
 .passos-box.exemple .pas-metode{background:#4a8f57}
-.pas-q{font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:3px}
+.pas-q{font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:4px}
 .pas-opts{display:flex;gap:16px;flex-wrap:wrap}
 /* El `gap` d'aquest flex separava tambe els trossos d'una MATEIXA paraula quan
    hi ha un <span> pel mig — i n'hi ha un a cada ela geminada (.gem). Es treu
@@ -243,29 +250,29 @@ p>span[contenteditable]:not([class]){display:inline}
 .pas-opt.marcat .pas-box::after{content:'✓';position:absolute;top:-4px;left:1px;color:#fff;font-size:14.5px;
   font-weight:900;line-height:1}
 .pas-opt b{color:var(--c-ink)}
-.pas-frase{padding:5px 12px;background:var(--c-tint);border-top:1px solid var(--rule)}
+.pas-frase{padding:6px 12px;background:var(--c-tint);border-top:1px solid var(--rule)}
 .pas-frase-lab{font-size:13.5px;font-weight:700;color:var(--c-ink);margin-bottom:2px}
 .pas-frase .wline{background:transparent}
-.exemple-nota{font-size:13.5px;color:#3e7a4a;font-style:normal;padding:4px 12px 5px;
+.exemple-nota{font-size:13.5px;color:#3e7a4a;font-style:normal;padding:4px 12px 6px;
   border-top:1px solid var(--rule);background:#f2f8f3}
 
 /* ── Calaixos on s'enganxen les tires retallables ── */
-.calaix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:5px 0}
-.calaix{border:1.6px solid var(--c-light);border-radius:9px;padding:4px 6px 5px;background:#fff}
+.calaix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:7px 0}
+.calaix{border:1.6px solid var(--c-light);border-radius:9px;padding:5px 6px 7px;background:#fff}
 .calaix-head{font-size:13.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;
   letter-spacing:.03em;margin-bottom:4px;text-align:center;line-height:1.5}
 .calaix-cell{border:1.5px dashed var(--rule-dark);border-radius:7px;background:#fff;
-  display:flex;flex-direction:column;gap:7px;padding:4px 5px}
+  display:flex;flex-direction:column;gap:7px;padding:5px 5px}
 .slot{height:44px;border:1.4px dashed var(--c-light);border-radius:6px;background:#fff;
   display:flex;align-items:center;justify-content:center}
 .slot span{font-size:8.5px;color:var(--c-light);letter-spacing:.08em;text-transform:uppercase}
 
 /* ── Comptador senzill (substitueix la taula de perfil de la B) ── */
-.compta-grid{display:flex;gap:10px;margin:5px 0}
+.compta-grid{display:flex;gap:10px;margin:6px 0}
 .compta{flex:1;border:1.6px solid var(--c-light);border-radius:9px;background:#fff;padding:8px;
   text-align:center}
 .compta-t{font-size:13.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;letter-spacing:.03em}
-.compta-s{font-size:11px;color:var(--muted);margin-bottom:3px;line-height:1.5}
+.compta-s{font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.5}
 .compta-caixa{height:40px;border:1.5px solid var(--rule-dark);border-radius:6px;background:#fff}
 
 /* ══════════════════════════════════════════════════════════════
@@ -282,23 +289,23 @@ p>span[contenteditable]:not([class]){display:inline}
 </head>
 <body>
 <div id="toolbar">
-  <span class="tb-tip">✎ Clica per editar · <strong>Ctrl+B</strong> negreta · <strong>×</strong> rosa elimina · <strong>Ctrl+Z</strong> desfés</span>
+  <span class="tb-tip">&#9998; Clica per editar &middot; <strong>Ctrl+B</strong> negreta &middot; <strong>&times;</strong> rosa elimina &middot; <strong>Ctrl+Z</strong> desf&eacute;s</span>
   <div class="tb-sep"></div>
-  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">↩ Desfer</button>
+  <button class="tb-btn tb-undo" id="btn-undo" onclick="undoDelete()">&#8617; Desfer</button>
   <button class="tb-btn tb-bold" onclick="document.execCommand('bold')"><b>N</b></button>
-  <button class="tb-btn tb-spacer" onclick="insertSpacer()">＋ Espai</button>
-  <button class="tb-btn tb-print" onclick="window.print()">🖨️ Imprimir / PDF</button>
+  <button class="tb-btn tb-spacer" onclick="insertSpacer()">&#65291; Espai</button>
+  <button class="tb-btn tb-print" onclick="window.print()">&#128424;&#65039; Imprimir / PDF</button>
 </div>
 
 <div class="page-wrap" id="doc">
 
   <div class="header-band deletable">
     <div class="del-btn" onclick="deleteEl(this)">✕</div>
-    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🔬</div></div>
+    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🧠</div></div>
     <div class="header-main">
-      <div class="header-sa" contenteditable="true">SA1 · Ciència i Pseudociència · Sessió 1 de 4</div>
-      <div class="header-title" contenteditable="true">Com decideixes què és cert?</div>
-      <div class="header-subtitle" contenteditable="true">Què em fa dir que una cosa és certa — i què no</div>
+      <div class="header-sa" contenteditable="true">SA2 · La cèl<span class="gem">·</span>lula · Sessió 4 de 4</div>
+      <div class="header-title" contenteditable="true">Un cos que copia i un cos que reparteix</div>
+      <div class="header-subtitle" contenteditable="true">Repàs: mitosi, meiosi i càncer</div>
     </div>
     <div class="header-right">
       <div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
@@ -321,351 +328,229 @@ p>span[contenteditable]:not([class]){display:inline}
     <div class="del-btn" onclick="deleteEl(this)">✕</div>
     <div class="oa-title">🎯 Objectius d'aprenentatge d'avui</div>
     <ul class="oa-list">
-      <li contenteditable="true">Poso afirmacions al calaix que els toca: <strong>molt certa</strong>, <strong>depèn</strong> o <strong>gens certa</strong>.</li>
-      <li contenteditable="true">Reconec <strong>3 garanties</strong>: dades, autoritat i el que vull creure.</li>
-      <li contenteditable="true">Sé dir si una cosa és <strong>ciència</strong> o <strong>pseudociència</strong> mirant si <strong>es pot comprovar</strong>.</li>
+      <li contenteditable="true">Davant d'un cas, dic si parla de <strong>mitosi</strong>, de <strong>meiosi</strong> o de <strong>càncer</strong>.</li>
+      <li contenteditable="true">Recordo <strong>què fa</strong> cada un dels tres processos.</li>
+      <li contenteditable="true">Dic <strong>què domino</strong> i <strong>què he de repassar</strong> de tota la SA.</li>
     </ul>
   </div>
 
   <div class="content">
 
-    <!-- ═══ Secció 0 · Idees prèvies ═══ -->
+    <!-- ═══ Secció 0 ═══ -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--muted)">0</div>
-        <div><div class="stitle">Idees prèvies <span class="temps">⏱️ 10 min</span></div>
-        <div class="sdesc" contenteditable="true">Sigues sincer/a: aquí no hi ha respostes dolentes</div></div>
+        <div><div class="stitle">Les tres frases <span class="temps">⏱️ 5 min</span></div>
+        <div class="sdesc" contenteditable="true">Sense mirar apunts. Ho compararem al final</div></div>
       </div>
       <div class="divider"></div>
       <div class="previ-box">
-        <p>✏️ <span contenteditable="true"><strong>1.</strong> Escriu una cosa de la qual estiguis <strong>molt segur/a</strong>.</span></p>
-        <div class="hint-out">Comença la frase així: «Estic molt segur/a que…»</div>
+        <div class="hint-out">1 · «La mitosi serveix per…»</div>
         <div class="wline tall" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <p style="margin-top:6px">✏️ <span contenteditable="true"><strong>2.</strong> I ara una cosa de la qual estiguis <strong>gens segur/a</strong>.</span></p>
-        <div class="hint-out">Comença la frase així: «No estic gens segur/a que…»</div>
+        <div class="hint-out">2 · «La meiosi serveix per…»</div>
         <div class="wline tall" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <p style="margin-top:6px">✏️ <span contenteditable="true"><strong>3.</strong> Quan vols convèncer algú que tens raó, en què et bases?</span></p>
-        <div class="hint-out">Comença la frase així: «Em baso en…»</div>
+        <div class="hint-out">3 · «El càncer és una divisió que…»</div>
         <div class="wline tall" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
       </div>
     </div>
 
-    <!-- ═══ Secció 1 · Els tres calaixos de la certesa ═══ -->
+    <!-- ═══ Secció 1 · Diagnostica ═══ -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--aqua)">1</div>
-        <div><div class="stitle" contenteditable="true">Els tres calaixos de la certesa <span class="temps">⏱️ 40 min</span></div>
-        <div class="sdesc" contenteditable="true">Retalla, enganxa i explica per què</div></div>
+        <div><div class="stitle" contenteditable="true">Diagnostica els tres casos <span class="temps">⏱️ 35 min</span></div>
+        <div class="sdesc" contenteditable="true">Llegeix, encercla i explica-ho en una frase</div></div>
       </div>
       <div class="divider"></div>
 
       <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <img class="fig" src="../images/sa1-s1-certesa-C.svg" alt="Tres calaixos: molt certa, depèn i gens certa, amb un exemple a cadascun" style="max-height:225px" onerror="this.style.display='none'">
+        <img class="fig" src="../images/sa2-s4-tres-processos-C.svg" alt="Mitosi, meiosi i càncer" style="max-height:235px" onerror="this.style.display='none'">
       </figure>
 
       <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
         <div class="llegir-icon">📖</div>
         <div><div class="llegir-title">Per llegir abans de començar</div>
-        <div class="llegir-text" contenteditable="true">A la vida —i a la ciència— gairebé res no és segur del tot. Hi ha coses <strong>molt certes</strong>, coses que <strong>depenen</strong> i coses <strong>gens certes</strong>. Això és el que en diem la <strong>certesa</strong> <span class="gl">(certesa = com de segur estàs que una cosa és veritat)</span>.<br>Per saber a quin calaix va una frase, fes-li sempre <strong>la mateixa pregunta</strong>: <strong>es pot comprovar?</strong> Si es pot comprovar i sempre passa, va al calaix de <strong>molt certa</strong>. Si a vegades passa i a vegades no, va a <strong>depèn</strong>. Si no hi ha cap manera de comprovar-ho, va a <strong>gens certa</strong>.</div></div>
+        <div class="llegir-text" contenteditable="true">Per encertar el cas, fes-te sempre <strong>la mateixa pregunta primer</strong>: <strong>de què parla, aquest cas?</strong><br>· Si parla de <strong>curar-se</strong> o de <strong>créixer</strong> → <strong>MITOSI</strong>.<br>· Si parla d'<strong>òvuls</strong>, <strong>espermatozoides</strong> o de <strong>tenir fills</strong> → <strong>MEIOSI</strong>.<br>· Si parla d'alguna cosa que <strong>creix i no para</strong>, o d'un número de divisions <strong>molt més alt del normal</strong> → <strong>CÀNCER</strong>.</div></div>
       </div>
 
       <div class="clau deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        🔎 Una cosa és més certa si <span class="drop">es pot COMPROVAR</span>
+        🩹 curar i créixer = MITOSI &nbsp;·&nbsp; 🧬 fills = MEIOSI &nbsp;·&nbsp; <span class="drop">⚠️ no para = CÀNCER</span>
       </div>
 
-      <p style="font-size:14px;margin:6px 0" contenteditable="true">Agafa el teu <strong>joc de tires retallables</strong> (full a part, <strong>bloc C</strong>). Retalla les <strong>6 tires</strong> i enganxa cadascuna al calaix que li toca. Hi caben 2 tires a cada calaix.</p>
-
-      <div class="calaix-grid deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="calaix">
-          <div class="calaix-head">✅ Molt certa</div>
-          <div class="calaix-cell">
-            <div class="slot"><span>enganxa una tira</span></div>
-            <div class="slot"><span>enganxa una tira</span></div>
-          </div>
-        </div>
-        <div class="calaix">
-          <div class="calaix-head">🤔 Depèn</div>
-          <div class="calaix-cell">
-            <div class="slot"><span>enganxa una tira</span></div>
-            <div class="slot"><span>enganxa una tira</span></div>
-          </div>
-        </div>
-        <div class="calaix">
-          <div class="calaix-head">❌ Gens certa</div>
-          <div class="calaix-cell">
-            <div class="slot"><span>enganxa una tira</span></div>
-            <div class="slot"><span>enganxa una tira</span></div>
-          </div>
-        </div>
+      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>Cas 1.</strong> La Laia s'ha fet un tall al braç. Al cap d'una setmana la pell s'ha tancat i el tall ja no es veu.<br>
+        <span class="opt">MITOSI</span><span class="tria-o">·</span><span class="opt">MEIOSI</span><span class="tria-o">·</span><span class="opt">CÀNCER</span>
       </div>
-
-      <p style="font-size:14px;margin:8px 0 2px" contenteditable="true">✏️ Tria <strong>una</strong> tira del calaix «molt certa» i explica per què hi va.</p>
-      <div class="hint-out">Comença la frase així: «La he posat a “molt certa” perquè es pot comprovar amb…»</div>
+      <div class="hint-out">Per què? Comença la frase així: «Perquè la pell ha fet…»</div>
       <div class="wline tall" contenteditable="true"></div>
       <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
 
-      <p style="font-size:14px;margin:10px 0 2px" contenteditable="true">✏️ Ara tria <strong>una</strong> tira del calaix «gens certa» i explica per què hi va.</p>
-      <div class="hint-out">Comença la frase així: «La he posat a “gens certa” perquè no hi ha manera de…»</div>
+      <div class="tria deletable" style="margin-top:6px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>Cas 2.</strong> A un senyor li miren un bony del <strong>múscul de la cuixa</strong>, que normalment gairebé no es divideix. Al laboratori compten <strong>80</strong> cèl<span class="gem">·</span>lules i <strong>28</strong> s'estan dividint.<br>
+        <span class="opt">MITOSI</span><span class="tria-o">·</span><span class="opt">MEIOSI</span><span class="tria-o">·</span><span class="opt">CÀNCER</span>
+      </div>
+      <p class="frase-completar deletable" contenteditable="true"><span class="del-btn" onclick="deleteEl(this)">✕</span>
+        Calcula-ho primer: <strong>28 ÷ 80 =</strong> <span class="blank blank-m"></span> &nbsp;→&nbsp; <strong>× 100 =</strong> <span class="blank blank-m"></span> <strong>%</strong></p>
+      <div class="hint-out">Per què? Comença la frase així: «Perquè en un múscul aquest número és…»</div>
       <div class="wline tall" contenteditable="true"></div>
       <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
 
-      <p style="font-size:14px;margin-top:6px" contenteditable="true">🗣️ <strong>En grup:</strong> compareu els calaixos. Si algú ha posat una tira en un calaix diferent del teu, <strong>escolta el seu motiu</strong> i marca aquella tira amb una <strong>estrella</strong>. No cal que canviïs res.</p>
+      <div class="tria deletable" style="margin-top:6px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <strong>Cas 3.</strong> Una parella no aconsegueix tenir fills. A l'anàlisi es veu que els espermatozoides de l'home tenen <strong>46</strong> cromosomes, quan n'haurien de tenir <strong>23</strong>.<br>
+        <span class="opt">MITOSI</span><span class="tria-o">·</span><span class="opt">MEIOSI</span><span class="tria-o">·</span><span class="opt">CÀNCER</span>
+      </div>
+      <div class="hint-out">Per què? Comença la frase així: «Perquè la divisió que fa els espermatozoides…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
     </div>
 
-    <!-- ═══ Secció 2 · Les garanties ═══ -->
+    <!-- ═══ Secció 2 · El mapa ═══ -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--teal)">2</div>
-        <div><div class="stitle" contenteditable="true">En què em baso? Les garanties <span class="temps">⏱️ 20 min</span></div>
-        <div class="sdesc" contenteditable="true">Tres maneres de dir que una cosa és certa</div></div>
+        <div><div class="stitle" contenteditable="true">El mapa dels tres processos <span class="temps">⏱️ 20 min</span></div>
+        <div class="sdesc" contenteditable="true">Omple la taula del repàs</div></div>
       </div>
       <div class="divider"></div>
 
-      <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <img class="fig" src="../images/sa1-s1-garanties-C.svg" alt="Tres garanties: dades, autoritat i el que vull creure" style="max-height:250px" onerror="this.style.display='none'">
-      </figure>
-
-      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="llegir-icon">📖</div>
-        <div><div class="llegir-title">Per llegir abans de començar</div>
-        <div class="llegir-text" contenteditable="true">Quan volem convèncer algú, sempre ens basem en alguna cosa. Això en què ens basem es diu <strong>garantia</strong> <span class="gl">(garantia = allò que dones perquè et creguin)</span>. Avui en faràs servir tres:<br>· <strong>DADES</strong> — números i mesures. <em>«El termòmetre marca 39 graus.»</em><br>· <strong>AUTORITAT</strong> — ho diu algú que en sap. <em>«Ho ha dit la metgessa.»</em><br>· <strong>EL QUE VULL CREURE</strong> — el que em convé o m'agrada. <em>«A mi em funciona.»</em><br>Les <strong>dades</strong> són la garantia més forta, perquè qualsevol les pot tornar a mesurar. «El que vull creure» és la més fluixa: no és cap prova.</div></div>
-      </div>
-
-      <p style="font-size:14px;margin:6px 0" contenteditable="true">Algú diu que <strong>demà plourà</strong> i dona diferents raons. <strong>Encercla</strong> en quina garantia es basa cada raó.</p>
-
-      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <strong>1.</strong> «Plourà perquè <em>la humitat de l'aire és del 95 %</em>.»<br>
-        <span class="opt">DADES</span><span class="tria-o">o</span><span class="opt">AUTORITAT</span>
-      </div>
-      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <strong>2.</strong> «Plourà perquè <em>ho ha dit el servei meteorològic al butlletí d'avui</em>.»<br>
-        <span class="opt">AUTORITAT</span><span class="tria-o">o</span><span class="opt">DADES</span>
-      </div>
-      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <strong>3.</strong> «Plourà perquè <em>no tinc gens de ganes que es faci l'excursió de demà</em>.»<br>
-        <span class="opt">EL QUE VULL CREURE</span><span class="tria-o">o</span><span class="opt">DADES</span>
-      </div>
-      <!-- RETALLAT 09/09/2026 (llegibilitat C): item 4 ("el barometre ha baixat 8
-           punts"), redundant amb l'item 1 ("la humitat es del 95%"): tots dos es
-           responen DADES. Amb els items 1-3 la particio dades / autoritat / el que
-           vull creure ja queda coberta sencera. Calia per no passar de 6 a 7 fulls
-           en pujar la lletra. -->
       <div class="llegir-box deletable" style="background:#fff"><div class="del-btn" onclick="deleteEl(this)">✕</div>
         <div class="llegir-icon">🪜</div>
-        <div><div class="llegir-title">Si dubtes</div>
-        <div class="llegir-text" contenteditable="true">Mira si a la frase hi ha <strong>un número</strong> → és <strong>DADES</strong>. Si hi ha <strong>algú que ho diu</strong> → és <strong>AUTORITAT</strong>. Si parla del que <strong>vols o no vols</strong> que passi → és <strong>EL QUE VULL CREURE</strong>.</div></div>
+        <div><div class="llegir-title">Com omplir-la</div>
+        <div class="llegir-text" contenteditable="true">Omple-la <strong>per files</strong>, no per columnes: primer la fila de «quantes cèl<span class="gem">·</span>lules», després la de «per a què serveix». Si t'encalles, mira el dibuix de l'apartat 1 i les caixes 📖 de les fitxes anteriors.</div></div>
       </div>
+
+      <table class="data-table">
+        <thead><tr><th style="width:36%">&nbsp;</th><th>MITOSI</th><th>MEIOSI</th></tr></thead>
+        <tbody>
+          <tr><td class="label-cell" contenteditable="true">Quantes cèl<span class="gem">·</span>lules surten?</td><td><div class="fill-cell" style="min-height:40px"></div></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Tenen tot el material o la meitat?</td><td><div class="fill-cell" style="min-height:40px"></div></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
+          <tr><td class="label-cell" contenteditable="true">Per a què serveix?</td><td><div class="fill-cell" style="min-height:40px"></div></td><td><div class="fill-cell" style="min-height:40px"></div></td></tr>
+        </tbody>
+      </table>
+
+      <p class="frase-completar deletable" contenteditable="true"><span class="del-btn" onclick="deleteEl(this)">✕</span>
+        I el càncer: és una <span class="blank blank-l"></span> que <span class="blank blank-xl"></span>.</p>
     </div>
 
-    <!-- ═══ Secció 3 · El meu perfil ═══ -->
+    <!-- ═══ Secció 3 · Informe final ═══ -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--purple)">3</div>
-        <div><div class="stitle" contenteditable="true">En què em baso jo? <span class="temps">⏱️ 20 min</span></div>
-        <div class="sdesc" contenteditable="true">Conèixer com penso per no deixar-me enganyar</div></div>
+        <div><div class="stitle" contenteditable="true">Informe final <span class="temps">⏱️ 25 min</span></div>
+        <div class="sdesc" contenteditable="true">Ara ho escrius tu sol/a</div></div>
       </div>
       <div class="divider"></div>
 
-      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="llegir-icon">📖</div>
-        <div><div class="llegir-title">Per llegir abans de començar</div>
-        <div class="llegir-text" contenteditable="true">Cadascú de nosaltres té una garantia que fa servir més que les altres. Saber quina és <strong>et protegeix</strong>: qui es basa sempre en el que vol creure és el més fàcil d'enganyar.<br>Ara, per a cada frase, marca <strong>una sola creueta</strong>: la garantia en què et bases <strong>tu</strong> per creure-t'ho o no creure-t'ho. No hi ha resposta correcta.</div></div>
-      </div>
-
-      <table class="data-table">
-        <thead><tr><th>Frase</th><th style="width:78px">📊 Dades</th><th style="width:88px">🎓 Autoritat</th><th style="width:112px">💭 El que vull creure</th></tr></thead>
-        <tbody>
-          <tr><td class="label-cell" contenteditable="true">Les vacunes funcionen</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Els horòscops encerten el que et passarà</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Hi ha números que donen sort</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Les plantes medicinals fan efecte</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-        </tbody>
-      </table>
-
-      <p style="font-size:14px;margin:8px 0 2px" contenteditable="true">Ara <strong>compta</strong> les creuetes de cada columna i escriu el número a la caixa:</p>
-      <div class="compta-grid deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="compta"><div class="compta-t">📊 Dades</div><div class="compta-s">Quantes creuetes?</div><div class="compta-caixa"></div></div>
-        <div class="compta"><div class="compta-t">🎓 Autoritat</div><div class="compta-s">Quantes creuetes?</div><div class="compta-caixa"></div></div>
-        <div class="compta"><div class="compta-t">💭 El que vull creure</div><div class="compta-s">Quantes creuetes?</div><div class="compta-caixa"></div></div>
-      </div>
-
-      <p class="frase-completar deletable" contenteditable="true"><span class="del-btn" onclick="deleteEl(this)">✕</span>
-        Completa: la garantia que he fet servir <strong>més</strong> vegades és <span class="blank blank-l"></span>, i la que he fet servir <strong>menys</strong> és <span class="blank blank-l"></span>.</p>
-
-      <p style="font-size:14px;margin:8px 0 2px" contenteditable="true">✏️ Compara-ho amb un company. Us baseu en la mateixa garantia?</p>
-      <div class="hint-out">Comença la frase així: «Jo em baso més en… i el meu company/a es basa més en…»</div>
-      <div class="wline tall" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-    </div>
-
-    <!-- ═══ Secció 4 · Ciència o pseudociència ═══ -->
-    <div class="section deletable">
-      <div class="del-btn" onclick="deleteEl(this)">✕</div>
-      <div class="section-header">
-        <div class="snum" style="background:var(--orange)">4</div>
-        <div><div class="stitle" contenteditable="true">Ciència o pseudociència? <span class="temps">⏱️ 20 min</span></div>
-        <div class="sdesc" contenteditable="true">La pregunta que ho decideix: es pot comprovar?</div></div>
-      </div>
-      <div class="divider"></div>
-
-      <figure class="deletable" style="margin:6px 0 8px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <img class="fig" src="../images/sa1-s1-ciencia-pseudo-C.svg" alt="Ciència: es pot comprovar. Pseudociència: no es pot comprovar" style="max-height:160px" onerror="this.style.display='none'">
-      </figure>
-
-      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="llegir-icon">📖</div>
-        <div><div class="llegir-title">Per llegir abans de començar</div>
-        <div class="llegir-text" contenteditable="true">La <strong>ciència</strong> mira el món, fa <strong>experiments</strong> i comprova si té raó. Si l'experiment li diu que s'equivocava, <strong>canvia d'idea</strong>.<br>La <strong>pseudociència</strong> <span class="gl">(«pseudo» vol dir <em>fals</em>: sembla ciència però no ho és)</span> promet coses que <strong>no es poden comprovar</strong> amb cap experiment, i qui les defensa <strong>no canvia mai d'idea</strong>, passi el que passi.</div></div>
-      </div>
-
-      <div class="clau deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        🔎 És ciència si <span class="drop">es pot COMPROVAR</span> amb un experiment
-      </div>
-
-      <p style="font-size:14px;margin:6px 0" contenteditable="true">Llegeix cada descripció i <strong>encercla</strong> la resposta.</p>
-
-      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <strong>1. Biologia</strong> — estudia els éssers vius fent experiments al laboratori i mirant si els resultats li donen la raó.<br>
-        <span class="opt">CIÈNCIA</span><span class="tria-o">o</span><span class="opt">PSEUDOCIÈNCIA</span>
-      </div>
-      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <strong>2. Astrologia</strong> — diu que la posició dels estels el dia que vas néixer decideix com ets. Si no encerta, diu que «no era el teu dia».<br>
-        <span class="opt">CIÈNCIA</span><span class="tria-o">o</span><span class="opt">PSEUDOCIÈNCIA</span>
-      </div>
-      <!-- RETALLAT 09/09/2026 (llegibilitat C): item "Geologia", redundant amb l'item 1
-           ("Biologia"): tots dos es responen CIENCIA. Hi queda un exemple de
-           ciencia i dos de pseudociencia (astrologia, reiki), que es el contrast
-           que la sessio ha de fer veure. -->
-      <div class="tria deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <strong>3. Reiki</strong> — assegura que cura passant les mans a prop del cos. Quan s'ha mesurat, no s'ha trobat cap efecte, i qui hi creu segueix dient que funciona.<br>
-        <span class="opt">CIÈNCIA</span><span class="tria-o">o</span><span class="opt">PSEUDOCIÈNCIA</span>
-      </div>
-
-      <!-- ── Pregunta d'escriptura amb el mètode · S1 = bastida ALTA ── -->
-      <div class="passos-box exemple deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="passos-cap">✅ El mètode — EXEMPLE JA FET <span class="cas-tag">La polsera magnètica</span></div>
-        <div class="metode-strip">El mètode: 👁️ Observo → ❓ Em pregunto → 🔗 Connecto → 💡 Dedueixo</div>
-        <div class="pas">
-          <div class="pas-num">1</div>
-          <div class="pas-cos">
-            <div class="pas-metode">👁️ Observo</div>
-            <div class="pas-q">Què promet la polsera magnètica?</div>
-            <div class="pas-opts">
-              <span class="pas-opt marcat"><span class="pas-box"></span> <b>Que et treu el dolor</b></span>
-              <span class="pas-opt"><span class="pas-box"></span> Que et dona l'hora</span>
-            </div>
-          </div>
-        </div>
-        <div class="pas">
-          <div class="pas-num">2</div>
-          <div class="pas-cos">
-            <div class="pas-metode">❓ Em pregunto</div>
-            <div class="pas-q">Es pot comprovar amb un experiment?</div>
-            <div class="pas-opts">
-              <span class="pas-opt marcat"><span class="pas-box"></span> <b>S'ha provat i no fa res</b></span>
-              <span class="pas-opt"><span class="pas-box"></span> S'ha provat i funciona</span>
-            </div>
-          </div>
-        </div>
-        <div class="pas-frase">
-          <div class="pas-metode">🔗 Connecto &nbsp;→&nbsp; 💡 Dedueixo</div>
-          <div class="pas-frase-lab">Qui la ven no canvia d'idea, i segueix venent-la. Frase feta: «La polsera magnètica és <strong>pseudociència</strong> perquè s'ha comprovat que no treu el dolor i, tot i així, qui la ven no canvia d'idea.»</div>
-        </div>
-        <div class="exemple-nota">💡 Aquest ja està fet. Ara el faràs tu amb un altre cas, aquí sota.</div>
-      </div>
-
+      <!-- ── Mètode · SA2-S4: bastida MÍNIMA, només les etiquetes ── -->
       <div class="passos-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="passos-cap">✏️ Ara ho fas tu <span class="cas-tag">L'horòscop</span></div>
-        <div class="metode-strip">El mètode: 👁️ Observo → ❓ Em pregunto → 🔗 Connecto → 💡 Dedueixo</div>
+        <div class="passos-cap">✏️ Tria el cas que més t'ha costat i explica'l amb el mètode <span class="cas-tag">Ara sense ajuda</span></div>
+        <div class="metode-strip">👁️ Observo = de què parla · ❓ Em pregunto = quin procés pot ser · 🔗 Connecto = què sé d'aquest procés · 💡 Dedueixo = per tant…</div>
         <div class="pas">
           <div class="pas-num">1</div>
           <div class="pas-cos">
             <div class="pas-metode">👁️ Observo</div>
-            <div class="pas-q">Què promet l'horòscop?</div>
-            <div class="pas-opts">
-              <span class="pas-opt"><span class="pas-box"></span> Que et diu què et passarà</span>
-              <span class="pas-opt"><span class="pas-box"></span> Que et diu quin temps farà</span>
-            </div>
+            <div class="wline" contenteditable="true"></div>
           </div>
         </div>
         <div class="pas">
           <div class="pas-num">2</div>
           <div class="pas-cos">
             <div class="pas-metode">❓ Em pregunto</div>
-            <div class="pas-q">Es pot comprovar? Diu una cosa prou clara per saber si ha encertat?</div>
-            <div class="pas-opts">
-              <span class="pas-opt"><span class="pas-box"></span> Sí: diu dia, hora i lloc</span>
-              <span class="pas-opt"><span class="pas-box"></span> No: diu coses que valen per a tothom</span>
-            </div>
+            <div class="wline" contenteditable="true"></div>
           </div>
         </div>
         <div class="pas">
           <div class="pas-num">3</div>
           <div class="pas-cos">
             <div class="pas-metode">🔗 Connecto</div>
-            <div class="pas-q">Quan no encerta, qui hi creu canvia d'idea?</div>
-            <div class="pas-opts">
-              <span class="pas-opt"><span class="pas-box"></span> Sí: deixa de llegir-lo</span>
-              <span class="pas-opt"><span class="pas-box"></span> No: diu que «no era el seu dia»</span>
-            </div>
+            <div class="wline" contenteditable="true"></div>
           </div>
         </div>
         <div class="pas-frase">
           <div class="pas-metode">💡 Dedueixo</div>
-          <div class="pas-frase-lab">✏️ Escriu <strong>una frase sencera</strong>. Comença-la així: «L'horòscop és pseudociència perquè…»</div>
+          <div class="pas-frase-lab">✏️ La frase final: el cas … és … perquè …</div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>
         </div>
       </div>
+
+      <p style="font-size:14px;margin:10px 0 2px" contenteditable="true">✏️ I ara, en conjunt: per què el cos necessita <strong>les dues</strong> divisions?</p>
+      <div class="hint-out">Comença la frase així: «Necessita la mitosi per… i la meiosi per…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+    </div>
+
+    <!-- ═══ Secció 4 · Torna a les tres frases ═══ -->
+    <div class="section deletable">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="section-header">
+        <div class="snum" style="background:var(--orange)">4</div>
+        <div><div class="stitle" contenteditable="true">Torna a les tres frases <span class="temps">⏱️ 15 min</span></div>
+        <div class="sdesc" contenteditable="true">Compara-ho amb el que has escrit a l'apartat 0</div></div>
+      </div>
+      <div class="divider"></div>
+
+      <p style="font-size:14px;margin:0 0 6px" contenteditable="true">Torna-les a escriure <strong>ara</strong>, amb tot el que has après. Després mira l'apartat 0: han canviat?</p>
+      <div class="hint-out">1 · «La mitosi serveix per…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="hint-out">2 · «La meiosi serveix per…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="hint-out">3 · «El càncer és una divisió que…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+
+      <p style="font-size:14px;margin:10px 0 4px" contenteditable="true">✏️ De les tres, quina <strong>t'ha canviat més</strong> des del principi de la sessió? Per què?</p>
+      <div class="hint-out">Comença la frase així: «La que m'ha canviat més és… perquè al principi jo pensava…»</div>
+      <div class="wline tall" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
+      <div class="wline" contenteditable="true"></div>
     </div>
 
     <!-- ═══ Metacognició ═══ -->
-    <div class="section deletable" style="margin-top:8px">
+    <div class="section deletable" style="margin-top:10px">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <p style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:4px">🧠 Metacognició — 3 min</p>
-      <div class="meta-oa-box deletable" style="margin-bottom:5px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="meta-oa-title">🎯 Torna als objectius — marca el que has après avui:</div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé posar una frase al calaix de molt certa, depèn o gens certa.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Reconec les 3 garanties: dades, autoritat i el que vull creure.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé dir si una cosa és ciència o pseudociència mirant si es pot comprovar.</div></div>
+      <div class="meta-oa-box deletable" style="margin-bottom:6px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+        <div class="meta-oa-title">🎯 Marca què domines i què has de repassar:</div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé dir si una cèl<span class="gem">·</span>lula està en repòs o es divideix.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé distingir la mitosi de la meiosi.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé calcular l'índex mitòtic.</div></div>
+        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé explicar què és el càncer.</div></div>
       </div>
       <div class="meta-grid">
-        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">❓</span><div class="meta-label">Encara em pregunto…</div>
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">🔁</span><div class="meta-label">El que he de repassar és…</div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
+        <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div>
         <div class="wline" contenteditable="true"></div></div>
-        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la sessió</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:11px;color:var(--muted);margin-top:2px">Encercla les estrelles</div></div>
+        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la SA</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:11px;color:var(--muted);margin-top:3px">Encercla les estrelles</div></div>
       </div>
     </div>
 
     <!-- ═══ Tasca per a casa ═══ -->
     <div class="tasca-box deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
-      <div class="tasca-title">📚 Feina per a casa — per a la Sessió 2</div>
+      <div class="tasca-title">📚 Feina per a casa — preparar la prova</div>
       <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">1</div>
-        <div contenteditable="true"><strong>🕵️ Caça una pseudociència:</strong> busca <strong>un</strong> anunci o producte que prometi alguna cosa que sona científica i sospitosa (una polsera, un batut «detox», l'horòscop, un aliment «que cura»…). <strong>Retalla'l o fes-li una foto</strong> i porta'l.</div></div>
-      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">2</div>
-        <div contenteditable="true"><strong>✏️ Escriu-hi una sola frase al darrere:</strong> «Aquest producte promet que…».</div></div>
+        <div contenteditable="true"><strong>📋 Copia en net la taula</strong> de l'apartat 2 en un full a part i afegeix-hi una tercera columna per al <strong>CÀNCER</strong>. Aquesta taula és el que has d'estudiar per a la prova.</div></div>
     </div>
 
     <div class="footer">
-      <div class="footer-l">SA1 · Ciència i Pseudociència · Sessió 1 · Versió C · IE Temple · Biologia i Geologia 4t ESO</div>
+      <div class="footer-l">SA2 · La cèl<span class="gem">·</span>lula · Sessió 4 · Versió C · IE Temple · Biologia i Geologia 4t ESO</div>
       <div class="footer-r">CC BY-NC-SA</div>
     </div>
     </div>
@@ -680,7 +565,7 @@ p>span[contenteditable]:not([class]){display:inline}
    FLOW = llista ordenada dels blocs de primer nivell (la font logica).
    Capcalera corrent a partir de la pagina 2 + peu comu amb llicencia.
    ════════════════════════════════════════════════════════════ */
-const SA_NOM = "Ciència i Pseudociència", SESSIO = "Sessió 1 de 4";
+const SA_NOM = "La cèl·lula", SESSIO = "Sessió 4 de 4";
 const SHEET_H = 1123, FOOT_H = 30, BODY_MAX = SHEET_H - FOOT_H - 8;
 let FLOW = [];
 

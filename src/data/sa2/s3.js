@@ -1,7 +1,7 @@
 export const sa2s3 = {
   id: "s3",
   saId: "sa2",
-  title: "El laboratori d'oncologia",
+  title: "Funciona el fàrmac contra el càncer?",
   sessionNumber: 3,
   biome: "sa2",
   duration: "2h",
@@ -25,6 +25,14 @@ export const sa2s3 = {
       "Calculo l'índex mitòtic amb la fórmula: cèl·lules en mitosi dividit pel total, per cent.",
       "Comparo l'índex mitòtic abans i després i dic si ha baixat, per concloure si el fàrmac funciona.",
       "Explico amb les meves paraules que el càncer és una divisió cel·lular sense control."
+    ],
+    // C = adaptació (alumnes amb DIL). NO és la B escurçada: menys
+    // objectius i tasca pròpia. Han de coincidir amb l'oa-box de
+    // fitxa_sa2_s3_VISUAL_C.html.
+    C: [
+      "Distingeixo una cèl·lula que es divideix d'una en repòs.",
+      "Calculo l'índex mitòtic amb la calculadora.",
+      "Dic si el medicament funciona mirant si l'índex ha baixat."
     ]
   },
 
@@ -148,7 +156,7 @@ export const sa2s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa2-s3-fitxa-A.html", B: "/fitxes/sa2-s3-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa2-s3-fitxa-A.html", B: "/fitxes/sa2-s3-fitxa-B.html", C: "/fitxes/sa2-s3-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament: torna a la pregunta del principi (què compta el laboratori) i respon-la amb el que has calculat, i digues en una frase per què el càncer és una divisió sense control.",
 

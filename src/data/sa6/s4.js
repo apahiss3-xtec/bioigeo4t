@@ -1,7 +1,7 @@
 export const sa6s4 = {
   id: "s4",
   saId: "sa6",
-  title: "Riscos naturals al nostre territori",
+  title: "Per què el mateix terratrèmol no fa el mateix mal?",
   sessionNumber: 4,
   biome: "sa6",
   duration: "2h",

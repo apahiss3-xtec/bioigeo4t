@@ -79,3 +79,27 @@ dos panells retolats «Profase» i quatre «Telofase» pràcticament iguals, i u
 es veuen al microscopi», cosa que no era certa. Substituïda per
 `sa2-s1-mitosi-ceba-real.jpg`. El fitxer es conserva a la carpeta perquè encara
 el referencien còpies antigues; **no s'ha de tornar a fer servir**.
+
+## Il·lustracions del nivell C (obra pròpia del projecte)
+
+Dibuixades a mà com a SVG per a les fitxes de **nivell C**, seguint el criteri §4 de
+`Nivell C - Criteris fitxes` (3-4 elements etiquetats com a màxim, no 8-10). **No** són versions
+reduïdes automàticament de les figures de B/A: són figures pròpies, amb menys elements i retolació
+més grossa. Autoria: Albert Pahissa · mateixa llicència que la fitxa (CC BY-NC-SA 4.0).
+
+| Fitxer | Sessions | Què simplifica respecte a la B/A |
+|---|---|---|
+| `sa1-s1-certesa-C.svg` | SA1·S1 | Tres calaixos de certesa. A la B és una escala de l'1 al 10 |
+| `sa1-s1-garanties-C.svg` | SA1·S1, S2, S4 | **5 garanties → 3**, amb icona, exemple i etiqueta de força |
+| `sa1-s1-ciencia-pseudo-C.svg` | SA1·S1 | Una sola pregunta («es pot comprovar?») en lloc de la llista de criteris |
+| `sa1-s2-detector-C.svg` | SA1·S2, S3, S4 | El detector de **5 senyals → 3**, numerats i amb exemple |
+| `sa1-s3-calaixos-C.svg` | SA1·S3, S4 | Els tres calaixos amb l'exemple canònic de cadascun |
+| `sa2-s1-repos-divisio-C.svg` | SA2·S1 | Només dos estats: ADN difús vs fils foscos |
+| `sa2-s1-fases-C.svg` | SA2·S1 | Les 4 fases en quatre plafons grossos; la interfase, al peu |
+| `sa2-s2-mitosi-meiosi-C.svg` | SA2·S2 | 2 vs 4 cèl·lules amb el número de cromosomes a dins |
+| `sa2-s3-index-C.svg` | SA2·S3 | Comptar en tres passos + la fórmula en gran |
+| `sa2-s4-tres-processos-C.svg` | SA2·S4 | El mapa dels tres processos en una línia |
+
+> **Emojis dins d'aquests SVG** (📊 🎓 💭 · 🚫 🙉 🎩 · ✅ ⏳ ❌ · 🩹 🧬 ⚠️): cap no fa
+> d'**il·lustració científica**. Són mnemotècnics d'idees abstractes (una garantia, un senyal
+> d'alerta, un calaix), que és l'ús que el criteri 7 deixa passar. Anotat, no retirat.
