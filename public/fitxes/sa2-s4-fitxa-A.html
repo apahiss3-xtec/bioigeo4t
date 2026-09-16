@@ -460,7 +460,17 @@ function flattenDoc(){
   if(inner){ while(inner.firstChild){ doc.insertBefore(inner.firstChild, inner); } inner.remove(); }
   const f2=doc.querySelector(':scope > .footer'); if(f2) f2.remove();
 }
-function extractFlow(){ FLOW = Array.from(document.getElementById('doc').children); }
+function extractFlow(){
+  FLOW = Array.from(document.getElementById('doc').children);
+  // Posicio original de cada fill de seccio: el paginador la fa servir per
+  // reassemblar en ordre una seccio que ha partit (sense aixo, cada
+  // repaginacio la desordena i separa una llegenda del seu dibuix).
+  FLOW.forEach(function(b){
+    if(b.classList && b.classList.contains('section')){
+      Array.prototype.forEach.call(b.children, function(k,i){ k._ord = i; });
+    }
+  });
+}
 function topFlowBlock(el){ while(el){ if(FLOW.indexOf(el)>=0) return el; el=el.parentElement; } return null; }
 
 function saveCaret(){
@@ -484,8 +494,16 @@ function repaginate(){
   const host=document.getElementById('sheets'); if(!host) return;
   const caret=saveCaret();
   _mergeTables(host);
+  var _origens=[];
   host.querySelectorAll('.section[data-cont]').forEach(function(cont){
-    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } if(_origens.indexOf(o)<0) _origens.push(o); }
+  });
+  // ...i es torna l'ordre original: els fills reassemblats s'afegien al final.
+  _origens.forEach(function(o){
+    var mc=o.querySelector(':scope > .move-ctrl');
+    var kids=Array.prototype.slice.call(o.children).filter(function(k){ return typeof k._ord === 'number'; });
+    kids.sort(function(a,b){ return a._ord - b._ord; });
+    kids.forEach(function(k){ o.insertBefore(k, mc); });
   });
   FLOW = FLOW.filter(function(b){ return b; });
   FLOW.forEach(function(b){ if(b.parentNode) b.parentNode.removeChild(b); });
@@ -801,8 +819,17 @@ function _mergeTables(root){
 function rebuildDocFromFlow(){
   const doc=document.getElementById('doc');
   _mergeTables(document);
+  var _origens2=[];
   document.querySelectorAll('.section[data-cont]').forEach(function(cont){
-    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } }
+    var o=cont._origin; if(o){ while(cont.firstChild){ o.appendChild(cont.firstChild); } if(_origens2.indexOf(o)<0) _origens2.push(o); }
+  });
+  // ...i es torna l'ordre original: en desar, els fills reassemblats s'afegien
+  // al final i el desordre quedava escrit al fitxer.
+  _origens2.forEach(function(o){
+    var mc=o.querySelector(':scope > .move-ctrl');
+    var kids=Array.prototype.slice.call(o.children).filter(function(k){ return typeof k._ord === 'number'; });
+    kids.sort(function(a,b){ return a._ord - b._ord; });
+    kids.forEach(function(k){ o.insertBefore(k, mc); });
   });
   FLOW.forEach(function(b){ if(b.classList.contains('spacer-block')) b.style.height=''; });
   FLOW.forEach(function(b){ if(b.parentNode!==doc){ if(b.parentNode) b.parentNode.removeChild(b); doc.appendChild(b); } });
