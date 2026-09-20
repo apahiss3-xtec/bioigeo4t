@@ -6,7 +6,7 @@ import { permutacioEstable } from '../utils.js'
 // Test de transferència: cas pràctic amb context NOU (diferent del de la
 // prova) per comprovar que l'alumne infereix i no només recorda.
 // Dona feedback orientador per opció, sense puntuar com una nota.
-export default function TransferTest({ test }) {
+export default function TransferTest({ test, onChange }) {
   const [answers, setAnswers] = useState({})
 
   // Ordre de presentació de cada pregunta. Es calcula un sol cop per test.
@@ -24,7 +24,22 @@ export default function TransferTest({ test }) {
   if (!test?.questions?.length) return null
 
   const choose = (qid, oi) =>
-    setAnswers((prev) => (prev[qid] === oi ? prev : { ...prev, [qid]: oi }))
+    setAnswers((prev) => {
+      if (prev[qid] === oi) return prev
+      const next = { ...prev, [qid]: oi }
+      // El PDF ha de portar també el resultat del test, no només la
+      // checklist: per això l'estat puja cap a SAAvaluacioPage.
+      onChange?.(
+        test.questions.map((q) => ({
+          id: q.id,
+          text: q.text,
+          chosen: next[q.id] === undefined ? null : q.options[next[q.id]],
+          correct: q.options[q.correct],
+          ok: next[q.id] === q.correct
+        }))
+      )
+      return next
+    })
 
   const answered = Object.keys(answers).length
   const correct = test.questions.filter((q) => answers[q.id] === q.correct).length

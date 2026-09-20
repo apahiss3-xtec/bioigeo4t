@@ -18,6 +18,93 @@
 // A més, la resposta correcta ja no és sempre la primera opció ni la més
 // llarga: abans el test s'encertava sencer sense haver llegit res.
 export const sa5Avaluacio = {
+  // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
+  // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
+  // una falsa sensacio d'anar preparat. Aqui les preguntes son del tipus de
+  // les de la prova i s'han de respondre a ma, en un full, abans d'obrir la
+  // solucio; els models AS i AE estan escrits amb els mateixos descriptors
+  // que fan servir les rubriques de les proves del curs.
+  escrita: {
+    intro:
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts. Vigila els verbs: «s'adapten», «es fan», «desenvolupen» són verbs lamarckians i fan baixar una resposta que per la resta estaria bé.",
+    minutes: 26,
+    questions: [
+      {
+        id: 'w1',
+        oa: 'OA3',
+        source: 'Prova final del curs · Pregunta 5, «la població canvia»',
+        minutes: 8,
+        text: "En una població, abans de cap canvi d'ambient, un 8 % dels individus ja resisteix el fred; després de refredar l'aigua, la proporció puja al 41 % i després al 87 %. Explica aquest canvi segons Lamarck i segons el neodarwinisme, i digues quina dada permet decidir entre les dues.",
+        model: {
+          as: "Lamarck diria que els individus es van fer resistents pel fred i que van transmetre aquesta resistència. El neodarwinisme diu que la variabilitat ja hi era i que el fred va fer que els resistents sobrevisquessin més i es reproduïssin. La dada decisiva és el 8 % de la generació 0, perquè ja hi havia resistents abans del fred.",
+          ae: "Lamarck: en trobar-se amb el fred, els individus haurien desenvolupat la resistència per necessitat i l'haurien transmesa als descendents; el caràcter apareixeria a causa de l'ambient. Neodarwinisme: la variabilitat ja existia —hi havia individus amb i sense l'al·lel, per mutacions anteriors i independents del fred—; en refredar l'aigua, els que tenien la proteïna anticongelant sobreviuen i es reprodueixen més, i la proporció d'aquell al·lel puja generació rere generació. L'ambient no crea el caràcter: selecciona el que ja hi havia. La dada que decideix és el 8 % de la generació 0, mesurat abans de refredar res, perquè és l'únic número on les dues teories prediuen coses diferents: Lamarck hi esperaria un 0 %. El 41 % i el 87 % són compatibles amb totes dues i per tant no decideixen res.",
+        },
+        aeWhy: "L'AE explica per què aquella dada i no una altra —és l'única on les dues teories divergeixen—. Assenyalar el 87 % final és l'error típic: és compatible amb les dues explicacions.",
+        must: [
+          "Has explicat les dues teories, no només la correcta.",
+          "Has dit que la variabilitat és prèvia i a l'atzar.",
+          "Has assenyalat el 8 % de la generació 0 com a dada decisiva.",
+          "Has dit per què el 87 % final no decideix res.",
+          "No has fet servir verbs lamarckians per explicar el neodarwinisme."
+        ]
+      },
+      {
+        id: 'w2',
+        oa: 'OA2',
+        source: 'Tipus de pregunta de la prova · Homologia i analogia',
+        minutes: 6,
+        text: "L'ala d'un ocell i l'ala d'un insecte serveixen per al mateix, però l'ala d'un ocell i el braç d'una persona no. Explica quina de les dues parelles és homòloga i quina anàloga, i què ens diu cadascuna sobre el parentiu.",
+        model: {
+          as: "L'ala d'ocell i el braç humà són homòlegs: tenen el mateix origen evolutiu i els mateixos ossos, encara que facin funcions diferents. L'ala d'ocell i la d'insecte són anàlogues: fan la mateixa funció però tenen orígens diferents. L'homologia indica parentiu; l'analogia, no.",
+          ae: "L'ala d'ocell i el braç humà són estructures homòlogues: comparteixen el mateix pla ossi heretat d'un avantpassat comú —un os llarg, dos ossos, ossets, dits— tot i que la funció ha divergit. L'ala d'ocell i la d'insecte són anàlogues: fan la mateixa funció però no deriven de cap estructura comuna; s'assemblen per convergència, perquè volar imposa exigències físiques semblants a qualsevol animal. La conseqüència és important a l'hora de classificar: per reconstruir el parentiu només serveixen les homologies, perquè són les que reflecteixen història compartida; guiar-se per les analogies porta a agrupar espècies només perquè viuen igual. Per això s'ha de mirar l'estructura interna i no l'aspecte exterior.",
+        },
+        aeWhy: "L'AE descriu el pla ossi compartit, anomena la convergència i n'extreu la regla pràctica: només les homologies serveixen per classificar.",
+        must: [
+          "Has identificat correctament les dues parelles.",
+          "Has definit homologia per l'origen, no per la funció.",
+          "Has dit que l'analogia no indica parentiu.",
+          "Has dit per què cal mirar l'estructura i no l'aspecte."
+        ]
+      },
+      {
+        id: 'w3',
+        oa: 'OA2',
+        source: 'Tipus de pregunta de la prova · Selecció natural i artificial',
+        minutes: 6,
+        text: "Un gall de granja amb prou feines pot volar i el seu parent salvatge vola sense problemes. Explica per quina raó, distingint selecció natural de selecció artificial.",
+        model: {
+          as: "Perquè el gall de granja ha passat per selecció artificial: les persones han triat durant generacions els individus més grossos i amb més carn, no els que volen millor. A la natura, en canvi, és l'ambient qui selecciona, i allà volar sí que és útil per escapar dels depredadors.",
+          ae: "En tots dos casos el mecanisme és el mateix —uns individus deixen més descendència que d'altres i la població canvia—; el que canvia és qui fa la tria. A la natura, la tria la fa l'ambient: un ocell que no pot volar no escapa dels depredadors i deixa menys descendència, de manera que la capacitat de vol es manté. A la granja, la tria la fa l'ésser humà, que durant generacions ha escollit per reproduir-se els individus més grossos i amb més pit, sense que volar hi compti gens; a més, els depredadors i la necessitat de fugir han desaparegut, així que la pressió que mantenia el vol s'ha aixecat. El resultat és un animal molt adaptat al criteri humà i incapaç de sobreviure sol. Convé no dir que «ha perdut la capacitat perquè no la feia servir»: això seria lamarckisme; el que ha passat és que els que volaven pitjor van poder reproduir-se igual.",
+        },
+        aeWhy: "L'AE veu que el mecanisme és idèntic i que només canvia l'agent que selecciona, explica que la pressió s'ha aixecat, i tanca la porta a l'explicació lamarckiana.",
+        must: [
+          "Has dit qui fa la tria en cada cas.",
+          "Has dit que el mecanisme de fons és el mateix.",
+          "Has explicat què passa amb la pressió selectiva a la granja.",
+          "No has explicat la pèrdua del vol per desús."
+        ]
+      },
+      {
+        id: 'w4',
+        oa: 'OA4',
+        source: 'Tipus de pregunta de la prova · Teories en context',
+        minutes: 6,
+        text: "Lamarck es va equivocar, però encara l'estudiem. Explica quina va ser la seva aportació i per quina raó no és just jutjar-lo amb el que sabem avui.",
+        model: {
+          as: "Lamarck va ser el primer a proposar que les espècies canvien amb el temps en comptes de ser fixes, i que els canvis es relacionen amb l'ambient. El que va errar és el mecanisme: creia que els caràcters adquirits s'heretaven. Al seu temps no es coneixia la genètica.",
+          ae: "L'aportació de Lamarck és de primer ordre: va trencar amb el fixisme i va proposar que les espècies canvien al llarg del temps i que el canvi té a veure amb l'ambient on viuen. El que va errar és el mecanisme —va suposar que els caràcters adquirits durant la vida es transmeten a la descendència—, però aquesta era una idea raonable amb el que es podia observar aleshores: no es coneixien ni les lleis de Mendel ni l'ADN, i per tant no hi havia cap manera de saber que el que s'hereta és la informació dels gàmetes i no el que li passa al cos. Jutjar-lo amb els nostres coneixements és anacrònic; el criteri just és preguntar-se si la seva proposta explicava millor les dades de què disposava que les alternatives del seu moment, i la resposta és que sí. Darwin va partir precisament de la idea de canvi que Lamarck havia obert.",
+        },
+        aeWhy: "L'AE separa la part encertada de la part errònia, explica per què l'error era raonable en el seu context i enuncia el criteri d'avaluació històrica.",
+        must: [
+          "Has dit què va aportar (el canvi de les espècies, contra el fixisme).",
+          "Has dit exactament en què es va equivocar.",
+          "Has explicat què no es podia saber en aquell moment.",
+          "Has donat un criteri per valorar una teoria en el seu context."
+        ]
+      }
+    ]
+  },
+
   checklist: [
     { id: 'c1', oa: 'OA1', text: "Descric amb precisió els trets observables d'un organisme i aplico criteris de classificació i la nomenclatura binomial (gènere + espècie)." },
     { id: 'c2', oa: 'OA1', text: "Identifico una adaptació relacionant una estructura concreta amb la seva funció i amb l'ambient on viu l'organisme." },

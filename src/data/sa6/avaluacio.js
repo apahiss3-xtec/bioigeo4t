@@ -19,6 +19,93 @@
 // 5) c4, c7 i c9 no recollien intersecció ni el marc perillositat/exposició/
 //    vulnerabilitat ni predicció/prevenció/correcció, que sí que es treballen.
 export const sa6Avaluacio = {
+  // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
+  // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
+  // una falsa sensacio d'anar preparat. Aqui les preguntes son del tipus de
+  // les de la prova i s'han de respondre a ma, en un full, abans d'obrir la
+  // solucio; els models AS i AE estan escrits amb els mateixos descriptors
+  // que fan servir les rubriques de les proves del curs.
+  escrita: {
+    intro:
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts. A geologia històrica el que es valora és que DEDUEIXIS l'ordre dels fets a partir dels principis, i que diguis en quin principi et bases a cada pas.",
+    minutes: 26,
+    questions: [
+      {
+        id: 'w1',
+        oa: 'OA2',
+        source: 'Prova final del curs · Pregunta 6, «quant fa»',
+        minutes: 8,
+        text: "Una capa amb fòssils està entre una capa de cendra volcànica datada en 1,20 Ma a sota i una altra de 0,80 Ma a sobre. Una esquerda talla les tres capes però queda coberta sencera per una quarta capa de damunt. Data el fòssil i situa l'esquerda, dient en quin principi et bases a cada pas.",
+        model: {
+          as: "El fòssil té entre 0,80 i 1,20 milions d'anys, perquè està entre les dues cendres datades (principi de superposició: el que hi ha a sota és més antic). L'esquerda és més moderna que les tres capes que talla (principi d'intersecció: el que talla és més jove) i més antiga que la capa que la cobreix.",
+          ae: "El fòssil: la capa no es pot datar directament, però està per sobre de la cendra d'1,20 Ma i per sota de la de 0,80 Ma; pel principi de superposició —en una successió no capgirada, el que hi ha a sota és més antic— queda acotada entre 0,80 i 1,20 milions d'anys. És una datació relativa acotada per dues datacions absolutes. L'esquerda: talla les capes 1, 2 i 3, i pel principi d'intersecció el que talla és més jove que el que és tallat, per tant és posterior a totes tres; però la capa 4 li passa per damunt sencera i no està tallada, de manera que és anterior a la capa 4. Queda pinçada entre el sostre de la capa 3 i la base de la capa 4: es va obrir després de dipositar-se la capa 3 i abans que hi caigués la cendra de 0,80 Ma. Amb les dades donades no es pot precisar més, i dir-ho també forma part de la resposta.",
+        },
+        aeWhy: "L'AE anomena els principis a cada pas, distingeix datació relativa d'absoluta i reconeix explícitament fins on arriben les dades — que en aquesta prova compta com a resposta correcta.",
+        must: [
+          "Has donat l'interval d'edat del fòssil.",
+          "Has anomenat el principi de superposició.",
+          "Has anomenat el principi d'intersecció.",
+          "Has acotat l'esquerda per les dues bandes.",
+          "Has dit fins on es pot arribar amb les dades donades."
+        ]
+      },
+      {
+        id: 'w2',
+        oa: 'OA1',
+        source: 'Tipus de pregunta de la prova · Deriva continental',
+        minutes: 7,
+        text: "Wegener va proposar la deriva continental el 1912 i va ser rebutjat durant dècades. Explica dues proves que tenia i per quina raó no el van creure.",
+        model: {
+          as: "Tenia l'encaix de les costes d'Àfrica i Sud-amèrica i la presència dels mateixos fòssils guia en continents avui separats, a més de la continuïtat de roques i serralades. No el van creure perquè no sabia explicar quina força movia els continents.",
+          ae: "Proves: (1) l'encaix geomètric de les costes d'Àfrica i Sud-amèrica, que millora encara si s'ajusten pels marges continentals i no per la línia de costa actual; (2) els mateixos fòssils guia d'espècies terrestres i d'aigua dolça —que no podien travessar un oceà— a banda i banda de l'Atlàntic; (3) la continuïtat de formacions rocoses i serralades que queden alineades si es tanca l'oceà. El rebuig no va ser per manca de proves sinó per manca de MECANISME: Wegener no sabia quina força podia moure una massa continental, i les que va proposar eren insuficients. La comunitat científica no va acceptar el model fins als anys 60, quan el fons oceànic i el paleomagnetisme van permetre identificar la convecció del mantell i l'expansió del fons com a motor. És un bon exemple de com funciona la ciència: una hipòtesi amb bones dades però sense mecanisme queda en espera, i són les proves noves les que la resolen.",
+        },
+        aeWhy: "L'AE explica que les proves eren bones i que el problema era el mecanisme, i tanca amb el que això ensenya sobre com funciona la ciència (connexió amb SA1).",
+        must: [
+          "Has donat com a mínim dues proves concretes.",
+          "Has dit per què els fòssils guia són una prova (no podien travessar l'oceà).",
+          "Has dit que el problema era la manca de mecanisme.",
+          "Has dit què va resoldre el problema anys després."
+        ]
+      },
+      {
+        id: 'w3',
+        oa: 'OA3',
+        source: 'Tipus de pregunta de la prova · Risc geològic',
+        minutes: 6,
+        text: "Dos pobles estan al mateix vessant i tenen la mateixa probabilitat d'esllavissada, però un té molt més risc que l'altre. Explica-ho descomponent el risc en perillositat, exposició i vulnerabilitat.",
+        model: {
+          as: "La perillositat és la mateixa, perquè és la probabilitat que passi el fenomen. El que canvia és l'exposició (quanta gent i quants béns hi ha en el camí) i la vulnerabilitat (com de preparats estan els edificis i les persones per resistir-ho).",
+          ae: "El risc no és només el fenomen: és el producte de tres coses. La perillositat és la probabilitat que es produeixi l'esllavissada i depèn de la litologia, el pendent, la vegetació i la pluja; aquí és la mateixa per als dos pobles. L'exposició és què hi ha en la trajectòria: si un poble té cases, l'escola i la carretera al peu del vessant i l'altre hi té camps, l'exposició és molt diferent. La vulnerabilitat és com de malament se'n surt allò que està exposat: edificis antics sense reforç, sense murs de contenció i sense pla d'evacuació són molt més vulnerables que els mateixos edificis consolidats i amb avisos. Per això es pot reduir molt el risc sense poder tocar gens la perillositat, i per això dos llocs geològicament idèntics poden tenir riscos completament diferents: hi ha decisions humanes pel mig.",
+        },
+        aeWhy: "L'AE defineix els tres components amb exemples concrets del cas i n'extreu la conseqüència: es pot actuar sobre l'exposició i la vulnerabilitat encara que la perillositat sigui inevitable.",
+        must: [
+          "Has definit els tres components.",
+          "Has dit que la perillositat és igual als dos pobles.",
+          "Has donat un exemple concret d'exposició i un de vulnerabilitat.",
+          "Has dit sobre quins components es pot actuar."
+        ]
+      },
+      {
+        id: 'w4',
+        oa: 'OA3',
+        source: 'Tipus de pregunta de la prova · Mesures',
+        minutes: 5,
+        text: "Proposa tres mesures per a un poble amb risc d'inundació i classifica cadascuna en predicció, prevenció o correcció.",
+        model: {
+          as: "Predicció: una xarxa de sensors al riu amb un sistema d'avisos. Prevenció: no deixar construir a la zona inundable i fer simulacres. Correcció: refer les motes i recuperar la vegetació de la ribera després d'una crescuda.",
+          ae: "Predicció — instal·lar sensors de cabal i pluviòmetres aigües amunt connectats a un sistema d'alerta primerenca: no evita la inundació, però guanya hores per evacuar. Prevenció — planificació urbanística que prohibeixi construir a la zona inundable, recuperar zones on el riu pugui vessar sense fer mal, i fer simulacres perquè la gent sàpiga què fer: actua abans que passi res i redueix exposició i vulnerabilitat. Correcció — un cop passat l'episodi, reparar i dimensionar millor les motes, restaurar la vegetació de ribera i revisar el pla amb el que s'ha après. Val la pena notar que la mesura més barata sol ser la de prevenció i la més cara la de correcció, i que l'escalfament global augmenta la freqüència d'episodis de pluja intensa: un risc que ja hi era es pot intensificar per acció humana.",
+        },
+        aeWhy: "L'AE justifica sobre què actua cada mesura i afegeix la perspectiva de riscos induïts, que és el criteri que distingeix AN d'AE en aquest OA.",
+        must: [
+          "Has proposat tres mesures concretes, no genèriques.",
+          "Has classificat cada mesura correctament.",
+          "Has dit sobre quin component del risc actua cadascuna.",
+          "Has esmentat que l'acció humana pot intensificar el risc."
+        ]
+      }
+    ]
+  },
+
   checklist: [
     { id: 'c1', oa: 'OA1', text: "Explico la deriva continental de Wegener i almenys dues proves que la sostenen (encaix de continents, fòssils guia en continents separats, continuïtat de roques i serralades)." },
     { id: 'c2', oa: 'OA1', text: "Descric els tres tipus de límits de plaques (divergent, convergent, transformant) i el fenomen associat a cada un." },

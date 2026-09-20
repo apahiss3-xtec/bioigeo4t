@@ -7,6 +7,7 @@ import { t } from '../t.js'
 import { getSA } from '../data/sas.js'
 import T from '../translate/T.jsx'
 import TransferTest from '../components/TransferTest.jsx'
+import WrittenPractice, { SELF_LABELS } from '../components/WrittenPractice.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
 
 const GRADES = ['NA', 'AS', 'AN', 'AE']
@@ -19,6 +20,10 @@ const KNOW_LEVELS = [
   { id: 'explica', label: 'Ho sé i ho sabria explicar a un company/a', color: '#3e7c4f' }
 ]
 
+// Amplada útil d'un A4 amb marges de 10 mm: (210 - 20) mm = 190 mm =
+// 190/25.4*96 ≈ 718 px. La plantilla del PDF s'hi ha d'ajustar exactament.
+const PDF_WIDTH = 718
+
 const scoreToLevel = (s) => (s >= 87.5 ? 'AE' : s >= 62.5 ? 'AN' : s >= 37.5 ? 'AS' : 'NA')
 
 export default function SAAvaluacioPage() {
@@ -28,6 +33,8 @@ export default function SAAvaluacioPage() {
   const [exitGrades, setExitGrades] = useState({})
   const [know, setKnow] = useState({})
   const [reflections, setReflections] = useState({ q1: '', q2: '', q3: '' })
+  const [written, setWritten] = useState([])
+  const [testResults, setTestResults] = useState([])
   const pdfRef = useRef(null)
 
   if (!sa || !sa.published) return <NotFoundPage />
@@ -57,6 +64,7 @@ export default function SAAvaluacioPage() {
     : null
 
   const checklist = sa.avaluacio?.checklist || []
+  const escrita = sa.avaluacio?.escrita || null
   const knowCount = checklist.filter((c) => know[c.id]).length
   const weak = checklist.filter((c) => know[c.id] === 'no')
 
@@ -67,11 +75,19 @@ export default function SAAvaluacioPage() {
     window
       .html2pdf()
       .set({
-        margin: 10,
+        margin: [10, 10, 10, 10],
         filename: `autoavaluacio-${sa.id}-${(name || 'alumne').replace(/\s+/g, '-').toLowerCase()}.pdf`,
         image: { type: 'jpeg', quality: 0.95 },
-        html2canvas: { scale: 2, backgroundColor: '#fdfafb' },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        // windowWidth fixa l'amplada amb què html2canvas recalcula el layout.
+        // Sense això el clon es re-maquetava a l'amplada útil de l'A4
+        // (190 mm ≈ 718 px) mentre la plantilla en demanava 760, i cada fila
+        // perdia ~40 px pel marge dret.
+        html2canvas: { scale: 2, backgroundColor: '#ffffff', windowWidth: PDF_WIDTH },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        // 'avoid-all' evita que un bloc quedi tallat entre dues pàgines;
+        // sense 'legacy' html2pdf afegeix una pàgina buida al final quan el
+        // contingut acaba just al límit de pàgina.
+        pagebreak: { mode: ['css', 'avoid-all'], avoid: ['tr', '.pdf-block'] }
       })
       .from(pdfRef.current)
       .save()
@@ -224,18 +240,31 @@ export default function SAAvaluacioPage() {
         )}
       </section>
 
-      {/* 3 · Test de transferència (cas nou) */}
-      {sa.avaluacio?.test && (
+      {/* 3 · Assaig de prova escrita (paper i boli) */}
+      {escrita && (
         <section className="card p-6 mb-6">
-          <p className="kicker mb-1">3 · {t('auto.testTitle')}</p>
-          <p className="text-sm text-[var(--muted)] mb-4">{t('auto.testIntro')}</p>
-          <TransferTest test={sa.avaluacio.test} />
+          <p className="kicker mb-1">3 · Assaig de prova escrita</p>
+          <p className="text-sm text-[var(--muted)] mb-4">
+            Marcar la casella bona no és el mateix que saber respondre. Aquí
+            hauràs d'escriure la resposta sencera a mà i comparar-la després
+            amb dos models: un d'assoliment satisfactori i un d'excel·lent.
+          </p>
+          <WrittenPractice escrita={escrita} onChange={setWritten} />
         </section>
       )}
 
-      {/* 4 · Reflexió */}
+      {/* 4 · Test de transferència (cas nou) */}
+      {sa.avaluacio?.test && (
+        <section className="card p-6 mb-6">
+          <p className="kicker mb-1">4 · {t('auto.testTitle')}</p>
+          <p className="text-sm text-[var(--muted)] mb-4">{t('auto.testIntro')}</p>
+          <TransferTest test={sa.avaluacio.test} onChange={setTestResults} />
+        </section>
+      )}
+
+      {/* 5 · Reflexió */}
       <section className="card p-6 mb-6">
-        <p className="kicker mb-4">4 · {t('auto.reflectionTitle')}</p>
+        <p className="kicker mb-4">5 · {t('auto.reflectionTitle')}</p>
         <div className="space-y-5">
           {['q1', 'q2', 'q3'].map((q, i) => (
             <label key={q} className="block">
@@ -256,7 +285,7 @@ export default function SAAvaluacioPage() {
         </div>
       </section>
 
-      {/* 5 · PDF */}
+      {/* 6 · PDF */}
       <section className="pb-12 text-center">
         <button
           onClick={downloadPdf}
@@ -272,8 +301,8 @@ export default function SAAvaluacioPage() {
         <div
           ref={pdfRef}
           style={{
-            width: '760px', background: '#fdfafb', color: '#1a1a2e',
-            fontFamily: "'Quicksand', sans-serif", padding: '32px', fontSize: '13px', lineHeight: 1.5
+            width: `${PDF_WIDTH}px`, background: '#ffffff', color: '#1a1a2e',
+            fontFamily: "'Quicksand', sans-serif", fontSize: '13px', lineHeight: 1.5
           }}
         >
           <p style={pdfKicker}>Biologia i Geologia · 4t ESO · IE Temple</p>
@@ -313,6 +342,70 @@ export default function SAAvaluacioPage() {
             </div>
           ))}
 
+          {escrita && (
+            <div className="pdf-block">
+              <h2 style={pdfH2}>Assaig de prova escrita</h2>
+              {escrita.questions.map((q, i) => {
+                const mine = written.find((w) => w.id === q.id)
+                const self = SELF_LABELS.find((l) => l.id === mine?.self)
+                const fets = mine?.must.filter((m) => m.done).length ?? 0
+                return (
+                  <div key={q.id} style={pdfCard} className="pdf-block">
+                    <p style={{ fontWeight: 700, margin: '0 0 2px' }}>
+                      {i + 1}. {q.text}
+                    </p>
+                    <p style={pdfMeta}>
+                      {[q.oa, q.source, q.minutes ? `~${q.minutes} min` : null]
+                        .filter(Boolean)
+                        .join(' · ')}
+                      {' · '}
+                      <strong>{self ? self.label : 'sense valorar'}</strong>
+                      {q.must?.length ? ` · ${fets}/${q.must.length} elements` : ''}
+                    </p>
+                    <p style={{ margin: '4px 0 0' }}>
+                      <strong>AS · </strong>
+                      {q.model.as}
+                    </p>
+                    <p style={{ margin: '4px 0 0' }}>
+                      <strong>AE · </strong>
+                      {q.model.ae}
+                    </p>
+                    {q.must?.length > 0 && (
+                      <p style={{ ...pdfMeta, marginTop: 4 }}>
+                        Hi ha de sortir: {q.must.join(' · ')}
+                      </p>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          )}
+
+          {testResults.length > 0 && (
+            <div className="pdf-block">
+              <h2 style={pdfH2}>{t('auto.testTitle')}</h2>
+              <table style={pdfTable}>
+                <tbody>
+                  {testResults.map((r, i) => (
+                    <tr key={r.id}>
+                      <td style={pdfTd}>
+                        <strong>{i + 1}.</strong> {r.text}
+                        <br />
+                        <span style={pdfMeta}>
+                          La teva: {r.chosen || '—'}
+                          {!r.ok && r.chosen ? ` · Correcta: ${r.correct}` : ''}
+                        </span>
+                      </td>
+                      <td style={{ ...pdfTd, width: 34, fontWeight: 700, textAlign: 'center' }}>
+                        {r.chosen ? (r.ok ? '✓' : '✗') : '—'}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
+
           <h2 style={pdfH2}>{t('auto.reflectionTitle')}</h2>
           {['q1', 'q2', 'q3'].map((q, i) => (
             <div key={q} style={{ marginBottom: 10 }}>
@@ -344,4 +437,8 @@ const pdfH2 = {
 }
 const pdfTable = { width: '100%', borderCollapse: 'collapse' }
 const pdfTd = { borderBottom: '1px solid #eae6f6', padding: '4px 6px', verticalAlign: 'top' }
-const pdfFoot = { marginTop: 24, paddingTop: 8, borderTop: '1px solid #eae6f6', color: '#666', fontSize: '11px' }
+// marginTop petit: amb 24 px el peu queia just al límit de la caixa de
+// pàgina i html2pdf generava un full en blanc al final.
+const pdfFoot = { marginTop: 10, paddingTop: 6, borderTop: '1px solid #eae6f6', color: '#666', fontSize: '11px' }
+const pdfCard = { border: '1px solid #eae6f6', borderRadius: 6, padding: '6px 8px', marginBottom: 8 }
+const pdfMeta = { color: '#666', fontSize: '11px', margin: 0 }

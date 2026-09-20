@@ -17,6 +17,92 @@
 // 4) Correccions menors: «Les anàlisis», i el feedback de t3 remetia a S4
 //    quan els nivells de certesa es treballen a S1.
 export const sa7Avaluacio = {
+  // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
+  // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
+  // una falsa sensacio d'anar preparat. Aqui les preguntes son del tipus de
+  // les de la prova i s'han de respondre a ma, en un full, abans d'obrir la
+  // solucio; els models AS i AE estan escrits amb els mateixos descriptors
+  // que fan servir les rubriques de les proves del curs.
+  escrita: {
+    intro:
+      "Aquestes preguntes són del tipus que trobaràs a la prova final. Full, bolígraf i sense apunts. Aquí es valora sobretot que distingeixis el que sabem del cert del que és una hipòtesi o una especulació, i que diguis en quina prova et bases.",
+    minutes: 27,
+    questions: [
+      {
+        id: 'w1',
+        oa: 'OA4',
+        source: 'Prova final del curs · Pregunta 6, «què en sabem del cert»',
+        minutes: 8,
+        text: "Classifica aquestes quatre afirmacions en fet establert, hipòtesi amb proves, especulació o afirmació no científica, i justifica-ho: (1) el microorganisme apareix a totes les mostres analitzades; (2) la població del llac ha evolucionat aïllada sota el gel; (3) sota el gel d'Europa hi deu haver microorganismes com aquest; (4) la vida sempre troba la manera.",
+        model: {
+          as: "1 és un fet establert, perquè és una observació directa i repetida. 2 és una hipòtesi amb proves, perquè hi ha indicis però ningú no ho ha vist. 3 és una especulació, perquè no hi ha cap prova d'allà. 4 no és científica, perquè no es pot posar a prova.",
+          ae: "(1) Fet establert: és una observació directa i repetida. Compte amb la trampa: diu que apareix a les mostres, no que visqui al llac; per això és un fet encara que no s'hagi fet el control negatiu. (2) Hipòtesi amb proves: hi ha indicis —el gel que tapa el llac, els fòssils datats—, però ningú no ho ha observat i podria haver-hi connexions amb altres masses d'aigua. (3) Especulació: és raonable i val la pena explorar-la, però no hi ha cap prova procedent d'Europa; el que s'ha trobat aquí no diu res del que hi ha en un altre lloc. (4) Afirmació no científica: no hi ha cap observació que la pogués contradir, perquè encaixaria amb tot el que passés; per tant no es pot posar a prova. Això no vol dir que sigui falsa: vol dir que queda fora del que la ciència pot decidir.",
+        },
+        aeWhy: "L'AE veu la trampa de la (1) —el que s'afirma és el que s'ha mesurat, no la conclusió— i no diu que la (4) sigui falsa, sinó que no és comprovable. Dir «és mentida» compta com a incorrecte.",
+        must: [
+          "Has classificat les quatre afirmacions.",
+          "Has justificat cada classificació, no només l'etiqueta.",
+          "Has dit que la (4) no es pot posar a prova, no que sigui falsa.",
+          "Has dit per què la troballa d'aquí no serveix de prova per a Europa."
+        ]
+      },
+      {
+        id: 'w2',
+        oa: 'OA4',
+        source: 'Prova final del curs · Pregunta 6, «què faria pujar de nivell»',
+        minutes: 6,
+        text: "Agafa l'afirmació «sota el gel d'Europa hi deu haver microorganismes» i digues quina prova concreta la faria pujar de nivell. Després fes el mateix amb «la vida sempre troba la manera».",
+        model: {
+          as: "La faria pujar qualsevol observació feta a Europa: detectar-hi una biofirma amb una sonda o trobar-hi molècules orgàniques complexes. La segona afirmació no pot pujar de nivell, perquè no hi ha cap observació que la pogués contradir.",
+          ae: "Per a la primera, la prova ha de venir d'allà i no d'aquí: detectar una biofirma amb una sonda enviada a Europa, trobar molècules orgàniques complexes als guèisers d'Encèlad, o confirmar que hi ha aigua líquida en contacte amb roca i amb una font d'energia. Amb qualsevol d'aquestes coses passaria d'especulació a hipòtesi amb proves. La segona no puja de nivell amb cap observació, i el motiu és estructural: no se'n pot enunciar ni una que la pogués contradir. Passi el que passi —que la vida sobrevisqui o que s'extingeixi— sempre es podrà dir que va trobar la manera o que aquest cop no la va trobar. Com que no hi ha manera de posar-la a prova, queda fora del que la ciència pot decidir; això no la converteix en falsa, la converteix en una altra classe d'afirmació.",
+        },
+        aeWhy: "L'AE insisteix que la prova ha de venir del lloc del qual es parla, i explica per què la quarta afirmació és infalsable en comptes de dir simplement que «no es pot demostrar».",
+        must: [
+          "Has proposat una prova concreta, i feta a Europa.",
+          "Has dit a quin nivell pujaria l'afirmació.",
+          "Has dit que la segona no pot pujar i per què.",
+          "No has dit que la segona sigui falsa."
+        ]
+      },
+      {
+        id: 'w3',
+        oa: 'OA2',
+        source: 'Tipus de pregunta de la prova · Semivida',
+        minutes: 6,
+        text: "Una mostra conté una quarta part de l'isòtop pare que tenia inicialment. Si la semivida és de 1.300 milions d'anys, calcula l'edat de la mostra i explica què vol dir exactament «semivida».",
+        model: {
+          as: "Si en queda una quarta part, han passat dues semivides (la meitat i la meitat de la meitat): 2 × 1.300 = 2.600 milions d'anys. La semivida és el temps que triga a desintegrar-se la meitat de l'isòtop pare.",
+          ae: "La semivida és el temps que triga a desintegrar-se la meitat dels àtoms de l'isòtop pare que hi ha en un moment donat. No és un compte enrere fix per a cada àtom: la desintegració és un procés a l'atzar per a cada àtom individual, però amb moltíssims àtoms la proporció que es desintegra per unitat de temps és constant i molt precisa, i això és el que la fa útil per datar. Si en queda 1/4, han passat dues semivides (1 → 1/2 → 1/4), és a dir 2 × 1.300 = 2.600 milions d'anys. Aquesta és una datació absoluta —dona una edat en anys—, a diferència de la datació relativa, que només permet ordenar esdeveniments.",
+        },
+        aeWhy: "L'AE explica per què la desintegració és fiable tot i ser aleatòria i situa el resultat com a datació absoluta enfront de la relativa.",
+        must: [
+          "Has dit quantes semivides han passat i per què.",
+          "Has donat l'edat en anys.",
+          "Has definit bé la semivida (la meitat, no tot).",
+          "Has dit que és una datació absoluta i en què es diferencia de la relativa."
+        ]
+      },
+      {
+        id: 'w4',
+        oa: 'OA3',
+        source: "Tipus de pregunta de la prova · Origen de la vida",
+        minutes: 7,
+        text: "Compara dues hipòtesis sobre l'origen de la vida i digues quina evidència sosté cadascuna. Després explica per quina raó la panspèrmia no resol la pregunta.",
+        model: {
+          as: "La sopa primordial es basa en l'experiment de Miller-Urey, que va obtenir aminoàcids a partir de gasos i descàrregues elèctriques. La hipòtesi de les fumaroles hidrotermals es basa en que allà hi ha energia química i minerals que poden catalitzar reaccions, i en que hi viuen organismes actuals. La panspèrmia no resol res perquè només trasllada la pregunta a un altre lloc: caldria explicar igualment com va sorgir la vida allà.",
+          ae: "Sopa primordial: Miller i Urey van demostrar que, amb els gasos que es creien de l'atmosfera primitiva i descàrregues elèctriques, es formen espontàniament aminoàcids; la seva evidència és, doncs, experimental i de laboratori, però depèn de com era realment aquella atmosfera, cosa que avui es discuteix. Fumaroles hidrotermals: ofereixen un gradient químic i tèrmic continu, minerals que poden actuar de catalitzadors i protecció davant la radiació, i hi trobem comunitats actuals independents de la llum solar; l'evidència és sobretot geoquímica i actualista. Una tercera, el món ARN, explica com podia haver-hi una molècula que guardés informació i alhora catalitzés reaccions abans que existissin les proteïnes. La panspèrmia, en canvi, proposa que la vida va arribar de fora: encara que fos certa —i hi ha indicis que molècules orgàniques viatgen en meteorits—, no respon la pregunta, només la desplaça, perquè allà on hagués sorgit caldria explicar exactament el mateix.",
+        },
+        aeWhy: "L'AE diu de quin TIPUS és l'evidència de cada hipòtesi i n'indica la debilitat, i concedeix el que la panspèrmia sí que aporta abans d'explicar per què no respon la pregunta.",
+        must: [
+          "Has comparat dues hipòtesis, no n'has descrit només una.",
+          "Has dit quina evidència concreta sosté cadascuna.",
+          "Has esmentat un punt feble d'alguna de les dues.",
+          "Has explicat que la panspèrmia desplaça la pregunta en comptes de respondre-la."
+        ]
+      }
+    ]
+  },
+
   checklist: [
     { id: 'c1', oa: 'OA1', text: "Explico el model del Big Bang i almenys dues proves observables que el sostenen (expansió de l'univers, radiació còsmica de fons, abundància d'hidrogen i heli)." },
     { id: 'c2', oa: 'OA1', text: "Situo en l'escala del temps còsmic el Big Bang (~13.800 M.a.) i la formació del sistema solar i la Terra (~4.600 M.a.), i explico com es va formar el sistema solar a partir d'un núvol de gas i pols." },

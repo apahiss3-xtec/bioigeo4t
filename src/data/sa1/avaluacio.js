@@ -24,6 +24,93 @@
 // se n'ha ancorat el feedback `wrong` al senyal 5 perquè el camí de tornada
 // a SA1 sigui explícit. Divergència vault↔material anotada a ESTAT.md.
 export const sa1Avaluacio = {
+  // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
+  // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
+  // una falsa sensacio d'anar preparat. Aqui les preguntes son del tipus de
+  // les de la prova i s'han de respondre a ma, en un full, abans d'obrir la
+  // solucio; els models AS i AE estan escrits amb els mateixos descriptors
+  // que fan servir les rubriques de les proves del curs.
+  escrita: {
+    intro:
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts: escriu la resposta sencera i només després obre la solució. A SA1 gairebé tot es respon argumentant, i un argument no és una etiqueta: «això és pseudociència» no és una resposta fins que dius per què.",
+    minutes: 24,
+    questions: [
+      {
+        id: 'w1',
+        oa: 'OA4',
+        source: 'Tipus de pregunta de la prova · Veredicte amb el detector',
+        minutes: 7,
+        text: "Un producte promet millorar la concentració «gràcies a la ressonància quàntica de les cèl·lules». No hi ha cap estudi publicat, però la web recull desenes de testimonis entusiastes. Dona-li un veredicte (ciència / pseudociència / encara no comprovat) i justifica'l amb els senyals del detector.",
+        model: {
+          as: "És pseudociència. Fa servir paraules que sonen científiques («quàntica») sense explicar res, es basa en testimonis en comptes de dades, i no hi ha cap estudi que ho pugui comprovar.",
+          ae: "Veredicte: pseudociència. Hi veig tres senyals alhora. (1) Sona científica: «ressonància quàntica» és vocabulari de física aplicat a un context on no vol dir res, i serveix per donar autoritat, no per explicar el mecanisme. (2) Les garanties que aporta són testimonis, no dades: molts casos anecdòtics no equivalen a un sol estudi controlat, perquè ningú no compta els que no ha funcionat. (3) No es pot comprovar: sense una predicció concreta que pugui sortir malament, cap resultat no la posaria en dubte. El que fa decisiu el veredicte no és que encara no hi hagi estudis —això només seria «encara no comprovat»—, sinó l'actitud davant la prova: es presenta com a ja demostrat i s'immunitza contra la crítica.",
+        },
+        aeWhy: "L'AE separa el calaix «pseudociència» del calaix «encara no comprovat» dient quin és el criteri que els distingeix (l'actitud davant la prova), i explica per què els testimonis no compten com a dades.",
+        must: [
+          "Has donat un veredicte explícit dels tres calaixos.",
+          "Has citat com a mínim dos senyals del detector.",
+          "Has explicat per què els testimonis no són dades.",
+          "Has dit què diferencia la pseudociència del «encara no comprovat»."
+        ]
+      },
+      {
+        id: 'w2',
+        oa: 'OA2',
+        source: 'Tipus de pregunta de la prova · Tipus de garantia',
+        minutes: 6,
+        text: "Dues persones defensen la mateixa conclusió. Una diu: «ho he llegit en un metaanàlisi de 40 estudis». L'altra diu: «a casa meva ho hem fet sempre així i ens ha anat bé». Explica quina garantia fa servir cadascuna i per quina raó no donen la mateixa certesa.",
+        model: {
+          as: "La primera fa servir dades i la segona, hàbits. Les dades donen més certesa perquè es poden comprovar i repetir, mentre que un hàbit només diu que a ells els ha funcionat.",
+          ae: "La primera fa servir dades (i un model, perquè un metaanàlisi resumeix molts estudis amb un criteri); la segona fa servir hàbits, reforçats per identitat («a casa meva»). No donen la mateixa certesa perquè les dades són públiques i contrastables: qualsevol pot mirar si els 40 estudis estan ben fets i si el resum és honest, i si estan equivocats es pot demostrar. Un hàbit, en canvi, només informa que una cosa s'ha repetit, no que funcioni: no té grup de comparació —no se sap què hauria passat fent-ho d'una altra manera— i no distingeix una relació causal d'una casualitat. Això no vol dir que l'hàbit hagi de ser fals; vol dir que, si volem saber si és cert, cal posar-lo a prova amb dades.",
+        },
+        aeWhy: "L'AE no es limita a ordenar les garanties: diu QUÈ falta a l'hàbit (grup de comparació, causalitat) i evita concloure que el segon estigui equivocat, que és el matís que la rúbrica busca.",
+        must: [
+          "Has anomenat les dues garanties amb el nom que fem servir a classe.",
+          "Has dit per què les dades són contrastables.",
+          "Has dit què li falta a l'hàbit per ser una prova.",
+          "No has dit que la segona persona estigui necessàriament equivocada."
+        ]
+      },
+      {
+        id: 'w3',
+        oa: 'OA3',
+        source: 'Tipus de pregunta de la prova · Disseny de la prova',
+        minutes: 6,
+        text: "Vols comprovar si una infusió realment redueix el mal de cap. Explica com muntaries la prova perquè les ganes de creure-hi no puguin decidir el resultat.",
+        model: {
+          as: "Faria dos grups a l'atzar: un pren la infusió i l'altre una infusió sense l'ingredient (placebo), amb el mateix gust i aspecte. Ningú no sabria quin pren, ni els participants ni qui recull les dades.",
+          ae: "Partiria d'una hipòtesi concreta i falsable: «qui pren la infusió A té menys episodis de mal de cap en quatre setmanes que qui pren la B». Repartiria molts participants a l'atzar en dos grups, un amb la infusió i l'altre amb un placebo indistingible en gust, color i olor, i mesuraria la mateixa variable en tots dos amb el mateix criteri. La clau és que ni els participants ni qui recull les dades sàpiguen qui pren què: així les ganes de creure-hi —el senyal 5— no poden decidir ni el que noten ni el que s'apunta. I abans de concloure res, caldria repetir-ho amb altres grups: un resultat que no es pot replicar no és un resultat.",
+        },
+        aeWhy: "L'AE parteix d'una hipòtesi que pot sortir malament, connecta explícitament el disseny amb el senyal 5 del detector i afegeix la replicació. L'AS descriu el muntatge però no diu per què cada peça hi és.",
+        must: [
+          "Has enunciat una hipòtesi que es pot posar a prova.",
+          "Has posat un grup control amb placebo.",
+          "Has repartit els participants a l'atzar.",
+          "Has explicat per què ningú no ha de saber qui pren què.",
+          "Has dit que cal repetir l'estudi."
+        ]
+      },
+      {
+        id: 'w4',
+        oa: 'OA1',
+        source: 'Tipus de pregunta de la prova · Provisionalitat',
+        minutes: 5,
+        text: "Un company diu: «si els científics canvien d'idea cada pocs anys, vol dir que no en saben res». Respon-li amb el que has treballat sobre com funciona la ciència.",
+        model: {
+          as: "No té raó. La ciència canvia quan apareixen proves noves, i això és una virtut: vol dir que el model nou explica millor les dades. El que seria dolent és no canviar mai.",
+          ae: "El que descriu com un defecte és precisament el mecanisme. Un model científic no és una veritat definitiva sinó la millor explicació disponible amb les proves que tenim; quan apareix una prova que no hi encaixa, el model es corregeix o se substitueix. Per això la ciència no dona mai un 100 % de certesa, i tampoc un 0 %: dona graus. Ara bé, que canviï no vol dir que qualsevol cosa valgui igual: el model nou ha d'explicar tot el que explicava l'antic i, a més, allò que l'antic no explicava. Canviar davant de proves noves és el contrari de no saber-ne res: és l'única manera de saber-ne cada cop més.",
+        },
+        aeWhy: "L'AE bloqueja la sortida relativista («tot és opinable») dient quina condició ha de complir el model nou per ser millor.",
+        must: [
+          "Has dit que canviar amb proves noves és una virtut.",
+          "Has parlat de graus de certesa, no de veritat o mentida.",
+          "Has dit què ha de complir el model nou per ser millor.",
+          "Has respost al company, no has fet només una definició."
+        ]
+      }
+    ]
+  },
+
   checklist: [
     { id: 'c1', oa: 'OA1', text: "Sé posar una nota de certesa (1–10) a una afirmació i justificar per què no és ni 100% segura ni del tot falsa." },
     { id: 'c2', oa: 'OA1', text: "Entenc per què a la ciència res no és 100% segur, i que canviar un model quan hi ha proves noves és una virtut, no una debilitat." },
