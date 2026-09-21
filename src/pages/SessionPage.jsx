@@ -560,9 +560,10 @@ export default function SessionPage() {
           {/* Full imprimible del tiquet de sortida: mig A4, dos tiquets per full
               (es retalla per la línia de punts). Generat per
               scripts/_exit-tickets/build_tickets.py. */}
+          {/* exitTicketUrl pot ser per nivells ({A,B,C}): la C té full propi. */}
           {session.exitTicketUrl && (
             <a
-              href={asset(session.exitTicketUrl)}
+              href={asset(pickLevel(session.exitTicketUrl, nivell))}
               target="_blank"
               rel="noopener noreferrer"
               className="mb-4 inline-block rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 font-display font-semibold hover:bg-[var(--paper-2)] transition-colors"
