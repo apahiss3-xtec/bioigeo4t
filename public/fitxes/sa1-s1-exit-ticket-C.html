@@ -166,6 +166,10 @@ span[contenteditable]{display:inline-block;}
 .vk-title{margin:0 4px 0 0;}
 .voc{grid-template-columns:auto 1fr;}
 
+.crit-bar{display:flex;align-items:baseline;gap:6px;padding:2px 12px;background:#f4f8f9;border-bottom:1px solid var(--rule,#dce9eb);font-family:'Inter',sans-serif;font-size:8px;color:#5f6e72;line-height:1.5;}
+.crit-bar b{font-size:11px;color:#1c4a55;letter-spacing:.02em;}
+.crit-bar .ck{font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+
 /* ══════════════════════════════════════════════════════════════
    LLEGIBILITAT-C v1 — llegibilitat de la Versió C (dislèxia). 09/09/2026.
    Cos en 'Fira Sans Condensed' (mateixa família que l'Extra Condensed
@@ -205,8 +209,8 @@ span[contenteditable]{display:inline-block;}
       <div class="eh-main">
 
         <div class="eh-top">
-          <span class="t-title" contenteditable="true">Què et fa dir que una cosa és certa?</span>
-          <span class="t-sa" contenteditable="true">SA1 · Sessió 1 de 4</span><span class="lvl-badge">Versió C</span>
+          <span class="t-title" contenteditable="true">Quin senyal s'hi encén?</span>
+          <span class="t-sa" contenteditable="true">SA1 · Sessió 1 de 3</span><span class="lvl-badge">Versió C</span>
           <span class="t-note" contenteditable="true">aquest full s'entrega en sortir de classe</span>
         </div>
 
@@ -217,23 +221,23 @@ span[contenteditable]{display:inline-block;}
           <span class="aval">avaluació: <span class="scale-mini">NE · NA · AS · AN · AE</span></span>
         </div>
 
+        <div class="crit-bar"><span class="ck">📐 Criteri avaluat</span><b>2.2</b><span>contrastar la fiabilitat de la informació i detectar pseudociències</span></div>
+
         <div class="exit-body">
 
           <div class="voc-box deletable">
             <div class="del-btn" onclick="deleteEl(this)">✕</div>
             <div class="voc-keys">
               <span class="vk-title">🧰 Paraules que pots fer servir</span>
-              <span class="chip">molt certa</span>
-              <span class="chip">depèn</span>
-              <span class="chip">gens certa</span>
+              <span class="chip">1 · no es pot comprovar</span>
+              <span class="chip">2 · no admet crítica</span>
+              <span class="chip">3 · sona «científica»</span>
               <span class="chip">dades</span>
-              <span class="chip">autoritat</span>
               <span class="chip">el que vull creure</span>
-              <span class="chip">comprovar</span>
             </div>
             <div class="voc-defs">
               <span class="vd-title">Recorda què volen dir</span>
-              <dl class="voc"><dt>garantia</dt><dd>allò que dones perquè et creguin.</dd><dt>comprovar</dt><dd>fer una prova que qualsevol pot repetir.</dd></dl>
+              <dl class="voc"><dt>senyal</dt><dd>pista que una frase sona a pseudociència.</dd><dt>garantia</dt><dd>allò en què es basa qui ho diu.</dd></dl>
             </div>
           </div>
 
@@ -243,17 +247,17 @@ span[contenteditable]{display:inline-block;}
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
             <div class="q-num">1</div>
-            <div class="q-text"><span contenteditable="true">Una amiga diu això. En quina <strong>garantia</strong> es basa?</span><span class="q-tag">encercla</span></div>
+            <div class="q-text"><span contenteditable="true">Quin <strong>senyal</strong> del detector s'encén en aquest anunci?</span><span class="q-tag">encercla</span></div>
           </div>
-          <div class="c-cas" contenteditable="true">«Aquest collaret em dona sort als exàmens: amb ell vaig aprovar l'últim.»</div>
-          <div class="c-tria"><span class="circ-opt">DADES</span><span class="c-o">o</span><span class="circ-opt">EL QUE VULL CREURE</span></div>
+          <div class="c-cas" contenteditable="true">«Crema natural amb l'<b>energia de les plantes</b> que et rejoveneix la pell 10 anys.»</div>
+          <div class="c-tria"><span class="circ-opt">1 · NO ES POT COMPROVAR</span><span class="c-o">o</span><span class="circ-opt">3 · SONA «CIENTÍFICA»</span></div>
         </div>
 
         <div class="q deletable" style="margin-bottom:2px">
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
             <div class="q-num">2</div>
-            <div class="q-text"><span contenteditable="true">Què hauries de <strong>comprovar</strong> per creure't que el collaret dona sort?</span><span class="q-tag">idea central</span></div>
+            <div class="q-text"><span contenteditable="true">Què hauries de <strong>comprovar</strong> per creure't que la crema rejoveneix la pell?</span><span class="q-tag">idea central</span></div>
           </div>
           <div class="c-inici" contenteditable="true">Comença així: <b>«Per creure-m'ho, hauria de comprovar si…»</b></div>
           <div class="wline" contenteditable="true"></div>

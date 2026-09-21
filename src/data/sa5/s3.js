@@ -158,6 +158,7 @@ export const sa5s3 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa5-s3-exit-ticket.html",
   exitTicketType: "paper",
+  exitTicketCriteri: "4.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica amb la cadena mutació → variabilitat → selecció → canvi per què, després d'anys usant un antibiòtic, tota una població de bacteris pot acabar sent resistent. Assenyala quin pas és a l'atzar i quin depèn de l'ambient.", hint: "La mutació apareix a l'atzar; l'antibiòtic (ambient) selecciona els que ja eren resistents." },

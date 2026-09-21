@@ -23,6 +23,10 @@
 // mesura, que és exactament el que ha de fer un test de transferència; només
 // se n'ha ancorat el feedback `wrong` al senyal 5 perquè el camí de tornada
 // a SA1 sigui explícit. Divergència vault↔material anotada a ESTAT.md.
+// Revisió 2026-09-21 (SA1 en 3 sessions): c1 ja no parla de nota 1–10 (l'escala
+// ara ordena 8 frases), c5 reformulat (el perfil epistèmic és una línia a la S1),
+// c7–c10 es mantenen (es treballen al puzle de la S2 i a l'app de la S3). El test de
+// transferència (Power Balance) es manté: no és cap dels casos del puzle ni de l'app.
 export const sa1Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -112,11 +116,11 @@ export const sa1Avaluacio = {
   },
 
   checklist: [
-    { id: 'c1', oa: 'OA1', text: "Sé posar una nota de certesa (1–10) a una afirmació i justificar per què no és ni 100% segura ni del tot falsa." },
+    { id: 'c1', oa: 'OA1', text: "Sé ordenar afirmacions de més certa a menys certa i justificar-ho dient si algú ho ha comprovat i com." },
     { id: 'c2', oa: 'OA1', text: "Entenc per què a la ciència res no és 100% segur, i que canviar un model quan hi ha proves noves és una virtut, no una debilitat." },
     { id: 'c3', oa: 'OA2', text: "Reconec els 5 tipus de garanties (dades, models, hàbits, autoritat, identitat/valors) en un argument real." },
     { id: 'c4', oa: 'OA2', text: "Sé explicar per què dades i models donen més certesa que autoritat, hàbits o identitat/valors." },
-    { id: 'c5', oa: 'OA2', text: "Conec el meu perfil epistèmic: sé de quines garanties abuso i en quins casos decideixo per allò que VULL que sigui cert (identitat i valors) en comptes de per proves." },
+    { id: 'c5', oa: 'OA2', text: "Sé quina garantia faig servir més jo i reconec quan decideixo per allò que VULL que sigui cert (identitat i valors) en comptes de per proves." },
     { id: 'c6', oa: 'OA3', text: "Puc explicar com treballa la ciència: hipòtesi, experiment que la pot posar a prova, i revisió crítica dels resultats." },
     { id: 'c7', oa: 'OA3', text: "Sé que les ganes de creure en una cosa (senyal 5) et poden fer notar un efecte que no hi és, i que per això una prova només val si està muntada de manera que aquestes ganes no puguin decidir el resultat." },
     { id: 'c8', oa: 'OA4', text: "Passo una afirmació pels 5 senyals del detector (no es comprova · no admet crítica · autoritat/testimonis · sona científica · apel·la al que vols creure)." },
@@ -178,7 +182,7 @@ export const sa1Avaluacio = {
         correct: 1,
         feedback: {
           correct: "Correcte. Un bon experiment ha d'aïllar allò que vol mesurar. El doble cec treu del mig les expectatives i les ganes de creure-hi, així que si apareix un efecte, és de la polsera; si no, no n'hi ha.",
-          wrong: "Lliga-ho amb el detector de S2: el senyal 5 diu que una promesa apel·la al que VOLS creure. Si saps que dus la polsera «bona», aquestes ganes ja et poden fer notar que et va millor, sense que la polsera hi tingui res a veure. Què és, doncs, el que el doble cec treu del mig perquè la mesura sigui fiable?"
+          wrong: "Lliga-ho amb el detector: el senyal 5 diu que una promesa apel·la al que VOLS creure. Si saps que dus la polsera «bona», aquestes ganes ja et poden fer notar que et va millor, sense que la polsera hi tingui res a veure. Què és, doncs, el que el doble cec treu del mig perquè la mesura sigui fiable?"
         }
       },
       {

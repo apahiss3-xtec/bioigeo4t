@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detector de pseudociència · SA1 · IE Temple · 4t ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Generat per SA1-ciencia-pseudociencia/_generador/build_sa1.py a partir de casos.py.
+     No editar a mà: les dades (casos, senyals) viuen a casos.py. -->
+<style>
+:root{
+  --teal:#2A6F7F; --teal-ink:#1c4a55; --teal-light:#9ccad2; --teal-tint:#eaf4f6; --aqua:#38a3a5;
+  --ink:#14201f; --ink-2:#334; --muted:#5f6e72; --rule:#dce9eb; --rule-dark:#b6ccd0; --paper:#fff; --bg:#f4f8f9;
+  --orange:#c96f3e; --orange-tint:#f6ece8; --ok:#2f7d4f; --ok-tint:#e5f3ea; --ko:#b23a48; --ko-tint:#f9e6e8; --amber:#b98500; --amber-tint:#fdf5dc;
+  --s1:#8e5bb5; --s2:#c0392b; --s3:#2d6fb3; --s4:#c96f3e; --s5:#2f8a6b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Fira Sans Extra Condensed',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.45;min-height:100vh}
+header{background:linear-gradient(135deg,#1c4a55,#2f7f8a);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header h1{font-size:23px;font-weight:900;letter-spacing:-.01em;line-height:1.1}
+header .sub{font-size:13px;opacity:.8}
+.mode{margin-left:auto;display:flex;gap:4px;background:rgba(255,255,255,.14);border-radius:999px;padding:3px}
+.mode button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:999px;padding:4px 12px;cursor:pointer;background:transparent;color:#fff}
+.mode button[aria-pressed="true"]{background:#fff;color:var(--teal-ink)}
+.bar{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:8px 18px;background:#fff;border-bottom:1px solid var(--rule);font-size:15px;color:var(--muted)}
+.bar b{color:var(--teal-ink);font-size:18px}
+.prog{flex:1;min-width:120px;height:8px;background:var(--teal-tint);border-radius:9px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--aqua);width:0;transition:width .3s}
+main{max-width:980px;margin:0 auto;padding:16px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:16px 18px;box-shadow:0 1px 6px rgba(20,60,70,.06)}
+.cas-k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cas-t{font-size:24px;font-weight:900;color:var(--teal-ink);margin:2px 0 8px;line-height:1.15}
+.cas-x{font-size:18.5px;line-height:1.6}
+mark{background:transparent;color:inherit;padding:0}
+.rev mark{border-radius:4px;padding:0 2px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.rev mark[data-s]{background:var(--mk,#eee)}
+.rev mark[data-s]::after{content:attr(data-n);display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;background:var(--mc,#666);border-radius:50%;width:16px;height:16px;margin-left:3px;vertical-align:2px}
+h2{font-size:15px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink);margin:16px 0 8px}
+.senyals{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+.sb{font:inherit;text-align:left;border:2px solid var(--rule-dark);background:#fff;border-radius:11px;padding:8px 10px;cursor:pointer;display:flex;gap:9px;align-items:flex-start;min-height:64px;transition:border-color .15s,background .15s}
+.sb:hover{border-color:var(--teal-light)}
+.sb .n{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--sc,#666);color:#fff;font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center}
+.sb .nm{font-weight:700;font-size:16px;line-height:1.15;display:block}
+.sb .df{font-size:13px;color:var(--muted);line-height:1.25;display:block;margin-top:2px}
+.sb[aria-pressed="true"]{border-color:var(--sc);background:color-mix(in srgb,var(--sc) 10%,#fff)}
+.sb[aria-pressed="true"] .n::after{content:'✓';font-size:13px;margin-left:1px}
+.sb[aria-pressed="true"] .n{font-size:0}
+.sb[aria-pressed="true"] .n::after{font-size:17px}
+.sb:disabled,.cb:disabled{cursor:default;color:inherit}
+.sb.fb-ok{border-color:var(--ok);background:var(--ok-tint)}
+.sb.fb-falta{border-color:var(--ko);background:var(--ko-tint);border-style:dashed}
+.sb.fb-sobra{border-color:var(--ko);background:var(--ko-tint)}
+.sb.fb-pot{border-color:var(--amber);background:var(--amber-tint)}
+.fbtag{display:block;font-size:12.5px;font-weight:700;margin-top:3px}
+.fb-ok .fbtag{color:var(--ok)} .fb-falta .fbtag,.fb-sobra .fbtag{color:var(--ko)} .fb-pot .fbtag{color:var(--amber)}
+.calaixos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cb{font:inherit;font-weight:900;font-size:16px;letter-spacing:.02em;border:2px solid var(--rule-dark);background:#fff;border-radius:11px;padding:10px 8px;cursor:pointer;line-height:1.15}
+.cb small{display:block;font-weight:400;font-size:12.5px;color:var(--muted);letter-spacing:0;margin-top:3px}
+.cb[aria-pressed="true"]{border-color:var(--teal);background:var(--teal-tint);color:var(--teal-ink)}
+.cb.fb-ok{border-color:var(--ok);background:var(--ok-tint)} .cb.fb-ko{border-color:var(--ko);background:var(--ko-tint)} .cb.fb-sol{border-color:var(--ok);border-style:dashed}
+.accions{display:flex;gap:10px;justify-content:flex-end;margin-top:14px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:700;font-size:17px;border:0;border-radius:10px;padding:10px 18px;cursor:pointer;background:var(--teal);color:#fff}
+.btn.sec{background:#fff;color:var(--teal-ink);border:2px solid var(--teal-light)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.veredicte{margin-top:14px;border-radius:12px;padding:12px 14px;font-size:17px}
+.veredicte.ok{background:var(--ok-tint);border:1.5px solid var(--ok)}
+.veredicte.mig{background:var(--amber-tint);border:1.5px solid var(--amber)}
+.veredicte.ko{background:var(--ko-tint);border:1.5px solid var(--ko)}
+.veredicte b.t{font-size:19px;display:block;margin-bottom:3px}
+.nota{font-size:13.5px;color:var(--muted);margin-top:6px}
+.fi{text-align:center;padding:26px 18px}
+.fi .big{font-size:56px;font-weight:900;color:var(--teal-ink);line-height:1}
+.fi p{margin:8px 0}
+.hidden{display:none!important}
+@media (max-width:620px){ .calaixos{grid-template-columns:1fr} .cas-x{font-size:17px} header h1{font-size:20px} }
+</style>
+</head>
+<body>
+<header>
+  <div><h1>🕵️ Detector de pseudociència</h1><div class="sub">SA1 · Entrenament autocorrectiu · Biologia i Geologia 4t ESO</div></div>
+  <div class="mode" role="group" aria-label="Quants senyals">
+    <button type="button" id="m5" aria-pressed="true">5 senyals</button>
+    <button type="button" id="m3" aria-pressed="false">3 senyals</button>
+  </div>
+</header>
+<div class="bar">
+  <span>Cas <b id="k-i">1</b> de <b id="k-n">14</b></span>
+  <div class="prog"><i id="k-p"></i></div>
+  <span>Encerts sencers: <b id="k-ok">0</b></span>
+  <span>Senyal que més falles: <b id="k-pitjor">—</b></span>
+</div>
+<main>
+  <section class="card" id="joc">
+    <div class="cas-k" id="c-k">Cas</div>
+    <div class="cas-t" id="c-t"></div>
+    <div class="cas-x" id="c-x"></div>
+
+    <h2>1 · Quins senyals s'encenen? <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)">(pot ser cap)</span></h2>
+    <div class="senyals" id="senyals"></div>
+
+    <h2>2 · A quin calaix va?</h2>
+    <div class="calaixos" id="calaixos"></div>
+
+    <div class="veredicte hidden" id="fb"></div>
+    <div class="accions">
+      <button type="button" class="btn" id="b-comprova" disabled>Comprova</button>
+      <button type="button" class="btn hidden" id="b-seg">Següent cas →</button>
+    </div>
+  </section>
+
+  <section class="card fi hidden" id="final">
+    <div class="big" id="f-n"></div>
+    <p id="f-t"></p>
+    <p id="f-p"></p>
+    <div class="accions" style="justify-content:center"><button type="button" class="btn" id="b-reinicia">Torna a començar</button></div>
+  </section>
+  <p class="nota">Encert sencer = has marcat tots els senyals que hi són, cap que no hi sigui, i el calaix correcte. Els senyals en groc són <b>defensables</b>: no compten ni a favor ni en contra.</p>
+</main>
+
+<script>
+const D = {"senyals": {"1": {"nom": "No es pot comprovar", "def": "La promesa és tan vaga, o parla d'una cosa tan impossible de mesurar, que cap experiment fiable la pot posar a prova."}, "2": {"nom": "No admet crítica", "def": "Passi el que passi, no canvia: té una excusa per a cada resultat en contra."}, "3": {"nom": "Es basa en autoritat", "def": "«Ho diu un expert», un famós o molts testimonis, en comptes de dades i mesures."}, "4": {"nom": "Sona «científica»", "def": "Paraules com «quàntic», «energia», «toxines», «ions» o «natural» que no expliquen res."}, "5": {"nom": "Apel·la al que vols creure", "def": "S'aprofita del que desitges o et fa por: curar-te, aprimar-te, ser feliç, ser més llest."}}, "senyalsC": [1, 2, 4], "calaixos": {"ciencia": {"nom": "CIÈNCIA", "def": "S'ha posat a prova amb una prova justa i accepta el resultat, encara que no li agradi."}, "no-comprovat": {"nom": "ENCARA NO COMPROVAT", "def": "Es pot posar a prova i qui ho investiga ho admet, però encara no hi ha prou proves."}, "pseudo": {"nom": "PSEUDOCIÈNCIA", "def": "Es presenta com a ciència, però no es deixa posar a prova o no canvia quan la prova li surt en contra."}}, "casos": [{"id": "numerologia", "titol": "El teu número de la sort", "text": "Suma els dígits de la teva data de naixement: el número que surt [[1|revela la teva personalitat i amb qui seràs feliç]]. És una [[4|ciència mil·lenària]] que ja feien servir [[3|els antics egipcis]]. [[2|Si no t'encaixa, és que no has fet bé el càlcul del teu nom]].", "si": [1, 2, 3, 4], "pot": [5], "calaix": "pseudo", "explica": "La promesa és tan vaga que qualsevol persona hi troba alguna cosa seva (1), i si no, sempre hi ha l'excusa del càlcul (2). Que sigui antiga no la fa certa (3)."}, {"id": "vacuna", "titol": "Una vacuna nova", "text": "Una vacuna nova es va provar amb 30.000 voluntaris repartits a l'atzar: la meitat va rebre la vacuna i l'altra meitat una injecció d'aigua amb sal, i ni ells ni els metges sabien qui rebia què. Al grup vacunat hi va haver un 90 % menys de casos greus. Les agències de medicaments la continuen vigilant per si apareixen efectes rars.", "si": [], "pot": [], "calaix": "ciencia", "explica": "Cap senyal: grups a l'atzar, ningú no sap qui rep què, un resultat mesurat i vigilància posterior (admet crítica). És ciència."}, {"id": "quars", "titol": "Un quars sota el coixí", "text": "Posa un quars rosa sota el coixí: [[4|la seva vibració harmonitza la teva energia]] i dorms millor. Ho recomana [[3|la terapeuta holística Laia V., amb 300.000 seguidors]]. [[2|Si no notes res, has de netejar el cristall a la llum de la lluna plena]].", "si": [2, 3, 4], "pot": [1, 5], "calaix": "pseudo", "explica": "«Vibració» i «energia» sense cap mesura (4), l'autoritat són els seguidors (3) i hi ha una excusa preparada si no funciona (2)."}, {"id": "neuromax", "titol": "NeuroMax Q10", "text": "[[4|Nanopartícules quàntiques que activen el 100 % del teu cervell]]. [[5|Treu millors notes sense estudiar més]]. Recomanat per [[3|un youtuber amb 2 milions de seguidors]]. [[2|Els científics no volen que ho sàpigues]].", "si": [2, 3, 4], "pot": [1, 5], "calaix": "pseudo", "explica": "«Els científics no volen que ho sàpigues» converteix qualsevol crítica en una prova a favor (2). «Quàntic» no explica res (4)."}, {"id": "microbiota", "titol": "Els bacteris de l'intestí i l'estat d'ànim", "text": "En ratolins, canviar els bacteris de l'intestí canvia el seu comportament. En persones, els pocs estudis fets són petits i els resultats no coincideixen. Els investigadors diuen que calen assajos més grans abans de recomanar res.", "si": [], "pot": [], "calaix": "no-comprovat", "explica": "Es pot posar a prova i els investigadors diuen clarament què falta. No és pseudociència: és una pregunta oberta."}, {"id": "pegats", "titol": "Pegats detox per als peus", "text": "Enganxa't aquests pegats a la planta del peu abans de dormir: al matí seran foscos per [[4|les toxines que han xuclat]]. [[4|Tecnologia japonesa de turmalina]]. [[3|Milers de clients satisfets]].", "si": [3, 4], "pot": [1, 5], "calaix": "pseudo", "explica": "Els pegats també es tornen foscos amb la humitat de la suor. «Toxines» i «turmalina» sonen científiques però no diuen què es mesura (4); els clients satisfets són testimonis (3)."}, {"id": "sangoneres", "titol": "Sangoneres a l'hospital", "text": "Després de reenganxar un dit tallat, a vegades la sang no pot sortir bé i el dit es pot perdre. Alguns hospitals hi posen sangoneres, que xuclen la sang sobrant. S'ha mesurat en pacients i, des del 2004, l'agència de medicaments dels EUA (FDA) les té aprovades per a aquest ús concret.", "si": [], "pot": [], "calaix": "ciencia", "explica": "Sona antic i estrany, però s'ha comprovat i s'aprova només per a un ús concret. Estrany no és cap senyal."}, {"id": "grup-sanguini", "titol": "La dieta del grup sanguini", "text": "Menja segons el teu grup sanguini: els del grup 0 han de menjar carn [[4|perquè descendeixen dels caçadors]]. Ho explica [[3|un metge naturista en un llibre de 7 milions d'exemplars]]. Un estudi del 2014 amb 1.455 persones va veure que els efectes de la dieta no depenien del grup sanguini, però [[2|el llibre es continua venent amb la mateixa promesa]].", "si": [2, 3], "pot": [4, 5], "calaix": "pseudo", "explica": "Es va poder comprovar i va sortir en contra; que es continuï venent igual és el senyal 2. Les vendes del llibre no són dades (3)."}, {"id": "deu-per-cent", "titol": "Només fem servir el 10 % del cervell", "text": "Només fem servir el 10 % del cervell: amb el nostre curs [[4|d'activació neuronal desbloquejaràs el 90 % restant]]. [[3|Einstein ja ho deia]]. [[5|Imagina què podries aconseguir!]]", "si": [3, 4], "pot": [1, 5], "calaix": "pseudo", "explica": "Les imatges del cervell mostren que fem servir totes les zones. I no hi ha cap prova que Einstein ho digués: autoritat falsa (3)."}, {"id": "mart", "titol": "Aigua líquida sota Mart?", "text": "Un equip ha estudiat els terratrèmols de Mart que va registrar la sonda InSight i proposa que hi ha aigua líquida a més de 10 km de profunditat. Altres científics diuen que les dades es poden explicar d'altres maneres i que caldrà una altra missió per confirmar-ho.", "si": [], "pot": [], "calaix": "no-comprovat", "explica": "Hipòtesi basada en dades, que es pot comprovar i que altres científics discuteixen obertament. Encara no comprovat."}, {"id": "polsera-coure", "titol": "La polsera de coure i imants", "text": "Aquesta polsera de coure i imants alleuja el dolor de l'artritis: [[4|els imants milloren la circulació]]. Un assaig del 2013 amb 70 persones va comparar polseres de debò amb polseres falses, sense que ningú sabés quina duia: el dolor va baixar igual amb totes. [[2|La marca diu que l'estudi es va fer malament i la continua venent]].", "si": [2, 4], "pot": [5], "calaix": "pseudo", "explica": "Es va comprovar amb una prova justa (a cegues, amb polseres falses) i va sortir en contra: continuar-la venent és el senyal 2."}, {"id": "reiki", "titol": "Reiki", "text": "El mestre de reiki [[4|canalitza l'energia universal amb les mans]] i t'equilibra els xacres. [[1|Aquesta energia no la pot detectar cap aparell]]. [[2|Si no et funciona, és que no hi estàs obert]].", "si": [1, 2, 4], "pot": [5], "calaix": "pseudo", "explica": "Els tres senyals més clars alhora: paraules grosses (4), una cosa que per definició no es pot mesurar (1) i l'excusa (2)."}, {"id": "tretinoina", "titol": "Una crema per a les arrugues", "text": "Les cremes amb tretinoïna redueixen les arrugues fines. Ho diuen assajos en què un grup es posava la crema i un altre una crema igual sense tretinoïna, i uns dermatòlegs que no sabien quina era mesuraven la pell. També avisen dels efectes secundaris: irritació i més sensibilitat al sol.", "si": [], "pot": [], "calaix": "ciencia", "explica": "Grup de comparació, mesura a cegues i avisos dels efectes secundaris: ciència. Que sigui un producte de bellesa no vol dir que sigui pseudociència."}, {"id": "piramides", "titol": "L'energia de les piràmides", "text": "Si guardes un plàtan dins una piràmide de cartró orientada al nord, dura més dies fresc: [[4|l'energia piramidal concentra forces còsmiques]]. Qui ho defensa diu que [[2|als laboratoris no funciona perquè les parets de formigó bloquegen l'energia]], i que [[1|aquesta energia no es pot mesurar amb cap aparell]].", "si": [1, 2, 4], "pot": [], "calaix": "pseudo", "explica": "Quan una prova surt malament, s'inventa una excusa (les parets) en comptes d'acceptar el resultat: senyal 2."}]};
+const COLORS = {1:'--s1',2:'--s2',3:'--s3',4:'--s4',5:'--s5'};
+let mode = 5, ordre = [], idx = 0, sel = new Set(), calaix = null, corregit = false, stats = {};
+
+function llegeixNivell(){
+  try { return localStorage.getItem('portal-bio4t-nivell'); } catch(e){ return null; }
+}
+function senyalsActius(){ return mode === 5 ? [1,2,3,4,5] : D.senyalsC.slice(); }
+function numVisible(s){ return mode === 5 ? s : D.senyalsC.indexOf(s) + 1; }
+function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function barreja(a){ a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function textCas(c, revela){
+  const act = senyalsActius();
+  return esc(c.text).replace(/\[\[(\d)\|([^\]]+)\]\]/g, function(_, s, frase){
+    s = +s;
+    if(!revela || act.indexOf(s) < 0) return frase;
+    return '<mark data-s="'+s+'" data-n="'+numVisible(s)+'" style="--mk:color-mix(in srgb,var('+COLORS[s]+') 20%,#fff);--mc:var('+COLORS[s]+')">'+frase+'</mark>';
+  });
+}
+
+function pintaSenyals(){
+  const box = document.getElementById('senyals'); box.innerHTML = '';
+  senyalsActius().forEach(function(s){
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'sb'; b.dataset.s = s;
+    b.style.setProperty('--sc', 'var('+COLORS[s]+')');
+    b.setAttribute('aria-pressed', sel.has(s) ? 'true' : 'false');
+    b.innerHTML = '<span class="n">'+numVisible(s)+'</span><span><span class="nm">'+D.senyals[s].nom+'</span><span class="df">'+D.senyals[s].def+'</span><span class="fbtag"></span></span>';
+    b.addEventListener('click', function(){
+      if(corregit) return;
+      sel.has(s) ? sel.delete(s) : sel.add(s);
+      b.setAttribute('aria-pressed', sel.has(s) ? 'true' : 'false');
+    });
+    box.appendChild(b);
+  });
+}
+function pintaCalaixos(){
+  const box = document.getElementById('calaixos'); box.innerHTML = '';
+  Object.keys(D.calaixos).forEach(function(k){
+    const b = document.createElement('button');
+    b.type='button'; b.className='cb'; b.dataset.k=k;
+    b.setAttribute('aria-pressed', calaix===k ? 'true':'false');
+    b.innerHTML = D.calaixos[k].nom + '<small>'+D.calaixos[k].def+'</small>';
+    b.addEventListener('click', function(){
+      if(corregit) return;
+      calaix = k;
+      box.querySelectorAll('.cb').forEach(function(x){ x.setAttribute('aria-pressed', x.dataset.k===k ? 'true':'false'); });
+      document.getElementById('b-comprova').disabled = false;
+    });
+    box.appendChild(b);
+  });
+}
+
+function mostraCas(){
+  const c = D.casos[ordre[idx]];
+  sel = new Set(); calaix = null; corregit = false;
+  document.getElementById('joc').classList.remove('hidden','rev');
+  document.getElementById('final').classList.add('hidden');
+  document.getElementById('c-k').textContent = 'Cas ' + (idx+1);
+  document.getElementById('c-t').textContent = c.titol;
+  document.getElementById('c-x').innerHTML = textCas(c, false);
+  document.getElementById('fb').className = 'veredicte hidden';
+  document.getElementById('b-comprova').classList.remove('hidden');
+  document.getElementById('b-comprova').disabled = true;
+  document.getElementById('b-seg').classList.add('hidden');
+  pintaSenyals(); pintaCalaixos(); actualitzaBarra();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function comprova(){
+  const c = D.casos[ordre[idx]], act = senyalsActius();
+  const si = c.si.filter(function(s){ return act.indexOf(s) >= 0; });
+  const pot = c.pot.filter(function(s){ return act.indexOf(s) >= 0; });
+  corregit = true;
+  let falten = [], sobren = [];
+  document.querySelectorAll('#senyals .sb').forEach(function(b){
+    const s = +b.dataset.s, marcat = sel.has(s), tag = b.querySelector('.fbtag');
+    b.disabled = true;
+    if(si.indexOf(s) >= 0){
+      if(marcat){ b.classList.add('fb-ok'); tag.textContent = '✓ Hi és: ben vist'; }
+      else { b.classList.add('fb-falta'); tag.textContent = '✗ Hi era i no l\'has marcat'; falten.push(s); }
+    } else if(pot.indexOf(s) >= 0){
+      b.classList.add('fb-pot'); tag.textContent = marcat ? '≈ Defensable (no compta)' : '≈ Defensable: també es podria marcar';
+    } else if(marcat){
+      b.classList.add('fb-sobra'); tag.textContent = '✗ Aquest no hi és'; sobren.push(s);
+    }
+  });
+  document.querySelectorAll('#calaixos .cb').forEach(function(b){
+    b.disabled = true;
+    if(b.dataset.k === c.calaix) b.classList.add(calaix === c.calaix ? 'fb-ok' : 'fb-sol');
+    else if(b.dataset.k === calaix) b.classList.add('fb-ko');
+  });
+  document.getElementById('c-x').innerHTML = textCas(c, true);
+  document.getElementById('joc').classList.add('rev');
+
+  falten.concat(sobren).forEach(function(s){ stats[s] = (stats[s]||0) + 1; });
+  const okS = !falten.length && !sobren.length, okC = calaix === c.calaix;
+  const fb = document.getElementById('fb');
+  let t, cls;
+  if(okS && okC){ t = '✅ Encert sencer!'; cls = 'ok'; encerts++; }
+  else if(okS || okC){ t = okC ? '🟡 Calaix encertat, però revisa els senyals' : '🟡 Senyals encertats, però el calaix no'; cls = 'mig'; }
+  else { t = si.length ? '❌ Aquest et costa: llegeix les frases pintades' : '❌ Aquest et costa: aquí no s\'encenia cap senyal'; cls = 'ko'; }
+  let extra = '';
+  fb.innerHTML = '<b class="t">'+t+'</b>'+esc(c.explica)+extra;
+  fb.className = 'veredicte ' + cls;
+  document.getElementById('b-comprova').classList.add('hidden');
+  const seg = document.getElementById('b-seg');
+  seg.textContent = idx === ordre.length-1 ? 'Veure el resultat →' : 'Següent cas →';
+  seg.classList.remove('hidden');
+  fets++; actualitzaBarra();
+}
+
+let encerts = 0, fets = 0;
+function pitjor(){
+  let m = null;
+  Object.keys(stats).forEach(function(s){ if(senyalsActius().indexOf(+s) < 0) return; if(m===null || stats[s] > stats[m]) m = s; });
+  return m === null ? null : +m;
+}
+function actualitzaBarra(){
+  document.getElementById('k-i').textContent = Math.min(idx+1, ordre.length);
+  document.getElementById('k-n').textContent = ordre.length;
+  document.getElementById('k-ok').textContent = encerts + ' / ' + fets;
+  document.getElementById('k-p').style.width = (100*fets/ordre.length) + '%';
+  const p = pitjor();
+  document.getElementById('k-pitjor').textContent = p ? numVisible(p) + ' · ' + D.senyals[p].nom : '—';
+}
+function seguent(){
+  if(idx < ordre.length-1){ idx++; mostraCas(); return; }
+  document.getElementById('joc').classList.add('hidden');
+  document.getElementById('final').classList.remove('hidden');
+  document.getElementById('f-n').textContent = encerts + ' / ' + fets;
+  document.getElementById('f-t').textContent = 'encerts sencers. Apunta-ho a la fitxa (apartat 1).';
+  const p = pitjor();
+  document.getElementById('f-p').innerHTML = p ? 'El senyal que més has fallat és el <b>' + numVisible(p) + ' · ' + D.senyals[p].nom + '</b>: ' + D.senyals[p].def
+                                               : 'No has fallat cap senyal. Molt bé!';
+}
+function comenca(m){
+  mode = m;
+  document.getElementById('m5').setAttribute('aria-pressed', m===5 ? 'true':'false');
+  document.getElementById('m3').setAttribute('aria-pressed', m===3 ? 'true':'false');
+  ordre = barreja(D.casos.map(function(_, i){ return i; }));
+  idx = 0; encerts = 0; fets = 0; stats = {};
+  mostraCas();
+}
+document.getElementById('b-comprova').addEventListener('click', comprova);
+document.getElementById('b-seg').addEventListener('click', seguent);
+document.getElementById('b-reinicia').addEventListener('click', function(){ comenca(mode); });
+document.getElementById('m5').addEventListener('click', function(){ if(mode!==5 || fets) comenca(5); });
+document.getElementById('m3').addEventListener('click', function(){ if(mode!==3 || fets) comenca(3); });
+comenca(llegeixNivell() === 'C' ? 3 : 5);
+</script>
+</body>
+</html>

@@ -160,6 +160,7 @@ export const sa7s4 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa7-s4-exit-ticket.html",
   exitTicketType: "web",
+  exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketWhere: "ja el respons a la fitxa (apartat 5 i torn 5 del debat)",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Escriu una afirmació que al setembre t'hauries cregut sense comprovar-la i que ara no et creuries sense comprovar-la. Digues què comprovaries i com.", hint: "Pensa en un titular, un anunci o una cosa que et van dir." },

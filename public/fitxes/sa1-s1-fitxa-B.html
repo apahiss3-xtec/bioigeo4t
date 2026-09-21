@@ -112,6 +112,9 @@ span[contenteditable]{display:inline-block}
 .scaffold-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
 .epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:9px 12px;margin:8px 0}
 .epist-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:9px 12px;margin:8px 0}
+.challenge-title{font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
+.challenge-text{font-size:11.5px;line-height:1.5;color:var(--ink-2)}
 .epist-text{font-size:11.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
 .data-table{width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px}
 .data-table th{background:var(--teal-ink);color:#fff;padding:6px 9px;text-align:left;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase}
@@ -170,6 +173,34 @@ p>span[contenteditable]:not([class]){display:inline}
   .nivell-badge-small { background:transparent !important; border-color:var(--rule-dark) !important; }
 }
 
+
+/* ── SA1 v3 (build_sa1.py, 21/09/2026) ── */
+.det-table{margin:4px 0 8px}
+.det-table td{padding:2px 8px;font-size:11.5px;line-height:1.3}
+.det-table th small{font-weight:400;opacity:.85;text-transform:none;letter-spacing:0}
+.anunci-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0 8px}
+.anunci{border:1.5px solid var(--teal-light);border-radius:7px;padding:5px 8px;font-size:11px;line-height:1.35;background:#fff}
+.anunci .al{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:900;margin-right:5px}
+.anunci b{font-weight:600}
+.expert-table td.label-cell{width:150px;font-size:11.5px}
+.mini-cal{font-size:10px;font-weight:700;letter-spacing:.02em;text-align:center;white-space:nowrap}
+.row-tag{font-size:9px;color:var(--muted);font-weight:400;display:block}
+.oa-list{display:grid;grid-template-columns:1fr 1fr;column-gap:16px}
+.oa-list li{font-size:11.5px}
+.section{margin-top:9px}
+.data-table.cmp td{padding:3px 8px}
+.data-table.cmp .fill-cell{min-height:22px}
+.mc-strip{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:7px 11px}
+.mc-head{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mc-head>span:first-child{font-weight:400;text-transform:none;letter-spacing:0;font-size:11px}
+.mc-stars{margin-left:auto;font-weight:700;text-transform:none;letter-spacing:0;font-size:11px;color:var(--ink-2)}
+.mc-stars .star{font-size:15px}
+.mc-items{display:grid;grid-template-columns:1fr 1fr;gap:3px 14px;margin-top:5px;font-size:11.5px}
+.gar-chips{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 6px}
+.gar-chips span{font-size:11px;border-radius:9999px;padding:2px 9px;color:#fff;font-weight:700}
+.det-mini{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:11.5px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:6px 10px;margin:4px 0 6px}
+.det-mini b{color:#a24e24}
+
 </style>
 </head>
 <body>
@@ -186,11 +217,11 @@ p>span[contenteditable]:not([class]){display:inline}
 
   <div class="header-band deletable">
     <div class="del-btn" onclick="deleteEl(this)">✕</div>
-    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🔬</div></div>
+    <div class="header-emoji-col"><div class="header-emoji-box" contenteditable="true">🔍</div></div>
     <div class="header-main">
-      <div class="header-sa" contenteditable="true">SA1 · Ciència i Pseudociència · Sessió 1 de 4</div>
+      <div class="header-sa" contenteditable="true">SA1 · Ciència i Pseudociència · Sessió 1 de 3</div>
       <div class="header-title" contenteditable="true">Com decideixes què és cert?</div>
-      <div class="header-subtitle" contenteditable="true">Escala de certeses, garanties i mètode científic</div>
+      <div class="header-subtitle" contenteditable="true">Escala de certeses, garanties i el detector de pseudociència</div>
     </div>
     <div class="header-right">
       <div class="logo-box"><img src="../images/logo_bio_geo_temple.png" style="height:60px;display:block" onerror="this.style.display='none'"></div>
@@ -200,7 +231,7 @@ p>span[contenteditable]:not([class]){display:inline}
 
   <div class="nivell-strip deletable">
     <div class="del-btn" onclick="deleteEl(this)">✕</div>
-    <span class="nivell-label" contenteditable="true">Treball a l'aula i autònom</span>
+    <span class="nivell-label" contenteditable="true">Treball a l'aula en parella i en grup</span>
     <span class="temps-badge" contenteditable="true">⏱️ 2h total</span>
     <div class="nom-field">
       Nom:&nbsp;<span class="input-span" contenteditable="true"></span>
@@ -213,215 +244,63 @@ p>span[contenteditable]:not([class]){display:inline}
     <div class="del-btn" onclick="deleteEl(this)">✕</div>
     <div class="oa-title">🎯 Objectius d'aprenentatge d'avui</div>
     <ul class="oa-list">
-      <li contenteditable="true">Ordeno afirmacions de <strong>més certa a menys certa</strong> i explico per què.</li>
-      <li contenteditable="true">Identifico els <strong>5 tipus de garanties</strong> (dades, models, hàbits, autoritat, identitat/valors).</li>
-      <li contenteditable="true">Compto quines garanties faig servir més i dibuixo el meu <strong>perfil epistèmic</strong>.</li>
-      <li contenteditable="true">Distingeixo <strong>ciència de pseudociència</strong> segons si es fa servir el mètode científic.</li>
+      <li contenteditable="true">Ordeno afirmacions de més certa a menys certa i justifico les que <strong>més dubto</strong>.</li>
+      <li contenteditable="true">Reconec els <strong>5 tipus de garanties</strong> en arguments senzills.</li>
+      <li contenteditable="true">Conec els <strong>5 senyals</strong> del detector de pseudociència.</li>
+      <li contenteditable="true">Passo anuncis curts pel detector i dic <strong>quins senyals s'encenen</strong>.</li>
     </ul>
   </div>
 
   <div class="content">
 
-    <!-- Secció 0 -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--muted)">0</div>
-        <div><div class="stitle">Idees prèvies <span class="temps">⏱️ 10 min</span></div>
+        <div><div class="stitle" contenteditable="true">Idees prèvies <span class="temps">⏱️ 5 min</span></div>
         <div class="sdesc" contenteditable="true">Sigues sincer/a: no hi ha respostes que restin</div></div>
       </div>
       <div class="divider"></div>
-      <div class="previ-box">
-        <p>✏️ <span contenteditable="true"><strong>1.</strong> Escriu una cosa de la qual estiguis MOLT segur/a i una de la qual estiguis MOLT poc segur/a. Què fa que una sigui més certa que l'altra?</span></p>
-        <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
-          <div><div class="scaffold-title">Ajuda per començar</div>
-          <div class="scaffold-text" contenteditable="true">«Estic molt segur/a que… i poc segur/a que… La diferència és…»</div></div></div>
-        <div class="wline tall" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>2.</strong> Quan vols convèncer algú que tens raó, en què t'acostumes a basar?</span></p>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <p style="margin-top:10px">✏️ <span contenteditable="true"><strong>3.</strong> Què vol dir per a tu que una cosa sigui «científica»?</span></p>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-      </div>
+      <div class="previ-box"><p>✏️ <span contenteditable="true">Escriu una cosa de la qual estiguis <strong>molt segur/a</strong>. Per què n'estàs tan segur/a?</span></p><div class="wline tall" contenteditable="true"></div></div>
     </div>
-
-    <!-- Secció 1: escala de certeses -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--aqua)">1</div>
-        <div><div class="stitle" contenteditable="true">Escala de certeses <span class="temps">⏱️ 40 min</span></div>
-        <div class="sdesc" contenteditable="true">Ordena de més certa (10) a menys certa (1)</div></div>
+        <div><div class="stitle" contenteditable="true">Escala de certeses <span class="temps">⏱️ 30 min</span></div>
+        <div class="sdesc" contenteditable="true">8 frases de la vida de cada dia</div></div>
       </div>
       <div class="divider"></div>
-      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Agafa el teu <strong>joc de retallables</strong> (full a part), retalla les 10 afirmacions i <strong>enganxa-les</strong> a la columna «Afirmació», de <strong>més certa (10)</strong> a <strong>menys certa (1)</strong>. Escriu a cada fila per què li dones aquesta certesa.</p>
-
-      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">✂️</div>
-        <div><div class="scaffold-title">Retallables</div>
-        <div class="scaffold-text" contenteditable="true">Les tires són al full <em>«Retallables — Escala de certeses»</em>, <strong>bloc B</strong> (1 joc per alumne). Tenen l'amplada d'aquesta columna per encaixar-hi.</div></div></div>
-
-      <table class="data-table scale-table">
-        <thead><tr><th style="width:36px">Cert.</th><th>Afirmació</th><th>Penso que és molt/poc certa perquè…</th></tr></thead>
-        <tbody>
-          <tr><td class="scale-num">10</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">9</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">8</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">7</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">6</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">5</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">4</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">3</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">2</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="scale-num">1</td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-        </tbody>
-      </table>
-      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
-        <div><div class="scaffold-title">Pista per justificar</div>
-        <div class="scaffold-text" contenteditable="true">Fes servir paraules com: <em>segur, probable, depèn de, no hi ha proves, tothom ho diu, és impossible</em>. Fixa't sobretot en <strong>si es pot comprovar</strong>.</div></div></div>
-      <p style="font-size:12px;margin-top:6px" contenteditable="true">🗣️ <strong>Consens de grup:</strong> discutiu fins a acordar un ordre comú. NO canviïs el teu full: marca amb <strong>fletxes vermelles</strong> els canvis que estàs disposat/da a acceptar.</p>
+      <p style="font-size:12px;margin:6px 0 4px" contenteditable="true">Amb el teu company/a, agafeu el <strong>joc de 8 tires</strong> (retallables, un per parella) i <strong>ordeneu-les sobre la taula</strong> de més certa a menys certa (<strong>no s'enganxen</strong>). Per a cada tira: <strong>algú ho ha comprovat? com?</strong> Aquí n'escriviu tres: 🗣️ Després, en <strong>grup de 4</strong>, compareu els ordres i defenseu les diferències.</p><table class="data-table cmp"><thead><tr><th>Tira</th><th>Justificació</th></tr></thead><tbody><tr><td class="label-cell" style="width:190px">La més certa<div class="fill-cell" style="min-height:22px" contenteditable="true"></div></td><td><span class="row-tag">Per què? Com ho sabem?</span><div class="fill-cell" style="min-height:30px" contenteditable="true"></div></td></tr><tr><td class="label-cell" style="width:190px">La menys certa<div class="fill-cell" style="min-height:22px" contenteditable="true"></div></td><td><span class="row-tag">Per què?</span><div class="fill-cell" style="min-height:30px" contenteditable="true"></div></td></tr><tr><td class="label-cell" style="width:190px">La que més hem dubtat<div class="fill-cell" style="min-height:22px" contenteditable="true"></div></td><td><span class="row-tag">Què ens faltaria saber per decidir-ho?</span><div class="fill-cell" style="min-height:30px" contenteditable="true"></div></td></tr></tbody></table>
     </div>
-
-    <!-- Secció 2: garanties -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
-        <div class="snum" style="background:var(--teal)">2</div>
-        <div><div class="stitle" contenteditable="true">Tipus d'arguments: les garanties <span class="temps">⏱️ 20 min</span></div>
-        <div class="sdesc" contenteditable="true">Amb què justifiquem que una cosa és certa?</div></div>
+        <div class="snum" style="background:var(--orange)">2</div>
+        <div><div class="stitle" contenteditable="true">Les garanties: en què et bases? <span class="temps">⏱️ 20 min</span></div>
+        <div class="sdesc" contenteditable="true">Dades · models · hàbits · autoritat · identitat i valors</div></div>
       </div>
       <div class="divider"></div>
-      <figure class="deletable" style="margin:6px 0 10px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <img class="fig" src="../images/sa1-s1-garanties.svg" alt="Els 5 tipus de garanties" style="max-height:260px" onerror="this.style.display='none'">
-      </figure>
-      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Algú afirma que <strong>plourà</strong> i dona diferents raons. Classifica cada argument segons el tipus de garantia. <em>Compte: hi pot haver més d'un argument del mateix tipus.</em></p>
-      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
-        <div><div class="scaffold-title">Com classificar</div>
-        <div class="scaffold-text" contenteditable="true">Números/mesures → <strong>DADES</strong> · com funciona un sistema → <strong>MODELS</strong> · «sempre ha estat així» → <strong>HÀBITS</strong> · «ho diu X» → <strong>AUTORITAT</strong> · el que vols o creus → <strong>IDENTITAT i VALORS</strong>.</div></div></div>
-      <table class="data-table">
-        <thead><tr><th>Argument («Plourà perquè…»)</th><th style="width:200px">Tipus de garantia</th></tr></thead>
-        <tbody>
-          <tr><td class="label-cell" contenteditable="true">…el baròmetre ha baixat 8 hPa en tres hores</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell" contenteditable="true">…l'aire humit puja, es refreda i l'aigua que porta es condensa</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell" contenteditable="true">…sempre plou el dia de la festa major</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell" contenteditable="true">…no tinc gens de ganes que es faci l'excursió de demà</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell" contenteditable="true">…ho ha anunciat el servei meteorològic al butlletí d'avui</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell" contenteditable="true">…la humitat de l'aire és del 95%</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-        </tbody>
-      </table>
+      <div class="gar-chips"><span style="background:#2A6F7F">DADES · números</span><span style="background:#38a3a5">MODELS · com funciona</span><span style="background:#c8960a">HÀBITS · «sempre»</span><span style="background:#c96f3e">AUTORITAT · «ho diu X»</span><span style="background:#8a5a9e">IDENTITAT i VALORS · el que vull creure</span></div><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">Algú diu que <strong>demà plourà</strong> i dona sis raons. Escriu quin <strong>tipus de garantia</strong> fa servir cadascuna.</p><table class="data-table cmp"><thead><tr><th>Argument («Plourà perquè…»)</th><th style="width:170px">Tipus de garantia</th></tr></thead><tbody><tr><td class="label-cell" style="font-size:11.5px">…el baròmetre ha baixat 8 hPa en tres hores.</td><td><div class="fill-cell" contenteditable="true"></div></td></tr><tr><td class="label-cell" style="font-size:11.5px">…l'aire humit puja, es refreda i l'aigua que porta es condensa.</td><td><div class="fill-cell" contenteditable="true"></div></td></tr><tr><td class="label-cell" style="font-size:11.5px">…sempre plou el dia de la festa major.</td><td><div class="fill-cell" contenteditable="true"></div></td></tr><tr><td class="label-cell" style="font-size:11.5px">…ho ha anunciat el servei meteorològic al butlletí d'avui.</td><td><div class="fill-cell" contenteditable="true"></div></td></tr><tr><td class="label-cell" style="font-size:11.5px">…no tinc gens de ganes que es faci l'excursió de demà.</td><td><div class="fill-cell" contenteditable="true"></div></td></tr><tr><td class="label-cell" style="font-size:11.5px">…la humitat de l'aire és del 95 %.</td><td><div class="fill-cell" contenteditable="true"></div></td></tr></tbody></table><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">✏️ A l'escala, la garantia que he fet servir <strong>més</strong> és: <span class="input-span" contenteditable="true" style="min-width:150px"></span>. 🧠 <em>Compte: les <strong>dades</strong> i els <strong>models</strong> donen més certesa que l'autoritat, els hàbits o el que vols creure.</em></p>
     </div>
-
-    <!-- Secció 3: perfil epistèmic -->
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
-        <div class="snum" style="background:var(--purple)">3</div>
-        <div><div class="stitle" contenteditable="true">El meu perfil epistèmic <span class="temps">⏱️ 20 min</span></div>
-        <div class="sdesc" contenteditable="true">Conèixer com penso per no deixar-me enganyar</div></div>
+        <div class="snum" style="background:var(--teal)">3</div>
+        <div><div class="stitle" contenteditable="true">El detector de pseudociència <span class="temps">⏱️ 35 min</span></div>
+        <div class="sdesc" contenteditable="true">Els 5 senyals que et faran servei tot el curs</div></div>
       </div>
       <div class="divider"></div>
-      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Posa una nota de certesa (1–10) a cada afirmació i marca en quina garantia et bases. Després compta quantes vegades has fet servir cada tipus.</p>
-      <table class="data-table">
-        <thead><tr><th>Afirmació</th><th style="width:44px">Cert.</th><th style="width:56px">Dades</th><th style="width:56px">Models</th><th style="width:56px">Hàbits</th><th style="width:64px">Autor.</th><th style="width:72px">Ident./Val.</th></tr></thead>
-        <tbody>
-          <tr><td class="label-cell" contenteditable="true">Les vacunes funcionen</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Els horòscops prediuen el futur</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Els productes homeopàtics funcionen</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Hi ha números que donen sort</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">La radiació del Wi-Fi és segura</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-          <tr><td class="label-cell" contenteditable="true">Les plantes medicinals funcionen</td><td><div class="fill-cell" contenteditable="true"></div></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:12px;margin-top:4px" contenteditable="true">✏️ Quina garantia has fet servir més? I menys? Què vol dir això sobre com penses? Compara-ho amb un company.</p>
+      <table class="data-table det-table"><thead><tr><th colspan="3">🕵️ El detector de pseudociència · <small style="display:inline">amb un senyal ja pots sospitar; com més senyals, més clar</small></th></tr></thead><tbody><tr><td style="width:26px;text-align:center;font-weight:900;color:#a24e24;font-size:14px">1</td><td style="width:172px"><strong>No es pot comprovar</strong></td><td style="font-size:11px;color:var(--ink-2)">Promesa vaga o impossible de mesurar: cap experiment la pot posar a prova.</td></tr><tr><td style="width:26px;text-align:center;font-weight:900;color:#a24e24;font-size:14px">2</td><td style="width:172px"><strong>No admet crítica</strong></td><td style="font-size:11px;color:var(--ink-2)">Té una excusa per a cada resultat en contra: no canvia mai.</td></tr><tr><td style="width:26px;text-align:center;font-weight:900;color:#a24e24;font-size:14px">3</td><td style="width:172px"><strong>Es basa en autoritat</strong></td><td style="font-size:11px;color:var(--ink-2)">«Ho diu un expert», un famós o molts testimonis, en lloc de dades.</td></tr><tr><td style="width:26px;text-align:center;font-weight:900;color:#a24e24;font-size:14px">4</td><td style="width:172px"><strong>Sona «científica»</strong></td><td style="font-size:11px;color:var(--ink-2)">«Quàntic», «energia», «toxines», «natural»… paraules que no expliquen res.</td></tr><tr><td style="width:26px;text-align:center;font-weight:900;color:#a24e24;font-size:14px">5</td><td style="width:172px"><strong>Apel·la al que vols creure</strong></td><td style="font-size:11px;color:var(--ink-2)">S'aprofita del que desitges o et fa por.</td></tr></tbody></table><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">Llegeix els quatre anuncis i marca <strong>quins senyals s'encenen</strong> a cadascun. Compte: <strong>un dels quatre no n'encén cap</strong>.</p><div class="anunci-grid"><div class="anunci"><span class="al">A</span><strong>Plantilles PolarFit.</strong> «Plantilles magnètiques que activen la circulació i cremen greix mentre camines. Les fa servir el campió de marató Marc R. Milers de clients satisfets!»</div><div class="anunci"><span class="al">B</span><strong>Aigua de cristalls.</strong> «Aigua informada amb la vibració dels cristalls: reprograma les teves cèl·lules. No funciona amb gent negativa: si no notes res, és que tens bloquejos.»</div><div class="anunci"><span class="al">C</span><strong>Un medicament per a la migranya.</strong> «2.000 voluntaris: la meitat pren el medicament i l'altra meitat una pastilla igual però sense res, i ningú no sap quina pren. Al grup del medicament, un 40 % menys de migranyes. Altres equips ho estan repetint.»</div><div class="anunci"><span class="al">D</span><strong>L'horòscop de la setmana.</strong> «Aquesta setmana l'energia de Venus et porta l'amor que busques. L'astrologia sempre encerta: la ciència oficial no la pot entendre.»</div></div><table class="data-table cmp"><thead><tr><th style="width:90px">Cas</th><th style="width:30px;text-align:center">1</th><th style="width:30px;text-align:center">2</th><th style="width:30px;text-align:center">3</th><th style="width:30px;text-align:center">4</th><th style="width:30px;text-align:center">5</th></tr></thead><tbody><tr><td class="label-cell" style="font-size:11.5px">Anunci A</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr><tr><td class="label-cell" style="font-size:11.5px">Anunci B</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr><tr><td class="label-cell" style="font-size:11.5px">Anunci C</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr><tr><td class="label-cell" style="font-size:11.5px">Anunci D</td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td><td style="text-align:center"><span class="chk"></span></td></tr></tbody></table><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">✏️ Quin anunci <strong>no encén cap senyal</strong>? Què té que els altres no tenen?</p><div class="wline" contenteditable="true"></div>
       <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:22px">🧠</div>
-        <div><div class="epist-title">Cognició epistèmica</div>
-        <div class="epist-text" contenteditable="true"><strong>Epistèmic</strong> vol dir «que té a veure amb com sabem el que sabem». I un <strong>biaix</strong> és una tendència a creure el que ens convé, encara que les proves diguin una altra cosa.<br>No totes les garanties valen igual per decidir què és cert: basar-se en <strong>dades i models</strong> dona més seguretat que fer-ho només per <strong>autoritat, hàbits o identitat</strong>. Fiar-se sempre d'un sol tipus és perillós.</div></div></div>
     </div>
-
-    <!-- Secció 4: ciència vs pseudociència -->
-    <div class="section deletable">
+    <div class="section deletable mc-strip">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
-      <div class="section-header">
-        <div class="snum" style="background:var(--orange)">4</div>
-        <div><div class="stitle" contenteditable="true">Ciència o pseudociència? <span class="temps">⏱️ 20 min</span></div>
-        <div class="sdesc" contenteditable="true">Té mètode? Es comprova? Admet crítica?</div></div>
-      </div>
-      <div class="divider"></div>
-      <figure class="deletable" style="margin:6px 0 10px;position:relative"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <img class="fig" src="../images/sa1-s1-ciencia-pseudo-fitxa.svg" alt="Ciència vs pseudociència" style="max-height:260px" onerror="this.style.display='none'">
-      </figure>
-      <p style="font-size:12px;margin-bottom:6px" contenteditable="true">Llegeix cada descripció i escriu si és <strong>ciència</strong> o <strong>pseudociència</strong>.</p>
-      <table class="data-table">
-        <thead><tr><th style="width:120px">Nom</th><th>Descripció</th><th style="width:130px">Ciència / Pseudo.</th></tr></thead>
-        <tbody>
-          <tr><td class="label-cell">Astrologia</td><td style="font-size:11px" contenteditable="true">Creu que la posició dels estels influeix en el caràcter i el futur</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell">Biologia</td><td style="font-size:11px" contenteditable="true">Estudia els éssers vius: com funcionen, es relacionen i evolucionen</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell">Homeopatia</td><td style="font-size:11px" contenteditable="true">Tractaments amb gotes molt diluïdes que asseguren curar malalties</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell">Geologia</td><td style="font-size:11px" contenteditable="true">Estudia la Terra: roques, volcans, terratrèmols i la seva història</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell">Ufologia</td><td style="font-size:11px" contenteditable="true">Estudi d'objectes voladors no identificats i de visitants extraterrestres</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-          <tr><td class="label-cell">Reiki</td><td style="font-size:11px" contenteditable="true">Assegura curar canalitzant energia amb les mans</td><td><div class="fill-cell" contenteditable="true"></div></td></tr>
-        </tbody>
-      </table>
-      <p style="font-size:12px;margin-top:4px" contenteditable="true">✏️ Tria UNA pseudociència i explica, amb el vocabulari d'avui, per què no la considerem científica.</p>
-      <div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div style="font-size:20px">🪜</div>
-        <div><div class="scaffold-title">Ajuda per redactar</div>
-        <div class="scaffold-text" contenteditable="true">«___ no és ciència perquè no es comprova amb ___, no admet ___ i es basa en ___ (garantia: ___).»</div></div></div>
-      <div class="wline tall" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
+      <div class="mc-head">🧠 Metacognició · 3 min · <span>marca el que has après avui</span>
+        <span class="mc-stars">⭐ la sessió: <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></span></div>
+      <div class="mc-items"><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé ordenar afirmacions per certesa i dir per què.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Reconec els 5 tipus de garanties.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Conec els 5 senyals del detector.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé dir quins senyals s'encenen en un anunci.</span></div>
+      <div style="font-size:11.5px;margin-top:6px;padding-top:5px;border-top:1px dashed var(--teal-light)"><b style="color:#a24e24">📚 Per a la Sessió 3:</b> <span contenteditable="true">🕵️ <strong>Caça un cas:</strong> un anunci, un post o un consell de salut que <strong>prometi una cosa concreta</strong> sobre el cos, la salut o la natura («Promet que…»). Fes-ne una foto. El faràs servir a la <strong>Sessió 3</strong>.</span></div>
     </div>
-
-    <!-- Metacognició -->
-    <div class="section deletable" style="margin-top:14px">
-      <div class="del-btn" onclick="deleteEl(this)">✕</div>
-      <p style="font-size:10px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:6px">🧠 Metacognició — 3 min</p>
-      <div class="meta-oa-box deletable" style="margin-bottom:8px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
-        <div class="meta-oa-title">🎯 Torna als objectius — marca el que has après avui:</div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé ordenar afirmacions per grau de certesa i explicar-ho.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Reconec els 5 tipus de garanties.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé llegir el meu perfil epistèmic.</div></div>
-        <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Distingeixo ciència de pseudociència amb criteris.</div></div>
-      </div>
-      <div class="meta-grid">
-        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">❓</span><div class="meta-label">Encara em pregunto…</div><div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div>
-        <div class="wline" contenteditable="true"></div></div>
-        <div class="meta-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span class="meta-icon">⭐</span><div class="meta-label">Puntuació de la sessió</div><div class="stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div><div style="font-size:9.5px;color:var(--muted);margin-top:4px">Encercla les estrelles</div></div>
-      </div>
-    </div>
-
-    <!-- Tasca casa -->
-    <div class="tasca-box deletable">
-      <div class="del-btn" onclick="deleteEl(this)">✕</div>
-      <div class="tasca-title">📚 Feina per a casa — per a la Sessió 2</div>
-      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">1</div>
-        <div contenteditable="true"><strong>🕵️ Caça una pseudociència:</strong> busca UN producte, notícia o anunci que prometi alguna cosa «científica» sospitosa (polsera magnètica, detox, horòscop, aliment «que cura»…). Retalla'l o fes-ne una foto.</div></div>
-      <div class="tasca-item deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="tasca-num">2</div>
-        <div contenteditable="true"><strong>🗣️ Prepara la defensa oral (1 minut):</strong> per què creus que és pseudociència i amb quines garanties intenta convèncer? Ho defensaràs a l'aula al judici de casos de la S3.</div></div>
-    </div>
-
     <div class="footer">
       <div class="footer-l">SA1 · Ciència i Pseudociència · Sessió 1 · Versió B · IE Temple · Biologia i Geologia 4t ESO</div>
       <div class="footer-r">CC BY-NC-SA</div>
@@ -438,7 +317,7 @@ p>span[contenteditable]:not([class]){display:inline}
    FLOW = llista ordenada dels blocs de primer nivell (la font logica).
    Capcalera corrent a partir de la pagina 2 + peu comu amb llicencia.
    ════════════════════════════════════════════════════════════ */
-const SA_NOM = "Ciència i Pseudociència", SESSIO = "Sessió 1 de 4";
+const SA_NOM = "Ciència i Pseudociència", SESSIO = "Sessió 1 de 3";
 const SHEET_H = 1123, FOOT_H = 30, BODY_MAX = SHEET_H - FOOT_H - 8;
 let FLOW = [];
 

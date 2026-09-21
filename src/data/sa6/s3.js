@@ -158,6 +158,7 @@ export const sa6s3 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa6-s3-exit-ticket.html",
   exitTicketType: "web",
+  exitTicketCriteri: "6.5",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "En un tall hi ha tres capes horitzontals (A a baix, B al mig, C a dalt) i una falla que talla A i B però NO arriba a C. Quin és l'ordre correcte?", options: ["Primer la falla, després A, B i C", "Primer A i B, després la falla, i finalment C", "Primer A, B i C, i la falla al final de tot", "No es pot saber amb els principis geològics"], correct: 1 },
     { id: "q2", type: "open", text: "Trobes la mateixa espècie de fòssil de rèptil terrestre en una capa del Brasil i en una de Namíbia, a l'altre costat de l'Atlàntic. Quines dues coses en pots deduir? Digues quina és la deducció sobre l'EDAT i quina sobre la POSICIÓ dels continents.", hint: "Una de les dues deduccions respon QUAN i l'altra respon ON. Per a la primera, pensa per a què serveix un fòssil guia; per a la segona, pensa què pot fer i què no pot fer un rèptil que viu a terra." },

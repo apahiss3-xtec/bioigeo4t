@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA1 · S3 · Casos de reserva</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2A6F7F;--teal-ink:#1c4a55;--teal-light:#9ccad2;--teal-tint:#eaf4f6;--ink:#14201f;--ink-2:#334;--muted:#6b7a7e;--rule:#dce9eb;--rule-dark:#b6ccd0;
+  --orange:#c96f3e;--orange-tint:#f6ece8;--amber-tint:#fdf7e2;--amber-ink:#7a5800}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);padding:52px 20px 40px;font-size:14px;line-height:1.5}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);height:44px;display:flex;align-items:center;gap:12px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.75);flex:1}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;background:var(--teal);color:#fff}
+.full{width:794px;min-height:1123px;margin:0 auto 26px;background:#fff;box-shadow:0 2px 30px rgba(0,0,0,.22);padding:30px 44px 40px;position:relative;display:flex;flex-direction:column}
+.band{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c4a55 0%,#2f7f8a 100%);color:#fff;margin:-30px -44px 14px;padding:14px 44px}
+.band .em{font-size:40px;line-height:1}
+.band .k{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.band h1{font-size:25px;font-weight:900;line-height:1.08}
+.band .num{margin-left:auto;font-size:44px;font-weight:900;opacity:.35}
+.no-esc{font-family:'Inter',sans-serif;font-size:9.5px;color:var(--muted);text-align:right;margin:-8px 0 10px}
+.en3{background:var(--amber-tint);border:1.5px solid #e0c98a;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:16px;line-height:1.5}
+.en3 .t{font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+h2{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink);border-bottom:1.5px solid var(--teal-light);padding-bottom:2px;margin:12px 0 6px}
+.cita{display:flex;gap:9px;align-items:flex-start;border-left:4px solid var(--orange);background:var(--orange-tint);border-radius:0 8px 8px 0;padding:6px 11px;margin:5px 0;font-size:14.5px}
+.cita .fn{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.comp{font-size:14.5px;line-height:1.55}
+.preg{background:var(--teal-tint);border-radius:10px;padding:9px 14px;margin-top:12px}
+.preg ol{margin-left:18px;font-size:14px}
+.det{font-family:'Inter',sans-serif;font-size:9.5px;color:var(--teal-ink);margin-top:10px;border-top:1px dashed var(--rule-dark);padding-top:6px}
+.font{font-family:'Inter',sans-serif;font-size:9px;color:var(--muted);margin-top:auto;padding-top:10px}
+.warn{background:#fdecec;border:1.5px solid #d98b8b;border-radius:8px;padding:6px 10px;font-weight:700;margin-top:8px}
+.clau-t{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.clau-t th{background:var(--teal-ink);color:#fff;text-align:left;padding:5px 7px;font-size:10px;letter-spacing:.05em;text-transform:uppercase}
+.clau-t td{border-bottom:1px solid var(--rule-dark);padding:6px 7px;vertical-align:top}
+.res{border:1.5px dashed var(--teal);border-radius:9px;padding:9px 12px;margin:7px 0;font-size:13.5px;break-inside:avoid}
+.res h3{font-size:15px;color:var(--teal-ink)}
+@media print{
+  @page{size:A4;margin:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar{display:none!important}
+  .full{box-shadow:none;margin:0;width:210mm;height:297mm;min-height:0;overflow:hidden;page-break-after:always;break-after:page}
+  .full:last-child{page-break-after:auto;break-after:auto}
+}
+</style>
+</head>
+<body>
+<div id="toolbar"><span class="tb-tip">🗂️ Casos de reserva · <b>1 full per a la taula del professor</b></span><button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button></div>
+
+<div class="full">
+  <div class="band"><span class="em">🗂️</span><div><div class="k">SA1 · Sessió 3</div><h1>Casos de reserva</h1></div></div>
+  <div class="no-esc">Per a qui no ha portat cas o l'ha portat sense una promesa concreta · <b>no s'hi escriu</b></div>
+  <div class="comp" style="font-size:13px;margin-bottom:6px">Tria'n un i fes amb ell l'apartat 2 de la fitxa, igual que si l'haguessis caçat tu. Copia la promesa a l'apartat 0.</div>
+  <div class="res"><h3>📿 R1 · Collarets d'ambre per a les dents dels nadons</h3><p>Es venen collarets de boletes d'ambre perquè els nadons els portin quan els surten les dents. Diuen que la calor de la pell allibera àcid succínic, que és un «analgèsic natural». Molts pares diuen que els nens ploren menys.</p><p style="margin-top:4px"><b>Què s'ha comprovat:</b> No hi ha cap estudi que mostri que l'ambre alliberi res a la temperatura de la pell ni que calmi el dolor. L'FDA (EUA) va alertar el 2018 que poden ofegar o estrangular els nadons.</p></div><div class="res"><h3>🥤 R2 · L'aigua alcalina que «desacidifica» el cos</h3><p>Es venen aparells i ampolles d'aigua alcalina que, diuen, «neutralitza l'acidesa del cos» i ajuda a prevenir el càncer. Un metge naturista ho recomana als seus vídeos.</p><p style="margin-top:4px"><b>Què s'ha comprovat:</b> El cos manté el pH de la sang molt estable (entre 7,35 i 7,45) mengis o beguis el que sigui; a l'estómac, l'aigua es barreja amb un àcid molt fort. Cap assaig no ha mostrat que previngui el càncer.</p></div><div class="res"><h3>🦟 R3 · Pegats de vitamina B1 contra els mosquits</h3><p>Uns pegats amb vitamina B1 prometen que, en 2 hores, la teva pell fa una olor que els mosquits no suporten. «Protecció natural i sense químics.»</p><p style="margin-top:4px"><b>Què s'ha comprovat:</b> Quan s'ha posat a prova (persones que prenen vitamina B1 comparades amb persones que no), els mosquits les piquen igual. Els repel·lents que funcionen s'han comprovat amb proves amb grups de comparació.</p></div><div class="res"><h3>🪐 R4 · Hi ha vida als núvols de Venus?</h3><p>El 2020 un equip va anunciar que havia detectat fosfina als núvols de Venus, un gas que a la Terra fan sobretot alguns éssers vius. Van dir que podia ser un senyal de vida, però que calia confirmar-ho.</p><p style="margin-top:4px"><b>Què s'ha comprovat:</b> Altres equips van tornar a analitzar les dades i en van trobar molta menys, o cap. Encara es discuteix i hi ha missions previstes per mesurar-ho de prop. Tothom accepta que ho decidirà una nova mesura.</p></div>
+  <div class="font">SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA 4.0</div>
+</div>
+</body>
+</html>

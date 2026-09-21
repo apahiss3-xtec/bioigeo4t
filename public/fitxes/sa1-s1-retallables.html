@@ -12,145 +12,42 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color
 #toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);height:44px;display:flex;align-items:center;gap:12px;padding:0 18px}
 .tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.75);flex:1}
 .tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;background:var(--teal);color:#fff}
-.page{width:794px;margin:0 auto;background:#fff;box-shadow:0 2px 30px rgba(0,0,0,.22);padding:26px 30px 34px}
-.doc-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--teal);padding-bottom:8px;margin-bottom:6px}
-.doc-title{font-size:20px;font-weight:900;color:var(--teal-ink)}
+.page{width:794px;margin:0 auto;background:#fff;box-shadow:0 2px 30px rgba(0,0,0,.22);padding:24px 30px 30px}
+.doc-head{display:flex;align-items:baseline;gap:10px;border-bottom:2px solid var(--teal);padding-bottom:6px;margin-bottom:6px}
+.doc-title{font-size:19px;font-weight:900;color:var(--teal-ink)}
 .doc-sa{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:auto}
-.doc-note{font-family:'Inter',sans-serif;font-size:10.5px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.doc-note{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);margin-bottom:10px;line-height:1.45}
 .doc-note strong{color:var(--teal-ink)}
-/* 2 columnes de jocs → 4 jocs (4 alumnes) per A4 */
-.sheet{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.joc{border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 8px 10px;break-inside:avoid}
-.joc-head{font-size:11px;font-weight:700;color:var(--teal-ink);margin-bottom:6px;display:flex;align-items:center;gap:6px}
-.joc-name{flex:1;border-bottom:1px solid var(--rule-dark);min-height:14px}
-/* Tira retallable: amplada = amplada del joc (≈ columna «Afirmació» de la fitxa) */
+.sheet{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}
+.joc{border:1.5px solid var(--teal-light);border-radius:8px;padding:6px 7px 7px;break-inside:avoid}
+.joc-head{font-size:9.5px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
 .strip{display:flex;align-items:center;gap:6px;border:1.3px dashed var(--teal);border-radius:4px;background:var(--teal-tint);
-  padding:5px 8px;margin:4px 0;font-size:12px;font-weight:600;line-height:1.2;min-height:26px}
-.strip .sc{font-size:11px;color:var(--teal);flex-shrink:0}
+  padding:3px 7px;margin:3px 0;font-size:12px;font-weight:600;line-height:1.15;min-height:24px}
+.strip .sc{font-size:10px;color:var(--teal);flex-shrink:0}
+.strip .num{flex-shrink:0;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .strip .tx{flex:1}
-.strip.buida{background:#fff;border-style:dashed;border-color:var(--orange,#c96f3e)}
-.strip.buida .sc{color:var(--orange,#c96f3e)}
-.strip.buida .tx{border-bottom:1px solid var(--rule-dark);min-height:20px}
-.bloc-head{font-size:13px;font-weight:900;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.06em;
-  border-left:4px solid var(--teal);padding:3px 0 3px 9px;margin:14px 0 8px}
-.bloc-head.bloc-a{border-left-color:#c96f3e;color:#a24e24;break-before:page}
-.bloc-head.bloc-c{border-left-color:#38a3a5;color:#1c4a55;break-before:page}
-/* Nivell C: 6 tires per joc, lletra més gran i més aire — s'han de poder llegir i manipular */
-.joc.joc-c .strip{font-size:14px;min-height:34px;padding:7px 9px;border-width:1.6px}
-.joc.joc-c .strip .sc{font-size:13px}
+.lic{font-family:'Inter',sans-serif;font-size:8px;color:var(--muted);margin-top:8px;text-align:center}
 @media print{
-  @page{size:A4;margin:9mm 11mm}
+  @page{size:A4;margin:8mm 10mm}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   body{background:#fff;padding:0}
   #toolbar{display:none!important}
   .page{box-shadow:none;width:100%;padding:0}
-  .joc{break-inside:avoid}
 }
 </style>
 </head>
 <body>
 <div id="toolbar">
-  <span class="tb-tip">✂️ Full de retallables · <b>1 joc = 1 alumne</b> · 3 pàgines: 4 jocs de nivell B + 4 de nivell A + 4 de nivell C · retalla per les línies puntejades</span>
+  <span class="tb-tip">✂️ Retallables · <b>1 joc = 1 parella</b> · 6 jocs per full (12 alumnes) · el mateix joc per a A, B i C</span>
   <button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button>
 </div>
-
 <div class="page">
-  <div class="doc-head">
-    <div class="doc-title">Retallables — Escala de certeses</div>
-    <div class="doc-sa">SA1 · Ciència i Pseudociència · S1</div>
-  </div>
-  <div class="doc-note">
-    <strong>Aquest full té tres blocs, i no són iguals.</strong> El <strong>bloc B</strong> (a sota) porta jocs de
-    <strong>10 tires</strong>: l'alumne només ha d'ordenar-les. El <strong>bloc A</strong> (segona pàgina) porta jocs de
-    <strong>7 tires escrites + 3 tires en blanc</strong>: l'alumne primer escriu tres afirmacions seves a la seva fitxa
-    (una de molt certa, una de certesa mitjana i una de molt poc certa) i després les copia a les tires en blanc, <strong>sense
-    indicar-hi quina és quina</strong> — a la fitxa se les intercanvia amb un company perquè les col·loqui a cegues.
-    El <strong>bloc C</strong> (tercera pàgina) porta jocs de <strong>6 tires</strong>, amb la lletra més grossa: no es tracta
-    d'ordenar-les de l'1 al 10, sinó de <strong>repartir-les en tres calaixos</strong> —<em>molt certa</em>, <em>depèn</em>,
-    <em>gens certa</em>— que ja són impresos a la fitxa C, dues tires a cada calaix.
-    Dona a cada alumne el joc del seu nivell.<br>
-    Cada bloc porta <strong>4 jocs</strong> (1 joc = 1 alumne). Les tires tenen l'amplada de la columna
-    <strong>«Afirmació»</strong> de la fitxa, per encaixar-hi en enganxar-les.
-    Retalla primer entre jocs i després cada tira per la línia puntejada.
-  </div>
-  <div class="bloc-head">Bloc B · jocs de 10 tires escrites</div>
-  <div class="sheet" id="sheet-b"></div>
-  <div class="bloc-head bloc-a">Bloc A · jocs de 7 tires escrites + 3 en blanc</div>
-  <div class="sheet" id="sheet-a"></div>
-  <div class="bloc-head bloc-c">Bloc C · jocs de 6 tires, per repartir en tres calaixos</div>
-  <div class="sheet" id="sheet-c"></div>
-  <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--muted);border-top:1px solid var(--muted);margin-top:10px;padding-top:5px">
-    <div>SA1 · Ciència i Pseudociència · Sessió 1 · Retallables · IE Temple · Biologia i Geologia 4t ESO</div>
-    <div>CC BY-NC-SA</div>
-  </div>
-  <div style="font-size:8.5px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5">
-    Adaptat per Albert Pahissa de l'original de Jordi Domènech. Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" style="color:var(--teal-ink)">CC BY-NC-SA 4.0</a> (Reconeixement–NoComercial–CompartirIgual).
-  </div>
+  <div class="doc-head"><div class="doc-title">Retallables — Escala de certeses</div><div class="doc-sa">SA1 · S1</div></div>
+  <div class="doc-note"><strong>Un joc per parella</strong> (el mateix per als tres nivells): per a una classe de 24, imprimeix <strong>2 fulls</strong>.
+  Retalla primer entre jocs i guarda cada joc en un sobre: <strong>no s'enganxen</strong>, s'ordenen sobre la taula i es poden reaprofitar amb un altre grup.
+  Les tires van numerades perquè la fitxa C hi pugui fer referència.</div>
+  <div class="sheet"><div class="joc"><div class="joc-head">Joc de parella · SA1 · S1</div><div class="strip"><span class="sc">✂</span><span class="num">1</span><span class="tx">La Terra gira al voltant del Sol.</span></div><div class="strip"><span class="sc">✂</span><span class="num">2</span><span class="tx">Rentar-se les mans amb sabó evita moltes infeccions.</span></div><div class="strip"><span class="sc">✂</span><span class="num">3</span><span class="tx">Si dorms poc abans d'un examen, rendeixes pitjor.</span></div><div class="strip"><span class="sc">✂</span><span class="num">4</span><span class="tx">Si surts amb els cabells molls a l'hivern, et refredaràs.</span></div><div class="strip"><span class="sc">✂</span><span class="num">5</span><span class="tx">Hi ha vida en algun altre planeta de l'univers.</span></div><div class="strip"><span class="sc">✂</span><span class="num">6</span><span class="tx">Els nascuts sota el signe de Lleó són més líders.</span></div><div class="strip"><span class="sc">✂</span><span class="num">7</span><span class="tx">Trencar un mirall porta set anys de mala sort.</span></div><div class="strip"><span class="sc">✂</span><span class="num">8</span><span class="tx">Demà el sol sortirà per l'est.</span></div></div><div class="joc"><div class="joc-head">Joc de parella · SA1 · S1</div><div class="strip"><span class="sc">✂</span><span class="num">1</span><span class="tx">La Terra gira al voltant del Sol.</span></div><div class="strip"><span class="sc">✂</span><span class="num">2</span><span class="tx">Rentar-se les mans amb sabó evita moltes infeccions.</span></div><div class="strip"><span class="sc">✂</span><span class="num">3</span><span class="tx">Si dorms poc abans d'un examen, rendeixes pitjor.</span></div><div class="strip"><span class="sc">✂</span><span class="num">4</span><span class="tx">Si surts amb els cabells molls a l'hivern, et refredaràs.</span></div><div class="strip"><span class="sc">✂</span><span class="num">5</span><span class="tx">Hi ha vida en algun altre planeta de l'univers.</span></div><div class="strip"><span class="sc">✂</span><span class="num">6</span><span class="tx">Els nascuts sota el signe de Lleó són més líders.</span></div><div class="strip"><span class="sc">✂</span><span class="num">7</span><span class="tx">Trencar un mirall porta set anys de mala sort.</span></div><div class="strip"><span class="sc">✂</span><span class="num">8</span><span class="tx">Demà el sol sortirà per l'est.</span></div></div><div class="joc"><div class="joc-head">Joc de parella · SA1 · S1</div><div class="strip"><span class="sc">✂</span><span class="num">1</span><span class="tx">La Terra gira al voltant del Sol.</span></div><div class="strip"><span class="sc">✂</span><span class="num">2</span><span class="tx">Rentar-se les mans amb sabó evita moltes infeccions.</span></div><div class="strip"><span class="sc">✂</span><span class="num">3</span><span class="tx">Si dorms poc abans d'un examen, rendeixes pitjor.</span></div><div class="strip"><span class="sc">✂</span><span class="num">4</span><span class="tx">Si surts amb els cabells molls a l'hivern, et refredaràs.</span></div><div class="strip"><span class="sc">✂</span><span class="num">5</span><span class="tx">Hi ha vida en algun altre planeta de l'univers.</span></div><div class="strip"><span class="sc">✂</span><span class="num">6</span><span class="tx">Els nascuts sota el signe de Lleó són més líders.</span></div><div class="strip"><span class="sc">✂</span><span class="num">7</span><span class="tx">Trencar un mirall porta set anys de mala sort.</span></div><div class="strip"><span class="sc">✂</span><span class="num">8</span><span class="tx">Demà el sol sortirà per l'est.</span></div></div><div class="joc"><div class="joc-head">Joc de parella · SA1 · S1</div><div class="strip"><span class="sc">✂</span><span class="num">1</span><span class="tx">La Terra gira al voltant del Sol.</span></div><div class="strip"><span class="sc">✂</span><span class="num">2</span><span class="tx">Rentar-se les mans amb sabó evita moltes infeccions.</span></div><div class="strip"><span class="sc">✂</span><span class="num">3</span><span class="tx">Si dorms poc abans d'un examen, rendeixes pitjor.</span></div><div class="strip"><span class="sc">✂</span><span class="num">4</span><span class="tx">Si surts amb els cabells molls a l'hivern, et refredaràs.</span></div><div class="strip"><span class="sc">✂</span><span class="num">5</span><span class="tx">Hi ha vida en algun altre planeta de l'univers.</span></div><div class="strip"><span class="sc">✂</span><span class="num">6</span><span class="tx">Els nascuts sota el signe de Lleó són més líders.</span></div><div class="strip"><span class="sc">✂</span><span class="num">7</span><span class="tx">Trencar un mirall porta set anys de mala sort.</span></div><div class="strip"><span class="sc">✂</span><span class="num">8</span><span class="tx">Demà el sol sortirà per l'est.</span></div></div><div class="joc"><div class="joc-head">Joc de parella · SA1 · S1</div><div class="strip"><span class="sc">✂</span><span class="num">1</span><span class="tx">La Terra gira al voltant del Sol.</span></div><div class="strip"><span class="sc">✂</span><span class="num">2</span><span class="tx">Rentar-se les mans amb sabó evita moltes infeccions.</span></div><div class="strip"><span class="sc">✂</span><span class="num">3</span><span class="tx">Si dorms poc abans d'un examen, rendeixes pitjor.</span></div><div class="strip"><span class="sc">✂</span><span class="num">4</span><span class="tx">Si surts amb els cabells molls a l'hivern, et refredaràs.</span></div><div class="strip"><span class="sc">✂</span><span class="num">5</span><span class="tx">Hi ha vida en algun altre planeta de l'univers.</span></div><div class="strip"><span class="sc">✂</span><span class="num">6</span><span class="tx">Els nascuts sota el signe de Lleó són més líders.</span></div><div class="strip"><span class="sc">✂</span><span class="num">7</span><span class="tx">Trencar un mirall porta set anys de mala sort.</span></div><div class="strip"><span class="sc">✂</span><span class="num">8</span><span class="tx">Demà el sol sortirà per l'est.</span></div></div><div class="joc"><div class="joc-head">Joc de parella · SA1 · S1</div><div class="strip"><span class="sc">✂</span><span class="num">1</span><span class="tx">La Terra gira al voltant del Sol.</span></div><div class="strip"><span class="sc">✂</span><span class="num">2</span><span class="tx">Rentar-se les mans amb sabó evita moltes infeccions.</span></div><div class="strip"><span class="sc">✂</span><span class="num">3</span><span class="tx">Si dorms poc abans d'un examen, rendeixes pitjor.</span></div><div class="strip"><span class="sc">✂</span><span class="num">4</span><span class="tx">Si surts amb els cabells molls a l'hivern, et refredaràs.</span></div><div class="strip"><span class="sc">✂</span><span class="num">5</span><span class="tx">Hi ha vida en algun altre planeta de l'univers.</span></div><div class="strip"><span class="sc">✂</span><span class="num">6</span><span class="tx">Els nascuts sota el signe de Lleó són més líders.</span></div><div class="strip"><span class="sc">✂</span><span class="num">7</span><span class="tx">Trencar un mirall porta set anys de mala sort.</span></div><div class="strip"><span class="sc">✂</span><span class="num">8</span><span class="tx">Demà el sol sortirà per l'est.</span></div></div></div>
+  <div class="lic">SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · Albert Pahissa, a partir de Jordi Domènech · CC BY-NC-SA 4.0</div>
 </div>
-
-<script>
-// Bloc B: les 10 afirmacions ja escrites — la tasca és ORDENAR-LES.
-const AFIRMACIONS_B = [
-  "Demà sortirà el Sol",
-  "Les aspirines treuen el mal de cap",
-  "Si tiro una moneda, sortirà cara",
-  "Pujarà el preu del petroli",
-  "Els trens compliran avui el seu horari",
-  "Treure bones notes depèn de l'esforç",
-  "El Barça guanyarà la lliga",
-  "Existeix vida extraterrestre",
-  "Si en compro, em tocarà la loteria",
-  "Viuré per sempre"
-];
-// Bloc A: només 7 escrites — la tasca és ESCRIURE'N 3 i després ordenar-les totes 10.
-const AFIRMACIONS_A = [
-  "Demà sortirà el Sol",
-  "Les aspirines treuen el mal de cap",
-  "Si tiro una moneda, sortirà cara",
-  "Treure bones notes depèn de l'esforç",
-  "El Barça guanyarà la lliga",
-  "Existeix vida extraterrestre",
-  "Viuré per sempre"
-];
-// Tires en blanc SENSE etiqueta: si hi digués «MOLT certa», la posició ja estaria
-// decidida abans d'ordenar-les i el company que les ha de col·locar la llegiria.
-// Quina és quina l'alumne ho escriu a la seva fitxa, no a la tira.
-const BUIDES_A = ["", "", ""];
-// Bloc C: 6 tires, dues per calaix (molt certa / depèn / gens certa). L'ordre en
-// què surten impreses NO és l'ordre de la resposta: es barregen a posta perquè
-// l'alumne hagi de decidir. Cap tira no és absurda —totes són coses que algú
-// pot dir de debò— de manera que triar el calaix exigeix pensar si es pot
-// comprovar, que és el criteri de la sessió ([[Nivell C - Criteris fitxes]] §1).
-const AFIRMACIONS_C = [
-  "Si compro loteria, em tocarà",       // gens certa
-  "Demà sortirà el Sol",                // molt certa
-  "El Barça guanyarà la lliga",         // depèn
-  "Viuré per sempre",                   // gens certa
-  "Si tiro una moneda, sortirà cara",   // depèn
-  "Les aspirines treuen el mal de cap"  // molt certa
-];
-const N_JOCS = 4;
-
-function strip(text, buida){
-  return '<div class="strip' + (buida ? ' buida' : '') + '"><span class="sc">✂️</span>' +
-         '<span class="tx">' + text + '</span></div>';
-}
-function omple(idSheet, llista, buides, etiqueta){
-  const sheet = document.getElementById(idSheet);
-  for (let j = 1; j <= N_JOCS; j++) {
-    const joc = document.createElement('div');
-    joc.className = 'joc';
-    joc.innerHTML = '<div class="joc-head">Joc ' + etiqueta + j + ' · Nom: <span class="joc-name"></span></div>' +
-      llista.map(a => strip(a, false)).join('') +
-      buides.map(a => strip(a, true)).join('');
-    sheet.appendChild(joc);
-  }
-}
-omple('sheet-b', AFIRMACIONS_B, [], 'B');
-omple('sheet-a', AFIRMACIONS_A, BUIDES_A, 'A');
-omple('sheet-c', AFIRMACIONS_C, [], 'C');
-// El joc C porta la classe .joc-c perquè les tires hi surtin més grosses.
-document.querySelectorAll('#sheet-c .joc').forEach(function(j){ j.classList.add('joc-c'); });
-</script>
 </body>
 </html>

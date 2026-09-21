@@ -153,6 +153,7 @@ export const sa6s1 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa6-s1-exit-ticket.html",
   exitTicketType: "web",
+  exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "El mateix fòssil d'un rèptil terrestre petit apareix a la costa d'Àfrica i a la de Sud-amèrica, separades avui per l'oceà Atlàntic. Quina explicació és més sòlida i per què: que va travessar l'oceà nedant, o que els dos continents van estar units?", hint: "Un rèptil terrestre petit no pot travessar un oceà; la prova apunta que les costes van estar juntes." },
     { id: "q2", type: "multiple", text: "En un límit DIVERGENT (com una dorsal oceànica), què passa amb l'escorça?", options: ["Es crea escorça nova perquè puja magma quan les plaques se separen", "Es destrueix escorça perquè una placa s'enfonsa sota l'altra", "No es crea ni es destrueix escorça, les plaques només llisquen de costat", "L'escorça s'arruga i forma una gran serralada"], correct: 0 },

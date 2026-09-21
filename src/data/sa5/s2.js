@@ -156,6 +156,7 @@ export const sa5s2 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa5-s2-exit-ticket.html",
   exitTicketType: "paper",
+  exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica amb les teves paraules la diferència entre HOMOLOGIA i ANALOGIA, i digues quina de les dues demostra que dos éssers vius són parents. Posa un exemple de cada.", hint: "Homologia = mateixa estructura interna; analogia = mateixa funció, estructura diferent." },

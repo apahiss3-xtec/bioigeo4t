@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA1 · Clau docent</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2A6F7F;--teal-ink:#1c4a55;--teal-light:#9ccad2;--teal-tint:#eaf4f6;--ink:#14201f;--ink-2:#334;--muted:#6b7a7e;--rule:#dce9eb;--rule-dark:#b6ccd0;
+  --orange:#c96f3e;--orange-tint:#f6ece8;--amber-tint:#fdf7e2;--amber-ink:#7a5800}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);padding:52px 20px 40px;font-size:14px;line-height:1.5}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);height:44px;display:flex;align-items:center;gap:12px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.75);flex:1}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;background:var(--teal);color:#fff}
+.full{width:794px;min-height:1123px;margin:0 auto 26px;background:#fff;box-shadow:0 2px 30px rgba(0,0,0,.22);padding:30px 44px 40px;position:relative;display:flex;flex-direction:column}
+.band{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c4a55 0%,#2f7f8a 100%);color:#fff;margin:-30px -44px 14px;padding:14px 44px}
+.band .em{font-size:40px;line-height:1}
+.band .k{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.band h1{font-size:25px;font-weight:900;line-height:1.08}
+.band .num{margin-left:auto;font-size:44px;font-weight:900;opacity:.35}
+.no-esc{font-family:'Inter',sans-serif;font-size:9.5px;color:var(--muted);text-align:right;margin:-8px 0 10px}
+.en3{background:var(--amber-tint);border:1.5px solid #e0c98a;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:16px;line-height:1.5}
+.en3 .t{font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+h2{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink);border-bottom:1.5px solid var(--teal-light);padding-bottom:2px;margin:12px 0 6px}
+.cita{display:flex;gap:9px;align-items:flex-start;border-left:4px solid var(--orange);background:var(--orange-tint);border-radius:0 8px 8px 0;padding:6px 11px;margin:5px 0;font-size:14.5px}
+.cita .fn{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.comp{font-size:14.5px;line-height:1.55}
+.preg{background:var(--teal-tint);border-radius:10px;padding:9px 14px;margin-top:12px}
+.preg ol{margin-left:18px;font-size:14px}
+.det{font-family:'Inter',sans-serif;font-size:9.5px;color:var(--teal-ink);margin-top:10px;border-top:1px dashed var(--rule-dark);padding-top:6px}
+.font{font-family:'Inter',sans-serif;font-size:9px;color:var(--muted);margin-top:auto;padding-top:10px}
+.warn{background:#fdecec;border:1.5px solid #d98b8b;border-radius:8px;padding:6px 10px;font-weight:700;margin-top:8px}
+.clau-t{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.clau-t th{background:var(--teal-ink);color:#fff;text-align:left;padding:5px 7px;font-size:10px;letter-spacing:.05em;text-transform:uppercase}
+.clau-t td{border-bottom:1px solid var(--rule-dark);padding:6px 7px;vertical-align:top}
+.res{border:1.5px dashed var(--teal);border-radius:9px;padding:9px 12px;margin:7px 0;font-size:13.5px;break-inside:avoid}
+.res h3{font-size:15px;color:var(--teal-ink)}
+@media print{
+  @page{size:A4;margin:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar{display:none!important}
+  .full{box-shadow:none;margin:0;width:210mm;height:297mm;min-height:0;overflow:hidden;page-break-after:always;break-after:page}
+  .full:last-child{page-break-after:auto;break-after:auto}
+}
+</style>
+</head>
+<body>
+<div id="toolbar"><span class="tb-tip">🔑 Clau docent de la SA1 · <b>només per al professorat</b></span><button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button></div>
+
+<div class="full">
+  <div class="band"><span class="em">🔑</span><div><div class="k">SA1 · Només docent</div><h1>Clau docent · tota la SA1</h1></div></div>
+  <h2>S2 · Puzle de casos · senyals, calaix i punt clau</h2>
+  <table class="clau-t"><thead><tr><th style="width:150px">Cas</th><th style="width:90px">Senyals</th><th style="width:100px">Calaix</th><th>Punt clau per a la posada en comú</th></tr></thead><tbody><tr><td><b>💧 1 · L'aigua que recorda</b></td><td>2, 3, 4 <span style='color:#6b7a7e'>(defensable: 5)</span></td><td><b>PSEUDOCIÈNCIA</b></td><td>«Memòria de l'aigua» i «més diluït, més potent» → sona científica (4). Testimonis de casa i 200 anys de tradició → autoritat/testimonis (3). Es va comprovar, va sortir malament i es continua venent igual → no admet crítica (2). La grip es cura sola: sense grup de comparació, curar-se no demostra res.</td></tr><tr><td><b>☠️ 2 · El miracle que es beu</b></td><td>2, 3, 4, 5 <span style='color:#6b7a7e'>(defensable: 1)</span></td><td><b>PSEUDOCIÈNCIA</b></td><td>Testimonis en vídeo → 3. «Les farmacèutiques ho amaguen» → 2 (qualsevol prova en contra es converteix en part del complot). «Mineral, natural» → 4. Promet curar malalties sense cura → 5 (s'aprofita de la desesperació). És l'única pseudociència del puzle que fa mal directament: bon moment per parlar de per què el detector importa.</td></tr><tr><td><b>🖐️ 3 · La nena i els camps d'energia</b></td><td>1, 2, 3, 4</td><td><b>PSEUDOCIÈNCIA</b></td><td>«No la detecta cap aparell» → 1. Escoles d'infermeria i hospitals → 3. «Camp d'energia» → 4. Continuen igual després de la prova → 2. El valor del cas és la PROVA: pantalla (ningú no ho veu), moneda (atzar) i comparar amb el 50 %. Si els experts del grup no entenen per què el 50 % és la clau, atureu-vos-hi: és la idea de la sessió.</td></tr><tr><td><b>🦶 4 · El bany de peus detox</b></td><td>1, 2, 4 <span style='color:#6b7a7e'>(defensable: 5)</span></td><td><b>PSEUDOCIÈNCIA</b></td><td>«Ions», «toxines», «depurar» → 4. No diuen QUINES toxines ni com es mesuren → 1. «Si surt fosca necessites més sessions» → 2 (tot resultat confirma la promesa). Idea de la sessió: el CONTROL sense peus.</td></tr><tr><td><b>🦠 5 · El trasplantament que fa fàstic</b></td><td>cap</td><td><b>CIÈNCIA</b></td><td>CAP senyal: és el CONTROL NEGATIU del puzle. Fa fàstic i sona estrany, però «estrany» no és un senyal. Té grups repartits a l'atzar, un resultat que podia sortir malament, repeticions, i diu els seus límits (admet crítica). Si algun grup hi veu el senyal 4, pregunteu: «bacteris» és una paraula grossa que no explica res, o explica exactament el mecanisme?</td></tr><tr><td><b>⏰ 6 · Menjar en 8 hores</b></td><td>cap</td><td><b>ENCARA NO COMPROVAT</b></td><td>Els INVESTIGADORS: cap senyal → encara no comprovat (es pot comprovar, admeten el que no saben). La frase de la INFLUENCER encén 4 («rejoveneix les cèl·lules»), 5 (viure més) i 3 (autoritat d'influencer), i diu «demostrat» quan no ho està. Idea clau per al tancament: el calaix depèn de COM es presenta i de què es fa amb la prova, no només del tema.</td></tr></tbody></table>
+  <h2>Com organitzar el puzle</h2>
+  <div class="comp" style="font-size:13px">Grups d'experts de <b>4</b> (6 casos → 24 alumnes). Amb menys alumnes, traieu primer el cas 2 i després el 6; amb més, feu dos grups d'experts
+  del mateix cas. Els alumnes de C van a grups amb un company que els faci de lector (recomanats: casos 4 i 5, els més visuals). El <b>cas 5</b> és el control negatiu
+  i el <b>cas 6</b> el de frontera: si falta temps a la posada en comú, comenceu per aquests dos.</div>
+</div>
+<div class="full">
+  <div class="band"><span class="em">🔑</span><div><div class="k">SA1 · Només docent</div><h1>Clau docent · S1 i S3</h1></div></div>
+  <h2>S1 · Escala de certeses (orientativa: es valora la justificació)</h2>
+  <table class="clau-t"><thead><tr><th>#</th><th>Tira</th><th>On sol anar · garantia</th></tr></thead><tbody><tr><td>1</td><td>La Terra gira al voltant del Sol.</td><td>molt certa · dades i models (observacions, astronomia)</td></tr><tr><td>2</td><td>Rentar-se les mans amb sabó evita moltes infeccions.</td><td>molt certa · dades (assajos i estudis d'higiene)</td></tr><tr><td>3</td><td>Si dorms poc abans d'un examen, rendeixes pitjor.</td><td>força certa · dades (estudis de son i memòria)</td></tr><tr><td>4</td><td>Si surts amb els cabells molls a l'hivern, et refredaràs.</td><td>depèn · mite parcial: els refredats els fan virus; el fred no n'és la causa directa</td></tr><tr><td>5</td><td>Hi ha vida en algun altre planeta de l'univers.</td><td>encara no comprovat · hipòtesi que es pot investigar</td></tr><tr><td>6</td><td>Els nascuts sota el signe de Lleó són més líders.</td><td>gens certa · identitat/valors, hàbits (astrologia)</td></tr><tr><td>7</td><td>Trencar un mirall porta set anys de mala sort.</td><td>gens certa · hàbits, superstició</td></tr><tr><td>8</td><td>Demà el sol sortirà per l'est.</td><td>molt certa · models (predicció astronòmica)</td></tr></tbody></table>
+  <h2>S1 · Els quatre anuncis</h2>
+  <table class="clau-t"><thead><tr><th>Anunci</th><th style="width:90px">Senyals</th><th style="width:130px">Calaix</th></tr></thead><tbody><tr><td><b>A</b> · Plantilles PolarFit</td><td>3, 4, 5</td><td><b>PSEUDOCIÈNCIA</b></td></tr><tr><td><b>B</b> · Aigua de cristalls</td><td>1, 2, 4</td><td><b>PSEUDOCIÈNCIA</b></td></tr><tr><td><b>C</b> · Un medicament per a la migranya</td><td>cap</td><td><b>CIÈNCIA</b></td></tr><tr><td><b>D</b> · L'horòscop de la setmana</td><td>1, 2, 4, 5</td><td><b>PSEUDOCIÈNCIA</b></td></tr></tbody></table>
+  <h2>S3 · Casos de reserva</h2>
+  <table class="clau-t"><thead><tr><th style="width:190px">Cas</th><th style="width:110px">Calaix</th><th>Què s'ha comprovat</th></tr></thead><tbody><tr><td><b>📿 R1 · Collarets d'ambre per a les dents dels nadons</b></td><td><b>PSEUDOCIÈNCIA</b></td><td>No hi ha cap estudi que mostri que l'ambre alliberi res a la temperatura de la pell ni que calmi el dolor. L'FDA (EUA) va alertar el 2018 que poden ofegar o estrangular els nadons.</td></tr><tr><td><b>🥤 R2 · L'aigua alcalina que «desacidifica» el cos</b></td><td><b>PSEUDOCIÈNCIA</b></td><td>El cos manté el pH de la sang molt estable (entre 7,35 i 7,45) mengis o beguis el que sigui; a l'estómac, l'aigua es barreja amb un àcid molt fort. Cap assaig no ha mostrat que previngui el càncer.</td></tr><tr><td><b>🦟 R3 · Pegats de vitamina B1 contra els mosquits</b></td><td><b>PSEUDOCIÈNCIA</b></td><td>Quan s'ha posat a prova (persones que prenen vitamina B1 comparades amb persones que no), els mosquits les piquen igual. Els repel·lents que funcionen s'han comprovat amb proves amb grups de comparació.</td></tr><tr><td><b>🪐 R4 · Hi ha vida als núvols de Venus?</b></td><td><b>ENCARA NO COMPROVAT</b></td><td>Altres equips van tornar a analitzar les dades i en van trobar molta menys, o cap. Encara es discuteix i hi ha missions previstes per mesurar-ho de prop. Tothom accepta que ho decidirà una nova mesura.</td></tr></tbody></table>
+  <div class="font">L'app del detector (S3) és autocorrectiva i no necessita clau. Fonts dels casos del puzle: al peu de cada dossier.</div>
+</div>
+</body>
+</html>

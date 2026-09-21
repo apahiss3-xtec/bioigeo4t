@@ -152,6 +152,7 @@ export const sa5s1 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa5-s1-exit-ticket.html",
   exitTicketType: "paper",
+  exitTicketCriteri: "1.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Explica què és una ADAPTACIÓ amb un exemple del pati, unint una estructura que has vist, la seva funció i l'ambient on viu l'organisme.", hint: "Estructura (què veig) → funció (per a què serveix) → ambient (on viu)." },

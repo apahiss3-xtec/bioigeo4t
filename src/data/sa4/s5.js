@@ -185,6 +185,7 @@ export const sa4s5 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa4-s5-exit-ticket.html",
   exitTicketType: "web",
+  exitTicketCriteri: "3.5",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     {
       id: "q1",

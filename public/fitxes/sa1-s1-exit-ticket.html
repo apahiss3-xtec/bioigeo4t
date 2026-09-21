@@ -144,6 +144,10 @@ span[contenteditable]{display:inline-block;}
   .nivell-badge-small { background:transparent !important; border-color:#b6ccd0 !important; }
 }
 
+
+.crit-bar{display:flex;align-items:baseline;gap:6px;padding:2px 12px;background:#f4f8f9;border-bottom:1px solid var(--rule,#dce9eb);font-family:'Inter',sans-serif;font-size:8px;color:#5f6e72;line-height:1.35;}
+.crit-bar b{font-size:9px;color:#1c4a55;letter-spacing:.02em;}
+.crit-bar .ck{font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
 </style>
 </head>
 <body>
@@ -173,8 +177,8 @@ span[contenteditable]{display:inline-block;}
       <div class="eh-main">
 
         <div class="eh-top">
-          <span class="t-title" contenteditable="true">Què et fa dir que una cosa és certa?</span>
-          <span class="t-sa" contenteditable="true">SA1 · Sessió 1 de 4</span><span class="lvl-badge">Versió B / A</span>
+          <span class="t-title" contenteditable="true">Quins senyals s'hi encenen?</span>
+          <span class="t-sa" contenteditable="true">SA1 · Sessió 1 de 3</span><span class="lvl-badge">Versió B / A</span>
           <span class="t-note" contenteditable="true">aquest full s'entrega en sortir de classe</span>
         </div>
 
@@ -185,6 +189,8 @@ span[contenteditable]{display:inline-block;}
           <span class="aval">avaluació: <span class="scale-mini">NE · NA · AS · AN · AE</span></span>
         </div>
 
+        <div class="crit-bar"><span class="ck">📐 Criteri avaluat</span><b>2.2</b><span>contrastar la fiabilitat de la informació i detectar pseudociències</span></div>
+
         <div class="exit-body">
 
           <div class="voc-box deletable">
@@ -192,16 +198,15 @@ span[contenteditable]{display:inline-block;}
             <div class="voc-keys">
               <span class="vk-title">🧰 Paraules que pots fer servir</span>
               <span class="chip">dades</span>
-              <span class="chip">models</span>
-              <span class="chip">hàbits</span>
               <span class="chip">autoritat</span>
               <span class="chip">identitat i valors</span>
-              <span class="chip">certesa</span>
-              <span class="chip">mètode científic</span>
+              <span class="chip">senyal</span>
+              <span class="chip">sona «científica»</span>
+              <span class="chip">apel·la al que vols creure</span>
             </div>
             <div class="voc-defs">
               <span class="vd-title">Recorda què volen dir</span>
-              <dl class="voc"><dt>garantia</dt><dd>el motiu en què et basses per donar una cosa per certa.</dd><dt>mètode científic</dt><dd>posar una idea a prova amb dades, sabent que pot fallar.</dd></dl>
+              <dl class="voc"><dt>garantia</dt><dd>el motiu en què et bases per donar una cosa per certa.</dd><dt>senyal</dt><dd>pista del detector que una promesa sona a pseudociència.</dd></dl>
             </div>
           </div>
 
@@ -209,9 +214,9 @@ span[contenteditable]{display:inline-block;}
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
             <div class="q-num">1</div>
-            <div class="q-text"><span contenteditable="true">Un anunci diu: <strong>«el 90 % dels dentistes recomanen aquesta pasta»</strong>. Quina <strong>nota de certesa</strong> (1–10) li poses, en quina <strong>garantia</strong> es basa qui s'ho creu, i què hauries de saber per pujar-li la nota?</span><span class="q-tag">idea central</span></div>
+            <div class="q-text"><span contenteditable="true">Un anunci diu: <strong>«Crema natural amb l'energia de les plantes que et rejoveneix la pell 10 anys. La recomanen 9 de cada 10 influencers.»</strong> Quins <strong>dos senyals</strong> del detector s'hi encenen, i amb quina frase? Què hauries de <strong>saber</strong> per creure-t'ho?</span><span class="q-tag">idea central</span></div>
           </div>
-          <div class="q-hint" contenteditable="true">Pista: decideix primer la garantia; la nota surt després.</div>
+          <div class="q-hint" contenteditable="true">Pista: per a cada senyal, copia les paraules exactes de l'anunci que l'encenen.</div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>

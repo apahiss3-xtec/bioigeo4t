@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SA1 · S2 · Dossiers del puzle de casos</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#2A6F7F;--teal-ink:#1c4a55;--teal-light:#9ccad2;--teal-tint:#eaf4f6;--ink:#14201f;--ink-2:#334;--muted:#6b7a7e;--rule:#dce9eb;--rule-dark:#b6ccd0;
+  --orange:#c96f3e;--orange-tint:#f6ece8;--amber-tint:#fdf7e2;--amber-ink:#7a5800}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#a9c3c8;color:var(--ink);padding:52px 20px 40px;font-size:14px;line-height:1.5}
+#toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,35,40,.94);height:44px;display:flex;align-items:center;gap:12px;padding:0 18px}
+.tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(180,215,220,.75);flex:1}
+.tb-btn{font-family:'Inter',sans-serif;font-size:12px;font-weight:600;border:none;border-radius:6px;padding:6px 13px;cursor:pointer;background:var(--teal);color:#fff}
+.full{width:794px;min-height:1123px;margin:0 auto 26px;background:#fff;box-shadow:0 2px 30px rgba(0,0,0,.22);padding:30px 44px 40px;position:relative;display:flex;flex-direction:column}
+.band{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#1c4a55 0%,#2f7f8a 100%);color:#fff;margin:-30px -44px 14px;padding:14px 44px}
+.band .em{font-size:40px;line-height:1}
+.band .k{font-family:'Inter',sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.band h1{font-size:25px;font-weight:900;line-height:1.08}
+.band .num{margin-left:auto;font-size:44px;font-weight:900;opacity:.35}
+.no-esc{font-family:'Inter',sans-serif;font-size:9.5px;color:var(--muted);text-align:right;margin:-8px 0 10px}
+.en3{background:var(--amber-tint);border:1.5px solid #e0c98a;border-radius:10px;padding:10px 14px;margin-bottom:12px;font-size:16px;line-height:1.5}
+.en3 .t{font-size:11px;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
+h2{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink);border-bottom:1.5px solid var(--teal-light);padding-bottom:2px;margin:12px 0 6px}
+.cita{display:flex;gap:9px;align-items:flex-start;border-left:4px solid var(--orange);background:var(--orange-tint);border-radius:0 8px 8px 0;padding:6px 11px;margin:5px 0;font-size:14.5px}
+.cita .fn{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.comp{font-size:14.5px;line-height:1.55}
+.preg{background:var(--teal-tint);border-radius:10px;padding:9px 14px;margin-top:12px}
+.preg ol{margin-left:18px;font-size:14px}
+.det{font-family:'Inter',sans-serif;font-size:9.5px;color:var(--teal-ink);margin-top:10px;border-top:1px dashed var(--rule-dark);padding-top:6px}
+.font{font-family:'Inter',sans-serif;font-size:9px;color:var(--muted);margin-top:auto;padding-top:10px}
+.warn{background:#fdecec;border:1.5px solid #d98b8b;border-radius:8px;padding:6px 10px;font-weight:700;margin-top:8px}
+.clau-t{width:100%;border-collapse:collapse;font-size:12px;margin-top:6px}
+.clau-t th{background:var(--teal-ink);color:#fff;text-align:left;padding:5px 7px;font-size:10px;letter-spacing:.05em;text-transform:uppercase}
+.clau-t td{border-bottom:1px solid var(--rule-dark);padding:6px 7px;vertical-align:top}
+.res{border:1.5px dashed var(--teal);border-radius:9px;padding:9px 12px;margin:7px 0;font-size:13.5px;break-inside:avoid}
+.res h3{font-size:15px;color:var(--teal-ink)}
+@media print{
+  @page{size:A4;margin:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  #toolbar{display:none!important}
+  .full{box-shadow:none;margin:0;width:210mm;height:297mm;min-height:0;overflow:hidden;page-break-after:always;break-after:page}
+  .full:last-child{page-break-after:auto;break-after:auto}
+}
+</style>
+</head>
+<body>
+<div id="toolbar"><span class="tb-tip">🧩 Dossiers del grup d'experts · <b>6 casos, un per full</b> · imprimeix-ne 1 per grup (o 2 si el grup és gran) · reutilitzables</span><button class="tb-btn" onclick="window.print()">🖨️ Imprimir / PDF</button></div>
+
+<div class="full">
+  <div class="band"><span class="em">💧</span><div><div class="k">Dossier d'experts · SA1 · Sessió 2 · Cas 1 de 6</div><h1>L'aigua que «recorda»: un remei de farmàcia per a la grip</h1></div><span class="num">1</span></div>
+  <div class="no-esc">Un dossier per grup · <b>no s'hi escriu</b>: es torna al professor en acabar</div>
+  <div class="en3"><div class="t">📖 En 3 línies</div>És un remei que es ven a les farmàcies per a la grip. Es fa diluint tantes vegades un extracte d'ànec que al final <b>només hi queda aigua i sucre</b>. Els estudis no han trobat que funcioni millor que no prendre res.</div>
+  <h2>📣 Què diuen</h2>
+  <div class="cita"><span class="fn">1</span><span>«L'aigua conserva la memòria de la substància, encara que ja no en quedi ni una molècula.»</span></div><div class="cita"><span class="fn">2</span><span>«Com més diluït, més potent.»</span></div><div class="cita"><span class="fn">3</span><span>«Fa més de 200 anys que milions de persones el fan servir.»</span></div><div class="cita"><span class="fn">4</span><span>«A casa, quan notem que ve la grip, ens el prenem i sempre ens va bé.»</span></div>
+  <h2>🔬 Com s'ha comprovat</h2>
+  <div class="comp">L'Oscillococcinum és un producte <b>homeopàtic</b>. Es prepara amb 1 part d'extracte i 99 d'aigua, i es repeteix <b>200 vegades</b> seguides (dilució «200C»). Després de només 12 dilucions d'aquestes ja no en queda pràcticament cap molècula; després de 200, <b>cap</b>. El 2015, una revisió Cochrane (un equip que ajunta i valora tots els estudis fets sobre un tema) no va trobar proves fiables que previngui ni que curi la grip. Pensa-hi: la grip <b>passa sola</b> en una setmana, així que qui se'l pren i es cura també s'hauria curat sense. Tot i així, es continua venent amb la mateixa promesa.</div>
+  
+  <div class="preg"><b>🧩 Per preparar-ho com a experts</b><ol>
+    <li>Què <b>promet</b>? Digueu-ho en una frase.</li>
+    <li>Quins <b>senyals</b> del detector s'encenen? Quina de les frases numerades els encén?</li>
+    <li>S'ha fet una <b>prova</b>? Hi havia grup de comparació? Algú sabia qui rebia què?</li>
+    <li>A quin <b>calaix</b> va: ciència, pseudociència o encara no comprovat?</li>
+  </ol></div>
+  <div class="det">🕵️ 1 No es pot comprovar · 2 No admet crítica · 3 Es basa en autoritat · 4 Sona «científica» · 5 Apel·la al que vols creure</div>
+  <div class="font">Font: Mathie i col., <i>Cochrane Database of Systematic Reviews</i> (2015): «Homeopathic Oscillococcinum for preventing and treating influenza». · SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA 4.0</div>
+</div>
+<div class="full">
+  <div class="band"><span class="em">☠️</span><div><div class="k">Dossier d'experts · SA1 · Sessió 2 · Cas 2 de 6</div><h1>El «miracle» que es beu: MMS</h1></div><span class="num">2</span></div>
+  <div class="no-esc">Un dossier per grup · <b>no s'hi escriu</b>: es torna al professor en acabar</div>
+  <div class="en3"><div class="t">📖 En 3 línies</div>Es ven per internet com a cura de moltes malalties greus. En realitat és <b>diòxid de clor</b>, un producte per blanquejar. No hi ha cap prova que curi res i <b>pot fer molt de mal</b>.</div>
+  <h2>📣 Què diuen</h2>
+  <div class="cita"><span class="fn">1</span><span>«Cura el càncer, l'autisme, la malària i la covid.»</span></div><div class="cita"><span class="fn">2</span><span>«Milers de testimonis ho confirmen: mira els vídeos.»</span></div><div class="cita"><span class="fn">3</span><span>«Les farmacèutiques ho amaguen perquè perdrien el negoci.»</span></div><div class="cita"><span class="fn">4</span><span>«És un mineral: cent per cent natural.»</span></div>
+  <h2>🔬 Com s'ha comprovat</h2>
+  <div class="comp">L'MMS («solució mineral miraculosa») es fa barrejant clorit de sodi amb un àcid: en surt <b>diòxid de clor</b>, que s'usa per blanquejar i desinfectar. <b>Cap assaig clínic</b> no ha demostrat que curi cap malaltia. Les agències sanitàries —l'FDA als Estats Units i l'AEMPS a Espanya— han emès alertes perquè provoca vòmits, diarrees greus i deshidratació, i n'han fet retirar productes. Quan arriben les alertes, els venedors responen que formen part de la conspiració. ⚠️ <b>Mai no te'n beguis:</b> aquí només l'analitzem.</div>
+  <div class="warn">⚠️ Mai no te'n beguis ni en recomanis: aquí només l'analitzem.</div>
+  <div class="preg"><b>🧩 Per preparar-ho com a experts</b><ol>
+    <li>Què <b>promet</b>? Digueu-ho en una frase.</li>
+    <li>Quins <b>senyals</b> del detector s'encenen? Quina de les frases numerades els encén?</li>
+    <li>S'ha fet una <b>prova</b>? Hi havia grup de comparació? Algú sabia qui rebia què?</li>
+    <li>A quin <b>calaix</b> va: ciència, pseudociència o encara no comprovat?</li>
+  </ol></div>
+  <div class="det">🕵️ 1 No es pot comprovar · 2 No admet crítica · 3 Es basa en autoritat · 4 Sona «científica» · 5 Apel·la al que vols creure</div>
+  <div class="font">Font: FDA, «Danger: Don't Drink Miracle Mineral Solution or Similar Products» (2019); AEMPS, alertes sobre el diòxid de clor/MMS. · SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA 4.0</div>
+</div>
+<div class="full">
+  <div class="band"><span class="em">🖐️</span><div><div class="k">Dossier d'experts · SA1 · Sessió 2 · Cas 3 de 6</div><h1>La nena de 9 anys que va posar a prova els «camps d'energia»</h1></div><span class="num">3</span></div>
+  <div class="no-esc">Un dossier per grup · <b>no s'hi escriu</b>: es torna al professor en acabar</div>
+  <div class="en3"><div class="t">📖 En 3 línies</div>Hi ha persones que diuen que <b>noten amb les mans un camp d'energia</b> del cos i que el poden curar. Una nena de 9 anys va inventar una prova senzilla per saber si de debò el noten. <b>No el van notar.</b></div>
+  <h2>📣 Què diuen</h2>
+  <div class="cita"><span class="fn">1</span><span>«Tothom té un camp d'energia que els practicants notem amb les mans.»</span></div><div class="cita"><span class="fn">2</span><span>«Aquesta energia no la detecta cap aparell, però nosaltres la sentim.»</span></div><div class="cita"><span class="fn">3</span><span>«S'ensenya a escoles d'infermeria i es fa servir en hospitals.»</span></div>
+  <h2>🔬 Com s'ha comprovat</h2>
+  <div class="comp">La pràctica es diu <b>tacte terapèutic</b>. El 1996, <b>Emily Rosa</b>, de 9 anys, en va fer un experiment per a la fira de ciències de l'escola. Cada practicant passava les mans per un forat d'una <b>pantalla</b> i no veia res. Emily <b>tirava una moneda</b> i, segons el que sortia, posava la seva mà a sobre de la mà dreta o de l'esquerra del practicant, que havia de dir on era. Si de debò notessin l'energia, encertarien gairebé sempre. Encertant <b>a l'atzar</b>, s'encerta la meitat de les vegades (50 %). Resultat: 21 practicants, 280 intents, <b>123 encerts (44 %)</b>. L'estudi es va publicar el 1998 a <i>JAMA</i>, una revista mèdica molt important. Molts practicants van respondre que la prova no valia i van continuar igual.</div>
+  
+  <div class="preg"><b>🧩 Per preparar-ho com a experts</b><ol>
+    <li>Què <b>promet</b>? Digueu-ho en una frase.</li>
+    <li>Quins <b>senyals</b> del detector s'encenen? Quina de les frases numerades els encén?</li>
+    <li>S'ha fet una <b>prova</b>? Hi havia grup de comparació? Algú sabia qui rebia què?</li>
+    <li>A quin <b>calaix</b> va: ciència, pseudociència o encara no comprovat?</li>
+  </ol></div>
+  <div class="det">🕵️ 1 No es pot comprovar · 2 No admet crítica · 3 Es basa en autoritat · 4 Sona «científica» · 5 Apel·la al que vols creure</div>
+  <div class="font">Font: Rosa, Rosa, Sarner i Barrett, «A close look at therapeutic touch», <i>JAMA</i> 279 (1998). · SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA 4.0</div>
+</div>
+<div class="full">
+  <div class="band"><span class="em">🦶</span><div><div class="k">Dossier d'experts · SA1 · Sessió 2 · Cas 4 de 6</div><h1>El bany de peus que «treu les toxines»</h1></div><span class="num">4</span></div>
+  <div class="no-esc">Un dossier per grup · <b>no s'hi escriu</b>: es torna al professor en acabar</div>
+  <div class="en3"><div class="t">📖 En 3 línies</div>Poses els peus en aigua amb sal i un aparell elèctric, i l'aigua <b>es torna marró</b>. Diuen que el marró són les toxines del teu cos. Però si engegues l'aparell <b>sense peus</b>, l'aigua també es torna marró.</div>
+  <h2>📣 Què diuen</h2>
+  <div class="cita"><span class="fn">1</span><span>«Els ions de l'aparell fan sortir les toxines pels porus dels peus.»</span></div><div class="cita"><span class="fn">2</span><span>«El color de l'aigua diu quin òrgan es depura: marró, el fetge; negre, metalls pesants.»</span></div><div class="cita"><span class="fn">3</span><span>«Si l'aigua surt molt fosca, és que necessites més sessions.»</span></div>
+  <h2>🔬 Com s'ha comprovat</h2>
+  <div class="comp">Uns investigadors (2012) van analitzar l'aigua de sessions <b>amb peus i sense peus</b>, i també l'orina de les persones abans i després. L'aigua es tornava igual de marró sense ningú: el corrent elèctric <b>rovella les barres de metall</b> de l'aparell dins l'aigua amb sal. No van trobar més substàncies tòxiques a l'aigua ni menys al cos de les persones. El bany <b>sense peus</b> és el que en ciència es diu un <b>control</b>: la mateixa prova, sense allò que vols comprovar.</div>
+  
+  <div class="preg"><b>🧩 Per preparar-ho com a experts</b><ol>
+    <li>Què <b>promet</b>? Digueu-ho en una frase.</li>
+    <li>Quins <b>senyals</b> del detector s'encenen? Quina de les frases numerades els encén?</li>
+    <li>S'ha fet una <b>prova</b>? Hi havia grup de comparació? Algú sabia qui rebia què?</li>
+    <li>A quin <b>calaix</b> va: ciència, pseudociència o encara no comprovat?</li>
+  </ol></div>
+  <div class="det">🕵️ 1 No es pot comprovar · 2 No admet crítica · 3 Es basa en autoritat · 4 Sona «científica» · 5 Apel·la al que vols creure</div>
+  <div class="font">Font: Kennedy i col., «Objective assessment of an ionic footbath (IonCleanse)», <i>Journal of Environmental and Public Health</i> (2012). · SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA 4.0</div>
+</div>
+<div class="full">
+  <div class="band"><span class="em">🦠</span><div><div class="k">Dossier d'experts · SA1 · Sessió 2 · Cas 5 de 6</div><h1>El trasplantament que fa fàstic (però funciona)</h1></div><span class="num">5</span></div>
+  <div class="no-esc">Un dossier per grup · <b>no s'hi escriu</b>: es torna al professor en acabar</div>
+  <div class="en3"><div class="t">📖 En 3 línies</div>Hi ha una infecció de l'intestí molt greu que torna una vegada i una altra. Els metges posen a l'intestí del malalt <b>bacteris de la femta d'una persona sana</b>. Una prova amb grups de comparació va demostrar que <b>funciona molt millor</b> que els antibiòtics.</div>
+  <h2>📣 Què diuen</h2>
+  <div class="cita"><span class="fn">1</span><span>«El bacteri <i>Clostridioides difficile</i> causa diarrees greus quan els antibiòtics maten els bacteris bons de l'intestí.»</span></div><div class="cita"><span class="fn">2</span><span>«La idea és tornar-hi a posar una comunitat de bacteris sans que no el deixi créixer.»</span></div><div class="cita"><span class="fn">3</span><span>«Sona desagradable, però ho hem posat a prova. I no serveix per a qualsevol malaltia: només ho recomanem per a aquesta.»</span></div>
+  <h2>🔬 Com s'ha comprovat</h2>
+  <div class="comp">El 2013, un equip d'Amsterdam va repartir <b>a l'atzar</b> 42 pacients en tres grups: trasplantament de bacteris (després d'un antibiòtic), només antibiòtic, i antibiòtic amb un rentat de l'intestí. Es van curar <b>13 de 16 (81 %)</b> amb el trasplantament, davant de 4 de 13 (31 %) i 3 de 13 (23 %) als altres grups. La diferència era tan gran que <b>van aturar l'estudi</b> abans d'hora per donar el tractament a tothom. Altres equips ho han repetit i avui és a les guies mèdiques per a aquesta infecció concreta. Els metges també expliquen els riscos i el que <b>encara no se sap</b>.</div>
+  
+  <div class="preg"><b>🧩 Per preparar-ho com a experts</b><ol>
+    <li>Què <b>promet</b>? Digueu-ho en una frase.</li>
+    <li>Quins <b>senyals</b> del detector s'encenen? Quina de les frases numerades els encén?</li>
+    <li>S'ha fet una <b>prova</b>? Hi havia grup de comparació? Algú sabia qui rebia què?</li>
+    <li>A quin <b>calaix</b> va: ciència, pseudociència o encara no comprovat?</li>
+  </ol></div>
+  <div class="det">🕵️ 1 No es pot comprovar · 2 No admet crítica · 3 Es basa en autoritat · 4 Sona «científica» · 5 Apel·la al que vols creure</div>
+  <div class="font">Font: van Nood i col., «Duodenal infusion of donor feces for recurrent <i>Clostridium difficile</i>», <i>New England Journal of Medicine</i> 368 (2013). · SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA 4.0</div>
+</div>
+<div class="full">
+  <div class="band"><span class="em">⏰</span><div><div class="k">Dossier d'experts · SA1 · Sessió 2 · Cas 6 de 6</div><h1>Menjar només en 8 hores per viure més anys?</h1></div><span class="num">6</span></div>
+  <div class="no-esc">Un dossier per grup · <b>no s'hi escriu</b>: es torna al professor en acabar</div>
+  <div class="en3"><div class="t">📖 En 3 línies</div>Hi ha qui només menja durant 8 hores al dia i no menja res les altres 16. En animals de laboratori, menjar menys <b>allarga la vida</b>. En persones <b>encara no se sap</b>: s'està investigant.</div>
+  <h2>📣 Què diuen</h2>
+  <div class="cita"><span class="fn">1</span><span>Una influencer: «El dejuni 16:8 està <b>demostrat científicament</b>: rejoveneix les teves cèl·lules i t'allarga la vida!»</span></div><div class="cita"><span class="fn">2</span><span>Un equip d'investigadors: «En ratolins i en altres animals, menjar menys allarga la vida. En humans no ho sabem: caldria seguir milers de persones durant dècades.»</span></div><div class="cita"><span class="fn">3</span><span>Un altre estudi: «Durant un any, qui menjava en 8 hores es va aprimar <b>el mateix</b> que qui menjava les mateixes calories sense horari.»</span></div>
+  <h2>🔬 Com s'ha comprovat</h2>
+  <div class="comp">És una <b>hipòtesi que es pot posar a prova</b>, i els científics diuen obertament què falta. L'estudi d'un any (Xina, 2022) va seguir 139 persones repartides a l'atzar en dos grups: no hi va haver diferència. Sobre si fa <b>viure més anys</b> a les persones, no hi ha cap estudi prou llarg: caldrien dècades. Fixa't que <b>el mateix tema</b> es pot explicar com una pregunta oberta (els investigadors) o com una promesa «demostrada» (la influencer).</div>
+  
+  <div class="preg"><b>🧩 Per preparar-ho com a experts</b><ol>
+    <li>Què <b>promet</b>? Digueu-ho en una frase.</li>
+    <li>Quins <b>senyals</b> del detector s'encenen? Quina de les frases numerades els encén?</li>
+    <li>S'ha fet una <b>prova</b>? Hi havia grup de comparació? Algú sabia qui rebia què?</li>
+    <li>A quin <b>calaix</b> va: ciència, pseudociència o encara no comprovat?</li>
+  </ol></div>
+  <div class="det">🕵️ 1 No es pot comprovar · 2 No admet crítica · 3 Es basa en autoritat · 4 Sona «científica» · 5 Apel·la al que vols creure</div>
+  <div class="font">Font: Liu i col., «Calorie restriction with or without time-restricted eating in weight loss», <i>New England Journal of Medicine</i> 386 (2022). · SA1 · Ciència i Pseudociència · IE Temple · Biologia i Geologia 4t ESO · CC BY-NC-SA 4.0</div>
+</div>
+</body>
+</html>

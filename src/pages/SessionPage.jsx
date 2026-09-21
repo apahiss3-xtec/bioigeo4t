@@ -505,6 +505,19 @@ export default function SessionPage() {
                   ✂️ Retallables
                 </a>
               )}
+              {/* Material de sessió per a l'alumnat (dossiers, casos de reserva…).
+                  El que és només docent (claus) viu a l'Espai docent. */}
+              {session.sessionMaterials?.filter((m) => m.who !== 'docent').map((m) => (
+                <a
+                  key={m.id}
+                  href={asset(m.url)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl border border-[var(--rule-strong)] px-5 py-2.5 font-display font-semibold hover:bg-[var(--paper-2)] transition-colors"
+                >
+                  📎 <T>{m.title}</T>
+                </a>
+              ))}
               {session.rubricUrl && (
                 <a
                   href={asset(session.rubricUrl)}
@@ -556,6 +569,13 @@ export default function SessionPage() {
           </SectionTitle>
           {session.exitTicketNote && (
             <p className="mb-4 italic text-[var(--muted)]">{session.exitTicketNote}</p>
+          )}
+          {/* Criteri curricular que avalua el tiquet (el mateix que surt imprès al full). */}
+          {session.exitTicketCriteri && getCriteri(session.exitTicketCriteri) && (
+            <p className="mb-4 text-sm text-[var(--muted)]">
+              📐 {t('session.criteriNum')} <strong>{session.exitTicketCriteri}</strong> ·{' '}
+              <T>{getCriteri(session.exitTicketCriteri).resum}</T>
+            </p>
           )}
           {/* Full imprimible del tiquet de sortida: mig A4, dos tiquets per full
               (es retalla per la línia de punts). Generat per

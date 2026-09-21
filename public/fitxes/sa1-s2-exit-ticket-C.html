@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exit Ticket · SA1 · Sessió 2 · Caça a la pseudociència · C</title>
+<title>Exit Ticket · SA1 · Sessió 2 · El puzle de casos · C</title>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -166,6 +166,10 @@ span[contenteditable]{display:inline-block;}
 .vk-title{margin:0 4px 0 0;}
 .voc{grid-template-columns:auto 1fr;}
 
+.crit-bar{display:flex;align-items:baseline;gap:6px;padding:2px 12px;background:#f4f8f9;border-bottom:1px solid var(--rule,#dce9eb);font-family:'Inter',sans-serif;font-size:8px;color:#5f6e72;line-height:1.5;}
+.crit-bar b{font-size:11px;color:#1c4a55;letter-spacing:.02em;}
+.crit-bar .ck{font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+
 /* ══════════════════════════════════════════════════════════════
    LLEGIBILITAT-C v1 — llegibilitat de la Versió C (dislèxia). 09/09/2026.
    Cos en 'Fira Sans Condensed' (mateixa família que l'Extra Condensed
@@ -197,7 +201,7 @@ span[contenteditable]{display:inline-block;}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
 
       <div class="eh-stub">
-        <span class="stub-ic">🚨</span>
+        <span class="stub-ic">🧩</span>
         <span class="stub-txt">Exit Ticket</span>
         <span class="stub-min">10 min · individual</span>
       </div>
@@ -205,8 +209,8 @@ span[contenteditable]{display:inline-block;}
       <div class="eh-main">
 
         <div class="eh-top">
-          <span class="t-title" contenteditable="true">Quin senyal has caçat avui?</span>
-          <span class="t-sa" contenteditable="true">SA1 · Sessió 2 de 4</span><span class="lvl-badge">Versió C</span>
+          <span class="t-title" contenteditable="true">Què fa justa una prova?</span>
+          <span class="t-sa" contenteditable="true">SA1 · Sessió 2 de 3</span><span class="lvl-badge">Versió C</span>
           <span class="t-note" contenteditable="true">aquest full s'entrega en sortir de classe</span>
         </div>
 
@@ -217,20 +221,23 @@ span[contenteditable]{display:inline-block;}
           <span class="aval">avaluació: <span class="scale-mini">NE · NA · AS · AN · AE</span></span>
         </div>
 
+        <div class="crit-bar"><span class="ck">📐 Criteri avaluat</span><b>3.3</b><span>interpretar resultats i treure'n conclusions</span></div>
+
         <div class="exit-body">
 
           <div class="voc-box deletable">
             <div class="del-btn" onclick="deleteEl(this)">✕</div>
             <div class="voc-keys">
               <span class="vk-title">🧰 Paraules que pots fer servir</span>
-              <span class="chip">1 · no es pot comprovar</span>
-              <span class="chip">2 · no admet crítica</span>
-              <span class="chip">3 · sona «científica»</span>
+              <span class="chip">prova</span>
+              <span class="chip">dos grups</span>
+              <span class="chip">ningú no ho sap</span>
+              <span class="chip">ciència</span>
               <span class="chip">pseudociència</span>
             </div>
             <div class="voc-defs">
               <span class="vd-title">Recorda què volen dir</span>
-              <dl class="voc"><dt>senyal d'alerta</dt><dd>pista que una frase sona a pseudociència.</dd><dt>admetre crítica</dt><dd>acceptar que et poden dir que t'equivoques.</dd></dl>
+              <dl class="voc"><dt>prova justa</dt><dd>comparar dos grups sense que ningú sàpiga qui rep què.</dd><dt>calaix</dt><dd>ciència, pseudociència o encara no comprovat.</dd></dl>
             </div>
           </div>
 
@@ -240,19 +247,19 @@ span[contenteditable]{display:inline-block;}
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
             <div class="q-num">1</div>
-            <div class="q-text"><span contenteditable="true">Quin <strong>senyal</strong> del detector hi ha en aquesta frase?</span><span class="q-tag">encercla</span></div>
+            <div class="q-text"><span contenteditable="true">Emily Rosa va fer la prova amb una <strong>pantalla</strong>. Per què la pantalla feia la prova justa?</span><span class="q-tag">encercla</span></div>
           </div>
-          <div class="c-cas" contenteditable="true">«Si el remei no t'ha curat, és que el teu cos encara s'estava netejant.»</div>
-          <div class="c-tria"><span class="circ-opt">1 · NO ES POT COMPROVAR</span><span class="c-o">o</span><span class="circ-opt">2 · NO ADMET CRÍTICA</span></div>
+          <div class="c-cas" contenteditable="true">Els practicants havien de dir on era la mà d'Emily <b>sense veure-la</b>.</div>
+          <div class="c-tria"><span class="circ-opt">PERQUÈ NO PODIEN VEURE LA MÀ</span><span class="c-o">o</span><span class="circ-opt">PERQUÈ LA MÀ FEIA CALOR</span></div>
         </div>
 
         <div class="q deletable" style="margin-bottom:2px">
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
             <div class="q-num">2</div>
-            <div class="q-text"><span contenteditable="true">Tria <strong>un senyal</strong> que hagis trobat al teu cas caçat i copia la frase del cas que t'ho fa dir.</span><span class="q-tag">idea central</span></div>
+            <div class="q-text"><span contenteditable="true">El cas 5 fa fàstic però és <strong>ciència</strong>. Per què?</span><span class="q-tag">idea central</span></div>
           </div>
-          <div class="c-inici" contenteditable="true">Comença així: <b>«Al meu cas hi ha el senyal … perquè diu: “…”»</b></div>
+          <div class="c-inici" contenteditable="true">Comença així: <b>«És ciència perquè ho van provar amb dos grups: …»</b></div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>

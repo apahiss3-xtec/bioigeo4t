@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exit Ticket · SA1 · Sessió 3 · El judici als casos · C</title>
+<title>Exit Ticket · SA1 · Sessió 3 · El detector al món real · C</title>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -166,6 +166,10 @@ span[contenteditable]{display:inline-block;}
 .vk-title{margin:0 4px 0 0;}
 .voc{grid-template-columns:auto 1fr;}
 
+.crit-bar{display:flex;align-items:baseline;gap:6px;padding:2px 12px;background:#f4f8f9;border-bottom:1px solid var(--rule,#dce9eb);font-family:'Inter',sans-serif;font-size:8px;color:#5f6e72;line-height:1.5;}
+.crit-bar b{font-size:11px;color:#1c4a55;letter-spacing:.02em;}
+.crit-bar .ck{font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
+
 /* ══════════════════════════════════════════════════════════════
    LLEGIBILITAT-C v1 — llegibilitat de la Versió C (dislèxia). 09/09/2026.
    Cos en 'Fira Sans Condensed' (mateixa família que l'Extra Condensed
@@ -197,7 +201,7 @@ span[contenteditable]{display:inline-block;}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
 
       <div class="eh-stub">
-        <span class="stub-ic">⚖️</span>
+        <span class="stub-ic">🌍</span>
         <span class="stub-txt">Exit Ticket</span>
         <span class="stub-min">10 min · individual</span>
       </div>
@@ -206,7 +210,7 @@ span[contenteditable]{display:inline-block;}
 
         <div class="eh-top">
           <span class="t-title" contenteditable="true">Què et faria canviar d'idea?</span>
-          <span class="t-sa" contenteditable="true">SA1 · Sessió 3 de 4</span><span class="lvl-badge">Versió C</span>
+          <span class="t-sa" contenteditable="true">SA1 · Sessió 3 de 3</span><span class="lvl-badge">Versió C</span>
           <span class="t-note" contenteditable="true">aquest full s'entrega en sortir de classe</span>
         </div>
 
@@ -217,21 +221,23 @@ span[contenteditable]{display:inline-block;}
           <span class="aval">avaluació: <span class="scale-mini">NE · NA · AS · AN · AE</span></span>
         </div>
 
+        <div class="crit-bar"><span class="ck">📐 Criteri avaluat</span><b>3.1</b><span>formular preguntes i hipòtesis que es poden posar a prova</span></div>
+
         <div class="exit-body">
 
           <div class="voc-box deletable">
             <div class="del-btn" onclick="deleteEl(this)">✕</div>
             <div class="voc-keys">
               <span class="vk-title">🧰 Paraules que pots fer servir</span>
-              <span class="chip">ciència</span>
-              <span class="chip">encara no comprovat</span>
-              <span class="chip">pseudociència</span>
+              <span class="chip">promesa</span>
               <span class="chip">prova</span>
+              <span class="chip">dos grups</span>
+              <span class="chip">calaix</span>
               <span class="chip">canviar d'idea</span>
             </div>
             <div class="voc-defs">
               <span class="vd-title">Recorda què volen dir</span>
-              <dl class="voc"><dt>encara no comprovat</dt><dd>es pot comprovar, però encara no se sap del cert.</dd><dt>prova</dt><dd>allò que miraries per saber si una frase és certa.</dd></dl>
+              <dl class="voc"><dt>promesa</dt><dd>el que el cas diu que farà.</dd><dt>prova</dt><dd>allò que miraries per saber si la promesa és certa.</dd></dl>
             </div>
           </div>
 
@@ -241,19 +247,19 @@ span[contenteditable]{display:inline-block;}
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
             <div class="q-num">1</div>
-            <div class="q-text"><span contenteditable="true">Llegeix què se'n sap i encercla el <strong>calaix</strong>.</span><span class="q-tag">encercla</span></div>
+            <div class="q-text"><span contenteditable="true">Una promesa diu «<strong>t'omple d'energia positiva</strong>». Es pot comprovar?</span><span class="q-tag">encercla</span></div>
           </div>
-          <div class="c-cas" contenteditable="true">«Estudiar amb música clàssica fa recordar més.» S'ha provat unes quantes vegades: a vegades surt que sí i a vegades que no. S'hi segueix investigant.</div>
-          <div class="c-tria"><span class="circ-opt">PSEUDOCIÈNCIA</span><span class="c-o">o</span><span class="circ-opt">ENCARA NO COMPROVAT</span></div>
+          
+          <div class="c-tria"><span class="circ-opt">SÍ, ES POT MESURAR</span><span class="c-o">o</span><span class="circ-opt">NO, ÉS MASSA VAGA</span></div>
         </div>
 
         <div class="q deletable" style="margin-bottom:2px">
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
             <div class="q-num">2</div>
-            <div class="q-text"><span contenteditable="true">Quina <strong>prova</strong> et faria canviar d'idea sobre aquesta frase?</span><span class="q-tag">idea central</span></div>
+            <div class="q-text"><span contenteditable="true">Escriu la promesa del <strong>teu cas</strong> i quina <strong>prova</strong> et faria canviar d'idea.</span><span class="q-tag">idea central</span></div>
           </div>
-          <div class="c-inici" contenteditable="true"><b>«Canviaria d'idea si…»</b></div>
+          <div class="c-inici" contenteditable="true"><b>«El meu cas promet… Canviaria d'idea si…»</b></div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>

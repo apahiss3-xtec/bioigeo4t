@@ -165,6 +165,7 @@ export const sa7s3 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa7-s3-exit-ticket.html",
   exitTicketType: "paper",
+  exitTicketCriteri: "2.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketWhere: "apartat 6 del full, en paper",
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Un titular diu: «Un experiment demostra que la vida es va crear a partir de gasos i llamps». Reescriu-lo perquè digui exactament el que l'experiment de Miller-Urey va demostrar, ni més ni menys.", hint: "Pensa què hi havia dins l'aparell al final: peces o una cosa viva?" },

@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage.jsx'
 import SAIndexPage from './pages/SAIndexPage.jsx'
 import SessionPage from './pages/SessionPage.jsx'
 import SAAvaluacioPage from './pages/SAAvaluacioPage.jsx'
+import DocentPage from './pages/DocentPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
 
 export default function App() {
@@ -21,6 +22,8 @@ export default function App() {
             <Route path="/sa/:saId" element={<SAIndexPage />} />
             {/* el segment estàtic té prioritat sobre :sessionId */}
             <Route path="/sa/:saId/autoavaluacio" element={<SAAvaluacioPage />} />
+            {/* Espai docent: no s'enllaça enlloc visible; només el «·» discret del peu */}
+            <Route path="/sa/:saId/docent" element={<DocentPage />} />
             <Route path="/sa/:saId/:sessionId" element={<SessionPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

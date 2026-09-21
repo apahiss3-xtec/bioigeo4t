@@ -200,6 +200,7 @@ export const sa4s2 = {
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa4-s2-exit-ticket.html",
   exitTicketType: "paper",
+  exitTicketCriteri: "4.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",
   exitTicketQuestions: [
     {
