@@ -156,12 +156,24 @@
     "estimateText": "Basant-te en les teves notes, el teu nivell estimat global és:",
     "reflectionTitle": "Reflexió final",
     "q1": "Quin objectiu d'aprenentatge tens més fluix? Què faràs per reforçar-lo abans de la prova?",
+    "cardDesc": "Comprova si vas preparat/da: checklist, gràfic per objectiu i un cas pràctic nou.",
+    "weakTail": "Repassa'ls amb les sessions abans de la prova.",
+    "escritaTitle": "Assaig de prova escrita",
     "q2": "Quina activitat de la SA t'ha ajudat més a entendre els conceptes? Per quina raó?",
     "q3": "Si tornessis a començar la SA, què faries diferent?",
     "downloadPdf": "Descarregar PDF",
     "pdfFooter": "Generat localment al navegador. Cap dada emmagatzemada ni transmesa.",
     "date": "Data",
-    "level": "Nivell"
+    "level": "Nivell",
+    "senseProva": {
+      "title": "Autoavaluació de la SA",
+      "intro": "Repassa què has après a la SA. Marca el que ja saps, posa les notes dels teus exit tiquets, practica per escrit i resol el cas pràctic nou. No es guarda res: en sortir de la pàgina, tot desapareix.",
+      "checklistTitle": "Què he après a la SA",
+      "q1": "Quin objectiu d'aprenentatge tens més fluix? Què faràs per reforçar-lo?",
+      "cardDesc": "Repassa la SA: checklist, gràfic per objectiu, pràctica escrita i un cas pràctic nou.",
+      "weakTail": "Repassa'ls amb les sessions de la SA.",
+      "escritaTitle": "Pràctica escrita"
+    }
   },
   "bar": {
     "simplify": "SIMPLIFICA"

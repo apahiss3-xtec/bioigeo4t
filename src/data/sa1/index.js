@@ -7,6 +7,10 @@ export const sa1 = {
   sessions: 3,
   portadaImage: "/images/sa1-s1-portada.jpg",
   guiaDocent: "/docs/sa1-guia-docent.docx",
+  // La SA1 no té prova escrita pròpia (l'única del curs és la final, SA7·S29; de la SA1
+  // només en toca el bloc OA-P4 de certesa). La pàgina d'autoavaluació i l'Espai docent
+  // ho respecten via src/autoavaluacio.js: «Autoavaluació de la SA», sense «pre-examen».
+  teProva: false,
   description: "Abans de fer biologia, aprendràs a pensar com un científic: a mesurar la teva certesa, a reconèixer en què bases els teus arguments (les garanties) i a fer servir un detector de pseudociència amb casos reals. És l'eina que faràs servir tot el curs.",
   product: "El detector aplicat a un cas real caçat per tu: senyals, calaix i la prova que el decidiria, revisat a cegues per un company.",
   objectives: [

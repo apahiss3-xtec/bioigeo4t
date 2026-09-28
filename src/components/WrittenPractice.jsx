@@ -28,7 +28,7 @@ const SELF = [
 
 export const SELF_LABELS = SELF
 
-export default function WrittenPractice({ escrita, onChange }) {
+export default function WrittenPractice({ escrita, onChange, ambProva = true }) {
   const [open, setOpen] = useState({})
   const [self, setSelf] = useState({})
   const [checks, setChecks] = useState({})
@@ -75,13 +75,15 @@ export default function WrittenPractice({ escrita, onChange }) {
         <p>
           <T>
             {escrita.intro ||
-              "Aquestes preguntes són del mateix tipus que les de la prova. Escriu cada resposta SENCERA a mà, en un full, sense mirar els apunts. Quan l'hagis acabada —i no abans— obre la solució i compara-la amb la teva."}
+              (ambProva
+                ? "Aquestes preguntes són del mateix tipus que les de la prova. Escriu cada resposta SENCERA a mà, en un full, sense mirar els apunts. Quan l'hagis acabada —i no abans— obre la solució i compara-la amb la teva."
+                : "Escriu cada resposta SENCERA a mà, en un full, sense mirar els apunts. Quan l'hagis acabada —i no abans— obre la solució i compara-la amb la teva.")}
           </T>
         </p>
         {totalMinutes > 0 && (
           <p className="mt-2 text-sm text-[var(--muted)]">
             Temps recomanat per a tot el bloc: <strong>{totalMinutes} min</strong>.
-            A la prova tampoc no en tindràs més.
+            {ambProva && ' A la prova tampoc no en tindràs més.'}
           </p>
         )}
       </div>

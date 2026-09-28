@@ -9,6 +9,7 @@ import T from '../translate/T.jsx'
 import TransferTest from '../components/TransferTest.jsx'
 import WrittenPractice, { SELF_LABELS } from '../components/WrittenPractice.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
+import { tAuto, ambProva } from '../autoavaluacio.js'
 
 const GRADES = ['NA', 'AS', 'AN', 'AE']
 const GRADE_SCORE = { NA: 25, AS: 50, AN: 75, AE: 100 }
@@ -99,9 +100,9 @@ export default function SAAvaluacioPage() {
         <Link to={`/sa/${sa.id}`} className="text-[var(--purple)] hover:underline text-sm">
           ← {sa.id.toUpperCase()} · {sa.title}
         </Link>
-        <h1 className="text-4xl md:text-5xl mt-3 mb-3">{t('auto.title')}</h1>
+        <h1 className="text-4xl md:text-5xl mt-3 mb-3">{tAuto(sa, 'title')}</h1>
         <p className="text-[var(--muted)] max-w-2xl">
-          <T>{t('auto.intro')}</T>
+          <T>{tAuto(sa, 'intro')}</T>
         </p>
       </section>
 
@@ -120,7 +121,7 @@ export default function SAAvaluacioPage() {
 
       {/* 1 · Checklist d'autoconeixement */}
       <section className="card p-6 mb-6">
-        <p className="kicker mb-1">1 · {t('auto.checklistTitle')}</p>
+        <p className="kicker mb-1">1 · {tAuto(sa, 'checklistTitle')}</p>
         <p className="text-sm text-[var(--muted)] mb-4">{t('auto.checklistIntro')}</p>
         <div className="space-y-3">
           {checklist.map((c) => (
@@ -155,7 +156,7 @@ export default function SAAvaluacioPage() {
           <p className="mt-4 text-sm">
             {weak.length === 0
               ? '✅ No has marcat cap punt com a «No ho sé». Bona senyal!'
-              : `⚠️ Tens ${weak.length} punt(s) marcats com a «No ho sé». Repassa'ls amb les sessions abans de la prova.`}
+              : `⚠️ Tens ${weak.length} punt(s) marcats com a «No ho sé». ${tAuto(sa, 'weakTail')}`}
           </p>
         )}
       </section>
@@ -240,16 +241,16 @@ export default function SAAvaluacioPage() {
         )}
       </section>
 
-      {/* 3 · Assaig de prova escrita (paper i boli) */}
+      {/* 3 · Assaig de prova escrita / Pràctica escrita si la SA no té prova (paper i boli) */}
       {escrita && (
         <section className="card p-6 mb-6">
-          <p className="kicker mb-1">3 · Assaig de prova escrita</p>
+          <p className="kicker mb-1">3 · {tAuto(sa, 'escritaTitle')}</p>
           <p className="text-sm text-[var(--muted)] mb-4">
             Marcar la casella bona no és el mateix que saber respondre. Aquí
             hauràs d'escriure la resposta sencera a mà i comparar-la després
             amb dos models: un d'assoliment satisfactori i un d'excel·lent.
           </p>
-          <WrittenPractice escrita={escrita} onChange={setWritten} />
+          <WrittenPractice escrita={escrita} onChange={setWritten} ambProva={ambProva(sa)} />
         </section>
       )}
 
@@ -271,7 +272,7 @@ export default function SAAvaluacioPage() {
               <span className="mb-2 flex gap-3">
                 <span className="bignum">{i + 1}</span>
                 <span className="pt-1.5">
-                  <T>{t(`auto.${q}`)}</T>
+                  <T>{tAuto(sa, q)}</T>
                 </span>
               </span>
               <textarea
@@ -307,7 +308,7 @@ export default function SAAvaluacioPage() {
         >
           <p style={pdfKicker}>Biologia i Geologia · 4t ESO · IE Temple</p>
           <h1 style={pdfH1}>
-            {t('auto.title')} — {sa.id.toUpperCase()}: {sa.title}
+            {tAuto(sa, 'title')} — {sa.id.toUpperCase()}: {sa.title}
           </h1>
           <p style={{ color: '#666', marginBottom: 16 }}>
             {name || '________________'} · {t('auto.date')}: {today}
@@ -316,7 +317,7 @@ export default function SAAvaluacioPage() {
             )}
           </p>
 
-          <h2 style={pdfH2}>{t('auto.checklistTitle')}</h2>
+          <h2 style={pdfH2}>{tAuto(sa, 'checklistTitle')}</h2>
           <table style={pdfTable}>
             <tbody>
               {checklist.map((c) => (
@@ -344,7 +345,7 @@ export default function SAAvaluacioPage() {
 
           {escrita && (
             <div className="pdf-block">
-              <h2 style={pdfH2}>Assaig de prova escrita</h2>
+              <h2 style={pdfH2}>{tAuto(sa, 'escritaTitle')}</h2>
               {escrita.questions.map((q, i) => {
                 const mine = written.find((w) => w.id === q.id)
                 const self = SELF_LABELS.find((l) => l.id === mine?.self)
@@ -410,7 +411,7 @@ export default function SAAvaluacioPage() {
           {['q1', 'q2', 'q3'].map((q, i) => (
             <div key={q} style={{ marginBottom: 10 }}>
               <p style={{ fontWeight: 700, margin: '0 0 2px' }}>
-                {i + 1}. {t(`auto.${q}`)}
+                {i + 1}. {tAuto(sa, q)}
               </p>
               <p style={{ margin: 0, borderBottom: '1px solid #c8c2dd', minHeight: 18 }}>
                 {reflections[q] || ' '}

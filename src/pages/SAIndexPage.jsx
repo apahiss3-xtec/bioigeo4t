@@ -6,6 +6,7 @@ import { getCompetency } from '../data/competencies.js'
 import T from '../translate/T.jsx'
 import BiomeImage from '../components/BiomeImage.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
+import { tAuto } from '../autoavaluacio.js'
 
 export default function SAIndexPage() {
   const { saId } = useParams()
@@ -186,10 +187,10 @@ export default function SAIndexPage() {
             </span>
             <div className="min-w-0">
               <p className="font-display font-semibold text-xl group-hover:text-[var(--biome-accent)] transition-colors">
-                {t('auto.title')}
+                {tAuto(sa, 'title')}
               </p>
               <p className="text-sm text-[var(--muted)]">
-                Comprova si vas preparat/da: checklist, gràfic per objectiu i un cas pràctic nou.
+                {tAuto(sa, 'cardDesc')}
               </p>
             </div>
             <span

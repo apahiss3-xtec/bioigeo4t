@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detector de pseudociència · SA1</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- App del detector amb el vocabulari de la fitxa C (3 senyals, 3 calaixos).
+     Generat per SA1-ciencia-pseudociencia/_generador/build_sa1.py a partir de
+     casos.py (SENYALS_APP_C, CALAIXOS_APP_C, CASOS_APP_C). No editar a mà.
+     Una sola pregunta a la pantalla: senyals → calaix → correcció. -->
+<style>
+:root{
+  --ink:#111; --muted:#444; --paper:#fff; --line:#9aa5a8; --soft:#eef5f6;
+  --teal:#1f5f6c; --teal-dark:#143f48;
+  --ok:#1d6b3c; --ok-bg:#e2f3e8; --ko:#a3202f; --ko-bg:#fbe5e7; --maybe:#8a6400; --maybe-bg:#fdf3d4;
+  --s1:#7a3fa8; --s2:#b0281b; --s3:#b85a24;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Fira Sans Condensed',Arial,sans-serif;background:var(--paper);color:var(--ink);font-size:21px;line-height:1.5;letter-spacing:.01em;min-height:100vh}
+.gem{letter-spacing:-.085em}
+header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:10px 18px;border-bottom:3px solid var(--teal);background:#fff}
+header h1{font-size:25px;font-weight:800;color:var(--teal-dark)}
+.compta{margin-left:auto;font-size:21px;display:flex;gap:18px}
+.compta b{font-size:25px;color:var(--teal-dark)}
+main{max-width:860px;margin:0 auto;padding:18px 16px 40px}
+.cas{border:2px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:18px}
+.cas-t{font-size:28px;font-weight:800;line-height:1.2;margin-bottom:8px;display:flex;gap:12px;align-items:center}
+.cas-t .em{font-size:40px;line-height:1}
+.cas p{font-size:25px;line-height:1.55;margin:4px 0}
+mark{background:transparent;color:inherit}
+.rev mark{background:var(--mk);border-bottom:3px solid var(--mc);border-radius:3px;padding:0 3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.rev mark::before{content:attr(data-n);display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--mc);color:#fff;font-weight:800;font-size:17px;margin-right:5px;vertical-align:2px}
+h2{font-size:25px;font-weight:800;margin:4px 0 12px;color:var(--teal-dark)}
+.opcions{display:grid;gap:10px}
+.op{font:inherit;text-align:left;display:flex;gap:14px;align-items:center;width:100%;padding:12px 16px;border:3px solid var(--line);border-radius:14px;background:#fff;color:var(--ink);cursor:pointer;min-height:72px}
+.op:hover{border-color:var(--teal)}
+.op:focus-visible,.btn:focus-visible{outline:4px solid #1a73e8;outline-offset:2px}
+.op .n{flex-shrink:0;width:46px;height:46px;border-radius:50%;background:var(--sc,#555);color:#fff;font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center}
+.op .nm{display:block;font-weight:800;font-size:24px;line-height:1.15}
+.op .df{display:block;font-size:19px;color:var(--muted);line-height:1.3;margin-top:2px}
+.op[aria-pressed="true"]{border-color:var(--sc,var(--teal));background:var(--soft);box-shadow:inset 0 0 0 2px var(--sc,var(--teal))}
+.op[aria-pressed="true"] .n{font-size:0}
+.op[aria-pressed="true"] .n::after{content:'✓';font-size:28px}
+.op.cap{--sc:#555}
+.accions{display:flex;justify-content:space-between;gap:12px;margin-top:18px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:800;font-size:24px;border:0;border-radius:12px;padding:12px 26px;cursor:pointer;background:var(--teal);color:#fff;margin-left:auto}
+.btn.sec{background:#fff;color:var(--teal-dark);border:3px solid var(--teal);margin-left:0}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.veredicte{display:flex;gap:16px;align-items:center;border-radius:14px;padding:14px 18px;margin-bottom:14px}
+.veredicte .cara{font-size:64px;line-height:1}
+.veredicte b{font-size:28px;display:block;line-height:1.2}
+.veredicte.ok{background:var(--ok-bg);border:3px solid var(--ok)}
+.veredicte.ko{background:var(--maybe-bg);border:3px solid var(--maybe)}
+.files{list-style:none;display:grid;gap:8px;margin-bottom:14px}
+.files li{display:flex;gap:12px;align-items:center;border:2px solid var(--line);border-radius:12px;padding:8px 12px;font-size:21px}
+.files li .n{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--sc,#555);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.files li .ic{margin-left:auto;font-size:28px}
+.files li.ok{border-color:var(--ok);background:var(--ok-bg)}
+.files li.ko{border-color:var(--ko);background:var(--ko-bg)}
+.files li.mb{border-color:var(--maybe);background:var(--maybe-bg)}
+.explica{font-size:23px;line-height:1.5;border-left:6px solid var(--teal);padding:4px 0 4px 14px}
+.fi{text-align:center;padding:30px 10px}
+.fi .cara{font-size:80px}
+.fi p{font-size:26px;margin:10px 0}
+.fi .gran{font-size:44px;font-weight:800;color:var(--teal-dark)}
+.hidden{display:none!important}
+@media (max-width:560px){ body{font-size:19px} .cas p{font-size:22px} .cas-t{font-size:24px} .op .nm{font-size:21px} .op .df{font-size:17px} }
+</style>
+</head>
+<body>
+<header>
+  <h1>🕵️ Detector de pseudociència</h1>
+  <div class="compta" aria-live="polite">
+    <span>Casos fets: <b id="k-fets">0</b></span>
+    <span>Encerts: <b id="k-ok">0</b></span>
+  </div>
+</header>
+<main>
+  <section class="cas" id="cas">
+    <div class="cas-t"><span class="em" id="c-em"></span><span id="c-t"></span></div>
+    <div id="c-x"></div>
+  </section>
+
+  <!-- Pas 1 · senyals -->
+  <section id="pas1">
+    <h2>1 · Quins senyals hi veus?</h2>
+    <div class="opcions" id="senyals"></div>
+    <div class="accions"><button type="button" class="btn" id="b-1" disabled>Endavant →</button></div>
+  </section>
+
+  <!-- Pas 2 · calaix -->
+  <section id="pas2" class="hidden">
+    <h2>2 · A quin calaix va?</h2>
+    <div class="opcions" id="calaixos"></div>
+    <div class="accions">
+      <button type="button" class="btn sec" id="b-enrere">← Senyals</button>
+      <button type="button" class="btn" id="b-2" disabled>Comprova</button>
+    </div>
+  </section>
+
+  <!-- Pas 3 · correcció -->
+  <section id="pas3" class="hidden">
+    <div class="veredicte" id="fb"><span class="cara" id="fb-cara"></span><div><b id="fb-t"></b></div></div>
+    <ul class="files" id="files"></ul>
+    <p class="explica" id="fb-x"></p>
+    <div class="accions"><button type="button" class="btn" id="b-3">Següent cas →</button></div>
+  </section>
+
+  <section id="final" class="fi hidden">
+    <div class="cara" id="f-cara"></div>
+    <p>Has fet <span class="gran" id="f-fets"></span> casos.</p>
+    <p>N'has encertat <span class="gran" id="f-ok"></span>.</p>
+    <p>✏️ Apunta-ho a la fitxa.</p>
+    <div class="accions" style="justify-content:center"><button type="button" class="btn" id="b-reinicia" style="margin:0">Torna a començar</button></div>
+  </section>
+</main>
+
+<script>
+const D = {"senyals": {"1": {"nom": "No es pot comprovar", "def": "No hi ha cap experiment que ho posi a prova."}, "2": {"nom": "No admet crítica", "def": "Passi el que passi, qui hi creu no canvia mai d'idea."}, "3": {"nom": "Sona «científica»", "def": "Paraules grosses (quàntic, energia, toxines, natural) que no expliquen res."}}, "calaixos": {"ciencia": {"nom": "CIÈNCIA", "def": "Ho han comprovat bé."}, "pseudo": {"nom": "PSEUDOCIÈNCIA", "def": "Diu que és ciència, però no es deixa comprovar o no canvia mai."}, "no-comprovat": {"nom": "ENCARA NO COMPROVAT", "def": "S'està investigant."}}, "casos": [{"id": "c-reiki", "emoji": "🙌", "titol": "Les mans que curen", "text": "Una persona passa les mans a prop del teu cos. Diu que [[3|et passa energia universal]]. [[1|Aquesta energia no la pot mesurar cap aparell]]. [[2|Si no et cura, diu que és perquè no hi creus prou]].", "si": [1, 2, 3], "pot": [], "calaix": "pseudo", "explica": "Té els tres senyals. «Energia universal» sona bé però no explica res. Ningú no la pot mesurar. I si no funciona, la culpa és teva."}, {"id": "c-vacuna", "emoji": "💉", "titol": "Una vacuna nova", "text": "Una vacuna nova es prova amb molta gent. Uns reben la vacuna. Els altres reben una punxada sense res. Ningú no sap què ha rebut. Els vacunats es posen malalts molt menys. Els metges la continuen vigilant.", "si": [], "pot": [], "calaix": "ciencia", "explica": "Aquí no hi ha cap senyal. L'han provat bé: dos grups, i ningú no sabia què rebia. Això és ciència."}, {"id": "c-cristall", "emoji": "💎", "titol": "Un cristall sota el coixí", "text": "Poses un cristall rosa sota el coixí. Diuen que [[3|la seva energia t'equilibra]] i dorms millor. [[2|Si no notes res, diuen que has de netejar el cristall]].", "si": [2, 3], "pot": [1], "calaix": "pseudo", "explica": "«Energia» sona científica però no diu res. I si no funciona, sempre hi ha una excusa: netejar el cristall."}, {"id": "c-pastilles", "emoji": "💊", "titol": "Pastilles per a les notes", "text": "Unes pastilles prometen millors notes sense estudiar. Diuen que tenen [[3|partícules quàntiques]] que desperten el cervell. [[2|Diuen que els científics ho amaguen]].", "si": [2, 3], "pot": [1], "calaix": "pseudo", "explica": "«Quàntic» és una paraula grossa que aquí no explica res. I «els científics ho amaguen» vol dir que cap crítica els farà canviar."}, {"id": "c-panxa", "emoji": "🦠", "titol": "Els bacteris de la panxa", "text": "Dins la panxa tenim molts bacteris. En ratolins, si canvies aquests bacteris, canvia com es comporten. En persones encara no se sap. Els científics ho estan investigant.", "si": [], "pot": [], "calaix": "no-comprovat", "explica": "Aquí no hi ha cap senyal. Es pot comprovar, i els científics diuen que encara no ho saben. Està encara no comprovat."}, {"id": "c-pegats", "emoji": "🦶", "titol": "Pegats per als peus", "text": "T'enganxes uns pegats als peus per dormir. Al matí estan foscos. Diuen que és perquè [[3|han xuclat les toxines del cos]]. Però els pegats també es tornen foscos només amb la suor.", "si": [3], "pot": [1], "calaix": "pseudo", "explica": "«Toxines» sona científic, però no diuen quines ni com ho saben. El color fosc ve de la suor."}, {"id": "c-sangoneres", "emoji": "🩸", "titol": "Sangoneres a l'hospital", "text": "A vegades, quan cusen un dit tallat, la sang s'hi queda embussada. Alguns hospitals hi posen sangoneres. Les sangoneres xuclen la sang que sobra. Ho han provat amb malalts i sí que funciona.", "si": [], "pot": [], "calaix": "ciencia", "explica": "Fa estrany, però no hi ha cap senyal: ho han provat i funciona. Estrany no vol dir fals."}, {"id": "c-piramide", "emoji": "🔺", "titol": "La piràmide de cartró", "text": "Poses un plàtan dins una piràmide de cartró. Diuen que dura més perquè [[3|la piràmide concentra forces còsmiques]]. Ho han provat al laboratori i no funciona. [[2|Diuen que les parets del laboratori tapen l'energia]].", "si": [2, 3], "pot": [1], "calaix": "pseudo", "explica": "Ho han provat i no funciona. En comptes de canviar d'idea, s'inventen una excusa: les parets. Això és no admetre crítica."}, {"id": "c-numero", "emoji": "🔢", "titol": "El teu número de la sort", "text": "Suma els números del dia que vas néixer. Diuen que [[1|el número et diu com ets i amb qui seràs feliç]]. [[2|Si no t'encaixa, diuen que has fet malament la suma]].", "si": [1, 2], "pot": [], "calaix": "pseudo", "explica": "Cap experiment pot comprovar «com ets» amb un número. I si no encaixa, la culpa és de la suma."}, {"id": "c-polsera", "emoji": "🧲", "titol": "La polsera d'imants", "text": "Una polsera d'imants promet treure el mal d'ossos. Diu que [[3|els imants netegen la sang]]. Ho han provat amb polseres de debò i amb polseres falses: el mal baixa igual. [[2|La marca diu que la prova està mal feta i la continua venent]].", "si": [2, 3], "pot": [], "calaix": "pseudo", "explica": "La van provar bé i no funciona. Però la marca no canvia d'idea: això és no admetre crítica."}]};
+const COLOR = {1:'var(--s1)', 2:'var(--s2)', 3:'var(--s3)'};
+let idx = 0, sel = new Set(), cap = false, calaix = null, fets = 0, encerts = 0;
+
+function $(id){ return document.getElementById(id); }
+function esc(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function gem(h){ return h.replace(/l·l/g, '<span class="gem">l·l</span>'); }
+
+// Una frase per línia; en corregir, pinta la frase de cada senyal amb el seu número.
+function textCas(c, revela){
+  return c.text.split(/(?<=\.)\s+/).map(function(frase){
+    const h = esc(frase).replace(/\[\[(\d)\|([^\]]+)\]\]/g, function(_, s, f){
+      if(!revela) return f;
+      return '<mark data-n="'+s+'" style="--mc:'+COLOR[s]+';--mk:color-mix(in srgb,'+COLOR[s]+' 16%,#fff)">'+f+'</mark>';
+    });
+    return '<p>'+gem(h)+'</p>';
+  }).join('');
+}
+
+function pas(n){
+  ['pas1','pas2','pas3'].forEach(function(p, i){ $(p).classList.toggle('hidden', i+1 !== n); });
+}
+
+function botoSenyal(s){
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'op'; b.dataset.s = s;
+  b.style.setProperty('--sc', COLOR[s]);
+  b.setAttribute('aria-pressed', 'false');
+  b.innerHTML = '<span class="n">'+s+'</span><span><span class="nm">'+gem(esc(D.senyals[s].nom))+'</span><span class="df">'+gem(esc(D.senyals[s].def))+'</span></span>';
+  b.addEventListener('click', function(){
+    sel.has(s) ? sel.delete(s) : sel.add(s);
+    cap = false; refresca1();
+  });
+  return b;
+}
+function refresca1(){
+  document.querySelectorAll('#senyals .op').forEach(function(b){
+    const on = b.dataset.s === 'cap' ? cap : sel.has(+b.dataset.s);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  $('b-1').disabled = !(cap || sel.size);
+}
+function pintaSenyals(){
+  const box = $('senyals'); box.innerHTML = '';
+  [1,2,3].forEach(function(s){ box.appendChild(botoSenyal(s)); });
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'op cap'; b.dataset.s = 'cap';
+  b.setAttribute('aria-pressed', 'false');
+  b.innerHTML = '<span class="n">0</span><span><span class="nm">Cap senyal</span><span class="df">No hi veig cap senyal.</span></span>';
+  b.addEventListener('click', function(){ cap = !cap; sel = new Set(); refresca1(); });
+  box.appendChild(b);
+}
+function pintaCalaixos(){
+  const box = $('calaixos'); box.innerHTML = '';
+  Object.keys(D.calaixos).forEach(function(k){
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'op'; b.dataset.k = k;
+    b.setAttribute('aria-pressed', 'false');
+    b.innerHTML = '<span><span class="nm">'+D.calaixos[k].nom+'</span><span class="df">'+gem(esc(D.calaixos[k].def))+'</span></span>';
+    b.addEventListener('click', function(){
+      calaix = k;
+      box.querySelectorAll('.op').forEach(function(x){ x.setAttribute('aria-pressed', x.dataset.k === k ? 'true' : 'false'); });
+      $('b-2').disabled = false;
+    });
+    box.appendChild(b);
+  });
+}
+
+function mostraCas(){
+  const c = D.casos[idx];
+  sel = new Set(); cap = false; calaix = null;
+  $('cas').classList.remove('rev','hidden');
+  $('final').classList.add('hidden');
+  $('c-em').textContent = c.emoji;
+  $('c-t').innerHTML = gem(esc(c.titol));
+  $('c-x').innerHTML = textCas(c, false);
+  pintaSenyals(); pintaCalaixos(); refresca1();
+  $('b-2').disabled = true;
+  pas(1);
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function comprova(){
+  const c = D.casos[idx];
+  let okS = true;
+  const files = [];
+  [1,2,3].forEach(function(s){
+    const hi = c.si.indexOf(s) >= 0, pot = c.pot.indexOf(s) >= 0, marcat = sel.has(s);
+    const nom = D.senyals[s].nom;
+    if(hi && marcat) files.push(['ok', s, nom+': <b>hi és</b>. Ben vist!', '😀']);
+    else if(hi){ files.push(['ko', s, nom+': <b>hi era</b> i no l\'has marcat.', '🤔']); okS = false; }
+    else if(pot && marcat) files.push(['mb', s, nom+': també es pot dir. Val.', '🙂']);
+    else if(marcat){ files.push(['ko', s, nom+': <b>aquí no hi és</b>.', '🤔']); okS = false; }
+  });
+  if(!c.si.length && !sel.size) files.push(['ok', 0, 'Cap senyal: <b>ben vist!</b>', '😀']);
+  const okC = calaix === c.calaix;
+  files.push([okC ? 'ok' : 'ko', null,
+    okC ? 'Calaix: <b>'+D.calaixos[c.calaix].nom+'</b>. Molt bé!'
+        : 'Has triat '+D.calaixos[calaix].nom+'. Va a <b>'+D.calaixos[c.calaix].nom+'</b>.',
+    okC ? '😀' : '🤔']);
+
+  const tot = okS && okC;
+  fets++; if(tot) encerts++;
+  $('fb').className = 'veredicte ' + (tot ? 'ok' : 'ko');
+  $('fb-cara').textContent = tot ? '😀' : '🤔';
+  $('fb-t').textContent = tot ? 'Encert!' : (okC ? 'El calaix és bo. Mira els senyals.' : (okS ? 'Els senyals són bons. Mira el calaix.' : 'Mira les frases pintades.'));
+  $('files').innerHTML = files.map(function(f){
+    const n = f[1] === null ? '<span class="n" style="--sc:var(--teal)">📦</span>'
+            : f[1] === 0 ? '<span class="n" style="--sc:#555">0</span>'
+            : '<span class="n" style="--sc:'+COLOR[f[1]]+'">'+f[1]+'</span>';
+    return '<li class="'+f[0]+'">'+n+'<span>'+gem(f[2])+'</span><span class="ic">'+f[3]+'</span></li>';
+  }).join('');
+  $('fb-x').innerHTML = gem(esc(c.explica));
+  $('c-x').innerHTML = textCas(c, true);
+  $('cas').classList.add('rev');
+  $('b-3').textContent = idx === D.casos.length-1 ? 'Veure el resultat →' : 'Següent cas →';
+  compta();
+  pas(3);
+}
+function compta(){ $('k-fets').textContent = fets; $('k-ok').textContent = encerts; }
+function seguent(){
+  if(idx < D.casos.length-1){ idx++; mostraCas(); return; }
+  $('cas').classList.add('hidden'); pas(0);
+  $('final').classList.remove('hidden');
+  $('f-fets').textContent = fets; $('f-ok').textContent = encerts;
+  $('f-cara').textContent = encerts >= fets/2 ? '😀' : '🤔';
+}
+function comenca(){ idx = 0; fets = 0; encerts = 0; compta(); mostraCas(); }
+
+$('b-1').addEventListener('click', function(){ pas(2); });
+$('b-enrere').addEventListener('click', function(){ pas(1); });
+$('b-2').addEventListener('click', comprova);
+$('b-3').addEventListener('click', seguent);
+$('b-reinicia').addEventListener('click', comenca);
+comenca();
+</script>
+</body>
+</html>

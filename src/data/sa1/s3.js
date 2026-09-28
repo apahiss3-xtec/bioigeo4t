@@ -17,7 +17,7 @@ export const sa1s3 = {
 
   engageChallenge: "Treu el cas que has caçat. En 30 segons, digues al company del costat què promet, sense dir-li què en penses. Ell et diu, a ull, si li sembla ciència o no. Ho comprovareu al final de la sessió.",
   engageQuestion: "El detector no és per aprovar la SA: és per no deixar-te enredar la resta de la teva vida. Funciona amb un cas que ningú no t'ha triat?",
-  teacherNotes: "Apartat 1 amb pantalles (app autocorrectiva, mode 3 senyals per a la C). Apartat 2 amb el cas propi o un cas de reserva. Revisió a cegues en parella i autoavaluació. L'exit tiquet tanca amb la falsabilitat del cas propi.",
+  teacherNotes: "Apartat 1 amb pantalles (app autocorrectiva; la versió C del web obre una app pròpia amb els 3 senyals i casos més curts). Apartat 2 amb el cas propi o un cas de reserva. Revisió a cegues en parella i autoavaluació. L'exit tiquet tanca amb la falsabilitat del cas propi.",
 
   levelObjectives: {
     A: [
@@ -49,7 +49,7 @@ export const sa1s3 = {
     },
     "2": {
       scaffold:
-        "Per a la prova, fes servir aquest motlle: «Faria dos grups: un rep ___ i l'altre no (o una imitació). Ningú no sap qui rep què. Mesuro ___. Si els dos grups surten igual, la promesa és falsa».",
+        "Per dissenyar la prova, fes servir aquest motlle: «Faria dos grups: un rep ___ i l'altre no (o una imitació). Ningú no sap qui rep què. Mesuro ___. Si els dos grups surten igual, la promesa és falsa».",
       challenge:
         "Reescriu la promesa del cas perquè es pugui posar a prova: què es mesura, en qui i comparat amb què. Si no es pot reescriure sense canviar-la del tot, això ja és un veredicte."
     },
@@ -74,19 +74,25 @@ export const sa1s3 = {
   },
 
   exploreActivity: {
-    what: "Entrenament amb l'app autocorrectiva del detector: 14 casos curts (ciència, pseudociència i encara no comprovat). Per a cada cas es marquen els senyals i el calaix i l'app corregeix al moment, pintant la frase que encén cada senyal. Mínim 8 casos. Qui treballa amb la versió C fa servir el mode «3 senyals».",
+    what: "Entrenament amb l'app autocorrectiva del detector: 14 casos curts (ciència, pseudociència i encara no comprovat). Per a cada cas es marquen els senyals i el calaix i l'app corregeix al moment, pintant la frase que encén cada senyal. Mínim 8 casos.",
     who: { mode: "individual", label: "Individual, amb ordinador o tauleta" },
     time: 25,
-    note: "Apunta a la fitxa quants casos has fet, quants encerts sencers i el senyal que més falles."
+    note: "L'app et compta els casos fets i els encerts: apunta a la fitxa el que et demana."
   },
   exploreInstructions: [
     "Obre l'app (a sota) o a pantalla completa",
     "Per a cada cas, marca els senyals que s'encenen (pot ser cap) i el calaix, i prem Comprova",
     "Llegeix les frases pintades quan t'equivoquis",
-    "Apunta a la fitxa els casos fets, els encerts i el senyal que més falles"
+    "Apunta a la fitxa el resultat que et demana (casos fets, encerts…)"
   ],
   exploreDuration: "25 min",
-  appSrc: "/apps/app_detector_pseudociencia.html",
+  // La C té una app pròpia (24/09/2026): vocabulari de la fitxa C (3 senyals),
+  // 10 casos reescrits curts i una pregunta per pantalla. SessionPage hi aplica pickLevel.
+  appSrc: {
+    A: "/apps/app_detector_pseudociencia.html",
+    B: "/apps/app_detector_pseudociencia.html",
+    C: "/apps/app_detector_pseudociencia_C.html"
+  },
   exploreNote: "L'app funciona sola i no desa res: el resultat s'apunta a la fitxa.",
 
   theoryPoints: [
@@ -117,7 +123,7 @@ export const sa1s3 = {
     { id: "clau", title: "Clau docent de la SA1", url: "/fitxes/sa1-clau-docent.html", who: "docent" }
   ],
   teoriaPdfUrl: null,
-  elaborateNote: "Fitxa de 2 pàgines. L'autoavaluació de la SA és l'apartat 4; per preparar la prova, fes també l'Autoavaluació pre-examen de la SA.",
+  elaborateNote: "Fitxa de 2 pàgines. L'autoavaluació de la SA és l'apartat 4; per repassar-la a fons, fes també l'Autoavaluació de la SA al web.",
 
   fitxaGuide: {
     fitxaName: "Fitxa S3 — El detector al món real",
@@ -166,8 +172,8 @@ export const sa1s3 = {
   },
 
   homework: {
-    description: "Fes l'Autoavaluació pre-examen de la SA1 (checklist, assaig de prova escrita i test de transferència).",
-    note: "L'assaig s'escriu a mà abans de mirar les respostes model."
+    description: "Fes l'Autoavaluació de la SA1 al web (checklist, pràctica escrita i un cas nou).",
+    note: "La pràctica escrita es fa a mà abans de mirar les respostes model."
   },
 
   recoveryInstructions: [

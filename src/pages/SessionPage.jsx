@@ -109,6 +109,8 @@ export default function SessionPage() {
   // `hasLevel` distingeix la fitxa pròpia del nivell de la que arriba pel
   // fallback: mentre no totes les SA tinguin C, el botó ho ha de dir.
   const fitxaUrl = pickLevel(session.fitxaUrl, nivell)
+  // appSrc pot ser una cadena o {A,B,C} (SA1·S3: la C té una app pròpia)
+  const appSrc = pickLevel(session.appSrc, nivell)
   const fitxaEsDelNivell = hasLevel(session.fitxaUrl, nivell)
 
   // ── Apartats numerats com al full ───────────────────────────
@@ -330,7 +332,7 @@ export default function SessionPage() {
         )}
 
         {/* ── APARTAT 1 · EXPLORA (l'app interactiva i les hipòtesis) ── */}
-        {(session.exploreInstructions || session.appSrc) && (
+        {(session.exploreInstructions || appSrc) && (
           <section className="pb-12">
             {apartatMeta['1'] ? (
               <ApartatHeader
@@ -350,9 +352,9 @@ export default function SessionPage() {
               </div>
             )}
 
-            {session.appSrc && (
+            {appSrc && (
               <div className="mb-8">
-                <AppFrame appSrc={session.appSrc} title={session.title} />
+                <AppFrame appSrc={appSrc} title={session.title} />
               </div>
             )}
 

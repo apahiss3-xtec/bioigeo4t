@@ -28,21 +28,23 @@
 // c7–c10 es mantenen (es treballen al puzle de la S2 i a l'app de la S3). El test de
 // transferència (Power Balance) es manté: no és cap dels casos del puzle ni de l'app.
 export const sa1Avaluacio = {
-  // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
-  // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
-  // una falsa sensacio d'anar preparat. Aqui les preguntes son del tipus de
-  // les de la prova i s'han de respondre a ma, en un full, abans d'obrir la
-  // solucio; els models AS i AE estan escrits amb els mateixos descriptors
-  // que fan servir les rubriques de les proves del curs.
+  // Pràctica escrita (24/09/2026: abans «Assaig de prova escrita»). La SA1 NO té
+  // prova pròpia (`teProva: false` a index.js), així que el bloc no es presenta
+  // com a assaig de cap prova: es manté perquè argumentar per escrit és el nucli
+  // de la SA i perquè entrena el bloc OA-P4 («classifico afirmacions segons el
+  // grau de certesa») de la prova final (SA7·S29). S'ha de respondre a mà, en un
+  // full, abans d'obrir la solució; els models AS i AE fan servir els mateixos
+  // descriptors que les rúbriques del curs. El títol del bloc el posa la pàgina
+  // (auto.senseProva.escritaTitle).
   escrita: {
     intro:
-      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts: escriu la resposta sencera i només després obre la solució. A SA1 gairebé tot es respon argumentant, i un argument no és una etiqueta: «això és pseudociència» no és una resposta fins que dius per què.",
+      "Practica argumentar per escrit. Full, bolígraf i sense apunts: escriu la resposta sencera i només després obre la solució. A SA1 gairebé tot es respon argumentant, i un argument no és una etiqueta: «això és pseudociència» no és una resposta fins que dius per què.",
     minutes: 24,
     questions: [
       {
         id: 'w1',
         oa: 'OA4',
-        source: 'Tipus de pregunta de la prova · Veredicte amb el detector',
+        source: 'Veredicte amb el detector',
         minutes: 7,
         text: "Un producte promet millorar la concentració «gràcies a la ressonància quàntica de les cèl·lules». No hi ha cap estudi publicat, però la web recull desenes de testimonis entusiastes. Dona-li un veredicte (ciència / pseudociència / encara no comprovat) i justifica'l amb els senyals del detector.",
         model: {
@@ -60,7 +62,7 @@ export const sa1Avaluacio = {
       {
         id: 'w2',
         oa: 'OA2',
-        source: 'Tipus de pregunta de la prova · Tipus de garantia',
+        source: 'Tipus de garantia',
         minutes: 6,
         text: "Dues persones defensen la mateixa conclusió. Una diu: «ho he llegit en un metaanàlisi de 40 estudis». L'altra diu: «a casa meva ho hem fet sempre així i ens ha anat bé». Explica quina garantia fa servir cadascuna i per quina raó no donen la mateixa certesa.",
         model: {
@@ -78,7 +80,7 @@ export const sa1Avaluacio = {
       {
         id: 'w3',
         oa: 'OA3',
-        source: 'Tipus de pregunta de la prova · Disseny de la prova',
+        source: "Disseny d'una prova justa",
         minutes: 6,
         text: "Vols comprovar si una infusió realment redueix el mal de cap. Explica com muntaries la prova perquè les ganes de creure-hi no puguin decidir el resultat.",
         model: {
@@ -97,7 +99,7 @@ export const sa1Avaluacio = {
       {
         id: 'w4',
         oa: 'OA1',
-        source: 'Tipus de pregunta de la prova · Provisionalitat',
+        source: 'Provisionalitat',
         minutes: 5,
         text: "Un company diu: «si els científics canvien d'idea cada pocs anys, vol dir que no en saben res». Respon-li amb el que has treballat sobre com funciona la ciència.",
         model: {

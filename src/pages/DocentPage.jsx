@@ -3,6 +3,7 @@ import { getSA } from '../data/sas.js'
 import { getCriteri } from '../data/criteris.js'
 import { asset } from '../utils.js'
 import NotFoundPage from './NotFoundPage.jsx'
+import { tAuto } from '../autoavaluacio.js'
 
 // ── ESPAI DOCENT · #/sa/:saId/docent ─────────────────────────────────────
 // Petició d'Albert (21/09/2026): la guia docent, els casos i TOTS els
@@ -12,7 +13,7 @@ import NotFoundPage from './NotFoundPage.jsx'
 //
 // Es construeix sol a partir de les dades de cada sessió, així que serveix per
 // a totes les SA sense tocar res: fitxaUrl, retallablesUrl, exitTicketUrl,
-// appSrc, rubricUrl i sessionMaterials (inclosos els marcats who: 'docent',
+// appSrc (cadena o {A,B,C}), rubricUrl i sessionMaterials (inclosos els marcats who: 'docent',
 // que la pàgina de sessió de l'alumnat no mostra).
 
 const NIVELLS = ['A', 'B', 'C']
@@ -88,7 +89,7 @@ export default function DocentPage() {
             </span>
           )}
           <Enllac href={`/sa/${sa.id}`} intern>🗺️ Pàgina de la SA (alumnat)</Enllac>
-          {sa.avaluacio && <Enllac href={`/sa/${sa.id}/autoavaluacio`} intern>✅ Autoavaluació pre-examen</Enllac>}
+          {sa.avaluacio && <Enllac href={`/sa/${sa.id}/autoavaluacio`} intern>✅ {tAuto(sa, 'title')}</Enllac>}
         </div>
         {sa.product && (
           <p className="mt-4 text-sm">
@@ -140,7 +141,12 @@ export default function DocentPage() {
             )}
             {s.appSrc && (
               <Fila titol="💻 App">
-                <Enllac href={s.appSrc}>{s.appSrc.split('/').pop()}</Enllac>
+                {perNivell(s.appSrc).map((f) => (
+                  <Enllac key={f.url} href={f.url}>
+                    {f.etiqueta ? `Versió ${f.etiqueta} · ` : ''}
+                    {f.url.split('/').pop()}
+                  </Enllac>
+                ))}
               </Fila>
             )}
             {s.rubricUrl && (
