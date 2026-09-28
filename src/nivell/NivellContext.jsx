@@ -11,7 +11,7 @@ import { createContext, useContext, useState } from 'react'
 //       Criteris: vault, «Nivell C - Criteris fitxes».
 // No s'ha de confondre amb els nivells d'assoliment NA/AS/AN/AE de l'autoavaluació.
 //
-// ⚠️ De moment només la SA1 té materials C. A la resta de SA, `pickLevel` cau
+// ⚠️ De moment tenen materials C la SA1, la SA2 i la SA3. A la resta de SA, `pickLevel` cau
 // a la B (vegeu més avall) i `hasLevel` permet dir-ho a la interfície en
 // comptes de fer passar una fitxa B per una C.
 export const NIVELLS = ['A', 'B', 'C']

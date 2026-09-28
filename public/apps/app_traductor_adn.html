@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tradueix i muta · El codi de la vida · IE Temple · 4t ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2E4A9E; --blue-ink:#22357A; --accent:#5B7BE0; --blue-tint:#EEF1FB;
+  --green:#2E7D57; --green-tint:#EAF6F0; --brown:#8a5a2b; --brown-tint:#f6eee4;
+  --orange:#B5502A; --orange-tint:#FBEEE0; --violet:#7B3F9E; --violet-tint:#F5ECFC;
+  --ink:#1A1A2E; --muted:#5f6475; --surface:#fbfcff; --rule:#dde3f5; --yellow:#FFF3C4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Fira Sans Extra Condensed','Segoe UI',sans-serif;background:var(--surface);color:var(--ink);min-height:100vh;font-size:16px}
+body.lang-ar .tr,body.lang-ur .tr{direction:rtl}
+header{background:var(--blue-ink);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:11px;font-weight:700;color:#9fb3f5;letter-spacing:.12em;text-transform:uppercase}
+.htitle{font-size:24px;font-weight:800;color:#fff;line-height:1.05}
+.hbtns{display:flex;gap:6px;flex-wrap:wrap}
+.hbtns button{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;border-radius:999px;padding:5px 13px;cursor:pointer;background:rgba(255,255,255,.14);color:#fff}
+.hbtns button.simp{background:var(--yellow);color:var(--blue-ink)}
+.hbtns button.active{background:#9fb3f5;color:var(--ink);box-shadow:0 0 0 2px #fff inset}
+.hbtns button.simp.active{background:#f9dc5c}
+main{max-width:1060px;margin:0 auto;padding:16px 16px 8px}
+.intro{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--accent);border-radius:10px;padding:10px 14px;font-size:15.5px;line-height:1.45;margin-bottom:14px}
+.card{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:14px 16px;margin-bottom:14px}
+.card h2{font-size:17px;font-weight:800;color:var(--blue-ink);letter-spacing:.02em;margin-bottom:8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.step{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;font-size:14px}
+.where{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:2px 9px;border-radius:999px}
+.where.nuc{background:var(--blue-tint);color:var(--blue)}
+.where.cit{background:var(--green-tint);color:var(--green)}
+.scroll{overflow-x:auto;padding-bottom:6px}
+.strand{display:flex;align-items:center;gap:0;min-width:max-content;margin:4px 0}
+.lab{width:118px;flex:none;font-size:13px;font-weight:700;color:var(--muted);line-height:1.1}
+.codon{display:flex;gap:2px;margin-right:10px;position:relative}
+.b{width:30px;height:34px;border-radius:6px;display:grid;place-items:center;font-weight:800;font-size:18px;border:2px solid transparent;transition:transform .25s,background .25s,opacity .3s}
+.coding .b{background:var(--blue-tint);color:var(--blue);border-color:#c5d0f2;cursor:pointer}
+.coding .b:hover{transform:translateY(-3px);border-color:var(--accent)}
+.coding .b.mut{background:var(--violet-tint);color:var(--violet);border-color:var(--violet)}
+.template .b{background:var(--brown-tint);color:var(--brown);border-color:#e6d3bd}
+.rna .b{background:var(--green-tint);color:var(--green);border-color:#bfe1cf;opacity:0;transform:translateY(-10px)}
+.rna .b.on{opacity:1;transform:none}
+.rna .b.mut{background:var(--violet-tint);color:var(--violet);border-color:var(--violet)}
+.rungs{display:flex;min-width:max-content}
+.rungs span{width:30px;margin-right:2px;text-align:center;color:#b8c3e6;font-size:11px;line-height:10px}
+.rungs .gap{width:10px;margin:0}
+.codon.reading::after{content:"";position:absolute;inset:-6px -5px;border:3px solid var(--orange);border-radius:10px;animation:pulse .9s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.pol{height:26px;position:relative;min-width:max-content;margin-left:118px}
+.pol .enz{position:absolute;top:0;left:0;width:70px;height:24px;border-radius:14px;background:var(--green);color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;transition:left .35s linear;opacity:0}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{font-family:inherit;font-size:15px;font-weight:700;border:none;border-radius:10px;padding:8px 16px;cursor:pointer;background:var(--blue);color:#fff}
+.btn.sec{background:var(--blue-tint);color:var(--blue)}
+.btn.warn{background:var(--orange-tint);color:var(--orange)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.hint{font-size:14px;color:var(--muted);margin-top:6px;line-height:1.4}
+.chain{display:flex;gap:6px;flex-wrap:wrap;min-height:48px;align-items:center;margin-top:6px}
+.aa{min-width:50px;height:40px;padding:0 8px;border-radius:20px;display:grid;place-items:center;font-weight:800;font-size:15px;background:#f6d7a8;color:#5a2a10;border:2px solid var(--orange);animation:pop .35s ease}
+.aa.diff{background:#e7c6f7;border-color:var(--violet);color:#3e1a57}
+.aa.stop{background:#fbe3e3;border-color:#c0392b;color:#a0281c}
+@keyframes pop{from{transform:scale(.3);opacity:0}}
+.trna{font-size:13px;color:var(--orange);margin-top:6px;min-height:20px}
+.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+@media (max-width:760px){.grid2{grid-template-columns:1fr}.lab{width:92px}.pol{margin-left:92px}}
+.verdict{font-size:16px;line-height:1.45}
+.verdict b{color:var(--blue-ink)}
+.tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:6px}
+.tag.ok{background:var(--green-tint);color:var(--green)}
+.tag.sil{background:#e7f0ff;color:var(--blue)}
+.tag.mis{background:var(--violet-tint);color:var(--violet)}
+.tag.non{background:#fbe3e3;color:#a0281c}
+.cellbox{display:flex;align-items:center;justify-content:center;min-height:170px}
+.cellbox svg{width:190px;height:170px}
+.reptes{list-style:none;display:grid;gap:6px}
+.reptes li{font-size:15px;padding:7px 10px;border-radius:9px;background:#f4f6fc;border:1px solid var(--rule);display:flex;gap:8px;align-items:flex-start}
+.reptes li .ck{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-size:13px;color:#fff}
+.reptes li.done{background:var(--green-tint);border-color:#bfe1cf}
+.reptes li.done .ck{background:var(--green);border-color:var(--green)}
+.gloss{display:none;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+body.lang-es .gloss,body.lang-ar .gloss,body.lang-ur .gloss{display:flex}
+.gloss span{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:4px 9px;font-size:14px}
+.gloss span i{font-style:normal;color:var(--accent);font-weight:700;margin-left:4px}
+.table-mini{font-size:13px;color:var(--muted);margin-top:8px}
+footer{max-width:1060px;margin:10px auto 16px;padding:10px 16px;border-top:1px solid var(--rule);font-size:12.5px;line-height:1.6;color:var(--muted);text-align:center}
+footer a{color:var(--blue)}
+.simple{display:none}
+body.simplified .simple{display:inline}
+body.simplified .full{display:none}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="eyebrow">SA3 · El codi de la vida · Sessió 3</div>
+    <div class="htitle">Tradueix i muta: de l'ADN a la proteïna</div>
+  </div>
+  <div class="hbtns">
+    <button class="simp" id="btnSimp" onclick="toggleSimplify()">Simplifica</button>
+    <button id="btnEs" onclick="setLang('es')">Castellano</button>
+    <button id="btnAr" onclick="setLang('ar')">عربي</button>
+    <button id="btnUr" onclick="setLang('ur')">اردو</button>
+  </div>
+</header>
+
+<main>
+  <div class="gloss" id="gloss"></div>
+
+  <p class="intro">
+    <span class="full">Aquest és el principi real del gen de l'<b>hemoglobina</b>, la proteïna que porta l'oxigen dins els glòbuls vermells. Primer <b>transcriu</b> l'ADN a ARN missatger i després <b>tradueix</b>-lo a aminoàcids. Quan ho tinguis, <b>clica una lletra de la cadena codificant</b> per canviar-la (una mutació) i torna-ho a fer: què li passa a la proteïna?</span>
+    <span class="simple">L'ADN és una recepta. <b>1)</b> Copia-la (botó verd). <b>2)</b> Llegeix-la de 3 en 3 lletres (botó taronja). <b>3)</b> Clica una lletra blava per canviar-la i mira què passa.</span>
+  </p>
+
+  <section class="card">
+    <h2><span class="step">1</span> <span class="full">Transcripció</span><span class="simple">Copiar la recepta</span> <span class="where nuc">al nucli</span></h2>
+    <div class="scroll">
+      <div class="strand coding" id="coding"><div class="lab">ADN · cadena codificant <span style="color:var(--accent)">(clica per mutar)</span></div></div>
+      <div class="rungs" id="rungs"></div>
+      <div class="strand template" id="template"><div class="lab">ADN · cadena motlle</div></div>
+      <div class="pol" id="polRow"><div class="enz" id="pol">ARN polimerasa</div></div>
+      <div class="strand rna" id="rna"><div class="lab">ARN missatger</div></div>
+    </div>
+    <div class="btnrow">
+      <button class="btn" style="background:var(--green)" id="bTrans" onclick="transcribe()">▶ Transcriu</button>
+      <button class="btn sec" onclick="resetAll()">↺ Torna al gen normal</button>
+    </div>
+    <p class="hint"><span class="full">L'ARN polimerasa llegeix la <b>cadena motlle</b> i posa la lletra complementària: A→U, T→A, G→C, C→G. Per això l'ARNm acaba igual que la cadena codificant, però amb <b>U</b> en lloc de <b>T</b>.</span><span class="simple">La màquina verda copia l'ADN. A l'ARN no hi ha T: hi ha <b>U</b>.</span></p>
+  </section>
+
+  <section class="card">
+    <h2><span class="step" style="background:var(--orange)">2</span> <span class="full">Traducció</span><span class="simple">Llegir la recepta</span> <span class="where cit">al ribosoma (citoplasma)</span></h2>
+    <p class="hint" style="margin-top:0"><span class="full">El ribosoma llegeix l'ARNm de <b>3 en 3 lletres</b> (codons). Per a cada codó arriba un <b>ARNt</b> amb l'anticodó que hi encaixa i hi deixa <b>un aminoàcid</b>.</span><span class="simple">Cada 3 lletres = 1 peça (aminoàcid). Les peces juntes fan la proteïna.</span></p>
+    <div class="trna" id="trna"></div>
+    <div class="chain" id="chain"></div>
+    <div class="btnrow">
+      <button class="btn" style="background:var(--orange)" id="bTrad" onclick="doTranslate()" disabled>▶ Tradueix</button>
+      <button class="btn sec" id="bFast" onclick="fast()">⏩ Fes-ho tot de cop</button>
+    </div>
+    <p class="table-mini">Abreviatures: Met = metionina (inici) · Val = valina · His = histidina · Leu = leucina · Thr = treonina · Pro = prolina · Glu = glutamat · STOP = s'atura la proteïna.</p>
+  </section>
+
+  <div class="grid2">
+    <section class="card">
+      <h2><span class="step" style="background:var(--violet)">3</span> <span class="full">Què ha canviat?</span><span class="simple">Què passa?</span></h2>
+      <div class="verdict" id="verdict"><span class="full">Transcriu i tradueix per veure el resultat.</span><span class="simple">Fes els passos 1 i 2.</span></div>
+      <div class="cellbox" id="cell"></div>
+    </section>
+    <section class="card">
+      <h2>🎯 Reptes</h2>
+      <ul class="reptes" id="reptes"></ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  Seqüència real de l'inici del gen <i>HBB</i> (β-globina) humà. Model simplificat per a 4t d'ESO · IE Temple.<br>
+  Adaptat per Albert Pahissa de l'original de Jordi Domènech. Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a>.
+</footer>
+
+<script>
+const NORMAL = "ATGGTGCACCTGACTCCTGAG";
+const BASES = "UCAG";
+const AA1 = "FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG";
+const TRI = {F:'Phe',L:'Leu',S:'Ser',Y:'Tyr','*':'STOP',C:'Cys',W:'Trp',P:'Pro',H:'His',Q:'Gln',R:'Arg',I:'Ile',M:'Met',T:'Thr',N:'Asn',K:'Lys',V:'Val',A:'Ala',D:'Asp',E:'Glu',G:'Gly'};
+const CODE = {}; let k = 0;
+for (const a of BASES) for (const b of BASES) for (const c of BASES) CODE[a+b+c] = TRI[AA1[k++]];
+const COMP_DNA = {A:'T',T:'A',G:'C',C:'G'};
+const TO_RNA = {A:'U',T:'A',G:'C',C:'G'}; // from template base
+const ANTI = {A:'U',U:'A',G:'C',C:'G'};
+
+let seq = NORMAL.split('');
+let transcribed = false, translated = false, busy = false, simplified = false, lang = null;
+const done = {falci:false, sil:false, non:false, mis:false};
+
+const GLOSS = {
+  es:[['ADN','ADN'],['gen','gen'],['ARN missatger','ARN mensajero'],['codó','codón'],['aminoàcid','aminoácido'],['proteïna','proteína'],['ribosoma','ribosoma'],['transcripció','transcripción'],['traducció','traducción'],['mutació','mutación'],['glòbul vermell','glóbulo rojo'],['anèmia falciforme','anemia falciforme']],
+  ar:[['ADN','الحمض النووي (DNA)'],['gen','جين'],['ARN missatger','الحمض النووي الريبي الرسول'],['codó','كودون'],['aminoàcid','حمض أميني'],['proteïna','بروتين'],['ribosoma','ريبوسوم'],['transcripció','النسخ'],['traducció','الترجمة'],['mutació','طفرة'],['glòbul vermell','كرية دم حمراء'],['anèmia falciforme','فقر الدم المنجلي']],
+  ur:[['ADN','ڈی این اے'],['gen','جین'],['ARN missatger','میسنجر آر این اے'],['codó','کوڈون'],['aminoàcid','امینو ایسڈ'],['proteïna','پروٹین'],['ribosoma','رائبوسوم'],['transcripció','ٹرانسکرپشن (نقل)'],['traducció','ترجمہ'],['mutació','میوٹیشن (تبدیلی)'],['glòbul vermell','خون کا سرخ خلیہ'],['anèmia falciforme','سکل سیل انیمیا']]
+};
+
+const $ = id => document.getElementById(id);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+function codonsOf(arr){ const out=[]; for(let i=0;i<arr.length;i+=3) out.push(arr.slice(i,i+3)); return out; }
+function mrna(){ return seq.map(b => b==='T'?'U':b); }
+
+function build(){
+  const rows = {coding:$('coding'), template:$('template'), rna:$('rna')};
+  for (const r of Object.values(rows)) r.querySelectorAll('.codon').forEach(n=>n.remove());
+  const rungs = $('rungs'); rungs.innerHTML = '<span style="width:118px;margin:0" class="lab"></span>';
+  if (window.innerWidth<=760) rungs.firstChild.style.width='92px';
+  codonsOf(seq.map((b,i)=>i)).forEach((idxs,ci)=>{
+    const c1=document.createElement('div'); c1.className='codon';
+    const c2=document.createElement('div'); c2.className='codon';
+    const c3=document.createElement('div'); c3.className='codon'; c3.dataset.ci=ci;
+    idxs.forEach(i=>{
+      const b=seq[i], mut = b!==NORMAL[i];
+      const e1=document.createElement('div'); e1.className='b'+(mut?' mut':''); e1.textContent=b; e1.title='Clica per canviar aquesta lletra';
+      e1.onclick=()=>mutate(i); c1.appendChild(e1);
+      const e2=document.createElement('div'); e2.className='b'; e2.textContent=COMP_DNA[b]; c2.appendChild(e2);
+      const e3=document.createElement('div'); e3.className='b'+(mut?' mut':'')+(transcribed?' on':''); e3.textContent=TO_RNA[COMP_DNA[b]]; e3.dataset.i=i; c3.appendChild(e3);
+      const r=document.createElement('span'); r.textContent='┆'; rungs.appendChild(r);
+    });
+    const g=document.createElement('span'); g.className='gap'; rungs.appendChild(g);
+    rows.coding.appendChild(c1); rows.template.appendChild(c2); rows.rna.appendChild(c3);
+  });
+}
+
+function mutate(i){
+  if (busy) return;
+  const order = "ATGC";
+  seq[i] = order[(order.indexOf(seq[i])+1)%4];
+  transcribed = false; translated = false;
+  $('chain').innerHTML=''; $('trna').textContent='';
+  $('bTrad').disabled = true;
+  $('verdict').innerHTML = '<span class="full">Has canviat una lletra de l\'ADN. Torna a <b>transcriure</b> i <b>traduir</b> per veure què passa.</span><span class="simple">Has canviat una lletra. Torna a fer 1 i 2.</span>';
+  drawCell(null);
+  build();
+}
+
+async function transcribe(){
+  if (busy) return; busy=true; $('bTrans').disabled=true;
+  const pol=$('pol'); pol.style.opacity=1;
+  const tiles=[...$('rna').querySelectorAll('.b')];
+  tiles.forEach(t=>t.classList.remove('on'));
+  for (let i=0;i<tiles.length;i++){
+    const t=tiles[i];
+    pol.style.left=(t.offsetLeft - $('rna').offsetLeft - 20)+'px';
+    await sleep(110);
+    t.classList.add('on');
+  }
+  await sleep(250); pol.style.opacity=0;
+  transcribed=true; busy=false; $('bTrans').disabled=false; $('bTrad').disabled=false;
+}
+
+async function doTranslate(){
+  if (busy || !transcribed) return; busy=true; $('bTrad').disabled=true;
+  const chain=$('chain'); chain.innerHTML='';
+  const cods=codonsOf(mrna()), normal=codonsOf(NORMAL.replace(/T/g,'U').split(''));
+  const nodes=[...$('rna').querySelectorAll('.codon')];
+  for (let ci=0; ci<cods.length; ci++){
+    nodes.forEach(n=>n.classList.remove('reading')); nodes[ci].classList.add('reading');
+    nodes[ci].scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+    const cod=cods[ci].join(''), aa=CODE[cod], naa=CODE[normal[ci].join('')];
+    const anti=cods[ci].map(x=>ANTI[x]).join('');
+    $('trna').innerHTML = aa==='STOP'
+      ? `Codó <b>${cod}</b>: cap ARNt hi encaixa → el ribosoma <b>s'atura</b>.`
+      : `Codó <b>${cod}</b> · arriba l'ARNt amb l'anticodó <b>${anti}</b> i porta <b>${aa}</b>.`;
+    await sleep(650);
+    const e=document.createElement('div');
+    e.className='aa'+(aa==='STOP'?' stop':(aa!==naa?' diff':''));
+    e.textContent=aa; chain.appendChild(e);
+    await sleep(250);
+    if (aa==='STOP') break;
+  }
+  nodes.forEach(n=>n.classList.remove('reading'));
+  translated=true; busy=false; $('bTrad').disabled=false;
+  judge();
+}
+
+async function fast(){
+  if (busy) return;
+  transcribed=true; build();
+  const chain=$('chain'); chain.innerHTML='';
+  const cods=codonsOf(mrna()), normal=codonsOf(NORMAL.replace(/T/g,'U').split(''));
+  for (let ci=0;ci<cods.length;ci++){
+    const aa=CODE[cods[ci].join('')], naa=CODE[normal[ci].join('')];
+    const e=document.createElement('div'); e.className='aa'+(aa==='STOP'?' stop':(aa!==naa?' diff':'')); e.textContent=aa; chain.appendChild(e);
+    if (aa==='STOP') break;
+  }
+  $('trna').textContent=''; $('bTrad').disabled=false; translated=true; judge();
+}
+
+function judge(){
+  const cods=codonsOf(mrna()).map(c=>c.join('')), ncods=codonsOf(NORMAL.replace(/T/g,'U').split('')).map(c=>c.join(''));
+  const aas=cods.map(c=>CODE[c]), naas=ncods.map(c=>CODE[c]);
+  const changedLetters = seq.filter((b,i)=>b!==NORMAL[i]).length;
+  let html='', kind='ok';
+  const stopAt = aas.findIndex(a=>a==='STOP');
+  const diffs = aas.map((a,i)=>a!==naas[i]?i:-1).filter(i=>i>=0);
+  if (changedLetters===0){
+    html = `<span class="tag ok">Gen normal</span><br><span class="full">Proteïna: <b>${aas.join(' · ')}</b>. Aquesta és la β-globina normal: el glòbul vermell és rodó i flexible.</span><span class="simple">Tot normal. Glòbul rodó.</span>`;
+    kind='ok';
+  } else if (stopAt>=0){
+    html = `<span class="tag non">Mutació sense sentit (STOP)</span><br><span class="full">El codó <b>${cods[stopAt]}</b> és un senyal d'<b>aturada</b>: la proteïna queda <b>tallada</b> i no funciona. Mutacions d'aquest tipus al gen de l'hemoglobina causen algunes <b>β-talassèmies</b>: es fabrica poca hemoglobina.</span><span class="simple">Surt un STOP: la proteïna queda a mitges i no funciona.</span>`;
+    kind='non'; done.non=true;
+  } else if (diffs.length===0){
+    html = `<span class="tag sil">Mutació silenciosa</span><br><span class="full">Has canviat ${changedLetters===1?'una lletra':changedLetters+' lletres'} de l'ADN, però el codó nou dona <b>el mateix aminoàcid</b> (el codi té codons «sinònims»). La proteïna és idèntica i la persona no nota res.</span><span class="simple">La lletra ha canviat, però la peça és la mateixa. No passa res.</span>`;
+    kind='sil'; done.sil=true;
+  } else {
+    const d=diffs.map(i=>`<b>${naas[i]} → ${aas[i]}</b> (posició ${i+1})`).join(', ');
+    const isFalci = diffs.length===1 && diffs[0]===6 && aas[6]==='Val';
+    if (isFalci){
+      html = `<span class="tag mis">Anèmia falciforme!</span><br><span class="full">Canvi d'aminoàcid: ${d}. Aquesta és <b>exactament</b> la mutació real (als hospitals en diuen <i>Glu6Val</i> perquè no compten la Met inicial): la valina fa que les hemoglobines s'enganxin entre elles, el glòbul es torna <b>una falç rígida</b> i s'encalla als capil·lars.</span><span class="simple">Glu passa a Val: el glòbul es torna una falç. És la malaltia real!</span>`;
+      kind='falci'; done.falci=true;
+    } else {
+      html = `<span class="tag mis">Canvi d'aminoàcid</span><br><span class="full">Canvi: ${d}. La proteïna ja no és igual. Si això n'altera la forma i la funció <b>depèn de quin aminoàcid i on</b>: caldria investigar-ho. Pista: a la posició 7, el canvi Glu → Val és el de l'anèmia falciforme.</span><span class="simple">Una peça ha canviat. Potser la proteïna funciona pitjor.</span>`;
+      kind='mis'; done.mis=true;
+    }
+  }
+  $('verdict').innerHTML=html;
+  drawCell(kind);
+  renderReptes();
+}
+
+function drawCell(kind){
+  const box=$('cell');
+  if (!kind){ box.innerHTML=''; return; }
+  const normal = `<svg viewBox="0 0 190 170"><defs><radialGradient id="g1" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#b8323a"/><stop offset=".55" stop-color="#d9464d"/><stop offset="1" stop-color="#e86a6f"/></radialGradient></defs>
+    <circle cx="95" cy="80" r="62" fill="url(#g1)"><animate attributeName="r" values="60;63;60" dur="2.4s" repeatCount="indefinite"/></circle>
+    <ellipse cx="95" cy="80" rx="32" ry="24" fill="#b02c34" opacity=".5"/>
+    <text x="95" y="162" text-anchor="middle" font-size="14" font-weight="700" fill="#2E4A9E" font-family="inherit">glòbul rodó i flexible</text></svg>`;
+  const sickle = `<svg viewBox="0 0 190 170"><defs><mask id="m1"><rect width="190" height="170" fill="#fff"/><circle cx="118" cy="56" r="58" fill="#000"/></mask></defs>
+    <g><circle cx="90" cy="84" r="62" fill="#8f2f3a" mask="url(#m1)"/><animateTransform attributeName="transform" type="rotate" values="-4 95 80;4 95 80;-4 95 80" dur="3s" repeatCount="indefinite"/></g>
+    <text x="95" y="162" text-anchor="middle" font-size="14" font-weight="700" fill="#7B3F9E" font-family="inherit">glòbul en falç, rígid</text></svg>`;
+  const unknown = `<svg viewBox="0 0 190 170"><circle cx="95" cy="80" r="62" fill="#e8a9ad" stroke="#b5502a" stroke-width="3" stroke-dasharray="8 6"/>
+    <text x="95" y="92" text-anchor="middle" font-size="46" font-weight="800" fill="#7B3F9E">?</text>
+    <text x="95" y="162" text-anchor="middle" font-size="14" font-weight="700" fill="#7B3F9E" font-family="inherit">efecte per investigar</text></svg>`;
+  const pale = `<svg viewBox="0 0 190 170"><circle cx="95" cy="80" r="50" fill="#f1b9bc"/><ellipse cx="95" cy="80" rx="30" ry="22" fill="#fbe3e3"/>
+    <text x="95" y="162" text-anchor="middle" font-size="14" font-weight="700" fill="#a0281c" font-family="inherit">poca hemoglobina</text></svg>`;
+  box.innerHTML = kind==='falci'?sickle : kind==='mis'?unknown : kind==='non'?pale : normal;
+}
+
+function renderReptes(){
+  const R=[
+    ['falci','<span class="full">Reprodueix la mutació de l\'<b>anèmia falciforme</b>: una sola lletra que converteixi el Glu en Val.</span><span class="simple">Fes que surti la falç (canvia una lletra de l\'últim codó).</span>'],
+    ['sil','<span class="full">Troba una <b>mutació silenciosa</b>: canvia una lletra sense que canviï cap aminoàcid.</span><span class="simple">Canvia una lletra i que la proteïna no canviï.</span>'],
+    ['non','<span class="full">Aconsegueix un <b>STOP</b> abans d\'hora amb un sol canvi.</span><span class="simple">Fes que surti un STOP.</span>'],
+    ['mis','<span class="full">Fes una mutació que canviï un aminoàcid <b>diferent</b> del de la falciforme i explica al quadern si creus que seria greu.</span><span class="simple">Canvia una altra peça.</span>']
+  ];
+  $('reptes').innerHTML = R.map(([k,t])=>`<li class="${done[k]?'done':''}"><span class="ck">${done[k]?'✓':''}</span><span>${t}</span></li>`).join('');
+}
+
+function resetAll(){
+  if (busy) return;
+  seq = NORMAL.split(''); transcribed=false; translated=false;
+  $('chain').innerHTML=''; $('trna').textContent=''; $('bTrad').disabled=true;
+  $('verdict').innerHTML='<span class="full">Transcriu i tradueix per veure el resultat.</span><span class="simple">Fes els passos 1 i 2.</span>';
+  drawCell(null); build();
+}
+
+function toggleSimplify(){ simplified=!simplified; document.body.classList.toggle('simplified',simplified); $('btnSimp').classList.toggle('active',simplified); }
+function setLang(l){
+  lang = lang===l?null:l;
+  document.body.classList.remove('lang-es','lang-ar','lang-ur');
+  ['Es','Ar','Ur'].forEach(x=>$('btn'+x).classList.remove('active'));
+  if (lang){ document.body.classList.add('lang-'+lang); $('btn'+lang[0].toUpperCase()+lang[1]).classList.add('active');
+    $('gloss').innerHTML = GLOSS[lang].map(([ca,t])=>`<span>${ca} <i class="tr" ${lang!=='es'?'dir="rtl"':''}>${t}</i></span>`).join(''); }
+}
+
+build(); renderReptes();
+window.addEventListener('resize', ()=>{ if(!busy) build(); });
+</script>
+</body>
+</html>

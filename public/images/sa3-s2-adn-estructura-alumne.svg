@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed','Segoe UI',Arial,sans-serif">
+  <rect x="0" y="0" width="920" height="420" fill="#ffffff"/>
+  <text x="460" y="36" text-anchor="middle" font-size="25" font-weight="700" fill="#2E4A9E">L'ADN per dins — completa la cadena 2</text>
+  <text x="460" y="60" text-anchor="middle" font-size="16" fill="#5B7BE0">Escriu la lletra que falta a cada esglao i explica quina regla has fet servir.</text>
+  <rect x="112" y="105" width="12" height="260" rx="6" fill="#2E4A9E"/>
+  <rect x="296" y="105" width="12" height="260" rx="6" fill="#2E4A9E"/>
+  <text x="118" y="95" text-anchor="middle" font-size="14" fill="#2E4A9E" font-weight="600">cadena 1</text>
+  <text x="302" y="95" text-anchor="middle" font-size="14" fill="#2E4A9E" font-weight="600">cadena 2</text>
+  <g>
+    <rect x="124" y="118" width="80" height="30" rx="6" fill="#EAEFFB" stroke="#2E4A9E" stroke-width="2"/>
+    <rect x="216" y="118" width="80" height="30" rx="6" fill="#ffffff" stroke="#b9c3dd" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="204" y1="133" x2="216" y2="133" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="140" text-anchor="middle" font-size="20" font-weight="700" fill="#2E4A9E">A</text>
+  </g>
+  <g>
+    <rect x="124" y="166" width="80" height="30" rx="6" fill="#EAF6F0" stroke="#2E7D57" stroke-width="2"/>
+    <rect x="216" y="166" width="80" height="30" rx="6" fill="#ffffff" stroke="#b9c3dd" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="204" y1="181" x2="216" y2="181" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="188" text-anchor="middle" font-size="20" font-weight="700" fill="#2E7D57">G</text>
+  </g>
+  <g>
+    <rect x="124" y="214" width="80" height="30" rx="6" fill="#FBEFEA" stroke="#B5502A" stroke-width="2"/>
+    <rect x="216" y="214" width="80" height="30" rx="6" fill="#ffffff" stroke="#b9c3dd" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="204" y1="229" x2="216" y2="229" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="236" text-anchor="middle" font-size="20" font-weight="700" fill="#B5502A">T</text>
+  </g>
+  <g>
+    <rect x="124" y="262" width="80" height="30" rx="6" fill="#FDF3DA" stroke="#9A7A0A" stroke-width="2"/>
+    <rect x="216" y="262" width="80" height="30" rx="6" fill="#ffffff" stroke="#b9c3dd" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="204" y1="277" x2="216" y2="277" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="284" text-anchor="middle" font-size="20" font-weight="700" fill="#9A7A0A">C</text>
+  </g>
+  <g>
+    <rect x="124" y="310" width="80" height="30" rx="6" fill="#EAEFFB" stroke="#2E4A9E" stroke-width="2"/>
+    <rect x="216" y="310" width="80" height="30" rx="6" fill="#ffffff" stroke="#b9c3dd" stroke-width="2" stroke-dasharray="5 4"/>
+    <line x1="204" y1="325" x2="216" y2="325" stroke="#8894b8" stroke-width="2" stroke-dasharray="3 3"/>
+    <text x="164" y="332" text-anchor="middle" font-size="20" font-weight="700" fill="#2E4A9E">A</text>
+  </g>
+  <text x="210" y="392" text-anchor="middle" font-size="15" fill="#333">Regla que has fet servir: <tspan fill="#9aa">________________________</tspan></text>
+
+  <rect x="400" y="100" width="480" height="150" rx="14" fill="#ffffff" stroke="#2E7D57" stroke-width="2.5"/>
+  <text x="640" y="128" text-anchor="middle" font-size="17" font-weight="700" fill="#2E7D57">Per que DUES cadenes i no una?</text>
+  <line x1="424" y1="160" x2="856" y2="160" stroke="#c9e0d3" stroke-width="1.4"/>
+  <line x1="424" y1="190" x2="856" y2="190" stroke="#c9e0d3" stroke-width="1.4"/>
+  <line x1="424" y1="220" x2="856" y2="220" stroke="#c9e0d3" stroke-width="1.4"/>
+  <text x="640" y="272" text-anchor="middle" font-size="15" fill="#555">Pista: pensa en la mitosi de SA2 — la cel.lula ha de COPIAR l'ADN abans de dividir-se.</text>
+
+  <rect x="400" y="292" width="480" height="100" rx="14" fill="#ffffff" stroke="#7B3F9E" stroke-width="2.5"/>
+  <text x="640" y="318" text-anchor="middle" font-size="17" font-weight="700" fill="#7B3F9E">Si l'ADN fos d'UNA sola cadena, que es perdria?</text>
+  <line x1="424" y1="348" x2="856" y2="348" stroke="#ddd0ea" stroke-width="1.4"/>
+  <line x1="424" y1="378" x2="856" y2="378" stroke="#ddd0ea" stroke-width="1.4"/>
+</svg>

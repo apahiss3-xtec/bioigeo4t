@@ -25,6 +25,11 @@ export const sa3s1 = {
       "Dic per què canviar una lletra de l'ADN pot canviar una característica d'un ésser viu.",
       "Miro una notícia sobre edició genètica i responc: qui l'ha escrita? per què? em puc refiar-ne? amb l'ajuda d'una llista de comprovació.",
       "Diferencio la pregunta «es pot fer?» de la pregunta «s'hauria de fer?» i dono la meva opinió amb almenys un argument."
+    ],
+    C: [
+      "Dic que l'ADN és un missatge de 4 lletres que serveix per fabricar proteïnes.",
+      "Poso en ordre el camí ADN → ARN → proteïna → característica.",
+      "Trio una postura sobre l'edició genètica i la justifico amb un «perquè»."
     ]
   },
 
@@ -74,6 +79,30 @@ export const sa3s1 = {
         starter: "Crec que… perquè…"
       }
     ]
+  },
+
+  // ── APARTAT 1 · EL CAS, EN FORMAT NOTÍCIA ─────────────────
+  // El cas de 2018 no es dona com un text de llibre: es presenta com el que
+  // era —una peça de premsa— perquè la mirada crítica de l'apartat 4 (qui ho
+  // signa, amb quina intenció, què es pot verificar) tingui on aplicar-se.
+  casNoticia: {
+    apartat: "1",
+    seccio: "Ciència · El cas dels «bebès editats»",
+    data: "26 de novembre de 2018",
+    lloc: "Shenzhen (Xina)",
+    titular: "Un científic anuncia les primeres nenes nascudes amb l'ADN editat",
+    entradeta:
+      "He Jiankui explica en un vídeo a YouTube que han nascut dues bessones a qui, quan eren embrions, els va modificar un gen amb la tècnica CRISPR. L'anunci no s'ha publicat en cap revista científica ni l'ha revisat cap altre equip.",
+    fets: [
+      { etiqueta: "qui", text: "He Jiankui, investigador d'una universitat de Shenzhen, amb el seu equip." },
+      { etiqueta: "què", text: "Va editar el gen CCR5 d'embrions humans amb CRISPR abans d'implantar-los." },
+      { etiqueta: "per a què", text: "Intentar que les nenes no poguessin ser infectades pel virus del VIH." },
+      { etiqueta: "com se sap", text: "Per un vídeo penjat per ell mateix i per l'anunci en un congrés; no per un article revisat." }
+    ],
+    reaccio:
+      "La reacció va ser de rebuig gairebé unànime: es va fer sense prou proves de seguretat, el canvi passarà als seus fills i hi havia maneres ja provades d'evitar el contagi. El 2019 un tribunal xinès el va condemnar a tres anys de presó per exercici il·legal de la medicina.",
+    font: "Reconstrucció a partir de les cròniques de l'època (AP, Nature, MIT Technology Review, novembre-desembre de 2018).",
+    pregunta: "Abans de decidir res: qui signa aquesta notícia, amb quina intenció es va fer pública i quina part es podria verificar?"
   },
 
   // ── EXPLORA (ABP · estudi de cas / posicionament) ─────────
@@ -127,11 +156,12 @@ export const sa3s1 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "2", before: false, title: "Del codi a la característica", src: "/images/sa3-s1-dogma.svg", note: "El camí general de la informació genètica: l'ordre de les lletres de l'ADN es copia a l'ARN i serveix per fabricar una proteïna, que dona una característica a l'organisme." }
+    { id: "Fig.1", apartat: "2", before: false, title: "Del codi a la característica", src: "/images/sa3-s1-dogma.svg", note: "El camí general de la informació genètica: l'ordre de les lletres de l'ADN es copia a l'ARN i serveix per fabricar una proteïna, que dona una característica a l'organisme." },
+    { id: "Fig.2", apartat: "2", before: false, title: "On és l'ADN? Del cos al gen", src: "/images/sa3-s1-zoom-adn.svg", note: "Zoom del cos a la cèl·lula, el nucli, el cromosoma, l'ADN i el gen. Gairebé totes les cèl·lules porten el mateix ADN; un gen és el tros amb les instruccions per a una proteïna." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa3-s1-fitxa-A.html", B: "/fitxes/sa3-s1-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa3-s1-fitxa-A.html", B: "/fitxes/sa3-s1-fitxa-B.html", C: "/fitxes/sa3-s1-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: torna a la teva postura de l'apartat 1 i, ara que ja tens la visió gen → proteïna → característica, reescriu-la millorada, separant l'argument científic de l'ètic.",
 
@@ -197,7 +227,10 @@ export const sa3s1 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa3-s1-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa3-s1-exit-ticket.html", B: "/fitxes/sa3-s1-exit-ticket.html", C: "/fitxes/sa3-s1-exit-ticket-C.html" },
+  // El tiquet es reparteix en un full a part: la fitxa no en porta l’apartat
+  // (ni els seus minuts). Ho llegeix tools/comprova_temps.mjs.
+  exitTicketDinsFitxa: false,
   exitTicketType: "paper",
   exitTicketCriteri: "1.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",

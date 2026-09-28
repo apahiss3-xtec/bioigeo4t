@@ -25,6 +25,11 @@ export const sa3s2 = {
       "Dic que l'ADN té dues cadenes i quatre lletres (A, T, G, C) que s'aparellen sempre igual (A amb T, G amb C), i que aquest ordre és la informació.",
       "Explico, amb la idea de solubilitat, per què l'ADN es fa visible quan hi afegim alcohol fred.",
       "Diferencio el que he vist (una massa blanca) del que suposo (que és ADN)."
+    ],
+    C: [
+      "Dic quin material fa falta per a cada pas per treure l'ADN.",
+      "Completo les parelles de lletres de l'ADN: A amb T i G amb C.",
+      "Distingeixo el que he VIST del que he DEDUÏT."
     ]
   },
 
@@ -94,6 +99,30 @@ export const sa3s2 = {
   appSrc: null,
   exploreNote: "Aquí teniu la pregunta i el material, però el mètode el raoneu vosaltres: no hi ha cap protocol fet per seguir pas a pas.",
 
+  // ── APARTAT 2 · MINI-HISTÒRIA DE LA CIÈNCIA ───────────────
+  // Rosalind Franklin i la Foto 51: la doble hèlix no es va «veure», es va
+  // DEDUIR d'una imatge — el mateix salt observar → inferir de l'apartat 4.
+  // La fotografia original NO és de domini públic (King's College London), per
+  // això aquí es DESCRIU i no s'hi reprodueix ni s'hi enllaça.
+  miniHistoria: {
+    apartat: "2",
+    badge: "🔎 Història de la ciència",
+    titol: "La Foto 51: qui va fer la imatge que va donar la doble hèlix",
+    fites: [
+      { any: "1951", text: "Rosalind Franklin, cristal·lògrafa, entra al King's College de Londres per estudiar l'ADN amb raigs X: no es pot mirar amb cap microscopi, així que s'hi fan passar raigs i es fotografia l'ombra que deixen." },
+      { any: "1952", text: "Al seu laboratori s'obté la imatge coneguda com a Foto 51, feta pel doctorand Raymond Gosling amb la seva direcció. Franklin n'extreu mesures precises i anota que l'ADN té dues cadenes amb els fosfats cap enfora." },
+      { any: "1953", text: "Maurice Wilkins ensenya la Foto 51 a James Watson sense que Franklin ho sàpiga. Watson i Crick publiquen el model de doble hèlix a Nature; el treball de Franklin i Gosling surt al mateix número, però com un article de suport." },
+      { any: "1958", text: "Franklin mor als 37 anys d'un càncer d'ovari." },
+      { any: "1962", text: "El Nobel va a Watson, Crick i Wilkins. El premi no es concedeix a títol pòstum, però durant anys el paper de Franklin va quedar explicat com una simple ajuda tècnica." }
+    ],
+    imatgeTitol: "Com és la Foto 51 (no la podem reproduir aquí)",
+    imatgeDescripcio:
+      "Un rectangle fosc, gairebé negre, amb taques borroses de color gris clar. Al centre, les taques formen una X gran, com dos braços creuats que surten del mig cap a les quatre cantonades. A dalt i a baix de tot hi ha dues bandes molt més negres i gruixudes. Aquesta X és el que diu que la molècula està cargolada en hèlix; la distància entre les taques dona l'amplada i el pas de l'espiral, i les bandes fosques, la distància entre esglaons.",
+    imatgeLlicencia:
+      "La fotografia original és propietat dels arxius del King's College de Londres i no té llicència lliure: per això la descrivim en comptes de publicar-la. Si la busqueu, la trobareu com «Photo 51».",
+    pregunta: "Ningú no va «veure» mai la doble hèlix en aquesta foto: la van DEDUIR. Quina part era el que es veia i quina part era la deducció?"
+  },
+
   // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [
     {
@@ -128,11 +157,13 @@ export const sa3s2 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "2", before: false, title: "L'ADN per dins: doble cadena i complementarietat", src: "/images/sa3-s2-adn-estructura.svg", note: "L'ADN com una escala retorçada de dues cadenes. Cada esglaó és una parella de bases que s'aparellen sempre igual: A amb T i G amb C (complementarietat). L'ordre de les lletres és la informació." }
+    { id: "Fig.1", apartat: "2", before: false, title: "L'ADN per dins: doble cadena i complementarietat", src: "/images/sa3-s2-adn-estructura.svg", note: "L'ADN com una escala retorçada de dues cadenes. Cada esglaó és una parella de bases que s'aparellen sempre igual: A amb T i G amb C (complementarietat). L'ordre de les lletres és la informació." },
+    { id: "Fig.2", apartat: "1", before: false, title: "Així es veu l'ADN de maduixa", src: "/images/sa3-s2-foto-adn-maduixa.jpg", note: "La massa blanquinosa que sura a la capa d'alcohol és l'ADN precipitat. Foto: Sheila Richards, Wikimedia Commons, CC BY 4.0." },
+    { id: "Fig.3", apartat: "2", before: false, title: "Per què dues cadenes? Així es copia l'ADN (animació)", src: "/images/sa3-s2-copia-adn-anim.svg", note: "Les dues cadenes se separen i cadascuna fa de motlle (A-T, G-C): surten dues molècules idèntiques abans que la cèl·lula es divideixi." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa3-s2-fitxa-A.html", B: "/fitxes/sa3-s2-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa3-s2-fitxa-A.html", B: "/fitxes/sa3-s2-fitxa-B.html", C: "/fitxes/sa3-s2-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: dissenya l'experiment «cal el sabó?» amb VI, VD, hipòtesi amb direcció i control negatiu, i respon a la pregunta clau: has vist l'ADN o una massa blanca que dedueixes que és ADN?",
 
@@ -198,7 +229,10 @@ export const sa3s2 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa3-s2-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa3-s2-exit-ticket.html", B: "/fitxes/sa3-s2-exit-ticket.html", C: "/fitxes/sa3-s2-exit-ticket-C.html" },
+  // El tiquet es reparteix en un full a part: la fitxa no en porta l’apartat
+  // (ni els seus minuts). Ho llegeix tools/comprova_temps.mjs.
+  exitTicketDinsFitxa: false,
   exitTicketType: "paper",
   exitTicketCriteri: "3.3",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",

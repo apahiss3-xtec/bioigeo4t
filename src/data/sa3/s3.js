@@ -25,6 +25,11 @@ export const sa3s3 = {
       "Amb l'ajuda de la taula de codons, tradueixo una seqüència curta d'ADN a ARNm i a aminoàcids, i dic que cada codó (3 lletres) correspon a un aminoàcid.",
       "Explico amb un exemple que l'ordre de les lletres de l'ADN determina la característica (genotip → fenotip).",
       "Identifico, en el cas de l'anèmia falciforme, quina lletra ha canviat i quin aminoàcid queda diferent."
+    ],
+    C: [
+      "Copio una cadena d'ADN a ARNm canviant la T per la U.",
+      "Faig servir la taula del codi genètic per saber quin aminoàcid diu cada codó.",
+      "Explico com una lletra canviada acaba canviant la persona."
     ]
   },
 
@@ -92,7 +97,7 @@ export const sa3s3 = {
     "Compareu les dues proteïnes: quin aminoàcid és diferent i on? Relacioneu-ho amb la forma de falç del glòbul vermell"
   ],
   exploreDuration: "25 min",
-  appSrc: null,
+  appSrc: "/apps/app_traductor_adn.html",
   exploreNote: "Itinerari guiat: la taula de codons i la seqüència es donen, però la traducció i la interpretació del canvi les feu vosaltres. És un exercici de resolució de problemes (mètode preferent a 4t).",
 
   // ── EXPLICA ───────────────────────────────────────────────
@@ -101,7 +106,7 @@ export const sa3s3 = {
       id: "t1",
       apartat: "1",
       heading: "El camí de la informació: ==transcripció== i ==traducció==",
-      text: "L'ADN es queda al ==nucli|p==, però les proteïnes es fabriquen fora, al ==citoplasma|p==. Per això la cèl·lula fa una còpia d'un gen en forma d'==ARN missatger (ARNm)==: aquest pas es diu ==transcripció== i el fa una màquina, l'==ARN polimerasa==. L'ARNm surt del nucli i, al ==ribosoma|p==, es llegeix per fabricar la proteïna: aquest segon pas és la ==traducció==. El camí complet és ==gen → ARNm → proteïna → característica==.",
+      text: "L'ADN es queda al ==nucli|p==, però les proteïnes es fabriquen fora, al ==citoplasma|p==. Per això la cèl·lula fa una còpia d'un gen en forma d'==ARN missatger (ARNm)==: aquest pas es diu ==transcripció== i el fa una màquina, l'==ARN polimerasa==. L'ARNm surt del nucli i, al ==ribosoma|p==, es llegeix per fabricar la proteïna: aquest segon pas és la ==traducció==. El camí complet és ==gen → ARNm → proteïna → característica==. L'ARN polimerasa llegeix una de les dues cadenes, la ==cadena motlle==, i fabrica l'ARNm per ==complementarietat==.",
       video: "/animacions/sa3-s3-transcripcio-traduccio.mp4",
       type: "concept"
     },
@@ -130,11 +135,13 @@ export const sa3s3 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "1", before: false, title: "El camí de l'ADN a la proteïna", src: "/images/sa3-s3-dogma-detall.svg", note: "Del gen (al nucli) a la característica. L'ADN es copia a ARNm (transcripció, dins el nucli); l'ARNm surt i al ribosoma es llegeix de tres en tres per encadenar aminoàcids i fabricar la proteïna (traducció). La proteïna dona la característica." },
-    { id: "Fig.2", apartat: "4", before: false, title: "Una lletra canviada: l'anèmia falciforme", src: "/images/sa3-s3-falciforme.svg", note: "El mateix gen amb una sola lletra diferent. El codó GAG (glutamat) passa a GTG/GUG (valina); la proteïna canvia i el glòbul vermell, rodó i flexible, es torna una falç rígida." }
+    { id: "Fig.2", apartat: "4", before: false, title: "Una lletra canviada: l'anèmia falciforme", src: "/images/sa3-s3-falciforme.svg", note: "El mateix gen amb una sola lletra diferent. El codó GAG (glutamat) passa a GTG/GUG (valina); la proteïna canvia i el glòbul vermell, rodó i flexible, es torna una falç rígida." },
+    { id: "Fig.3", apartat: "2", before: false, title: "El codi genètic complet", src: "/images/sa3-s3-taula-codons.svg", note: "Fila = 1a lletra del codó, columna = 2a, dins la casella = 3a. Fixa't que molts aminoàcids tenen més d'un codó." },
+    { id: "Fig.4", apartat: "4", before: false, title: "Glòbuls falciformes al microscopi", src: "/images/sa3-s3-foto-frotis-falciformes.jpg", note: "Frotis de sang d'una persona amb anèmia falciforme: entre els glòbuls rodons n'hi ha d'allargats en forma de falç. Foto: Ed Uthman, Wikimedia Commons, CC BY 2.0." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa3-s3-fitxa-A.html", B: "/fitxes/sa3-s3-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa3-s3-fitxa-A.html", B: "/fitxes/sa3-s3-fitxa-B.html", C: "/fitxes/sa3-s3-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa: després de traduir el gen normal i el mutat, respon per què una sola lletra canviada pot causar una malaltia i quan, en canvi, un canvi de lletra no té cap efecte (mutació silenciosa).",
 
@@ -168,7 +175,7 @@ export const sa3s3 = {
         phase: "explore",
         instruction: "Passa la seqüència d'ADN a ARNm (U en lloc de T), separa-la en codons de 3 lletres i, amb la taula de codons, escriu la proteïna.",
         hints: [
-          "Recorda la complementarietat i que l'ARN fa servir U en lloc de T.",
+          "L'ARN polimerasa llegeix la cadena motlle; per això l'ARNm té les mateixes lletres que la cadena codificant, amb U en lloc de T.",
           "Cada 3 lletres (codó) = 1 aminoàcid. Comença per AUG (inici)."
         ]
       },
@@ -200,7 +207,10 @@ export const sa3s3 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa3-s3-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa3-s3-exit-ticket.html", B: "/fitxes/sa3-s3-exit-ticket.html", C: "/fitxes/sa3-s3-exit-ticket-C.html" },
+  // El tiquet es reparteix en un full a part: la fitxa no en porta l’apartat
+  // (ni els seus minuts). Ho llegeix tools/comprova_temps.mjs.
+  exitTicketDinsFitxa: false,
   exitTicketType: "paper",
   exitTicketCriteri: "4.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "8 min",

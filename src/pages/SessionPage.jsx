@@ -16,6 +16,9 @@ import FitxaGuide from '../components/FitxaGuide.jsx'
 import ActivityCard from '../components/ActivityCard.jsx'
 import NivellSelector from '../components/NivellSelector.jsx'
 import { useNivell, pickLevel, hasLevel } from '../nivell/NivellContext.jsx'
+import CasNoticia from '../components/CasNoticia.jsx'
+import MiniHistoria from '../components/MiniHistoria.jsx'
+import PlantillaAssaig from '../components/PlantillaAssaig.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
 
 // Fitxes reals (HTML, nivells A/B) a public/fitxes/. fitxaUrl és { A, B }
@@ -406,6 +409,16 @@ export default function SessionPage() {
                 ))}
               </div>
             )}
+            {session.casNoticia?.apartat === '1' && (
+              <div className="mt-6">
+                <CasNoticia cas={session.casNoticia} />
+              </div>
+            )}
+            {session.miniHistoria?.apartat === '1' && (
+              <div className="mt-6">
+                <MiniHistoria historia={session.miniHistoria} />
+              </div>
+            )}
             <ApartatExtra extras={session.apartatExtras?.['1']} nivell={nivell} />
           </section>
         )}
@@ -437,6 +450,16 @@ export default function SessionPage() {
                   {graphicsAfter(num).map((g) => (
                     <GraphicFigure key={g.id} g={g} />
                   ))}
+                </div>
+              )}
+              {session.casNoticia?.apartat === num && (
+                <div className="mt-8">
+                  <CasNoticia cas={session.casNoticia} />
+                </div>
+              )}
+              {session.miniHistoria?.apartat === num && (
+                <div className="mt-8">
+                  <MiniHistoria historia={session.miniHistoria} />
                 </div>
               )}
               <ApartatExtra extras={session.apartatExtras?.[num]} nivell={nivell} />
@@ -669,6 +692,11 @@ export default function SessionPage() {
                   <p className="italic text-[var(--orange)]">
                     ⚠️ <T>{session.homework.note}</T>
                   </p>
+                )}
+                {/* Plantilla d'assaig per nivells: la C la porta a la fitxa,
+                    la B la té aquí (postura → raó → prova). */}
+                {hasLevel(session.plantillaAssaig, nivell) && (
+                  <PlantillaAssaig plantilla={pickLevel(session.plantillaAssaig, nivell)} />
                 )}
               </>
             ) : (

@@ -1,14 +1,14 @@
 export const sa3s4 = {
   id: "s4",
   saId: "sa3",
-  title: "Reescriure la vida?",
+  title: "Podem o hauríem?",
   sessionNumber: 4,
   biome: "sa3",
   duration: "2h",
   engageImage: "/images/sa3-s4-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
-  engageChallenge: "El 2018, un científic va anunciar al món que havia editat l'ADN de dues nenes bessones quan encara eren embrions, per intentar fer-les resistents al VIH. Ho va fer amb CRISPR, unes «tisores moleculars» que retallen l'ADN i permeten canviar-hi lletres. La comunitat científica va reaccionar amb alarma: no perquè fos impossible, sinó perquè s'havia fet en embrions —i aquests canvis passaran als seus fills i als fills dels seus fills, per sempre. El científic va acabar a la presó. El repte d'avui no és de laboratori, sinó de decisió: ara que SABEM que es pot canviar una lletra de l'ADN per curar o per «millorar» una persona, qui decideix fins on podem arribar? I amb quins arguments?",
+  engageChallenge: "El 2023, el Regne Unit i els EUA van aprovar Casgevy, el primer tractament fet amb CRISPR: a persones amb anèmia falciforme se'ls treuen cèl·lules mare de la medul·la, s'editen al laboratori i se'ls tornen a posar. Molts pacients han deixat de tenir crisis de dolor. Cinc anys abans, el 2018, un científic xinès havia fet servir la mateixa eina per editar dos embrions humans, i va acabar a la presó. Mateixa tecnologia, dues reaccions oposades. Per què una s'aplaudeix i l'altra es condemna? Qui decideix fins on podem arribar, i amb quins arguments?",
   engageQuestion: "Una cosa és preguntar-se QUÈ ES POT fer amb el codi de la vida (una pregunta de ciència) i una altra de ben diferent QUÈ S'HAURIA de fer (una pregunta de valors). On és la frontera entre curar una malaltia i «dissenyar» una persona? I com decidim, entre tots, on posar-la?",
   engageContext: "Ja saps com és l'ADN per dins, com es tradueix en proteïnes i com una sola lletra canviada pot curar o causar una malaltia. Avui tornes a la pregunta que ho va obrir tot: fins on hauríem de poder reescriure nosaltres el codi? Faràs servir la graella de fonts fiables per destriar la informació sòlida del soroll, coneixeràs qui va descobrir l'estructura de l'ADN (i qui va quedar oblidada) i prepararàs el teu assaig argumentatiu.",
 
@@ -24,7 +24,12 @@ export const sa3s4 = {
       "Explico la diferència entre el que la ciència POT fer (CRISPR permet canviar lletres de l'ADN) i el que la societat decideix que S'HAURIA de fer.",
       "Dic la diferència entre editar cèl·lules del cos (no passa als fills) i editar embrions (passa als fills) i per què això preocupa.",
       "Faig servir la graella de fonts fiables de SA1 per decidir si una informació sobre CRISPR és de fiar o no.",
-      "Escric un text argumentatiu curt amb la meva postura, un argument a favor i un en contra, i explico qui era Rosalind Franklin."
+      "Escric un text argumentatiu curt amb la meva postura, un argument a favor i un en contra, i recordo, de la sessió 2, qui era Rosalind Franklin."
+    ],
+    C: [
+      "Explico amb paraules meves què fan les tisores CRISPR.",
+      "Distingeixo un canvi somàtic d'un canvi germinal.",
+      "Dic si una font és fiable i escric la meva postura amb un «perquè»."
     ]
   },
 
@@ -54,7 +59,7 @@ export const sa3s4 = {
       scaffold:
         "Un bon argument no és una opinió: és una postura + una raó + una prova o un valor que la sosté. Estructura senzilla per al debat: «Crec que [postura] perquè [raó científica o ètica], com mostra [exemple, dada o principi].» Fes servir el que has treballat: la distinció somàtica/germinal, qui assumeix el risc, el consentiment, els beneficis (curar malalties greus) i els perills (desigualtat, errors irreversibles, «millorar» en lloc de curar). Un argument a favor i un en contra, cadascun ben sostingut, valen més que deu opinions soltes.",
       challenge:
-        "Prepara la teva postura per a l'assaig de manera ordenada (el marc PODEM/HAURÍEM): identifica els fets científics rellevants, els valors en joc (salut, llibertat, igualtat, precaució) i qui es veu afectat per la decisió. Construeix el teu argument més fort I el contraargument més fort de la posició contrària, i després respon-lo: un bon assaig no ignora l'altra banda, la rebat. Inclou una reflexió sobre com el cas de Rosalind Franklin ens recorda que la ciència és una tasca col·lectiva on el reconeixement no sempre és just."
+        "Prepara la teva postura per a l'assaig de manera ordenada (el marc PODEM/HAURÍEM): identifica els fets científics rellevants, els valors en joc (salut, llibertat, igualtat, precaució) i qui es veu afectat per la decisió. Construeix el teu argument més fort I el contraargument més fort de la posició contrària, i després respon-lo: un bon assaig no ignora l'altra banda, la rebat. Inclou una reflexió sobre com el cas de Rosalind Franklin (sessió 2) ens recorda que la ciència és una tasca col·lectiva on el reconeixement no sempre és just."
     }
   },
 
@@ -107,7 +112,7 @@ export const sa3s4 = {
       id: "t2",
       apartat: "2",
       heading: "==Somàtica== o ==germinal==: la diferència que ho canvia tot",
-      text: "Editar les cèl·lules del ==cos== d'una persona (per exemple, la medul·la d'un adult malalt) és edició ==somàtica==: el canvi es queda ==en ella== i ==no s'hereta==. Editar un ==embrió|p== o els ==gàmetes|p== és edició ==germinal==: el canvi entra a ==totes les cèl·lules== i ==passa als descendents== per sempre. Per això molts països ==permeten== investigar l'edició somàtica però ==prohibeixen== l'edició germinal en humans: un error no afectaria una persona, sinó ==tota una descendència== que no ha pogut ==consentir-hi==.",
+      text: "Editar les cèl·lules del ==cos== d'una persona (per exemple, les cèl·lules mare de la medul·la, com fa ==Casgevy==, aprovat el 2023) és edició ==somàtica==: el canvi es queda ==en ella== i ==no s'hereta==. Editar un ==embrió|p== o els ==gàmetes|p== és edició ==germinal==: el canvi entra a ==totes les cèl·lules== i ==passa als descendents== per sempre. Per això molts països ==permeten== investigar l'edició somàtica però ==prohibeixen== l'edició germinal en humans: un error no afectaria una persona, sinó ==tota una descendència== que no ha pogut ==consentir-hi==.",
       type: "concept"
     },
     {
@@ -121,24 +126,26 @@ export const sa3s4 = {
       id: "t4",
       apartat: "4",
       heading: "==Podem== vs ==hauríem==: decidir amb arguments",
-      text: "La ciència pot dir què és ==possible==, però ==no decideix tota sola== què és ==desitjable==: això ho decidim ==entre tots==, amb ==arguments==. Un argument sòlid és una ==postura== + una ==raó== (científica o ètica) + una ==prova o un valor== que la sosté. En una ==qüestió sociocientífica== (SSI) com aquesta cal pesar ==beneficis== (curar malalties greus) i ==riscos== (desigualtat, errors irreversibles, «==millorar==» en lloc de curar). I convé recordar, amb el cas de ==Rosalind Franklin==, que la ciència és una ==tasca col·lectiva== on el reconeixement no sempre ha estat ==just==.",
+      text: "La ciència pot dir què és ==possible==, però ==no decideix tota sola== què és ==desitjable==: això ho decidim ==entre tots==, amb ==arguments==. Un argument sòlid és una ==postura== + una ==raó== (científica o ètica) + una ==prova o un valor== que la sosté. En una ==qüestió sociocientífica== (SSI) com aquesta cal pesar ==beneficis== (curar malalties greus) i ==riscos== (desigualtat, errors irreversibles, «==millorar==» en lloc de curar). I convé recordar, amb el cas de ==Rosalind Franklin== que vas veure a la ==sessió 2==, que la ciència és una ==tasca col·lectiva== on el reconeixement no sempre ha estat ==just==.",
       type: "concept"
     }
   ],
 
   graphicResources: [
     { id: "Fig.1", apartat: "1", before: false, title: "CRISPR: localitzar, tallar, editar", src: "/images/sa3-s4-crispr.svg", note: "L'eina localitza una seqüència concreta de l'ADN, hi fa un tall dirigit i permet canviar la lletra que causa el problema (aquí, corregir la mutació de tipus falciforme de S3). No inventa un canvi nou: dirigeix el mateix tipus de canvi que fa una mutació." },
-    { id: "Fig.2", apartat: "2", before: false, title: "Edició somàtica vs germinal", src: "/images/sa3-s4-somatica-germinal.svg", note: "A dalt, edició somàtica: es corregeixen cèl·lules del cos d'un adult; el canvi es queda en ell i no passa als fills. A baix, edició germinal: s'edita un embrió i el canvi entra a totes les cèl·lules, també les que formaran gàmetes, així que s'hereta generació rere generació." }
+    { id: "Fig.2", apartat: "2", before: false, title: "Edició somàtica vs germinal", src: "/images/sa3-s4-somatica-germinal.svg", note: "A dalt, edició somàtica: es corregeixen cèl·lules del cos d'un adult; el canvi es queda en ell i no passa als fills. A baix, edició germinal: s'edita un embrió i el canvi entra a totes les cèl·lules, també les que formaran gàmetes, així que s'hereta generació rere generació." },
+    { id: "Fig.3", apartat: "1", before: false, title: "CRISPR en acció (animació)", src: "/images/sa3-s4-crispr-anim.svg", note: "L'ARN guia busca la seqüència, la Cas9 talla les dues cadenes i, en reparar el tall, s'hi posa la lletra desitjada. Model simplificat." },
+    { id: "Fig.4", apartat: "2", before: false, title: "Casgevy: un cas real d'edició somàtica", src: "/images/sa3-s4-casgevy.svg", note: "No corregeix la lletra de la falciforme: desactiva el gen «fre» BCL11A perquè es torni a fabricar hemoglobina fetal. El canvi no passa als fills." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa3-s4-fitxa-A.html", B: "/fitxes/sa3-s4-fitxa-B.html" },
+  fitxaUrl: { A: "/fitxes/sa3-s4-fitxa-A.html", B: "/fitxes/sa3-s4-fitxa-B.html", C: "/fitxes/sa3-s4-fitxa-C.html" },
   teoriaPdfUrl: null,
   elaborateNote: "Tancament de la fitxa i de la SA: amb el marc PODEM/HAURIEM, la distinció somàtica/germinal i la graella de fonts, planifica el teu assaig argumentatiu (postura, argument a favor, contraargument rebatut i conclusió). L'assaig és el producte que avalua tota la SA3.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────
   fitxaGuide: {
-    fitxaName: "Fitxa S4 — Reescriure la vida? El debat CRISPR",
+    fitxaName: "Fitxa S4 — Podem o hauríem? El debat CRISPR",
     steps: [
       {
         apartat: "0",
@@ -198,7 +205,10 @@ export const sa3s4 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa3-s4-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa3-s4-exit-ticket.html", B: "/fitxes/sa3-s4-exit-ticket.html", C: "/fitxes/sa3-s4-exit-ticket-C.html" },
+  // El tiquet es reparteix en un full a part: la fitxa no en porta l’apartat
+  // (ni els seus minuts). Ho llegeix tools/comprova_temps.mjs.
+  exitTicketDinsFitxa: false,
   exitTicketType: "paper",
   exitTicketCriteri: "3.6",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "8 min",
@@ -239,6 +249,23 @@ export const sa3s4 = {
   homework: {
     description: "Escriu l'assaig argumentatiu individual sobre l'edició genètica d'embrions humans (producte avaluable de la SA3): una postura clara, com a mínim un argument a favor i un en contra fonamentats (postura + raó + prova/valor), l'altra banda rebatuda i una conclusió raonada. Cita les fonts que facis servir (graella de SA1). Inclou una menció a per què la ciència és una tasca col·lectiva, amb l'exemple de Rosalind Franklin.",
     note: "L'assaig es defensa a l'aula: has de poder explicar i sostenir els teus arguments en directe, no només lliurar-los (política d'ús de la IA d'Albert)."
+  },
+
+  // Plantilla d'assaig del nivell B: estructura + inici de frase per peça.
+  // L'A no la porta (ha de construir l'estructura); la C la té a la fitxa.
+  plantillaAssaig: {
+    B: {
+      titol: "Plantilla de l'assaig: postura → raó → prova",
+      intro: "Cada argument de l'assaig es munta amb aquestes tres peces. Repeteix-les una vegada per a l'argument a favor i una altra per al contraargument.",
+      passos: [
+        { etiqueta: "POSTURA", que: "Què dius tu. Una sola frase, clara i sense «depèn».", inici: "Crec que editar l'ADN d'embrions humans s'hauria de" },
+        { etiqueta: "RAÓ", que: "Per què ho dius. Digues si la raó és científica (seguretat, eficàcia) o ètica (qui decideix, qui en surt perjudicat).", inici: "Ho dic perquè" },
+        { etiqueta: "PROVA O VALOR", que: "En què et bases: una dada, un cas vist a classe, o un valor que defenses (salut, llibertat, igualtat, precaució).", inici: "Em baso en" },
+        { etiqueta: "L'ALTRA BANDA", que: "El millor argument de qui pensa el contrari, escrit de manera justa — i la teva resposta.", inici: "Qui pensa el contrari diria que… Hi responc que" },
+        { etiqueta: "CONCLUSIÓ", que: "Torna a la postura i digues què hauria de passar perquè canviessis d'idea.", inici: "Per tant… Canviaria d'idea si" }
+      ],
+      avis: "No barregis PODEM amb HAURÍEM: la primera la respon un laboratori, la segona no."
+    }
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────

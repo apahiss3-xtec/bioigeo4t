@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed','Segoe UI',Arial,sans-serif">
+  <defs>
+    <marker id="ah2" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#22357A"/></marker>
+    <radialGradient id="rbc" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#b8323a"/><stop offset=".55" stop-color="#d9464d"/><stop offset="1" stop-color="#e86a6f"/></radialGradient>
+    <linearGradient id="sick" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a23a44"/><stop offset="1" stop-color="#7a2a34"/></linearGradient>
+    <mask id="cres"><rect x="560" y="150" width="200" height="170" fill="#fff"/><circle cx="684" cy="206" r="47" fill="#000"/></mask>
+  </defs>
+  <rect width="880" height="350" fill="#fff"/>
+  <text x="440" y="32" text-anchor="middle" font-size="22" font-weight="700" fill="#22357A">Una lletra canviada: l'anèmia falciforme</text>
+
+  <text x="220" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#2E4A9E">Hemoglobina NORMAL</text>
+  <rect x="60" y="84" width="320" height="44" rx="8" fill="#eef1fb" stroke="#5B7BE0" stroke-width="1.5"/>
+  <text x="220" y="103" text-anchor="middle" font-size="15" font-weight="700" fill="#22357A" letter-spacing="1.5">ADN codificant: …ACT · CCT · ______</text>
+  <text x="220" y="121" text-anchor="middle" font-size="12" fill="#555">ARNm: …ACU · CCU · ______</text>
+  <text x="220" y="152" text-anchor="middle" font-size="14" fill="#333">aminoàcids: … Thr · Pro · <tspan fill="#9aa">______</tspan></text>
+  <g transform="translate(220,232)">
+    <ellipse cx="0" cy="4" rx="50" ry="46" fill="#000" opacity=".06"/>
+    <circle r="48" fill="url(#rbc)"/>
+    <ellipse rx="26" ry="20" fill="#b02c34" opacity=".55"/>
+  </g>
+  <text x="220" y="304" text-anchor="middle" font-size="14" font-weight="700" fill="#2E4A9E"></text>
+  <text x="220" y="322" text-anchor="middle" font-size="12" fill="#666"></text>
+
+  <line x1="400" y1="232" x2="478" y2="232" stroke="#22357A" stroke-width="2.5" marker-end="url(#ah2)"/>
+  <text x="440" y="218" text-anchor="middle" font-size="13" font-weight="700" fill="#7B3F9E">?</text>
+
+  <text x="660" y="70" text-anchor="middle" font-size="17" font-weight="700" fill="#7B3F9E">Hemoglobina FALCIFORME</text>
+  <rect x="500" y="84" width="320" height="44" rx="8" fill="#f7ecfc" stroke="#b07fd0" stroke-width="1.5"/>
+  <text x="660" y="103" text-anchor="middle" font-size="15" font-weight="700" fill="#22357A" letter-spacing="1.5">ADN codificant: …ACT · CCT · ______</text>
+  <text x="660" y="121" text-anchor="middle" font-size="12" fill="#555">ARNm: …ACU · CCU · ______</text>
+  <text x="660" y="152" text-anchor="middle" font-size="14" fill="#333">aminoàcids: … Thr · Pro · <tspan fill="#9aa">______</tspan></text>
+  <g>
+    <circle cx="656" cy="236" r="50" fill="#000" opacity=".06" mask="url(#cres)"/>
+    <circle cx="652" cy="232" r="50" fill="url(#sick)" mask="url(#cres)"/>
+  </g>
+  <text x="660" y="304" text-anchor="middle" font-size="14" font-weight="700" fill="#7B3F9E"></text>
+  <text x="660" y="322" text-anchor="middle" font-size="12" fill="#666"></text>
+  
+</svg>
