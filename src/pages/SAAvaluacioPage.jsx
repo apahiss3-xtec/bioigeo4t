@@ -79,11 +79,13 @@ export default function SAAvaluacioPage() {
         margin: [10, 10, 10, 10],
         filename: `autoavaluacio-${sa.id}-${(name || 'alumne').replace(/\s+/g, '-').toLowerCase()}.pdf`,
         image: { type: 'jpeg', quality: 0.95 },
-        // windowWidth fixa l'amplada amb què html2canvas recalcula el layout.
-        // Sense això el clon es re-maquetava a l'amplada útil de l'A4
-        // (190 mm ≈ 718 px) mentre la plantilla en demanava 760, i cada fila
-        // perdia ~40 px pel marge dret.
-        html2canvas: { scale: 2, backgroundColor: '#ffffff', windowWidth: PDF_WIDTH },
+        // scrollX/scrollY a 0: el botó és al final de la pàgina i html2canvas
+        // resta el desplaçament de la finestra; sense això el PDF sortia en
+        // blanc (29/09/2026). NO posar windowWidth: html2pdf centra el clon a
+        // la finestra real i, si html2canvas re-maqueta a una amplada menor,
+        // el contingut queda desplaçat i es talla el marge esquerre. La
+        // plantilla ja fa exactament PDF_WIDTH, que és l'amplada útil de l'A4.
+        html2canvas: { scale: 2, backgroundColor: '#ffffff', scrollX: 0, scrollY: 0 },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
         // 'avoid-all' evita que un bloc quedi tallat entre dues pàgines;
         // sense 'legacy' html2pdf afegeix una pàgina buida al final quan el
@@ -302,7 +304,10 @@ export default function SAAvaluacioPage() {
         <div
           ref={pdfRef}
           style={{
-            width: `${PDF_WIDTH}px`, background: '#ffffff', color: '#1a1a2e',
+            // boxSizing + padding: marge interior perquè la vora dreta dels
+            // requadres no quedi just al límit del full i es talli.
+            width: `${PDF_WIDTH}px`, boxSizing: 'border-box', padding: '0 6px',
+            background: '#ffffff', color: '#1a1a2e',
             fontFamily: "'Quicksand', sans-serif", fontSize: '13px', lineHeight: 1.5
           }}
         >
@@ -344,13 +349,12 @@ export default function SAAvaluacioPage() {
           ))}
 
           {escrita && (
-            <div className="pdf-block">
-              <h2 style={pdfH2}>{tAuto(sa, 'escritaTitle')}</h2>
+            <div>
               {escrita.questions.map((q, i) => {
                 const mine = written.find((w) => w.id === q.id)
                 const self = SELF_LABELS.find((l) => l.id === mine?.self)
                 const fets = mine?.must.filter((m) => m.done).length ?? 0
-                return (
+                const card = (
                   <div key={q.id} style={pdfCard} className="pdf-block">
                     <p style={{ fontWeight: 700, margin: '0 0 2px' }}>
                       {i + 1}. {q.text}
@@ -377,6 +381,16 @@ export default function SAAvaluacioPage() {
                       </p>
                     )}
                   </div>
+                )
+                // El títol va dins del mateix bloc que la 1a pregunta: si no,
+                // 'avoid-all' el deixava sol al peu de la pàgina anterior.
+                return i === 0 ? (
+                  <div key={q.id} className="pdf-block">
+                    <h2 style={pdfH2}>{tAuto(sa, 'escritaTitle')}</h2>
+                    {card}
+                  </div>
+                ) : (
+                  card
                 )
               })}
             </div>
