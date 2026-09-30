@@ -151,7 +151,7 @@ export const sa2s3 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: true, title: "Com distingir una cèl·lula en divisió", src: "/images/sa2-s3-com-distingir.svg", note: "Interfase (nucli difús) NO compta; en divisió (cromosomes visibles) SÍ. A sota, la fórmula de l'índex mitòtic i quan un índex ha de fer sospitar." },
+    { id: "Fig.1", apartat: "1", before: true, title: "Es divideix o no? Esquema i foto real de cada fase", src: "/images/sa2-s3-com-distingir.svg", note: "Cada fase amb l'esquema a dalt i la foto real d'arrel de ceba a sota. Interfase (nucli rodó i llis) NO compta; profase, metafase, anafase i telofase (cromosomes visibles) SÍ. Regla: una telofase amb 2 nuclis compta com UNA cèl·lula. A la dreta, un exemple resolt d'índex mitòtic i quan ha de fer sospitar." },
     { id: "Fig.2", apartat: "1", before: true, title: "Exemple de fitxa de pacient", src: "/images/sa2-s3-biopsia-exemple.png", note: "Aquest és el TIPUS d'imatge que compteu. Cada equip rep una fitxa de pacient diferent (amb el seu fàrmac, dosi i temps) amb la seva biòpsia inicial i final." }
   ],
 

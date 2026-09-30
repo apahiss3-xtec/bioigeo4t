@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="'Fira Sans Condensed','Fira Sans',sans-serif">
+  <rect width="720" height="320" fill="#ffffff"/>
+  <text x="360" y="34" text-anchor="middle" font-size="27" font-weight="700" fill="#5A2E77">Dues còpies o quatre a mitges</text>
+  <text x="360" y="58" text-anchor="middle" font-size="17" fill="#6b6274">La mateixa cèl·lula de partida, dos resultats diferents.</text>
+
+  <g>
+    <rect x="24" y="76" width="320" height="220" rx="14" fill="#f3e8fa" stroke="#7B3F9E" stroke-width="3"/>
+    <text x="184" y="106" text-anchor="middle" font-size="24" font-weight="700" fill="#5A2E77">MITOSI</text>
+    <circle cx="184" cy="146" r="22" fill="#ffffff" stroke="#7B3F9E" stroke-width="2.5"/>
+    <text x="184" y="152" text-anchor="middle" font-size="15" font-weight="700" fill="#5A2E77">4</text>
+    <line x1="184" y1="170" x2="184" y2="186" stroke="#7B3F9E" stroke-width="2.5"/>
+    <circle cx="146" cy="210" r="22" fill="#ffffff" stroke="#7B3F9E" stroke-width="2.5"/>
+    <text x="146" y="216" text-anchor="middle" font-size="15" font-weight="700" fill="#5A2E77">4</text>
+    <circle cx="222" cy="210" r="22" fill="#ffffff" stroke="#7B3F9E" stroke-width="2.5"/>
+    <text x="222" y="216" text-anchor="middle" font-size="15" font-weight="700" fill="#5A2E77">4</text>
+    <text x="184" y="256" text-anchor="middle" font-size="19" font-weight="700" fill="#1d1622">2 cèl·lules IGUALS</text>
+    <text x="184" y="280" text-anchor="middle" font-size="18" fill="#5A2E77">Per créixer i reparar.</text>
+  </g>
+
+  <g>
+    <rect x="376" y="76" width="320" height="220" rx="14" fill="#e6f5f5" stroke="#2f9aa0" stroke-width="3"/>
+    <text x="536" y="106" text-anchor="middle" font-size="24" font-weight="700" fill="#1d6165">MEIOSI</text>
+    <circle cx="536" cy="140" r="20" fill="#ffffff" stroke="#2f9aa0" stroke-width="2.5"/>
+    <text x="536" y="146" text-anchor="middle" font-size="14" font-weight="700" fill="#1d6165">4</text>
+    <line x1="536" y1="161" x2="536" y2="174" stroke="#2f9aa0" stroke-width="2.5"/>
+    <circle cx="452" cy="196" r="20" fill="#ffffff" stroke="#2f9aa0" stroke-width="2.5"/>
+    <text x="452" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#1d6165">2</text>
+    <circle cx="508" cy="196" r="20" fill="#ffffff" stroke="#2f9aa0" stroke-width="2.5"/>
+    <text x="508" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#1d6165">2</text>
+    <circle cx="564" cy="196" r="20" fill="#ffffff" stroke="#2f9aa0" stroke-width="2.5"/>
+    <text x="564" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#1d6165">2</text>
+    <circle cx="620" cy="196" r="20" fill="#ffffff" stroke="#2f9aa0" stroke-width="2.5"/>
+    <text x="620" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#1d6165">2</text>
+    <text x="536" y="242" text-anchor="middle" font-size="19" font-weight="700" fill="#1d1622">4 cèl·lules amb LA MEITAT</text>
+    <text x="536" y="266" text-anchor="middle" font-size="18" fill="#1d6165">Per fer òvuls i</text>
+    <text x="536" y="288" text-anchor="middle" font-size="18" fill="#1d6165">espermatozoides.</text>
+  </g>
+</svg>

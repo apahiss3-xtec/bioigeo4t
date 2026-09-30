@@ -142,9 +142,21 @@ export default function SessionPage() {
     ? session.graphicResources?.filter((g) => !g.apartat) || []
     : session.graphicResources || []
 
+  // g.embed: la «figura» és una pàgina HTML autònoma (animació) i va en un iframe
   const GraphicFigure = ({ g }) => (
     <figure className="card overflow-hidden">
-      <img src={asset(g.src)} alt={g.title} className="w-full bg-white" loading="lazy" />
+      {g.embed ? (
+        <iframe
+          src={asset(g.src)}
+          title={g.title}
+          className="block w-full border-0 bg-white"
+          style={{ aspectRatio: g.aspect || '16 / 10', minHeight: g.minHeight }}
+          loading="lazy"
+          allowFullScreen
+        />
+      ) : (
+        <img src={asset(g.src)} alt={g.title} className="w-full bg-white" loading="lazy" />
+      )}
       <figcaption className="px-5 py-3 text-sm text-[var(--muted)]">
         <strong className="text-[var(--text)]">
           {g.id} · {g.title}
@@ -368,6 +380,15 @@ export default function SessionPage() {
               </div>
             )}
 
+            {/* Figures de l'apartat 1 (abans, les de l'1 no es pintaven enlloc) */}
+            {hasApartats && graphicsBefore('1').length > 0 && (
+              <div className="mb-8 grid gap-6">
+                {graphicsBefore('1').map((g) => (
+                  <GraphicFigure key={g.id} g={g} />
+                ))}
+              </div>
+            )}
+
             {appSrc && (
               <div className="mb-8">
                 <AppFrame appSrc={appSrc} title={session.title} />
@@ -411,6 +432,14 @@ export default function SessionPage() {
                 {session.exploreNote && (
                   <p className="mt-5 text-sm italic text-[var(--muted)]">{session.exploreNote}</p>
                 )}
+              </div>
+            )}
+
+            {hasApartats && graphicsAfter('1').length > 0 && (
+              <div className="mt-8 grid gap-6">
+                {graphicsAfter('1').map((g) => (
+                  <GraphicFigure key={g.id} g={g} />
+                ))}
               </div>
             )}
 

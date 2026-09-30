@@ -371,312 +371,308 @@ header {
 
 <script>
 // ─────────────────────────────────────────────────
-// SVG DRAWING FUNCTIONS — convenció de cromosomes de la SA2 (26/09/2026)
-//   FORMA: bastonet amb centròmer i bandes · MIDA = tipus (llarg / curt)
-//   COLOR = origen: vermell = de la mare, blau = del pare
-//   «I» = sense copiar · «X» = copiat (2 cromàtides) · una X és UN cromosoma
-//   Model: 2n = 4 (2 parelles). Humà: 2n = 46, n = 23.
+// SVG DRAWING FUNCTIONS
 // ─────────────────────────────────────────────────
 
 const colors = {
   membrane: '#7B68C8',
   nuclearMembrane: '#5a4aa0',
-  mare: '#D2474F', mareD: '#8E2430',
-  pare: '#2F6DB5', pareD: '#173F73',
-  spindle: '#B9AEDC',
-  gold: '#C8960A', goldInk: '#6E5000',
-  cellFill: 'rgba(239,234,245,0.45)',
-  nucleusFill: 'rgba(225,212,240,0.55)',
+  chr1a: '#E76F6F',
+  chr2a: '#6FA3E7',
+  spindle: '#C8C2DD',
+  cellFill: 'rgba(239,234,245,0.3)',
+  nucleusFill: 'rgba(239,234,245,0.5)',
 };
-const FONT = "font-family=\"Fira Sans Extra Condensed, Arial Narrow, sans-serif\"";
-const TYPES = {
-  L: { p: 15, q: 27, bands: [[0.55, 'p'], [0.35, 'q'], [0.7, 'q']] },
-  S: { p: 10, q: 17, bands: [[0.5, 'q']] },
-};
-const other = o => (o === 'm' ? 'p' : 'm');
-const fillOf = o => (o === 'm' ? colors.mare : colors.pare);
-const strokeOf = o => (o === 'm' ? colors.mareD : colors.pareD);
 
-function armPath(L, w) {
-  const h = w / 2;
-  return `M${-w*.26},0 Q${-h},${-w*.25} ${-h},${-w*.75} L${-h},${-(L-h)} A${h},${h} 0 0 1 ${h},${-(L-h)} L${h},${-w*.75} Q${h},${-w*.25} ${w*.26},0 Z`;
-}
-// Braç d'una cromàtide. tip = origen del tros final intercanviat pel crossing over (o null)
-function arm(L, w, o, angle, bands, tip) {
-  const h = w / 2;
-  let s = `<g transform="rotate(${angle})"><path d="${armPath(L, w)}" fill="${fillOf(o)}" stroke="${strokeOf(o)}" stroke-width="1.3" stroke-linejoin="round"/>`;
-  if (tip) {
-    const y0 = -L * 0.55;
-    s += `<path d="M${-h},${y0} L${-h},${-(L-h)} A${h},${h} 0 0 1 ${h},${-(L-h)} L${h},${y0} Z" fill="${fillOf(tip)}" stroke="${strokeOf(tip)}" stroke-width="1.3" stroke-linejoin="round"/>`;
-  }
-  bands.forEach(f => {
-    const y = -(w*.8 + f*(L - w*1.4));
-    s += `<line x1="${-h*.72}" y1="${y}" x2="${h*.72}" y2="${y}" stroke="#fff" stroke-opacity=".55" stroke-width="${Math.max(1.2, w*.2)}" stroke-linecap="round"/>`;
-  });
-  return s + '</g>';
-}
-// Cromàtide amb centròmer a (0,0). rec = true → el braç llarg porta un tros de l'altre progenitor
-function chromatid(t, o, ap, aq, sc, rec) {
-  const T = TYPES[t], w = 9 * sc;
-  const bp = T.bands.filter(b => b[1] === 'p').map(b => b[0]);
-  const bq = T.bands.filter(b => b[1] === 'q').map(b => b[0]);
-  return arm(T.p*sc, w, o, ap, bp, null) + arm(T.q*sc, w, o, aq, bq, rec ? other(o) : null) +
-    `<circle r="${w*.3}" fill="${strokeOf(o)}"/>`;
-}
-// Cromosoma SENSE copiar («I»)
-function single(x, y, t, o, rot = 0, sc = 1, rec = false, bend = 0) {
-  return `<g transform="translate(${x},${y}) rotate(${rot})">${chromatid(t, o, -bend, 180 + bend, sc, rec)}</g>`;
-}
-// Cromosoma COPIAT («X»). rec = índex de la cromàtide recombinant (0 o 1) o null
-function double(x, y, t, o, rot = 0, sc = 1, rec = null, spread = 11) {
-  const w = 9 * sc, off = w * .46;
-  return `<g transform="translate(${x},${y}) rotate(${rot})">` +
-    `<g transform="translate(${-off},0)">${chromatid(t, o, -spread, 180 + spread, sc, rec === 0)}</g>` +
-    `<g transform="translate(${off},0)">${chromatid(t, o, spread, 180 - spread, sc, rec === 1)}</g>` +
-    `<ellipse rx="${w*.7}" ry="${w*.38}" fill="${strokeOf(o)}"/></g>`;
-}
-// Cromàtide estirada cap a un pol (anafase): centròmer al davant, braços en V endarrere
-function vshape(x, y, t, o, toward = 0, sc = 1, rec = false, spread = 28) {
-  const back = toward + 180;
-  return `<g transform="translate(${x},${y})">${chromatid(t, o, back - spread, back + spread, sc, rec)}</g>`;
-}
-// Cromatina: fils prims (interfase)
-function chromatin(cx, cy, r, seed = 3, n = 6) {
-  let s = seed, out = '';
-  const rnd = () => { s = (s * 9301 + 49297) % 233280; return s / 233280; };
-  ['m', 'p'].forEach(o => {
-    for (let k = 0; k < n; k++) {
-      let a = rnd() * 6.283, rr = (0.1 + rnd() * 0.55) * r, x = cx + rr*Math.cos(a), y = cy + rr*Math.sin(a);
-      const pts = [[x, y]];
-      for (let j = 0; j < 5; j++) {
-        a += (rnd() - .5) * 3.2; x += Math.cos(a)*r*.32; y += Math.sin(a)*r*.32;
-        const dx = x - cx, dy = y - cy, d = Math.hypot(dx, dy);
-        if (d > r*.82) { x = cx + dx/d*r*.8; y = cy + dy/d*r*.8; }
-        pts.push([x, y]);
-      }
-      let d = `M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;
-      for (let i = 1; i < pts.length - 1; i++)
-        d += ` Q${pts[i][0].toFixed(1)},${pts[i][1].toFixed(1)} ${((pts[i][0]+pts[i+1][0])/2).toFixed(1)},${((pts[i][1]+pts[i+1][1])/2).toFixed(1)}`;
-      out += `<path d="${d}" fill="none" stroke="${fillOf(o)}" stroke-width="1.8" stroke-linecap="round" opacity=".85"/>`;
-    }
-  });
-  return out;
-}
 function cellBase(cx, cy, rx, ry, fill = colors.cellFill) {
   return `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${fill}" stroke="${colors.membrane}" stroke-width="3"/>`;
 }
-// Cèl·lula que s'estrangula (telofase): dues meitats unides per un solc
-function pinched(cx, cy, rx, ry, pinch = 22) {
-  const t = cy - ry, b = cy + ry, k = rx * 0.55;
-  return `<path d="M${cx},${t} C${cx+k},${t} ${cx+rx},${cy-ry*.55} ${cx+rx},${cy-ry*.25} Q${cx+rx},${cy-10} ${cx+rx-pinch},${cy} Q${cx+rx},${cy+10} ${cx+rx},${cy+ry*.25} C${cx+rx},${cy+ry*.55} ${cx+k},${b} ${cx},${b} C${cx-k},${b} ${cx-rx},${cy+ry*.55} ${cx-rx},${cy+ry*.25} Q${cx-rx},${cy+10} ${cx-rx+pinch},${cy} Q${cx-rx},${cy-10} ${cx-rx},${cy-ry*.25} C${cx-rx},${cy-ry*.55} ${cx-k},${t} ${cx},${t} Z" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="3"/>`;
-}
-function nucleus(cx, cy, r, dashed = false) {
-  return dashed
-    ? `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${colors.nuclearMembrane}" stroke-width="1.5" stroke-dasharray="5,4" opacity=".45"/>`
-    : `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>`;
-}
-function nucleusE(cx, cy, rx, ry) {
-  return `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="1.8"/>`;
-}
-function fibres(px, py, pts) {
-  return pts.map(p => `<line x1="${px}" y1="${py}" x2="${p[0]}" y2="${p[1]}" stroke="${colors.spindle}" stroke-width="1.2"/>`).join('') +
-    `<circle cx="${px}" cy="${py}" r="3.5" fill="${colors.spindle}"/>`;
-}
-function plate(cx, cy, half) {
-  return `<line x1="${cx-half}" y1="${cy}" x2="${cx+half}" y2="${cy}" stroke="${colors.gold}" stroke-width="1.4" stroke-dasharray="4,3"/>`;
-}
-// Comptador (dalt a l'esquerra) + peu de dues línies
-function counter(txt) {
-  const w = txt.length * 6.3 + 24;
-  return `<rect x="8" y="8" width="${w}" height="24" rx="12" fill="#fff" stroke="${colors.gold}" stroke-width="1.4"/>` +
-    `<text x="${8 + w/2}" y="24.5" text-anchor="middle" ${FONT} font-size="13" font-weight="800" fill="${colors.goldInk}">${txt}</text>`;
-}
-function caption(l1, l2) {
-  return `<text x="200" y="298" text-anchor="middle" ${FONT} font-size="13.5" fill="#555">${l1}</text>` +
-    (l2 ? `<text x="200" y="314" text-anchor="middle" ${FONT} font-size="12.5" font-weight="bold" fill="${colors.nuclearMembrane}">${l2}</text>` : '');
-}
-function wrap(inner) {
-  return `<rect width="400" height="320" fill="transparent"/>` + inner;
+
+function nucleus(cx, cy, r) {
+  return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>`;
 }
 
-// Conjunts de cromosomes
-const FULL = [['L', 'm'], ['L', 'p'], ['S', 'm'], ['S', 'p']];
+function chromatin(cx, cy) {
+  return `
+    <path d="M${cx-20},${cy-10} Q${cx-5},${cy+10} ${cx+15},${cy}" stroke="${colors.chr1a}" stroke-width="2.5" fill="none" opacity=".7"/>
+    <path d="M${cx+20},${cy-15} Q${cx+5},${cy+5} ${cx-10},${cy+10}" stroke="${colors.chr2a}" stroke-width="2.5" fill="none" opacity=".7"/>
+    <path d="M${cx-15},${cy+5} Q${cx},${cy-8} ${cx+10},${cy+15}" stroke="#6FBE7A" stroke-width="2" fill="none" opacity=".6"/>
+  `;
+}
+
+function chromosome(cx, cy, color, angle = 0, condensed = true, w = 10, h = 28) {
+  const dx = condensed ? 4 : 0;
+  return `
+    <g transform="translate(${cx},${cy}) rotate(${angle})">
+      <rect x="${-dx/2-w/2}" y="${-h/2}" width="${w/2+dx/4}" height="${h}" rx="4" fill="${color}" opacity=".85"/>
+      <rect x="${dx/4}" y="${-h/2}" width="${w/2+dx/4}" height="${h}" rx="4" fill="${color}" opacity=".7"/>
+      <line x1="${-dx/2}" y1="0" x2="${dx/2}" y2="0" stroke="${color}" stroke-width="1.5" opacity=".5"/>
+    </g>
+  `;
+}
+
+function chromosomeSingle(cx, cy, color, angle = 0, w = 8, h = 24) {
+  return `
+    <g transform="translate(${cx},${cy}) rotate(${angle})">
+      <rect x="${-w/2}" y="${-h/2}" width="${w}" height="${h}" rx="4" fill="${color}" opacity=".85"/>
+    </g>
+  `;
+}
+
+function spindleFibers(cx, cy, chr_positions, poleTy = 60, poleBy = 260) {
+  let lines = '';
+  chr_positions.forEach(p => {
+    lines += `<line x1="${cx}" y1="${poleTy}" x2="${p[0]}" y2="${p[1]}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>`;
+    lines += `<line x1="${cx}" y1="${poleBy}" x2="${p[0]}" y2="${p[1]}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>`;
+  });
+  return lines;
+}
 
 // ── MITOSI ─────────────────────────────────────────────
 
-function drawInterfase() {
-  return wrap(`${cellBase(200, 145, 140, 120)}${nucleus(200, 145, 62)}${chromatin(200, 145, 58, 11, 7)}
-    ${counter('4 cromosomes (fils prims)')}
-    ${caption('Els cromosomes són fils llargs i prims: no es veuen. Cadascun es copia.', 'Surt de l’interfase amb 4 cromosomes copiats (2n = 4)')}`);
+function drawInterfase(cx = 200, cy = 160) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    ${nucleus(cx, cy, 50)}
+    ${chromatin(cx, cy)}
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">ADN copiat (cromosomes no condensats)</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (amb còpies → 2 × 2n)</text>
+  `;
 }
 
-function drawProfase() {
-  return wrap(`${cellBase(200, 145, 140, 120)}${nucleus(200, 145, 78, true)}
-    ${double(160, 115, 'L', 'm', -25)}${double(238, 118, 'L', 'p', 30)}
-    ${double(165, 185, 'S', 'p', 70)}${double(240, 182, 'S', 'm', -40)}
-    ${counter('4 cromosomes (en X)')}
-    ${caption('Els fils s’enrotllen i es fan gruixuts: apareixen en forma d’X.', 'Una X és UN cromosoma copiat (2 cromàtides), no dos')}`);
+function drawProfase(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    <circle cx="${cx}" cy="${cy}" r="50" fill="none" stroke="${colors.nuclearMembrane}" stroke-width="1.5" stroke-dasharray="5,4" opacity=".4"/>
+    ${chromosome(cx-30, cy-20, colors.chr1a, -15)}
+    ${chromosome(cx-15, cy+20, colors.chr1a, 10)}
+    ${chromosome(cx+25, cy-15, colors.chr2a, 15)}
+    ${chromosome(cx+10, cy+25, colors.chr2a, -10)}
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromosomes condensats, membrana nuclear es trenca</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (cromàtides germanes unides)</text>
+  `;
 }
 
-function drawMetafase() {
-  const xs = [[-72, 'L', 'm'], [-24, 'S', 'p'], [24, 'L', 'p'], [74, 'S', 'm']];
-  const cx = 200, cy = 145;
-  return wrap(`${cellBase(cx, cy, 140, 120)}
-    ${fibres(cx, 32, xs.map(a => [cx + a[0], cy - 7]))}${fibres(cx, 258, xs.map(a => [cx + a[0], cy + 7]))}
-    ${plate(cx, cy, 118)}
-    ${xs.map(a => double(cx + a[0], cy, a[1], a[2], 90)).join('')}
-    ${counter('4 cromosomes (en X, en fila)')}
-    ${caption('Els cromosomes s’alineen al mig. Cada cromàtide mira cap a un pol.', 'Les fibres del fus s’enganxen al centròmer de cada X')}`);
+function drawMetafase(cx = 200, cy = 155) {
+  const spindles = [[cx-30, cy], [cx-15, cy], [cx+15, cy], [cx+30, cy]];
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    ${spindleFibers(cx, cy, spindles, cy-100, cy+100)}
+    ${chromosome(cx-28, cy, colors.chr1a, 90, true, 10, 28)}
+    ${chromosome(cx-14, cy, colors.chr1a, 90, true, 10, 28)}
+    ${chromosome(cx+14, cy, colors.chr2a, 90, true, 10, 28)}
+    ${chromosome(cx+28, cy, colors.chr2a, 90, true, 10, 28)}
+    <line x1="${cx-70}" y1="${cy}" x2="${cx+70}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".4"/>
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromosomes a l'equador (placa metafàsica)</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (cromàtides germanes unides)</text>
+  `;
 }
 
-function drawAnafase() {
-  const xs = [[-54, 'L', 'm'], [-18, 'S', 'p'], [18, 'L', 'p'], [54, 'S', 'm']];
-  const cx = 200, cy = 145;
-  let s = `${cellBase(cx, cy, 128, 132)}`;
-  s += fibres(cx, 18, xs.map(a => [cx + a[0]*.9, cy - 62])) + fibres(cx, 272, xs.map(a => [cx + a[0]*.9, cy + 62]));
-  xs.forEach(a => { s += vshape(cx + a[0]*.9, cy - 62, a[1], a[2], 0) + vshape(cx + a[0]*.9, cy + 62, a[1], a[2], 180); });
-  s += `<path d="M${cx-12},${cy-6} l0,-16 m-5,6 l5,-6 5,6 M${cx+12},${cy+6} l0,16 m-5,-6 l5,6 5,-6" stroke="${colors.gold}" stroke-width="2.2" fill="none" stroke-linecap="round"/>`;
-  return wrap(s + counter('4 amunt + 4 avall') +
-    caption('Cada X es parteix: una cromàtida va amunt i l’altra avall.', 'Cada pol rep UN de cada: llarg i curt, de la mare i del pare'));
+function drawAnafase(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    ${chromosomeSingle(cx-25, cy-50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx-10, cy-50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx+10, cy-50, colors.chr2a, 90)}
+    ${chromosomeSingle(cx+25, cy-50, colors.chr2a, 90)}
+    ${chromosomeSingle(cx-25, cy+50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx-10, cy+50, colors.chr1a, 90)}
+    ${chromosomeSingle(cx+10, cy+50, colors.chr2a, 90)}
+    ${chromosomeSingle(cx+25, cy+50, colors.chr2a, 90)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" stroke-dasharray="4,3" opacity=".4"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromàtides germanes separen cap als pols</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">4n transitòriament (cap pol: 2n)</text>
+  `;
 }
 
-function drawTelofase() {
-  const cx = 200;
-  let s = pinched(cx, 145, 125, 128) + `<line x1="${cx-100}" y1="145" x2="${cx+100}" y2="145" stroke="${colors.membrane}" stroke-width="1.6" stroke-dasharray="5,4" opacity=".6"/>`;
-  [85, 205].forEach(y => {
-    s += nucleusE(cx, y, 72, 40);
-    [[-42, 'L', 'm', 12], [-14, 'S', 'p', -10], [14, 'L', 'p', 8], [42, 'S', 'm', -14]].forEach(a => { s += single(cx + a[0], y, a[1], a[2], a[3], .8, false, 6); });
-  });
-  return wrap(s + counter('4 i 4') +
-    caption('Es formen 2 nuclis i la cèl·lula comença a estrangular-se pel mig.', 'Cada nucli: 4 cromosomes sense copiar (2n = 4)'));
+function drawTelofase(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    <ellipse cx="${cx}" cy="${cy-60}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    <ellipse cx="${cx}" cy="${cy+60}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    ${chromatin(cx, cy-62)}
+    ${chromatin(cx, cy+58)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.membrane}" stroke-width="2" stroke-dasharray="6,4" opacity=".5"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Dos nuclis nous es formen, cèl·lula s'allarga</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada pol: 2n</text>
+  `;
 }
 
-function drawCitoquinesi() {
-  const cx = 200;
-  let s = '';
-  [80, 212].forEach(y => {
-    s += cellBase(cx, y, 118, 60) + nucleus(cx, y, 38);
-    [[-24, 'L', 'm', 12], [-8, 'S', 'p', -10], [8, 'L', 'p', 8], [24, 'S', 'm', -14]].forEach(a => { s += single(cx + a[0], y, a[1], a[2], a[3], .62, false, 6); });
-  });
-  return wrap(s + counter('2 cèl·lules × 4 cromosomes') +
-    caption('La cèl·lula es parteix en dues. Les dues filles són IGUALS.', '2 cèl·lules 2n = 4, idèntiques a la de partida'));
+function drawCitoquinesi(cx = 200, cy = 155) {
+  return `
+    <ellipse cx="${cx}" cy="${cy-62}" rx="110" ry="78" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="3"/>
+    <ellipse cx="${cx}" cy="${cy+62}" rx="110" ry="78" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="3"/>
+    ${nucleus(cx, cy-62, 38)}
+    ${nucleus(cx, cy+62, 38)}
+    ${chromatin(cx, cy-68)}
+    ${chromatin(cx, cy+56)}
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Citoplasma es divideix → 2 cèl·lules filles</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2 cèl·lules 2n idèntiques</text>
+  `;
 }
 
 // ── MEIOSI ─────────────────────────────────────────────
-// Crossing over (profase I): una cromàtide de cada cromosoma llarg intercanvia el tros final.
-//   L de la mare: cromàtide 1 recombinant · L del pare: cromàtide 0 recombinant.
 
-function drawMeiosiInterfase() {
-  return wrap(`${cellBase(200, 145, 140, 120)}${nucleus(200, 145, 62)}${chromatin(200, 145, 58, 17, 7)}
-    ${counter('4 cromosomes (fils prims)')}
-    ${caption('Igual que a la mitosi: cada cromosoma es copia UNA sola vegada.', 'Però ara vindran DUES divisions seguides')}`);
+function drawMeiosiInterfase(cx = 200, cy = 160) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    ${nucleus(cx, cy, 50)}
+    ${chromatin(cx, cy)}
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">ADN copiat una sola vegada (vindrà 2 divisions)</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (amb còpies: 2 × 2n)</text>
+  `;
 }
 
-function drawProfase1() {
-  const cx = 200, cy = 145;
-  return wrap(`${cellBase(cx, cy, 140, 120)}${nucleus(cx, cy, 82, true)}
-    <g transform="translate(${cx-46},${cy-6}) rotate(-10)">${double(-15, 0, 'L', 'm', 0, 1.2, 1)}${double(15, 0, 'L', 'p', 0, 1.2, 0)}
-      <path d="M-5,30 l10,10 m0,-10 l-10,10" stroke="${colors.gold}" stroke-width="2.6" stroke-linecap="round"/></g>
-    <g transform="translate(${cx+52},${cy+8}) rotate(12)">${double(-13, 0, 'S', 'm', 0, 1.2)}${double(13, 0, 'S', 'p', 0, 1.2)}</g>
-    <text x="${cx-46}" y="${cy-66}" text-anchor="middle" ${FONT} font-size="12" font-weight="800" fill="${colors.goldInk}">crossing over</text>
-    ${counter('4 cromosomes = 2 parelles juntes')}
-    ${caption('Cada cromosoma s’ajunta amb el seu company de la mateixa mida.', 'Poden intercanviar un tros: el crossing over')}`);
+function drawProfase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    <circle cx="${cx}" cy="${cy}" r="50" fill="none" stroke="${colors.nuclearMembrane}" stroke-width="1.5" stroke-dasharray="5,4" opacity=".4"/>
+    <!-- Bivalent 1: parella vermella -->
+    <g transform="translate(${cx-25},${cy-10})">
+      <rect x="-9" y="-16" width="9" height="32" rx="4" fill="${colors.chr1a}" opacity=".85"/>
+      <rect x="0" y="-16" width="9" height="32" rx="4" fill="${colors.chr1a}" opacity=".6"/>
+    </g>
+    <!-- Bivalent 2: parella blava -->
+    <g transform="translate(${cx+25},${cy+10})">
+      <rect x="-9" y="-16" width="9" height="32" rx="4" fill="${colors.chr2a}" opacity=".85"/>
+      <rect x="0" y="-16" width="9" height="32" rx="4" fill="${colors.chr2a}" opacity=".6"/>
+    </g>
+    <!-- Crossing over symbol -->
+    <line x1="${cx-20}" y1="${cy-5}" x2="${cx-30}" y2="${cy+5}" stroke="#E7B96F" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="${cx-20}" cy="${cy-5}" r="3" fill="#E7B96F"/>
+    <text x="${cx-12}" y="${cy-22}" font-family="Fira Sans Extra Condensed" font-size="10" fill="#E7B96F" font-weight="bold">crossing over</text>
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Homòlegs aparellats (bivalents); crossing over</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (cromàtides unides, bivalents)</text>
+  `;
 }
 
-function drawMetafase1() {
-  const cx = 200, cy = 145;
-  const up = [[cx-40, cy-26, 'L', 'm', 1], [cx+44, cy-19, 'S', 'p', null]];
-  const dn = [[cx-40, cy+26, 'L', 'p', 0], [cx+44, cy+19, 'S', 'm', null]];
-  return wrap(`${cellBase(cx, cy, 140, 120)}
-    ${fibres(cx, 32, up.map(a => [a[0], a[1] - 4]))}${fibres(cx, 258, dn.map(a => [a[0], a[1] + 4]))}
-    ${plate(cx, cy, 118)}
-    ${up.map(a => double(a[0], a[1], a[2], a[3], 0, 1, a[4])).join('')}
-    ${dn.map(a => double(a[0], a[1], a[2], a[3], 0, 1, a[4])).join('')}
-    ${counter('4 cromosomes: parelles al mig')}
-    ${caption('Les PARELLES s’alineen al mig: un company a cada costat.', 'Quin va amunt i quin avall és a l’atzar')}`);
+function drawMetafase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 110)}
+    <line x1="${cx-70}" y1="${cy-100}" x2="${cx-22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <line x1="${cx-70}" y1="${cy+100}" x2="${cx-22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <line x1="${cx+70}" y1="${cy-100}" x2="${cx+22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <line x1="${cx+70}" y1="${cy+100}" x2="${cx+22}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" opacity=".6"/>
+    <!-- Bivalents a l'equador -->
+    <g transform="translate(${cx-22},${cy})">
+      <rect x="-8" y="-16" width="8" height="32" rx="4" fill="${colors.chr1a}" opacity=".85"/>
+      <rect x="0" y="-16" width="8" height="32" rx="4" fill="${colors.chr1a}" opacity=".6"/>
+    </g>
+    <g transform="translate(${cx+22},${cy})">
+      <rect x="-8" y="-16" width="8" height="32" rx="4" fill="${colors.chr2a}" opacity=".85"/>
+      <rect x="0" y="-16" width="8" height="32" rx="4" fill="${colors.chr2a}" opacity=".6"/>
+    </g>
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".4"/>
+    <text x="${cx}" y="${cy+140}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Bivalents a l'equador; cada pol rep un homòleg</text>
+    <text x="${cx}" y="${cy+156}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">2n (bivalents a l'equador)</text>
+  `;
 }
 
-function drawAnafase1() {
-  const cx = 200, cy = 145;
-  return wrap(`${cellBase(cx, cy, 128, 132)}
-    ${fibres(cx, 18, [[cx-30, cy-66], [cx+30, cy-66]])}${fibres(cx, 272, [[cx-30, cy+66], [cx+30, cy+66]])}
-    ${double(cx-30, cy-66, 'L', 'm', 0, 1, 1)}${double(cx+30, cy-62, 'S', 'p')}
-    ${double(cx-30, cy+66, 'L', 'p', 0, 1, 0)}${double(cx+30, cy+62, 'S', 'm')}
-    <path d="M${cx-12},${cy-6} l0,-16 m-5,6 l5,-6 5,6 M${cx+12},${cy+6} l0,16 m-5,-6 l5,6 5,-6" stroke="${colors.gold}" stroke-width="2.2" fill="none" stroke-linecap="round"/>
-    ${counter('2 amunt + 2 avall (encara en X)')}
-    ${caption('Se separen les PARELLES. Les X NO es parteixen.', 'Cada pol rep UN de cada parella: 1 llarg + 1 curt')}`);
+function drawAnafase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    <!-- Homòlegs (no cromàtides) cap als pols -->
+    ${chromosome(cx-45, cy-55, colors.chr1a, -8, true, 9, 26)}
+    ${chromosome(cx-20, cy-55, colors.chr1a, 8, true, 9, 26)}
+    ${chromosome(cx+20, cy+55, colors.chr2a, -8, true, 9, 26)}
+    ${chromosome(cx+45, cy+55, colors.chr2a, 8, true, 9, 26)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.spindle}" stroke-width="1" stroke-dasharray="4,3" opacity=".3"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Homòlegs separen cap als pols (cromàtides unides)</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada pol: n (cromàtides unides)</text>
+  `;
 }
 
-function drawTelofase1() {
-  const cx = 200;
-  let s = pinched(cx, 145, 125, 128) + `<line x1="${cx-100}" y1="145" x2="${cx+100}" y2="145" stroke="${colors.membrane}" stroke-width="1.6" stroke-dasharray="5,4" opacity=".6"/>`;
-  s += nucleusE(cx, 85, 62, 42) + double(cx-20, 85, 'L', 'm', 0, .9, 1) + double(cx+22, 88, 'S', 'p', 0, .9);
-  s += nucleusE(cx, 205, 62, 42) + double(cx-20, 205, 'L', 'p', 0, .9, 0) + double(cx+22, 208, 'S', 'm', 0, .9);
-  return wrap(s + counter('2 i 2 (n = 2, en X)') +
-    caption('Surten 2 cèl·lules amb la MEITAT: un cromosoma de cada tipus.', 'NO hi ha còpia nova abans de la 2a divisió'));
+function drawTelofase1(cx = 200, cy = 155) {
+  return `
+    ${cellBase(cx, cy, 130, 130)}
+    <ellipse cx="${cx}" cy="${cy-65}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    <ellipse cx="${cx}" cy="${cy+65}" rx="55" ry="38" fill="${colors.nucleusFill}" stroke="${colors.nuclearMembrane}" stroke-width="2"/>
+    ${chromosome(cx-20, cy-65, colors.chr1a, 0, true, 9, 22)}
+    ${chromosome(cx+20, cy-65, colors.chr1a, 0, true, 9, 22)}
+    ${chromosome(cx-20, cy+65, colors.chr2a, 0, true, 9, 22)}
+    ${chromosome(cx+20, cy+65, colors.chr2a, 0, true, 9, 22)}
+    <line x1="${cx-80}" y1="${cy}" x2="${cx+80}" y2="${cy}" stroke="${colors.membrane}" stroke-width="2" stroke-dasharray="6,4" opacity=".5"/>
+    <text x="${cx}" y="${cy+152}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">2 cèl·lules haploides formant-se</text>
+    <text x="${cx}" y="${cy+168}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada cèl·lula: n (cromàtides germanes unides)</text>
+  `;
 }
 
 function drawProfase2() {
-  const cy = 145;
-  return wrap(`${cellBase(110, cy, 86, 96)}${nucleus(110, cy, 56, true)}${double(88, cy-8, 'L', 'm', -15, 1, 1)}${double(134, cy+12, 'S', 'p', 20)}
-    ${cellBase(290, cy, 86, 96)}${nucleus(290, cy, 56, true)}${double(268, cy-8, 'L', 'p', 15, 1, 0)}${double(314, cy+12, 'S', 'm', -20)}
-    ${counter('2 + 2 cromosomes (en X)')}
-    ${caption('Les 2 cèl·lules es preparen per tornar-se a dividir, sense copiar res.', 'Cada una: n = 2 (1 llarg + 1 curt)')}`);
+  const cx1 = 130, cx2 = 270, cy = 155;
+  return `
+    ${cellBase(cx1, cy, 90, 80)}
+    ${chromosome(cx1-15, cy-10, colors.chr1a, -10, true, 8, 22)}
+    ${chromosome(cx1+15, cy+10, colors.chr1a, 10, true, 8, 22)}
+    ${cellBase(cx2, cy, 90, 80)}
+    ${chromosome(cx2-15, cy-10, colors.chr2a, -10, true, 8, 22)}
+    ${chromosome(cx2+15, cy+10, colors.chr2a, 10, true, 8, 22)}
+    <text x="200" y="278" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">2 cèl·lules n preparen la 2a divisió (sense copiar ADN)</text>
+    <text x="200" y="294" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada cèl·lula: n (cromàtides unides)</text>
+  `;
 }
 
 function drawMetafase2() {
-  const cy = 145;
-  let s = '';
-  [[110, 'm', 'p', 1], [290, 'p', 'm', 0]].forEach(([cx, oL, oS, r]) => {
-    s += cellBase(cx, cy, 86, 96) + fibres(cx, cy - 86, [[cx-28, cy-7], [cx+34, cy-7]]) + fibres(cx, cy + 86, [[cx-28, cy+7], [cx+34, cy+7]]);
-    s += plate(cx, cy, 76) + double(cx - 28, cy, 'L', oL, 90, .95, r) + double(cx + 34, cy, 'S', oS, 90, .95);
-  });
-  return wrap(s + counter('2 + 2 cromosomes (en X, en fila)') +
-    caption('A cada cèl·lula, les X s’alineen al mig, com a la mitosi.', 'Ara sí que es partiran les X')); 
+  const cx1 = 130, cx2 = 270, cy = 155;
+  return `
+    ${cellBase(cx1, cy, 90, 80)}
+    ${chromosome(cx1-14, cy, colors.chr1a, 90, true, 8, 22)}
+    ${chromosome(cx1+14, cy, colors.chr1a, 90, true, 8, 22)}
+    <line x1="${cx1-60}" y1="${cy}" x2="${cx1+60}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".5"/>
+    ${cellBase(cx2, cy, 90, 80)}
+    ${chromosome(cx2-14, cy, colors.chr2a, 90, true, 8, 22)}
+    ${chromosome(cx2+14, cy, colors.chr2a, 90, true, 8, 22)}
+    <line x1="${cx2-60}" y1="${cy}" x2="${cx2+60}" y2="${cy}" stroke="${colors.nuclearMembrane}" stroke-width="1" stroke-dasharray="3,3" opacity=".5"/>
+    <text x="200" y="278" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromosomes a l'equador de cada cèl·lula n</text>
+    <text x="200" y="294" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada cèl·lula: n (cromàtides a l'equador)</text>
+  `;
 }
 
 function drawAnafase2() {
-  const cy = 145;
-  let s = '';
-  // [cx, origen L, origen S, cromàtide recombinant de L]
-  [[110, 'm', 'p', 1], [290, 'p', 'm', 0]].forEach(([cx, oL, oS, r]) => {
-    s += cellBase(cx, cy, 88, 112);
-    s += fibres(cx, cy - 104, [[cx-22, cy-52], [cx+22, cy-50]]) + fibres(cx, cy + 104, [[cx-22, cy+52], [cx+22, cy+50]]);
-    s += vshape(cx - 22, cy - 52, 'L', oL, 0, .95, r === 0) + vshape(cx + 22, cy - 50, 'S', oS, 0, .95);
-    s += vshape(cx - 22, cy + 52, 'L', oL, 180, .95, r === 1) + vshape(cx + 22, cy + 50, 'S', oS, 180, .95);
-  });
-  return wrap(s + counter('4 grups de 2') +
-    caption('Ara es parteixen les X: una cromàtida amunt i l’altra avall.', 'Cada pol: 2 cromosomes sense copiar (1 llarg + 1 curt)'));
+  const cx1 = 130, cx2 = 270, cy = 155;
+  return `
+    ${cellBase(cx1, cy, 90, 95)}
+    ${chromosomeSingle(cx1-18, cy-45, colors.chr1a, 90, 7, 20)}
+    ${chromosomeSingle(cx1+18, cy-45, colors.chr1a, 90, 7, 20)}
+    ${chromosomeSingle(cx1-18, cy+45, colors.chr1a, 90, 7, 20)}
+    ${chromosomeSingle(cx1+18, cy+45, colors.chr1a, 90, 7, 20)}
+    ${cellBase(cx2, cy, 90, 95)}
+    ${chromosomeSingle(cx2-18, cy-45, colors.chr2a, 90, 7, 20)}
+    ${chromosomeSingle(cx2+18, cy-45, colors.chr2a, 90, 7, 20)}
+    ${chromosomeSingle(cx2-18, cy+45, colors.chr2a, 90, 7, 20)}
+    ${chromosomeSingle(cx2+18, cy+45, colors.chr2a, 90, 7, 20)}
+    <text x="200" y="295" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">Cromàtides germanes separen cap als pols (×2)</text>
+    <text x="200" y="311" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">Cada pol: n (cromosomes simples)</text>
+  `;
 }
 
-// 4 gàmetes: [origen L, L recombinant?, origen S]
-const GAMETES = [['m', false, 'p'], ['m', true, 'p'], ['p', false, 'm'], ['p', true, 'm']];
-const GPOS = [[110, 88], [110, 208], [290, 88], [290, 208]];
-
 function drawTelofase2() {
-  let s = pinched(110, 148, 86, 122, 18) + pinched(290, 148, 86, 122, 18);
-  GAMETES.forEach((g, i) => {
-    const [x, y] = GPOS[i];
-    s += nucleusE(x, y, 46, 36) + single(x - 12, y, 'L', g[0], 8, .8, g[1], 6) + single(x + 14, y, 'S', g[2], -10, .8, false, 6);
+  const positions = [[110, 110], [290, 110], [110, 210], [290, 210]];
+  let svg = '';
+  const chrColors = [colors.chr1a, colors.chr2a, colors.chr1a, colors.chr2a];
+  positions.forEach((p, i) => {
+    svg += `<ellipse cx="${p[0]}" cy="${p[1]}" rx="68" ry="58" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="2.5"/>`;
+    svg += nucleus(p[0], p[1], 26);
+    svg += chromatin(p[0], p[1]);
   });
-  return wrap(s + counter('4 nuclis × 2 cromosomes') +
-    caption('Es formen 4 nuclis i les 2 cèl·lules s’estrangulen.', '4 cèl·lules n = 2 (1 llarg + 1 curt)'));
+  svg += `<text x="200" y="294" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">4 nuclis haploides — citoquinesi imminent</text>`;
+  svg += `<text x="200" y="310" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">4 cèl·lules n (cromosomes descomprimits)</text>`;
+  return svg;
 }
 
 function drawGametes() {
-  const pos = [[62, 120], [154, 120], [246, 120], [338, 120]];
-  let s = '';
-  GAMETES.forEach((g, i) => {
-    const [x, y] = pos[i];
-    s += `<circle cx="${x}" cy="${y}" r="42" fill="${colors.cellFill}" stroke="${colors.membrane}" stroke-width="2.5"/>`;
-    s += single(x - 12, y + 2, 'L', g[0], 0, .9, g[1]) + single(x + 13, y + 2, 'S', g[2], 0, .9);
-    s += `<text x="${x}" y="${y + 60}" text-anchor="middle" ${FONT} font-size="13" font-weight="800" fill="${colors.nuclearMembrane}">Gàmeta ${i + 1}</text>`;
+  const positions = [[90, 100], [200, 80], [310, 100], [200, 230]];
+  const labels = ['Gàmeta 1', 'Gàmeta 2', 'Gàmeta 3', 'Gàmeta 4'];
+  let svg = '';
+  positions.forEach((p, i) => {
+    const col = i < 2 ? colors.chr1a : colors.chr2a;
+    svg += `<circle cx="${p[0]}" cy="${p[1]}" r="48" fill="${colors.cellFill}" stroke="${col}" stroke-width="2.5"/>`;
+    svg += nucleus(p[0], p[1], 22);
+    svg += chromatin(p[0], p[1]);
+    svg += `<text x="${p[0]}" y="${p[1]+62}" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="11" fill="${col}" font-weight="bold">${labels[i]}</text>`;
   });
-  s += `<text x="200" y="222" text-anchor="middle" ${FONT} font-size="13.5" fill="#444">Tots 4 porten 1 llarg + 1 curt, però cap no és igual a un altre:</text>`;
-  s += `<text x="200" y="240" text-anchor="middle" ${FONT} font-size="13.5" fill="#444">canvia de qui ve cada cromosoma i on hi ha trossos intercanviats.</text>`;
-  s += `<text x="200" y="266" text-anchor="middle" ${FONT} font-size="13.5" font-weight="800" fill="${colors.goldInk}">A les persones: 46 → meiosi → 23 a cada gàmeta</text>`;
-  return wrap(s + counter('4 gàmetes × 2 cromosomes') +
-    caption('Fecundació: n + n = 2n  (humans: 23 + 23 = 46)', ''));
+  svg += `<text x="200" y="300" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="13" fill="#666">4 gàmetes, cada un diferent (variabilitat)</text>`;
+  svg += `<text x="200" y="316" text-anchor="middle" font-family="Fira Sans Extra Condensed" font-size="12" fill="${colors.membrane}" font-weight="bold">4 cèl·lules n — fecundació: n + n = 2n</text>`;
+  return svg;
 }
 
 // ─────────────────────────────────────────────────
@@ -691,67 +687,67 @@ const PHASES = {
       id: 'interfase-m',
       name: 'Interfase',
       eyebrow: 'Mitosi · Fase 1 de 6',
-      notation: '2n = 4 (cada cromosoma es copia)',
-      description: 'La cèl·lula <span class="tr-word">creix<span class="tooltip-box tooltip-ar">ينمو</span><span class="tooltip-box tooltip-es">crece</span><span class="tooltip-box tooltip-ur">بڑھتا ہے</span></span> i fa una còpia completa del seu <span class="tr-word">material genètic<span class="tooltip-box tooltip-ar">المادة الوراثية</span><span class="tooltip-box tooltip-es">material genético</span><span class="tooltip-box tooltip-ur">جینیاتی مادہ</span></span> (ADN). Continua tenint els mateixos cromosomes (2n), però ara cadascun té dues còpies idèntiques unides (cromàtides germanes). <strong>Compte:</strong> una X és UN cromosoma copiat, no dos. La membrana nuclear encara és intacta.',
+      notation: '2n → 2n (ADN copiat: 2 × 2n)',
+      description: 'La cèl·lula <span class="tr-word">creix<span class="tooltip-box tooltip-ar">ينمو</span><span class="tooltip-box tooltip-es">crece</span><span class="tooltip-box tooltip-ur">بڑھتا ہے</span></span> i fa una còpia completa del seu <span class="tr-word">material genètic<span class="tooltip-box tooltip-ar">المادة الوراثية</span><span class="tooltip-box tooltip-es">material genético</span><span class="tooltip-box tooltip-ur">جینیاتی مادہ</span></span> (ADN). La quantitat de material és 2n, però amb les còpies passa a tenir 2 × 2n (cromàtides germanes unides als centròmers). La membrana nuclear encara és intacta.',
       simplified: 'La cèl·lula creix i fa una fotocòpia del seu ADN. Segueix sent 2n, però amb dues còpies de cada cromosoma unides.',
       points: ['La cèl·lula creix de mida', 'Duplicació del DNA (S: síntesi)', 'La membrana nuclear és intacta', 'Pas previ obligatori a qualsevol divisió'],
       svg: drawInterfase,
-      chromosomes: '4 cromosomes (2n = 4); acaben copiats',
+      chromosomes: '2n (amb còpies: 2 × 2n)',
     },
     {
       id: 'profase-m',
       name: 'Profase',
       eyebrow: 'Mitosi · Fase 2 de 6',
-      notation: '2n = 4 (4 X)',
+      notation: '2n (cromàtides germanes visibles)',
       description: 'Els cromosomes es <span class="tr-word">condensen<span class="tooltip-box tooltip-ar">يتكثف</span><span class="tooltip-box tooltip-es">se condensan</span><span class="tooltip-box tooltip-ur">گھنے ہو جاتے ہیں</span></span> i es fan visibles al microscopi (dues cromàtides germanes per cromosoma, unides al centròmer). La <span class="tr-word">membrana nuclear<span class="tooltip-box tooltip-ar">الغشاء النووي</span><span class="tooltip-box tooltip-es">membrana nuclear</span><span class="tooltip-box tooltip-ur">نیوکلیئر جھلی</span></span> comença a desaparèixer.',
       simplified: 'Els cromosomes es fan visibles (es "retorcen"). La membrana del nucli comença a desfer-se.',
       points: ['Cromosomes condensats → visibles al microscopi', 'Cada cromosoma: 2 cromàtides germanes unides', 'Membrana nuclear es desfà', 'Es forma el fus acromàtic (fibres del fus)'],
       svg: drawProfase,
-      chromosomes: '4 cromosomes, cadascun en forma d\'X',
+      chromosomes: '2n (cromàtides unides; X visibles)',
     },
     {
       id: 'metafase-m',
       name: 'Metafase',
       eyebrow: 'Mitosi · Fase 3 de 6',
-      notation: '2n = 4 (a l\'equador)',
+      notation: '2n (a l\'equador)',
       description: 'Els cromosomes s\'alineen a l\'<span class="tr-word">equador<span class="tooltip-box tooltip-ar">خط الاستواء</span><span class="tooltip-box tooltip-es">ecuador</span><span class="tooltip-box tooltip-ur">خط استوا</span></span> (placa metafàsica). Les fibres del fus s\'uneixen als <span class="tr-word">centròmers<span class="tooltip-box tooltip-ar">السنترومير</span><span class="tooltip-box tooltip-es">centrómeros</span><span class="tooltip-box tooltip-ur">سینٹرومیر</span></span> de cada cromosoma. Cadascun és tirat cap als dos pols oposats.',
       simplified: 'Els cromosomes es posen en fila al mig de la cèl·lula. Com si es posessin a la línia de sortida d\'una cursa, un a cada costat.',
       points: ['Cromosomes a la placa metafàsica (equador)', 'Fibres del fus unides als centròmers', 'Punt de control: totes les fibres unides correctament', 'Preparació per repartir per igual'],
       svg: drawMetafase,
-      chromosomes: '4 cromosomes en X, en fila al mig',
+      chromosomes: '2n (cromàtides unides, a l\'equador)',
     },
     {
       id: 'anafase-m',
       name: 'Anafase',
       eyebrow: 'Mitosi · Fase 4 de 6',
-      notation: 'Cada pol: 2n = 4 (sense copiar)',
+      notation: 'Cap pol: 2n (cromosomes simples)',
       description: 'Les <span class="tr-word">cromàtides germanes<span class="tooltip-box tooltip-ar">الكروماتيدات الشقيقة</span><span class="tooltip-box tooltip-es">cromátidas hermanas</span><span class="tooltip-box tooltip-ur">بہن کروماٹڈ</span></span> se separen: cada centròmer es trenca i una cromàtida va cap a cada pol. La cèl·lula s\'allarga. En aquest moment, cada pol té la quantitat completa (2n) de cromosomes individuals.',
       simplified: 'Les dues còpies de cada cromosoma es separen: una va cap amunt i l\'altra cap avall. La cèl·lula s\'allarga com un xiclet.',
       points: ['Separació de cromàtides germanes', 'Cada pol rep una còpia de cada cromosoma', 'La cèl·lula s\'allarga', 'Cada pol: 2n (cromosomes individuals)'],
       svg: drawAnafase,
-      chromosomes: '4 que pugen + 4 que baixen (una cromàtida cadascun)',
+      chromosomes: 'Cada pol: 2n (cromosomes simples)',
     },
     {
       id: 'telofase-m',
       name: 'Telofase',
       eyebrow: 'Mitosi · Fase 5 de 6',
-      notation: '2 nuclis, cadascun 2n = 4',
+      notation: '2 nuclis, cadascun 2n',
       description: 'Es formen dos nous <span class="tr-word">nuclis<span class="tooltip-box tooltip-ar">نوى</span><span class="tooltip-box tooltip-es">núcleos</span><span class="tooltip-box tooltip-ur">نیوکلئی</span></span>: la membrana nuclear es refà al voltant de cada grup de cromosomes. Els cromosomes comencen a descompactar-se. La cèl·lula encara és una, però té dos nuclis (2n cadascun).',
       simplified: 'Es formen dos nuclis nous. La cèl·lula té ara dos nuclis separats, un a cada banda.',
       points: ['Membranes nuclears noves es formen', 'Cromosomes es descompacten (ADN accessible)', 'Dos nuclis 2n a la mateixa cèl·lula', 'El citoplasma encara no s\'ha dividit'],
       svg: drawTelofase,
-      chromosomes: '2 nuclis amb 4 cromosomes cadascun',
+      chromosomes: '2 nuclis, cadascun 2n',
     },
     {
       id: 'citoquinesi-m',
       name: 'Citoquinesi',
       eyebrow: 'Mitosi · Resultat final',
-      notation: '2 cèl·lules filles 2n = 4',
+      notation: '2 cèl·lules filles 2n',
       description: 'El <span class="tr-word">citoplasma<span class="tooltip-box tooltip-ar">السيتوبلازم</span><span class="tooltip-box tooltip-es">citoplasma</span><span class="tooltip-box tooltip-ur">سائٹوپلازم</span></span> es divideix: la cèl·lula es "pelliga" per la meitat. El resultat final: 2 cèl·lules filles <span class="tr-word">idèntiques<span class="tooltip-box tooltip-ar">متطابقتان</span><span class="tooltip-box tooltip-es">idénticas</span><span class="tooltip-box tooltip-ur">یکساں</span></span> a la cèl·lula mare. Funció: créixer, reparar teixits, substituir cèl·lules desgastades.',
       simplified: 'El citoplasma es parteix en dos. Resultat: 2 cèl·lules noves exactament iguals a la mare.',
       points: ['Divisió del citoplasma (no del nucli)', '2 cèl·lules filles 2n, idèntiques entre elles i a la mare', 'Cap variabilitat genètica generada', 'Funció: creixement i reparació (cèl·lules somàtiques)'],
       svg: drawCitoquinesi,
-      chromosomes: '2 cèl·lules × 4 cromosomes, iguals',
+      chromosomes: '2 cèl·lules filles: 2n cadascuna',
     },
   ],
 
@@ -760,111 +756,111 @@ const PHASES = {
       id: 'interfase-mei',
       name: 'Interfase',
       eyebrow: 'Meiosi · Fase 1 de 10',
-      notation: '2n = 4 (es copia UNA vegada)',
+      notation: '2n → 2n (ADN copiat una sola vegada)',
       description: 'Com a la mitosi, la cèl·lula fa una còpia del seu <span class="tr-word">ADN<span class="tooltip-box tooltip-ar">الحمض النووي</span><span class="tooltip-box tooltip-es">ADN</span><span class="tooltip-box tooltip-ur">ڈی این اے</span></span>. <strong>Diferència clau:</strong> aquest ADN es copiarà <em>una sola vegada</em>, però la cèl·lula es dividirà <em>dues vegades</em>. Això és el que permetrà reduir a la meitat el nombre de cromosomes.',
       simplified: 'La cèl·lula fa una còpia del seu ADN (igual que si fes mitosi). Però vindrà una gran diferència: es dividirà dues vegades seguides.',
       points: ['L\'ADN es copia una sola vegada (com a la mitosi)', 'Però vindran dues divisions consecutives', 'Es parteix d\'una cèl·lula 2n', 'La doble divisió (sense nova còpia intermèdia) és el que reduirà a n'],
       svg: drawMeiosiInterfase,
-      chromosomes: '4 cromosomes (2n = 4); acaben copiats',
+      chromosomes: '2n (ADN copiat: 2 × 2n)',
     },
     {
       id: 'profase1-mei',
       name: 'Profase I',
       eyebrow: 'Meiosi I · Fase 2 de 10',
-      notation: '2n = 4 (2 parelles juntes)',
+      notation: '2n (bivalents; crossing over)',
       description: 'Els cromosomes homòlegs (un del pare, un de la mare) s\'<span class="tr-word">aparellen<span class="tooltip-box tooltip-ar">يقترن</span><span class="tooltip-box tooltip-es">se emparejan</span><span class="tooltip-box tooltip-ur">جوڑا بناتے ہیں</span></span> formant <em>bivalents</em>. Sovint s\'intercanvien fragments entre homòlegs: el <span class="tr-word">crossing over<span class="tooltip-box tooltip-ar">العبور</span><span class="tooltip-box tooltip-es">sobrecruzamiento</span><span class="tooltip-box tooltip-ur">کراسنگ اوور</span></span>. Aquesta fase és la font principal de <strong>variabilitat genètica</strong> de la meiosi.',
       simplified: 'El cromosoma que vas heretar del teu pare i el que vas heretar de la teva mare s\'ajunten en parella i de vegades intercanvien trossets. Per això cada cèl·lula sexual que faràs serà única.',
       points: ['Homòlegs aparellats: bivalents (= 2 cromosomes × 2 cromàtides = 4 cromàtides)', 'Crossing over: intercanvi de segments entre cromàtides no germanes', 'Font principal de variabilitat genètica', 'La membrana nuclear es desfà'],
       svg: drawProfase1,
-      chromosomes: '4 cromosomes en X, aparellats de 2 en 2',
+      chromosomes: '2n (bivalents amb crossing over)',
     },
     {
       id: 'metafase1-mei',
       name: 'Metafase I',
       eyebrow: 'Meiosi I · Fase 3 de 10',
-      notation: '2n = 4 (parelles a l\'equador)',
+      notation: '2n (bivalents a l\'equador)',
       description: 'Els bivalents s\'alineen a l\'equador. A diferència de la mitosi, aquí és el parell de cromosomes homòlegs (el bivalent sencer) el que s\'alinea — no cromosomes individuals. L\'ordre en què se situen és a l\'atzar (independència de l\'assortiment), cosa que genera més variabilitat.',
       simplified: 'Les parelles d\'homòlegs (els bivalents) es col·loquen al mig de la cèl·lula. On es posarà cada parella és totalment a l\'atzar: per això els fills d\'uns mateixos pares no s\'assemblen del tot.',
       points: ['Bivalents (parelles d\'homòlegs) a la placa metafàsica', 'Cada bivalent s\'orienta a l\'atzar cap a un pol o l\'altre', 'Independència de l\'assortiment (2a font de variabilitat)', 'Les fibres del fus s\'uneixen als centròmers dels homòlegs (no de les cromàtides)'],
       svg: drawMetafase1,
-      chromosomes: '4 cromosomes: cada parella, un a cada banda',
+      chromosomes: '2n (bivalents a l\'equador)',
     },
     {
       id: 'anafase1-mei',
       name: 'Anafase I',
       eyebrow: 'Meiosi I · Fase 4 de 10',
-      notation: 'Cada pol: n = 2 (encara en X)',
+      notation: 'Cada pol: n (cromàtides unides)',
       description: 'Els cromosomes <span class="tr-word">homòlegs<span class="tooltip-box tooltip-ar">متماثلة</span><span class="tooltip-box tooltip-es">homólogos</span><span class="tooltip-box tooltip-ur">ہومولوگس</span></span> se separen: cada membre d\'un bivalent va cap a un pol diferent. <strong>Important:</strong> les cromàtides germanes NO se separen aquí (a diferència de l\'anafase de la mitosi). Per això cada pol arriba a tenir n cromosomes (però cada cromosoma encara té 2 cromàtides unides).',
       simplified: 'Els cromosomes homòlegs (del pare i de la mare) van a pols oposats. Les dues còpies de cada cromosoma (cromàtides) segueixen unides. Resultat: cada costat té la meitat dels cromosomes originals.',
       points: ['Se separen homòlegs (NO cromàtides germanes)', 'Cada pol rep n cromosomes (cada un amb 2 cromàtides unides)', 'Reducció de 2n a n en cada pol', 'La separació a l\'atzar aquí també genera variabilitat'],
       svg: drawAnafase1,
-      chromosomes: '2 amunt + 2 avall: 1 llarg i 1 curt a cada pol',
+      chromosomes: 'Cada pol: n (cromàtides germanes unides)',
     },
     {
       id: 'telofase1-mei',
       name: 'Telofase I',
       eyebrow: 'Meiosi I · Fase 5 de 10',
-      notation: '2 cèl·lules n = 2 (en X)',
+      notation: '2 cèl·lules n (cromàtides unides)',
       description: 'Comencen a formar-se dos nuclis. La cèl·lula es divideix (citoquinesi) i resulten <strong>2 cèl·lules haploides</strong> (n). Cada una té la meitat dels cromosomes originals, però cada cromosoma encara té les dues cromàtides germanes unides. <strong>No hi haurà nova còpia d\'ADN</strong> entre la meiosi I i la meiosi II.',
       simplified: 'La cèl·lula es parteix en dues. Cada cèl·lula nova té la meitat dels cromosomes (n). No fan cap nova còpia d\'ADN; passen directament a la 2a divisió.',
       points: ['Citoquinesi: 2 cèl·lules filles haploides (n)', 'Cada cèl·lula: n cromosomes, cadascun amb 2 cromàtides unides', 'NO hi ha nova replicació d\'ADN entre meiosi I i II', 'Les 2 cèl·lules poden ser genèticament diferents (per crossing over i assortiment)'],
       svg: drawTelofase1,
-      chromosomes: '2 cèl·lules × 2 cromosomes en X',
+      chromosomes: '2 cèl·lules n (cromàtides germanes unides)',
     },
     {
       id: 'profase2-mei',
       name: 'Profase II',
       eyebrow: 'Meiosi II · Fase 6 de 10',
-      notation: 'n = 2 a cada cèl·lula (en X)',
-      description: 'Cada una de les 2 cèl·lules haploides (n) inicia la Meiosi II. Els cromosomes es tornen a condensar. La membrana nuclear es torna a desfer. Aquesta divisió s\'assembla molt a la mitosi, però parteix de cèl·lules n (amb la meitat dels cromosomes).',
+      notation: 'n (cromàtides unides, ×2 cèl·lules)',
+      description: 'Cada una de les 2 cèl·lules haploides (n) inicia la Meiosi II. Els cromosomes es tornen a condensar. La membrana nuclear es torna a desfà. Esta divisió s\'assembla molt a la mitosi, però parteix de cèl·lules n (amb la meitat dels cromosomes).',
       simplified: 'Les dues cèl·lules que tenim (n) es preparen per tornar a dividir-se. Els seus cromosomes es tornen a condensar, com al principi d\'una mitosi.',
       points: ['Les 2 cèl·lules n preparen la 2a divisió', 'Cromosomes es condensen de nou', 'Membrana nuclear es trenca', 'Cap còpia nova d\'ADN: els cromosomes n segueixen amb 2 cromàtides'],
       svg: drawProfase2,
-      chromosomes: '2 cèl·lules × 2 cromosomes en X',
+      chromosomes: 'n (cromàtides unides) × 2 cèl·lules',
     },
     {
       id: 'metafase2-mei',
       name: 'Metafase II',
       eyebrow: 'Meiosi II · Fase 7 de 10',
-      notation: 'n = 2 a cada cèl·lula (a l\'equador)',
+      notation: 'n (cromosomes a l\'equador) × 2 cèl·lules',
       description: 'En cada una de les 2 cèl·lules, els cromosomes individuals (no bivalents: no hi ha homòlegs en cada cèl·lula n) s\'alineen a l\'equador. Les fibres del fus s\'uneixen als centròmers, igual que a la metafase de la mitosi. Ara la divisió separarà cromàtides germanes.',
       simplified: 'Dins de cada una de les 2 cèl·lules, els cromosomes es posen al mig, a punt per repartir les dues còpies (cromàtides) de cada cromosoma.',
       points: ['Cromosomes individuals (no bivalents) a l\'equador', 'Fibres del fus s\'uneixen als centròmers', 'Passa simultàniament a les 2 cèl·lules haploides', 'A punt per separar cromàtides germanes'],
       svg: drawMetafase2,
-      chromosomes: '2 cèl·lules × 2 cromosomes en X, en fila',
+      chromosomes: 'n (a l\'equador) × 2 cèl·lules',
     },
     {
       id: 'anafase2-mei',
       name: 'Anafase II',
       eyebrow: 'Meiosi II · Fase 8 de 10',
-      notation: 'Cada pol: n = 2 (sense copiar)',
+      notation: 'Cada pol: n (cromosomes simples) × 2 cèl·lules',
       description: 'Les <span class="tr-word">cromàtides germanes<span class="tooltip-box tooltip-ar">الكروماتيدات الشقيقة</span><span class="tooltip-box tooltip-es">cromátidas hermanas</span><span class="tooltip-box tooltip-ur">بہن کروماٹڈ</span></span> se separen: cada centròmer es trenca i una cromàtida va cap a cada pol. <em>Ara sí</em> que és el mateix que l\'anafase de la mitosi, però dins de cèl·lules n. Passa simultàniament a les 2 cèl·lules.',
       simplified: 'Ara les dues còpies de cada cromosoma (les cromàtides germanes) es separen: una va cap amunt i l\'altra cap avall, dins de cada una de les 2 cèl·lules.',
       points: ['Separació de cromàtides germanes (com a l\'anafase de la mitosi)', 'Cada pol rep cromosomes simples (1 cromàtida)', 'Passa a les 2 cèl·lules simultàniament → 4 grups de cromosomes', 'Cada pol: n cromosomes simples'],
       svg: drawAnafase2,
-      chromosomes: '4 grups de 2 cromosomes (1 llarg + 1 curt)',
+      chromosomes: 'n (cromosomes simples) × 2 cèl·lules en curs',
     },
     {
       id: 'telofase2-mei',
       name: 'Telofase II',
       eyebrow: 'Meiosi II · Fase 9 de 10',
-      notation: '4 nuclis n = 2',
+      notation: '4 nuclis n (cromosomes simples)',
       description: 'Es formen 4 nous nuclis haploides. Les membranes nuclears es refan al voltant de cada grup de cromosomes. Seguirà la citoquinesi de cada una de les 2 cèl·lules, donant 4 cèl·lules haploides en total. Cada una és genèticament única.',
       simplified: 'Es formen 4 nuclis. La citoquinesi completarà la divisió i deixarà 4 cèl·lules noves, totes haploides (n) i totes una mica diferents entre elles.',
       points: ['4 nuclis haploides formats', 'Cromosomes es descompacten', 'Citoquinesi → 4 cèl·lules n', 'Cada una és genèticament única (per crossing over + assortiment)'],
       svg: drawTelofase2,
-      chromosomes: '4 nuclis × 2 cromosomes',
+      chromosomes: '4 nuclis n (citoquinesi imminent)',
     },
     {
       id: 'gametes-mei',
       name: 'Gàmetes (resultat)',
       eyebrow: 'Meiosi · Resultat final',
-      notation: '4 gàmetes n = 2 · fecundació: n + n = 2n',
+      notation: '4 cèl·lules n — fecundació: n + n = 2n',
       description: 'El resultat de la meiosi: <strong>4 <span class="tr-word">gàmetes<span class="tooltip-box tooltip-ar">أمشاج</span><span class="tooltip-box tooltip-es">gametos</span><span class="tooltip-box tooltip-ur">گیمیٹ</span></span></strong> (<span class="tr-word">espermatozoides<span class="tooltip-box tooltip-ar">الحيوانات المنوية</span><span class="tooltip-box tooltip-es">espermatozoides</span><span class="tooltip-box tooltip-ur">نطفہ</span></span> o <span class="tr-word">òvuls<span class="tooltip-box tooltip-ar">البيوض</span><span class="tooltip-box tooltip-es">óvulos</span><span class="tooltip-box tooltip-ur">بیضہ</span></span>), cada un amb la meitat del material genètic (n) i genèticament únic. Quan dos gàmetes s\'uneixen (<span class="tr-word">fecundació<span class="tooltip-box tooltip-ar">الإخصاب</span><span class="tooltip-box tooltip-es">fecundación</span><span class="tooltip-box tooltip-ur">کھاد</span></span>), es restaura la quantitat 2n a la nova cèl·lula (zigot).',
-      simplified: 'El resultat final és 4 cèl·lules reproductores (espermatozoides o òvuls), totes haploides (n) i totes úniques. Quan dues s\'uneixen en la fecundació, la nova cèl·lula torna a tenir el nombre complet (2n).',
-      points: ['4 gàmetes n, cada un diferent dels altres', 'Funció: reproducció sexual', 'Fecundació: n + n = 2n (zigot)', 'Per què els fills no són idèntics als pares ni als germans: crossing over + assortiment independent + fecundació a l\'atzar'],
+      simplified: 'El resultat final és 4 cèl·lules reproductores (espermatozoides o òvuls), totes haploides (n) i totes únicas. Quan dues s\'uneixen en la fecundació, la nova cèl·lula torna a tenir el nombre complet (2n).',
+      points: ['4 gàmetes n, cada un diferent dels altres', 'Funció: reproducció sexual', 'Fecundació: n + n = 2n (zigot)', 'Per que els fills no son idèntics als pares ni als germans: crossing over + assortiment independent + fecundació aleatòria'],
       svg: drawGametes,
-      chromosomes: '4 gàmetes × 2 (humans: 23 cadascun)',
+      chromosomes: '4 cèl·lules n — fecundació n + n = 2n',
     },
   ]
 };
@@ -874,7 +870,6 @@ const PHASES = {
 // ─────────────────────────────────────────────────
 
 let mode = 'mitosi';
-let ORIG = null; // HTML original de l'etiqueta i la navegació (Compara els sobreescriu)
 let currentPhase = 0;
 let simplified = false;
 let lang = null;
@@ -948,17 +943,16 @@ function renderPhase() {
       </ul>
     </div>
     <div class="chromosome-legend">
-      <div class="info-section-title" style="border-color:var(--rule-dark)">Com llegir els cromosomes</div>
-      <svg viewBox="0 0 250 78" width="100%" style="max-width:300px;display:block" role="img" aria-label="Com llegir els cromosomes">
-        ${single(14, 36, 'L', 'm', 0, .8)}${single(32, 36, 'L', 'p', 0, .8)}
-        <text x="46" y="30" ${FONT} font-size="13" font-weight="800" fill="#4A3F3F">color = d’on ve</text>
-        <text x="46" y="46" ${FONT} font-size="13" font-weight="800"><tspan fill="${colors.mare}">mare</tspan><tspan fill="#666"> o </tspan><tspan fill="${colors.pare}">pare</tspan></text>
-        <text x="46" y="62" ${FONT} font-size="12" fill="#666">mida = tipus</text>
-        ${single(160, 34, 'L', 'm', 0, .8)}${double(214, 34, 'L', 'm', 0, .8)}
-        <text x="160" y="72" text-anchor="middle" ${FONT} font-size="11.5" font-weight="700" fill="#666">sense copiar</text>
-        <text x="214" y="72" text-anchor="middle" ${FONT} font-size="11.5" font-weight="700" fill="#666">copiat (X) = 1</text>
-      </svg>
-      <div style="font-size:13px;color:var(--muted);margin-top:6px">Compta: <strong style="color:var(--purple-ink)">${ph.chromosomes}</strong></div>
+      <div class="info-section-title" style="border-color:var(--rule-dark)">Material genètic</div>
+      <div class="legend-row">
+        <span class="legend-dot" style="background:#E76F6F"></span>
+        <span style="font-size:14px;color:var(--ink-2)">Grup 1 (vermell)</span>
+      </div>
+      <div class="legend-row">
+        <span class="legend-dot" style="background:#6FA3E7"></span>
+        <span style="font-size:14px;color:var(--ink-2)">Grup 2 (blau)</span>
+      </div>
+      <div style="font-size:13px;color:var(--muted);margin-top:6px">Quantitat: <strong style="color:var(--purple-ink)">${ph.chromosomes}</strong></div>
       <div class="notation-badge">${ph.notation || ''}</div>
     </div>
   `;
@@ -977,7 +971,6 @@ function renderPhase() {
 }
 
 function renderCompara() {
-  if (!ORIG) ORIG = { label: document.getElementById('phaseLabelArea').innerHTML, nav: document.querySelector('.bottom-nav').innerHTML };
   const cellCanvas = document.getElementById('cellCanvas');
   const phaseLabelArea = document.getElementById('phaseLabelArea');
   const sideInfo = document.getElementById('sideInfo');
@@ -993,8 +986,6 @@ function renderCompara() {
             <tr><td>Divisions</td><td>1</td></tr>
             <tr><td>Cèl·lules filles</td><td>2</td></tr>
             <tr><td>Ploïdia resultant</td><td>2n (igual que la mare)</td></tr>
-            <tr><td>Compta (model)</td><td>4 → 4 i 4</td></tr>
-            <tr><td>Compta (humans)</td><td>46 → 46 i 46</td></tr>
             <tr><td>Fases intermèdies</td><td>Profase, Metafase, Anafase, Telofase</td></tr>
             <tr><td>Separació en anafase</td><td>Cromàtides germanes</td></tr>
             <tr><td>Variabilitat genètica</td><td>No (còpies idèntiques)</td></tr>
@@ -1010,9 +1001,7 @@ function renderCompara() {
             <tr><th>Característica</th><th>Valor</th></tr>
             <tr><td>Divisions</td><td>2 (Meiosi I + Meiosi II)</td></tr>
             <tr><td>Cèl·lules filles</td><td>4</td></tr>
-            <tr><td>Ploïdia resultant</td><td>n: la meitat = UN de cada parella</td></tr>
-            <tr><td>Compta (model)</td><td>4 → 2, 2, 2, 2</td></tr>
-            <tr><td>Compta (humans)</td><td>46 → 23, 23, 23, 23</td></tr>
+            <tr><td>Ploïdia resultant</td><td>n (la meitat de la mare)</td></tr>
             <tr><td>Fases intermèdies</td><td>Profase I, Metafase I, Anafase I, Telofase I + Profase II, Metafase II, Anafase II, Telofase II</td></tr>
             <tr><td>Separació en Anafase I</td><td>Cromosomes homòlegs</td></tr>
             <tr><td>Separació en Anafase II</td><td>Cromàtides germanes</td></tr>
@@ -1039,8 +1028,6 @@ function renderCompara() {
         <li class="key-point">La meiosi té Profase I amb aparellament d'homòlegs i crossing over: origen de variabilitat</li>
         <li class="key-point">A l'Anafase I separen homòlegs (no cromàtides); a l'Anafase II i a la mitosi separen cromàtides germanes</li>
         <li class="key-point">Meiosi: 2n → n (reducció de ploïdia). Mitosi: 2n → 2n</li>
-        <li class="key-point">«La meitat» no vol dir 2 cromosomes qualssevol: vol dir UN de cada parella</li>
-        <li class="key-point">Una X és UN cromosoma copiat: quan comptis, compta centròmers, no braços</li>
         <li class="key-point">Fecundació: n (gàmeta) + n (gàmeta) = 2n (zigot) → manté constant la ploïdia entre generacions</li>
       </ul>
     </div>
@@ -1079,19 +1066,15 @@ function setMode(m) {
   cv.style.flexWrap = m === 'compara' ? 'wrap' : '';
 
   if (m !== 'compara') {
-    // createElementNS: amb createElement('svg') el dibuix no es pintava en tornar de Compara
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const svg = document.createElement('svg');
     svg.id = 'cellSvg';
     svg.classList.add('cell-diagram');
     svg.setAttribute('viewBox', '0 0 400 320');
+    svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
     svg.setAttribute('width', '400');
     svg.setAttribute('height', '320');
     cv.innerHTML = '';
     cv.appendChild(svg);
-    if (ORIG) {
-      document.getElementById('phaseLabelArea').innerHTML = ORIG.label;
-      document.querySelector('.bottom-nav').innerHTML = ORIG.nav;
-    }
   }
 
   renderAll();

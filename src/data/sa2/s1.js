@@ -105,6 +105,13 @@ export const sa2s1 = {
   // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [
     {
+      id: "t0",
+      apartat: "2",
+      heading: "Abans de res: què és un ==cromosoma==?",
+      text: "L'ADN és un ==fil llarguíssim==. Quan la cèl·lula s'ha de dividir, el fil ==s'enrotlla== i es fa gruixut i curt: això és un ==cromosoma|p==, un bastonet (I). Abans de dividir-se, la cèl·lula ==copia== cada cromosoma i les dues còpies queden enganxades pel mig: fan una ==X==. Compte: ==una X és UN cromosoma== (copiat), no dos. Pensa en ==mitjons==: tens parells de mitjons de ==mides diferents== (cada mida és un tipus de cromosoma), i de cada parell un és de la ==mare|r== i l'altre del ==pare|b==. Als esquemes, el color diu d'on ve i la mida quin tipus és. Les teves cèl·lules en tenen 46 (23 parells); als dibuixos en fem servir només 4 (2 parells) perquè es vegi clar.",
+      type: "concept"
+    },
+    {
       id: "t1",
       apartat: "2",
       heading: "El ==cicle cel·lular==: la major part del temps, la cèl·lula NO es divideix",
@@ -144,7 +151,7 @@ export const sa2s1 = {
 
   graphicResources: [
     { id: "Fig.2", apartat: "1", before: true, title: "Deu cèl·lules en moments diferents (per ordenar)", src: "/images/sa2-s1-observa-cellules.svg", note: "Cada quadre és una cèl·lula en un moment diferent de la divisió, SENSE nom. Agrupa-les segons com es veu l'ADN, ordena-les i compta quantes n'hi ha de cada tipus." },
-    { id: "Fig.1", apartat: "2", before: true, title: "El cicle de la mitosi (la solució)", src: "/images/sa2-s1-cicle-mitosi.svg", note: "Les fases en ordre. Fes-la servir per comprovar l'ordre que has deduït tu i posar nom a cada grup." },
+    { id: "Fig.1", apartat: "2", before: true, title: "El cicle de la mitosi (la solució), amb fotos reals", src: "/images/sa2-s1-cicle-mitosi.svg", note: "L'interfase i les 4 fases en ordre, amb el model de 4 cromosomes (2 parelles). Sota cada fase, la mateixa cèl·lula en una foto real d'arrel de ceba i la pista per reconèixer-la. Compta els cromosomes a cada fase: sempre són 4 (una X és UN cromosoma). Fes-la servir per comprovar l'ordre que has deduït tu i posar nom a cada grup." },
     { id: "Fig.3", apartat: "2", title: "Les mateixes fases en cèl·lules reals", src: "/images/sa2-s1-mitosi-ceba.png", note: "Preparacions reals d'àpex d'arrel de ceba: així es veuen de veritat les fases al microscopi." }
   ],
 

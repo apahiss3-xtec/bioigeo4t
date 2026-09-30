@@ -86,21 +86,21 @@ export const sa2s2 = {
 
   // ── EXPLORA (ABP · modelatge manipulatiu) ─────────────────
   exploreActivity: {
-    what: "Modeleu les dues divisions amb la MATEIXA cèl·lula de partida (les parelles que indiqui la vostra fitxa: 2 al nivell B, 3 al nivell A, un color per parella), amb plastilina, fils de colors o dibuixant. Primer feu la mitosi; després, des de la mateixa cèl·lula, la meiosi. Compareu els dos resultats: quantes cèl·lules surten i quant material té cadascuna. Al nivell A la meiosi es fa DUES vegades, canviant l'orientació d'alguna parella.",
+    what: "Modeleu les dues divisions amb la MATEIXA cèl·lula de partida (les parelles que indiqui la vostra fitxa: 2 al nivell B, 3 al nivell A; cada parella d'una MIDA, i dins la parella un vermell = mare i un blau = pare), amb plastilina, fils de colors o dibuixant. Primer feu la mitosi; després, des de la mateixa cèl·lula, la meiosi. Compareu els dos resultats: quantes cèl·lules surten i quant material té cadascuna. Al nivell A la meiosi es fa DUES vegades, canviant l'orientació d'alguna parella.",
     who: { mode: "grup", label: "Parelles de laboratori" },
     time: { A: 47, B: 40 },
     note: "La gràcia és FER-HO vosaltres i adonar-vos, amb el model a la mà, que partint del mateix s'arriba a resultats diferents. La demostració a l'aula és ensenyar els dos models a una altra parella i defensar per què la meiosi acaba amb la meitat."
   },
   exploreInstructions: [
-    "Feu una cèl·lula de partida amb les parelles que digui la vostra fitxa (2 parelles al nivell B, 3 al nivell A), amb un color per parella",
-    "Copieu cada cromosoma: feu-ne un segon xurro idèntic i enganxeu-lo al primer pel centre; ara té forma de X (dues còpies unides). És el pas comú a les dues divisions",
+    "Feu una cèl·lula de partida amb les parelles que digui la vostra fitxa (2 parelles al nivell B, 3 al nivell A): cada parella és d'una mida (un llarg, un curt...) i té un xurro vermell (mare) i un de blau (pare)",
+    "Copieu cada cromosoma: feu-ne un segon xurro idèntic i enganxeu-lo al primer pel centre; ara té forma de X (dues còpies unides). Una X continua sent UN cromosoma. És el pas comú a les dues divisions",
     "MITOSI: repartiu les còpies en dues cèl·lules i compteu els cromosomes de cada filla",
-    "MEIOSI: primera divisió, separeu les PARELLES; segona divisió, separeu les còpies; compteu quantes cèl·lules i quants cromosomes queden",
+    "MEIOSI: primera divisió, separeu les PARELLES; segona divisió, separeu les còpies; compteu quantes cèl·lules i quants cromosomes queden (cada gàmeta ha de tenir UN de cada mida)",
     "Compareu els dos resultats i anoteu les diferències (nombre de cèl·lules i quantitat de material genètic)"
   ],
   exploreDuration: "40 min",
   appSrc: "/apps/app_mitosi_meiosi.html",
-  exploreNote: "Modelatge (ABP): construïu, compareu i defenseu. Amb l'app interactiva (Mitosi 6 fases · Meiosi 10 fases · notació 2n/n) podeu comprovar l'ordre correcte i la notació ploïdica un cop heu fet el model de plastilina/dibuix. L'ordre i el perquè els confirmareu a l'apartat EXPLICA. Demostració a l'aula: ensenyar els dos models a una altra parella i explicar per què la meiosi dona la meitat.",
+  exploreNote: "Modelatge (ABP): construïu, compareu i defenseu. Amb l'app interactiva (Mitosi 6 fases · Meiosi 10 fases · comptador de cromosomes a cada fase · notació 2n/n) podeu comprovar l'ordre correcte, el recompte i la notació ploïdica un cop heu fet el model de plastilina/dibuix. L'ordre i el perquè els confirmareu a l'apartat EXPLICA. Demostració a l'aula: ensenyar els dos models a una altra parella i explicar per què la meiosi dona la meitat: un cromosoma de cada parella.",
 
   // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [
@@ -115,14 +115,14 @@ export const sa2s2 = {
       id: "t2",
       apartat: "2",
       heading: "La ==meiosi==: dues divisions per fer gàmetes",
-      text: "La meiosi fa ==gàmetes== (òvuls i espermatozoides). A partir d'una cèl·lula fa ==dues divisions seguides== i n'obté ==quatre cèl·lules==, cadascuna amb la ==meitat|r== del material genètic (23 cromosomes en els humans). A la primera divisió se separen les ==parelles|b== de cromosomes; a la segona, les còpies. Per això el resultat NO és una còpia idèntica de la cèl·lula original.",
+      text: "La meiosi fa ==gàmetes== (òvuls i espermatozoides). A partir d'una cèl·lula fa ==dues divisions seguides== i n'obté ==quatre cèl·lules==, cadascuna amb la ==meitat|r== del material genètic: ==un cromosoma de cada parella== (23 en els humans, un de cada tipus). A la primera divisió se separen les ==parelles|b== de cromosomes; a la segona, les còpies. Per això el resultat NO és una còpia idèntica de la cèl·lula original.",
       type: "concept"
     },
     {
       id: "t3",
       apartat: "3",
       heading: "Per què la ==meitat==? La fecundació",
-      text: "A la ==fecundació|g==, un òvul (==n==, la meitat) s'uneix amb un espermatozoide (==n==, la meitat) i formen el ==zigot== (==2n==, complet). Si els gàmetes tinguessin el material sencer, cada generació el ==doblaria== (46 → 92 → 184...). La meiosi ho evita: reparteix la meitat perquè, en sumar-se les dues meitats, el nombre torni a ser el normal.",
+      text: "A la ==fecundació|g==, un òvul (==n==, la meitat) s'uneix amb un espermatozoide (==n==, la meitat) i formen el ==zigot== (==2n==, complet). Si els gàmetes tinguessin el material sencer, cada generació el ==doblaria== (46 → 92 → 184...). La meiosi ho evita: a cada gàmeta hi posa ==un cromosoma de cada parella== (no 23 qualssevol) perquè, en sumar-se les dues meitats, el nombre torni a ser el normal.",
       type: "concept"
     },
     {
@@ -143,8 +143,9 @@ export const sa2s2 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: true, title: "Mitosi i meiosi, comparades", src: "/images/sa2-s2-mitosi-meiosi.svg", note: "La MATEIXA cèl·lula de partida dona dos resultats: mitosi (2 cèl·lules idèntiques, material complet) i meiosi (4 cèl·lules, la meitat). Fes-la servir per comprovar el teu model." },
-    { id: "Fig.2", apartat: "3", before: true, title: "Per què la meitat: la fecundació", src: "/images/sa2-s2-fecundacio.svg", note: "Òvul (n) + espermatozoide (n) = zigot (2n). Si els gàmetes no tinguessin la meitat, cada generació doblaria el nombre de cromosomes." }
+    { id: "Fig.1", apartat: "1", before: true, title: "Mitosi i meiosi, comparades", src: "/images/sa2-s2-mitosi-meiosi.svg", note: "La MATEIXA cèl·lula de partida dona dos resultats: mitosi (2 cèl·lules idèntiques, 2n = 4) i meiosi (4 gàmetes amb la meitat: un llarg + un curt, un de cada parella). Mira la llegenda: el color diu d'on ve (mare/pare), la mida el tipus, i una X és UN cromosoma copiat. Fes-la servir per comprovar el teu model." },
+    { id: "Animació", apartat: "3", before: true, embed: true, aspect: "900 / 760", minHeight: 600, title: "23 + 23 = 46: la fecundació pas a pas", src: "/apps/sa2-s2-fecundacio-animacio.html", note: "Avança amb els botons o les fletxes ← →. L'òvul i l'espermatozoide porten 23 cromosomes cadascun, un de cada tipus; el zigot en té 46, en 23 parelles. L'últim pas mostra què passaria sense meiosi: 46 → 92 → 184 → 368." },
+    { id: "Fig.2", apartat: "3", before: true, title: "Per què la meitat: la fecundació", src: "/images/sa2-s2-fecundacio.svg", note: "Òvul (n = 23, un de cada tipus) + espermatozoide (n = 23) = zigot (2n = 46, 23 parelles). Els cromosomes són de mides diferents perquè cada mida és un tipus. Si els gàmetes no tinguessin la meitat, cada generació doblaria el nombre de cromosomes." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────

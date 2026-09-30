@@ -154,7 +154,7 @@ export const sa2Avaluacio = {
   c: {
     checklist: [
       { id: 'c1', oa: 'OA1', icon: '🔬', text: "Sé si una cèl·lula es divideix mirant l'ADN." },
-      { id: 'c2', oa: 'OA2', icon: '✂️', text: "Sé la diferència: la mitosi fa 2 cèl·lules iguals; la meiosi, 4 amb la meitat." },
+      { id: 'c2', oa: 'OA2', icon: '✂️', text: "Sé la diferència: la mitosi fa 2 cèl·lules iguals; la meiosi, 4 amb la meitat (un cromosoma de cada parella)." },
       { id: 'c3', oa: 'OA3', icon: '🧮', text: "Sé calcular l'índex mitòtic amb la calculadora." },
       { id: 'c4', oa: 'OA3', icon: '⚠️', text: "Sé que el càncer és una divisió que no s'atura." }
     ],
@@ -172,7 +172,7 @@ export const sa2Avaluacio = {
         id: 'p2', oa: 'OA2',
         img: '/images/sa2-s2-mitosi-meiosi-C.svg',
         alt: "La mateixa cèl·lula fa mitosi (2 cèl·lules iguals) o meiosi (4 cèl·lules amb la meitat).",
-        llegir: "Mitosi: 2 cèl·lules iguals, per créixer i reparar. Meiosi: 4 cèl·lules amb la meitat, per fer òvuls i espermatozoides.",
+        llegir: "Mitosi: 2 cèl·lules iguals, per créixer i reparar. Meiosi: 4 cèl·lules amb la meitat (un de cada parella), per fer òvuls i espermatozoides.",
         text: "L'ovari fa un òvul. Quina divisió fa servir?",
         options: ["Mitosi", "Meiosi"],
         correct: 1
@@ -200,7 +200,7 @@ export const sa2Avaluacio = {
     { id: 'c1', oa: 'OA1', text: "Sé identificar la interfase i les quatre fases de la mitosi (profase, metafase, anafase, telofase) en una imatge o preparació, i sé que la interfase no forma part de la mitosi." },
     { id: 'c2', oa: 'OA1', text: "Puc explicar per quina raó el cos ha de dividir cèl·lules per mitosi: reparar teixits i créixer." },
     { id: 'c3', oa: 'OA1', text: "Entenc que a la interfase la cèl·lula copia tot el seu ADN abans de repartir-lo, i que per això les dues cèl·lules filles surten idèntiques." },
-    { id: 'c4', oa: 'OA2', text: "Sé distingir la mitosi (2 cèl·lules idèntiques, material complet) de la meiosi (4 cèl·lules, la meitat del material)." },
+    { id: 'c4', oa: 'OA2', text: "Sé distingir la mitosi (2 cèl·lules idèntiques, material complet) de la meiosi (4 cèl·lules amb la meitat: un cromosoma de cada parella)." },
     { id: 'c5', oa: 'OA2', text: "Explico per què els gàmetes han de tenir la meitat dels cromosomes, i què passaria a la fecundació si no fos així." },
     { id: 'c6', oa: 'OA2', text: "Entenc per què la meiosi barreja el material genètic a l'atzar i és la font de la variabilitat entre germans." },
     { id: 'c7', oa: 'OA3', text: "Sé calcular l'índex mitòtic (cèl·lules en divisió ÷ total × 100) a partir d'un recompte." },

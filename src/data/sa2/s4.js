@@ -22,7 +22,7 @@ export const sa2s4 = {
     ],
     B: [
       "Reconec en un cas nou si parla de mitosi normal, de mitosi descontrolada (càncer) o d'un error de meiosi.",
-      "Recordo les diferències clau: mitosi = 2 cèl·lules idèntiques (reparar/créixer); meiosi = 4 cèl·lules amb la meitat (gàmetes); càncer = mitosi sense control.",
+      "Recordo les diferències clau: mitosi = 2 cèl·lules idèntiques (reparar/créixer); meiosi = 4 cèl·lules amb la meitat, un de cada parella (gàmetes); càncer = mitosi sense control.",
       "Uso l'índex mitòtic per decidir, amb els números a la mà, si un cas és sospitós o no.",
       "Distingeixo un error en el repartiment de cromosomes a un gàmeta d'un problema de mitosi."
     ],
@@ -50,7 +50,7 @@ export const sa2s4 = {
     },
     "2": {
       scaffold:
-        "Recorda el mapa dels tres: MITOSI (S1) = 1 cèl·lula → 2 idèntiques, per créixer i reparar. MEIOSI (S2) = 1 cèl·lula → 4 amb la meitat (n), per fer gàmetes. CÀNCER (S3) = mitosi que ha perdut el control, es detecta amb l'índex mitòtic. Situa cada cas d'abans en aquest mapa.",
+        "Recorda el mapa dels tres: MITOSI (S1) = 1 cèl·lula → 2 idèntiques, per créixer i reparar. MEIOSI (S2) = 1 cèl·lula → 4 amb la meitat (n: un de cada parella), per fer gàmetes. CÀNCER (S3) = mitosi que ha perdut el control, es detecta amb l'índex mitòtic. Situa cada cas d'abans en aquest mapa.",
       challenge:
         "El mapa dels tres processos es pot dibuixar com un sol esquema (un cicle amb una bifurcació i una alarma). Dibuixa'l tu mateix/a amb les teves paraules, sense mirar els apunts, i compara'l després amb el d'un company."
     },
@@ -117,7 +117,7 @@ export const sa2s4 = {
       id: "t1",
       apartat: "2",
       heading: "Repàs: el mateix cicle, ==dues sortides==",
-      text: "Tota cèl·lula ve del ==cicle cel·lular== (S1): creix, copia el seu material genètic i es divideix. La ==mitosi|b== és la sortida normal: 2 cèl·lules ==idèntiques==, per créixer o reparar. La ==meiosi|o== és una sortida diferent, només a ==ovaris i testicles==: 4 cèl·lules amb ==la meitat== del material (gàmetes). Són dues maneres de dividir-se per a dues finalitats diferents.",
+      text: "Tota cèl·lula ve del ==cicle cel·lular== (S1): creix, copia el seu material genètic i es divideix. La ==mitosi|b== és la sortida normal: 2 cèl·lules ==idèntiques==, per créixer o reparar. La ==meiosi|o== és una sortida diferent, només a ==ovaris i testicles==: 4 cèl·lules amb ==la meitat== del material: ==un cromosoma de cada parella== (gàmetes). Són dues maneres de dividir-se per a dues finalitats diferents.",
       type: "concept"
     },
     {
@@ -131,7 +131,7 @@ export const sa2s4 = {
       id: "t3",
       apartat: "2",
       heading: "Els tres fils, en un sol mapa",
-      text: "==Mitosi== (1 cèl·lula → 2 idèntiques, tot el cos) + ==meiosi== (1 cèl·lula → 4 amb la meitat, només gàmetes) + ==càncer== (mitosi que ==no s'atura==) formen un sol mapa: totes tres parteixen del mateix ==cicle cel·lular==, i la clau per distingir-les és sempre la mateixa pregunta: quantes cèl·lules surten, amb quin material genètic, i s'atura quan toca?",
+      text: "==Mitosi== (1 cèl·lula → 2 idèntiques, tot el cos) + ==meiosi== (1 cèl·lula → 4 amb la meitat, un de cada parella; només gàmetes) + ==càncer== (mitosi que ==no s'atura==) formen un sol mapa: totes tres parteixen del mateix ==cicle cel·lular==, i la clau per distingir-les és sempre la mateixa pregunta: quantes cèl·lules surten, amb quin material genètic, i s'atura quan toca?",
       type: "concept"
     },
     {
@@ -153,7 +153,7 @@ export const sa2s4 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "2", before: true, title: "Repàs: el cicle cel·lular i la mitosi", src: "/images/sa2-s1-cicle-mitosi.svg", note: "El cicle amb la interfase i la mitosi (S1). Un tumor és aquest mateix cicle sense aturador." },
-    { id: "Fig.2", apartat: "2", title: "Repàs: mitosi vs meiosi", src: "/images/sa2-s2-mitosi-meiosi.svg", note: "La mateixa cèl·lula de partida, dues sortides diferents (S2): 2 idèntiques o 4 amb la meitat." },
+    { id: "Fig.2", apartat: "2", title: "Repàs: mitosi vs meiosi", src: "/images/sa2-s2-mitosi-meiosi.svg", note: "La mateixa cèl·lula de partida, dues sortides diferents (S2): 2 idèntiques o 4 amb la meitat (un de cada parella). Llegenda: color = mare/pare, mida = tipus, una X és UN cromosoma." },
     { id: "Fig.3", apartat: "2", title: "Repàs: com es detecta la pèrdua de control", src: "/images/sa2-s3-com-distingir.svg", note: "Interfase vs en divisió i la fórmula de l'índex mitòtic (S3): l'eina per detectar un tumor." }
   ],
 
@@ -194,7 +194,7 @@ export const sa2s4 = {
         phase: "explica",
         instruction: "Amb les Fig.1-3 de repàs, dibuixa o completa un sol esquema que situï mitosi, meiosi i càncer partint del mateix cicle cel·lular.",
         hints: [
-          "Mitosi = 2 idèntiques (tot el cos). Meiosi = 4 amb la meitat (només gàmetes). Càncer = mitosi sense aturador.",
+          "Mitosi = 2 idèntiques (tot el cos). Meiosi = 4 amb la meitat, un de cada parella (només gàmetes). Càncer = mitosi sense aturador.",
           "Les tres respostes a la mateixa pregunta: quantes cèl·lules surten i amb quin material genètic?"
         ]
       },

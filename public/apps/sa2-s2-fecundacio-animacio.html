@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>De 23 a 46: la fecundació pas a pas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#4A2463;--purple:#7B3F9E;--lilac:#A66BC9;--tint:#F3E8FA;--tint2:#FBF7FD;--grey:#6F6878;
+--mare:#D2474F;--mare-d:#8E2430;--pare:#2F6DB5;--pare-d:#173F73;--gold:#C8960A;--gold-bg:#FDF7E2;--gold-ink:#6E5000;--bg:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:'Fira Sans Extra Condensed','Arial Narrow',sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:14px 14px 18px}
+h1{font-size:clamp(20px,3.2vw,28px);font-weight:800;margin:0 0 2px}
+.sub{color:var(--grey);font-size:15px;margin:0 0 10px}
+.stage{position:relative;background:var(--tint2);border:1.5px solid var(--lilac);border-radius:16px;overflow:hidden}
+svg{display:block;width:100%;height:auto}
+.caption{min-height:74px;margin:12px 2px 8px;font-size:clamp(16px,2.2vw,20px);line-height:1.3}
+.caption b{font-weight:800}
+.m{color:var(--mare);font-weight:800}.p{color:var(--pare);font-weight:800}
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+button{font:inherit;font-size:17px;font-weight:800;border-radius:999px;padding:9px 20px;cursor:pointer;border:2px solid var(--purple);background:#fff;color:var(--purple)}
+button.primary{background:var(--purple);color:#fff}
+button:disabled{opacity:.35;cursor:default}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.dots{display:flex;gap:7px;margin-left:auto}
+.dot{width:12px;height:12px;border-radius:50%;background:#e2d3ec;border:0;padding:0}
+.dot.on{background:var(--purple)}
+label.tog{display:flex;align-items:center;gap:6px;font-size:16px;font-weight:600;color:var(--grey);cursor:pointer}
+.count{font-weight:800}
+@media (max-width:560px){.dots{margin-left:0;width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>De 23 a 46: la fecundació pas a pas</h1>
+  <p class="sub">Cada bastonet és un cromosoma. Color: <span class="m">de la mare</span> o <span class="p">del pare</span>. Mida: el tipus de cromosoma.</p>
+  <div class="stage"><svg id="sv" viewBox="0 0 900 560" role="img" aria-labelledby="cap"></svg></div>
+  <div class="caption" id="cap" aria-live="polite"></div>
+  <div class="bar">
+    <button id="prev">← Enrere</button>
+    <button id="next" class="primary">Següent →</button>
+    <label class="tog"><input type="checkbox" id="nums"> Mostra el número de cada tipus</label>
+    <div class="dots" id="dots"></div>
+  </div>
+</div>
+<script>
+const HUMAN = [["1", 19.8, 24.2, [[0.51, "p"], [0.27, "q"], [0.31, "q"]]], ["2", 14.1, 28.6, [[0.56, "p"], [0.6, "q"], [0.43, "q"]]], ["3", 18.6, 22.8, [[0.73, "p"], [0.57, "q"], [0.63, "q"]]], ["4", 13.2, 26.9, [[0.34, "p"], [0.42, "q"], [0.59, "q"]]], ["5", 12.8, 26.0, [[0.44, "p"], [0.68, "q"], [0.53, "q"]]], ["6", 12.4, 25.1, [[0.46, "p"], [0.78, "q"], [0.45, "q"]]], ["7", 11.9, 24.3, [[0.64, "p"], [0.73, "q"], [0.77, "q"]]], ["8", 11.5, 23.4, [[0.38, "p"], [0.69, "q"]]], ["9", 11.1, 22.5, [[0.34, "p"], [0.27, "q"]]], ["10", 10.7, 21.6, [[0.69, "p"], [0.6, "q"]]], ["11", 10.2, 20.8, [[0.73, "p"], [0.53, "q"]]], ["12", 9.8, 19.9, [[0.58, "p"], [0.65, "q"]]], ["13", 3.4, 25.0, [[0.58, "q"], [0.67, "q"]]], ["14", 3.3, 23.8, [[0.65, "q"], [0.63, "q"]]], ["15", 3.1, 22.7, [[0.32, "q"]]], ["16", 11.0, 13.5, [[0.76, "p"]]], ["17", 7.7, 15.5, [[0.68, "q"]]], ["18", 7.2, 14.7, [[0.43, "q"]]], ["19", 9.3, 11.3, [[0.75, "p"]]], ["20", 8.7, 10.6, [[0.6, "q"]]], ["21", 2.2, 15.8, [[0.38, "q"]]], ["22", 2.0, 14.7, [[0.78, "q"]]], ["X", 12.0, 18.0, [[0.38, "p"], [0.8, "q"]]]];
+const C = {m:['#D2474F','#8E2430'], p:['#2F6DB5','#173F73']};
+const NS='http://www.w3.org/2000/svg';
+const sv=document.getElementById('sv');
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function el(t,a,parent){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);(parent||sv).appendChild(e);return e}
+
+function armPath(L,w){const h=w/2;return `M${-w*.26},0 Q${-h},${-w*.25} ${-h},${-w*.75} L${-h},${-(L-h)} A${h},${h} 0 0 1 ${h},${-(L-h)} L${h},${-w*.75} Q${h},${-w*.25} ${w*.26},0 Z`}
+function drawChromo(g,type,origin){
+  const [name,p,q,bands]=type,[fill,st]=C[origin],w=9;
+  [[p,0,'p'],[q,180,'q']].forEach(([L,ang,arm])=>{
+    const a=el('g',{transform:`rotate(${ang})`},g);
+    el('path',{d:armPath(L,w),fill,stroke:st,'stroke-width':1.3,'stroke-linejoin':'round'},a);
+    bands.filter(b=>b[1]===arm).forEach(([f])=>{const y=-(w*.8+f*(L-w*1.4));el('line',{x1:-3.2,y1:y,x2:3.2,y2:y,stroke:'#fff','stroke-opacity':.55,'stroke-width':1.8,'stroke-linecap':'round'},a)});
+  });
+  el('circle',{r:2.7,fill:st},g);
+  const t=el('text',{y:q+14,'text-anchor':'middle','font-size':11,'font-weight':800,fill:st,class:'num'},g);t.textContent=name;
+}
+
+// ---------- escena
+const bg=el('g',{});
+const cellO=el('circle',{cx:260,cy:290,r:160,fill:'#FFF7F7',stroke:'#8E2430','stroke-width':2.6},bg);
+const lblO=el('text',{x:260,y:470,'text-anchor':'middle','font-size':20,'font-weight':800,fill:'#8E2430'},bg);
+const sperm=el('g',{},bg);
+const tail=el('path',{fill:'none',stroke:'#173F73','stroke-width':6,'stroke-linecap':'round'},sperm);
+const mid=el('ellipse',{cx:92,cy:0,rx:16,ry:10,fill:'#DCE8F7',stroke:'#173F73','stroke-width':1.6},sperm);
+const head=el('ellipse',{cx:0,cy:0,rx:80,ry:58,fill:'#F4F8FD',stroke:'#173F73','stroke-width':2.4},sperm);
+const lblS=el('text',{x:0,y:200,'text-anchor':'middle','font-size':20,'font-weight':800,fill:'#173F73'},sperm);
+const note=el('text',{x:0,y:-78,'text-anchor':'middle','font-size':13,'font-weight':600,fill:'#9A93A3'},sperm);
+note.textContent='cap molt ampliat';
+const layer=el('g',{});
+const counter=el('g',{});
+const cBox=el('rect',{x:300,y:14,width:300,height:50,rx:25,fill:'#fff',stroke:'#C8960A','stroke-width':1.6},counter);
+const cTxt=el('text',{x:450,y:47,'text-anchor':'middle','font-size':26,'font-weight':800,fill:'#4A2463'},counter);
+const extra=el('g',{opacity:0});
+
+const chromos=[];
+['m','p'].forEach(o=>HUMAN.forEach((t,i)=>{const g=el('g',{},layer);drawChromo(g,t,o);chromos.push({g,o,i,x:0,y:0,s:1,op:1})}));
+function setT(c){c.g.setAttribute('transform',`translate(${c.x.toFixed(1)},${c.y.toFixed(1)}) scale(${c.s.toFixed(3)})`);c.g.setAttribute('opacity',c.op)}
+
+// ---------- posicions
+function gridPos(i,cx,cy,cols,dx,dy){const n=23,rows=Math.ceil(n/cols),r=Math.floor(i/cols),c=i%cols,nc=r<rows-1?cols:n-cols*(rows-1);return[cx+(c-(nc-1)/2)*dx,cy+(r-(rows-1)/2)*dy]}
+let spermPos={x:690,y:290,rot:0,op:1};
+const rnd=(()=>{let s=7;return()=>{s=(s*9301+49297)%233280;return s/233280}})();
+const scatter=HUMAN.map(()=>{const a=rnd()*6.283,r=Math.sqrt(rnd())*125;return[Math.cos(a)*r,Math.sin(a)*r,rnd()*360]});
+const scatter2=HUMAN.map(()=>{const a=rnd()*6.283,r=Math.sqrt(rnd())*125;return[Math.cos(a)*r,Math.sin(a)*r,rnd()*360]});
+
+const STEPS=[
+ {cap:`Un <span class="m">òvul</span> i un <span class="p">espermatozoide</span>. Compta’ls: cada un porta <b>23 cromosomes</b>, <b>un de cada tipus</b> (del 1 al 23). Això és <b>n = 23</b>.`,
+  count:'<tspan fill="#D2474F">23</tspan>  i  <tspan fill="#2F6DB5">23</tspan>',
+  place(){cellO.setAttribute('cx',260);cellO.setAttribute('r',160);
+   return {sperm:{x:690,y:290,op:1},m:i=>[...gridPos(i,260,290,6,40,56),0,.95,1],p:i=>{const [x,y]=gridPos(i,0,0,6,22,26);return[690+x,290+y,0,.5,1]}}}},
+ {cap:`<b>Fecundació.</b> L’espermatozoide arriba a l’òvul i hi entra. Els seus 23 cromosomes <span class="p">blaus</span> queden a dins, barrejats amb els 23 <span class="m">vermells</span>.`,
+  count:'<tspan fill="#D2474F">23</tspan> + <tspan fill="#2F6DB5">23</tspan>',
+  place(){return {sperm:{x:470,y:290,op:0},m:i=>[260+scatter[i][0],290+scatter[i][1],scatter[i][2],.9,1],p:i=>[260+scatter2[i][0],290+scatter2[i][1],scatter2[i][2],.9,1]}}},
+ {cap:`Ara ja no és un òvul: és el <b>zigot</b>, la primera cèl·lula d’una persona nova. Cada cromosoma de la mare troba el seu <b>company del mateix tipus</b> del pare.`,
+  count:'23 + 23 = <tspan fill="#7B3F9E">46</tspan>',
+  place(){return {sperm:{x:470,y:290,op:0},zig:true,m:i=>{const[x,y]=gridPos(i,450,292,6,68,64);return[x-9,y,0,.95,1]},p:i=>{const[x,y]=gridPos(i,450,292,6,68,64);return[x+9,y,0,.95,1]}}}},
+ {cap:`<b>2n = 46 = 23 parelles.</b> A partir d’aquí, per mitosi, totes les cèl·lules del teu cos tindran aquestes mateixes 46: la meitat de la mare i la meitat del pare.`,
+  count:'2n = <tspan fill="#7B3F9E">46</tspan>',
+  place(){return STEPS[2].place()}},
+ {cap:`<b>I si no hi hagués meiosi?</b> Si els gàmetes en portessin 46, el fill en tindria 92, el nét 184, el besnét 368… Per això els gàmetes només en porten la meitat.`,
+  count:'46 + 46 = <tspan fill="#8E2430">92</tspan> ?',
+  place(){return {...STEPS[2].place(),extra:true}}},
+];
+
+// barres "sense meiosi"
+(function(){el('rect',{x:120,y:100,width:660,height:400,rx:16,fill:'#FDF7E2',stroke:'#C8960A','stroke-width':1.6,opacity:.97},extra);
+ const t=el('text',{x:450,y:140,'text-anchor':'middle','font-size':22,'font-weight':800,fill:'#6E5000'},extra);t.textContent='Sense meiosi: cromosomes a cada generació';
+ [['Tu',46],['Fill',92],['Nét',184],['Besnét',368]].forEach(([n,v],k)=>{const y=180+k*72,w=v*1.35;
+  const r=el('rect',{x:230,y,width:w,height:44,rx:8,fill:k?'#D2474F':'#7B3F9E',class:'grow','data-w':w},extra);
+  const a=el('text',{x:218,y:y+29,'text-anchor':'end','font-size':20,'font-weight':800,fill:'#4A2463'},extra);a.textContent=n;
+  const b=el('text',{x:240+w,y:y+29,'font-size':20,'font-weight':800,fill:'#4A2463'},extra);b.textContent=v;});})();
+
+// ---------- animació
+let step=0,anim=null;
+function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2}
+function tailD(ph){let d='M100,0';for(let k=1;k<=6;k++){const x=100+k*28,y=Math.sin(ph+k*1.1)*(6+k*2.2);d+=` L${x},${y.toFixed(1)}`}return d}
+let ph=0;(function wig(){ph+=reduce?0:.18;tail.setAttribute('d',tailD(ph));requestAnimationFrame(wig)})();
+function go(n){
+  step=Math.max(0,Math.min(STEPS.length-1,n));const S=STEPS[step],L=S.place();
+  document.getElementById('cap').innerHTML=S.cap;cTxt.innerHTML=S.count;
+  lblO.textContent=L.zig?'Zigot · 2n = 46':'Òvul · n = 23';lblS.textContent='Espermatozoide · n = 23';
+  lblO.setAttribute('x',L.zig?450:260);lblO.setAttribute('y',L.zig?532:490);
+  lblO.setAttribute('fill',L.zig?'#7B3F9E':'#8E2430');
+  cellO.setAttribute('fill',L.zig?'#F8F1FC':'#FFF7F7');cellO.setAttribute('stroke',L.zig?'#7B3F9E':'#8E2430');
+  extra.setAttribute('opacity',L.extra?1:0);
+  document.getElementById('prev').disabled=step===0;document.getElementById('next').disabled=step===STEPS.length-1;
+  document.querySelectorAll('.dot').forEach((d,k)=>d.classList.toggle('on',k===step));
+  const from=chromos.map(c=>({x:c.x,y:c.y,r:c.r||0,s:c.s,op:c.op}));
+  const to=chromos.map(c=>{const v=(c.o==='m'?L.m:L.p)(c.i);return{x:v[0],y:v[1],r:v[2],s:v[3],op:v[4]}});
+  const sF={...spermPos},sT={x:L.sperm.x,y:L.sperm.y,op:L.sperm.op};
+  const cF={cx:+cellO.getAttribute('cx'),r:+cellO.getAttribute('r')},cT=L.zig?{cx:450,r:196}:{cx:260,r:160};
+  const dur=reduce?1:1600,t0=performance.now();cancelAnimationFrame(anim);
+  (function frame(now){const t=Math.min(1,(now-t0)/dur);
+    // l'espermatozoide es mou primer; els cromosomes blaus entren després
+    const ts=ease(Math.min(1,t*1.6)),tc=ease(Math.max(0,(t-.25)/.75));
+    spermPos={x:sF.x+(sT.x-sF.x)*ts,y:sF.y+(sT.y-sF.y)*ts,op:sF.op+(sT.op-sF.op)*ease(Math.max(0,(t-.35)/.65))};
+    sperm.setAttribute('transform',`translate(${spermPos.x},${spermPos.y})`);sperm.setAttribute('opacity',spermPos.op);
+    cellO.setAttribute('cx',cF.cx+(cT.cx-cF.cx)*tc);cellO.setAttribute('r',cF.r+(cT.r-cF.r)*tc);
+    chromos.forEach((c,k)=>{const a=from[k],b=to[k],lag=(c.i%23)/23*.25,tt=ease(Math.max(0,Math.min(1,(t-lag)/(1-lag))));
+      const u=c.o==='p'?Math.max(0,Math.min(1,(t*1.6-.2)/1.4)):1; // els blaus es mouen amb l'espermatozoide
+      const tq=c.o==='p'&&step===1?ease(Math.max(0,(t-.4)/.6)):tt;
+      c.x=a.x+(b.x-a.x)*tq;c.y=a.y+(b.y-a.y)*tq;c.r=a.r+(b.r-a.r)*tq;c.s=a.s+(b.s-a.s)*tq;c.op=a.op+(b.op-a.op)*tq;
+      c.g.setAttribute('transform',`translate(${c.x.toFixed(1)},${c.y.toFixed(1)}) rotate(${c.r.toFixed(1)}) scale(${c.s.toFixed(3)})`);
+      if(c.o==='p'&&step===1&&tq===0){const d=spermPos.x-sF.x;c.g.setAttribute('transform',`translate(${(a.x+d).toFixed(1)},${a.y}) rotate(${a.r}) scale(${a.s})`)}});
+    extra.querySelectorAll('.grow').forEach(r=>r.setAttribute('width',L.extra?(+r.dataset.w)*ease(t):0));
+    if(t<1)anim=requestAnimationFrame(frame)})(t0);
+}
+// inicial
+STEPS.forEach((_,k)=>{const b=document.createElement('button');b.className='dot';b.setAttribute('aria-label','Pas '+(k+1));b.onclick=()=>go(k);document.getElementById('dots').appendChild(b)});
+const L0=STEPS[0].place();chromos.forEach(c=>{const v=(c.o==='m'?L0.m:L0.p)(c.i);[c.x,c.y,c.r,c.s,c.op]=v});
+document.getElementById('prev').onclick=()=>go(step-1);document.getElementById('next').onclick=()=>go(step+1);
+const nums=document.getElementById('nums');function showNums(){sv.querySelectorAll('.num').forEach(t=>t.setAttribute('display',nums.checked?'inline':'none'))}
+nums.onchange=showNums;showNums();
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(step+1);if(e.key==='ArrowLeft')go(step-1)});
+go(0);
+</script>
+</body>
+</html>
