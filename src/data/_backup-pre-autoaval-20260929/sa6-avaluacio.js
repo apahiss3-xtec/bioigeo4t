@@ -18,14 +18,6 @@
 // 4) t3 demanava dues coses alhora (causa + mesura); ara només la causa.
 // 5) c4, c7 i c9 no recollien intersecció ni el marc perillositat/exposició/
 //    vulnerabilitat ni predicció/prevenció/correcció, que sí que es treballen.
-//
-// Revisió 2026-09-29 (autoavaluació ≠ prova): l'assaig escrit copiava
-// preguntes de la prova final del curs («El llac sota el gel»). S'ha refet
-// sencer amb un context NOU —el talús d'una pedrera (dic, falla, cendra i colada datades)— que no és el de la
-// prova, ni l'enigma de la SA, ni el del test. Cada pregunta entrena
-// el bloc 6 de la prova final (6a–6b: edat d'un fòssil i d'una estructura que talla) amb les mateixes habilitats i exigència
-// (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
-// Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
 export const sa6Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -35,79 +27,80 @@ export const sa6Avaluacio = {
   // que fan servir les rubriques de les proves del curs.
   escrita: {
     intro:
-      "Assaig del bloc de la prova final que treballa SA6 (ordre i edat de les roques), amb un cas NOU: el talús d'una pedrera abandonada. De baix a dalt hi ha cinc capes horitzontals. Capa 1: calcària amb petxines marines. Capa 2: cendra volcànica, datada en 5,3 Ma. Capa 3: argiles amb una dent fòssil de mastodont. Capa 4: una colada de lava, datada en 3,6 Ma. Capa 5: graves de riu. Un dic de basalt (una làmina de roca volcànica vertical) travessa les capes 1, 2 i 3 i s'atura a sota de la 4, que el cobreix sense tallar-se. Una falla desplaça totes les capes, de la 1 a la 5. (Ma = milions d'anys.) Dibuixa el tall al full abans de respondre.",
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts. A geologia històrica el que es valora és que DEDUEIXIS l'ordre dels fets a partir dels principis, i que diguis en quin principi et bases a cada pas.",
     minutes: 26,
     questions: [
       {
         id: 'w1',
         oa: 'OA2',
-        source: 'Entrena el bloc 6 de la prova final · ordenar esdeveniments amb els principis',
-        minutes: 7,
-        text: "Ordena del més antic al més recent tots els esdeveniments del talús: la formació de cada capa, el dic i la falla. Per a cada pas important, digues quin principi geològic fas servir.",
+        source: 'Prova final del curs · Pregunta 6, «quant fa»',
+        minutes: 8,
+        text: "Una capa amb fòssils està entre una capa de cendra volcànica datada en 1,20 Ma a sota i una altra de 0,80 Ma a sobre. Una esquerda talla les tres capes però queda coberta sencera per una quarta capa de damunt. Data el fòssil i situa l'esquerda, dient en quin principi et bases a cada pas.",
         model: {
-          as: "Capa 1 → capa 2 → capa 3 → dic → capa 4 → capa 5 → falla. Les capes, per superposició (les de sota són més antigues). El dic és posterior a la 3 perquè la talla, i anterior a la 4 perquè no la talla. La falla és la darrera perquè talla totes les capes.",
-          ae: "Ordre: capa 1 → capa 2 → capa 3 → dic → capa 4 → capa 5 → falla. Les capes es van dipositar horitzontals (principi d'horitzontalitat) i, com que no estan capgirades, la de sota és més antiga que la de sobre (principi de superposició): 1, 2, 3, 4, 5. El dic travessa la 1, la 2 i la 3, i una estructura que en talla una altra és més moderna que el que talla (principi d'intersecció): per tant és posterior a la capa 3. Com que la colada 4 el cobreix sense estar tallada, el dic ja hi era quan la lava s'hi va escampar: és anterior a la 4. La falla desplaça les cinc capes: per intersecció, és posterior a la capa 5 i és l'últim esdeveniment. L'error que cal evitar és ordenar el dic o la falla per la seva posició (a baix o a dalt): el que compta és què tallen i què no tallen.",
+          as: "El fòssil té entre 0,80 i 1,20 milions d'anys, perquè està entre les dues cendres datades (principi de superposició: el que hi ha a sota és més antic). L'esquerda és més moderna que les tres capes que talla (principi d'intersecció: el que talla és més jove) i més antiga que la capa que la cobreix.",
+          ae: "El fòssil: la capa no es pot datar directament, però està per sobre de la cendra d'1,20 Ma i per sota de la de 0,80 Ma; pel principi de superposició —en una successió no capgirada, el que hi ha a sota és més antic— queda acotada entre 0,80 i 1,20 milions d'anys. És una datació relativa acotada per dues datacions absolutes. L'esquerda: talla les capes 1, 2 i 3, i pel principi d'intersecció el que talla és més jove que el que és tallat, per tant és posterior a totes tres; però la capa 4 li passa per damunt sencera i no està tallada, de manera que és anterior a la capa 4. Queda pinçada entre el sostre de la capa 3 i la base de la capa 4: es va obrir després de dipositar-se la capa 3 i abans que hi caigués la cendra de 0,80 Ma. Amb les dades donades no es pot precisar més, i dir-ho també forma part de la resposta.",
         },
-        aeWhy: "L'AE posa el dic i la falla al seu lloc amb el principi d'intersecció, fa servir el que el dic NO talla per acotar-lo per dalt i anomena cada principi en el pas on l'aplica. L'error típic és situar les estructures per l'altura on es veuen.",
+        aeWhy: "L'AE anomena els principis a cada pas, distingeix datació relativa d'absoluta i reconeix explícitament fins on arriben les dades — que en aquesta prova compta com a resposta correcta.",
         must: [
-          "L'ordre és 1, 2, 3, dic, 4, 5, falla.",
-          "Has fet servir la superposició per a les capes.",
-          "Has fet servir la intersecció per al dic i per a la falla.",
-          "Has fet servir que la capa 4 no està tallada per dir que el dic és anterior."
+          "Has donat l'interval d'edat del fòssil.",
+          "Has anomenat el principi de superposició.",
+          "Has anomenat el principi d'intersecció.",
+          "Has acotat l'esquerda per les dues bandes.",
+          "Has dit fins on es pot arribar amb les dades donades."
         ]
       },
       {
         id: 'w2',
-        oa: 'OA2',
-        source: 'Entrena el bloc 6 de la prova final · acotar l\'edat d\'un fòssil entre dues capes datades',
-        minutes: 6,
-        text: "a) Quina edat té la dent de mastodont de la capa 3? Justifica-ho. b) Un company respon «4,45 Ma, que és el punt mig». Què li diries? c) Quina troballa al talús permetria saber-ne l'edat amb més precisió?",
+        oa: 'OA1',
+        source: 'Tipus de pregunta de la prova · Deriva continental',
+        minutes: 7,
+        text: "Wegener va proposar la deriva continental el 1912 i va ser rebutjat durant dècades. Explica dues proves que tenia i per quina raó no el van creure.",
         model: {
-          as: "a) Entre 5,3 i 3,6 Ma, perquè la capa 3 és a sobre de la 2 (més moderna que 5,3 Ma) i a sota de la 4 (més antiga que 3,6 Ma). b) Que no es pot saber tan exacte: només sabem que és entre les dues edats. c) Una altra capa de cendra datada més a prop de la dent.",
-          ae: "a) La dent té entre 5,3 i 3,6 Ma. Per superposició, la capa 3 es va dipositar després de la cendra 2 (per tant, fa menys de 5,3 Ma) i abans de la colada 4 (per tant, fa més de 3,6 Ma). Les capes 2 i 4 es poden datar perquè són volcàniques; la capa 3 no, i per això la seva edat és un interval, no un número. b) Li diria que el punt mig no té cap base: les dades només diuen que la dent és DINS l'interval, però no on. Podria tenir 5,2 Ma o 3,7 Ma, perquè no sabem si les argiles es van dipositar de pressa o a poc a poc. Donar una xifra exacta és inventar una precisió que les dades no tenen. c) Una capa volcànica datable just a sota o just a sobre de la dent, o dins de la mateixa capa 3: com més a prop de la dent hi hagi una capa datada, més estret serà l'interval.",
+          as: "Tenia l'encaix de les costes d'Àfrica i Sud-amèrica i la presència dels mateixos fòssils guia en continents avui separats, a més de la continuïtat de roques i serralades. No el van creure perquè no sabia explicar quina força movia els continents.",
+          ae: "Proves: (1) l'encaix geomètric de les costes d'Àfrica i Sud-amèrica, que millora encara si s'ajusten pels marges continentals i no per la línia de costa actual; (2) els mateixos fòssils guia d'espècies terrestres i d'aigua dolça —que no podien travessar un oceà— a banda i banda de l'Atlàntic; (3) la continuïtat de formacions rocoses i serralades que queden alineades si es tanca l'oceà. El rebuig no va ser per manca de proves sinó per manca de MECANISME: Wegener no sabia quina força podia moure una massa continental, i les que va proposar eren insuficients. La comunitat científica no va acceptar el model fins als anys 60, quan el fons oceànic i el paleomagnetisme van permetre identificar la convecció del mantell i l'expansió del fons com a motor. És un bon exemple de com funciona la ciència: una hipòtesi amb bones dades però sense mecanisme queda en espera, i són les proves noves les que la resolen.",
         },
-        aeWhy: "L'AE dona l'edat com a interval justificat per superposició, explica per què només les capes volcàniques tenen xifra i rebutja el punt mig amb raons. L'error típic és donar un sol número (una de les dues edats o la mitjana) com si fos l'edat del fòssil.",
+        aeWhy: "L'AE explica que les proves eren bones i que el problema era el mecanisme, i tanca amb el que això ensenya sobre com funciona la ciència (connexió amb SA1).",
         must: [
-          "Has donat l'interval entre 5,3 i 3,6 Ma.",
-          "Has justificat els dos límits amb la superposició.",
-          "Has explicat per què el punt mig no és vàlid.",
-          "Has proposat una capa datable més a prop de la dent."
+          "Has donat com a mínim dues proves concretes.",
+          "Has dit per què els fòssils guia són una prova (no podien travessar l'oceà).",
+          "Has dit que el problema era la manca de mecanisme.",
+          "Has dit què va resoldre el problema anys després."
         ]
       },
       {
         id: 'w3',
-        oa: 'OA2',
-        source: 'Entrena el bloc 6 de la prova final · edat relativa d\'una estructura que talla',
+        oa: 'OA3',
+        source: 'Tipus de pregunta de la prova · Risc geològic',
         minutes: 6,
-        text: "a) El dic, és més antic o més modern que la capa 3? I que la capa 4? Digues entre quines edats el pots situar. b) Què pots dir de l'edat de la falla, i què NO en pots dir amb aquestes dades?",
+        text: "Dos pobles estan al mateix vessant i tenen la mateixa probabilitat d'esllavissada, però un té molt més risc que l'altre. Explica-ho descomponent el risc en perillositat, exposició i vulnerabilitat.",
         model: {
-          as: "a) El dic és més modern que la capa 3, perquè la talla, i més antic que la 4, perquè no la talla. És entre 5,3 i 3,6 Ma. b) La falla té menys de 3,6 Ma, perquè talla la colada 4 i també la 5, però no sabem quants anys exactes té.",
-          ae: "a) Més modern que la capa 3, perquè la talla (principi d'intersecció), i més antic que la 4, que el cobreix sense estar tallada. Com que la capa 3 és posterior a la cendra de 5,3 Ma, el dic té menys de 5,3 Ma; com que és anterior a la colada de 3,6 Ma, en té més de 3,6. Per tant, està entre 5,3 i 3,6 Ma, i dins d'aquest interval és posterior a la dent de mastodont. b) La falla talla la colada 4 i també la capa 5, de manera que té menys de 3,6 Ma i és posterior a les graves de riu. El que no en puc dir és el límit més recent: cap capa datada no la cobreix, així que podria tenir 3 Ma o haver-se mogut fa poc. Per acotar-la per dalt caldria trobar una capa, idealment datable, que la cobreixi sense estar desplaçada.",
+          as: "La perillositat és la mateixa, perquè és la probabilitat que passi el fenomen. El que canvia és l'exposició (quanta gent i quants béns hi ha en el camí) i la vulnerabilitat (com de preparats estan els edificis i les persones per resistir-ho).",
+          ae: "El risc no és només el fenomen: és el producte de tres coses. La perillositat és la probabilitat que es produeixi l'esllavissada i depèn de la litologia, el pendent, la vegetació i la pluja; aquí és la mateixa per als dos pobles. L'exposició és què hi ha en la trajectòria: si un poble té cases, l'escola i la carretera al peu del vessant i l'altre hi té camps, l'exposició és molt diferent. La vulnerabilitat és com de malament se'n surt allò que està exposat: edificis antics sense reforç, sense murs de contenció i sense pla d'evacuació són molt més vulnerables que els mateixos edificis consolidats i amb avisos. Per això es pot reduir molt el risc sense poder tocar gens la perillositat, i per això dos llocs geològicament idèntics poden tenir riscos completament diferents: hi ha decisions humanes pel mig.",
         },
-        aeWhy: "L'AE combina el principi d'intersecció amb les dues dates per convertir un ordre relatiu en un interval, i marca què queda obert: la falla només té límit per un costat. Aquesta és la diferència entre acotar una edat i endevinar-la.",
+        aeWhy: "L'AE defineix els tres components amb exemples concrets del cas i n'extreu la conseqüència: es pot actuar sobre l'exposició i la vulnerabilitat encara que la perillositat sigui inevitable.",
         must: [
-          "Has situat el dic entre la capa 3 i la capa 4, amb el principi d'intersecció.",
-          "Has convertit l'ordre del dic en l'interval 5,3–3,6 Ma.",
-          "Has dit que la falla té menys de 3,6 Ma.",
-          "Has dit que la falla no té límit recent i què caldria per trobar-lo."
+          "Has definit els tres components.",
+          "Has dit que la perillositat és igual als dos pobles.",
+          "Has donat un exemple concret d'exposició i un de vulnerabilitat.",
+          "Has dit sobre quins components es pot actuar."
         ]
       },
       {
         id: 'w4',
-        oa: 'OA4',
-        source: 'Entrena el bloc 6 de la prova final · comunicar una reconstrucció geològica',
-        minutes: 7,
-        text: "Escriu, en 6–8 línies, el text d'un plafó per als visitants de la pedrera que expliqui la història del talús en ordre. Ha d'incloure almenys dos principis geològics, dues edats i què ens diuen la calcària amb petxines i les graves de riu sobre com era el lloc.",
+        oa: 'OA3',
+        source: 'Tipus de pregunta de la prova · Mesures',
+        minutes: 5,
+        text: "Proposa tres mesures per a un poble amb risc d'inundació i classifica cadascuna en predicció, prevenció o correcció.",
         model: {
-          as: "Fa més de 5,3 Ma aquí hi havia mar, perquè la calcària té petxines. Després un volcà va deixar cendra (5,3 Ma), es van dipositar argiles amb un mastodont, va entrar un dic i una colada de lava (3,6 Ma) ho va cobrir. Al final, un riu hi va deixar graves i una falla ho va trencar tot. Les de sota són més antigues (superposició).",
-          ae: "Fa més de 5,3 milions d'anys, aquest lloc era fons de mar: la calcària de la base és plena de petxines marines, i els organismes com aquests avui només viuen al mar (actualisme). Fa 5,3 Ma, una erupció hi va deixar una capa de cendra. A sobre s'hi van acumular argiles, on va quedar la dent d'un mastodont: el mar ja s'havia retirat i hi vivien grans mamífers. Abans de fa 3,6 Ma, el magma va pujar per una fractura i va formar un dic que talla aquestes capes; una colada de lava el va cobrir fa 3,6 Ma. Després, un riu hi va dipositar graves. L'últim episodi és una falla que desplaça totes les capes. Com ho sabem: les capes de sota són les més antigues (superposició) i allò que talla una capa és més modern que ella (intersecció).",
+          as: "Predicció: una xarxa de sensors al riu amb un sistema d'avisos. Prevenció: no deixar construir a la zona inundable i fer simulacres. Correcció: refer les motes i recuperar la vegetació de la ribera després d'una crescuda.",
+          ae: "Predicció — instal·lar sensors de cabal i pluviòmetres aigües amunt connectats a un sistema d'alerta primerenca: no evita la inundació, però guanya hores per evacuar. Prevenció — planificació urbanística que prohibeixi construir a la zona inundable, recuperar zones on el riu pugui vessar sense fer mal, i fer simulacres perquè la gent sàpiga què fer: actua abans que passi res i redueix exposició i vulnerabilitat. Correcció — un cop passat l'episodi, reparar i dimensionar millor les motes, restaurar la vegetació de ribera i revisar el pla amb el que s'ha après. Val la pena notar que la mesura més barata sol ser la de prevenció i la més cara la de correcció, i que l'escalfament global augmenta la freqüència d'episodis de pluja intensa: un risc que ja hi era es pot intensificar per acció humana.",
         },
-        aeWhy: "L'AE explica la història en ordre, reconstrueix l'ambient de cada moment amb l'actualisme (mar, terra ferma, riu), fa servir les edats com a límits i diu d'on surt cada conclusió. L'error típic és fer una llista de capes sense dir què va passar ni com se sap.",
+        aeWhy: "L'AE justifica sobre què actua cada mesura i afegeix la perspectiva de riscos induïts, que és el criteri que distingeix AN d'AE en aquest OA.",
         must: [
-          "La història està en l'ordre correcte, amb el dic i la falla al seu lloc.",
-          "Has fet servir almenys dos principis geològics anomenats.",
-          "Has fet servir les dues edats de les capes volcàniques.",
-          "Has dit com era l'ambient (mar, riu) a partir de les roques."
+          "Has proposat tres mesures concretes, no genèriques.",
+          "Has classificat cada mesura correctament.",
+          "Has dit sobre quin component del risc actua cadascuna.",
+          "Has esmentat que l'acció humana pot intensificar el risc."
         ]
       }
     ]

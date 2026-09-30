@@ -1,7 +1,7 @@
 export const sa6s5 = {
   id: "s5",
   saId: "sa6",
-  title: "Què explica el teu planeta?",
+  title: "Gondwana Tales: l'estrena i l'informe final",
   sessionNumber: 5,
   biome: "sa6",
   duration: "2h",

@@ -1,7 +1,7 @@
 export const sa2s3 = {
   id: "s3",
   saId: "sa2",
-  title: "Funciona el fàrmac contra el càncer?",
+  title: "El laboratori d'oncologia",
   sessionNumber: 3,
   biome: "sa2",
   duration: "2h",

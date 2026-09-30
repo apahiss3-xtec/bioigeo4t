@@ -198,8 +198,17 @@ p>span[contenteditable]:not([class]){display:inline}
 .mc-items{display:grid;grid-template-columns:1fr 1fr;gap:3px 14px;margin-top:5px;font-size:13.5px}
 .gar-chips{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 6px}
 .gar-chips span{font-size:13.5px;border-radius:9999px;padding:2px 9px;color:#fff;font-weight:700}
-.det-mini{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:13.5px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:6px 10px;margin:4px 0 6px}
+.det-mini{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;font-size:13.5px;line-height:1.5;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:5px 10px;margin:4px 0 6px}
+.det-mini .dm-t{grid-column:1/-1;font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#a24e24}
 .det-mini b{color:#a24e24}
+.motlle{font-size:14px;line-height:2;background:var(--teal-tint);border:1.5px dashed var(--teal);border-radius:8px;padding:4px 10px;margin:4px 0 6px}
+.lab-t td{height:30px}
+.lab-t th{font-size:11px;text-align:center}
+.oral-strip{background:#fdf3e7;border:1.5px solid var(--orange);border-radius:8px;padding:6px 11px}
+.oral-head{font-size:13.5px;color:#7a3d18}
+.oral-list{margin:3px 0 0 18px;font-size:13.5px;line-height:1.5;display:grid;grid-template-columns:1fr 1fr;column-gap:18px}
+.oral-list li{margin:1px 0}
+.oral-card td{height:34px}
 
 
 /* tokens --c-* de la SA1 */
@@ -354,7 +363,7 @@ p>span[contenteditable]:not([class]){display:inline}
     <ul class="oa-list">
       <li contenteditable="true">Llegeixo el meu cas amb el <strong>grup d'experts</strong> i hi trobo els senyals.</li>
       <li contenteditable="true">Explico el meu cas al puzle amb el <strong>guió</strong>.</li>
-      <li contenteditable="true">Poso cada cas al seu <strong>calaix</strong>.</li>
+      <li contenteditable="true">Sé què té una <strong>prova justa</strong>: dos grups, a l'atzar, a cegues.</li>
     </ul>
   </div>
 
@@ -394,19 +403,18 @@ p>span[contenteditable]:not([class]){display:inline}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--teal)">3</div>
-        <div><div class="stitle" contenteditable="true">Què hem après? <span class="temps">⏱️ 15 min</span></div>
-        <div class="sdesc" contenteditable="true">Amb tota la classe</div></div>
+        <div><div class="stitle" contenteditable="true">Com es comprova de debò? <span class="temps">⏱️ 30 min</span></div>
+        <div class="sdesc" contenteditable="true">El laboratori de la prova justa</div></div>
       </div>
       <div class="divider"></div>
-      <p style="font-size:14px;margin:6px 0 4px" contenteditable="true">✏️ El cas 5 fa fàstic però <strong>és ciència</strong>. Per què?</p><div class="hint-out">«És ciència perquè ho van comprovar amb…»</div><div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div><div class="clau deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>🔬 Estrany <span class="drop">no vol dir</span> pseudociència</div>
+      <div class="llegir-box deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><div class="llegir-icon">📖</div><div><div class="llegir-title">Per llegir</div><div class="llegir-text" contenteditable="true">Amb un company, obre l'app <strong>«El laboratori de la prova justa»</strong>. Un xiclet, ZenStop, diu que cura el refredat. Fes els <strong>3 passos</strong> i completa cada frase amb una d'aquestes paraules: <strong>SOL · CREUS · SORT</strong>.</div></div></div><div class="frase-completar"><b>Pas 1 · Dos grups.</b> Sense un grup que no pren res, no sé si s'hauria curat <span class="blank blank-m"></span>.<br><b>Pas 2 · A l'atzar i a cegues.</b> Si saps què prens, et trobes millor perquè t'ho <span class="blank blank-m"></span>.<br><b>Pas 3 · Prou gent.</b> Amb només 4 persones, pot guanyar per <span class="blank blank-m"></span>.</div><p style="font-size:14px;margin:6px 0 4px" contenteditable="true"><strong>Cas 4 · bany de peus.</strong> Van posar la màquina amb aigua i <strong>sense peus</strong>. L'aigua també es va tornar marró. Les «toxines» sortien dels peus?</p><div class="tria"><span class="opt">SÍ</span> <span class="tria-o">o</span> <span class="opt">NO</span></div><div class="clau deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div>🔬 Estrany <span class="drop">no vol dir</span> pseudociència</div>
     </div>
     <div class="section deletable mc-strip">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="mc-head">🧠 Metacognició · 3 min · <span>marca el que has après avui</span>
         <span class="mc-stars">⭐ la sessió: <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></span></div>
       <div class="mc-items"><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé explicar el meu cas.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé posar cada cas al seu calaix.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé que estrany no vol dir fals.</span></div>
-      <div style="font-size:13.5px;margin-top:6px;padding-top:5px;border-top:1px dashed var(--teal-light)"><b style="color:#a24e24">📚 Per a la Sessió 3:</b> <span contenteditable="true">🕵️ Porta <strong>el cas que has caçat</strong> (la foto o la frase de la promesa).</span></div>
+      <div style="font-size:13.5px;margin-top:6px;padding-top:5px;border-top:1px dashed var(--teal-light)"><b style="color:#a24e24">📚 Per a la Sessió 3:</b> <span contenteditable="true">🕵️ Porta <strong>el cas que has caçat</strong>. A la Sessió 3 <strong>l'explicaràs en veu alta</strong> (1 min 30 s) i t'ho avaluaré. Guió: què promet → senyals → calaix. Assaja-ho a casa.</span></div>
     </div>
     <div class="footer">
       <div class="footer-l">SA1 · Ciència i Pseudociència · Sessió 2 · Versió C · IE Temple · Biologia i Geologia 4t ESO</div>

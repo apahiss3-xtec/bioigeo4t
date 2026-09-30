@@ -9,6 +9,8 @@ import T from '../translate/T.jsx'
 import TransferTest from '../components/TransferTest.jsx'
 import WrittenPractice, { SELF_LABELS } from '../components/WrittenPractice.jsx'
 import NotFoundPage from './NotFoundPage.jsx'
+import AutoavaluacioC from '../components/AutoavaluacioC.jsx'
+import { useNivell } from '../nivell/NivellContext.jsx'
 import { tAuto, ambProva } from '../autoavaluacio.js'
 
 const GRADES = ['NA', 'AS', 'AN', 'AE']
@@ -25,41 +27,51 @@ const KNOW_LEVELS = [
 // 190/25.4*96 ≈ 718 px. La plantilla del PDF s'hi ha d'ajustar exactament.
 const PDF_WIDTH = 718
 
+const CURS = '4t ESO'
+
 const scoreToLevel = (s) => (s >= 87.5 ? 'AE' : s >= 62.5 ? 'AN' : s >= 37.5 ? 'AS' : 'NA')
 
 export default function SAAvaluacioPage() {
   const { saId } = useParams()
   const sa = getSA(saId)
   const [name, setName] = useState('')
+  // Exit tiquets: primer l'alumne marca quins ha fet (exitDone) i només
+  // d'aquests en tria la nota. El gràfic, la nota estimada i el PDF només
+  // compten els marcats (29/09/2026: abans hi havia un botó «No fet»).
+  const [exitDone, setExitDone] = useState({})
   const [exitGrades, setExitGrades] = useState({})
+  const { nivell, setNivell } = useNivell()
   const [know, setKnow] = useState({})
   const [reflections, setReflections] = useState({ q1: '', q2: '', q3: '' })
   const [written, setWritten] = useState([])
   const [testResults, setTestResults] = useState([])
   const pdfRef = useRef(null)
 
-  if (!sa || !sa.published) return <NotFoundPage />
+  // Nota d'un tiquet NOMÉS si està marcat com a fet i té nota triada.
+  const exitScore = (s) =>
+    exitDone[s.id] && exitGrades[s.id] ? GRADE_SCORE[exitGrades[s.id]] : null
 
   const chartData = useMemo(
     () =>
-      sa.objectives.map((oa) => {
+      (sa?.objectives || []).map((oa) => {
         const linked = sa.sessionsData.filter((s) => s.oaLinks.includes(oa.id))
-        const scores = linked
-          .map((s) => exitGrades[s.id])
-          .filter((g) => g && g !== 'notDone')
-          .map((g) => GRADE_SCORE[g])
+        const scores = linked.map(exitScore).filter((v) => v != null)
         const value = scores.length
           ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
           : 0
         return { name: oa.id, label: oa.text, value, graded: scores.length > 0 }
       }),
-    [sa, exitGrades]
+    [sa, exitDone, exitGrades]
   )
 
-  const gradedScores = sa.sessionsData
-    .map((s) => exitGrades[s.id])
-    .filter((g) => g && g !== 'notDone')
-    .map((g) => GRADE_SCORE[g])
+  if (!sa || !sa.published) return <NotFoundPage />
+
+  // Versió fàcil (nivell C): només si la SA en té dades (avaluacio.c).
+  // Lligada al NivellContext: A i B → versió estàndard; C → versió fàcil.
+  const hasC = !!sa.avaluacio?.c
+  const versioC = hasC && nivell === 'C'
+
+  const gradedScores = sa.sessionsData.map(exitScore).filter((v) => v != null)
   const globalLevel = gradedScores.length
     ? scoreToLevel(gradedScores.reduce((a, b) => a + b, 0) / gradedScores.length)
     : null
@@ -71,8 +83,8 @@ export default function SAAvaluacioPage() {
 
   const today = new Date().toLocaleDateString('ca-ES')
 
-  const downloadPdf = () => {
-    if (!window.html2pdf || !pdfRef.current) return
+  const downloadPdf = (el = pdfRef.current) => {
+    if (!window.html2pdf || !el) return
     window
       .html2pdf()
       .set({
@@ -92,13 +104,76 @@ export default function SAAvaluacioPage() {
         // contingut acaba just al límit de pàgina.
         pagebreak: { mode: ['css', 'avoid-all'], avoid: ['tr', '.pdf-block'] }
       })
-      .from(pdfRef.current)
+      .from(el)
       .save()
+  }
+
+  // Selector de versió, a dalt de tot i ben visible (targetes grans).
+  const selector = hasC && (
+    <section className="pt-8" aria-label="Tria la versió">
+      <p className="kicker mb-2">Tria la teva versió</p>
+      <div className="grid grid-cols-2 gap-3 max-w-2xl">
+        {[
+          { id: 'std', icon: '📘', title: 'Versió estàndard', sub: 'Totes les preguntes', on: !versioC, pick: () => nivell === 'C' && setNivell('B') },
+          { id: 'c', icon: '🧩', title: 'Versió fàcil 🟢', sub: 'Pas a pas, amb imatges', on: versioC, pick: () => setNivell('C') }
+        ].map((v) => (
+          <button
+            key={v.id}
+            onClick={v.pick}
+            aria-pressed={v.on}
+            className="rounded-2xl border-2 p-4 sm:p-5 text-left transition-colors"
+            style={{
+              borderColor: v.on ? sa.color.primary : 'var(--rule-strong)',
+              background: v.on ? 'var(--bg-soft)' : '#fff',
+              boxShadow: v.on ? `0 0 0 3px ${sa.color.primary}33` : 'none'
+            }}
+          >
+            <span className="block text-3xl mb-1">{v.icon}</span>
+            <span className="block font-display font-bold text-xl sm:text-2xl leading-tight">{v.title}</span>
+            <span className="block text-sm text-[var(--muted)] mt-1">{v.sub}</span>
+            <span
+              className="mt-2 inline-block text-sm font-semibold"
+              style={{ color: sa.color.primary, visibility: v.on ? 'visible' : 'hidden' }}
+            >
+              ✓ Triada
+            </span>
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+
+  if (versioC) {
+    return (
+      <div className={`biome-${sa.biome} mx-auto max-w-3xl px-4`}>
+        {selector}
+        <section className="pt-6 pb-4">
+          <Link to={`/sa/${sa.id}`} className="text-[var(--purple)] hover:underline text-sm">
+            ← {sa.id.toUpperCase()} · {sa.title}
+          </Link>
+        </section>
+        <AutoavaluacioC
+          sa={sa}
+          curs={CURS}
+          name={name}
+          setName={setName}
+          grades={GRADES}
+          exitDone={exitDone}
+          setExitDone={setExitDone}
+          exitGrades={exitGrades}
+          setExitGrades={setExitGrades}
+          chartData={chartData}
+          globalLevel={globalLevel}
+          downloadPdf={downloadPdf}
+        />
+      </div>
+    )
   }
 
   return (
     <div className={`biome-${sa.biome} mx-auto max-w-4xl px-4`}>
-      <section className="py-10">
+      {selector}
+      <section className={hasC ? 'pt-6 pb-10' : 'py-10'}>
         <Link to={`/sa/${sa.id}`} className="text-[var(--purple)] hover:underline text-sm">
           ← {sa.id.toUpperCase()} · {sa.title}
         </Link>
@@ -166,37 +241,49 @@ export default function SAAvaluacioPage() {
       {/* 2 · Notes dels exit tiquets → gràfic OA */}
       <section className="card p-6 mb-6">
         <p className="kicker mb-1">2 · {t('auto.exitSection')}</p>
-        <p className="text-sm text-[var(--muted)] mb-4">{t('auto.exitIntro')}</p>
+        <p className="text-sm text-[var(--muted)] mb-4">
+          Marca primer els exit tiquets que <strong>has fet</strong>; després, posa la nota que hi
+          vas treure. El gràfic i la nota estimada només compten els que has marcat.
+        </p>
         <div className="space-y-3 mb-6">
           {sa.sessionsData.map((s) => (
             <div
               key={s.id}
               className="flex flex-col gap-2 rule pt-3 first:pt-0 first:border-0 sm:flex-row sm:items-center sm:justify-between"
             >
-              <p className="text-sm max-w-md">
-                <strong>S{s.sessionNumber}:</strong> <T>{s.title}</T>{' '}
-                <span className="text-[var(--muted)]">({s.oaLinks.join(', ')})</span>
-              </p>
-              <div className="flex gap-1.5 shrink-0 flex-wrap">
-                {[...GRADES, 'notDone'].map((g) => (
-                  <button
-                    key={g}
-                    onClick={() => setExitGrades((p) => ({ ...p, [s.id]: g }))}
-                    className={`rounded-full px-3 py-1 text-sm font-semibold border transition-colors ${
-                      exitGrades[s.id] === g
-                        ? 'text-white border-transparent'
-                        : 'border-[var(--rule-strong)] text-[var(--muted)] hover:text-[var(--text)]'
-                    }`}
-                    style={
-                      exitGrades[s.id] === g
-                        ? { background: g === 'notDone' ? '#555066' : sa.color.primary }
-                        : undefined
-                    }
-                  >
-                    {g === 'notDone' ? t('auto.notDone') : g}
-                  </button>
-                ))}
-              </div>
+              <label className="flex items-start gap-2.5 text-sm max-w-md cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={!!exitDone[s.id]}
+                  onChange={(e) => setExitDone((p) => ({ ...p, [s.id]: e.target.checked }))}
+                  className="mt-0.5 h-5 w-5 shrink-0"
+                  style={{ accentColor: sa.color.primary }}
+                  aria-label={`He fet l'exit tiquet de la sessió ${s.sessionNumber}`}
+                />
+                <span>
+                  <strong>S{s.sessionNumber}:</strong> <T>{s.title}</T>{' '}
+                  <span className="text-[var(--muted)]">({s.oaLinks.join(', ')})</span>
+                </span>
+              </label>
+              {exitDone[s.id] && (
+                <div className="flex gap-1.5 shrink-0 flex-wrap ps-7 sm:ps-0">
+                  {GRADES.map((g) => (
+                    <button
+                      key={g}
+                      onClick={() => setExitGrades((p) => ({ ...p, [s.id]: g }))}
+                      aria-pressed={exitGrades[s.id] === g}
+                      className={`rounded-full px-3 py-1 text-sm font-semibold border transition-colors ${
+                        exitGrades[s.id] === g
+                          ? 'text-white border-transparent'
+                          : 'border-[var(--rule-strong)] text-[var(--muted)] hover:text-[var(--text)]'
+                      }`}
+                      style={exitGrades[s.id] === g ? { background: sa.color.primary } : undefined}
+                    >
+                      {g}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -311,7 +398,7 @@ export default function SAAvaluacioPage() {
             fontFamily: "'Quicksand', sans-serif", fontSize: '13px', lineHeight: 1.5
           }}
         >
-          <p style={pdfKicker}>Biologia i Geologia · 4t ESO · IE Temple</p>
+          <p style={pdfKicker}>Biologia i Geologia · {CURS} · IE Temple</p>
           <h1 style={pdfH1}>
             {tAuto(sa, 'title')} — {sa.id.toUpperCase()}: {sa.title}
           </h1>
@@ -336,11 +423,27 @@ export default function SAAvaluacioPage() {
             </tbody>
           </table>
 
+          <div className="pdf-block">
+            <h2 style={pdfH2}>{t('auto.exitSection')}</h2>
+            <table style={pdfTable}>
+              <tbody>
+                {sa.sessionsData.map((s) => (
+                  <tr key={s.id}>
+                    <td style={pdfTd}>S{s.sessionNumber} · {s.title}</td>
+                    <td style={{ ...pdfTd, width: 150, fontWeight: 700 }}>
+                      {!exitDone[s.id] ? t('auto.notDone') : exitGrades[s.id] || 'Fet, sense nota'}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
           <h2 style={pdfH2}>{t('auto.chartTitle')}</h2>
           {chartData.map((d) => (
             <div key={d.name} style={{ marginBottom: 8 }}>
               <span style={{ fontWeight: 700 }}>
-                {d.name} · {d.label} — {d.graded ? `${d.value}/100` : t('auto.notDone')}
+                {d.name} · {d.label} — {d.graded ? `${d.value}/100` : 'cap tiquet fet'}
               </span>
               <div style={{ height: 12, background: '#efeaf5', borderRadius: 6, overflow: 'hidden', marginTop: 3 }}>
                 <div style={{ width: `${d.value}%`, height: '100%', background: d.graded ? '#5a4aa0' : '#c8c2dd' }} />

@@ -17,14 +17,6 @@
 //    no s'ha treballat. Ara demana relacionar estructura → funció → ambient.
 // A més, la resposta correcta ja no és sempre la primera opció ni la més
 // llarga: abans el test s'encertava sencer sense haver llegit res.
-//
-// Revisió 2026-09-29 (autoavaluació ≠ prova): l'assaig escrit copiava
-// preguntes de la prova final del curs («El llac sota el gel»). S'ha refet
-// sencer amb un context NOU —els espinosos que colonitzen un llac d'aigua dolça— que no és el de la
-// prova, ni l'enigma de la SA, ni el del test. Cada pregunta entrena
-// el bloc 5 de la prova final del curs (i la idea de variabilitat del bloc 2) amb les mateixes habilitats i exigència
-// (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
-// Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
 export const sa5Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -34,79 +26,80 @@ export const sa5Avaluacio = {
   // que fan servir les rubriques de les proves del curs.
   escrita: {
     intro:
-      "Assaig del bloc de la prova final que treballa SA5 (la població canvia), amb un cas NOU: l'espinós, un peix petit que viu al mar i que té el cos cobert de plaques d'os. Un grup d'espinosos marins arriba a un llac d'aigua dolça. Allà, fabricar plaques costa molt (l'aigua té poc calci), i els peixos amb poques plaques creixen més de pressa i es reprodueixen abans. Recompte al llac, en % d'individus amb poques plaques: generació 0 (els peixos marins que hi arriben), 2 %; generació 10, 35 %; generació 25, 80 %. El caràcter «poques plaques» depèn d'un al·lel recessiu. Full, bolígraf i sense apunts.",
-    minutes: 27,
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts. Vigila els verbs: «s'adapten», «es fan», «desenvolupen» són verbs lamarckians i fan baixar una resposta que per la resta estaria bé.",
+    minutes: 26,
     questions: [
       {
         id: 'w1',
         oa: 'OA3',
-        source: 'Entrena el bloc 5 de la prova final · explicar un canvi amb dues teories',
+        source: 'Prova final del curs · Pregunta 5, «la població canvia»',
         minutes: 8,
-        text: "Explica el canvi dels espinosos del llac com ho faria Lamarck i com ho fa el neodarwinisme. Escriu les dues explicacions per separat, cadascuna amb les seves paraules clau.",
+        text: "En una població, abans de cap canvi d'ambient, un 8 % dels individus ja resisteix el fred; després de refredar l'aigua, la proporció puja al 41 % i després al 87 %. Explica aquest canvi segons Lamarck i segons el neodarwinisme, i digues quina dada permet decidir entre les dues.",
         model: {
-          as: "Lamarck: com que al llac les plaques no servien, els peixos les van deixar de fer servir i de fabricar, i aquest canvi el van passar als fills. Neodarwinisme: ja hi havia peixos amb poques plaques; al llac es reproduïen més, i el seu al·lel es va anar fent més freqüent.",
-          ae: "Lamarck: l'ambient crea una necessitat i l'organisme canvia per respondre-hi. Al llac les plaques no serien necessàries; per desús, cada peix en fabricaria menys al llarg de la seva vida i transmetria aquest caràcter adquirit als fills, i generació rere generació en tindrien menys. Neodarwinisme: la variació és anterior al canvi d'ambient i sorgeix per mutació a l'atzar i per la recombinació de la reproducció sexual. Entre els peixos que hi van arribar n'hi havia pocs amb l'al·lel de poques plaques. Al llac, aquests creixen més de pressa i es reprodueixen abans (selecció natural), de manera que deixen més descendents, i la FREQÜÈNCIA de l'al·lel a la població puja: del 2 % al 80 % en 25 generacions. Cap peix no canvia al llarg de la vida: el que canvia és la proporció de la població. En l'explicació neodarwinista no hi poden sortir verbs com «s'adapten», «ho necessiten» o «deixen de fabricar-ne».",
+          as: "Lamarck diria que els individus es van fer resistents pel fred i que van transmetre aquesta resistència. El neodarwinisme diu que la variabilitat ja hi era i que el fred va fer que els resistents sobrevisquessin més i es reproduïssin. La dada decisiva és el 8 % de la generació 0, perquè ja hi havia resistents abans del fred.",
+          ae: "Lamarck: en trobar-se amb el fred, els individus haurien desenvolupat la resistència per necessitat i l'haurien transmesa als descendents; el caràcter apareixeria a causa de l'ambient. Neodarwinisme: la variabilitat ja existia —hi havia individus amb i sense l'al·lel, per mutacions anteriors i independents del fred—; en refredar l'aigua, els que tenien la proteïna anticongelant sobreviuen i es reprodueixen més, i la proporció d'aquell al·lel puja generació rere generació. L'ambient no crea el caràcter: selecciona el que ja hi havia. La dada que decideix és el 8 % de la generació 0, mesurat abans de refredar res, perquè és l'únic número on les dues teories prediuen coses diferents: Lamarck hi esperaria un 0 %. El 41 % i el 87 % són compatibles amb totes dues i per tant no decideixen res.",
         },
-        aeWhy: "L'AE separa les dues teories pel mecanisme (necessitat i caràcters adquirits vs variació prèvia i selecció), diu que canvia la població i no l'individu, i fa servir les dades. L'error més repetit és escriure una explicació «neodarwinista» amb verbs lamarckians.",
+        aeWhy: "L'AE explica per què aquella dada i no una altra —és l'única on les dues teories divergeixen—. Assenyalar el 87 % final és l'error típic: és compatible amb les dues explicacions.",
         must: [
-          "A Lamarck hi ha la necessitat o el desús i l'herència del que s'adquireix.",
-          "Al neodarwinisme hi ha variació prèvia, a l'atzar, i selecció natural.",
-          "Has dit que el que canvia és la freqüència a la població, no cada peix.",
-          "No has fet servir «s'adapten» o «ho necessiten» a l'explicació neodarwinista."
+          "Has explicat les dues teories, no només la correcta.",
+          "Has dit que la variabilitat és prèvia i a l'atzar.",
+          "Has assenyalat el 8 % de la generació 0 com a dada decisiva.",
+          "Has dit per què el 87 % final no decideix res.",
+          "No has fet servir verbs lamarckians per explicar el neodarwinisme."
         ]
       },
       {
         id: 'w2',
-        oa: 'OA4',
-        source: 'Entrena el bloc 5 de la prova final · la dada que decideix entre les teories',
+        oa: 'OA2',
+        source: 'Tipus de pregunta de la prova · Homologia i analogia',
         minutes: 6,
-        text: "Quina de les tres xifres del recompte serveix per triar entre Lamarck i el neodarwinisme? Per què precisament aquesta i no les altres?",
+        text: "L'ala d'un ocell i l'ala d'un insecte serveixen per al mateix, però l'ala d'un ocell i el braç d'una persona no. Explica quina de les dues parelles és homòloga i quina anàloga, i què ens diu cadascuna sobre el parentiu.",
         model: {
-          as: "La de la generació 0: el 2 % dels peixos que venien del mar ja tenien poques plaques abans d'arribar al llac. Vol dir que la variació ja hi era.",
-          ae: "La dada decisiva és la de la generació 0: el 2 % dels peixos que arriben del MAR ja tenen poques plaques, abans d'haver viscut ni un dia a l'aigua dolça. Si Lamarck tingués raó, el caràcter hauria d'aparèixer DESPRÉS d'arribar al llac, com a resposta a l'ambient: a la generació 0 hi hauria d'haver un 0 %. En canvi, el neodarwinisme necessita justament que la variant ja existeixi abans perquè la selecció hi pugui actuar. Les dades de les generacions 10 i 25 (35 % i 80 %) no decideixen res, perquè totes dues teories prediuen que el percentatge puja: el 80 % final és la dada més vistosa, però no permet distingir-les. Una dada decideix entre dues teories quan cadascuna en prediu un valor diferent.",
+          as: "L'ala d'ocell i el braç humà són homòlegs: tenen el mateix origen evolutiu i els mateixos ossos, encara que facin funcions diferents. L'ala d'ocell i la d'insecte són anàlogues: fan la mateixa funció però tenen orígens diferents. L'homologia indica parentiu; l'analogia, no.",
+          ae: "L'ala d'ocell i el braç humà són estructures homòlogues: comparteixen el mateix pla ossi heretat d'un avantpassat comú —un os llarg, dos ossos, ossets, dits— tot i que la funció ha divergit. L'ala d'ocell i la d'insecte són anàlogues: fan la mateixa funció però no deriven de cap estructura comuna; s'assemblen per convergència, perquè volar imposa exigències físiques semblants a qualsevol animal. La conseqüència és important a l'hora de classificar: per reconstruir el parentiu només serveixen les homologies, perquè són les que reflecteixen història compartida; guiar-se per les analogies porta a agrupar espècies només perquè viuen igual. Per això s'ha de mirar l'estructura interna i no l'aspecte exterior.",
         },
-        aeWhy: "L'AE tria la dada de la generació 0 i justifica per què: és l'única on les dues teories prediuen coses diferents. Descarta explícitament la dada final, que és la que tria l'error típic, i formula el criteri general.",
+        aeWhy: "L'AE descriu el pla ossi compartit, anomena la convergència i n'extreu la regla pràctica: només les homologies serveixen per classificar.",
         must: [
-          "Has triat la generació 0 (el 2 % abans d'arribar al llac).",
-          "Has dit què hauria de valer aquella dada si Lamarck tingués raó.",
-          "Has explicat per què el 35 % i el 80 % no decideixen.",
-          "Has formulat el criteri: una dada decideix si les teories en prediuen valors diferents."
+          "Has identificat correctament les dues parelles.",
+          "Has definit homologia per l'origen, no per la funció.",
+          "Has dit que l'analogia no indica parentiu.",
+          "Has dit per què cal mirar l'estructura i no l'aspecte."
         ]
       },
       {
         id: 'w3',
-        oa: 'OA3',
-        source: 'Entrena el bloc 5 de la prova final · d\'on surt la variabilitat',
-        minutes: 7,
-        text: "Al mar, els peixos amb poques plaques són rars i són menjats més sovint, però l'al·lel no desapareix mai del tot. a) Explica com pot ser que de dos pares amb moltes plaques neixi un fill amb poques. b) Explica per què la meiosi i la fecundació són importants perquè la població del llac hagi pogut canviar tan de pressa.",
+        oa: 'OA2',
+        source: 'Tipus de pregunta de la prova · Selecció natural i artificial',
+        minutes: 6,
+        text: "Un gall de granja amb prou feines pot volar i el seu parent salvatge vola sense problemes. Explica per quina raó, distingint selecció natural de selecció artificial.",
         model: {
-          as: "a) Els pares tenen l'al·lel recessiu amagat: són heterozigots i el fill rep l'al·lel de poques plaques de cadascun. b) La meiosi barreja els al·lels i fa que els fills siguin diferents: sense aquesta variabilitat la selecció no tindria res a triar.",
-          ae: "a) Com que «poques plaques» és recessiu, un peix heterozigot (una còpia de cada al·lel) té moltes plaques però porta l'al·lel amagat. Al mar, la selecció elimina els homozigots de poques plaques, però no veu els heterozigots, i per això l'al·lel s'hi manté amb una freqüència baixa. Si dos heterozigots es creuen, a la meiosi cadascun fa gàmetes amb un al·lel o l'altre, i en la fecundació una part dels fills (tendència 1 de cada 4) rep els dos al·lels recessius i té poques plaques. b) La meiosi separa els al·lels i els combina de maneres noves (recombinació i repartiment a l'atzar), i la fecundació ajunta els de dos individus: cada generació apareixen combinacions noves i els al·lels amagats tornen a sortir. Això dona a la selecció variabilitat sobre la qual actuar. Si els espinosos només es reproduïssin per mitosi, cada fill seria una còpia del pare i la població només podria canviar si aparegués una mutació nova, que és un procés molt més lent. La meiosi no «crea» el caràcter perquè faci falta: reparteix i combina la variació que ja hi ha.",
+          as: "Perquè el gall de granja ha passat per selecció artificial: les persones han triat durant generacions els individus més grossos i amb més carn, no els que volen millor. A la natura, en canvi, és l'ambient qui selecciona, i allà volar sí que és útil per escapar dels depredadors.",
+          ae: "En tots dos casos el mecanisme és el mateix —uns individus deixen més descendència que d'altres i la població canvia—; el que canvia és qui fa la tria. A la natura, la tria la fa l'ambient: un ocell que no pot volar no escapa dels depredadors i deixa menys descendència, de manera que la capacitat de vol es manté. A la granja, la tria la fa l'ésser humà, que durant generacions ha escollit per reproduir-se els individus més grossos i amb més pit, sense que volar hi compti gens; a més, els depredadors i la necessitat de fugir han desaparegut, així que la pressió que mantenia el vol s'ha aixecat. El resultat és un animal molt adaptat al criteri humà i incapaç de sobreviure sol. Convé no dir que «ha perdut la capacitat perquè no la feia servir»: això seria lamarckisme; el que ha passat és que els que volaven pitjor van poder reproduir-se igual.",
         },
-        aeWhy: "L'AE uneix herència i evolució: explica per què un al·lel recessiu sobreviu amagat als heterozigots, fa servir la meiosi i la fecundació per explicar d'on surt la variabilitat i raona el cas límit d'una població de còpies. Evita l'error de dir que la meiosi «crea» caràcters quan calen.",
+        aeWhy: "L'AE veu que el mecanisme és idèntic i que només canvia l'agent que selecciona, explica que la pressió s'ha aixecat, i tanca la porta a l'explicació lamarckiana.",
         must: [
-          "Has dit que els pares són heterozigots i porten l'al·lel amagat.",
-          "Has explicat per què la selecció del mar no elimina els heterozigots.",
-          "Has dit que la meiosi i la fecundació barregen i combinen al·lels.",
-          "Has raonat què passaria amb una població que només fes mitosi."
+          "Has dit qui fa la tria en cada cas.",
+          "Has dit que el mecanisme de fons és el mateix.",
+          "Has explicat què passa amb la pressió selectiva a la granja.",
+          "No has explicat la pèrdua del vol per desús."
         ]
       },
       {
         id: 'w4',
         oa: 'OA4',
-        source: 'Entrena el bloc 5 de la prova final · Darwin, neodarwinisme i context històric',
+        source: 'Tipus de pregunta de la prova · Teories en context',
         minutes: 6,
-        text: "Darwin ja explicava la selecció natural, però no sabia res de gens. a) Què del cas dels espinosos podia explicar Darwin i què no? b) Una companya diu: «Lamarck era un ignorant». Valora aquesta frase tenint en compte el context en què va treballar.",
+        text: "Lamarck es va equivocar, però encara l'estudiem. Explica quina va ser la seva aportació i per quina raó no és just jutjar-lo amb el que sabem avui.",
         model: {
-          as: "a) Darwin podia explicar que els peixos amb poques plaques sobreviuen i es reprodueixen més, però no sabia d'on surt la variació ni per què passa als fills. b) No és just: en aquella època no se sabia res dels gens, i Lamarck va ser dels primers a proposar que les espècies canvien.",
-          ae: "a) Darwin podia explicar el mecanisme: hi ha variació entre els individus, al llac els de poques plaques deixen més descendents i, amb el temps, la població canvia. El que no podia explicar és d'on surt aquesta variació ni com es transmet: no coneixia els gens, ni els al·lels dominants i recessius, ni les mutacions. El neodarwinisme hi afegeix la genètica: la variació surt de mutacions a l'atzar i de la recombinació de la meiosi, es transmet amb els al·lels, i per això un caràcter recessiu pot quedar amagat i tornar a aparèixer. b) La frase jutja Lamarck amb el que sabem avui. A principi del segle XIX no es coneixia l'herència, i Lamarck va ser dels primers a defensar que les espècies no són fixes i que canvien amb el temps, cosa que llavors era trencadora. La seva explicació del mecanisme, l'herència dels caràcters adquirits, les proves l'han descartada, però això no el fa ignorant: el fa un científic del seu temps amb una hipòtesi que després no es va confirmar.",
+          as: "Lamarck va ser el primer a proposar que les espècies canvien amb el temps en comptes de ser fixes, i que els canvis es relacionen amb l'ambient. El que va errar és el mecanisme: creia que els caràcters adquirits s'heretaven. Al seu temps no es coneixia la genètica.",
+          ae: "L'aportació de Lamarck és de primer ordre: va trencar amb el fixisme i va proposar que les espècies canvien al llarg del temps i que el canvi té a veure amb l'ambient on viuen. El que va errar és el mecanisme —va suposar que els caràcters adquirits durant la vida es transmeten a la descendència—, però aquesta era una idea raonable amb el que es podia observar aleshores: no es coneixien ni les lleis de Mendel ni l'ADN, i per tant no hi havia cap manera de saber que el que s'hereta és la informació dels gàmetes i no el que li passa al cos. Jutjar-lo amb els nostres coneixements és anacrònic; el criteri just és preguntar-se si la seva proposta explicava millor les dades de què disposava que les alternatives del seu moment, i la resposta és que sí. Darwin va partir precisament de la idea de canvi que Lamarck havia obert.",
         },
-        aeWhy: "L'AE separa el que aporta Darwin (el mecanisme de selecció) del que hi afegeix la genètica (l'origen i la transmissió de la variació), i valora Lamarck en el seu context sense jutjar-lo amb els coneixements d'avui, que és el que demana l'OA4.",
+        aeWhy: "L'AE separa la part encertada de la part errònia, explica per què l'error era raonable en el seu context i enuncia el criteri d'avaluació històrica.",
         must: [
-          "Has dit que Darwin explicava la selecció però no l'origen de la variació.",
-          "Has dit què hi afegeix el neodarwinisme (gens, mutació, meiosi).",
-          "Has situat Lamarck en el seu context històric.",
-          "Has distingit una hipòtesi descartada d'una persona «ignorant»."
+          "Has dit què va aportar (el canvi de les espècies, contra el fixisme).",
+          "Has dit exactament en què es va equivocar.",
+          "Has explicat què no es podia saber en aquell moment.",
+          "Has donat un criteri per valorar una teoria en el seu context."
         ]
       }
     ]

@@ -1,7 +1,7 @@
 export const sa4s5 = {
   id: "s5",
   saId: "sa4",
-  title: "Sabries defensar el teu cas davant del congrés?",
+  title: "Prova de problemes de genètica",
   sessionNumber: 5,
   biome: "sa4",
   duration: "2h",

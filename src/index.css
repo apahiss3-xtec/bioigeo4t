@@ -275,3 +275,7 @@ body.simplified a {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: #e3dcec; border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--purple); }
+
+/* Ela geminada amb Fira Sans Condensed (versió fàcil): tanca el punt volat,
+   com la classe .gem de les fitxes C. */
+.gem { margin: 0 -0.085em; font-style: normal; }

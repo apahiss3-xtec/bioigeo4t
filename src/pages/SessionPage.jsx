@@ -113,7 +113,10 @@ export default function SessionPage() {
   // fallback: mentre no totes les SA tinguin C, el botó ho ha de dir.
   const fitxaUrl = pickLevel(session.fitxaUrl, nivell)
   // appSrc pot ser una cadena o {A,B,C} (SA1·S3: la C té una app pròpia)
-  const appSrc = pickLevel(session.appSrc, nivell)
+  const appSrcAny = pickLevel(session.appSrc, nivell)
+  // appApartat: l'app viu en un altre apartat que no és l'EXPLORA (SA1·S2: lab de la prova justa, ap. 3)
+  const appApartat = session.appApartat && session.appApartat !== '1' ? session.appApartat : null
+  const appSrc = appApartat ? null : appSrcAny
   const fitxaEsDelNivell = hasLevel(session.fitxaUrl, nivell)
 
   // ── Apartats numerats com al full ───────────────────────────
@@ -193,9 +196,19 @@ export default function SessionPage() {
           className="py-10"
         >
           <p className="kicker mb-3" style={{ color: 'var(--biome-accent)' }}>👋 {t('session.comencem')}</p>
+          {/* El títol és el mateix que el de la fitxa (curt). La pregunta
+              provocadora, que és llarga, viu en una targeta acotada. */}
           <h1 className="text-4xl md:text-5xl leading-tight mb-5">
-            <T>{session.engageQuestion}</T>
+            <T>{session.title}</T>
           </h1>
+          {session.engageQuestion && (
+            <div className="mb-5 max-w-2xl rounded-2xl border border-[var(--rule-strong)] bg-[var(--surface)] p-5">
+              <p className="kicker mb-1" style={{ color: 'var(--biome-accent)' }}>❓ {t('session.preguntaDia')}</p>
+              <p className="text-xl leading-snug">
+                <T>{session.engageQuestion}</T>
+              </p>
+            </div>
+          )}
           {session.engageContext && (
             <p className="italic text-[var(--muted)] max-w-2xl">
               <T>{session.engageContext}</T>
@@ -438,6 +451,11 @@ export default function SessionPage() {
                   {graphicsBefore(num).map((g) => (
                     <GraphicFigure key={g.id} g={g} />
                   ))}
+                </div>
+              )}
+              {appApartat === num && appSrcAny && (
+                <div className="mb-8">
+                  <AppFrame appSrc={appSrcAny} title={session.title} />
                 </div>
               )}
               <div className="space-y-5">

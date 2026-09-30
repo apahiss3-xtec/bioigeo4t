@@ -13,14 +13,6 @@
 // com a OA1 quan el seu contingut és consell genètic i ètica (OA4), i cap
 // pregunta cobria OA1 → t1 passa a ser una pregunta de lectura de pedigrí
 // (OA1) i la pregunta sobre portadores es manté dins de t2 (OA4).
-//
-// Revisió 2026-09-29 (autoavaluació ≠ prova): l'assaig escrit copiava
-// preguntes de la prova final del curs («El llac sota el gel»). S'ha refet
-// sencer amb un context NOU —els conills de pèl curt i angora d'una granja del Lluçanès— que no és el de la
-// prova, ni l'enigma de la SA, ni el del test. Cada pregunta entrena
-// el bloc 4 de la prova final del curs amb les mateixes habilitats i exigència
-// (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
-// Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
 export const sa4Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -30,79 +22,79 @@ export const sa4Avaluacio = {
   // que fan servir les rubriques de les proves del curs.
   escrita: {
     intro:
-      "Assaig del bloc de la prova final que treballa SA4 (qui ho hereta), amb un cas NOU: una granja de conills del Lluçanès. En aquests conills, el pèl curt (al·lel C) domina sobre el pèl llarg o angora (al·lel c). Full, bolígraf i sense apunts. Dibuixa els quadres de Punnett al full: el que es valora és que JUSTIFIQUIS els genotips, no només que escriguis una proporció.",
-    minutes: 26,
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts. A genètica no n'hi ha prou amb encertar la proporció: cal ensenyar el quadre de Punnett i justificar els genotips dels progenitors.",
+    minutes: 27,
     questions: [
       {
         id: 'w1',
         oa: 'OA2',
-        source: 'Entrena el bloc 4 de la prova final · deduir els genotips dels progenitors',
+        source: 'Prova final del curs · Pregunta 4, «qui ho hereta»',
         minutes: 8,
-        text: "La Clara creua un mascle i una femella, tots dos de pèl curt. En un any tenen 24 cries: 18 de pèl curt i 6 de pèl llarg. a) Quins genotips tenen els dos progenitors? Fes el quadre de Punnett. b) Justifica per què han de ser aquests genotips i no uns altres.",
+        text: "Dos progenitors presenten un caràcter, però una quarta part dels seus descendents no el presenta. Dedueix el genotip dels dos progenitors, fes el quadre de Punnett i justifica per què no podrien ser tots dos homozigots dominants.",
         model: {
-          as: "Tots dos són Cc. El quadre dona CC, Cc, Cc i cc: 3 de pèl curt per 1 de pèl llarg, que és el que ha passat (18 i 6). Si algun fos CC no hi hauria cries de pèl llarg.",
-          ae: "Els dos progenitors són Cc. Raonament: les cries de pèl llarg tenen el fenotip recessiu, i per tant són cc; cada c ha vingut d'un progenitor diferent, així que TOTS DOS porten un al·lel c. Com que tots dos tenen el pèl curt, també porten un C. Per tant: Cc × Cc. Gàmetes de cada un: C i c. Quadre: CC, Cc, Cc, cc → genotips 1 CC : 2 Cc : 1 cc; fenotips 3 de pèl curt : 1 de pèl llarg. Les dades hi encaixen: 6 de 24 és exactament 1 de cada 4. Per què no uns altres: si un progenitor fos CC, cada cria rebria almenys una C i cap no podria ser cc, però n'han sortit sis. I no poden ser cc, perquè llavors tindrien el pèl llarg. Fixa't que el genotip (Cc) no es veu: el que es veu és el fenotip (pèl curt).",
+          as: "Tots dos són Aa. Fent el quadre A/a × A/a surten AA, Aa, Aa i aa, és a dir, 3 que presenten el caràcter i 1 que no. Si fossin AA, cap descendent no podria ser aa.",
+          ae: "Els dos progenitors presenten el caràcter, per tant tots dos tenen com a mínim un al·lel A. Com que apareix descendència que no el presenta, i aquests només poden ser aa, cada progenitor ha d'haver aportat una a: tots dos són heterozigots, Aa. Quadre de Punnett (A/a × A/a): AA · Aa · Aa · aa, és a dir 3 amb el caràcter : 1 sense, exactament l'1 de cada 4 de l'enunciat. No poden ser AA × AA ni AA × Aa perquè en tots dos casos almenys un progenitor només aportaria A i cap descendent no podria ser aa. Cal recordar, a més, que 3:1 és una proporció esperada, una tendència estadística: en una família concreta de quatre fills poden sortir-ne quatre amb el caràcter sense que això contradigui res.",
         },
-        aeWhy: "L'AE parteix de les cries cc per deduir què porta cada progenitor, descarta explícitament CC i cc, i distingeix genotip de fenotip. L'error típic és escriure «3:1, per tant Cc × Cc» sense explicar d'on surt, o confondre la proporció de genotips amb la de fenotips.",
+        aeWhy: "L'AE raona cap enrere des del fenotip aa fins als genotips dels pares, descarta explícitament les altres combinacions i afegeix el matís esperat/observat que demana l'OA2.",
         must: [
-          "Has deduït que les cries de pèl llarg són cc i que cada c ve d'un progenitor.",
-          "Has fet el quadre amb els gàmetes C i c de cada progenitor.",
-          "Has descartat que algun progenitor sigui CC, i has dit per què.",
-          "Has distingit la proporció de genotips (1:2:1) de la de fenotips (3:1)."
+          "Has escrit el quadre de Punnett amb les quatre caselles.",
+          "Has justificat per què cada progenitor ha d'aportar una a.",
+          "Has descartat AA × AA i AA × Aa dient per què.",
+          "Has distingit la proporció esperada del resultat concret d'una família."
         ]
       },
       {
         id: 'w2',
-        oa: 'OA2',
-        source: 'Entrena el bloc 4 de la prova final · proporció esperada i atzar',
-        minutes: 5,
-        text: "Una altra parella, també Cc × Cc, té una ventrada de 4 cries i TOTES són de pèl curt. En Martí, que ajuda a la granja, diu: «El quadre de Punnett falla: n'havia de sortir una de pèl llarg». Té raó? Justifica-ho.",
+        oa: 'OA4',
+        source: 'Tipus de pregunta de la prova · Herència lligada a X',
+        minutes: 7,
+        text: "Una dona portadora d'un caràcter recessiu lligat al cromosoma X té fills amb un home que no el presenta. Digues quina descendència es pot esperar i explica per quina raó aquests caràcters afecten més sovint els homes.",
         model: {
-          as: "No té raó. El quadre diu la probabilitat, 1 de cada 4, però no vol dir que de cada 4 cries n'hagi de sortir una exacta. Amb poques cries pot passar que no en surti cap.",
-          ae: "No té raó. El quadre de Punnett no diu quantes cries de cada tipus sortiran en una ventrada, sinó la probabilitat de cada cria: cada una, independentment de les altres, té 1 possibilitat de 4 de ser cc. Les cries no «es compensen» entre elles: que una surti de pèl curt no fa més probable que la següent el tingui llarg. Amb només 4 cries és perfectament possible que cap no sigui cc. La proporció 3:1 és una tendència que s'acosta a la realitat quan hi ha moltes cries —com les 24 de la pregunta anterior—, no una garantia per a cada ventrada. Si aquesta parella tingués 40 o 50 cries i no en sortís cap de pèl llarg, llavors sí que caldria dubtar que siguin Cc.",
+          as: "La mare és X^A X^a i el pare X^A Y. Els fills poden ser: noies X^A X^A o X^A X^a (cap afectada) i nois X^A Y o X^a Y (la meitat dels nois, afectats). Afecta més els homes perquè només tenen un cromosoma X.",
+          ae: "Mare X^A X^a, pare X^A Y. Quadre: filles X^A X^A i X^A X^a — cap no presenta el caràcter, però la meitat són portadores — i fills X^A Y i X^a Y — la meitat el presenten. Els homes en resulten afectats més sovint perquè només tenen un cromosoma X: n'hi ha prou amb un sol al·lel recessiu perquè s'expressi, ja que no hi ha un segon X que pugui emmascarar-lo (el cromosoma Y és molt més petit i no porta la majoria d'aquests gens). Una dona, en canvi, ha de rebre l'al·lel per duplicat, un de cada progenitor, cosa molt menys probable; per això les dones solen ser portadores i són elles les que transmeten el caràcter als fills.",
         },
-        aeWhy: "L'AE separa probabilitat de resultat concret, explica que cada cria és independent i diu amb quantes cries la dada seria preocupant. L'error típic és llegir el 3:1 com una quota que s'ha de complir en cada ventrada.",
+        aeWhy: "L'AE explica el mecanisme (el Y no porta el gen homòleg, no hi ha emmascarament) i afegeix la conseqüència del patró: la transmissió per via materna.",
         must: [
-          "Has dit que en Martí no té raó.",
-          "Has explicat que 1 de cada 4 és una probabilitat per a cada cria.",
-          "Has dit que amb poques cries l'atzar pesa molt.",
-          "Has dit amb quantes cries sí que caldria dubtar dels genotips."
+          "Has escrit els genotips amb la notació X^A, X^a i Y.",
+          "Has donat el resultat separant filles i fills.",
+          "Has esmentat les portadores.",
+          "Has explicat per què tenir un sol X fa que s'expressi."
         ]
       },
       {
         id: 'w3',
-        oa: 'OA1',
-        source: 'Entrena el bloc 4 de la prova final · dos progenitors amb el caràcter recessiu',
+        oa: 'OA3',
+        source: 'Tipus de pregunta de la prova · Més enllà de Mendel',
         minutes: 6,
-        text: "La Clara creua dos conills angora (pèl llarg). a) Quines cries n'esperes? Justifica-ho amb els genotips. b) En una ventrada apareix una cria de pèl curt. Quines explicacions possibles hi ha, i quina NO ho pot ser?",
+        text: "Explica la diferència entre codominància i dominància incompleta amb un exemple de cada una, i digues per quina raó cap de les dues no encaixa amb el model de dominància simple.",
         model: {
-          as: "Tots dos són cc, així que només poden donar gàmetes c i totes les cries seran cc, de pèl llarg. Si en surt una de pèl curt, potser el pare és un altre conill de pèl curt.",
-          ae: "a) Un conill de pèl llarg té el fenotip recessiu i per força és cc (si tingués una C, tindria el pèl curt). Dos cc només fan gàmetes c, i totes les cries seran cc: pèl llarg, el 100 %, no el 3:1. b) Una cria de pèl curt ha de tenir almenys una C, i cap dels dos pares no en té. Explicacions possibles: que el pare no sigui el que creiem (un mascle de pèl curt de la granja ha arribat a la femella), que és el més probable; o una mutació nova de c a C en un gàmeta, que és possible però molt rara. El que NO ho pot explicar és que la C «estigués amagada» en els pares: en un cc no hi ha cap C per amagar. Un caràcter recessiu pot saltar generacions; un de dominant, no.",
+          as: "A la codominància els dos al·lels s'expressen alhora i es veuen tots dos, com al grup sanguini AB. A la dominància incompleta el fenotip és una barreja intermèdia, com una flor rosa a partir d'una de vermella i una de blanca. En cap dels dos casos un al·lel tapa l'altre.",
+          ae: "A la dominància simple, l'heterozigot té el mateix fenotip que l'homozigot dominant: un al·lel emmascara l'altre. A la codominància, l'heterozigot expressa els dos al·lels alhora i tots dos es manifesten sencers i distingibles: el grup sanguini AB té alhora l'antigen A i l'antigen B, no un antigen intermedi. A la dominància incompleta, l'heterozigot mostra un fenotip intermedi entre els dos homozigots —la flor rosa d'un creuament vermell × blanc—, perquè una sola còpia de l'al·lel no en produeix prou quantitat per donar el fenotip complet. Cap de les dues encaixa amb la dominància simple perquè en totes dues l'heterozigot es distingeix dels dos homozigots, i per tant la proporció fenotípica de la F2 ja no és 3:1 sinó 1:2:1.",
         },
-        aeWhy: "L'AE dedueix el genotip a partir del fenotip recessiu, resol el cas de dos progenitors cc (l'extra de la versió A) i, davant de la dada inesperada, ordena les explicacions per probabilitat i en descarta una amb raons. Evita l'error d'aplicar el 3:1 a qualsevol creuament.",
+        aeWhy: "L'AE defineix les dues per contrast amb l'heterozigot (que és on es veu la diferència) i n'extreu la conseqüència numèrica: 1:2:1 en comptes de 3:1.",
         must: [
-          "Has dit que un conill de pèl llarg és per força cc.",
-          "Has predit el 100 % de cries de pèl llarg, amb el raonament dels gàmetes.",
-          "Has proposat un altre pare (o una mutació rara) per a la cria de pèl curt.",
-          "Has descartat que la C estigués amagada en els pares."
+          "Has posat un exemple concret de cada cas.",
+          "Has dit què passa a l'heterozigot en cada cas.",
+          "Has dit que a la codominància es veuen tots dos, no una barreja.",
+          "Has dit com canvia la proporció fenotípica respecte de 3:1."
         ]
       },
       {
         id: 'w4',
         oa: 'OA1',
-        source: 'Entrena el bloc 4 de la prova final · descartar un genotip amb un creuament',
-        minutes: 7,
-        text: "Un comprador vol un mascle de pèl curt que NO porti l'al·lel c, i en tenen un de pèl curt que no saben si és CC o Cc. No es pot fer cap anàlisi d'ADN. a) Quin creuament faries per saber-ho, i quins resultats esperes en cada cas? b) Si les 3 cries que surten són de pèl curt, ja pots assegurar que el mascle és CC?",
+        source: 'Tipus de pregunta de la prova · Pedigrí',
+        minutes: 6,
+        text: "En un arbre genealògic, un caràcter apareix als avis, no apareix a cap dels fills i torna a aparèixer en un net. Explica què et diu això sobre el caràcter i per quina raó no ha desaparegut mai del tot.",
         model: {
-          as: "El creuaria amb una femella de pèl llarg (cc). Si és CC, totes les cries seran de pèl curt; si és Cc, la meitat seran de pèl llarg. Amb 3 cries no n'estaria segur del tot: en caldrien més.",
-          ae: "a) El creuaria amb una femella de pèl llarg, que per força és cc i només aporta c. Així, el fenotip de cada cria ens diu quin al·lel ha aportat el mascle. Si és CC, totes les cries reben C i totes tenen el pèl curt (100 %). Si és Cc, cada cria té 1 possibilitat de 2 de rebre la c i ser de pèl llarg (tendència 1:1). b) No. Una sola cria de pèl llarg ja demostraria que és Cc, però tres de pèl curt no demostren que sigui CC: un mascle Cc també pot tenir tres cries seguides de pèl curt per atzar (1/2 × 1/2 × 1/2 = 1 de cada 8 vegades). Si en surten deu i totes són de pèl curt, la probabilitat que sigui Cc baixa a menys d'1 de cada 1.000, i llavors sí que el podríem vendre com a CC amb molta confiança, tot i que no amb certesa absoluta.",
+          as: "Que el caràcter és recessiu. Els fills el portaven però no el mostraven: eren heterozigots (portadors). Quan dos portadors tenen descendència, pot tornar a sortir un aa i el caràcter reapareix.",
+          ae: "Que el caràcter és recessiu i que els que «no el tenen» poden portar-lo igualment. Els fills havien de ser heterozigots, Aa: tenien l'al·lel però el dominant l'emmascarava, de manera que el genotip i el fenotip no coincidien. L'al·lel es transmet amb normalitat encara que no es vegi, i quan dos portadors tenen descendència hi ha una probabilitat d'1 sobre 4 que el fill sigui aa i el caràcter reaparegui. És el que volem dir quan diem que un caràcter «salta» una generació: no salta, viatja amagat. I això explica per què llegir un pedigrí exigeix distingir genotip de fenotip — si només mires qui el mostra, l'arbre sembla impossible.",
         },
-        aeWhy: "L'AE tria el creuament que fa visible l'al·lel amagat, diu què s'espera en cada cas i distingeix una prova que descarta (una cria de pèl llarg) d'una que només fa probable (moltes de pèl curt). És el mateix raonament que cal a la prova per descartar un genotip, fet al revés.",
+        aeWhy: "L'AE posa el nom al mecanisme (genotip ≠ fenotip), quantifica la probabilitat i corregeix la metàfora de «saltar», que és l'error conceptual que la pregunta busca.",
         must: [
-          "Has proposat creuar-lo amb un conill cc.",
-          "Has dit què s'espera si és CC i què si és Cc.",
-          "Has dit que 3 cries de pèl curt no ho demostren.",
-          "Has dit que amb moltes més cries la conclusió seria molt més fiable."
+          "Has dit que el caràcter és recessiu.",
+          "Has anomenat els portadors heterozigots.",
+          "Has distingit genotip de fenotip.",
+          "Has donat la probabilitat que reaparegui entre dos portadors."
         ]
       }
     ]

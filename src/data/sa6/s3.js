@@ -1,7 +1,7 @@
 export const sa6s3 = {
   id: "s3",
   saId: "sa6",
-  title: "Què va passar primer: la capa o l'esquerda?",
+  title: "Llegir la història a les roques",
   sessionNumber: 3,
   biome: "sa6",
   duration: "2h",

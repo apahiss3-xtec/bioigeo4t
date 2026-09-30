@@ -198,8 +198,17 @@ p>span[contenteditable]:not([class]){display:inline}
 .mc-items{display:grid;grid-template-columns:1fr 1fr;gap:3px 14px;margin-top:5px;font-size:11.5px}
 .gar-chips{display:flex;flex-wrap:wrap;gap:5px;margin:4px 0 6px}
 .gar-chips span{font-size:11px;border-radius:9999px;padding:2px 9px;color:#fff;font-weight:700}
-.det-mini{display:flex;flex-wrap:wrap;gap:3px 12px;font-size:11.5px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:6px 10px;margin:4px 0 6px}
+.det-mini{display:grid;grid-template-columns:1fr 1fr;gap:2px 14px;font-size:11px;line-height:1.3;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:5px 10px;margin:4px 0 6px}
+.det-mini .dm-t{grid-column:1/-1;font-size:10px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#a24e24}
 .det-mini b{color:#a24e24}
+.motlle{font-size:12px;line-height:2;background:var(--teal-tint);border:1.5px dashed var(--teal);border-radius:8px;padding:4px 10px;margin:4px 0 6px}
+.lab-t td{height:30px}
+.lab-t th{font-size:10px;text-align:center}
+.oral-strip{background:#fdf3e7;border:1.5px solid var(--orange);border-radius:8px;padding:6px 11px}
+.oral-head{font-size:11.5px;color:#7a3d18}
+.oral-list{margin:3px 0 0 18px;font-size:11.5px;line-height:1.4;display:grid;grid-template-columns:1fr 1fr;column-gap:18px}
+.oral-list li{margin:1px 0}
+.oral-card td{height:34px}
 
 </style>
 </head>
@@ -247,7 +256,7 @@ p>span[contenteditable]:not([class]){display:inline}
       <li contenteditable="true">Analitzo a fons un cas real amb el meu <strong>grup d'experts</strong> i el passo pel detector.</li>
       <li contenteditable="true">Explico el meu cas als companys del puzle en <strong>3 minuts</strong>.</li>
       <li contenteditable="true">Passo pel detector els casos que m'expliquen i els poso al <strong>calaix</strong> que toca.</li>
-      <li contenteditable="true">Explico què té una <strong>prova justa</strong>: grup de comparació i ningú no sap qui rep què.</li>
+      <li contenteditable="true">Munto una <strong>prova justa</strong>: grup de comparació, a l'atzar, a cegues i prou gent.</li>
     </ul>
   </div>
 
@@ -261,7 +270,7 @@ p>span[contenteditable]:not([class]){display:inline}
         <div class="sdesc" contenteditable="true">El tindràs al davant tota la sessió</div></div>
       </div>
       <div class="divider"></div>
-      <div class="det-mini"><span>🕵️</span><span><b>1</b> No es pot comprovar</span><span><b>2</b> No admet crítica</span><span><b>3</b> Es basa en autoritat</span><span><b>4</b> Sona «científica»</span><span><b>5</b> Apel·la al que vols creure</span></div><p style="font-size:11px;margin:6px 0 4px;padding:5px 9px;background:var(--teal-tint);border-radius:6px;line-height:1.45" contenteditable="true"><strong>Els tres calaixos.</strong> <strong>CIÈNCIA</strong>: s'ha posat a prova amb una prova justa i accepta el resultat, encara que no li agradi. &nbsp;·&nbsp; <strong>ENCARA NO COMPROVAT</strong>: es pot posar a prova i qui ho investiga ho admet, però encara no hi ha prou proves. &nbsp;·&nbsp; <strong>PSEUDOCIÈNCIA</strong>: es presenta com a ciència, però no es deixa posar a prova o no canvia quan la prova li surt en contra.</p><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">El meu cas d'expert és el número <span class="input-span" contenteditable="true" style="min-width:40px"></span> : <span class="input-span" contenteditable="true" style="min-width:260px"></span></p>
+      <div class="det-mini"><span class="dm-t">🕵️ El detector · amb un senyal ja pots sospitar</span><span><b>1 · No es pot comprovar.</b> Promesa vaga o impossible de mesurar: cap experiment la pot posar a prova.</span><span><b>2 · No admet crítica.</b> Té una excusa per a cada resultat en contra: no canvia mai.</span><span><b>3 · Es basa en autoritat.</b> «Ho diu un expert», un famós o molts testimonis, en lloc de dades.</span><span><b>4 · Sona «científica».</b> «Quàntic», «energia», «toxines», «natural»… paraules que no expliquen res.</span><span><b>5 · Apel·la al que vols creure.</b> S'aprofita del que desitges o et fa por.</span></div><p style="font-size:11px;margin:6px 0 4px;padding:5px 9px;background:var(--teal-tint);border-radius:6px;line-height:1.45" contenteditable="true"><strong>Els tres calaixos.</strong> <strong>CIÈNCIA</strong>: s'ha posat a prova amb una prova justa i accepta el resultat, encara que no li agradi. &nbsp;·&nbsp; <strong>ENCARA NO COMPROVAT</strong>: es pot posar a prova i qui ho investiga ho admet, però encara no hi ha prou proves. &nbsp;·&nbsp; <strong>PSEUDOCIÈNCIA</strong>: es presenta com a ciència, però no es deixa posar a prova o no canvia quan la prova li surt en contra.</p><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">El meu cas d'expert és el número <span class="input-span" contenteditable="true" style="min-width:40px"></span> : <span class="input-span" contenteditable="true" style="min-width:260px"></span></p>
     </div>
     <div class="section deletable">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
@@ -287,20 +296,23 @@ p>span[contenteditable]:not([class]){display:inline}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="section-header">
         <div class="snum" style="background:var(--teal)">3</div>
-        <div><div class="stitle" contenteditable="true">Què hem après dels sis casos? <span class="temps">⏱️ 15 min</span></div>
-        <div class="sdesc" contenteditable="true">Posada en comú amb tota la classe</div></div>
+        <div><div class="stitle" contenteditable="true">Com es comprova de debò? <span class="temps">⏱️ 30 min</span></div>
+        <div class="sdesc" contenteditable="true">El laboratori de la prova justa i el motlle</div></div>
       </div>
       <div class="divider"></div>
-      <p style="font-size:12px;margin:6px 0 4px" contenteditable="true">✏️ <strong>a)</strong> El cas 5 fa fàstic però <strong>no encén el detector</strong>. Per què és ciència?</p><div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">✏️ <strong>b)</strong> Els casos 3, 4 i 5 es van posar a prova. Què tenien en comú les proves <strong>justes</strong>?</p><div class="wline" contenteditable="true"></div>
-      <div class="wline" contenteditable="true"></div>
+      <p style="font-size:12px;margin:6px 0 4px" contenteditable="true"><strong>3a · Laboratori</strong> (parelles, una pantalla): obre l'app <strong>«El laboratori de la prova justa»</strong> i fes els passos amb el xiclet ZenStop. A cada pas, escriu <strong>en una paraula</strong> quina trampa descobreixes.</p><table class="data-table lab-t"><thead><tr><th>1 · Només ZenStop</th><th>2 · Grup de comparació</th><th>3 · A l'atzar</th><th>4 · A cegues</th><th>5 · Prou gent</th></tr></thead><tbody><tr><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td><td><div class="fill-cell" contenteditable="true"></div></td></tr></tbody></table><p style="font-size:12px;margin:6px 0 4px" contenteditable="true"><strong>3b · Posada en comú.</strong> Omple el motlle per posar a prova el <strong>cas 1</strong> (l'aigua que recorda).</p><div class="frase-completar motlle">🧪 Faig <strong>dos grups a l'atzar</strong>. El grup A rep <span class="blank" style="display:inline-block;min-width:150px"></span>; el grup B rep <strong>una imitació</strong> (o res): <span class="blank" style="display:inline-block;min-width:150px"></span>. <strong>Ningú no sap</strong> qui rep què. Tot el demés és <strong>igual</strong>. Mesuro <span class="blank" style="display:inline-block;min-width:200px"></span>. Si els dos grups surten igual, la promesa <strong>cau</strong>.</div><p style="font-size:12px;margin:6px 0 4px" contenteditable="true">✏️ El cas 5 fa fàstic però és ciència. Quina peça del motlle <strong>sí</strong> que tenia?</p><div class="wline" contenteditable="true"></div>
     </div>
     <div class="section deletable mc-strip">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <div class="mc-head">🧠 Metacognició · 3 min · <span>marca el que has après avui</span>
         <span class="mc-stars">⭐ la sessió: <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></span></div>
       <div class="mc-items"><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé explicar el meu cas i els seus senyals.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé passar pel detector un cas que m'expliquen.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Distingeixo ciència, pseudociència i encara no comprovat.</span><span class="mc-it"><span class="meta-oa-check" style="display:inline-block;vertical-align:-3px;margin-right:4px"></span>Sé què fa que una prova sigui justa.</span></div>
-      <div style="font-size:11.5px;margin-top:6px;padding-top:5px;border-top:1px dashed var(--teal-light)"><b style="color:#a24e24">📚 Per a la Sessió 3:</b> <span contenteditable="true">🕵️ Porta <strong>el cas que has caçat</strong> (la foto o la frase de la promesa). Si encara no en tens, busca'n un que <strong>prometi una cosa concreta</strong> sobre el cos, la salut o la natura.</span></div>
+      <div style="font-size:11.5px;margin-top:6px;padding-top:5px;border-top:1px dashed var(--teal-light)"><b style="color:#a24e24">📚 Per a la Sessió 3:</b> <span contenteditable="true">🕵️ Porta <strong>el cas que has caçat</strong>. A la Sessió 3 <strong>l'exposaràs oralment (1 min 30 s) i t'ho avaluaré</strong>: què promet, quins senyals encén (amb la frase), com el posaries a prova amb dos grups i a quin calaix va.</span></div>
+    </div>
+    <div class="section deletable oral-strip">
+      <div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="oral-head">🎤 A la Sessió 3 exposaràs el teu cas oralment · <b>1 min 30 s</b> · t'ho avaluaré · assaja-ho una vegada en veu alta a casa</div>
+      <ol class="oral-list"><li><b>Què promet</b> — «Aquest … promet que…» (una frase)</li><li><b>Senyals</b> — quins s'encenen i <b>amb quina frase</b> del cas</li><li><b>Com ho comprovaria</b> — el motlle: dos grups, què rep cadascun, qui no sap què, què mesuro i <b>quin resultat la faria caure</b></li><li><b>Calaix</b> — a quin calaix va, i si el company de la revisió a cegues hi va arribar</li></ol>
     </div>
     <div class="footer">
       <div class="footer-l">SA1 · Ciència i Pseudociència · Sessió 2 · Versió B · IE Temple · Biologia i Geologia 4t ESO</div>

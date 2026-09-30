@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El laboratori de la prova justa · SA1 · IE Temple · 4t ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<!-- Generat per SA1-ciencia-pseudociencia/_generador/build_sa1.py (app_prova_justa).
+     No editar la còpia de web/public/apps: edita aquesta plantilla. -->
+<style>
+:root{
+  --teal:#2A6F7F; --teal-ink:#1c4a55; --teal-light:#9ccad2; --teal-tint:#eaf4f6; --aqua:#38a3a5;
+  --ink:#14201f; --ink-2:#334; --muted:#5f6e72; --rule:#dce9eb; --rule-dark:#b6ccd0; --paper:#fff; --bg:#f4f8f9;
+  --orange:#c96f3e; --orange-tint:#f6ece8; --ok:#2f7d4f; --ok-tint:#e5f3ea; --ko:#b23a48; --ko-tint:#f9e6e8; --amber:#b98500; --amber-tint:#fdf5dc;
+  --zen:#8e5bb5; --zen-tint:#f1e9f7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Fira Sans Extra Condensed',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:17px;line-height:1.45;min-height:100vh}
+header{background:linear-gradient(135deg,#1c4a55,#2f7f8a);color:#fff;padding:12px 18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header h1{font-size:23px;font-weight:900;line-height:1.1}
+header .sub{font-size:13px;opacity:.85}
+.mode{margin-left:auto;display:flex;gap:4px;background:rgba(255,255,255,.14);border-radius:999px;padding:3px}
+.mode button{font:inherit;font-size:14px;font-weight:700;border:0;border-radius:999px;padding:4px 12px;cursor:pointer;background:transparent;color:#fff}
+.mode button[aria-pressed="true"]{background:#fff;color:var(--teal-ink)}
+nav.steps{display:flex;gap:6px;flex-wrap:wrap;padding:8px 18px;background:#fff;border-bottom:1px solid var(--rule)}
+nav.steps button{font:inherit;font-size:14px;font-weight:700;border:2px solid var(--rule-dark);background:#fff;color:var(--muted);border-radius:999px;padding:3px 11px;cursor:pointer}
+nav.steps button[aria-current="step"]{border-color:var(--teal);color:var(--teal-ink);background:var(--teal-tint)}
+nav.steps button.fet{border-color:var(--ok);color:var(--ok)}
+nav.steps button:disabled{opacity:.45;cursor:default}
+main{max-width:980px;margin:0 auto;padding:16px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:16px 18px;box-shadow:0 1px 6px rgba(20,60,70,.06);margin-bottom:14px}
+.k{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h2{font-size:25px;font-weight:900;color:var(--teal-ink);margin:2px 0 8px;line-height:1.15}
+h3{font-size:15px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-ink);margin:14px 0 8px}
+p{margin:0 0 8px}
+.story{font-size:18px}
+.toggle{display:inline-flex;gap:4px;background:var(--teal-tint);border-radius:999px;padding:3px;margin:4px 0 10px}
+.toggle button{font:inherit;font-size:15px;font-weight:700;border:0;border-radius:999px;padding:5px 14px;cursor:pointer;background:transparent;color:var(--teal-ink)}
+.toggle button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.grp{border:2px solid var(--rule);border-radius:12px;padding:10px 12px;background:#fff}
+.grp.zen{border-color:#d6c3e6;background:var(--zen-tint)}
+.grp .gt{font-weight:900;font-size:17px;line-height:1.15}
+.grp .gs{font-size:13.5px;color:var(--muted);margin-bottom:6px;min-height:19px}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:4px;max-width:300px}
+.dot{aspect-ratio:1;border-radius:50%;border:2px solid #b9c7ca;background:#fff;transition:background .25s,border-color .25s}
+.dot.cur{background:var(--ok);border-color:var(--ok)}
+.dots.poc{grid-template-columns:repeat(4,38px)}
+.num{font-size:28px;font-weight:900;color:var(--teal-ink);margin-top:6px;line-height:1}
+.num small{font-size:15px;font-weight:600;color:var(--muted)}
+.meas{font-size:13.5px;color:var(--muted);margin-top:6px}
+.legend{font-size:13.5px;color:var(--muted);margin-top:6px;display:flex;gap:14px;flex-wrap:wrap}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:50%;vertical-align:-1px;margin-right:4px;border:2px solid #b9c7ca}
+.legend i.c{background:var(--ok);border-color:var(--ok)}
+.q{font-weight:700;font-size:18px;margin:12px 0 8px}
+.opts{display:grid;gap:8px}
+.opt{font:inherit;font-size:16.5px;text-align:left;border:2px solid var(--rule-dark);background:#fff;border-radius:11px;padding:9px 12px;cursor:pointer;line-height:1.3}
+.opt:hover:not(:disabled){border-color:var(--teal-light)}
+.opt:disabled{cursor:default;color:inherit}
+.opt.ok{border-color:var(--ok);background:var(--ok-tint)}
+.opt.ko{border-color:var(--ko);background:var(--ko-tint)}
+.fb{margin-top:10px;border-radius:11px;padding:10px 13px;font-size:16.5px}
+.fb.ok{background:var(--ok-tint);border-left:5px solid var(--ok)}
+.fb.ko{background:var(--ko-tint);border-left:5px solid var(--ko)}
+.trap{margin-top:12px;border:2px dashed var(--orange);background:var(--orange-tint);border-radius:12px;padding:10px 13px}
+.trap b.w{font-size:21px;color:#a24e24;letter-spacing:.03em}
+.btn{font:inherit;font-weight:900;font-size:16px;border:0;border-radius:11px;padding:9px 16px;cursor:pointer;background:var(--teal);color:#fff}
+.btn.sec{background:#fff;color:var(--teal-ink);border:2px solid var(--teal-light)}
+.btn:disabled{opacity:.4;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.tally{font-size:15px;color:var(--ink-2);background:var(--teal-tint);border-radius:9px;padding:6px 10px}
+.motlle{font-size:18px;line-height:1.9;background:var(--teal-tint);border-radius:12px;padding:12px 14px}
+.motlle .b{display:inline-block;min-width:120px;border-bottom:2px solid var(--teal);margin:0 3px;color:var(--teal-ink);font-weight:700;text-align:center}
+.pieces{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:8px 0}
+.piece{border:2px solid var(--teal-light);border-radius:11px;padding:8px 10px;background:#fff}
+.piece b{display:block;color:var(--teal-ink);font-size:17px}
+.piece span{font-size:14px;color:var(--muted)}
+ul.links{margin:4px 0 0 20px}
+ul.links li{margin-bottom:4px}
+.note{font-size:14px;color:var(--muted)}
+@media (max-width:520px){header h1{font-size:20px}.story,.q{font-size:17px}h2{font-size:22px}}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>🧪 El laboratori de la prova justa</h1>
+    <div class="sub" id="sub">Un xiclet promet curar el refredat. Com ho comprovaries de debò?</div>
+  </div>
+  <div class="mode" id="mode" role="group" aria-label="Nivell"></div>
+</header>
+<nav class="steps" id="nav" aria-label="Passos"></nav>
+<main id="main"></main>
+
+<script>
+const CONFIG = {"variant": "C"} || {variant: "AB"};
+const C = CONFIG.variant === "C";
+
+// ── Atzar amb llavor (passos fixos: tothom veu el mateix) i atzar de debò (pas «prou gent»)
+function rng(seed){ return function(){ seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+  t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+function shuffled(n, k, seed){ const a = Array.from({length:n}, (_, i) => i < k); const r = rng(seed);
+  for (let i = n - 1; i > 0; i--){ const j = Math.floor(r() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+let nivell = "B";
+try { const v = localStorage.getItem("portal-bio4t-nivell"); if (v === "A" || v === "B" || v === "C") nivell = v; } catch(e) {}
+if (C) nivell = "C"; else if (nivell === "C") nivell = "B";
+
+// ── Passos. Cada grup: {nom, sub, n, k, zen}
+const STEPS_AB = [
+  { id:"s1", tab:"1 · Només ZenStop",
+    title:"Donem ZenStop a 40 persones refredades",
+    story:"El xiclet <b>ZenStop</b> promet: «Cura el refredat». Busquem 40 persones refredades i totes el masteguen. Al cap de 7 dies, mirem quantes s'han curat.",
+    views:{ un:{ groups:[{nom:"Amb ZenStop", sub:"40 persones", n:40, k:32, zen:true, seed:11}] } },
+    meas:"Què mesurem: curats al cap de 7 dies.",
+    q:"32 de 40 curats. ZenStop funciona?",
+    opts:[
+      {t:"Sí: el 80 % s'ha curat.", ok:false, fb:"Compte: un refredat <b>es cura sol</b> en 5-7 dies. Aquests 32 potser s'haurien curat igual sense xiclet."},
+      {t:"No ho puc saber: no sé quants s'haurien curat sense ZenStop.", ok:true, fb:"Exacte. Un refredat es cura sol en 5-7 dies. Sense un grup que no prengui ZenStop, no tenim amb què comparar."},
+      {t:"No: si funcionés, s'haurien curat tots 40.", ok:false, fb:"Un remei pot funcionar sense curar tothom. El problema és un altre: <b>amb què ho comparem</b>?"}
+    ],
+    trap:"Molta gent es cura sola. Si només mires els que prenen el producte, li dones un mèrit que no és seu.",
+    word:"ES CURA SOL" },
+  { id:"s2", tab:"2 · Grup de comparació",
+    title:"Afegim un grup que no pren res",
+    story:"Ara fem <b>dos grups</b> de 40. Un masteca ZenStop i l'altre no masteca res. Mateix dia, mateixa mesura.",
+    views:{ un:{ groups:[{nom:"Grup A · ZenStop", sub:"40 persones", n:40, k:32, zen:true, seed:11},{nom:"Grup B · res", sub:"40 persones", n:40, k:30, seed:12}] } },
+    meas:"Què mesurem: curats al cap de 7 dies.",
+    q:"Què et diu el grup de comparació?",
+    opts:[
+      {t:"Que sense ZenStop també se'n curen gairebé els mateixos.", ok:true, fb:"Sí. 32 contra 30: la diferència és petitíssima. El grup B et diu <b>què passaria sense el producte</b>."},
+      {t:"Que ZenStop funciona, perquè 32 és més que 30.", ok:false, fb:"2 persones de diferència és molt poc: pot ser casualitat. I encara hi ha trampes amagades (passos 3, 4 i 5)."},
+      {t:"Res: el grup B no ha pres res, no compta.", ok:false, fb:"Al contrari: el grup que no pren res és <b>el més important</b>. És la referència amb què compares."}
+    ],
+    trap:"Sense un grup de comparació no saps què hauria passat igualment.",
+    word:"COMPARAR" },
+  { id:"s3", tab:"3 · A l'atzar",
+    title:"Qui va a cada grup?",
+    story:"Deixem que cadascú <b>triï</b> si vol ZenStop. Els que el trien solen ser els que més es cuiden: fan repòs, beuen aigua… Mira què passa. Després canvia a <b>a l'atzar</b> (com tirar una moneda).",
+    views:{
+      tria:{ label:"🙋 Trien ells", groups:[{nom:"Grup A · ZenStop", sub:"els que el volien (i es cuiden més)", n:40, k:36, zen:true, seed:21},{nom:"Grup B · res", sub:"els que no el volien", n:40, k:27, seed:22}] },
+      atzar:{ label:"🎲 A l'atzar", groups:[{nom:"Grup A · ZenStop", sub:"sortejats", n:40, k:32, zen:true, seed:23},{nom:"Grup B · res", sub:"sortejats", n:40, k:30, seed:24}] } },
+    meas:"Què mesurem: curats al cap de 7 dies.",
+    mustSee:["tria","atzar"],
+    q:"Per què, quan trien ells, ZenStop sembla que funciona molt (36 contra 27)?",
+    opts:[
+      {t:"Perquè als grups hi ha gent diferent: al A hi ha els que es cuiden més.", ok:true, fb:"Això mateix. La diferència no la fa el xiclet, la fa <b>qui hi ha a cada grup</b>. A l'atzar, els dos grups s'assemblen i la diferència desapareix (32 contra 30)."},
+      {t:"Perquè quan el tries, ZenStop funciona millor.", ok:false, fb:"El xiclet és el mateix. El que canvia és <b>la gent</b> de cada grup: els que el trien ja es cuidaven més."},
+      {t:"Perquè a l'atzar hi ha menys sort.", ok:false, fb:"L'atzar no treu la sort: fa que els dos grups siguin <b>semblants</b>, i així l'única diferència és el xiclet."}
+    ],
+    trap:"Si la gent tria el grup, els grups ja són diferents abans de començar.",
+    word:"A L'ATZAR" },
+  { id:"s4", tab:"4 · A cegues",
+    title:"Qui sap què pren?",
+    story:"Ara mesurem una cosa que depèn del que sents: el 3r dia preguntem <b>«Et trobes millor?»</b>. Primer, tothom <b>sap</b> què pren. Després, el grup B masteca un xiclet <b>idèntic però sense res</b> (un placebo): ningú no sap si té ZenStop.",
+    views:{
+      saben:{ label:"👀 Saben què prenen", groups:[{nom:"Grup A · ZenStop", sub:"saben que el prenen", n:40, k:31, zen:true, seed:31},{nom:"Grup B · res", sub:"saben que no prenen res", n:40, k:20, seed:32}] },
+      cegues:{ label:"🙈 A cegues", groups:[{nom:"Grup A · ZenStop", sub:"no saben què masteguen", n:40, k:26, zen:true, seed:33},{nom:"Grup B · xiclet placebo", sub:"no saben què masteguen", n:40, k:25, seed:34}] } },
+    meas:"Què mesurem: diuen que es troben millor el 3r dia.",
+    mustSee:["saben","cegues"],
+    q:"Per què, quan saben què prenen, el grup ZenStop diu que es troba molt millor?",
+    opts:[
+      {t:"Perquè esperen millorar, i les ganes fan que es notin millor.", ok:true, fb:"Sí. Qui sap que pren el remei, <b>s'ho creu</b> i nota una millora que no ve del xiclet. A cegues, els dos grups diuen gairebé el mateix (26 contra 25). Encara millor: <b>doble cec</b>, que tampoc no ho sàpiga qui pregunta."},
+      {t:"Perquè el placebo fa mal.", ok:false, fb:"El placebo no fa res: és un xiclet sense res. Serveix perquè els dos grups <b>no sàpiguen</b> què prenen."},
+      {t:"Perquè ZenStop funciona millor el 3r dia.", ok:false, fb:"Si fos el xiclet, també es veuria a cegues. A cegues, la diferència desapareix: era <b>creure-s'ho</b>."}
+    ],
+    trap:"Si saps què prens, t'ho creus i et notes millor. Ningú no ha de saber qui rep què.",
+    word:"A CEGUES" },
+  { id:"s5", tab:"5 · Prou gent", sim:true,
+    title:"4 persones o 40?",
+    story:"Fem-ho a l'atzar i a cegues, però amb <b>molt poca gent</b>: 4 a cada grup. Aquí ZenStop <b>no fa res</b>: cada persona té la mateixa probabilitat de curar-se al grup A i al B. Prem <b>Repeteix</b> moltes vegades i mira qui «guanya».",
+    meas:"Què mesurem: curats al cap de 7 dies. Probabilitat de curar-se: igual als dos grups.",
+    q:"Amb 4 persones per grup, per què de vegades sembla que ZenStop guanya per molt?",
+    opts:[
+      {t:"Per pura sort: amb poca gent, l'atzar fa diferències grans.", ok:true, fb:"Exacte. Amb 4 persones, 4 contra 2 surt sovint per casualitat. Amb 40, les diferències per sort es fan petites. Cal <b>prou gent</b>, i repetir la prova."},
+      {t:"Perquè ZenStop funciona una mica.", ok:false, fb:"En aquesta simulació ZenStop no fa res de res. Totes les diferències són <b>sort</b>."},
+      {t:"Perquè amb 40 persones l'app s'equivoca.", ok:false, fb:"Al contrari: amb 40 persones la diferència s'acosta a la de debò (zero). Amb 4, la sort mana."}
+    ],
+    trap:"Amb poca gent, la sort pot fer semblar que una cosa funciona.",
+    word:"PROU GENT" },
+  { id:"s6", tab:"6 · Control positiu", onlyA:true,
+    title:"🎯 Repte A · La prova és capaç de veure alguna cosa?",
+    story:"Un defensor de ZenStop diu: «La vostra prova surt igual perquè està mal feta: no detectaria res». Com li respons? Fem la mateixa prova amb un remei que <b>sabem</b> que funciona: un antitèrmic per baixar la febre, contra un placebo.",
+    views:{ un:{ groups:[{nom:"Grup A · antitèrmic", sub:"a l'atzar i a cegues", n:40, k:35, zen:true, seed:61},{nom:"Grup B · placebo", sub:"a l'atzar i a cegues", n:40, k:9, seed:62}] } },
+    meas:"Què mesurem: sense febre al cap de 2 hores.",
+    q:"Què demostra aquest resultat (35 contra 9)?",
+    opts:[
+      {t:"Que la prova sí que detecta un efecte quan n'hi ha: si ZenStop surt igual, no és culpa de la prova.", ok:true, fb:"Sí. Això és un <b>control positiu</b>: comproves que la teva prova és capaç de veure un efecte real. Així l'objecció «la prova no serveix» cau."},
+      {t:"Que ZenStop també baixa la febre.", ok:false, fb:"Aquí no hi ha ZenStop. Hem provat la <b>prova</b> amb un remei conegut."},
+      {t:"Res: és un altre medicament, no té res a veure.", ok:false, fb:"Té a veure amb la <b>prova</b>: si detecta l'antitèrmic, sabem que funciona. Així, quan ZenStop surt igual, podem confiar en el resultat."}
+    ],
+    trap:"Una prova que no veu res no serveix. Prova-la amb una cosa que sabem que funciona.",
+    word:"CONTROL POSITIU" }
+];
+
+const STEPS_C = [
+  { id:"c1", tab:"1 · Dos grups",
+    title:"Pas 1 · Dos grups",
+    story:"El xiclet <b>ZenStop</b> diu: «Cura el refredat». Un refredat <b>es cura sol</b> en una setmana. Mira els dos grups.",
+    views:{
+      un:{ label:"Només ZenStop", groups:[{nom:"Amb ZenStop", sub:"10 persones", n:10, k:8, zen:true, seed:11}] },
+      dos:{ label:"Dos grups", groups:[{nom:"Grup A · ZenStop", sub:"10 persones", n:10, k:8, zen:true, seed:11},{nom:"Grup B · res", sub:"10 persones", n:10, k:8, seed:12}] } },
+    meas:"Punt verd = curat en una setmana.",
+    mustSee:["un","dos"],
+    q:"Sense ZenStop, també es curen?",
+    opts:[
+      {t:"SÍ", ok:true, fb:"Sí. Es curen <b>sols</b>. Per això cal un grup que no pren res."},
+      {t:"NO", ok:false, fb:"Mira el grup B: també hi ha 8 punts verds. Es curen <b>sols</b>."}
+    ],
+    trap:"Sense un grup que no pren res, no sé si s'hauria curat sol.",
+    word:"SOL" },
+  { id:"c2", tab:"2 · Atzar i a cegues",
+    title:"Pas 2 · A l'atzar i a cegues",
+    story:"Ara el grup B masteca un xiclet <b>igual però sense res</b>. Ningú no sap què masteca. Preguntem: «Et trobes millor?»",
+    views:{
+      saben:{ label:"👀 Saben què prenen", groups:[{nom:"Grup A · ZenStop", sub:"ho saben", n:10, k:9, zen:true, seed:31},{nom:"Grup B · res", sub:"ho saben", n:10, k:5, seed:32}] },
+      cegues:{ label:"🙈 No ho saben", groups:[{nom:"Grup A · ZenStop", sub:"no ho saben", n:10, k:7, zen:true, seed:33},{nom:"Grup B · xiclet sense res", sub:"no ho saben", n:10, k:7, seed:34}] } },
+    meas:"Punt verd = diu que es troba millor.",
+    mustSee:["saben","cegues"],
+    q:"Quan no saben què prenen, hi ha diferència?",
+    opts:[
+      {t:"SÍ", ok:false, fb:"Mira-ho bé: 7 i 7. Quan no ho saben, <b>no hi ha diferència</b>."},
+      {t:"NO", ok:true, fb:"Correcte: 7 i 7. Abans es trobaven millor perquè <b>s'ho creien</b>."}
+    ],
+    trap:"Si saps què prens, et trobes millor perquè t'ho creus.",
+    word:"CREUS" },
+  { id:"c3", tab:"3 · Prou gent", sim:true,
+    title:"Pas 3 · Prou gent",
+    story:"Aquí ZenStop <b>no fa res</b>. Prem <b>Repeteix</b> moltes vegades. Mira el grup de 4 persones.",
+    meas:"Punt verd = curat.",
+    q:"Amb 4 persones, de vegades guanya ZenStop. Per què?",
+    opts:[
+      {t:"Per sort", ok:true, fb:"Sí. Amb poca gent, guanya per <b>sort</b>. Amb 40 persones, surten gairebé iguals."},
+      {t:"Perquè funciona", ok:false, fb:"Aquí ZenStop no fa res. Guanya per <b>sort</b>."}
+    ],
+    trap:"Amb només 4 persones, pot guanyar per sort.",
+    word:"SORT" }
+];
+
+const STEPS = C ? STEPS_C : STEPS_AB;
+const state = {}; // per pas: {answer, seen:Set, view}
+let cur = 0;
+let sim = { tries:0, winsSmall:0, small:null, big:null };
+
+function visible(){ return STEPS.filter(s => !s.onlyA || nivell === "A"); }
+
+function renderMode(){
+  const m = document.getElementById("mode");
+  if (C){ m.innerHTML = '<span style="font-size:14px;font-weight:700;padding:4px 12px">Nivell C</span>'; return; }
+  m.innerHTML = ["B","A"].map(n => `<button aria-pressed="${nivell===n}" data-n="${n}">Nivell ${n}</button>`).join("");
+  m.querySelectorAll("button").forEach(b => b.onclick = () => {
+    nivell = b.dataset.n; try { localStorage.setItem("portal-bio4t-nivell", nivell); } catch(e) {}
+    const vs = visible(); if (cur > vs.length) cur = vs.length; render();
+  });
+}
+
+function done(s){ const st = state[s.id]; return st && st.answer != null && s.opts[st.answer].ok; }
+function unlocked(i){ const vs = visible(); for (let j = 0; j < i; j++) if (!done(vs[j])) return false; return true; }
+
+function renderNav(){
+  const vs = visible();
+  const items = vs.map((s, i) => `<button data-i="${i}" ${i===cur?'aria-current="step"':''} class="${done(s)?'fet':''}" ${unlocked(i)?'':'disabled'}>${done(s)?'✓ ':''}${s.tab}</button>`);
+  items.push(`<button data-i="${vs.length}" ${cur===vs.length?'aria-current="step"':''} ${unlocked(vs.length)?'':'disabled'}>🧩 La prova justa</button>`);
+  const nav = document.getElementById("nav"); nav.innerHTML = items.join("");
+  nav.querySelectorAll("button").forEach(b => b.onclick = () => { cur = +b.dataset.i; render(); window.scrollTo({top:0, behavior:"smooth"}); });
+}
+
+function dotsHTML(g, arr){
+  const cured = arr || shuffled(g.n, g.k, g.seed);
+  const k = cured.filter(Boolean).length;
+  return `<div class="grp ${g.zen?'zen':''}"><div class="gt">${g.nom}</div><div class="gs">${g.sub||''}</div>
+    <div class="dots ${g.n<=4?'poc':''}">${cured.map(c => `<span class="dot ${c?'cur':''}"></span>`).join("")}</div>
+    <div class="num">${k} <small>de ${g.n}</small></div></div>`;
+}
+
+function simRun(){
+  const p = 0.75, draw = n => Array.from({length:n}, () => Math.random() < p);
+  const n = C ? 10 : 40;
+  sim.small = [draw(4), draw(4)]; sim.big = [draw(n), draw(n)];
+  const c = a => a.filter(Boolean).length;
+  sim.tries++;
+  if (c(sim.small[0]) - c(sim.small[1]) >= 2) sim.winsSmall++;
+}
+
+function renderSim(s, st){
+  if (!sim.small) simRun();
+  const n = C ? 10 : 40, c = a => a.filter(Boolean).length;
+  const d4 = c(sim.small[0]) - c(sim.small[1]);
+  const pct = sim.tries ? Math.round(100 * sim.winsSmall / sim.tries) : 0;
+  st.seen = st.seen || new Set(); if (sim.tries >= 5) st.seen.add("sim");
+  return `<h3>4 persones per grup</h3><div class="groups">
+      ${dotsHTML({nom:"Grup A · ZenStop", sub:"4 persones", n:4, zen:true}, sim.small[0])}
+      ${dotsHTML({nom:"Grup B · placebo", sub:"4 persones", n:4}, sim.small[1])}</div>
+    <p style="margin-top:8px"><b>${d4 >= 2 ? "😮 ZenStop «guanya» per " + d4 + "!" : d4 <= -2 ? "😮 El placebo «guanya» per " + (-d4) + "!" : "Gairebé iguals."}</b></p>
+    <h3>${n} persones per grup</h3><div class="groups">
+      ${dotsHTML({nom:"Grup A · ZenStop", sub:n+" persones", n, zen:true}, sim.big[0])}
+      ${dotsHTML({nom:"Grup B · placebo", sub:n+" persones", n}, sim.big[1])}</div>
+    <div class="row"><button class="btn" id="rep">🎲 Repeteix</button>
+      <span class="tally">Proves: <b>${sim.tries}</b> · amb 4 persones, ZenStop ha «guanyat» per 2 o més <b>${sim.winsSmall}</b> vegades${sim.tries?` (${pct} %)`:''}</span></div>
+    ${sim.tries < 5 ? `<p class="note">Repeteix-ho almenys 5 vegades per poder respondre (${sim.tries}/5).</p>` : ''}`;
+}
+
+function render(){
+  renderMode(); renderNav();
+  const vs = visible(), main = document.getElementById("main");
+  if (cur >= vs.length){ main.innerHTML = finalHTML(); return; }
+  const s = vs[cur], st = state[s.id] = state[s.id] || {answer:null, seen:new Set()};
+  const keys = s.views ? Object.keys(s.views) : [];
+  if (s.views && !st.view) st.view = keys[0];
+  if (s.views) st.seen.add(st.view);
+  let body = `<div class="card"><div class="k">Pas ${cur+1} de ${vs.length}</div><h2>${s.title}</h2><p class="story">${s.story}</p>`;
+  if (s.sim){ body += renderSim(s, st); }
+  else {
+    const v = s.views[st.view];
+    if (keys.length > 1) body += `<div class="toggle" role="group">${keys.map(k => `<button aria-pressed="${k===st.view}" data-v="${k}">${s.views[k].label}</button>`).join("")}</div>`;
+    body += `<div class="groups">${v.groups.map(g => dotsHTML(g)).join("")}</div>`;
+  }
+  body += `<div class="legend"><span><i class="c"></i>${C ? "sí" : "curat / millor"}</span><span><i></i>no</span><span>${s.meas}</span></div></div>`;
+
+  const need = s.sim ? ["sim"] : (s.mustSee || []);
+  const ready = need.every(k => st.seen.has(k));
+  body += `<div class="card"><div class="q">${s.q}</div>`;
+  if (!ready) body += `<p class="note">${s.sim ? "Primer, prem Repeteix unes quantes vegades." : "Primer, mira les dues opcions de dalt (" + need.map(k => s.views[k].label).join(" i ") + ")."}</p>`;
+  else {
+    body += `<div class="opts">${s.opts.map((o, i) => {
+      const cls = st.answer === i ? (o.ok ? "ok" : "ko") : (done(s) && o.ok ? "ok" : "");
+      return `<button class="opt ${cls}" data-o="${i}" ${done(s)?'disabled':''}>${o.t}</button>`; }).join("")}</div>`;
+    if (st.answer != null){
+      const o = s.opts[st.answer];
+      body += `<div class="fb ${o.ok?'ok':'ko'}">${o.ok ? "✅ " : "🤔 "}${o.fb}${o.ok ? "" : " <i>Torna-ho a provar.</i>"}</div>`;
+      if (o.ok) body += `<div class="trap">🕳️ <b>La trampa:</b> ${s.trap}<br>✏️ ${C ? "Paraula per a la fitxa:" : "A la fitxa, en una paraula:"} <b class="w">${s.word}</b></div>
+        <div class="row"><button class="btn" id="next">${cur+1 < vs.length ? "Pas següent →" : "🧩 Munta la prova justa →"}</button></div>`;
+    }
+  }
+  body += `</div>`;
+  main.innerHTML = body;
+  main.querySelectorAll(".toggle button").forEach(b => b.onclick = () => { st.view = b.dataset.v; render(); });
+  main.querySelectorAll(".opt").forEach(b => b.onclick = () => {
+    const i = +b.dataset.o; st.answer = i; render();
+  });
+  const rep = document.getElementById("rep"); if (rep) rep.onclick = () => { simRun(); render(); };
+  const nx = document.getElementById("next"); if (nx) nx.onclick = () => { cur++; render(); window.scrollTo({top:0, behavior:"smooth"}); };
+}
+
+function finalHTML(){
+  if (C) return `<div class="card"><div class="k">Resum</div><h2>🧩 La prova justa</h2>
+    <div class="pieces">
+      <div class="piece"><b>1 · Dos grups</b><span>Un pren el producte, l'altre no. Si no, no sé si es cura <b>sol</b>.</span></div>
+      <div class="piece"><b>2 · Ningú no ho sap</b><span>Si ho saps, et trobes millor perquè t'ho <b>creus</b>.</span></div>
+      <div class="piece"><b>3 · Prou gent</b><span>Amb 4 persones, pot guanyar per <b>sort</b>.</span></div></div>
+    <div class="motlle">El grup A rep <span class="b">ZenStop</span>. El grup B rep <span class="b">un xiclet sense res</span>. Ningú no sap qui rep què. Miro si <span class="b">es curen</span>.</div>
+    <p style="margin-top:10px">Si els dos grups surten <b>igual</b>, ZenStop <b>no funciona</b>.</p></div>
+    <div class="card"><h3>Ara, a la fitxa</h3><p>Completa les 3 frases amb <b>SOL · CREUS · SORT</b>.</p></div>`;
+  const A = nivell === "A";
+  return `<div class="card"><div class="k">Resum</div><h2>🧩 Anatomia d'una prova justa</h2>
+    <div class="pieces">
+      <div class="piece"><b>🆚 Grup de comparació</b><span>Un grup no rep el producte (o en rep una imitació). Si no, no saps si s'hauria curat sol.</span></div>
+      <div class="piece"><b>🎲 A l'atzar</b><span>Sorteges qui va a cada grup. Si no, els grups ja són diferents abans de començar.</span></div>
+      <div class="piece"><b>🙈 A cegues</b><span>Ningú no sap qui rep què (doble cec: ni qui mesura). Si no, creure-s'ho ja fa efecte.</span></div>
+      <div class="piece"><b>👥 Prou gent</b><span>Com més gent, menys hi pot la sort. I cal repetir-ho.</span></div>
+      ${A ? `<div class="piece"><b>🎯 Control positiu</b><span>Proves la prova amb una cosa que sabem que funciona.</span></div>` : ''}</div>
+    <h3>El motlle</h3>
+    <div class="motlle">🧪 Faig <b>dos grups a l'atzar</b>. El grup A rep <span class="b">ZenStop</span>; el grup B rep <b>una imitació</b> (o res): <span class="b">un xiclet sense res</span>. <b>Ningú no sap</b> qui rep què. Tot el demés és <b>igual</b>. Mesuro <span class="b">quants es curen en 7 dies</span>. Si els dos grups surten igual, la promesa <b>cau</b>.</div>
+    <p style="margin-top:10px">I després, <b>acceptar el resultat</b>, encara que no agradi.</p></div>
+    <div class="card"><h3>Ho reconeixes als casos del puzle?</h3><ul class="links">
+      <li><b>Cas 3 · Emily Rosa</b>: els practicants no veien on era la mà, i ella tirava una moneda. Peces: <b>a cegues</b> i <b>atzar</b>.</li>
+      <li><b>Cas 4 · Bany de peus</b>: la màquina amb aigua i <b>sense peus</b> també es torna marró. Peça: <b>comparació</b>.</li>
+      <li><b>Cas 5 · Trasplantament</b>: fa fàstic, però van repartir els pacients <b>a l'atzar</b> i el van comparar amb el tractament habitual. Peces: <b>atzar</b> i <b>comparació</b>.</li></ul>
+      <p style="margin-top:8px"><b>Ara, a la fitxa:</b> ${A ? "omple el motlle per decidir el <b>cas 6</b> i digues quanta gent hi posaries." : "omple el motlle per posar a prova el <b>cas 1</b> (l'aigua que recorda)."}</p></div>`;
+}
+
+render();
+</script>
+</body>
+</html>

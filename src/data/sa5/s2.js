@@ -1,7 +1,7 @@
 export const sa5s2 = {
   id: "s2",
   saId: "sa5",
-  title: "Ala de ratpenat i ala de mosca: parents o coincidència?",
+  title: "Les proves de l'evolució",
   sessionNumber: 2,
   biome: "sa5",
   duration: "2h",

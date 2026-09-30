@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exit Ticket · SA1 · Sessió 3 · El detector al món real</title>
+<title>Exit Ticket · SA1 · Sessió 3 · Posa a prova un cas nou</title>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -145,6 +145,17 @@ span[contenteditable]{display:inline-block;}
 }
 
 
+/* ── Tiquet de transferència GreenBeat (SA1 S3, 29/09/2026) ── */
+.gb-cas{margin:0 0 5px;padding:4px 9px;border-left:3px solid var(--teal);background:var(--teal-tint);font-size:10.5px;line-height:1.35;border-radius:0 6px 6px 0;font-style:italic;}
+.gb-q{display:flex;gap:6px;align-items:baseline;margin:3px 0 1px;font-size:10.5px;color:var(--ink-2);}
+.gb-q .q-num{flex:0 0 auto;}
+.gb-si{display:flex;align-items:flex-end;gap:5px;margin-left:27px;font-size:10.5px;font-weight:700;color:var(--purple-ink);}
+.gb-si .wline{flex:1;min-height:24px;}
+.gb-t{margin:1px 0 2px 27px;width:calc(100% - 27px);border-collapse:collapse;font-size:9.5px;}
+.gb-t th{width:34%;text-align:left;font-weight:700;color:var(--purple-ink);background:var(--purple-tint);border:1px solid var(--rule-dark);padding:2px 6px;}
+.gb-t td{border:1px solid var(--rule-dark);height:19px;background:#fff;}
+.gb-cont .wline{margin-left:27px;width:calc(100% - 27px);min-height:24px;}
+
 .crit-bar{display:flex;align-items:baseline;gap:6px;padding:2px 12px;background:#f4f8f9;border-bottom:1px solid var(--rule,#dce9eb);font-family:'Inter',sans-serif;font-size:8px;color:#5f6e72;line-height:1.35;}
 .crit-bar b{font-size:9px;color:#1c4a55;letter-spacing:.02em;}
 .crit-bar .ck{font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;}
@@ -169,7 +180,7 @@ span[contenteditable]{display:inline-block;}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
 
       <div class="eh-stub">
-        <span class="stub-ic">🌍</span>
+        <span class="stub-ic">🍅</span>
         <span class="stub-txt">Exit Ticket</span>
         <span class="stub-min">10 min · individual</span>
       </div>
@@ -177,7 +188,7 @@ span[contenteditable]{display:inline-block;}
       <div class="eh-main">
 
         <div class="eh-top">
-          <span class="t-title" contenteditable="true">Què faria caure el teu cas?</span>
+          <span class="t-title" contenteditable="true">Un cas nou: GreenBeat</span>
           <span class="t-sa" contenteditable="true">SA1 · Sessió 3 de 3</span><span class="lvl-badge">Versió B / A</span>
           <span class="t-note" contenteditable="true">aquest full s'entrega en sortir de classe</span>
         </div>
@@ -198,25 +209,38 @@ span[contenteditable]{display:inline-block;}
             <div class="voc-keys">
               <span class="vk-title">🧰 Paraules que pots fer servir</span>
               <span class="chip">promesa</span>
-              <span class="chip">posar a prova</span>
-              <span class="chip">grup de comparació</span>
-              <span class="chip">calaix</span>
-              <span class="chip">no es pot comprovar</span>
+              <span class="chip">dos grups</span>
+              <span class="chip">a l'atzar</span>
+              <span class="chip">a cegues</span>
+              <span class="chip">tot el demés igual</span>
             </div>
             <div class="voc-defs">
               <span class="vd-title">Recorda què volen dir</span>
-              <dl class="voc"><dt>posar a prova</dt><dd>pensar una prova que la promesa podria no superar.</dd><dt>encara no comprovat</dt><dd>es pot posar a prova, però encara no s'ha fet prou.</dd></dl>
+              <dl class="voc"><dt>prova justa</dt><dd>dos grups repartits a l'atzar; només canvia allò que vols provar.</dd><dt>a cegues</dt><dd>qui mesura no sap quin grup és quin.</dd></dl>
             </div>
           </div>
 
-        <div class="q deletable" style="margin-bottom:2px">
-          <div class="del-btn" onclick="deleteEl(this)">✕</div>
-          <div class="q-head">
-            <div class="q-num">1</div>
-            <div class="q-text"><span contenteditable="true">Escriu la <strong>promesa</strong> del teu cas en una frase i <strong>quina prova concreta</strong> la podria fer caure. Si no se t'acut cap prova possible, què et diu això del cas?</span><span class="q-tag">idea central</span></div>
-          </div>
-          <div class="q-hint" contenteditable="true">Pista: si cap resultat no la pot fer caure, recorda el senyal 1 del detector.</div>
-          <div class="wline" contenteditable="true"></div>
+        <div class="gb-cas deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span contenteditable="true">🎵 «Posa el nostre altaveu a l'hivernacle: amb la música especial <b>GreenBeat</b>, les teves tomaqueres creixeran un <b>30 % més</b>. Ho diuen centenars de pagesos satisfets.»</span></div>
+
+        <div class="q deletable" style="margin-bottom:2px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+          <div class="gb-q"><div class="q-num">1</div><span contenteditable="true">Escriu la <strong>promesa</strong> com una frase que es pugui comprovar.</span></div>
+          <div class="gb-si"><span>Si</span><div class="wline" contenteditable="true"></div><span>, aleshores</span><div class="wline" contenteditable="true"></div></div>
+        </div>
+
+        <div class="q deletable" style="margin-bottom:2px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+          <div class="gb-q"><div class="q-num">2</div><span contenteditable="true">Dissenya la <strong>prova justa</strong>.</span></div>
+          <table class="gb-t">
+            <tr><th>Grup A rep…</th><td contenteditable="true"></td></tr>
+            <tr><th>Grup B rep…</th><td contenteditable="true"></td></tr>
+            <tr><th>3 coses iguals als dos grups</th><td contenteditable="true"></td></tr>
+            <tr><th>Què mesures i quan</th><td contenteditable="true"></td></tr>
+            <tr><th>Qui no sap quin grup és quin</th><td contenteditable="true"></td></tr>
+          </table>
+          <div class="q-hint" contenteditable="true">Pista: les plantes no poden fer veure que creixen. Qui s'ha de posar a cegues és qui mesura.</div>
+        </div>
+
+        <div class="q gb-cont deletable" style="margin-bottom:0"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+          <div class="gb-q"><div class="q-num">3</div><span contenteditable="true">Quin <strong>resultat</strong> faria caure la promesa? Si l'empresa respon «les plantes han de sentir la música amb <em>bona energia</em>», quin <strong>senyal</strong> s'encén i per què?</span></div>
           <div class="wline" contenteditable="true"></div>
           <div class="wline" contenteditable="true"></div>
         </div>

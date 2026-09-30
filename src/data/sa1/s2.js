@@ -4,10 +4,12 @@
 // qualitat de la notícia que cada alumne havia trobat. Ara els casos es DONEN,
 // treballats a fons en un dossier, i l'alumnat es mou per l'aula en format puzle.
 // Dossiers, clau i casos: SA1-ciencia-pseudociencia/_generador/casos.py.
+import { SENYALS_TXT } from "./senyals.js"
+
 export const sa1s2 = {
   id: "s2",
   saId: "sa1",
-  title: "Et creuries aquests sis casos?",
+  title: "El puzle de casos",
   repteInicial: "Sis casos reals, sis grups d'experts. Cada grup n'estudia un a fons i després us barregeu: cada expert explica el seu cas i la resta el passa pel detector. Al final, sabreu per què un cas que fa fàstic és ciència i un que sona molt científic no ho és.",
   sessionNumber: 2,
   biome: "sa1",
@@ -16,25 +18,26 @@ export const sa1s2 = {
 
   engageChallenge: "Un remei que es ven a les farmàcies, un «miracle» que es beu, una nena de 9 anys que desmunta una teràpia, un bany de peus que es torna marró, un trasplantament que fa fàstic i un horari per menjar que promet anys de vida. Quins són ciència?",
   engageQuestion: "Tenim el detector. Però un detector només serveix si l'has fet servir amb casos de debò, i si saps distingir el que és estrany del que és fals.",
-  teacherNotes: "Puzle (jigsaw): 6 grups d'experts de 4 (un cas cadascun) → 4-6 grups puzle amb un expert de cada cas. El cas 5 és el control negatiu (ciència) i el 6 el de frontera (encara no comprovat vs influencer). Dossiers: un per grup, reutilitzables. Clau docent a part.",
+  teacherNotes: "Puzle (jigsaw): 6 grups d'experts de 4 (un cas cadascun) → 4-6 grups puzle amb un expert de cada cas. El cas 5 és el control negatiu (ciència) i el 6 el de frontera (encara no comprovat vs influencer). Dossiers: un per grup, reutilitzables. Clau docent a part. Apartat 3 (29/09/2026): laboratori de la prova justa amb l'app ZenStop (parelles, una pantalla) i posada en comú amb el motlle. Al final, avisa en veu alta: a la S3 exposaran el seu cas oralment (1 min 30 s) i s'avaluarà; el guió és a peu de fitxa.",
 
   levelObjectives: {
     A: [
       "Analitzo un cas a fons i dissenyo la prova que el decidiria.",
       "Explico al puzle el cas i la prova que el decidiria.",
       "Distingeixo quan el problema és el tema i quan és com es presenta.",
-      "Comparo les proves dels casos i dic què fa que una prova sigui justa."
+      "Explico què fa justa una prova (comparació, atzar, a cegues, prou gent) i per què cal un control positiu."
     ],
     B: [
       "Analitzo a fons un cas real amb el meu grup d'experts i el passo pel detector.",
       "Explico el meu cas als companys del puzle en 3 minuts.",
       "Passo pel detector els casos que m'expliquen i els poso al calaix que toca.",
-      "Explico què té una prova justa: grup de comparació i ningú no sap qui rep què."
+      "Explico què té una prova justa: grup de comparació, a l'atzar, a cegues i prou gent."
     ],
     C: [
       "Llegeixo el meu cas amb el grup d'experts i hi trobo els senyals.",
       "Explico el meu cas al puzle amb el guió.",
-      "Poso cada cas al seu calaix."
+      "Poso cada cas al seu calaix.",
+      "Sé què té una prova justa: dos grups, a l'atzar, a cegues."
     ]
   },
 
@@ -44,19 +47,19 @@ export const sa1s2 = {
       scaffold:
         "Repartiu-vos la feina: llegiu tots junts el requadre «📖 En 3 línies»; després cadascú llegeix un apartat del dossier i l'explica als altres. Assageu en veu alta: què promet → quins senyals (amb la frase) → com es va comprovar → calaix.",
       challenge:
-        "Ets qui dissenya la prova del grup: dos grups, què rep cadascun, qui no sap què, què es mesura i quin resultat faria canviar el calaix. Al puzle, després d'explicar el cas, explica com la muntaries tu i per què així les ganes de creure-hi no poden decidir el resultat."
+        "Detecta amb els senyals escrits: " + SENYALS_TXT + " Marca'ls al dossier amb la frase que els encén. Després, ets qui dissenya la prova del grup: dos grups, què rep cadascun, qui no sap què, què es mesura i quin resultat faria canviar el calaix. Al puzle, després d'explicar el cas, explica com la muntaries tu i per què així les ganes de creure-hi no poden decidir el resultat."
     },
     "2": {
       scaffold:
         "Marca els senyals i el calaix ABANS que l'expert us digui els seus, i després compareu. Si no coincidiu, pregunteu-li quina frase del dossier encén el senyal.",
       challenge:
-        "Quan un expert acabi, fes-li una pregunta que el faci dubtar: «I si…?». Una bona pregunta ataca la prova, no la persona."
+        "Tens els senyals escrits: " + SENYALS_TXT + " Per a cada cas, digues quin senyal s'encén i amb quina frase del dossier. Quan un expert acabi, fes-li una pregunta que el faci dubtar: «I si…?». Una bona pregunta ataca la prova, no la persona."
     },
     "3": {
       scaffold:
-        "Per a la b): mira els casos 3, 4 i 5. Hi havia algú que no rebia el tractament? Algú sabia qui el rebia? Es va repartir la gent a l'atzar?",
+        "A cada pas de l'app, la paraula per a la fitxa surt al requadre taronja «La trampa». Per al motlle del cas 1: el grup A rep el producte; el grup B, una imitació (boletes de sucre iguals); mesures si es curen de la grip i en quants dies.",
       challenge:
-        "Per ordenar les proves de més justa a menys justa, fixa't en tres coses: si hi ha grup de comparació, si és a cegues i si es va repetir."
+        "Fes també el pas 6 de l'app (Control positiu). Al motlle del cas 6, digues quanta gent hi posaries i per què (recorda el pas 5 amb 4 persones). Després, amb els senyals escrits (" + SENYALS_TXT + "), digues quin senyal encendria la influencer del cas 6 si la prova li sortís en contra."
     }
   },
 
@@ -89,8 +92,10 @@ export const sa1s2 = {
     "Cartell o projecció amb el número de grup d'experts i de grup puzle de cada alumne"
   ],
   exploreDuration: "35 min",
-  appSrc: null,
-  exploreNote: "Sense pantalles: dossiers en paper i conversa. Pots tenir els dossiers projectats per a qui els necessiti més grans.",
+  // L'app és el lab de l'apartat 3 (no de l'EXPLORA): SessionPage la mostra a l'apartat appApartat.
+  appSrc: { A: "/apps/app_prova_justa.html", B: "/apps/app_prova_justa.html", C: "/apps/app_prova_justa_C.html" },
+  appApartat: "3",
+  exploreNote: "Els apartats 1 i 2 van sense pantalles: dossiers en paper i conversa. L'app del laboratori de la prova justa és a l'apartat 3.",
 
   theoryPoints: [
     {
@@ -102,15 +107,15 @@ export const sa1s2 = {
     },
     {
       id: "t2",
-      apartat: "2",
+      apartat: "3",
       heading: "Com es comprova ==de debò== si una cosa funciona",
-      text: "Cal un ==grup de comparació== (gent que no rep el producte, o en rep una imitació), repartir la gent ==a l'atzar== i que ==ningú no sàpiga== qui rep què. Les ganes que una cosa funcioni et poden fer notar una millora que no hi és. I després, ==acceptar el resultat==, encara que no agradi: això és el que fa el cas 5 i no fa el cas 1.",
+      text: "Una prova justa té quatre peces. (1) Un ==grup de comparació== que no rep el producte o en rep una imitació: si no, no saps si s'hauria curat sol. (2) Repartir la gent ==a l'atzar==: si cadascú tria, els grups ja són diferents abans de començar. (3) ==A cegues==: ningú no sap qui rep què, perquè les ganes que funcioni et fan notar una millora que no hi és. (4) ==Prou gent==, i repetir-ho: amb 4 persones, la sort decideix. Si els dos grups surten igual, la promesa cau. I després, ==acceptar el resultat==, encara que no agradi: això és el que fa el cas 5 i no fa el cas 1.",
       type: "epistemic",
       badge: "🔬 Com funciona la ciència"
     },
     {
       id: "t3",
-      apartat: "3",
+      apartat: "2",
       heading: "El calaix depèn de ==com es presenta==",
       text: "El cas 6 ho mostra: els investigadors diuen «en humans encara no ho sabem» (encara no comprovat), i una influencer diu «està demostrat que t'allarga la vida» (pseudociència). ==El mateix tema== pot anar a calaixos diferents segons què es fa amb la prova.",
       type: "epistemic",
@@ -119,7 +124,8 @@ export const sa1s2 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "2", before: true, title: "El detector de pseudociència", src: "/images/sa1-s2-detector.svg", note: "Els 5 senyals. Els tens també a dalt de la fitxa." }
+    { id: "Fig.1", apartat: "2", before: true, title: "El detector de pseudociència", src: "/images/sa1-s2-detector.svg", note: "Els 5 senyals. Els tens també a dalt de la fitxa." },
+    { id: "Fig.2", apartat: "3", title: "Anatomia d'una prova justa", src: "/images/sa1-s2-prova-justa.svg", note: "Les quatre peces que has descobert a l'app. Són les del motlle de la fitxa." }
   ],
 
   fitxaUrl: { A: "/fitxes/sa1-s2-fitxa-A.html", B: "/fitxes/sa1-s2-fitxa-B.html", C: "/fitxes/sa1-s2-fitxa-C.html" },
@@ -147,10 +153,11 @@ export const sa1s2 = {
           "Si no coincidiu amb l'expert, demana-li la frase del dossier.",
           "Estrany no vol dir fals: mira si s'ha comprovat."
         ] },
-      { apartat: "3", title: "Què hem après dels sis casos?", time: "15 min", phase: "explica",
-        instruction: "Posada en comú: per què el cas 5 és ciència i què tenien en comú les proves justes.",
+      { apartat: "3", title: "Com es comprova de debò?", time: "30 min", phase: "explica",
+        instruction: "En parelles, fes els passos de l'app del laboratori (el xiclet ZenStop) i escriu a la fitxa la paraula de cada trampa. Després, omple el motlle de la prova justa amb un cas del puzle.",
         hints: [
-          "Pensa en grup de comparació, atzar i qui sabia què.",
+          "La paraula de cada pas surt al requadre taronja «La trampa».",
+          "Motlle: dos grups a l'atzar, un rep una imitació, ningú no sap qui rep què, i un resultat que faria caure la promesa.",
           "Que una cosa faci fàstic o soni rara no és cap senyal del detector."
         ] }
     ]
@@ -174,12 +181,13 @@ export const sa1s2 = {
   },
 
   homework: {
-    description: "Porta el cas que has caçat (la foto o la frase de la promesa). Si encara no en tens, busca'n un que prometi una cosa concreta sobre el cos, la salut o la natura.",
-    note: "A la Sessió 3 el passaràs pel detector. Si no en portes, hi haurà casos de reserva."
+    description: "Porta el cas que has caçat (la foto o la frase de la promesa). Si encara no en tens, busca'n un que prometi una cosa concreta sobre el cos, la salut o la natura. 🎤 A la Sessió 3 l'exposaràs oralment (1 min 30 s) i t'ho avaluaré: assaja-ho una vegada en veu alta seguint el guió de peu de fitxa (què promet → senyals amb la frase → com ho comprovaria amb dos grups → calaix).",
+    note: "A la Sessió 3 el passaràs pel detector i l'exposaràs. Si no en portes, hi haurà casos de reserva."
   },
 
   recoveryInstructions: [
-    "Llegeix l'apartat EXPLICA: els tres calaixos i com es comprova de debò si una cosa funciona",
+    "Llegeix la teoria: els tres calaixos i les quatre peces d'una prova justa (figura «Anatomia d'una prova justa»)",
+    "Fes l'app del laboratori de la prova justa (apartat 3) i omple la taula i el motlle de la fitxa",
     "Obre els dossiers dels 6 casos (enllaç a ELABORA) i llegeix-ne almenys tres",
     "Omple la fitxa d'expert amb un dels casos i la graella del puzle amb els altres",
     "Fes l'exit tiquet"

@@ -7,6 +7,8 @@
 //   · el DETECTOR (5 senyals) es DONA fet en aquesta sessió, a tots els nivells, i
 //     s'estrena amb quatre anuncis curts i controlats (un de ciència com a control).
 //     Construir-lo entre tots no funcionava a l'aula (Albert, 21/09/2026).
+import { SENYALS_TXT } from "./senyals.js"
+
 export const sa1s1 = {
   id: "s1",
   saId: "sa1",
@@ -62,7 +64,7 @@ export const sa1s1 = {
       scaffold:
         "Llegeix l'anunci buscant paraules concretes: paraula grossa que no explica res → senyal 4; excusa per si no funciona → senyal 2; famosos o testimonis → senyal 3; promet el que desitges → senyal 5; impossible de mesurar → senyal 1. Un dels quatre anuncis no n'encén cap.",
       challenge:
-        "Marca els senyals dels quatre anuncis i, al final, inventa'n un de pseudociència (dues línies) que encengui almenys tres senyals. Passa'l a un company sense dir-li quins són: si hi troba els mateixos, has guanyat."
+        "Tens els senyals escrits: " + SENYALS_TXT + " Marca els senyals dels quatre anuncis i, per a cada senyal, copia la frase que l'encén. Al final, inventa'n un de pseudociència (dues línies) que encengui almenys tres senyals. Passa'l a un company sense dir-li quins són: si hi troba els mateixos, has guanyat."
     }
   },
 
@@ -195,7 +197,7 @@ export const sa1s1 = {
 
   homework: {
     description: "Caça un cas per a la Sessió 3: un anunci, un post o un consell de salut que prometi una cosa concreta sobre el cos, la salut o la natura. Fes-ne una foto o copia la frase de la promesa. Ha de poder-se dir en una frase: «Promet que…».",
-    note: "A la Sessió 2 treballareu casos que us donem fets; el vostre cas el fareu servir a la 3."
+    note: "A la Sessió 2 treballareu casos que us donem fets; el vostre cas el fareu servir a la 3, i l'exposareu oralment a la classe."
   },
 
   recoveryInstructions: [

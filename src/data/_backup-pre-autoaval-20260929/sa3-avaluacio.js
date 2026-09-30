@@ -14,14 +14,6 @@
 // haver llegit res. També s'ha corregit que la PKU és recessiva (calen les
 // DUES còpies del gen mutades) i s'han reescrit t2 i t4, que regalaven la
 // resposta dins l'enunciat o preguntaven per coses no treballades a la SA.
-//
-// Revisió 2026-09-29 (autoavaluació ≠ prova): l'assaig escrit copiava
-// preguntes de la prova final del curs («El llac sota el gel»). S'ha refet
-// sencer amb un context NOU —les lluernes i el gen de la luciferasa— que no és el de la
-// prova, ni l'enigma de la SA, ni el del test. Cada pregunta entrena
-// el bloc 3 de la prova final del curs amb les mateixes habilitats i exigència
-// (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
-// Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
 export const sa3Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -31,79 +23,79 @@ export const sa3Avaluacio = {
   // que fan servir les rubriques de les proves del curs.
   escrita: {
     intro:
-      "Assaig del bloc de la prova final que treballa SA3 (de la lletra de l'ADN al caràcter), amb un cas NOU: les lluernes. Una lluerna brilla gràcies a una proteïna, la luciferasa, que fabrica llum dins les cèl·lules de l'abdomen; els mascles fan pampallugues perquè les femelles els trobin. El gen de la luciferasa té dos al·lels: L (la proteïna funciona i la lluerna brilla) i l (la proteïna no funciona). Full, bolígraf i sense apunts: la cadena ha d'arribar SENCERA fins al caràcter.",
-    minutes: 26,
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Full, bolígraf i sense apunts. A SA3 la cadena gen → ARNm → proteïna → caràcter ha de sortir SENCERA: quedar-se a la proteïna és l'error més repetit.",
+    minutes: 25,
     questions: [
       {
         id: 'w1',
-        oa: 'OA1',
-        source: 'Entrena el bloc 3 de la prova final · llegir un ARN missatger de tres en tres',
-        minutes: 5,
-        text: "La cadena motlle de l'ADN d'un tros del gen de la luciferasa (al·lel L) és: GGA ACC TTT CGA. a) Escriu l'ARN missatger que se'n transcriu i separa'l en codons. b) Digues en quin lloc de la cèl·lula passa i per què l'ARN missatger no porta cap T.",
+        oa: 'OA2',
+        source: 'Prova final del curs · Pregunta 3, «una lletra canviada»',
+        minutes: 7,
+        text: "En un gen canvia una sola base. Explica tot el camí que va d'aquest canvi fins que l'organisme deixa de tenir una característica.",
         model: {
-          as: "ARNm: CCU UGG AAA GCU (quatre codons). Es fa al nucli (transcripció). No porta T perquè l'ARN fa servir uracil (U) en lloc de timina.",
-          ae: "Cada base de l'ARNm és la complementària de la del motlle: G → C, A → U, C → G, T → A. Per tant: GGA ACC TTT CGA → CCU UGG AAA GCU, que es llegeix de tres en tres: quatre codons, que donaran quatre aminoàcids. La transcripció passa al nucli, on hi ha l'ADN; l'ARNm en surt cap al ribosoma, on es farà la traducció. No hi ha T perquè l'ARN porta uracil en lloc de timina: allà on el motlle té una A, l'ARNm hi posa U. L'error que cal evitar és copiar les mateixes lletres del motlle, o escriure T dins un ARN.",
+          as: "Si canvia una base, canvia el codó. Aquell codó pot passar a codificar un aminoàcid diferent, i llavors la proteïna surt alterada i pot no fer bé la seva funció, de manera que la característica desapareix.",
+          ae: "La cadena és: base → codó → aminoàcid → proteïna → caràcter, és a dir, genotip → fenotip. Un canvi d'una sola base altera UN codó (no tres lletres: el codó sencer és diferent perquè una de les seves tres lletres ho és). Si el codó nou codifica un altre aminoàcid, la proteïna incorpora un aminoàcid diferent, cosa que pot canviar-ne la forma i, amb la forma, la funció; si la proteïna era, per exemple, una anticongelant que impedeix que es formin cristalls de gel, en deixar de fer la seva feina l'organisme deixa de resistir la congelació. Ara bé, no tota mutació puntual té efecte: hi ha codons diferents que donen el mateix aminoàcid (mutació silenciosa) i llavors la proteïna surt igual.",
         },
-        aeWhy: "L'AE aplica la complementarietat lletra per lletra, diu que el missatge es llegeix en codons (tres lletres, un aminoàcid) i situa la transcripció i la traducció on toca. Tanca els dos errors típics: copiar el motlle i posar T a l'ARN.",
+        aeWhy: "L'AE arriba fins al CARÀCTER, evita l'error de «canvien tres lletres» i afegeix el cas de la mutació silenciosa, que és el que demostra que s'ha entès el codi i no s'ha memoritzat una fletxa.",
         must: [
-          "Has escrit CCU UGG AAA GCU, separat en quatre codons.",
-          "Has aplicat A → U (i no A → T).",
-          "Has dit que la transcripció passa al nucli.",
-          "Has dit que l'ARN porta uracil en lloc de timina."
+          "Has escrit la cadena sencera fins al caràcter observable.",
+          "Has dit que canvia un codó, no tres lletres.",
+          "Has explicat per què canviar un aminoàcid pot canviar la funció.",
+          "Has esmentat que hi ha mutacions sense efecte (silencioses)."
         ]
       },
       {
         id: 'w2',
-        oa: 'OA2',
-        source: 'Entrena el bloc 3 de la prova final · comparar dos al·lels amb la taula de codons',
+        oa: 'OA1',
+        source: 'Tipus de pregunta de la prova · ADN i ARN',
         minutes: 6,
-        text: "Aquest és el mateix tros d'ARNm en els dos al·lels. Al·lel L: … CCU UGG AAA GCU … Al·lel l: … CCU UGG ACA GCU … Tros de la taula de codons: CCU = prolina · UGG = triptòfan · AAA = lisina · AAG = lisina · ACA = treonina · GCU = alanina · CAU = histidina · GGA = glicina. a) Quantes lletres són diferents entre L i l, i en quin codó? b) Escriu els aminoàcids que surten de cada al·lel. c) Quin aminoàcid canvia?",
+        text: "Explica les diferències entre ADN i ARN i per quina raó la cèl·lula necessita les dues molècules en comptes de fer-ho tot amb una.",
         model: {
-          as: "Hi ha una sola lletra diferent, al tercer codó (AAA → ACA). L: prolina, triptòfan, lisina, alanina. l: prolina, triptòfan, treonina, alanina. Canvia la lisina per treonina.",
-          ae: "Comparant lletra a lletra, només n'hi ha UNA de diferent: la del mig del tercer codó (AAA a L, ACA a l). No canvien tres lletres: canvia un sol codó perquè una de les seves tres lletres és diferent. Traducció de L: prolina – triptòfan – lisina – alanina. Traducció de l: prolina – triptòfan – treonina – alanina. Els altres tres codons són idèntics i donen els mateixos aminoàcids; l'únic que canvia és el tercer: lisina a L, treonina a l. Per tant, la proteïna de l'al·lel l té la mateixa llargada i un sol aminoàcid diferent en aquesta posició.",
+          as: "L'ADN té doble cadena, desoxiribosa i timina; l'ARN té cadena simple, ribosa i uracil. L'ADN guarda la informació al nucli i l'ARN missatger la transporta fins al ribosoma, que és on es fabrica la proteïna.",
+          ae: "L'ADN és de doble cadena, amb desoxiribosa i timina; l'ARN és de cadena simple, amb ribosa i uracil. Tenen funcions diferents perquè tenen exigències contràries: l'ADN ha de ser l'arxiu, estable i protegit, i per això es queda al nucli i la doble cadena el fa més resistent i permet reparar-lo (si una cadena es malmet, l'altra serveix de motlle per complementarietat A-T i G-C). L'ARN missatger ha de ser una còpia de treball: es fabrica quan cal, surt del nucli fins al ribosoma i es degrada, de manera que la cèl·lula pot regular quanta proteïna fabrica sense tocar mai l'original. Si tot es fes amb una sola molècula, cada lectura posaria en risc l'arxiu.",
         },
-        aeWhy: "L'AE compta bé (una lletra, un codó, un aminoàcid) i ho escriu tot en ordre, que és el que la pregunta demana. Evita els dos errors típics d'aquest tipus de taula: dir que canvien tres lletres i dir que canvien tots els aminoàcids del tros.",
+        aeWhy: "L'AE respon la segona part de debò: explica per què convé separar l'arxiu de la còpia de treball, i aprofita la complementarietat per justificar l'estabilitat de l'ADN.",
         must: [
-          "Has dit que hi ha una sola lletra diferent, al tercer codó.",
-          "Has traduït els quatre codons de cada al·lel.",
-          "Has identificat lisina → treonina com l'únic canvi.",
-          "No has dit que canvien tres lletres ni tota la proteïna."
+          "Has dit les tres diferències (cadena, sucre, base).",
+          "Has dit on és cada molècula i què hi fa.",
+          "Has anomenat la complementarietat A-T i G-C.",
+          "Has explicat per què convé tenir arxiu i còpia de treball separats."
         ]
       },
       {
         id: 'w3',
-        oa: 'OA2',
-        source: 'Entrena el bloc 3 de la prova final · encadenar base, aminoàcid, proteïna i caràcter',
-        minutes: 7,
-        text: "Un mascle té els dos al·lels l i no brilla. Explica tota la cadena: de quina manera una única lletra diferent a l'ADN fa que aquest mascle tingui molt poques possibilitats de deixar descendència?",
+        oa: 'OA3',
+        source: 'Tipus de pregunta de la prova · Mutació i variabilitat',
+        minutes: 6,
+        text: "Un company diu: «les bactèries es fan resistents a l'antibiòtic perquè el necessiten». Corregeix-lo explicant d'on surt realment la resistència.",
         model: {
-          as: "La lletra diferent canvia un codó i fa que la luciferasa porti un aminoàcid diferent. La proteïna no funciona, no fabrica llum i el mascle no brilla, així que les femelles no el troben.",
-          ae: "Cal seguir el camí de la lletra fins al caràcter, és a dir, del genotip al fenotip. Una lletra diferent a l'ADN fa que, en la transcripció, l'ARNm porti un codó diferent (ACA en lloc d'AAA). En la traducció, el ribosoma hi posa treonina en lloc de lisina. Un aminoàcid diferent pot canviar la forma de la proteïna, i la luciferasa necessita la seva forma per fer la reacció que produeix llum: si la forma canvia, deixa de funcionar. Sense luciferasa que funcioni, les cèl·lules de l'abdomen no fan llum: el caràcter observable és que el mascle no brilla. I aquí no s'acaba: les femelles troben els mascles per les pampallugues, de manera que aquest mascle gairebé no s'aparellarà i l'al·lel l passarà a menys descendents. El gen no «fa llum» directament: fa una proteïna, i és la proteïna la que fa la llum.",
+          as: "No és així. Les mutacions apareixen a l'atzar, abans i independentment de l'antibiòtic. Quan s'aplica l'antibiòtic, les que per casualitat ja eren resistents sobreviuen i es reprodueixen, i la població passa a ser resistent.",
+          ae: "La resistència no apareix perquè calgui. Les mutacions es produeixen a l'atzar en copiar l'ADN, abans que hi hagi cap antibiòtic i sense cap relació amb ell: en una població enorme de bacteris, per pura probabilitat, algun ja porta un canvi que el fa menys sensible. L'antibiòtic no crea aquesta variant: la selecciona, perquè elimina la resta i deixa que aquell es reprodueixi sense competència. En poques generacions la proporció de resistents puja. La prova que ho decideix és que es poden trobar bacteris resistents en poblacions que mai no han estat exposades a l'antibiòtic. I d'aquí ve la recomanació d'acabar sempre el tractament: deixar-lo a mitges és exactament el que dona avantatge als menys sensibles.",
         },
-        aeWhy: "L'AE no s'atura a «la proteïna no funciona», que és on es queda la majoria: arriba al caràcter observable (no brilla) i a la seva conseqüència (no troba parella). També deixa clar que el gen fa una proteïna i no el caràcter directament.",
+        aeWhy: "L'AE dona la prova que decideix entre les dues explicacions (resistents no exposats) i evita els verbs lamarckians («es fan resistents», «s'adapten»). Acaba amb la conseqüència pràctica.",
         must: [
-          "Has passat per transcripció (ARNm) i traducció (aminoàcid).",
-          "Has explicat per què un aminoàcid diferent pot fer que la proteïna deixi de funcionar.",
-          "Has arribat al caràcter observable: no brilla.",
-          "Has lligat el caràcter amb la possibilitat de deixar descendència."
+          "Has dit que la mutació és prèvia i a l'atzar.",
+          "Has dit que l'ambient selecciona, no crea.",
+          "No has fet servir verbs del tipus «s'adapten» o «desenvolupen».",
+          "Has dit quina prova permetria decidir entre les dues explicacions."
         ]
       },
       {
         id: 'w4',
-        oa: 'OA3',
-        source: 'Entrena el bloc 3 de la prova final · mutació sense efecte i límits de les dades',
-        minutes: 8,
-        text: "En una altra població es troba un tercer al·lel, L2, amb aquest mateix tros d'ARNm: … CCU UGG AAG GCU … a) Amb la taula de codons de la pregunta anterior, prediu si les lluernes L2 brillaran i justifica-ho. b) Amb les dades que tens, què NO pots deduir sobre l'al·lel l, i què caldria fer per saber-ho?",
+        oa: 'OA4',
+        source: 'Tipus de pregunta de la prova · CRISPR',
+        minutes: 6,
+        text: "Distingeix l'edició genètica somàtica de la germinal i explica per quina raó el debat ètic no és el mateix en els dos casos.",
         model: {
-          as: "Brillaran: AAG també codifica lisina, així que la proteïna surt igual. No podem saber del cert si la treonina és el que espatlla la proteïna, perquè només veiem un tros del gen: caldria mirar el gen sencer.",
-          ae: "a) L2 té una lletra diferent de L (AAA → AAG), però AAG també codifica lisina: la proteïna surt amb els mateixos aminoàcids, la luciferasa funciona i la lluerna brilla. És una mutació silenciosa: hi ha canvi a l'ADN però no a la proteïna, perquè diversos codons donen el mateix aminoàcid. b) Amb aquest tros sol no puc deduir: (1) que el canvi lisina → treonina sigui la causa de la proteïna que no funciona, perquè només veig quatre codons d'un gen molt més llarg i hi podria haver altres diferències; (2) si aquell aminoàcid és en una zona de la proteïna important per fer la llum o en una que no ho és. Per saber-ho caldria seqüenciar el gen sencer dels dos al·lels i, al laboratori, fabricar la proteïna amb només aquest canvi i mesurar si fa llum, comparant-la amb la de L com a control.",
+          as: "L'edició somàtica afecta només les cèl·lules del cos de la persona tractada i no es transmet als fills. La germinal afecta els gàmetes o l'embrió i sí que es transmet a tota la descendència, per sempre.",
+          ae: "La somàtica modifica cèl·lules del cos d'una persona ja nascuda —per exemple, les de la medul·la per tractar una malaltia de la sang—: l'efecte s'acaba amb aquella persona i no passa als fills. La germinal modifica gàmetes o embrions, de manera que el canvi és a totes les cèl·lules del nou individu i es transmet a la seva descendència indefinidament. El debat no és el mateix per dos motius: primer, qui rep el canvi germinal no pot donar-hi consentiment, ni ell ni cap de les generacions següents; i segon, un efecte no previst esdevé irreversible i es propaga a la població. A més cal separar les dues preguntes: què es pot fer és una pregunta de ciència, i què s'hauria de fer és una decisió de valors que la ciència sola no respon.",
         },
-        aeWhy: "L'AE resol la mutació silenciosa amb la taula i, sobretot, marca el límit del que diuen les dades (un tros no és el gen sencer; un canvi no prova la causa) i proposa com posar-ho a prova, amb control. Aquest és l'extra que la versió A de la prova demana per arribar a AE.",
+        aeWhy: "L'AE dona els dos arguments que fan diferent el cas germinal (consentiment i irreversibilitat) i separa explícitament la pregunta científica de la de valors, que és el criteri de l'OA4.",
         must: [
-          "Has dit que L2 brilla perquè AAG també és lisina.",
-          "Has fet servir l'expressió «mutació silenciosa» o l'has explicada.",
-          "Has dit almenys una cosa que les dades no permeten deduir.",
-          "Has proposat com comprovar-ho (gen sencer o fabricar la proteïna i mesurar-la)."
+          "Has definit bé les dues modalitats.",
+          "Has dit que la germinal es transmet a la descendència.",
+          "Has parlat del consentiment o de la irreversibilitat.",
+          "Has separat «què es pot fer» de «què s'hauria de fer»."
         ]
       }
     ]

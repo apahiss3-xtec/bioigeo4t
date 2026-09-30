@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" font-family="'Fira Sans Extra Condensed', 'Arial Narrow', system-ui, sans-serif">
+  <title>Anatomia d'una prova justa</title>
+  <rect width="960" height="540" fill="#f4f8f9"/>
+  <text x="480" y="48" text-anchor="middle" font-size="34" font-weight="900" fill="#1c4a55">Anatomia d'una prova justa</text>
+  <text x="480" y="80" text-anchor="middle" font-size="19" fill="#5f6e72">Quatre peces perquè les ganes de creure-hi no decideixin el resultat</text>
+
+  <!-- Centre: els dos grups -->
+  <g transform="translate(330,180)">
+    <rect width="300" height="200" rx="18" fill="#fff" stroke="#9ccad2" stroke-width="3"/>
+    <rect x="16" y="18" width="126" height="164" rx="12" fill="#f1e9f7" stroke="#d6c3e6" stroke-width="2"/>
+    <rect x="158" y="18" width="126" height="164" rx="12" fill="#eaf4f6" stroke="#b6ccd0" stroke-width="2"/>
+    <text x="79" y="46" text-anchor="middle" font-size="20" font-weight="900" fill="#5e3a7a">GRUP A</text>
+    <text x="79" y="68" text-anchor="middle" font-size="15" fill="#334">rep el producte</text>
+    <text x="221" y="46" text-anchor="middle" font-size="20" font-weight="900" fill="#1c4a55">GRUP B</text>
+    <text x="221" y="68" text-anchor="middle" font-size="15" fill="#334">rep una imitació</text>
+    <g fill="#8e5bb5">
+      <circle cx="44" cy="96" r="9"/><circle cx="68" cy="96" r="9"/><circle cx="92" cy="96" r="9"/><circle cx="116" cy="96" r="9"/>
+      <circle cx="44" cy="122" r="9"/><circle cx="68" cy="122" r="9"/><circle cx="92" cy="122" r="9"/><circle cx="116" cy="122" r="9"/>
+      <circle cx="44" cy="148" r="9"/><circle cx="68" cy="148" r="9"/><circle cx="92" cy="148" r="9"/><circle cx="116" cy="148" r="9"/>
+    </g>
+    <g fill="#2A6F7F">
+      <circle cx="186" cy="96" r="9"/><circle cx="210" cy="96" r="9"/><circle cx="234" cy="96" r="9"/><circle cx="258" cy="96" r="9"/>
+      <circle cx="186" cy="122" r="9"/><circle cx="210" cy="122" r="9"/><circle cx="234" cy="122" r="9"/><circle cx="258" cy="122" r="9"/>
+      <circle cx="186" cy="148" r="9"/><circle cx="210" cy="148" r="9"/><circle cx="234" cy="148" r="9"/><circle cx="258" cy="148" r="9"/>
+    </g>
+    <text x="150" y="232" text-anchor="middle" font-size="16" fill="#334">tot el demés, <tspan font-weight="900">igual</tspan> · mesuro el mateix als dos</text>
+  </g>
+
+  <!-- Peça 1 -->
+  <g transform="translate(34,120)">
+    <rect width="262" height="150" rx="16" fill="#fff" stroke="#2A6F7F" stroke-width="3"/>
+    <circle cx="36" cy="36" r="22" fill="#2A6F7F"/><text x="36" y="44" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">1</text>
+    <text x="68" y="34" font-size="22" font-weight="900" fill="#1c4a55">Grup de</text>
+    <text x="68" y="58" font-size="22" font-weight="900" fill="#1c4a55">comparació</text>
+    <text x="18" y="92" font-size="16" fill="#334">Un grup no rep el producte.</text>
+    <text x="18" y="114" font-size="16" fill="#334">Evita: <tspan font-weight="700" fill="#a24e24">«s'hauria curat sol»</tspan></text>
+  </g>
+  <!-- Peça 2 -->
+  <g transform="translate(664,120)">
+    <rect width="262" height="150" rx="16" fill="#fff" stroke="#2A6F7F" stroke-width="3"/>
+    <circle cx="36" cy="36" r="22" fill="#2A6F7F"/><text x="36" y="44" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">2</text>
+    <text x="68" y="44" font-size="22" font-weight="900" fill="#1c4a55">A l'atzar 🎲</text>
+    <text x="18" y="92" font-size="16" fill="#334">Sorteges qui va a cada grup.</text>
+    <text x="18" y="114" font-size="16" fill="#334">Evita: <tspan font-weight="700" fill="#a24e24">grups diferents d'entrada</tspan></text>
+  </g>
+  <!-- Peça 3 -->
+  <g transform="translate(34,300)">
+    <rect width="262" height="150" rx="16" fill="#fff" stroke="#2A6F7F" stroke-width="3"/>
+    <circle cx="36" cy="36" r="22" fill="#2A6F7F"/><text x="36" y="44" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">3</text>
+    <text x="68" y="44" font-size="22" font-weight="900" fill="#1c4a55">A cegues 🙈</text>
+    <text x="18" y="92" font-size="16" fill="#334">Ningú no sap qui rep què.</text>
+    <text x="18" y="114" font-size="16" fill="#334">Evita: <tspan font-weight="700" fill="#a24e24">«m'ho crec i ho noto»</tspan></text>
+  </g>
+  <!-- Peça 4 -->
+  <g transform="translate(664,300)">
+    <rect width="262" height="150" rx="16" fill="#fff" stroke="#2A6F7F" stroke-width="3"/>
+    <circle cx="36" cy="36" r="22" fill="#2A6F7F"/><text x="36" y="44" text-anchor="middle" font-size="22" font-weight="900" fill="#fff">4</text>
+    <text x="68" y="44" font-size="22" font-weight="900" fill="#1c4a55">Prou gent 👥</text>
+    <text x="18" y="92" font-size="16" fill="#334">Molta gent, i repetir-ho.</text>
+    <text x="18" y="114" font-size="16" fill="#334">Evita: <tspan font-weight="700" fill="#a24e24">guanyar per sort</tspan></text>
+  </g>
+
+  <!-- Connectors -->
+  <g stroke="#9ccad2" stroke-width="3" stroke-dasharray="6 6" fill="none">
+    <path d="M296 195 H330"/><path d="M664 195 H630"/><path d="M296 375 H330"/><path d="M664 375 H630"/>
+  </g>
+
+  <!-- Peu -->
+  <rect x="34" y="474" width="892" height="46" rx="14" fill="#f6ece8" stroke="#c96f3e" stroke-width="2"/>
+  <text x="480" y="504" text-anchor="middle" font-size="19" fill="#14201f">Si els dos grups surten <tspan font-weight="900">igual</tspan>, la promesa <tspan font-weight="900">cau</tspan>. I cal <tspan font-weight="900">acceptar el resultat</tspan>, encara que no agradi.</text>
+</svg>

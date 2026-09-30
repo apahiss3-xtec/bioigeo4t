@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exit Ticket · SA1 · Sessió 3 · El detector al món real · C</title>
+<title>Exit Ticket · SA1 · Sessió 3 · Posa a prova un cas nou · C</title>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Fira+Sans+Extra+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -165,6 +165,10 @@ span[contenteditable]{display:inline-block;}
 .voc-keys{flex-direction:row;flex-wrap:wrap;align-items:center;border-right:none;padding-right:0;border-bottom:1px dashed var(--teal);padding-bottom:4px;}
 .vk-title{margin:0 4px 0 0;}
 .voc{grid-template-columns:auto 1fr;}
+.c-gb{margin:1px 0 3px 27px;width:calc(100% - 27px);border-collapse:collapse;font-size:13.5px;}
+.c-gb th{width:36%;text-align:left;font-weight:700;color:var(--purple-ink);background:var(--purple-tint);border:1px solid var(--rule-dark);padding:2px 6px;}
+.c-gb td{border:1px solid var(--rule-dark);height:24px;padding:1px 6px;color:var(--muted);background:#fff;}
+.c-gb td[contenteditable]{background:#fff;}
 
 .crit-bar{display:flex;align-items:baseline;gap:6px;padding:2px 12px;background:#f4f8f9;border-bottom:1px solid var(--rule,#dce9eb);font-family:'Inter',sans-serif;font-size:8px;color:#5f6e72;line-height:1.5;}
 .crit-bar b{font-size:11px;color:#1c4a55;letter-spacing:.02em;}
@@ -201,7 +205,7 @@ span[contenteditable]{display:inline-block;}
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
 
       <div class="eh-stub">
-        <span class="stub-ic">🌍</span>
+        <span class="stub-ic">🍅</span>
         <span class="stub-txt">Exit Ticket</span>
         <span class="stub-min">10 min · individual</span>
       </div>
@@ -209,7 +213,7 @@ span[contenteditable]{display:inline-block;}
       <div class="eh-main">
 
         <div class="eh-top">
-          <span class="t-title" contenteditable="true">Què et faria canviar d'idea?</span>
+          <span class="t-title" contenteditable="true">Un cas nou: GreenBeat</span>
           <span class="t-sa" contenteditable="true">SA1 · Sessió 3 de 3</span><span class="lvl-badge">Versió C</span>
           <span class="t-note" contenteditable="true">aquest full s'entrega en sortir de classe</span>
         </div>
@@ -230,39 +234,51 @@ span[contenteditable]{display:inline-block;}
             <div class="voc-keys">
               <span class="vk-title">🧰 Paraules que pots fer servir</span>
               <span class="chip">promesa</span>
-              <span class="chip">prova</span>
               <span class="chip">dos grups</span>
-              <span class="chip">calaix</span>
-              <span class="chip">canviar d'idea</span>
+              <span class="chip">a cegues</span>
+              <span class="chip">igual</span>
             </div>
             <div class="voc-defs">
               <span class="vd-title">Recorda què volen dir</span>
-              <dl class="voc"><dt>promesa</dt><dd>el que el cas diu que farà.</dd><dt>prova</dt><dd>allò que miraries per saber si la promesa és certa.</dd></dl>
+              <dl class="voc"><dt>prova justa</dt><dd>dos grups; només canvia la música.</dd><dt>a cegues</dt><dd>qui mesura no sap quin grup és quin.</dd></dl>
             </div>
           </div>
 
-        <div class="c-obs deletable"><div class="del-btn" onclick="deleteEl(this)">✕</div><span contenteditable="true"><b>Com ho penso:</b> 👁️ <b>OBSERVO</b> què diu → ❓ <b>EM PREGUNTO</b> es pot comprovar? → 🔗 <b>CONNECTO</b> amb el que hem fet avui → 💡 <b>DEDUEIXO</b> la resposta.</span></div>
+        
 
-        <div class="q deletable" style="margin-bottom:3px">
-          <div class="del-btn" onclick="deleteEl(this)">✕</div>
-          <div class="q-head">
-            <div class="q-num">1</div>
-            <div class="q-text"><span contenteditable="true">Una promesa diu «<strong>t'omple d'energia positiva</strong>». Es pot comprovar?</span><span class="q-tag">encercla</span></div>
-          </div>
-          
-          <div class="c-tria"><span class="circ-opt">SÍ, ES POT MESURAR</span><span class="c-o">o</span><span class="circ-opt">NO, ÉS MASSA VAGA</span></div>
-        </div>
+        <div class="c-cas" style="margin-left:0" contenteditable="true">🎵🍅 «Amb la música <b>GreenBeat</b>, les tomaqueres creixen un <b>30 % més</b>.»</div>
 
         <div class="q deletable" style="margin-bottom:2px">
           <div class="del-btn" onclick="deleteEl(this)">✕</div>
           <div class="q-head">
-            <div class="q-num">2</div>
-            <div class="q-text"><span contenteditable="true">Escriu la promesa del <strong>teu cas</strong> i quina <strong>prova</strong> et faria canviar d'idea.</span><span class="q-tag">idea central</span></div>
+            <div class="q-num">1</div>
+            <div class="q-text"><span contenteditable="true">Escriu la <strong>promesa</strong> amb el motlle.</span><span class="q-tag">idea central</span></div>
           </div>
-          <div class="c-inici" contenteditable="true"><b>«El meu cas promet… Canviaria d'idea si…»</b></div>
+          <div class="c-inici" contenteditable="true"><b>«Si poso música GreenBeat, les tomaqueres…»</b></div>
           <div class="wline" contenteditable="true"></div>
-          <div class="wline" contenteditable="true"></div>
-          <div class="wline" contenteditable="true"></div>
+        </div>
+
+        <div class="q deletable" style="margin-bottom:2px">
+          <div class="del-btn" onclick="deleteEl(this)">✕</div>
+          <div class="q-head"><div class="q-num">2</div>
+            <div class="q-text"><span contenteditable="true">Completa la <strong>prova justa</strong>.</span><span class="q-tag">omple</span></div></div>
+          <table class="c-gb">
+            <tr><th>🔊 Grup A rep</th><td>música GreenBeat</td></tr>
+            <tr><th>🔇 Grup B rep</th><td contenteditable="true"></td></tr>
+            <tr><th>💧☀️ Igual als dos</th><td>aigua, llum, terra, mena de tomaquera</td></tr>
+            <tr><th>📏 Què mesuro</th><td contenteditable="true"></td></tr>
+            <tr><th>🙈 A cegues</th><td>qui mesura no sap quin grup és quin</td></tr>
+          </table>
+        </div>
+
+        <div class="q deletable" style="margin-bottom:3px">
+          <div class="del-btn" onclick="deleteEl(this)">✕</div>
+          <div class="q-head">
+            <div class="q-num">3</div>
+            <div class="q-text"><span contenteditable="true">Quin <strong>resultat</strong> faria caure la promesa?</span><span class="q-tag">encercla</span></div>
+          </div>
+          
+          <div class="c-tria"><span class="circ-opt">A I B CREIXEN IGUAL</span><span class="c-o">o</span><span class="circ-opt">A CREIX MÉS QUE B</span></div>
         </div>
 
         </div><!-- .exit-body -->

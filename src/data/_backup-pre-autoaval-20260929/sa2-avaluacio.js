@@ -50,14 +50,6 @@
 // mucosa intestinal; i t2 encara era encertable sense saber-ne, perquè el
 // context regalava mitja resposta i l'enunciat donava per fet que el company
 // s'equivocava. Corregits tots dos.
-//
-// Revisió 2026-09-29 (autoavaluació ≠ prova): l'assaig escrit copiava
-// preguntes de la prova final del curs («El llac sota el gel»). S'ha refet
-// sencer amb un context NOU —les mules d'una cooperativa del Pallars (egua × ase, 63 cromosomes)— que no és el de la
-// prova, ni l'enigma de la SA, ni el del test. Cada pregunta entrena
-// els blocs 1–4 de la prova pròpia de SA2 («Ostres de tres jocs», S4) amb les mateixes habilitats i exigència
-// (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
-// Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
 export const sa2Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -67,79 +59,79 @@ export const sa2Avaluacio = {
   // que fan servir les rubriques de les proves del curs.
   escrita: {
     intro:
-      "Assaig de la prova amb un cas NOU, que no és el de la prova: una cooperativa ramadera del Pallars cria mules per treballar a la muntanya. Una mula és la cria d'una egua (2n = 64) i un ase (2n = 62). Cada pregunta entrena un bloc de la prova amb la mateixa exigència. Escriu a mà i sense apunts, i no obris el model fins que hagis acabat. Les dades que a la prova van en figura o en taula, aquí van dins l'enunciat.",
-    minutes: 28,
+      "Aquestes preguntes són del tipus que trobaràs a la prova. Escriu-les senceres a mà i sense apunts. A SA2 el parany habitual és descriure fases de memòria: el que es valora és que expliquis PER QUÈ el cicle és com és.",
+    minutes: 25,
     questions: [
       {
         id: 'w1',
         oa: 'OA1',
-        source: 'Entrena el bloc 1 de la prova · ordenar fases amb proves i predir una mitosi',
-        minutes: 7,
-        text: "Una mula té 63 cromosomes a cada cèl·lula del cos. En una mostra de pell d'una mula jove, la veterinària descriu quatre cèl·lules, desordenades. P: els cromosomes, ben visibles, formen una fila al centre de la cèl·lula. Q: el nucli és difús i no s'hi distingeix cap cromosoma. R: s'estan formant dos nuclis nous i la cèl·lula comença a estrènyer-se pel mig. S: dos grups de cromosomes iguals s'allunyen cap a extrems oposats. a) Ordena-les començant per la que no es divideix, i digues de cada una en quina fase és i quina prova visible ho mostra. b) Prediu quants cromosomes tindrà cada cèl·lula filla d'una mitosi de mula i justifica per què un nombre senar no hi és cap obstacle.",
+        source: 'Tipus de pregunta de la prova · Interfase i mitosi',
+        minutes: 6,
+        text: "Explica per quina raó les dues cèl·lules filles d'una mitosi surten idèntiques a la mare, i digues què passa abans de la mitosi perquè això sigui possible.",
         model: {
-          as: "Q (interfase: nucli difús, no es veuen cromosomes) → P (metafase: cromosomes en fila al centre) → S (anafase: dos grups que se separen) → R (telofase: dos nuclis nous i la cèl·lula es parteix). Cada filla tindrà 63 cromosomes, perquè la mitosi fa dues cèl·lules iguals a la mare.",
-          ae: "Ordre: Q → P → S → R. Q és en interfase, que NO és una fase de la mitosi: el nucli és difús perquè l'ADN està desplegat i s'està copiant. P és en metafase: cada cromosoma, ja duplicat en dues cromàtides, s'alinea al centre. S és en anafase: les dues còpies de cada cromosoma se separen i marxen a pols oposats. R és en telofase: es refan dos nuclis i el citoplasma es parteix. Cada filla tindrà 63 cromosomes. El nombre senar no importa perquè la mitosi no aparella cromosomes: cadascun dels 63 s'ha copiat a la interfase i, a l'anafase, el que se separa són les dues còpies D'UN MATEIX cromosoma. Un cromosoma sense parella es reparteix igual de bé que un que en té. Per això una mula creix i repara els teixits amb tota normalitat.",
+          as: "Perquè a la interfase, abans de la mitosi, la cèl·lula copia tot el seu ADN. Després la mitosi reparteix una còpia a cada cèl·lula filla, i per això les dues tenen el mateix material genètic.",
+          ae: "La clau no és a la mitosi sinó just abans. Durant la interfase —que no forma part de la mitosi— la cèl·lula duplica tot el seu ADN: cada cromosoma passa a tenir dues còpies idèntiques unides. La mitosi és només el repartiment: els cromosomes s'alineen al centre (metafase) i les dues còpies se separen cap a pols oposats (anafase), de manera que cada cèl·lula filla rep exactament una còpia de cada cromosoma. Per això surten dues cèl·lules amb el mateix material genètic complet que la mare, i per això la mitosi serveix per créixer i per reparar teixits: cal substituir una cèl·lula per una altra d'igual, no per una de diferent.",
         },
-        aeWhy: "L'AE dona una prova visible per a cada fase, deixa clar que la interfase no és mitosi i tanca el parany de la pregunta: creure que la mitosi necessita parelles de cromosomes i que un nombre senar la fa fallar. A l'anafase se separen les dues còpies d'un mateix cromosoma.",
+        aeWhy: "L'AE situa la duplicació a la interfase i la distingeix de la mitosi, explica el repartiment amb la fase concreta i tanca amb la funció biològica.",
         must: [
-          "Has ordenat Q → P → S → R, començant per la interfase.",
-          "Per a cada cèl·lula has donat una prova visible, no només el nom de la fase.",
-          "Has predit 63 cromosomes a cada filla.",
-          "Has justificat que a la mitosi se separen les dues còpies de cada cromosoma i que no cal aparellar-los."
+          "Has dit que l'ADN es duplica a la interfase.",
+          "Has dit que la interfase NO és part de la mitosi.",
+          "Has explicat el repartiment de les còpies.",
+          "Has dit per a què serveix la mitosi al cos."
         ]
       },
       {
         id: 'w2',
         oa: 'OA2',
-        source: 'Entrena el bloc 2 de la prova · calcular cromosomes d\'un creuament i llegir dades',
+        source: 'Prova final del curs · Pregunta 2, «dues maneres de dividir-se»',
         minutes: 7,
-        text: "a) L'egua (2n = 64) i l'ase (2n = 62) fan meiosi per formar els gàmetes. Calcula quants cromosomes porta l'òvul, quants l'espermatozoide i quants la mula que en neix. b) Explica per què una mula gairebé no pot fer gàmetes. c) Un estudi compta els espermatozoides en formació en un tros de testicle de la mateixa mida: cavall, 120; ase, 110; mul (el mascle de la mula), 3. Quin percentatge representa el mul respecte al cavall, i què et diu aquesta dada?",
+        text: "Compara mitosi i meiosi (quantes cèl·lules, amb quin material genètic) i explica per quina raó una espècie que només es dividís per mitosi ho tindria molt més difícil per adaptar-se a un canvi d'ambient.",
         model: {
-          as: "Òvul: 32. Espermatozoide: 31. Mula: 32 + 31 = 63. La mula gairebé no fa gàmetes perquè a la meiosi els cromosomes del cavall i els de l'ase no es poden aparellar bé i no es reparteixen. El mul en fa 3 per cada 120 del cavall: un 2,5 %. La meiosi gairebé no li funciona.",
-          ae: "La meiosi redueix a la meitat: l'òvul de l'egua porta 64 / 2 = 32 cromosomes i l'espermatozoide de l'ase, 62 / 2 = 31. La fecundació els suma: 32 + 31 = 63, i com que després el zigot es divideix per mitosi, totes les cèl·lules de la mula en tenen 63. El problema apareix quan la mula ha de fer meiosi. A la meiosi I, cada cromosoma s'ha d'aparellar amb el seu homòleg per enviar-ne un a cada pol; però els 32 de l'egua i els 31 de l'ase no són parelles de veritat (no coincideixen ni en nombre ni en forma) i un queda sol. Molts no es poden aparellar, el repartiment falla i gairebé tots els gàmetes surten amb un joc de cromosomes erroni i no són viables. No és que 63 «no es pugui dividir per dos»: la meiosi no reparteix un número, reparteix parelles. La dada ho confirma: 3 / 120 × 100 = 2,5 %. El mul té testicles però hi fa uns quaranta cops menys espermatozoides que el cavall, perquè la meiosi s'encalla; la mitosi, en canvi, li funciona perfectament.",
+          as: "La mitosi dona 2 cèl·lules idèntiques amb el material complet (2n) i la meiosi en dona 4 amb la meitat (n) i diferents entre elles. Si només hi hagués mitosi, tots els descendents serien còpies i no hi hauria variabilitat per adaptar-se.",
+          ae: "Mitosi: 2 cèl·lules filles, totes dues 2n i genèticament iguals a la mare. Meiosi: 4 cèl·lules n, diferents entre elles, perquè hi ha recombinació i el repartiment dels cromosomes es fa a l'atzar. Aquesta diferència és la que importa: la meiosi genera variabilitat, i sense variabilitat la selecció no té sobre què actuar. Una població de còpies idèntiques, davant del fred, o bé resistiria tota o bé no en resistiria cap; la proporció no podria anar canviant generació rere generació. Només podria canviar si aparegués una mutació nova, que és un procés molt més lent i que depèn de l'atzar. Per això la reproducció sexual, tot i ser més costosa, és un avantatge en ambients que canvien.",
         },
-        aeWhy: "L'AE fa el càlcul pas a pas (la meiosi divideix per dos, la fecundació suma), situa el problema en l'aparellament d'homòlegs de la meiosi I i descarta l'explicació fàcil i falsa («63 és senar»). A més connecta la dada numèrica amb la meiosi que falla, que és el que la rúbrica del bloc demana per arribar a AE.",
+        aeWhy: "L'AE diu d'on surt la variabilitat (recombinació + atzar) i raona el cas límit d'una població de clons, que és exactament el que demana la prova final del curs.",
         must: [
-          "Has calculat 32, 31 i 63, i has dit que la meiosi divideix per dos i la fecundació suma.",
-          "Has situat el problema en l'aparellament dels homòlegs a la meiosi I.",
-          "No has dit que a la mula li falla la mitosi.",
-          "Has calculat el 2,5 % i l'has relacionat amb la meiosi que falla."
+          "Has dit quantes cèl·lules dona cadascuna.",
+          "Has fet servir 2n i n correctament.",
+          "Has dit d'on surt la variabilitat a la meiosi.",
+          "Has raonat què passaria amb una població de còpies idèntiques."
         ]
       },
       {
         id: 'w3',
         oa: 'OA3',
-        source: 'Entrena el bloc 3 de la prova · índex mitòtic, control i fiabilitat',
-        minutes: 8,
-        text: "Algunes mules tenen nòduls a la pell i la veterinària, la Mireia, sospita un tumor. A la pell sana d'un animal adult, poques cèl·lules es divideixen. Ha comptat cèl·lules al microscopi. Pell sana d'una mula sense nòduls (control): 500 cèl·lules, 5 en divisió. Nòdul de la mula Tramuntana: 200 cèl·lules, 4 en divisió. Nòdul de la mula Garbí: 320 cèl·lules, 48 en divisió. a) Calcula l'índex mitòtic de cada mostra. b) En quin dels dos nòduls les cèl·lules sembla que es divideixen de manera descontrolada? Compara-ho amb la mostra de control. c) En Biel, el mosso, diu: «La Tramuntana també en té, de tumor: dobla el control». Comenta-ho fixant-te en el nombre real de cèl·lules que s'estan dividint, i explica què faries abans de donar-li la raó. d) A la mucosa de l'intestí d'un poltre sa, la Mireia troba un 22 %. És motiu d'alarma?",
+        source: 'Tipus de pregunta de la prova · Índex mitòtic',
+        minutes: 6,
+        text: "En una preparació de 250 cèl·lules d'intestí n'hi ha 35 en divisió. Calcula l'índex mitòtic i digues si aquesta dada, per si sola, indica que hi ha un problema.",
         model: {
-          as: "Control: 5 / 500 = 1 %. Tramuntana: 4 / 200 = 2 %. Garbí: 48 / 320 = 15 %. El Garbí pot tenir una divisió sense control, perquè té quinze vegades el control. La Tramuntana només té 4 cèl·lules en divisió, és massa poc per dir-ho. L'intestí es renova constantment, així que el 22 % hi és normal.",
-          ae: "Índexs: control 5 / 500 × 100 = 1 %; Tramuntana 4 / 200 × 100 = 2 %; Garbí 48 / 320 × 100 = 15 %. El nòdul del Garbí és el sospitós: en un teixit on normalment gairebé no hi ha divisió, té un índex quinze vegades el del control de la mateixa pell. No n'hi ha prou de dir si un índex és «alt» o «baix», perquè el valor normal canvia d'un teixit a un altre; només la comparació amb un control del MATEIX teixit diu si és anòmal. Sobre la Tramuntana, en Biel confon una proporció amb una prova: 2 % és el doble d'1 %, però són 4 cèl·lules contra 5, i amb recomptes tan petits una o dues cèl·lules de més o de menys, per pura casualitat, canvien molt el percentatge. No ho afirmaria ni ho descartaria: comptaria moltes més cèl·lules, de diversos camps i de més d'un nòdul, abans de decidir. El 22 % de l'intestí no és alarmant: la mucosa intestinal es renova cada pocs dies i un índex alt hi és el que s'espera; el mateix valor a la pell adulta sí que ho seria.",
+          as: "35 ÷ 250 × 100 = 14 %. Per si sola no indica cap problema: l'intestí és un teixit que es renova constantment, així que és normal que tingui un índex mitòtic alt.",
+          ae: "Índex mitòtic = 35/250 × 100 = 14 %. La dada per si sola no diu res. L'índex mitòtic només es pot interpretar comparant-lo amb el que és normal EN AQUELL teixit: a l'intestí o a la pell, que es renoven cada pocs dies, un valor alt és exactament el que s'espera; en un teixit que amb prou feines es divideix, com el nerviós, el mateix 14 % seria alarmant. El que indica pèrdua de control del cicle no és un número alt sinó que estigui molt per sobre del que toca en aquell teixit, o que la divisió no s'aturi quan hauria de fer-ho. Per decidir-ho caldria una referència: el mateix recompte en un teixit intestinal sa.",
         },
-        aeWhy: "L'AE no s'atura en el càlcul: compara cada mostra amb el control del mateix teixit, valora la fiabilitat d'un recompte petit i diu què faria, i reconeix que en un teixit que es renova molt una divisió alta és normal. Evita llegir «el doble» com si fos una prova i jutjar un índex sense referència.",
+        aeWhy: "L'AE dona el criteri de comparació i proposa quina dada faltaria. Respondre només «14 % i és normal» es queda a AS.",
         must: [
-          "Has calculat 1 %, 2 % i 15 % i has escrit l'operació.",
-          "Has justificat el Garbí comparant-lo amb el control, no amb un llindar après de memòria.",
-          "Has dit que 4 cèl·lules en divisió són massa poques per decidir i que caldria comptar-ne més.",
-          "Has explicat per què el 22 % de l'intestí és normal."
+          "Has fet el càlcul i has donat el percentatge.",
+          "Has dit que la dada sola no es pot interpretar.",
+          "Has comparat amb el que és normal en aquell teixit.",
+          "Has dit quina dada addicional caldria."
         ]
       },
       {
         id: 'w4',
         oa: 'OA4',
-        source: 'Entrena el bloc 4 de la prova · argumentar una recomanació i revisar-la amb dades noves',
+        source: 'Tipus de pregunta de la prova · Cas nou',
         minutes: 6,
-        text: "a) En Biel proposa: «Comprem vint mules i, d'aquí a uns anys, ja tindrem mulets de les nostres». Per què el pla no pot funcionar i d'on hauran de sortir cada any les mules noves? b) Un tractant assegura que «una mula no cria mai, ni una». Suposa que en una comarca hi ha 12.000 mules femelles i que una de cada 2.000 pot arribar a fer algun òvul viable. Calcula quantes en podrien fer i revisa la frase del tractant. c) Escriu la recomanació per a la cooperativa (5–6 línies) amb mitosi, meiosi, nombre de cromosomes i almenys una dada. Afegeix-hi un risc: imagina que tots els animals surten d'un sol ase i d'unes poques egües, i que apareix una malaltia nova.",
+        text: "Un nadó neix amb tres còpies del cromosoma 21. Explica en quin moment s'ha originat això i per quina raó no es pot atribuir a una mitosi descontrolada.",
         model: {
-          as: "No pot funcionar perquè les mules gairebé no fan gàmetes: cada mula s'ha d'obtenir creuant una egua amb un ase. 12.000 / 2.000 = 6 mules en podrien fer, així que «mai» no és correcte: és «gairebé mai». Recomanació: creuar egües amb ases cada any i fer servir més d'un ase.",
-          ae: "a) Les mules creixen i es reparen per mitosi sense cap problema, però la meiosi els falla (63 cromosomes que no fan parelles) i, sense gàmetes viables, no poden criar entre elles. Cada mula nova ha de sortir, cada vegada, d'un creuament egua × ase. b) 12.000 / 2.000 = 6 mules: poques, però no zero. La frase bona és «una mula gairebé mai no cria»; «mai» és una afirmació absoluta que una sola excepció ja fa caure. c) Les mules són bons animals de treball perquè la mitosi els funciona com a qualsevol animal, però amb 63 cromosomes la meiosi no pot aparellar els homòlegs i gairebé no fan gàmetes. Per tant, la cooperativa ha de mantenir egües (2n = 64) i ases (2n = 62) reproductors i fer el creuament cada any, sense comptar que les mules criïn (només unes 6 de cada 12.000 podrien fer-ho). Risc: si totes surten del mateix ase i de poques egües, s'assemblaran molt genèticament i, davant d'una malaltia nova, si una és sensible ho poden ser gairebé totes. Convé canviar de reproductors per mantenir la variabilitat.",
+          as: "Ve d'un error a la meiosi: en formar el gàmeta, els dos cromosomes 21 no s'han separat i el gàmeta n'ha portat dos en comptes d'un. No és mitosi descontrolada, perquè la mitosi dona cèl·lules idèntiques i el problema és el repartiment als gàmetes.",
+          ae: "S'ha originat a la meiosi, durant la formació d'un dels gàmetes: els dos cromosomes 21 no s'han separat (no-disjunció), de manera que un gàmeta n'ha portat dos. En fecundar-se amb un gàmeta normal, el zigot n'ha quedat amb tres, i com que totes les cèl·lules del cos vénen d'aquest zigot per mitosi, totes en tenen tres. No és mitosi descontrolada per dues raons: la mitosi produeix còpies exactes i no altera el nombre de cromosomes, i el càncer és una divisió que no s'atura en un teixit concret d'una persona ja formada, mentre que aquí l'alteració és present des del primer moment i a tot el cos. La mitosi, aquí, no ha fallat: ha copiat fidelment un error que ja hi era.",
         },
-        aeWhy: "L'AE argumenta amb la mitosi i la meiosi (no només «perquè són estèrils»), converteix la proporció en un nombre concret per revisar una afirmació absoluta i valora el risc de fer-les totes dels mateixos reproductors. L'error típic és repetir «són estèrils» sense explicar-ho i no revisar la conclusió quan arriba la dada nova.",
+        aeWhy: "L'AE distingeix els tres casos del criteri (mitosi normal, mitosi descontrolada, error de meiosi) i explica per què l'alteració és a totes les cèl·lules.",
         must: [
-          "Has explicat que cada mula surt d'un creuament egua × ase.",
-          "Has calculat 6 i has canviat «mai» per «gairebé mai».",
-          "La recomanació fa servir mitosi, meiosi i el nombre de cromosomes, amb una dada.",
-          "Has valorat el risc de fer-les totes dels mateixos reproductors."
+          "Has dit que l'error és a la meiosi.",
+          "Has explicat què vol dir que els cromosomes no se separen.",
+          "Has dit per què l'alteració és a totes les cèl·lules del cos.",
+          "Has dit per què NO és un cas de mitosi descontrolada."
         ]
       }
     ]
@@ -174,8 +166,8 @@ export const sa2Avaluacio = {
         alt: "La mateixa cèl·lula fa mitosi (2 cèl·lules iguals) o meiosi (4 cèl·lules amb la meitat).",
         llegir: "Mitosi: 2 cèl·lules iguals, per créixer i reparar. Meiosi: 4 cèl·lules amb la meitat, per fer òvuls i espermatozoides.",
         text: "L'ovari fa un òvul. Quina divisió fa servir?",
-        options: ["Mitosi", "Meiosi"],
-        correct: 1
+        options: ["Meiosi", "Mitosi"],
+        correct: 0
       },
       {
         id: 'p3', oa: 'OA3',

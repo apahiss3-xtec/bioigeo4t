@@ -1,7 +1,7 @@
 export const sa4s4 = {
   id: "s4",
   saId: "sa4",
-  title: "Per què el daltonisme afecta més els nois?",
+  title: "Herència lligada al sexe i malalties genètiques",
   sessionNumber: 4,
   biome: "sa4",
   duration: "2h",

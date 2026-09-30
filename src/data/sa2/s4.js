@@ -1,7 +1,7 @@
 export const sa2s4 = {
   id: "s4",
   saId: "sa2",
-  title: "Quin dels tres processos explica cada cas?",
+  title: "Un cos que copia i un cos que reparteix",
   sessionNumber: 4,
   biome: "sa2",
   duration: "2h",

@@ -16,6 +16,14 @@
 // 3) Cap pregunta cobria OA1 (Big Bang i escala còsmica): t1 ara ho fa.
 // 4) Correccions menors: «Les anàlisis», i el feedback de t3 remetia a S4
 //    quan els nivells de certesa es treballen a S1.
+//
+// Revisió 2026-09-29 (autoavaluació ≠ prova): l'assaig escrit copiava
+// preguntes de la prova final del curs («El llac sota el gel»). S'ha refet
+// sencer amb un context NOU —els microorganismes dins els cristalls de guix d'una mina de Mèxic— que no és el de la
+// prova, ni l'enigma de la SA, ni el del test. Cada pregunta entrena
+// els blocs 1 i 6 de la prova final (6c–6e: controls i grau de certesa) amb les mateixes habilitats i exigència
+// (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
+// Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
 export const sa7Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -25,79 +33,79 @@ export const sa7Avaluacio = {
   // que fan servir les rubriques de les proves del curs.
   escrita: {
     intro:
-      "Aquestes preguntes són del tipus que trobaràs a la prova final. Full, bolígraf i sense apunts. Aquí es valora sobretot que distingeixis el que sabem del cert del que és una hipòtesi o una especulació, i que diguis en quina prova et bases.",
-    minutes: 27,
+      "Assaig dels blocs de la prova final que treballen SA7 (el control experimental i el grau de certesa), amb un cas NOU: una mina de Mèxic amb cristalls de guix gegants, a 300 m de fondària i a uns 50 °C. Dins dels cristalls hi ha bombolles petites d'aigua que van quedar tancades quan el cristall creixia. Una investigadora, la doctora Ruiz, obre aquestes bombolles amb una agulla estèril i hi troba microorganismes vius. Per arribar-hi, l'equip ha de trepitjar la cova, tocar els cristalls i fer-hi forats. Full, bolígraf i sense apunts.",
+    minutes: 26,
     questions: [
       {
         id: 'w1',
-        oa: 'OA4',
-        source: 'Prova final del curs · Pregunta 6, «què en sabem del cert»',
-        minutes: 8,
-        text: "Classifica aquestes quatre afirmacions en fet establert, hipòtesi amb proves, especulació o afirmació no científica, i justifica-ho: (1) el microorganisme apareix a totes les mostres analitzades; (2) la població del llac ha evolucionat aïllada sota el gel; (3) sota el gel d'Europa hi deu haver microorganismes com aquest; (4) la vida sempre troba la manera.",
+        oa: 'OA3',
+        source: 'Entrena el bloc 1 de la prova final · proposar els controls d\'un resultat',
+        minutes: 7,
+        text: "Un revisor diu que, abans d'afirmar que els microorganismes vivien DINS dels cristalls, calen controls. Proposa un control negatiu i un control positiu: per a cada un, digues què analitzaries i què hi hauria de sortir si la feina està ben feta.",
         model: {
-          as: "1 és un fet establert, perquè és una observació directa i repetida. 2 és una hipòtesi amb proves, perquè hi ha indicis però ningú no ho ha vist. 3 és una especulació, perquè no hi ha cap prova d'allà. 4 no és científica, perquè no es pot posar a prova.",
-          ae: "(1) Fet establert: és una observació directa i repetida. Compte amb la trampa: diu que apareix a les mostres, no que visqui al llac; per això és un fet encara que no s'hagi fet el control negatiu. (2) Hipòtesi amb proves: hi ha indicis —el gel que tapa el llac, els fòssils datats—, però ningú no ho ha observat i podria haver-hi connexions amb altres masses d'aigua. (3) Especulació: és raonable i val la pena explorar-la, però no hi ha cap prova procedent d'Europa; el que s'ha trobat aquí no diu res del que hi ha en un altre lloc. (4) Afirmació no científica: no hi ha cap observació que la pogués contradir, perquè encaixaria amb tot el que passés; per tant no es pot posar a prova. Això no vol dir que sigui falsa: vol dir que queda fora del que la ciència pot decidir.",
+          as: "Control negatiu: analitzar l'agulla, l'aigua i els productes que es fan servir, sense obrir cap cristall; no hi hauria de sortir cap microorganisme. Control positiu: afegir un microorganisme conegut a una mostra estèril i comprovar que el mètode el detecta.",
+          ae: "Control negatiu: passar per tot el procés una mostra on SEGUR que no hi ha microorganismes de la cova: l'agulla estèril i els reactius sense tocar cap cristall, i també un frotis de la superfície externa del cristall abans d'obrir-lo. Si la feina està ben feta, a l'agulla i als reactius no hi ha de sortir res, i el que surti a la superfície ens diu què hi pot haver deixat l'equip o l'aire de la cova, per comparar-ho amb el de dins. Control positiu: una mostra estèril a la qual s'afegeix una quantitat petita d'un microorganisme conegut, processada exactament igual. Hi ha de sortir, perquè demostra que el mètode és capaç de detectar-lo: si no sortís, un resultat negatiu no voldria dir res. Un control no és repetir la mesura: és una mostra on ja saps què ha de sortir, que et diu si pots creure't la teva.",
         },
-        aeWhy: "L'AE veu la trampa de la (1) —el que s'afirma és el que s'ha mesurat, no la conclusió— i no diu que la (4) sigui falsa, sinó que no és comprovable. Dir «és mentida» compta com a incorrecte.",
+        aeWhy: "L'AE proposa els dos controls amb el que s'espera de cadascun i explica què demostra cada un: el negatiu descarta la contaminació; el positiu, que el mètode funciona. Tanca l'error típic de confondre un control amb repetir la mesura.",
         must: [
-          "Has classificat les quatre afirmacions.",
-          "Has justificat cada classificació, no només l'etiqueta.",
-          "Has dit que la (4) no es pot posar a prova, no que sigui falsa.",
-          "Has dit per què la troballa d'aquí no serveix de prova per a Europa."
+          "Has proposat un control negatiu (agulla i reactius sense cristall, o superfície externa).",
+          "Has dit que al negatiu no hi ha de sortir res.",
+          "Has proposat un control positiu amb un microorganisme conegut, i que hi ha de sortir.",
+          "Has explicat que un control no és el mateix que repetir la mesura."
         ]
       },
       {
         id: 'w2',
-        oa: 'OA4',
-        source: 'Prova final del curs · Pregunta 6, «què faria pujar de nivell»',
-        minutes: 6,
-        text: "Agafa l'afirmació «sota el gel d'Europa hi deu haver microorganismes» i digues quina prova concreta la faria pujar de nivell. Després fes el mateix amb «la vida sempre troba la manera».",
+        oa: 'OA3',
+        source: 'Entrena el bloc 1 de la prova final · què concloure si un control falla',
+        minutes: 5,
+        text: "Els resultats arriben i, al control negatiu, hi apareixen microorganismes de la mateixa mena que els de dins dels cristalls. La doctora Ruiz tenia l'article gairebé acabat. Què vol dir aquest resultat? Explica què s'ha de fer amb l'article, què no es pot donar per provat i quins passos vénen ara.",
         model: {
-          as: "La faria pujar qualsevol observació feta a Europa: detectar-hi una biofirma amb una sonda o trobar-hi molècules orgàniques complexes. La segona afirmació no pot pujar de nivell, perquè no hi ha cap observació que la pogués contradir.",
-          ae: "Per a la primera, la prova ha de venir d'allà i no d'aquí: detectar una biofirma amb una sonda enviada a Europa, trobar molècules orgàniques complexes als guèisers d'Encèlad, o confirmar que hi ha aigua líquida en contacte amb roca i amb una font d'energia. Amb qualsevol d'aquestes coses passaria d'especulació a hipòtesi amb proves. La segona no puja de nivell amb cap observació, i el motiu és estructural: no se'n pot enunciar ni una que la pogués contradir. Passi el que passi —que la vida sobrevisqui o que s'extingeixi— sempre es podrà dir que va trobar la manera o que aquest cop no la va trobar. Com que no hi ha manera de posar-la a prova, queda fora del que la ciència pot decidir; això no la converteix en falsa, la converteix en una altra classe d'afirmació.",
+          as: "Vol dir que hi ha contaminació: els microorganismes poden venir del material o de l'equip. No es pot publicar que vivien dins dels cristalls. Cal trobar d'on ve la contaminació i repetir-ho amb més cura.",
+          ae: "Vol dir que el mètode deixa entrar microorganismes de fora: el que s'ha trobat dins els cristalls pot ser contaminació, i no hi ha manera de saber quina part ho és. L'article, tal com està, no es pot publicar: seria afirmar una cosa que les dades no sostenen. Compte, però: tampoc no queda demostrat que els microorganismes NO siguin de dins els cristalls. El resultat no diu «són de fora»; diu «amb això no ho podem saber». Cal buscar la font de la contaminació (material, reactius, persones, aire de la cova), corregir el protocol, per exemple esterilitzant la superfície del cristall abans d'obrir-lo, i repetir-ho tot amb controls nous. Només si el negatiu surt net i el de dins no, es podrà tornar a plantejar.",
         },
-        aeWhy: "L'AE insisteix que la prova ha de venir del lloc del qual es parla, i explica per què la quarta afirmació és infalsable en comptes de dir simplement que «no es pot demostrar».",
+        aeWhy: "L'AE separa les tres coses que demana la pregunta (publicació, què no queda demostrat i passos següents) i evita els dos errors típics: publicar igualment i concloure que els microorganismes no són de dins. Un control fallat deixa la pregunta oberta, no la tanca en contra.",
         must: [
-          "Has proposat una prova concreta, i feta a Europa.",
-          "Has dit a quin nivell pujaria l'afirmació.",
-          "Has dit que la segona no pot pujar i per què.",
-          "No has dit que la segona sigui falsa."
+          "Has dit que no es pot publicar així.",
+          "Has dit que no queda demostrat, però que tampoc no queda descartat.",
+          "Has proposat buscar la font de contaminació i corregir el mètode.",
+          "Has dit que cal repetir-ho amb controls nous."
         ]
       },
       {
         id: 'w3',
-        oa: 'OA2',
-        source: 'Tipus de pregunta de la prova · Semivida',
-        minutes: 6,
-        text: "Una mostra conté una quarta part de l'isòtop pare que tenia inicialment. Si la semivida és de 1.300 milions d'anys, calcula l'edat de la mostra i explica què vol dir exactament «semivida».",
+        oa: 'OA4',
+        source: 'Entrena el bloc 6 de la prova final · classificar afirmacions pel grau de certesa',
+        minutes: 7,
+        text: "Suposa que el problema s'ha resolt i els controls ara surten bé. Un diari publica quatre frases. Per a cada una, decideix si és un fet establert, una especulació, una afirmació no científica o una hipòtesi amb proves, i justifica-ho. 1) S'han trobat microorganismes a totes les bombolles de cristall obertes i analitzades amb el protocol nou. 2) Aquests microorganismes van quedar tancats quan els cristalls es formaven, fa desenes de milers d'anys. 3) A les coves de qualsevol planeta amb aigua calenta sota terra hi deu haver vida com aquesta. 4) Han sobreviscut tant de temps perquè estaven destinats a ser descoberts.",
         model: {
-          as: "Si en queda una quarta part, han passat dues semivides (la meitat i la meitat de la meitat): 2 × 1.300 = 2.600 milions d'anys. La semivida és el temps que triga a desintegrar-se la meitat de l'isòtop pare.",
-          ae: "La semivida és el temps que triga a desintegrar-se la meitat dels àtoms de l'isòtop pare que hi ha en un moment donat. No és un compte enrere fix per a cada àtom: la desintegració és un procés a l'atzar per a cada àtom individual, però amb moltíssims àtoms la proporció que es desintegra per unitat de temps és constant i molt precisa, i això és el que la fa útil per datar. Si en queda 1/4, han passat dues semivides (1 → 1/2 → 1/4), és a dir 2 × 1.300 = 2.600 milions d'anys. Aquesta és una datació absoluta —dona una edat en anys—, a diferència de la datació relativa, que només permet ordenar esdeveniments.",
+          as: "1) Fet establert: s'ha observat. 2) Hipòtesi amb proves: hi ha dades que ho fan pensar, però no és segur. 3) Especulació: no hi ha cap prova d'altres planetes. 4) No científica: no es pot comprovar.",
+          ae: "1) Fet establert: és una observació directa, feta amb controls que surten bé, i qualsevol equip que repeteixi el protocol ho pot comprovar. Diu què s'ha trobat, no per què. 2) Hipòtesi amb proves: la sostenen dades (l'edat dels cristalls, el fet que les bombolles són tancades i que els controls descarten contaminació), però no s'ha observat el moment en què van quedar tancats i hi podria haver altres explicacions, com una fissura antiga per on haguessin entrat després. 3) Especulació: estén el cas a altres planetes sense cap dada d'enlloc fora de la Terra. No és absurda, però ara com ara no té proves. 4) Afirmació no científica: «estaven destinats» parla d'un propòsit, i no hi ha cap observació que la pugui confirmar ni desmentir.",
         },
-        aeWhy: "L'AE explica per què la desintegració és fiable tot i ser aleatòria i situa el resultat com a datació absoluta enfront de la relativa.",
+        aeWhy: "L'AE justifica cada nivell amb un criteri (observació repetible, dades que sostenen però no demostren, extensió sense dades, impossibilitat de posar-ho a prova), i a la 2 diu què li falta per ser un fet. L'error típic és classificar per intuïció o confondre especulació amb no científica.",
         must: [
-          "Has dit quantes semivides han passat i per què.",
-          "Has donat l'edat en anys.",
-          "Has definit bé la semivida (la meitat, no tot).",
-          "Has dit que és una datació absoluta i en què es diferencia de la relativa."
+          "Has classificat 1 com a fet, 2 com a hipòtesi, 3 com a especulació i 4 com a no científica.",
+          "A cada una has donat el criteri, no només l'etiqueta.",
+          "A la 2 has dit quines proves la sostenen i per què encara no és un fet.",
+          "Has distingit l'especulació (sense proves encara) de la no científica (no es pot provar)."
         ]
       },
       {
         id: 'w4',
-        oa: 'OA3',
-        source: "Tipus de pregunta de la prova · Origen de la vida",
+        oa: 'OA4',
+        source: 'Entrena el bloc 6 de la prova final · què faria pujar una afirmació de nivell',
         minutes: 7,
-        text: "Compara dues hipòtesis sobre l'origen de la vida i digues quina evidència sosté cadascuna. Després explica per quina raó la panspèrmia no resol la pregunta.",
+        text: "a) Quina observació concreta faria pujar de nivell la frase 3? b) Per què cap observació no aconseguirà mai fer pujar la frase 4? Respon-ho sense afirmar que és falsa.",
         model: {
-          as: "La sopa primordial es basa en l'experiment de Miller-Urey, que va obtenir aminoàcids a partir de gasos i descàrregues elèctriques. La hipòtesi de les fumaroles hidrotermals es basa en que allà hi ha energia química i minerals que poden catalitzar reaccions, i en que hi viuen organismes actuals. La panspèrmia no resol res perquè només trasllada la pregunta a un altre lloc: caldria explicar igualment com va sorgir la vida allà.",
-          ae: "Sopa primordial: Miller i Urey van demostrar que, amb els gasos que es creien de l'atmosfera primitiva i descàrregues elèctriques, es formen espontàniament aminoàcids; la seva evidència és, doncs, experimental i de laboratori, però depèn de com era realment aquella atmosfera, cosa que avui es discuteix. Fumaroles hidrotermals: ofereixen un gradient químic i tèrmic continu, minerals que poden actuar de catalitzadors i protecció davant la radiació, i hi trobem comunitats actuals independents de la llum solar; l'evidència és sobretot geoquímica i actualista. Una tercera, el món ARN, explica com podia haver-hi una molècula que guardés informació i alhora catalitzés reaccions abans que existissin les proteïnes. La panspèrmia, en canvi, proposa que la vida va arribar de fora: encara que fos certa —i hi ha indicis que molècules orgàniques viatgen en meteorits—, no respon la pregunta, només la desplaça, perquè allà on hagués sorgit caldria explicar exactament el mateix.",
+          as: "a) Trobar microorganismes en aigua calenta sota terra en un altre planeta o lluna. b) Perquè no hi ha cap experiment que la pugui comprovar: no parla de coses que es puguin mesurar.",
+          ae: "a) Una observació fora de la Terra: per exemple, que una sonda detecti en aigua subterrània calenta d'un altre planeta molècules que només fan els éssers vius, o microorganismes, amb controls que descartin que els hi hagi portat la mateixa sonda. Llavors la frase passaria d'especulació a hipòtesi amb proves; per ser un fet caldria que es repetís en diversos llocs, perquè «qualsevol planeta» és molt més que un cas. b) La frase 4 no fa cap predicció que es pugui comprovar: tant si demà es troben més microorganismes com si no, «estaven destinats» encaixa amb qualsevol resultat. Una afirmació que cap observació no pot contradir tampoc no la pot confirmar cap observació, i per això queda fora de la ciència. No per això és falsa: simplement, la ciència no té cap manera de posar-la a prova.",
         },
-        aeWhy: "L'AE diu de quin TIPUS és l'evidència de cada hipòtesi i n'indica la debilitat, i concedeix el que la panspèrmia sí que aporta abans d'explicar per què no respon la pregunta.",
+        aeWhy: "L'AE proposa una observació concreta i realista, diu a quin nivell faria pujar la frase i què faltaria per arribar a fet. I explica per què la 4 no pot pujar (no es pot contradir) sense caure en l'error de declarar-la falsa, que és l'extra de la versió A.",
         must: [
-          "Has comparat dues hipòtesis, no n'has descrit només una.",
-          "Has dit quina evidència concreta sosté cadascuna.",
-          "Has esmentat un punt feble d'alguna de les dues.",
-          "Has explicat que la panspèrmia desplaça la pregunta en comptes de respondre-la."
+          "Has proposat una observació concreta fora de la Terra.",
+          "Has dit fins a quin nivell pujaria la frase 3.",
+          "Has explicat que la 4 encaixa amb qualsevol resultat i no es pot posar a prova.",
+          "No has dit que la 4 sigui falsa."
         ]
       }
     ]
@@ -123,7 +131,7 @@ export const sa7Avaluacio = {
   // la vida, i el judici explorar/afirmar.
   test: {
     context:
-      "L'any 1984 es va trobar a l'Antàrtida un meteorit anomenat ALH84001. Les anàlisis de la seva composició (les proporcions d'isòtops de gasos atrapats a dins) van demostrar que provenia de Mart: un impacte va llançar aquest tros de roca marciana a l'espai fa uns 17 milions d'anys, i va caure a la Terra fa uns 13.000 anys. Mesurant la desintegració radioactiva d'alguns dels seus minerals, els científics van calcular que la roca es va formar fa uns 4.000 milions d'anys, quan Mart era jove. El 1996, un equip de la NASA va anunciar en una roda de premsa que havien trobat, dins d'aquest meteorit, unes estructures microscòpiques amb forma de bastonet que s'assemblaven a bacteris fossilitzats, i van suggerir que podrien ser una prova de vida antiga a Mart. La notícia va aparèixer a portada de diaris de tot el món amb titulars com «Troben vida a Mart». Anys després, la majoria de la comunitat científica va concloure que aquelles estructures probablement es podien explicar per processos purament químics, sense necessitat que hi hagués vida, tot i que el debat no està completament tancat encara avui.",
+      "L'any 1984 es va recollir un meteorit anomenat ALH84001. Les anàlisis de la seva composició (les proporcions d'isòtops de gasos atrapats a dins) van demostrar que provenia de Mart: un impacte va llançar aquest tros de roca marciana a l'espai fa uns 17 milions d'anys, i va caure a la Terra fa uns 13.000 anys. Mesurant la desintegració radioactiva d'alguns dels seus minerals, els científics van calcular que la roca es va formar fa uns 4.000 milions d'anys, quan Mart era jove. El 1996, un equip de la NASA va anunciar en una roda de premsa que havien trobat, dins d'aquest meteorit, unes estructures microscòpiques amb forma de bastonet que s'assemblaven a bacteris fossilitzats, i van suggerir que podrien ser una prova de vida antiga a Mart. La notícia va aparèixer a portada de diaris de tot el món amb titulars com «Troben vida a Mart». Anys després, la majoria de la comunitat científica va concloure que aquelles estructures probablement es podien explicar per processos purament químics, sense necessitat que hi hagués vida, tot i que el debat no està completament tancat encara avui.",
     questions: [
       {
         id: 't1',
@@ -133,7 +141,7 @@ export const sa7Avaluacio = {
           "No: una roca de Mart hauria de tenir exactament la mateixa edat que el seu planeta.",
           "No: si venia de Mart, hauria de tenir l'edat de l'univers sencer, uns 13.800 milions d'anys.",
           "Sí, però només perquè a Mart el temps passa a un ritme diferent que a la Terra.",
-          "Sí: el sistema solar es va formar fa uns 4.600 M.a., i Mart ja tenia escorça 600 M.a. després."
+          "Sí: el sistema solar té uns 4.600 M.a., i Mart ja tenia escorça uns 600 M.a. després."
         ],
         correct: 3,
         feedback: {
@@ -178,7 +186,7 @@ export const sa7Avaluacio = {
         oa: 'OA3',
         text: "Imagina que algun dia es confirma que hi va haver vida microbiana a Mart fa 4.000 milions d'anys. Què es podria concloure —i què no— sobre l'origen de la vida a la Terra?",
         options: [
-          "Que la vida terrestre va arribar de Mart dins d'un meteorit: seria la confirmació definitiva de la panspèrmia.",
+          "Que la vida terrestre va arribar de Mart a bord d'un meteorit: seria la confirmació definitiva de la panspèrmia.",
           "Que la hipòtesi de Miller-Urey queda descartada, perquè la vida no hauria començat aquí.",
           "Que la vida pot sorgir allà on hi ha condicions semblants, però sense confirmar cap hipòtesi terrestre concreta.",
           "Res de res: un descobriment a Mart no té cap relació amb la pregunta de l'origen de la vida."

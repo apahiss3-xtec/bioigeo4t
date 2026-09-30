@@ -1,7 +1,7 @@
 export const sa4s1 = {
   id: "s1",
   saId: "sa4",
-  title: "Per què t'assembles als teus avis?",
+  title: "Retrat de família",
   sessionNumber: 1,
   biome: "sa4",
   duration: "2h",
