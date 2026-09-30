@@ -24,8 +24,6 @@
 // els blocs 1 i 6 de la prova final (6c–6e: controls i grau de certesa) amb les mateixes habilitats i exigència
 // (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
 // Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
-// Revisió 2026-09-30: versió fàcil (nivell C, clau `c`): 4 punts de checklist,
-// 3 preguntes curtes amb suport «Per llegir» i una frase per completar.
 export const sa7Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -200,49 +198,5 @@ export const sa7Avaluacio = {
         }
       }
     ]
-  },
-  c: {
-    checklist: [
-      { id: 'c1', oa: 'OA1', icon: '💥', text: "Sé que l'univers va començar amb el Big Bang i que encara s'expandeix." },
-      { id: 'c2', oa: 'OA2', icon: '🌡️', text: "Sé que la Terra té aigua líquida perquè no és ni massa a prop ni massa lluny del Sol." },
-      { id: 'c3', oa: 'OA2', icon: '⏳', text: "Sé que a cada semivida queda la meitat." },
-      { id: 'c4', oa: 'OA4', icon: '🪜', text: "Sé distingir un fet, una hipòtesi i una afirmació no científica." }
-    ],
-    preguntes: [
-      {
-        id: 'p1', oa: 'OA1',
-        img: '/images/sa7-s1-bigbang.svg',
-        alt: "Les tres proves del Big Bang: l'expansió, la radiació de fons i l'hidrogen i l'heli.",
-        llegir: "Les galàxies s'allunyen de nosaltres. Si anem enrere en el temps, tot estava junt.",
-        text: "Les galàxies llunyanes s'allunyen de nosaltres. Què vol dir?",
-        options: ["Que l'univers s'està fent més petit", "Que l'univers s'expandeix"],
-        correct: 1
-      },
-      {
-        id: 'p2', oa: 'OA2',
-        img: '/images/sa7-s2-semivida-exemple.svg',
-        alt: "Una corba de semivida: 100 %, 50 %, 25 % i 12,5 %.",
-        llegir: "A cada semivida en desapareix la meitat. Després d'una, en queda el 50 %. Després de dues, el 25 %.",
-        text: "Una roca tenia 100 àtoms d'un element. Han passat dues semivides. Quants en queden?",
-        options: ["25", "0", "50"],
-        correct: 0
-      },
-      {
-        id: 'p3', oa: 'OA4',
-        img: '/images/sa7-s1-escala-certeses.svg',
-        alt: "L'escala de certeses: fet ben establert, hipòtesi amb proves, especulació i afirmació no científica.",
-        llegir: "Fet: moltes proves. Hipòtesi: algunes proves. No científica: no es pot comprovar de cap manera.",
-        text: "«La Terra gira al voltant del Sol.» Quin nivell té?",
-        options: ["Hipòtesi amb proves", "Fet ben establert"],
-        correct: 1
-      }
-    ],
-    completar: {
-      id: 'k1', oa: 'OA2',
-      llegir: "La Terra no és ni massa a prop ni massa lluny del Sol. Per això l'aigua hi és líquida.",
-      frase: "A la Terra l'aigua és {0} perquè la distància al Sol és la {1}.",
-      respostes: ['líquida', 'justa'],
-      banc: ['gel', 'líquida', 'justa', 'gran']
-    }
   }
 }

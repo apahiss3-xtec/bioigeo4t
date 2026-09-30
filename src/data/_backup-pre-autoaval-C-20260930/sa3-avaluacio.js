@@ -22,8 +22,6 @@
 // el bloc 3 de la prova final del curs amb les mateixes habilitats i exigència
 // (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
 // Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
-// Revisió 2026-09-30: versió fàcil (nivell C, clau `c`): 4 punts de checklist,
-// 3 preguntes curtes amb suport «Per llegir» i una frase per completar.
 export const sa3Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -198,47 +196,5 @@ export const sa3Avaluacio = {
         }
       }
     ]
-  },
-  c: {
-    checklist: [
-      { id: 'c1', oa: 'OA1', icon: '🧬', text: "Sé que a l'ADN la A va amb la T, i la G va amb la C." },
-      { id: 'c2', oa: 'OA2', icon: '➡️', text: "Sé el camí: ADN → ARN → proteïna → característica." },
-      { id: 'c3', oa: 'OA3', icon: '✏️', text: "Sé que si canvia una lletra de l'ADN, la proteïna pot canviar." },
-      { id: 'c4', oa: 'OA4', icon: '👶', text: "Sé que un canvi a la pell no passa als fills, i un canvi a un òvul, sí." }
-    ],
-    preguntes: [
-      {
-        id: 'p1', oa: 'OA1',
-        img: '/images/sa3-s2-adn-estructura.svg',
-        alt: "La doble cadena de l'ADN: la A s'aparella amb la T i la G amb la C.",
-        llegir: "La A s'aparella amb la T. La G s'aparella amb la C.",
-        text: "Una cadena de l'ADN diu T-G-A. Què hi ha a l'altra cadena?",
-        options: ["T-G-A, igual que la primera", "A-C-T"],
-        correct: 1
-      },
-      {
-        id: 'p2', oa: 'OA2',
-        img: '/images/sa3-s1-dogma.svg',
-        alt: "El camí de l'ADN a la característica: ADN, ARN, proteïna i caràcter.",
-        llegir: "L'ADN té el missatge. L'ARN en fa una còpia. La proteïna fa la feina i fa que l'organisme sigui com és.",
-        text: "Un gat té el pèl negre perquè una proteïna fabrica el color negre. D'on surten les instruccions d'aquesta proteïna?",
-        options: ["D'un gen del seu ADN", "Del menjar que el gat ha anat menjant"],
-        correct: 0
-      },
-      {
-        id: 'p3', oa: 'OA3',
-        llegir: "Una mutació és un canvi en una lletra de l'ADN. A vegades la proteïna surt diferent i no funciona.",
-        text: "En una planta canvia una lletra del gen del color. La flor surt blanca en lloc de vermella. Per què?",
-        options: ["La planta ha decidit canviar", "La proteïna del color ha sortit diferent"],
-        correct: 1
-      }
-    ],
-    completar: {
-      id: 'k1', oa: 'OA4',
-      llegir: "Les cèl·lules del cos no passen als fills. Els òvuls i els espermatozoides, sí.",
-      frase: "Un canvi a l'ADN de la pell {0} passa als fills. Un canvi a l'ADN d'un òvul {1} hi passa.",
-      respostes: ['no', 'sí'],
-      banc: ['sí', 'no', 'sempre', 'mai']
-    }
   }
 }

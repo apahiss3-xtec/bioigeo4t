@@ -25,8 +25,6 @@
 // el bloc 5 de la prova final del curs (i la idea de variabilitat del bloc 2) amb les mateixes habilitats i exigència
 // (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
 // Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
-// Revisió 2026-09-30: versió fàcil (nivell C, clau `c`): 4 punts de checklist,
-// 3 preguntes curtes amb suport «Per llegir» i una frase per completar.
 export const sa5Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -200,47 +198,5 @@ export const sa5Avaluacio = {
         }
       }
     ]
-  },
-  c: {
-    checklist: [
-      { id: 'c1', oa: 'OA1', icon: '🦎', text: "Sé relacionar una part del cos amb la seva funció i amb on viu l'animal." },
-      { id: 'c2', oa: 'OA2', icon: '🦴', text: "Sé que els mateixos ossos en animals diferents vol dir que són parents." },
-      { id: 'c3', oa: 'OA3', icon: '🎲', text: "Sé que les mutacions surten a l'atzar, i que l'ambient tria." },
-      { id: 'c4', oa: 'OA4', icon: '📜', text: "Sé la diferència entre Lamarck i Darwin." }
-    ],
-    preguntes: [
-      {
-        id: 'p1', oa: 'OA2',
-        img: '/images/sa5-s2-homologia-analogia.svg',
-        alt: "Braços i ales de quatre animals amb els mateixos ossos, i dues ales per volar sense els mateixos ossos.",
-        llegir: "Homologia: els mateixos ossos, feines diferents. Vol dir que són parents.",
-        text: "El braç d'un mico i l'aleta d'una foca tenen els mateixos ossos. Què vol dir?",
-        options: ["Que fan la mateixa feina", "Que són parents"],
-        correct: 1
-      },
-      {
-        id: 'p2', oa: 'OA3',
-        img: '/images/sa5-s3-simulacio.svg',
-        alt: "Preses clares i fosques sobre un fons: sobreviuen les que es camuflen.",
-        llegir: "Els animals que es camuflen sobreviuen més i tenen més fills. És l'ambient qui tria.",
-        text: "En una platja de sorra blanca hi viuen ratolins clars i foscos. Els mussols veuen millor els foscos. Amb els anys, què passarà?",
-        options: ["Hi haurà més ratolins foscos", "Hi haurà més ratolins clars"],
-        correct: 1
-      },
-      {
-        id: 'p3', oa: 'OA4',
-        llegir: "Lamarck: l'animal canvia perquè ho necessita. Darwin: ja hi havia diferències, i l'ambient tria.",
-        text: "«Els cactus van fer punxes perquè les necessitaven.» Qui ho diria?",
-        options: ["Darwin", "Lamarck"],
-        correct: 1
-      }
-    ],
-    completar: {
-      id: 'k1', oa: 'OA3',
-      llegir: "Les mutacions surten a l'atzar. No surten perquè facin falta. Després, l'ambient tria.",
-      frase: "Les mutacions surten a l'{0}, i l'{1} tria quins individus tenen més fills.",
-      respostes: ['atzar', 'ambient'],
-      banc: ['ambient', 'atzar', 'animal', 'esforç']
-    }
   }
 }

@@ -26,8 +26,6 @@
 // el bloc 6 de la prova final (6a–6b: edat d'un fòssil i d'una estructura que talla) amb les mateixes habilitats i exigència
 // (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
 // Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
-// Revisió 2026-09-30: versió fàcil (nivell C, clau `c`): 4 punts de checklist,
-// 3 preguntes curtes amb suport «Per llegir» i una frase per completar.
 export const sa6Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -202,49 +200,5 @@ export const sa6Avaluacio = {
         }
       }
     ]
-  },
-  c: {
-    checklist: [
-      { id: 'c1', oa: 'OA1', icon: '🌍', text: "Sé que les plaques es mouen: se separen, xoquen o llisquen." },
-      { id: 'c2', oa: 'OA2', icon: '🪨', text: "Sé que la capa de sota és la més antiga." },
-      { id: 'c3', oa: 'OA2', icon: '✂️', text: "Sé que el que talla una capa és més nou que la capa." },
-      { id: 'c4', oa: 'OA3', icon: '⚠️', text: "Sé que el risc depèn també de qui viu en aquell lloc." }
-    ],
-    preguntes: [
-      {
-        id: 'p1', oa: 'OA1',
-        img: '/images/sa6-s1-limits.svg',
-        alt: "Els tres límits de plaques: divergent, convergent i transformant.",
-        llegir: "Divergent: les plaques se separen. Convergent: xoquen. Transformant: llisquen de costat.",
-        text: "A Islàndia dues plaques se separen i en surt magma. Quin límit és?",
-        options: ["Convergent", "Divergent"],
-        correct: 1
-      },
-      {
-        id: 'p2', oa: 'OA2',
-        img: '/images/sa6-s3-tall.svg',
-        alt: "Un tall amb capes horitzontals, un dic i una falla, ordenats pas a pas.",
-        llegir: "Les capes es fan una a sobre de l'altra. La de sota és la més antiga.",
-        text: "En un penya-segat hi ha tres capes: sorra a baix, argila al mig i calcària a dalt. Quina és la més antiga?",
-        options: ["La calcària", "L'argila", "La sorra"],
-        correct: 2
-      },
-      {
-        id: 'p3', oa: 'OA3',
-        img: '/images/sa6-s4-risc.svg',
-        alt: "El mateix barranc amb la mateixa crescuda en tres llocs: camps, cases noves amb mur i cases velles.",
-        llegir: "El risc no és només el perill. També compta qui viu allà i si està protegit.",
-        text: "El mateix riu es desborda en dos llocs: un camp buit i un poble. On hi ha més risc?",
-        options: ["Al poble", "Al camp buit"],
-        correct: 0
-      }
-    ],
-    completar: {
-      id: 'k1', oa: 'OA2',
-      llegir: "Una falla que talla una capa s'ha fet després de la capa. La capa de sota es va fer primer.",
-      frase: "Una falla que talla una capa és més {0} que la capa. La capa de sota és la més {1}.",
-      respostes: ['nova', 'antiga'],
-      banc: ['antiga', 'nova', 'dura', 'alta']
-    }
   }
 }

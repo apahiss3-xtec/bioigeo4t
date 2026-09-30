@@ -21,8 +21,6 @@
 // el bloc 4 de la prova final del curs amb les mateixes habilitats i exigència
 // (tipus de dada, verb, format) i el model AE tanca l'error típic del bloc.
 // Auditoria: web/scripts-avaluacio/audita_autoavaluacio.py.
-// Revisió 2026-09-30: versió fàcil (nivell C, clau `c`): 4 punts de checklist,
-// 3 preguntes curtes amb suport «Per llegir» i una frase per completar.
 export const sa4Avaluacio = {
   // Assaig de prova escrita. El test de 4 opcions comprova si es transfereix
   // una idea, pero la prova es respon ESCRIVINT: marcar la casella bona dona
@@ -197,49 +195,5 @@ export const sa4Avaluacio = {
         }
       }
     ]
-  },
-  c: {
-    checklist: [
-      { id: 'c1', oa: 'OA1', icon: '🧩', text: "Sé què és un al·lel dominant i un de recessiu." },
-      { id: 'c2', oa: 'OA1', icon: '👀', text: "Sé que el genotip són les lletres (Aa) i el fenotip és el que es veu." },
-      { id: 'c3', oa: 'OA2', icon: '🔲', text: "Sé omplir un quadre de Punnett." },
-      { id: 'c4', oa: 'OA4', icon: '👫', text: "Sé que el sexe depèn de si el pare aporta una X o una Y." }
-    ],
-    preguntes: [
-      {
-        id: 'p1', oa: 'OA1',
-        img: '/images/sa4-s1-pedigri.svg',
-        alt: "Un pedigrí: els pares no mostren el caràcter i el passen a un fill que el mostra.",
-        llegir: "El dominant (A) es veu sempre que hi és. El recessiu (a) només es veu si n'hi ha dos: aa.",
-        text: "En els pèsols, el color groc (A) domina sobre el verd (a). Un pèsol Aa, de quin color és?",
-        options: ["Verd, perquè porta una a", "Groc"],
-        correct: 1
-      },
-      {
-        id: 'p2', oa: 'OA2',
-        img: '/images/sa4-s2-punnett.svg',
-        alt: "Un quadre de Punnett: les lletres del pare a dalt, les de la mare al costat, i cada casella és un fill possible.",
-        llegir: "El quadre creua les lletres del pare i de la mare. Cada casella és un fill possible.",
-        text: "Creues un pèsol Aa amb un pèsol aa. Quina part dels fills serà verda (aa)?",
-        options: ["1 de cada 4", "Cap", "1 de cada 2"],
-        correct: 2
-      },
-      {
-        id: 'p3', oa: 'OA4',
-        img: '/images/sa4-s4-determinacio-sexe.svg',
-        alt: "La mare aporta sempre una X; el pare aporta una X o una Y.",
-        llegir: "La mare aporta sempre una X. El pare aporta una X o una Y. XX = nena. XY = nen.",
-        text: "Un espermatozoide amb una Y fecunda un òvul. Què naixerà?",
-        options: ["Una nena", "Un nen"],
-        correct: 1
-      }
-    ],
-    completar: {
-      id: 'k1', oa: 'OA2',
-      llegir: "El quadre de Punnett diu el que tendeix a passar quan hi ha molts fills. No diu què passarà amb un fill concret.",
-      frase: "El 3:1 és una {0}, no una {1} per a cada fill.",
-      respostes: ['tendència', 'garantia'],
-      banc: ['garantia', 'tendència', 'mutació', 'proteïna']
-    }
   }
 }

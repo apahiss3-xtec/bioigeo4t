@@ -27,8 +27,6 @@
 // ara ordena 8 frases), c5 reformulat (el perfil epistèmic és una línia a la S1),
 // c7–c10 es mantenen (es treballen al puzle de la S2 i a l'app de la S3). El test de
 // transferència (Power Balance) es manté: no és cap dels casos del puzle ni de l'app.
-// Revisió 2026-09-30: versió fàcil (nivell C, clau `c`): 4 punts de checklist,
-// 3 preguntes curtes amb suport «Per llegir» i una frase per completar.
 export const sa1Avaluacio = {
   // Pràctica escrita (24/09/2026: abans «Assaig de prova escrita»). La SA1 NO té
   // prova pròpia (`teProva: false` a index.js), així que el bloc no es presenta
@@ -206,49 +204,5 @@ export const sa1Avaluacio = {
         }
       }
     ]
-  },
-  c: {
-    checklist: [
-      { id: 'c1', oa: 'OA1', icon: '🔎', text: "Sé que res no és 100 % segur: hi ha coses més certes i coses menys certes." },
-      { id: 'c2', oa: 'OA2', icon: '📊', text: "Sé que les dades valen més que «ho diu un famós»." },
-      { id: 'c3', oa: 'OA3', icon: '⚖️', text: "Sé fer una prova justa: dos grups, i només canvia una cosa." },
-      { id: 'c4', oa: 'OA4', icon: '🚨', text: "Sé fer servir els 3 senyals del detector." }
-    ],
-    preguntes: [
-      {
-        id: 'p1', oa: 'OA1',
-        img: '/images/sa1-s1-certesa-C.svg',
-        alt: "Tres calaixos de certesa: molt certa, depèn i gens certa, cadascun amb un exemple.",
-        llegir: "Molt certa: ho puc comprovar i sempre passa. Depèn: a vegades passa i a vegades no.",
-        text: "«Si deixo anar una pilota, cau a terra.» Quina certesa té?",
-        options: ["Depèn: a vegades no cau", "Molt certa"],
-        correct: 1
-      },
-      {
-        id: 'p2', oa: 'OA4',
-        img: '/images/sa1-s2-detector-C.svg',
-        alt: "Els 3 senyals del detector: no es pot comprovar, no admet crítica i sona «científica».",
-        llegir: "Senyal 3: fa servir paraules que sonen «científiques» per convèncer-te.",
-        text: "Un anunci diu: «Aquesta aigua té energia molecular i et fa més llest». Quin senyal hi veus?",
-        options: ["Sona «científica»", "Cap senyal: és un anunci normal"],
-        correct: 0
-      },
-      {
-        id: 'p3', oa: 'OA4',
-        img: '/images/sa1-s3-calaixos-C.svg',
-        alt: "Tres calaixos: ciència, encara no comprovat i pseudociència.",
-        llegir: "Encara no comprovat: es pot comprovar, però encara no se sap. Pseudociència: no es pot comprovar de cap manera.",
-        text: "«Les plantes creixen més si els parles.» Es pot comprovar, però ningú no ho ha fet bé. On va?",
-        options: ["Pseudociència", "Encara no comprovat", "Ciència"],
-        correct: 1
-      }
-    ],
-    completar: {
-      id: 'k1', oa: 'OA3',
-      llegir: "Una prova justa té dos grups. Entre els dos grups només canvia una cosa.",
-      frase: "En una prova justa hi ha {0} grups i només {1} una cosa.",
-      respostes: ['dos', 'canvia'],
-      banc: ['un', 'dos', 'canvia', 'queda']
-    }
   }
 }
