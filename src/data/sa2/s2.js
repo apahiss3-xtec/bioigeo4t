@@ -160,7 +160,7 @@ export const sa2s2 = {
       {
         apartat: "0",
         title: "Idees prèvies + posada en comú dels deures",
-        time: "10 min (A: 8)",
+        time: "10 min (A: 5)",
         phase: "engage",
         instruction: "Posa en comú els dos teixits dels deures i respon: d'on creus que surt la barreja que fa que un fill no sigui idèntic als pares. No es corregeix.",
         hints: []
@@ -168,7 +168,7 @@ export const sa2s2 = {
       {
         apartat: "1",
         title: "Modela: mitosi i meiosi amb la mateixa cèl·lula",
-        time: "40 min (A: 47)",
+        time: "40 min (A: 48)",
         phase: "explore",
         instruction: "Amb les parelles de cromosomes que indiqui la teva fitxa (un color per parella), modela primer la mitosi i després la meiosi. Compta quantes cèl·lules surten i quants cromosomes té cadascuna.",
         hints: [
@@ -179,7 +179,7 @@ export const sa2s2 = {
       {
         apartat: "2",
         title: "Mitosi vs meiosi: el resultat",
-        time: "20 min",
+        time: "20 min (A: 22)",
         phase: "explica",
         instruction: "Amb la Fig.1, completa la comparació: nombre de cèl·lules i quantitat de material genètic de cada divisió. Marca quina fa cèl·lules idèntiques.",
         hints: [
@@ -190,7 +190,7 @@ export const sa2s2 = {
       {
         apartat: "3",
         title: "Per què la meitat + per què no som clons",
-        time: "20 min (A: 15)",
+        time: "20 min (A: 18)",
         phase: "explica",
         instruction: "Amb la Fig.2, explica per què els gàmetes tenen la meitat dels cromosomes i digues quants n'ha de tenir un òvul humà. Després explica per què dos germans no són idèntics.",
         hints: [
@@ -201,7 +201,7 @@ export const sa2s2 = {
       {
         apartat: "4",
         title: "Quan fa el cos cada divisió + torna al hook",
-        time: "20 min (A: 16)",
+        time: "20 min (A: 17)",
         phase: "explica",
         instruction: "Digues on i per a què fa servir el cos cada divisió. Després torna a la pregunta del principi (per què no tenim 92 cromosomes) i respon-la.",
         hints: [

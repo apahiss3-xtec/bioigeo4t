@@ -167,7 +167,7 @@ export const sa2s3 = {
       {
         apartat: "0",
         title: "Idees prèvies + posada en comú dels deures",
-        time: "10 min (A: 8)",
+        time: "10 min (A: 5)",
         phase: "engage",
         instruction: "Posa en comú l'esquema mitosi/meiosi dels deures i respon: què creus que busca un patòleg al microscopi per detectar un càncer. No es corregeix.",
         hints: []
@@ -175,7 +175,7 @@ export const sa2s3 = {
       {
         apartat: "1",
         title: "Compta i calcula els dos índexs mitòtics",
-        time: "40 min (A: 44)",
+        time: "40 min (A: 45)",
         phase: "explore",
         instruction: "A la teva fitxa de pacient, compta a cada biòpsia (inicial i final) el total de cèl·lules i les que estan en divisió, i calcula els dos índexs mitòtics. La Fig.2 mostra un exemple del tipus d'imatge.",
         hints: [
@@ -197,7 +197,7 @@ export const sa2s3 = {
       {
         apartat: "3",
         title: "Veredicte: funciona el fàrmac?",
-        time: "25 min (A: 27)",
+        time: "25 min (A: 30)",
         phase: "elabora",
         instruction: "Compara l'índex inicial i el final i escriu el veredicte de l'equip amb les dades que l'aguanten. Prepara com el defensaràs.",
         hints: [
@@ -209,7 +209,7 @@ export const sa2s3 = {
       {
         apartat: "4",
         title: "Per què el càncer no para + torna al principi",
-        time: "15 min (A: 13)",
+        time: "15 min",
         phase: "elabora",
         instruction: "Explica per què el càncer és una divisió sense control i per què la quimioteràpia té efectes secundaris. Després torna a la pregunta d'entrada i respon-la.",
         hints: [

@@ -190,7 +190,7 @@ export const sa2s4 = {
       {
         apartat: "2",
         title: "El mapa dels tres processos",
-        time: "20 min",
+        time: "20 min (A: 15)",
         phase: "explica",
         instruction: "Amb les Fig.1-3 de repàs, dibuixa o completa un sol esquema que situï mitosi, meiosi i càncer partint del mateix cicle cel·lular.",
         hints: [

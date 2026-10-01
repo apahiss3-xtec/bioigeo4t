@@ -167,7 +167,7 @@ export const sa2s1 = {
       {
         apartat: "0",
         title: "Idees prèvies",
-        time: "10 min (A: 8)",
+        time: "10 min (A: 5)",
         phase: "engage",
         instruction: "Omple l'apartat 0: d'on surten les cèl·lules noves i què creus que passa en una cèl·lula cancerosa. No es corregeix; ho compararàs al final.",
         hints: []
@@ -175,7 +175,7 @@ export const sa2s1 = {
       {
         apartat: "1",
         title: "Laboratori: observa i ordena les fases",
-        time: "40 min",
+        time: "40 min (A: 42)",
         phase: "explore",
         instruction: "Mira els deu quadres de la Fig.2 (o el microscopi). Escriu primer el criteri amb què agruparàs, després agrupa, ordena i compta. Ningú no et diu quants grups hi ha.",
         hints: [
@@ -186,7 +186,7 @@ export const sa2s1 = {
       {
         apartat: "2",
         title: "El cicle i les 4 fases",
-        time: "20 min (A: 18)",
+        time: "20 min",
         phase: "explica",
         instruction: "Amb la Fig.1, comprova el teu ordre, posa-hi tu el nom de cada fase i digues quin dels TEUS grups és cadascuna. Després encercla la part del cicle que NO és mitosi. Al final, torna al criteri que havies escrit i digues si el mantindries.",
         hints: [
@@ -197,7 +197,7 @@ export const sa2s1 = {
       {
         apartat: "3",
         title: "Per què dividir-se? I quan es perd el control",
-        time: "20 min (A: 15)",
+        time: "20 min (A: 18)",
         phase: "explica",
         instruction: "Explica dos motius pels quals el cos divideix cèl·lules i què diferencia una divisió normal d'una tumoral.",
         hints: [
