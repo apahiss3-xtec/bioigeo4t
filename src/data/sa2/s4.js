@@ -226,7 +226,7 @@ export const sa2s4 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa2-s4-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa2-s4-exit-ticket.html", B: "/fitxes/sa2-s4-exit-ticket.html", C: "/fitxes/sa2-s4-exit-ticket-C.html" },
   exitTicketType: "web",
   exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
