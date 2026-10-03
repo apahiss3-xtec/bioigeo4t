@@ -184,7 +184,7 @@ export const sa5s3 = {
     "Estudia la Fig.1 (com el fons selecciona el color que sobreviu) i la Fig.2 (la graella de les 4 teories amb el coll de la girafa resolt)",
     "Descarrega la fitxa S19 i fes una mini-simulació a casa amb paperets de colors sobre dos fons diferents, registrant quins sobreviuen",
     "Omple la graella de les 4 teories amb el cas de la resistència a un antibiòtic, seguint el model de la girafa",
-    "Respon l'exit tiquet (apartat EXIT TIQUET) i prepara la targeta-cas del teu organisme per al museu de la propera sessió"
+    "Respon l'exit tiquet online (a l'acordió de sota) i prepara la targeta-cas del teu organisme per al museu de la propera sessió"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

@@ -248,7 +248,7 @@ export const sa4s3 = {
     "Estudia la Fig.1 (vermell × blanc → rosa, 1:2:1), la Fig.2 (grups sanguinis ABO i codominància) i la Fig.3 (poligènia: variació contínua)",
     "Descarrega la fitxa S3 i resol el quadre de grups sanguinis de l'apartat 2 i la classificació de casos de l'apartat 4",
     "Comprova que saps la diferència clau: dominància incompleta = mescla intermèdia; codominància = els dos trets alhora",
-    "L'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET); porta la tanda de problemes resolta"
+    "L'exit tiquet el trobaràs a classe o el pots fer online a l'acordió de sota; porta la tanda de problemes resolta"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

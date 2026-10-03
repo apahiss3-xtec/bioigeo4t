@@ -279,7 +279,7 @@ export const sa3s1 = {
     "Mira la Fig.1 (del codi a la característica) i intenta explicar-la amb una comparació teva",
     "Descarrega la fitxa S1, llegeix el cas dels «bebès editats» i respon les preguntes per ordre de dificultat",
     "Escriu la teva postura separant l'argument científic (es pot fer?) de l'ètic (s'hauria de fer?)",
-    "A casa, busca una notícia sobre genètica i anota qui la signa i amb quina intenció; l'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET)"
+    "A casa, busca una notícia sobre genètica i anota qui la signa i amb quina intenció; l'exit tiquet el trobaràs a classe o el pots fer online a l'acordió de sota"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

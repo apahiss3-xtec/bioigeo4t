@@ -178,7 +178,7 @@ export const sa5s1 = {
     "Estudia la Fig.1: com s'agrupen els organismes del pati per semblances i el model de nom científic",
     "Descarrega la fitxa S17 i, si pots, surt un moment a observar 3-4 organismes reals (del pati, un parc o el carrer) omplint la taula «Observo / Penso»",
     "Tria un organisme, identifica-hi una possible adaptació i escriu-la com a cadena estructura → funció → ambient",
-    "L'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET); porta la teva observació a la propera sessió"
+    "L'exit tiquet el trobaràs a classe o el pots fer online a l'acordió de sota; porta la teva observació a la propera sessió"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

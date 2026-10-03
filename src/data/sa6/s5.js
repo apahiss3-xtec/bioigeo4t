@@ -157,7 +157,7 @@ export const sa6s5 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa6-s5-exit-ticket.html",
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "3.5",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "Quatre equips expliquen la mateixa escena. Quina de les frases fa divulgació científica de veritat?", options: ["Com que al mapa hi ha dinosaures dibuixats als dos continents, i sabem que eren animals grans, podem concloure que al Mesozoic aquelles terres estaven unides", "Com que trobem el mateix rèptil terrestre fòssil a les dues costes, i sabem que no podia travessar l'oceà, podem concloure que al Mesozoic les terres estaven unides", "Al Mesozoic els continents es van separar i entre ells es va obrir un oceà molt gran que encara avui continua creixent uns centímetres cada any", "Com que ho diuen els llibres de geologia i el nostre professor, i sabem que són fonts fiables, podem concloure que al Mesozoic aquelles terres estaven unides"], correct: 1 },

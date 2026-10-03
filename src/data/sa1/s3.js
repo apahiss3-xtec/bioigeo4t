@@ -179,7 +179,7 @@ export const sa1s3 = {
   },
 
   exitTicketUrl: { A: "/fitxes/sa1-s3-exit-ticket.html", B: "/fitxes/sa1-s3-exit-ticket.html", C: "/fitxes/sa1-s3-exit-ticket-C.html" },
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "3.1",
   exitTicketQuestions: [
     {

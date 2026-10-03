@@ -223,7 +223,7 @@ export const sa2s1 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: { A: "/fitxes/sa2-s1-exit-ticket.html", B: "/fitxes/sa2-s1-exit-ticket.html", C: "/fitxes/sa2-s1-exit-ticket-C.html" },
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     {
@@ -252,7 +252,7 @@ export const sa2s1 = {
     "Mira la Fig.1 (el cicle de la mitosi) i la Fig.3 (cèl·lules reals d'arrel de ceba) i intenta ordenar tu les fases",
     "Descarrega la fitxa S1 i completa l'observació i el recompte amb les imatges de la Fig.2",
     "A casa, busca un teixit que es regeneri de pressa i un que no, i anota per què",
-    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
+    "Fes l'exit tiquet online a l'acordió de sota"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

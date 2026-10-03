@@ -224,7 +224,7 @@ export const sa2s3 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: { A: "/fitxes/sa2-s3-exit-ticket.html", B: "/fitxes/sa2-s3-exit-ticket.html", C: "/fitxes/sa2-s3-exit-ticket-C.html" },
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "3.3",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     {
@@ -254,7 +254,7 @@ export const sa2s3 = {
     "Llegeix l'apartat EXPLICA (índex mitòtic, provar un fàrmac abans/després, el càncer com a cicle sense control)",
     "Descarrega la fitxa S3 i completa el recompte, la interpretació i el veredicte",
     "Redacta el mini-informe de conclusió amb els teus números",
-    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
+    "Fes l'exit tiquet online a l'acordió de sota"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

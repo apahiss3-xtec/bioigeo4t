@@ -246,7 +246,7 @@ export const sa4s1 = {
     "Estudia la Fig.1: aprèn els símbols del pedigrí (quadrat/cercle, ple/buit) i com un caràcter recessiu salta una generació via portadors",
     "Descarrega la fitxa S1 i completa l'apartat 2 (vocabulari) i l'apartat 3 (lectura del pedigrí)",
     "Tria un caràcter per al projecte Heredity ID (observable, dues varietats clares, divers) i dibuixa el pedigrí d'una família de 3 generacions",
-    "L'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET); porta el teu arbre a la propera sessió"
+    "L'exit tiquet el trobaràs a classe o el pots fer online a l'acordió de sota; porta el teu arbre a la propera sessió"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

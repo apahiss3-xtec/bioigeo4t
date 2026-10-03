@@ -632,10 +632,9 @@ export default function SessionPage() {
               // Sessions on l'exit tiquet no és ni un full a part ni un formulari:
               // les preguntes ja viuen dins d'un apartat de la fitxa.
               <> · {session.exitTicketWhere}</>
-            ) : session.exitTicketType === 'paper' ? (
-              <> · {t(session.exitTicketDuration ? 'session.exitOnPaperStar' : 'session.exitOnPaper')}</>
             ) : (
-              <> · {t('session.exitOnWeb')}</>
+              // A classe sempre en paper; l'online viu a la seccio «Has faltat a classe?».
+              <> · {t(session.exitTicketDuration ? 'session.exitOnPaperStar' : 'session.exitOnPaper')}</>
             )}
             {session.exitTicketDuration && <> · ⏱ {session.exitTicketDuration}</>}
           </SectionTitle>
@@ -663,18 +662,9 @@ export default function SessionPage() {
               🎟️ {t('session.exitTicketSheet')}
             </a>
           )}
-          {session.exitTicketType === 'paper' ? (
-            <div className="space-y-4">
-              <p className="card px-5 py-4">✏️ {t('session.exitPaperNote')}</p>
-              <Accordion title={`🏠 ${t('session.exitAbsentAccordion')}`}>
-                <ExitTicketForm session={session} />
-              </Accordion>
-            </div>
-          ) : (
-            <div className="card p-6">
-              <ExitTicketForm session={session} />
-            </div>
-          )}
+          {/* A classe l'exit tiquet es fa SEMPRE en paper (B/C). El formulari online
+              viu nomes a la seccio 7 «Has faltat a classe?». */}
+          <p className="card px-5 py-4">✏️ {t('session.exitPaperNote')}</p>
         </section>
 
         {/* Estructura informe (SA2 S7) */}
@@ -772,6 +762,13 @@ export default function SessionPage() {
                 </li>
               ))}
             </ol>
+            {session.exitTicketQuestions?.length > 0 && (
+              <div className="mt-6">
+                <Accordion title={t('session.exitOnlineAccordion')}>
+                  <ExitTicketForm session={session} />
+                </Accordion>
+              </div>
+            )}
           </Accordion>
         </section>
 

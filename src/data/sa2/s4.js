@@ -227,7 +227,7 @@ export const sa2s4 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: { A: "/fitxes/sa2-s4-exit-ticket.html", B: "/fitxes/sa2-s4-exit-ticket.html", C: "/fitxes/sa2-s4-exit-ticket-C.html" },
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     {
@@ -256,7 +256,7 @@ export const sa2s4 = {
     "Llegeix l'apartat EXPLICA d'avui: connecta els tres processos en un sol mapa",
     "Descarrega la fitxa S4 i resol-ne els casos de diagnòstic amb el vocabulari de les tres sessions anteriors",
     "Fes la taula comparativa dels deures (Mitosi / Meiosi / Càncer) com a preparació per a la prova",
-    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
+    "Fes l'exit tiquet online a l'acordió de sota"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

@@ -231,7 +231,7 @@ export const sa4s4 = {
     "Estudia la Fig.1 (Punnett XX × XY: el pare determina el sexe) i la Fig.2 (pedigrí lligat al X: portadores i fills afectats)",
     "Descarrega la fitxa S4 i resol el quadre de Punnett de l'apartat 2 (mare portadora × pare sa) separant fills i filles",
     "Comprova que entens la idea clau: l'home només té una X (hemizigot), per això un al·lel recessiu del X l'afecta amb una sola còpia; la dona pot ser portadora sana",
-    "L'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET); porta el problema de daltonisme resolt"
+    "L'exit tiquet el trobaràs a classe o el pots fer online a l'acordió de sota; porta el problema de daltonisme resolt"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

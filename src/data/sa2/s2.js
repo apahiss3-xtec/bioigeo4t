@@ -216,7 +216,7 @@ export const sa2s2 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: { A: "/fitxes/sa2-s2-exit-ticket.html", B: "/fitxes/sa2-s2-exit-ticket.html", C: "/fitxes/sa2-s2-exit-ticket-C.html" },
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "1.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     {
@@ -245,7 +245,7 @@ export const sa2s2 = {
     "Mira la Fig.1 (mitosi vs meiosi) i la Fig.2 (fecundació) i intenta reconstruir tu els dos processos amb un dibuix",
     "Descarrega la fitxa S2 i completa la comparació i el càlcul dels cromosomes de l'òvul",
     "A casa, fes l'esquema-resum de comparació mitosi/meiosi de quatre columnes",
-    "Fes l'exit tiquet en aquesta mateixa pàgina, a l'apartat EXIT TIQUET"
+    "Fes l'exit tiquet online a l'acordió de sota"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

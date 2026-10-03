@@ -159,7 +159,7 @@ export const sa7s4 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa7-s4-exit-ticket.html",
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketWhere: "ja el respons a la fitxa (apartat 5 i torn 5 del debat)",
   exitTicketQuestions: [

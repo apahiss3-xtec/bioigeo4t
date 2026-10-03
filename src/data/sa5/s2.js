@@ -182,7 +182,7 @@ export const sa5s2 = {
     "Estudia la Fig.1: els mateixos ossos (húmer, radi, cúbit) a l'ala de pollastre, el braç humà, l'ala de ratpenat i l'aleta de balena (homologia) i l'ala d'ocell vs d'insecte (analogia)",
     "Estudia la Fig.3: com es llegeix un arbre de semblances (nodes = avantpassats comuns, eix vertical = temps, com més a prop el node compartit més emparentats)",
     "Descarrega la fitxa S18 i fes els apartats 1 a 4; si pots, aconsegueix una ala de pollastre neta i localitza-hi els ossos",
-    "L'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET)"
+    "L'exit tiquet el trobaràs a classe o el pots fer online a l'acordió de sota"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

@@ -157,7 +157,7 @@ export const sa6s3 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa6-s3-exit-ticket.html",
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "6.5",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "En un tall hi ha tres capes horitzontals (A a baix, B al mig, C a dalt) i una falla que talla A i B però NO arriba a C. Quin és l'ordre correcte?", options: ["Primer la falla, després A, B i C", "Primer A i B, després la falla, i finalment C", "Primer A, B i C, i la falla al final de tot", "No es pot saber amb els principis geològics"], correct: 1 },

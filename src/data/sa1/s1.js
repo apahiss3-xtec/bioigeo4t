@@ -179,7 +179,7 @@ export const sa1s1 = {
 
   // ── EXIT TIQUET ──────────────────────────────────────────
   exitTicketUrl: { A: "/fitxes/sa1-s1-exit-ticket.html", B: "/fitxes/sa1-s1-exit-ticket.html", C: "/fitxes/sa1-s1-exit-ticket-C.html" },
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "2.2",
   exitTicketQuestions: [
     {

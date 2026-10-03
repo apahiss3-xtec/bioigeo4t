@@ -155,7 +155,7 @@ export const sa6s2 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa6-s2-exit-ticket.html",
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "1.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Al teu model, l'aigua calenta amb colorant pujava, s'escampava per dalt i tornava a baixar pels costats. Com relaciones aquest moviment amb el que fa el mantell sota les plaques? Digues què representava cada part del model.", hint: "Ves part per part del model i busca a què correspon cadascuna a la Terra: el líquid, el colorant i el que hi havia a la superfície. Després mira on pujava i on baixava." },

@@ -156,7 +156,7 @@ export const sa7s1 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa7-s1-exit-ticket.html",
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "2.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     { id: "q1", type: "open", text: "Un titular diu: «Un telescopi troba vida en un planeta llunyà». La notícia explica que s'ha detectat un senyal feble d'una molècula que a la Terra produeixen sobretot éssers vius, i que cal confirmar-lo. En quin nivell de certesa situaries l'afirmació del titular i quina observació concreta la faria pujar de nivell?", hint: "Separa primer què s'ha observat de debò i què hi afegeix el titular; després pensa quina observació nova caldria." },

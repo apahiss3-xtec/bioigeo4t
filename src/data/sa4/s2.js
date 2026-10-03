@@ -247,7 +247,7 @@ export const sa4s2 = {
     "Estudia la Fig.1 (quadre de Punnett Aa × Aa → 1:2:1 i 3:1) i la Fig.2 (com les monedes simulen l'atzar dels gàmetes)",
     "Descarrega la fitxa S2 i completa el quadre de Punnett de l'apartat 2 i els problemes de l'apartat 4",
     "Fes la simulació a casa amb dues monedes: 40 tirades, apunta els genotips i comprova que t'acostes al 75% dominant",
-    "L'exit tiquet el trobaràs a classe o aquí (apartat EXIT TIQUET); porta la tanda de problemes resolta"
+    "L'exit tiquet el trobaràs a classe o el pots fer online a l'acordió de sota; porta la tanda de problemes resolta"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

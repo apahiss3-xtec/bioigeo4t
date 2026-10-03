@@ -158,7 +158,7 @@ export const sa6s4 = {
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
   exitTicketUrl: "/fitxes/sa6-s4-exit-ticket.html",
-  exitTicketType: "web",
+  exitTicketType: "paper",
   exitTicketCriteri: "6.4",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketQuestions: [
     { id: "q1", type: "multiple", text: "Un poble decideix prohibir construir cases noves a la plana inundable del barranc. Sobre quin factor del risc actua aquesta mesura?", options: ["Sobre la perillositat: el barranc es desbordarà menys sovint", "Sobre l'exposició: hi haurà menys coses i persones al lloc on arriba l'aigua", "Sobre la vulnerabilitat: les cases que ja hi ha seran més resistents", "Sobre cap dels tres: és només una mesura administrativa"], correct: 1 },
