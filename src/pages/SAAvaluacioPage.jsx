@@ -378,7 +378,7 @@ export default function SAAvaluacioPage() {
       {/* 6 · PDF */}
       <section className="pb-12 text-center">
         <button
-          onClick={downloadPdf}
+          onClick={() => downloadPdf()}
           className="rounded-xl bg-[var(--purple-ink)] px-8 py-3.5 font-display font-bold text-xl text-white hover:bg-[var(--purple-deep)] transition-colors"
         >
           ⬇ {t('auto.downloadPdf')}
