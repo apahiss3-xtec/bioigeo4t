@@ -163,9 +163,8 @@ export default function SAIndexPage() {
                     <T>{s.title}</T>
                   </p>
                   <p className="text-sm text-[var(--muted)] mt-1">
-                    {s.duration}
-                    {s.isFinalSession && <> · 🏁 {t('sa.finalSession')}</>}
-                    {s.isKeySession && <> · ★ {t('sa.keySession')}</>}
+                    {s.isFinalSession && <>🏁 {t('sa.finalSession')}</>}
+                    {s.isKeySession && <>{s.isFinalSession && ' · '}★ {t('sa.keySession')}</>}
                   </p>
                 </div>
               </Link>

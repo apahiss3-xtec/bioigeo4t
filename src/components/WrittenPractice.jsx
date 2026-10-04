@@ -61,10 +61,6 @@ export default function WrittenPractice({ escrita, onChange, ambProva = true }) 
       return next
     })
 
-  const totalMinutes =
-    escrita.minutes ||
-    escrita.questions.reduce((sum, q) => sum + (q.minutes || 0), 0)
-
   return (
     <div className="space-y-5">
       <div
@@ -80,12 +76,6 @@ export default function WrittenPractice({ escrita, onChange, ambProva = true }) 
                 : "Escriu cada resposta SENCERA a mà, en un full, sense mirar els apunts. Quan l'hagis acabada —i no abans— obre la solució i compara-la amb la teva.")}
           </T>
         </p>
-        {totalMinutes > 0 && (
-          <p className="mt-2 text-sm text-[var(--muted)]">
-            Temps recomanat per a tot el bloc: <strong>{totalMinutes} min</strong>.
-            {ambProva && ' A la prova tampoc no en tindràs més.'}
-          </p>
-        )}
       </div>
 
       {escrita.questions.map((q, i) => {
@@ -99,7 +89,7 @@ export default function WrittenPractice({ escrita, onChange, ambProva = true }) 
               </span>
             </p>
             <p className="mb-4 ms-[3.25rem] text-xs text-[var(--muted)]">
-              {[q.oa, q.source, q.minutes ? `~${q.minutes} min` : null]
+              {[q.oa, q.source]
                 .filter(Boolean)
                 .join(' · ')}
             </p>

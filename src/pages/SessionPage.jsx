@@ -46,7 +46,6 @@ const ApartatHeader = ({ num, phase, title, time }) => (
       <p className="kicker" style={{ color: 'var(--biome-accent)' }}>
         {t('session.apartat')} {num}
         {phaseLabel(phase) && <> · {phaseLabel(phase)}</>}
-        {time && <> · ⏱ {time}</>}
       </p>
       <h2 className="text-2xl md:text-3xl leading-tight">
         <T>{title}</T>
@@ -184,7 +183,7 @@ export default function SessionPage() {
         <div className="absolute bottom-0 inset-x-0">
           <div className="mx-auto max-w-4xl px-4 pb-6">
             <p className="kicker" style={{ color: 'var(--biome-accent)' }}>
-              {sa.id.toUpperCase()} · {t('sa.session')} {session.sessionNumber} · {session.duration}
+              {sa.id.toUpperCase()} · {t('sa.session')} {session.sessionNumber}
               {session.isFinalSession && <> · 🏁 {t('sa.finalSession')}</>}
               {session.isKeySession && <> · ★ {t('sa.keySession')}</>}
             </p>
@@ -397,11 +396,6 @@ export default function SessionPage() {
 
             {session.exploreInstructions && (
               <div className="card p-6">
-                {!apartatMeta['1'] && session.exploreDuration && (
-                  <div className="mb-5 text-sm text-[var(--muted)]">
-                    ⏱ <strong>{t('session.duration')}:</strong> {session.exploreDuration}
-                  </div>
-                )}
                 <ol className="space-y-4">
                   {session.exploreInstructions.map((step, i) => (
                     <li key={i} className="flex gap-4">
@@ -636,7 +630,6 @@ export default function SessionPage() {
               // A classe sempre en paper; l'online viu a la seccio «Has faltat a classe?».
               <> · {t(session.exitTicketDuration ? 'session.exitOnPaperStar' : 'session.exitOnPaper')}</>
             )}
-            {session.exitTicketDuration && <> · ⏱ {session.exitTicketDuration}</>}
           </SectionTitle>
           {session.exitTicketNote && (
             <p className="mb-4 italic text-[var(--muted)]">{session.exitTicketNote}</p>

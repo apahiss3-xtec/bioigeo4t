@@ -463,7 +463,7 @@ export default function SAAvaluacioPage() {
                       {i + 1}. {q.text}
                     </p>
                     <p style={pdfMeta}>
-                      {[q.oa, q.source, q.minutes ? `~${q.minutes} min` : null]
+                      {[q.oa, q.source]
                         .filter(Boolean)
                         .join(' · ')}
                       {' · '}

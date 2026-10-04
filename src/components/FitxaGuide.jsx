@@ -31,11 +31,6 @@ export default function FitxaGuide({ guide }) {
             <div className="min-w-0 pt-0.5">
               <p className="font-display font-semibold text-lg leading-tight">
                 <T>{step.title}</T>
-                {step.time && (
-                  <span className="ms-2 text-sm font-normal text-[var(--muted)]">
-                    ⏱ {tempsNivell(step.time, nivell)}
-                  </span>
-                )}
                 {phaseLabel(step.phase) && (
                   <span className="ms-2 rounded-full border border-[var(--rule-strong)] px-2 py-0.5 text-xs uppercase tracking-wide text-[var(--muted)]">
                     {phaseLabel(step.phase)}
