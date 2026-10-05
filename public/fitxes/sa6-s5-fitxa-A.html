@@ -38,8 +38,8 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#bcccd6;color
 span[contenteditable]{display:inline-block}
 .wline{display:block;width:100%;min-height:52px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
 .wline:focus{border-bottom-color:var(--teal);background:rgba(58,82,102,.04)}
-.wline.tall{min-height:104px}
-.wline.xtall{min-height:128px}
+.wline.tall{min-height:72px}
+.wline.xtall{min-height:89px}
 .nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
 .input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
 .input-span.data-span{min-width:70px}
@@ -127,15 +127,17 @@ span[contenteditable]{display:inline-block}
 }
 </style>
 <style>
-.wline{min-height:72px}
-.wline.tall{min-height:118px}
-.wline.xtall{min-height:150px}
-.wline.xxtall{min-height:210px}
-.fill-cell{min-height:62px}
+.wline{min-height:50px}
+.wline.tall{min-height:82px}
+.wline.xtall{min-height:105px}
+.wline.xxtall{min-height:147px}
+.fill-cell{min-height:43px}
 .princ-strip{display:flex;gap:8px;flex-wrap:wrap;background:#eef3f6;border:1.5px solid #a9bccb;border-radius:8px;padding:7px 12px;margin:8px 0}
 .princ-strip b{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:#2A3D4C;align-self:center}
 .princ-chip{font-size:11.5px;font-weight:700;color:#2A3D4C;background:#fff;border:1px solid #a9bccb;border-radius:9999px;padding:2px 10px}
 .abp-note{background:#f8f0df;border-left:4px solid #C0872E;border-radius:0 8px 8px 0;padding:8px 12px;margin:10px 0;font-size:11.5px;color:#33404b}
+@media print{img.fig{display:block;width:80%!important;margin:4px auto!important}}
+img.fig{display:block;width:56%!important;margin:4px auto!important}@media print{.data-table tr{break-inside:auto!important;page-break-inside:auto!important}.data-table{break-inside:auto!important;page-break-inside:auto!important}.scaffold-box,.epist-box,.challenge-box,.abp-note{break-inside:auto!important}}
 </style>
 </head>
 <body>
@@ -183,10 +185,9 @@ span[contenteditable]{display:inline-block}
 <p style="font-size:12px;margin:9px 0 3px"><b>V&Iacute;DEO 2</b> &nbsp;Equip avaluat: <span class="input-span" contenteditable="true"></span></p><table class="data-table"><tr><th style="width:40%">Criteri</th><th style="width:14%">Nivell</th><th style="width:46%">Evid&egrave;ncia concreta &mdash; del v&iacute;deo (qu&egrave; diuen i on) o de la <b>resposta oral</b></th></tr><tr><td class="label-cell">Reconstrucci&oacute; justificada<br><span style="font-weight:400;font-size:10.5px">Diu on eren els continents a cada per&iacute;ode i ho justifica amb proves de tipus diferents, dient on s&oacute;n i de quin tipus s&oacute;n els l&iacute;mits de placa.</span></td><td style="text-align:center"><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">Coher&egrave;ncia de l&#39;ambientaci&oacute;<br><span style="font-weight:400;font-size:10.5px">Les imatges de cada per&iacute;ode concorden amb el que el mateix equip afirma sobre la posici&oacute; dels continents i el clima d&#39;aquell moment.</span></td><td style="text-align:center"><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">Proves que no quadren <span style='font-weight:400'>(es valora amb la RESPOSTA ORAL)</span><br><span style="font-weight:400;font-size:10.5px">L&#39;equip autor sap dir quina prova no li encaixava i per qu&egrave; li ha donat menys pes. Si diu que no n&#39;hi havia cap, ha de poder dir com ho ha comprovat.</span></td><td style="text-align:center"><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">Predicci&oacute;<br><span style="font-weight:400;font-size:10.5px">Prediu com continuar&agrave; el moviment dels continents i diu en qu&egrave; es basa.</span></td><td style="text-align:center"><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr><tr><td class="label-cell">L&egrave;xic geol&ograve;gic<br><span style="font-weight:400;font-size:10.5px">Usa el l&egrave;xic de la unitat (dorsal, l&iacute;mits, subducci&oacute;, convecci&oacute;, cicle de Wilson, f&ograve;ssil guia&hellip;) i el fa servir b&eacute; en el context, no nom&eacute;s el diu.</span></td><td style="text-align:center"><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
 <p style="font-size:11.5px;margin:6px 0 2px">Comentari del v&iacute;deo 2:</p><div class="wline tall" contenteditable="true"></div>
 <div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128483;&#65039; Prepara la resposta oral.</b> Just en acabar el vostre v&iacute;deo, un membre de l&#39;equip triat a l&#39;<b>atzar</b> haur&agrave; de respondre <b>sense paper</b>: &laquo;quina prova sost&eacute; aquesta escena?&raquo; i &laquo;quina prova no us quadrava, i qu&egrave; n&#39;heu fet?&raquo;. Escriviu-ne una l&iacute;nia per a cadascuna:<div class="wline" contenteditable="true"></div><div class="wline" contenteditable="true"></div></div>
-<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#9889; Repte</div><div class="challenge-text">Els cinc criteris no valen tots el mateix. <b>(1)</b> Quin hauria de <b>pesar m&eacute;s</b> en un v&iacute;deo de divulgaci&oacute; <i>cient&iacute;fica</i>, i per qu&egrave;? <b>(2)</b> Quin criteri hi <b>falta</b> que tu hi afegiries?</div></div></div>
+<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#9889; Repte</div><div class="challenge-text">Els cinc criteris no valen tots el mateix. Quin criteri hauria de <b>pesar m&eacute;s</b> en un v&iacute;deo de divulgaci&oacute; <i>cient&iacute;fica</i>, i per qu&egrave;?</div></div></div>
 <p style="font-size:12px;margin:7px 0 3px"><b>2a.</b> El criteri que hauria de pesar m&eacute;s, i per qu&egrave;:</p><div class="wline tall" contenteditable="true"></div>
-<p style="font-size:12px;margin:7px 0 3px"><b>2b.</b> El criteri que hi falta:</p><div class="wline tall" contenteditable="true"></div>
-<p style="font-size:12px;margin:7px 0 3px"><b>2c.</b> Despr&eacute;s de llegir les coavaluacions <b>rebudes</b>: qu&egrave; refar&iacute;eu, i quina <b>prova</b> haur&iacute;eu buscat?</p><div class="wline tall" contenteditable="true"></div>
+<p style="font-size:12px;margin:7px 0 3px"><b>2b.</b> Despr&eacute;s de llegir les coavaluacions <b>rebudes</b>: qu&egrave; refar&iacute;eu, i quina <b>prova</b> haur&iacute;eu buscat?</p><div class="wline tall" contenteditable="true"></div>
 </div>
 <div class="section"><div class="section-header"><div class="snum" style="background:#C0872E">3</div><div><span class="stitle">L&#39;informe individual de riscos</span><div class="sdesc">Individual &middot; avaluable &middot; s&#39;acaba a casa</div></div></div><div class="divider"></div>
 <img class="fig" src="../images/sa6-s5-informe.svg" alt="Els cinc blocs d&#39;un informe de riscos" style="margin:0 auto 4px;max-width:80%;display:block" onerror="this.style.display='none'"><p style="font-size:10.5px;color:#5c7285;font-style:italic;text-align:center;margin:0 0 8px">Fig.3 &middot; El format t&egrave;cnic, amb un exemple d&#39;un indret inventat que no &eacute;s cap dels tres de S24.</p>

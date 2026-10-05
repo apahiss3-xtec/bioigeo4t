@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detectiu de pedigrís · IE Temple · 4t ESO</title>
+<style>
+:root{
+  --purple:#c084fc;--purple-ink:#5a4aa0;--purple-deep:#7B68C8;
+  --ink:#1A1A2E;--ink-2:#4A3F3F;--muted:#666666;
+  --surface:#fdfafb;--card:#ffffff;--rule:#EAE6F6;--rule-dark:#C8C2DD;
+  --purple-tint:#EFEAF5;--yellow-tint:#FFF9E0;--green:#3fa15a;--green-tint:#EAF4EB;
+  --red:#d64550;--red-tint:#fbecec;--amber:#e0a92b;
+  --teal:#1E7A70;--teal-tint:#EAF5F2;
+  --aff:#c96f3e;--aff-ink:#a24e24;--car:#9fd8cd;
+  --shadow:0 1px 2px rgba(26,26,46,.06),0 8px 24px rgba(26,26,46,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Fira Sans Extra Condensed','Arial Narrow','Segoe UI',sans-serif;background:var(--surface);color:var(--ink-2);min-height:100vh;}
+button{font-family:inherit;cursor:pointer;}
+header{background:var(--purple-ink);padding:12px 24px;}
+.eyebrow{font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;}
+.htitle{font-size:22px;font-weight:700;color:#fff;line-height:1.1;}
+.hsub{font-size:13px;color:#e4defa;margin-top:2px;}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 20px 40px;}
+.intro h1{font-size:24px;color:var(--ink);line-height:1.15;}
+.intro p{font-size:15.5px;line-height:1.45;margin-top:6px;}
+.mission{margin-top:10px;background:var(--yellow-tint);border-left:4px solid var(--amber);padding:9px 12px;border-radius:8px;font-size:15px;font-weight:600;color:var(--ink);}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:18px;margin-top:16px;align-items:start;}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow);padding:16px;}
+.card h2{font-size:14px;color:var(--purple-ink);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+.step{display:inline-block;background:var(--purple-deep);color:#fff;border-radius:50%;width:22px;height:22px;text-align:center;line-height:22px;font-size:13px;margin-right:6px;}
+.hint{font-size:14.5px;line-height:1.4;color:var(--ink-2);}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.btn{display:inline-flex;align-items:center;gap:7px;border:none;background:var(--purple-deep);color:#fff;font-size:15px;font-weight:700;padding:9px 16px;border-radius:10px;transition:filter .15s,transform .1s;}
+.btn:hover{filter:brightness(1.08);}
+.btn:active{transform:translateY(1px);}
+.btn.small{font-size:13.5px;padding:6px 11px;}
+.btn.ghost{background:transparent;color:var(--purple-ink);border:1.5px solid var(--purple-deep);}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+svg.ped{width:100%;height:auto;display:block;margin-top:10px;touch-action:manipulation;}
+.ind{cursor:pointer;}
+.ind:focus{outline:none;}
+.ind:focus .shape,.ind:hover .shape{stroke-width:4;}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;font-size:14px;align-items:center;}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chip{border:1.5px solid var(--rule-dark);background:#fff;border-radius:9999px;padding:6px 13px;font-size:15px;font-weight:700;color:var(--ink-2);}
+.chip.on{border-color:var(--purple-deep);background:var(--purple-tint);color:var(--purple-ink);}
+.verd{margin-top:12px;border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.45;}
+.verd h3{font-size:15px;margin-bottom:4px;color:var(--ink);}
+.verd.ok{background:var(--green-tint);border-left:4px solid var(--green);}
+.verd.no{background:var(--red-tint);border-left:4px solid var(--red);}
+.verd ul{margin:4px 0 0 18px;}
+.verd li::first-letter{text-transform:uppercase;}
+.pfb{margin-top:12px;padding:10px 12px;border-radius:10px;font-size:15px;line-height:1.45;background:var(--purple-tint);color:var(--ink);}
+.pista{margin-top:12px;padding:10px 12px;border-radius:10px;font-size:15px;line-height:1.45;background:var(--yellow-tint);color:var(--ink);}
+.hidden{display:none;}
+.quiz{background:var(--card);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow);padding:18px 20px;margin-top:18px;}
+.quiz h2{font-size:18px;color:var(--purple-ink);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em;}
+.quiz .q{margin-top:14px;}
+.quiz .q p{font-size:15.5px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--rule-dark);background:#fff;border-radius:10px;padding:9px 12px;font-size:15px;color:var(--ink-2);margin-top:6px;}
+.opt:hover{border-color:var(--purple-deep);}
+.opt.correct{background:var(--green-tint);border-color:var(--green);color:var(--ink);}
+.opt.wrong{background:var(--red-tint);border-color:var(--red);}
+.opt.dim{opacity:.55;}
+.fb{font-size:14.5px;margin-top:8px;line-height:1.45;display:none;}
+.fb.show{display:block;}
+@media (max-width:900px){ .grid{grid-template-columns:1fr;} }
+@media (max-width:480px){
+  header{padding:10px 16px;}
+  .wrap{padding:14px 16px 32px;}
+  .intro h1{font-size:21px;}
+  .card{padding:12px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Biologia i Geologia · 4t ESO · IE Temple</div>
+  <div class="htitle">Detectiu de pedigrís</div>
+  <div class="hsub">SA4 · Sessió 4 · Herència lligada al sexe</div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>Autosòmica o lligada al X?</h1>
+    <p>Construeix una família de tres generacions tocant cada persona: <b>sana → afectada → portadora → sana</b>. Abans de comprovar-ho, decideix quin tipus d'herència recessiva hi encaixa. L'app prova totes les combinacions de genotips possibles i et diu si cada model funciona i per què.</p>
+    <div class="mission">🎯 Missió: troba quina dada d'un pedigrí és capaç de descartar l'herència lligada al X.</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2><span class="step">1</span>Construeix la família</h2>
+      <p class="hint">Quadrat = home · cercle = dona. Una persona sana sense marca pot ser portadora o no: l'app prova les dues opcions.</p>
+      <div class="presets">
+        <button class="btn small ghost" data-preset="hook">Cas de l'avi hemofílic</button>
+        <button class="btn small ghost" data-preset="filla">Cas de la filla afectada</button>
+        <button class="btn small ghost" data-preset="buit">↺ Família buida</button>
+      </div>
+      <svg class="ped" id="ped" viewBox="0 0 660 410" role="group" aria-label="Pedigrí de tres generacions"></svg>
+      <div class="legend">
+        <span><svg width="18" height="18"><rect x="1" y="1" width="16" height="16" fill="#fff" stroke="#1E7A70" stroke-width="2"/></svg> sa</span>
+        <span><svg width="18" height="18"><rect x="1" y="1" width="16" height="16" fill="#c96f3e" stroke="#a24e24" stroke-width="2"/></svg> afectat/da</span>
+        <span><svg width="18" height="18"><circle cx="9" cy="9" r="8" fill="#fff" stroke="#1E7A70" stroke-width="2"/><path d="M9,1 A8,8 0 0,1 9,17 Z" fill="#9fd8cd"/></svg> portador/a (sabem que ho és)</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2><span class="step">2</span>La teva hipòtesi</h2>
+      <p class="hint">Quin model d'herència recessiva pot explicar aquesta família?</p>
+      <div class="chips" id="chips">
+        <button type="button" class="chip" data-v="auto">Només autosòmica</button>
+        <button type="button" class="chip" data-v="x">Només lligada al X</button>
+        <button type="button" class="chip" data-v="totes">Totes dues</button>
+        <button type="button" class="chip" data-v="cap">Cap</button>
+      </div>
+      <div style="margin-top:12px;"><button class="btn" id="bCheck" disabled>🔍 Comprova</button></div>
+
+      <div id="out" class="hidden">
+        <div class="pfb" id="pfb"></div>
+        <div class="verd" id="vAuto"></div>
+        <div class="verd" id="vX"></div>
+        <div class="pista hidden" id="pista"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz" id="quiz">
+    <h2>Comprova-ho</h2>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const NS = 'http://www.w3.org/2000/svg';
+  // Família fixa de tres generacions. f/m = pare/mare (índex); null = ve de fora de la família.
+  const P = [
+    { id: 'I-1',   nom: "l'avi (I-1)",        sex: 'M', x: 260, y: 55,  f: null, m: null },
+    { id: 'I-2',   nom: "l'àvia (I-2)",       sex: 'F', x: 400, y: 55,  f: null, m: null },
+    { id: 'II-1',  nom: 'la jove (II-1)',     sex: 'F', x: 70,  y: 195, f: null, m: null, fora: true },
+    { id: 'II-2',  nom: 'el fill (II-2)',     sex: 'M', x: 200, y: 195, f: 0, m: 1 },
+    { id: 'II-3',  nom: 'la filla (II-3)',    sex: 'F', x: 460, y: 195, f: 0, m: 1 },
+    { id: 'II-4',  nom: 'el gendre (II-4)',   sex: 'M', x: 590, y: 195, f: null, m: null, fora: true },
+    { id: 'III-1', nom: 'el nét (III-1)',     sex: 'M', x: 85,  y: 335, f: 3, m: 2 },
+    { id: 'III-2', nom: 'la néta (III-2)',    sex: 'F', x: 185, y: 335, f: 3, m: 2 },
+    { id: 'III-3', nom: 'el nét (III-3)',     sex: 'M', x: 435, y: 335, f: 5, m: 4 },
+    { id: 'III-4', nom: 'la néta (III-4)',    sex: 'F', x: 525, y: 335, f: 5, m: 4 },
+    { id: 'III-5', nom: 'el nét (III-5)',     sex: 'M', x: 615, y: 335, f: 5, m: 4 }
+  ];
+  const R = 26;
+  let ph = new Array(P.length).fill(0);   // 0 sa · 1 afectat · 2 portador
+  let pred = null;
+
+  // ── Dibuix ──
+  const svg = $('ped');
+  function el(tag, attrs){ const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); return e; }
+  function line(x1, y1, x2, y2){ svg.appendChild(el('line', { x1, y1, x2, y2, stroke: '#4A3F3F', 'stroke-width': 2 })); }
+  function couple(a, b, kids){
+    const A = P[a], B = P[b], ym = A.y, mx = (A.x + B.x) / 2;
+    line(Math.min(A.x, B.x) + R, ym, Math.max(A.x, B.x) - R, ym);
+    const ys = ym + 70;
+    line(mx, ym, mx, ys);
+    const xs = kids.map(k => P[k].x);
+    line(Math.min(mx, ...xs), ys, Math.max(mx, ...xs), ys);
+    kids.forEach(k => line(P[k].x, ys, P[k].x, P[k].y - R));
+  }
+  const gens = [['I', 55], ['II', 195], ['III', 335]];
+  gens.forEach(([g, y]) => { const t = el('text', { x: 8, y: y + 5, 'font-size': 20, 'font-weight': 700, fill: '#7B68C8' }); t.textContent = g; svg.appendChild(t); });
+  couple(0, 1, [3, 4]);
+  couple(2, 3, [6, 7]);
+  couple(4, 5, [8, 9, 10]);
+
+  const nodes = P.map((p, i) => {
+    const g = el('g', { class: 'ind', tabindex: 0, role: 'button' });
+    const shape = p.sex === 'M'
+      ? el('rect', { class: 'shape', x: p.x - R, y: p.y - R, width: 2 * R, height: 2 * R })
+      : el('circle', { class: 'shape', cx: p.x, cy: p.y, r: R });
+    const half = p.sex === 'M'
+      ? el('rect', { x: p.x, y: p.y - R + 1.5, width: R - 1.5, height: 2 * R - 3, fill: '#9fd8cd' })
+      : el('path', { d: 'M' + p.x + ',' + (p.y - R + 1.5) + ' A' + (R - 1.5) + ',' + (R - 1.5) + ' 0 0,1 ' + p.x + ',' + (p.y + R - 1.5) + ' Z', fill: '#9fd8cd' });
+    const lab = el('text', { x: p.x, y: p.y + R + 20, 'text-anchor': 'middle', 'font-size': 18, 'font-weight': 600, fill: '#4A3F3F' });
+    lab.textContent = p.id;
+    if (p.fora) { const f = el('text', { x: p.x, y: p.y - R - 9, 'text-anchor': 'middle', 'font-size': 15, fill: '#666' }); f.textContent = 'de fora'; g.appendChild(f); }
+    g.append(shape, half, lab);
+    g.addEventListener('click', () => { ph[i] = (ph[i] + 1) % 3; paint(); invalidate(); });
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); g.dispatchEvent(new Event('click')); } });
+    svg.appendChild(g);
+    return { shape, half, g };
+  });
+
+  const ESTAT = ['sa', 'afectat', 'portador'];
+  function paint(){
+    nodes.forEach((n, i) => {
+      const s = ph[i];
+      n.shape.setAttribute('fill', s === 1 ? '#c96f3e' : '#fff');
+      n.shape.setAttribute('stroke', s === 1 ? '#a24e24' : '#1E7A70');
+      n.shape.setAttribute('stroke-width', 2.5);
+      n.half.style.display = s === 2 ? '' : 'none';
+      const p = P[i];
+      const est = s === 1 ? (p.sex === 'M' ? 'afectat' : 'afectada') : s === 2 ? (p.sex === 'M' ? 'portador' : 'portadora') : (p.sex === 'M' ? 'sa' : 'sana');
+      n.g.setAttribute('aria-label', p.id + ', ' + (p.sex === 'M' ? 'home' : 'dona') + ', ' + est);
+    });
+  }
+
+  // ── Models ──
+  // Valor = nombre d'al·lels recessius. Autosòmic: 0 AA · 1 Aa · 2 aa.
+  // Lligat al X: dones 0 XᴴXᴴ · 1 XᴴXʰ · 2 XʰXʰ; homes 0 XᴴY · 1 XʰY.
+  const gam = k => k === 0 ? [0] : k === 1 ? [0, 1] : [1];   // al·lels que pot passar una dona (o qualsevol, en autosòmic)
+  const MODELS = {
+    auto: {
+      allowed: (p, s) => s === 1 ? [2] : s === 2 ? [1] : [0, 1],
+      child: (p, gf, gm) => { const out = new Set(); gam(gf).forEach(a => gam(gm).forEach(b => out.add(a + b))); return out; }
+    },
+    x: {
+      allowed: (p, s) => p.sex === 'M' ? (s === 1 ? [1] : s === 2 ? [] : [0]) : (s === 1 ? [2] : s === 2 ? [1] : [0, 1]),
+      // fill home: la seva X ve de la mare · filla: X del pare (gf) + una X de la mare
+      child: (p, gf, gm) => p.sex === 'M' ? new Set(gam(gm)) : new Set(gam(gm).map(b => gf + b))
+    }
+  };
+
+  function solve(model, extra){
+    const M = MODELS[model], g = new Array(P.length);
+    function bt(i){
+      if (i === P.length) return true;
+      const p = P[i];
+      let opts = M.allowed(p, ph[i]);
+      if (extra) opts = opts.filter(v => extra(i, v));
+      if (p.f !== null) { const ok = M.child(p, g[p.f], g[p.m]); opts = opts.filter(v => ok.has(v)); }
+      for (const v of opts) { g[i] = v; if (bt(i + 1)) return true; }
+      return false;
+    }
+    return bt(0);
+  }
+
+  const nom = i => P[i].nom;
+  const kidsOf = i => P.map((p, k) => (p.f === i || p.m === i) ? k : -1).filter(k => k >= 0);
+
+  function reasonsX(){
+    const r = [];
+    P.forEach((p, i) => { if (p.sex === 'M' && ph[i] === 2) r.push('<b>' + nom(i) + '</b> és un home marcat com a portador. Si el gen és al cromosoma X, un home no pot ser portador sa: només té una X, i si hi porta l’al·lel h, està afectat.'); });
+    P.forEach((p, i) => { if (p.f !== null && p.sex === 'F' && ph[i] === 1 && ph[p.f] !== 1) r.push('<b>' + nom(i) + '</b> està afectada, però el seu pare no. Una filla afectada (XʰXʰ) ha de rebre una Xʰ del pare, i un pare amb Xʰ estaria afectat.'); });
+    P.forEach((p, i) => { if (p.f !== null && p.sex === 'M' && ph[i] !== 1 && ph[p.m] === 1) r.push('<b>' + nom(p.m) + '</b> està afectada (XʰXʰ): totes les X que passa porten h, i per tant <b>' + nom(i) + '</b> també hauria d’estar afectat.'); });
+    P.forEach((p, i) => { if (p.f !== null && p.sex === 'F' && ph[i] !== 1 && ph[p.f] === 1 && ph[p.m] === 1) r.push('El pare i la mare de <b>' + nom(i) + '</b> estan afectats: ella rebria una Xʰ de cadascun i hauria d’estar afectada.'); });
+    return r;
+  }
+  function reasonsAuto(){
+    const r = [];
+    P.forEach((p, i) => { if (p.f !== null && ph[p.f] === 1 && ph[p.m] === 1 && ph[i] !== 1) r.push('El pare i la mare de <b>' + nom(i) + '</b> estan afectats (aa): només poden passar l’al·lel a, i tots els fills haurien de ser aa i estar afectats.'); });
+    return r;
+  }
+
+  // Quines persones de fora de la família cal que portin l'al·lel perquè el model funcioni?
+  function foraNecessaris(model){
+    const fora = P.map((p, i) => p.fora ? i : -1).filter(i => i >= 0);
+    if (solve(model, (i, v) => !fora.includes(i) || v === 0)) return [];
+    return fora.filter(k => !solve(model, (i, v) => i !== k || v === 0));
+  }
+
+  function verdict(model, ok){
+    const box = $(model === 'auto' ? 'vAuto' : 'vX');
+    const nomModel = model === 'auto' ? 'Recessiva autosòmica' : 'Recessiva lligada al X';
+    box.className = 'verd ' + (ok ? 'ok' : 'no');
+    if (ok) {
+      const nec = foraNecessaris(model);
+      let t = '<h3>✅ ' + nomModel + ': encaixa</h3>Hi ha almenys una combinació de genotips que explica tota la família.';
+      if (nec.length) t += ' Però només si <b>' + nec.map(nom).join('</b> i <b>') + '</b>, que ve de fora de la família, també porta l’al·lel. És possible, però si la malaltia és rara, és poc probable.';
+      box.innerHTML = t;
+    } else {
+      const rs = model === 'auto' ? reasonsAuto() : reasonsX();
+      box.innerHTML = '<h3>❌ ' + nomModel + ': no encaixa</h3>' +
+        (rs.length ? '<ul><li>' + rs.join('</li><li>') + '</li></ul>' : 'No hi ha cap combinació de genotips que expliqui alhora totes les persones marcades.');
+    }
+  }
+
+  function check(){
+    const okA = solve('auto'), okX = solve('x');
+    verdict('auto', okA); verdict('x', okX);
+    const real = okA && okX ? 'totes' : okA ? 'auto' : okX ? 'x' : 'cap';
+    const NOMS = { auto: 'només autosòmica', x: 'només lligada al X', totes: 'totes dues', cap: 'cap' };
+    $('pfb').innerHTML = (pred === real ? '✅ La teva hipòtesi era correcta: ' : '🤔 Havies dit «' + NOMS[pred] + '» i la resposta és: ') + '<b>' + NOMS[real] + '</b>.';
+    const pista = $('pista');
+    const afect = ph.map((s, i) => s === 1 ? i : -1).filter(i => i >= 0);
+    if (real === 'totes' && afect.length) {
+      const homes = afect.filter(i => P[i].sex === 'M').length;
+      pista.classList.remove('hidden');
+      pista.innerHTML = '💡 Que un model <i>encaixi</i> no vol dir que sigui <i>segur</i>. Aquí hi ha ' + homes + ' home' + (homes === 1 ? '' : 's') + ' afectat' + (homes === 1 ? '' : 's') + ' de ' + afect.length + (afect.length === 1 ? ' persona afectada.' : ' persones afectades.') + ' Si gairebé tots els afectats són homes i la malaltia «salta» a través de dones sanes, és una pista a favor del cromosoma X. Per descartar-lo de debò, cal una dada que el model del X no pugui explicar.';
+    } else pista.classList.add('hidden');
+    $('out').classList.remove('hidden');
+  }
+
+  function invalidate(){ $('out').classList.add('hidden'); }
+
+  const PRESETS = {
+    hook:  { 'I-1': 1, 'III-3': 1 },
+    filla: { 'III-4': 1 },
+    buit:  {}
+  };
+  document.querySelectorAll('[data-preset]').forEach(b => b.addEventListener('click', () => {
+    const pr = PRESETS[b.dataset.preset];
+    ph = P.map(p => pr[p.id] || 0); paint(); invalidate();
+  }));
+  document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+    c.classList.add('on'); pred = c.dataset.v; $('bCheck').disabled = false; invalidate();
+  }));
+  $('bCheck').addEventListener('click', check);
+
+  // ── Comprova-ho ──
+  const Q = [
+    { p: 'Un home pot ser portador sa d’una malaltia recessiva lligada al X?',
+      o: ['Sí, igual que una dona', 'No: només té una X, i si porta l’al·lel, el manifesta', 'Sí, si l’al·lel és al cromosoma Y', 'Només si el seu pare està afectat'],
+      c: 1, f: 'L’home és XY: el que porta a la seva única X s’expressa sempre. Prova de marcar un home com a portador a l’app i mira què diu el model del X.' },
+    { p: 'Un pare daltònic (XʰY) i una mare no portadora (XᴴXᴴ) tenen fills. Com seran les filles?',
+      o: ['Totes daltòniques', 'Totes portadores sanes', 'La meitat daltòniques', 'Totes sanes i no portadores'],
+      c: 1, f: 'Cada filla rep la Xʰ del pare i una Xᴴ de la mare: XᴴXʰ, portadores sanes. Els fills reben la Y del pare i no hereten l’al·lel.' },
+    { p: 'Quina d’aquestes dades d’un pedigrí descarta una herència recessiva lligada al X?',
+      o: ['Hi ha més homes afectats que dones', 'Un avi afectat té un nét afectat', 'Una filla afectada té el pare sa', 'Una dona sana té un fill afectat'],
+      c: 2, f: 'Per estar afectada, la filla necessita una Xʰ del pare, i un pare amb Xʰ estaria afectat. Les altres tres dades encaixen amb el model del X.' }
+  ];
+  const quiz = $('quiz');
+  Q.forEach((q, qi) => {
+    const box = document.createElement('div'); box.className = 'q';
+    box.innerHTML = '<p>' + (qi + 1) + '. ' + q.p + '</p>';
+    const fb = document.createElement('div'); fb.className = 'fb';
+    q.o.forEach((t, oi) => {
+      const b = document.createElement('button'); b.className = 'opt'; b.textContent = t;
+      b.addEventListener('click', () => {
+        box.querySelectorAll('.opt').forEach((x, xi) => { x.classList.remove('correct', 'wrong', 'dim'); if (xi === q.c) x.classList.add('correct'); else if (xi === oi) x.classList.add('wrong'); else x.classList.add('dim'); });
+        fb.innerHTML = (oi === q.c ? '✅ ' : '❌ ') + q.f; fb.classList.add('show');
+      });
+      box.appendChild(b);
+    });
+    box.appendChild(fb); quiz.appendChild(box);
+  });
+
+  paint();
+})();
+</script>
+</body>
+</html>

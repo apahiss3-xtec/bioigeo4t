@@ -142,7 +142,7 @@ export const sa3s3 = {
 
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa3-s3-fitxa-A.html", B: "/fitxes/sa3-s3-fitxa-B.html", C: "/fitxes/sa3-s3-fitxa-C.html" },
-  teoriaPdfUrl: null,
+  teoriaPdfUrl: "/teoria/sa3-s3-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: després de traduir el gen normal i el mutat, respon per què una sola lletra canviada pot causar una malaltia i quan, en canvi, un canvi de lletra no té cap efecte (mutació silenciosa).",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────

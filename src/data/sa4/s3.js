@@ -25,6 +25,11 @@ export const sa4s3 = {
       "Ompliu un quadre de Punnett d'un creuament de grups sanguinis i dic quins grups poden tenir els fills.",
       "Explico amb les meves paraules per què l'alçada o el color de pell tenen molts valors intermedis i no només «alt/baix».",
       "Classifico un cas senzill segons el tipus d'herència seguint una taula de pistes."
+    ],
+    C: [
+      "Miro l'heterozigot i dic si surt una barreja (dominància incompleta) o els dos alhora (codominància).",
+      "Omplo un quadre de Punnett de grups sanguinis i dic quins grups poden tenir els fills.",
+      "Dic que l'alçada té molts valors perquè hi intervenen molts gens i l'ambient."
     ]
   },
 
@@ -133,8 +138,8 @@ export const sa4s3 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa4-s3-fitxa-A.html", B: "/fitxes/sa4-s3-fitxa-B.html" },
-  teoriaPdfUrl: null,
+  fitxaUrl: { A: "/fitxes/sa4-s3-fitxa-A.html", B: "/fitxes/sa4-s3-fitxa-B.html", C: "/fitxes/sa4-s3-fitxa-C.html" },
+  teoriaPdfUrl: "/teoria/sa4-s3-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna als tres casos del hook (flors rosa, fills de grup AB, alçada contínua) i etiqueta cadascun amb el seu tipus d'herència, explicant en una frase quina evidència t'ho ha fet decidir.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────
@@ -199,7 +204,7 @@ export const sa4s3 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa4-s3-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa4-s3-exit-ticket.html", B: "/fitxes/sa4-s3-exit-ticket.html", C: "/fitxes/sa4-s3-exit-ticket-C.html" },
   exitTicketType: "paper",
   exitTicketCriteri: "1.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",

@@ -150,7 +150,10 @@ export const sa2s2 = {
 
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s2-fitxa-A.html", B: "/fitxes/sa2-s2-fitxa-B.html", C: "/fitxes/sa2-s2-fitxa-C.html" },
-  teoriaPdfUrl: null,
+  sessionMaterials: [
+    { id: "rubrica-producte", title: "Rúbrica del producte final: maqueta del cicle + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
+  ],
+  teoriaPdfUrl: "/teoria/sa2-s2-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a la pregunta del principi (per què no tenim 92 cromosomes) i respon-la amb el que has après sobre la meiosi i la fecundació.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────

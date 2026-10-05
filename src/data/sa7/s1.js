@@ -78,13 +78,13 @@ export const sa7s1 = {
 
   // ── EXPLORA (ABP · comitè editorial: escala de certeses) ──
   exploreActivity: {
-    what: "Feu de comitè editorial d'una revista de divulgació científica. Us arriben vuit afirmacions reals que han sortit als mitjans sobre l'univers, la Terra i la vida, i heu de decidir com les publicaríeu. Per a cadascuna heu de dir en quin dels quatre nivells de certesa la col·loqueu, en quina prova us baseu i com la redactaríeu perquè el titular no digués més del que la prova sosté. No busqueu la resposta correcta al llibre: la vostra feina és justificar la decisió. Al final l'equip ha de poder defensar en veu alta les dues afirmacions que li hagin costat més.",
+    what: "Feu de comitè editorial d'una revista de divulgació científica. Us arriben sis afirmacions reals que han sortit als mitjans sobre l'univers, la Terra i la vida, i heu de decidir com les publicaríeu. Per a cadascuna heu de dir en quin dels quatre nivells de certesa la col·loqueu, en quina prova us baseu i com la redactaríeu perquè el titular no digués més del que la prova sosté. No busqueu la resposta correcta al llibre: la vostra feina és justificar la decisió. Al final l'equip ha de poder defensar en veu alta les dues afirmacions que li hagin costat més.",
     who: { mode: "grup", label: "Equips de 3-4 (comitè editorial)" },
     time: 25,
     note: "Demostració a l'aula: un membre de cada equip, triat a l'atzar, defensarà sense paper una de les afirmacions dubtoses: en quin nivell l'heu posada, per quina prova, i quina observació la faria pujar de nivell."
   },
   exploreInstructions: [
-    "Llegiu les vuit afirmacions i, per a cadascuna, pregunteu-vos: quina observació la sosté i quina la desmentiria?",
+    "Llegiu les sis afirmacions i, per a cadascuna, pregunteu-vos: quina observació la sosté i quina la desmentiria?",
     "Col·loqueu cada afirmació en un dels quatre nivells de certesa (fet ben establert · hipòtesi amb proves · especulació · afirmació no científica)",
     "Anoteu, en una línia, la prova concreta en què us baseu per posar-la en aquell nivell",
     "Detecteu les afirmacions on el titular diu més del que la prova sosté i reescriviu-ne el titular",
@@ -128,7 +128,7 @@ export const sa7s1 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: true, title: "L'escala de certeses (amb un exemple resolt)", src: "/images/sa7-s1-escala-certeses.svg", note: "Els quatre nivells amb la pregunta que decideix cadascun. L'exemple resolt de sota és d'un tema que no surt a les vuit afirmacions de la fitxa: et serveix per veure el nivell de detall que s'espera, no per copiar-ne la resposta." },
+    { id: "Fig.1", apartat: "1", before: true, title: "L'escala de certeses (amb un exemple resolt)", src: "/images/sa7-s1-escala-certeses.svg", note: "Els quatre nivells amb la pregunta que decideix cadascun. L'exemple resolt de sota és d'un tema que no surt a les sis afirmacions de la fitxa: et serveix per veure el nivell de detall que s'espera, no per copiar-ne la resposta." },
     { id: "Fig.2", apartat: "2", before: true, title: "Les tres proves del Big Bang (per completar)", src: "/images/sa7-s1-bigbang-alumne.svg", note: "És la figura de la fitxa: les tres observacions les tens donades i les caselles grogues les omples tu, primer sol i després, amb un altre color, quan ho hàgim explicat. La versió amb les deduccions escrites la reparteixo a classe en acabar." },
     { id: "Fig.3", apartat: "4", before: false, title: "El calendari còsmic: com es fa el càlcul", src: "/images/sa7-s1-calendari.svg", note: "Com es transforma una edat en milions d'anys en una data del calendari còsmic, amb una fita resolta com a mostra del càlcul. Aquesta fita d'exemple no és cap de les set que has de situar tu." },
     { id: "Fig.4", apartat: "4", before: false, title: "La línia del temps còsmica (en blanc)", src: "/images/sa7-s1-linia-temps-alumne.svg", note: "És la línia buida de la fitxa, aquí per si has faltat: l'any còsmic sencer, mes a mes. Les targetes de les fites són al full de retallables que reparteixo a classe." }
@@ -145,7 +145,7 @@ export const sa7s1 = {
     fitxaName: "Fitxa S26 — Estem sols?",
     steps: [
       { apartat: "0", title: "D'on partim", time: "6 min", phase: "engage", instruction: "Escriu una cosa que creguis que se sap del cert sobre l'origen de tot i una que creguis que encara no se sap, i com ho decideixes. No es corregeix.", hints: [] },
-      { apartat: "1", title: "El comitè editorial", time: "25 min + 8 de defensa oral", phase: "explore", instruction: "Classifica les vuit afirmacions en els quatre nivells de certesa, anota la prova en què et bases i reescriu els titulars que diuen més del que la prova sosté.", hints: ["Abans de decidir el nivell, respon dues preguntes per escrit: quina observació la sosté? i quina la desmentiria?", "Separa sempre què s'ha observat de debò i què hi afegeix qui ho explica."] },
+      { apartat: "1", title: "El comitè editorial", time: "25 min + 8 de defensa oral", phase: "explore", instruction: "Classifica les sis afirmacions en els quatre nivells de certesa, anota la prova en què et bases i reescriu els titulars que diuen més del que la prova sosté.", hints: ["Abans de decidir el nivell, respon dues preguntes per escrit: quina observació la sosté? i quina la desmentiria?", "Separa sempre què s'ha observat de debò i què hi afegeix qui ho explica."] },
       { apartat: "2", title: "El Big Bang i la llum que triga a arribar", time: "20 min", phase: "explain", instruction: "Completa la figura muda de les tres proves ABANS de l'explicació de classe: per a cada observació, escriu què se'n dedueix. Després, amb un altre color, corregeix-la, esmena la frase que diu que va ser una explosió dins de l'espai i respon per què mirar lluny és mirar enrere.", hints: ["Pregunta't què implica, mirat cap enrere, el que observes ara.", "Cada prova sola deixa alguna porta oberta: quina, i qui la tanca?"] },
       { apartat: "3", title: "Com es va fer la Terra", time: "8 min", phase: "explain", instruction: "Explica en poques frases com es passa d'un núvol de gas i pols al Sol i als planetes, i per què els de dins són rocosos i els de fora gasosos.", hints: ["Segueix la massa: on va a parar la major part, i què hi passa quan s'hi acumula?", "Mira la dada de la temperatura del disc i pensa què s'hi pot quedar i què no."] },
       { apartat: "4", title: "La línia del temps còsmica", time: "30 min", phase: "elabora", instruction: "Calcula la data còsmica de cada fita, marca-la a la línia i enganxa-hi la targeta del full de retallables; després digues quina mena de prova ens permet saber-ho.", hints: ["Comença sempre pel temps transcorregut des del Big Bang, no per l'edat de la fita.", "Compte amb l'última fita: no et donarà un dia nou, sinó una hora."] }
@@ -166,7 +166,7 @@ export const sa7s1 = {
 
   // ── METACOGNICIÓ ─────────────────────────────────────────
   metacognition: {
-    prompt: "Torna a llegir el que has escrit a l'apartat 0 sobre com decideixes si una cosa se sap o no se sap. Canviaries alguna cosa de la teva resposta ara? Quina de les vuit afirmacions t'ha fet dubtar més, i què has necessitat per decidir-te? I l'última: després d'una sessió sobre 13.800 milions d'anys, quina pregunta t'endus a casa?",
+    prompt: "Torna a llegir el que has escrit a l'apartat 0 sobre com decideixes si una cosa se sap o no se sap. Canviaries alguna cosa de la teva resposta ara? Quina de les sis afirmacions t'ha fet dubtar més, i què has necessitat per decidir-te? I l'última: després d'una sessió sobre 13.800 milions d'anys, quina pregunta t'endus a casa?",
     type: "reflection"
   },
 
@@ -180,7 +180,7 @@ export const sa7s1 = {
   recoveryInstructions: [
     "Llegeix l'apartat EXPLICA: els quatre graus de certesa, el model del Big Bang i les seves tres proves, la formació del sistema solar i la idea que mirar lluny és mirar enrere",
     "Estudia la Fig.1 (l'escala de certeses amb un exemple resolt), la Fig.2 (les tres proves del Big Bang) i la Fig.3 (com es calcula una data del calendari còsmic)",
-    "Demana la fitxa S26 i el full de retallables, i completa la classificació de les vuit afirmacions i la línia del temps còsmica",
+    "Demana la fitxa S26 i el full de retallables, i completa la classificació de les sis afirmacions i la línia del temps còsmica",
     "Respon l'exit tiquet: en quin nivell situaries un titular sobre vida en un exoplaneta, quina frase descriu bé el Big Bang i com respondries que sí que es pot saber què va passar sense testimonis",
     "Comprova que entens la diferència entre els 13.800 milions d'anys de l'univers i els 4.600 milions d'anys de la Terra: a la propera sessió es dona per sabuda"
   ],

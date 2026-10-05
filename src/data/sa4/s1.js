@@ -25,6 +25,11 @@ export const sa4s1 = {
       "Dic per què una característica pot desaparèixer en els pares i tornar a aparèixer en un fill (perquè els pares en són portadors).",
       "Llegeixo un pedigrí senzill amb l'ajuda de la llegenda de símbols i identifico qui té el caràcter i qui no.",
       "Trio un caràcter per investigar seguint una llista de comprovació i recullo dades de la meva família amb respecte a la intimitat."
+    ],
+    C: [
+      "Faig servir les paraules gen, al·lel, genotip i fenotip amb l'ajuda d'un banc de paraules.",
+      "Dic que dos pares sans poden tenir un fill amb el caràcter si tots dos en són portadors.",
+      "Llegeixo un pedigrí amb la llegenda: ple = té el caràcter, buit = no el té."
     ]
   },
 
@@ -131,8 +136,11 @@ export const sa4s1 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa4-s1-fitxa-A.html", B: "/fitxes/sa4-s1-fitxa-B.html" },
-  teoriaPdfUrl: null,
+  fitxaUrl: { A: "/fitxes/sa4-s1-fitxa-A.html", B: "/fitxes/sa4-s1-fitxa-B.html", C: "/fitxes/sa4-s1-fitxa-C.html" },
+  sessionMaterials: [
+    { id: "rubrica-poster", title: "Rúbrica del pòster Heredity ID (també per coavaluar)", url: "/fitxes/sa4-rubrica-poster-heredity.html", who: "alumnat" }
+  ],
+  teoriaPdfUrl: "/teoria/sa4-s1-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna al cas de la CTNNB1 de l'apartat 1 i reescriu la teva explicació ara amb el vocabulari nou (al·lel, portador, homozigot/heterozigot), fent servir genotips.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────
@@ -197,7 +205,7 @@ export const sa4s1 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa4-s1-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa4-s1-exit-ticket.html", B: "/fitxes/sa4-s1-exit-ticket.html", C: "/fitxes/sa4-s1-exit-ticket-C.html" },
   exitTicketType: "paper",
   exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",

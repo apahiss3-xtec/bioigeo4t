@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadre de Punnett · IE Temple · 4t ESO</title>
+<style>
+:root{
+  --purple:#c084fc;--purple-ink:#5a4aa0;--purple-deep:#7B68C8;
+  --ink:#1A1A2E;--ink-2:#4A3F3F;--muted:#666666;
+  --surface:#fdfafb;--card:#ffffff;--rule:#EAE6F6;--rule-dark:#C8C2DD;
+  --purple-tint:#EFEAF5;--yellow-tint:#FFF9E0;--green:#3fa15a;--green-tint:#EAF4EB;
+  --red:#d64550;--red-tint:#fbecec;--amber:#e0a92b;
+  --teal:#1E7A70;--teal-ink:#17605A;--teal-soft:#bfe0d9;--teal-tint:#EAF5F2;
+  --shadow:0 1px 2px rgba(26,26,46,.06),0 8px 24px rgba(26,26,46,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Fira Sans Extra Condensed','Arial Narrow','Segoe UI',sans-serif;background:var(--surface);color:var(--ink-2);min-height:100vh;}
+button{font-family:inherit;cursor:pointer;}
+header{background:var(--purple-ink);padding:12px 24px;}
+.eyebrow{font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;}
+.htitle{font-size:22px;font-weight:700;color:#fff;line-height:1.1;}
+.hsub{font-size:13px;color:#e4defa;margin-top:2px;}
+.wrap{max-width:1180px;margin:0 auto;padding:18px 20px 40px;}
+.intro h1{font-size:24px;color:var(--ink);line-height:1.15;}
+.intro p{font-size:15.5px;line-height:1.45;margin-top:6px;}
+.mission{margin-top:10px;background:var(--yellow-tint);border-left:4px solid var(--amber);padding:9px 12px;border-radius:8px;font-size:15px;font-weight:600;color:var(--ink);}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:16px;align-items:start;}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow);padding:16px;}
+.card h2{font-size:14px;color:var(--purple-ink);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;}
+.step{display:inline-block;background:var(--purple-deep);color:#fff;border-radius:50%;width:22px;height:22px;text-align:center;line-height:22px;font-size:13px;margin-right:6px;}
+.parents{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;}
+.parent label{display:block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:5px;}
+.seg{display:inline-flex;border:1.5px solid var(--teal);border-radius:10px;overflow:hidden;}
+.seg button{border:none;background:#fff;color:var(--teal-ink);font-size:18px;font-weight:700;padding:7px 14px;min-width:52px;}
+.seg button.on{background:var(--teal);color:#fff;}
+.times{font-size:26px;font-weight:700;color:var(--muted);padding-top:16px;}
+.pred{margin-top:14px;padding-top:12px;border-top:1px dashed var(--rule-dark);}
+.pred p{font-size:15px;color:var(--ink);font-weight:600;}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.chip{border:1.5px solid var(--rule-dark);background:#fff;border-radius:9999px;padding:6px 14px;font-size:15px;font-weight:700;color:var(--ink-2);}
+.chip.on{border-color:var(--purple-deep);background:var(--purple-tint);color:var(--purple-ink);}
+.btn{display:inline-flex;align-items:center;gap:7px;border:none;background:var(--purple-deep);color:#fff;font-size:15px;font-weight:700;padding:9px 16px;border-radius:10px;transition:filter .15s,transform .1s;}
+.btn:hover{filter:brightness(1.08);}
+.btn:active{transform:translateY(1px);}
+.btn.teal{background:var(--teal);}
+.btn.ghost{background:transparent;color:var(--purple-ink);border:1.5px solid var(--purple-deep);}
+.btn:disabled{opacity:.4;cursor:not-allowed;}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.punnett{display:grid;grid-template-columns:56px 1fr 1fr;grid-template-rows:56px 1fr 1fr;gap:6px;max-width:340px;margin:14px auto 0;}
+.corner{display:flex;align-items:flex-end;justify-content:flex-end;font-size:11px;color:var(--muted);line-height:1.1;text-align:right;padding:2px;}
+.gam{display:flex;align-items:center;justify-content:center;}
+.coin{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;border:2px solid var(--teal-ink);}
+.coin.A{background:var(--teal);color:#fff;}
+.coin.a{background:#fff;color:var(--teal-ink);}
+.cell{aspect-ratio:1;border:2px dashed var(--rule-dark);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:var(--ink);background:#fff;transition:background .3s,border-color .3s,transform .3s;}
+.cell small{font-size:12.5px;font-weight:600;color:var(--muted);}
+.cell.dom{background:var(--teal-tint);border:2px solid var(--teal);}
+.cell.rec{background:#fff;border:2px solid var(--purple-deep);}
+.cell.pop{transform:scale(1.06);}
+.res{margin-top:12px;font-size:15.5px;line-height:1.5;color:var(--ink);min-height:48px;}
+.res b{color:var(--teal-ink);}
+.fbk{margin-top:8px;padding:9px 12px;border-radius:10px;font-size:15px;line-height:1.45;display:none;}
+.fbk.show{display:block;}
+.fbk.good{background:var(--green-tint);}
+.fbk.bad{background:var(--red-tint);}
+.kids{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;margin-top:12px;min-height:30px;}
+.kid{aspect-ratio:1;border-radius:50%;border:1.5px solid var(--teal-ink);}
+.kid.dom{background:var(--teal);}
+.kid.rec{background:#fff;border-color:var(--purple-deep);}
+.cmp{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px;}
+.cmp th,.cmp td{padding:6px 6px;border-bottom:1px solid var(--rule);text-align:left;}
+.cmp th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--purple-ink);}
+.cmp td.num{font-weight:700;color:var(--ink);white-space:nowrap;}
+.bars{margin-top:12px;}
+.barrow{display:grid;grid-template-columns:80px 1fr 48px;gap:8px;align-items:center;margin-top:6px;font-size:14px;}
+.bar{height:16px;background:var(--rule);border-radius:8px;overflow:hidden;position:relative;}
+.bar div{height:100%;transition:width .5s;}
+.bar .exp{background:var(--purple);}
+.bar .obs{background:var(--teal);}
+.msg{margin-top:12px;font-size:15px;line-height:1.45;padding:10px 12px;border-radius:10px;background:var(--teal-tint);color:var(--ink);}
+.coins{display:flex;gap:12px;align-items:center;margin-top:16px;padding-top:12px;border-top:1px dashed var(--rule-dark);font-size:14.5px;line-height:1.4;}
+.coins img{width:140px;max-width:40%;border:1px solid var(--rule);border-radius:8px;background:#fff;}
+.coins a{color:var(--purple-ink);font-weight:700;}
+.legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;font-size:14px;}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:50%;border:1.5px solid var(--teal-ink);}
+.legend i.dom{background:var(--teal);}
+.legend i.rec{background:#fff;border-color:var(--purple-deep);}
+.quiz{background:var(--card);border:1px solid var(--rule);border-radius:16px;box-shadow:var(--shadow);padding:18px 20px;margin-top:18px;}
+.quiz h2{font-size:18px;color:var(--purple-ink);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em;}
+.quiz .q{margin-top:14px;}
+.quiz .q p{font-size:15.5px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.opt{display:block;width:100%;text-align:left;border:1.5px solid var(--rule-dark);background:#fff;border-radius:10px;padding:9px 12px;font-size:15px;color:var(--ink-2);margin-top:6px;}
+.opt:hover{border-color:var(--purple-deep);}
+.opt.correct{background:var(--green-tint);border-color:var(--green);color:var(--ink);}
+.opt.wrong{background:var(--red-tint);border-color:var(--red);}
+.opt.dim{opacity:.55;}
+.fb{font-size:14.5px;margin-top:8px;line-height:1.45;display:none;}
+.fb.show{display:block;}
+@media (max-width:900px){ .grid{grid-template-columns:1fr;} }
+@media (max-width:480px){
+  header{padding:10px 16px;}
+  .wrap{padding:14px 16px 32px;}
+  .intro h1{font-size:21px;}
+  .card{padding:12px;}
+  .kids{gap:2px;}
+  .punnett{grid-template-columns:44px 1fr 1fr;grid-template-rows:48px 1fr 1fr;}
+  .coin{width:38px;height:38px;font-size:18px;}
+  .barrow{grid-template-columns:66px 1fr 44px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Biologia i Geologia · 4t ESO · IE Temple</div>
+  <div class="htitle">Quadre de Punnett</div>
+  <div class="hsub">SA4 · Sessió 2 · Les lleis de Mendel com a eina de predicció</div>
+</header>
+
+<div class="wrap">
+  <div class="intro">
+    <h1>Es pot preveure com seran els fills?</h1>
+    <p>Tria el genotip de cada progenitor, fes la teva predicció i després omple el quadre. Al final, fes que la parella tingui fills de debò (a l'atzar) i compara el que surt amb el que esperaves.</p>
+    <div class="mission">🎯 Missió: descobreix per què el quadre diu «3 de cada 4», però una família de 4 fills gairebé mai surt exactament així.</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h2><span class="step">1</span>Els progenitors</h2>
+      <div class="parents">
+        <div class="parent">
+          <label>Pare</label>
+          <div class="seg" data-who="p"><button type="button">AA</button><button type="button" class="on">Aa</button><button type="button">aa</button></div>
+        </div>
+        <div class="times">×</div>
+        <div class="parent">
+          <label>Mare</label>
+          <div class="seg" data-who="m"><button type="button">AA</button><button type="button" class="on">Aa</button><button type="button">aa</button></div>
+        </div>
+      </div>
+      <div class="legend">
+        <span><i class="dom"></i> Fenotip dominant (té almenys una A)</span>
+        <span><i class="rec"></i> Fenotip recessiu (aa)</span>
+      </div>
+
+      <div class="pred">
+        <p><span class="step">2</span>Abans d'omplir el quadre: quina part dels fills creus que tindrà el fenotip <u>recessiu</u>?</p>
+        <div class="chips" id="chips">
+          <button type="button" class="chip" data-v="0">0 de 4</button>
+          <button type="button" class="chip" data-v="1">1 de 4</button>
+          <button type="button" class="chip" data-v="2">2 de 4</button>
+          <button type="button" class="chip" data-v="3">3 de 4</button>
+          <button type="button" class="chip" data-v="4">4 de 4</button>
+        </div>
+        <div class="btns"><button class="btn" id="bFill" disabled>▦ Omple el quadre</button></div>
+      </div>
+
+      <div class="punnett" id="punnett">
+        <div class="corner">mare ↓<br>pare →</div>
+        <div class="gam" id="gp0"></div><div class="gam" id="gp1"></div>
+        <div class="gam" id="gm0"></div><div class="cell" id="c00"></div><div class="cell" id="c01"></div>
+        <div class="gam" id="gm1"></div><div class="cell" id="c10"></div><div class="cell" id="c11"></div>
+      </div>
+      <div class="res" id="res"></div>
+      <div class="fbk" id="predFb"></div>
+    </div>
+
+    <div class="card">
+      <h2><span class="step">3</span>Ara, fills de debò</h2>
+      <p style="font-size:15px;line-height:1.45;">Cada fill rep a l'atzar un al·lel de cada progenitor, com si cada un tirés una moneda. Prova una família petita i una de molt gran.</p>
+      <div class="btns">
+        <button class="btn teal" id="b4">👪 Tenir 4 fills</button>
+        <button class="btn teal" id="b100">👨‍👩‍👧‍👦 Tenir 100 fills</button>
+        <button class="btn ghost" id="bClear">↺ Esborra</button>
+      </div>
+      <div class="kids" id="kids" aria-label="Fills nascuts"></div>
+
+      <table class="cmp">
+        <thead><tr><th></th><th>Esperat (quadre)</th><th>Observat</th></tr></thead>
+        <tbody>
+          <tr><td>AA</td><td class="num" id="eAA">–</td><td class="num" id="oAA">–</td></tr>
+          <tr><td>Aa</td><td class="num" id="eAa">–</td><td class="num" id="oAa">–</td></tr>
+          <tr><td>aa</td><td class="num" id="eaa">–</td><td class="num" id="oaa">–</td></tr>
+        </tbody>
+      </table>
+      <div class="bars">
+        <div style="font-size:13px;color:var(--muted);">% de fills amb fenotip dominant</div>
+        <div class="barrow"><span>Esperat</span><div class="bar"><div class="exp" id="bExp"></div></div><b id="tExp">–</b></div>
+        <div class="barrow"><span>Observat</span><div class="bar"><div class="obs" id="bObs"></div></div><b id="tObs">–</b></div>
+      </div>
+      <div class="msg" id="msg">Encara no hi ha cap fill.</div>
+
+      <div class="coins">
+        <a href="/images/sa4-s2-monedes.svg" target="_blank" rel="noopener"><img src="/images/sa4-s2-monedes.svg" alt="Figura: simular l'herència amb monedes" onerror="this.style.display='none'"></a>
+        <div>Això és el mateix que fas amb les monedes a l'apartat 1: cada moneda és un progenitor (cara = passa A, creu = passa a). <a href="/images/sa4-s2-monedes.svg" target="_blank" rel="noopener">Obre la figura de les monedes</a>.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz" id="quiz">
+    <h2>Comprova-ho</h2>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const G = { p: 'Aa', m: 'Aa' };
+  let pred = null, filled = false, fills = [];
+
+  const sortG = (x, y) => (x === 'A' ? x + y : y + x);   // la majúscula sempre al davant
+  const isDom = g => g.includes('A');
+  const pc = (n, t) => t ? Math.round(100 * n / t) : 0;
+
+  function coin(al){ return '<div class="coin ' + al + '">' + al + '</div>'; }
+
+  function drawGametes(){
+    $('gp0').innerHTML = coin(G.p[0]); $('gp1').innerHTML = coin(G.p[1]);
+    $('gm0').innerHTML = coin(G.m[0]); $('gm1').innerHTML = coin(G.m[1]);
+  }
+
+  function expected(){
+    const c = { AA: 0, Aa: 0, aa: 0 };
+    for (const x of G.p) for (const y of G.m) c[sortG(x, y)]++;
+    return c;   // sobre 4
+  }
+
+  function clearSquare(){
+    filled = false;
+    ['c00','c01','c10','c11'].forEach(id => { $(id).className = 'cell'; $(id).innerHTML = ''; });
+    $('res').innerHTML = ''; $('predFb').className = 'fbk';
+  }
+
+  function onChange(){
+    drawGametes(); clearSquare(); clearKids();
+    pred = null; document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+    $('bFill').disabled = true;
+    const e = expected();
+    ['AA','Aa','aa'].forEach(k => $('e' + k).textContent = e[k] + ' de 4 (' + (e[k] * 25) + ' %)');
+    const ed = (e.AA + e.Aa) * 25;
+    $('bExp').style.width = ed + '%'; $('tExp').textContent = ed + ' %';
+  }
+
+  function fill(){
+    if (filled) return;
+    filled = true; $('bFill').disabled = true;
+    const ids = [['c00', 0, 0], ['c01', 1, 0], ['c10', 0, 1], ['c11', 1, 1]];
+    ids.forEach(([id, i, j], n) => setTimeout(() => {
+      const g = sortG(G.p[i], G.m[j]);
+      const el = $(id);
+      el.className = 'cell pop ' + (isDom(g) ? 'dom' : 'rec');
+      el.innerHTML = g + '<small>' + (isDom(g) ? 'dominant' : 'recessiu') + '</small>';
+      setTimeout(() => el.classList.remove('pop'), 300);
+      if (n === 3) showResult();
+    }, 450 * (n + 1)));
+  }
+
+  function showResult(){
+    const e = expected(), rec = e.aa, dom = 4 - rec;
+    const parts = ['AA','Aa','aa'].filter(k => e[k]).map(k => e[k] + ' ' + k);
+    $('res').innerHTML = 'Genotips: <b>' + parts.join(' : ') + '</b><br>Fenotips: <b>' + dom + ' dominant' + (dom === 1 ? '' : 's') + ' : ' + rec + ' recessiu' + (rec === 1 ? '' : 's') + '</b> (de cada 4)';
+    const fb = $('predFb');
+    if (pred === rec) { fb.className = 'fbk show good'; fb.innerHTML = '✅ La teva predicció (' + pred + ' de 4) coincideix amb el quadre.'; }
+    else { fb.className = 'fbk show bad'; fb.innerHTML = '❌ Havies dit ' + pred + ' de 4 i el quadre en dona ' + rec + '. Compta les caselles aa: només aquestes es veuen recessives.'; }
+  }
+
+  function clearKids(){
+    fills = []; $('kids').innerHTML = '';
+    ['AA','Aa','aa'].forEach(k => $('o' + k).textContent = '–');
+    $('bObs').style.width = '0'; $('tObs').textContent = '–';
+    $('msg').textContent = 'Encara no hi ha cap fill.';
+  }
+
+  let busy = false;
+  function neixen(n){
+    if (busy) return;
+    clearKids(); busy = true;
+    $('b4').disabled = $('b100').disabled = true;
+    const kids = $('kids');
+    let k = 0;
+    const step = n > 10 ? 25 : 350;
+    const t = setInterval(() => {
+      const g = sortG(G.p[Math.random() < .5 ? 0 : 1], G.m[Math.random() < .5 ? 0 : 1]);
+      fills.push(g);
+      const d = document.createElement('div'); d.className = 'kid ' + (isDom(g) ? 'dom' : 'rec'); d.title = g;
+      kids.appendChild(d);
+      updateObs();
+      if (++k >= n) { clearInterval(t); busy = false; $('b4').disabled = $('b100').disabled = false; finalMsg(n); }
+    }, step);
+  }
+
+  function updateObs(){
+    const t = fills.length, c = { AA: 0, Aa: 0, aa: 0 };
+    fills.forEach(g => c[g]++);
+    ['AA','Aa','aa'].forEach(k => $('o' + k).textContent = c[k] + ' de ' + t + ' (' + pc(c[k], t) + ' %)');
+    const od = pc(c.AA + c.Aa, t);
+    $('bObs').style.width = od + '%'; $('tObs').textContent = od + ' %';
+  }
+
+  function finalMsg(n){
+    const e = expected(), ed = (e.AA + e.Aa) * 25;
+    const od = pc(fills.filter(isDom).length, fills.length);
+    const dif = Math.abs(od - ed);
+    let txt = 'Esperat: ' + ed + ' % dominants. Observat: ' + od + ' %. Diferència: ' + dif + ' punts. ';
+    if (ed === 0 || ed === 100) txt += 'Amb aquests progenitors no hi ha atzar en el fenotip: tots els fills són iguals, siguin 4 o 100.';
+    else if (n <= 10) txt += 'Amb només ' + n + ' fills la proporció pot «ballar» molt. Torna-ho a provar unes quantes vegades: surt sempre igual?';
+    else txt += 'Amb 100 fills l’observat s’acosta molt més a l’esperat: és la tendència del conjunt (llei dels grans nombres).';
+    $('msg').textContent = txt;
+  }
+
+  document.querySelectorAll('.seg').forEach(seg => {
+    seg.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+      seg.querySelectorAll('button').forEach(x => x.classList.remove('on'));
+      b.classList.add('on'); G[seg.dataset.who] = b.textContent; onChange();
+    }));
+  });
+  document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+    if (filled) return;
+    document.querySelectorAll('.chip').forEach(x => x.classList.remove('on'));
+    c.classList.add('on'); pred = +c.dataset.v; $('bFill').disabled = false;
+  }));
+  $('bFill').addEventListener('click', fill);
+  $('b4').addEventListener('click', () => neixen(4));
+  $('b100').addEventListener('click', () => neixen(100));
+  $('bClear').addEventListener('click', clearKids);
+
+  // ── Comprova-ho ──
+  const Q = [
+    { p: 'Un progenitor Aa té fills amb un progenitor aa. Quina part dels fills tindrà el fenotip recessiu?',
+      o: ['Cap', '1 de cada 4', '2 de cada 4 (la meitat)', 'Tots'],
+      c: 2, f: 'Gàmetes del primer: A o a. Del segon: només a. Caselles: Aa, Aa, aa, aa → la meitat recessius. Prova-ho amb el selector.' },
+    { p: 'Un criador creua dos conills Aa × Aa. En una ventrada de 8 cries, 4 tenen el fenotip recessiu. Què en pots concloure?',
+      o: ['Que el quadre falla: n’hi havien de sortir exactament 2', 'Que la proporció ha canviat i ara és 1:1', 'Que és possible per atzar: cada cria és una tirada independent i 8 cries són pocs casos', 'Que segur que un dels pares no era Aa'],
+      c: 2, f: 'El quadre dona la tendència amb molts descendents. Amb 8, la proporció pot allunyar-se força del 3:1. Prova «Tenir 4 fills» unes quantes vegades i ho veuràs.' },
+    { p: 'Creues AA × aa. Com seran TOTS els fills?',
+      o: ['AA', 'Aa, amb fenotip dominant', 'aa', 'La meitat AA i la meitat aa'],
+      c: 1, f: 'Un progenitor només dona A i l’altre només a: totes les caselles són Aa. És la 1a llei de Mendel (uniformitat).' }
+  ];
+  const quiz = $('quiz');
+  Q.forEach((q, qi) => {
+    const box = document.createElement('div'); box.className = 'q';
+    box.innerHTML = '<p>' + (qi + 1) + '. ' + q.p + '</p>';
+    const fb = document.createElement('div'); fb.className = 'fb';
+    q.o.forEach((t, oi) => {
+      const b = document.createElement('button'); b.className = 'opt'; b.textContent = t;
+      b.addEventListener('click', () => {
+        box.querySelectorAll('.opt').forEach((x, xi) => { x.classList.remove('correct', 'wrong', 'dim'); if (xi === q.c) x.classList.add('correct'); else if (xi === oi) x.classList.add('wrong'); else x.classList.add('dim'); });
+        fb.innerHTML = (oi === q.c ? '✅ ' : '❌ ') + q.f; fb.classList.add('show');
+      });
+      box.appendChild(b);
+    });
+    box.appendChild(fb); quiz.appendChild(box);
+  });
+
+  onChange();
+})();
+</script>
+</body>
+</html>

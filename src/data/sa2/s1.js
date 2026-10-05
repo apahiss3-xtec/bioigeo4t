@@ -157,7 +157,10 @@ export const sa2s1 = {
 
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s1-fitxa-A.html", B: "/fitxes/sa2-s1-fitxa-B.html", C: "/fitxes/sa2-s1-fitxa-C.html" },
-  teoriaPdfUrl: null,
+  sessionMaterials: [
+    { id: "rubrica-producte", title: "Rúbrica del producte final: maqueta del cicle + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
+  ],
+  teoriaPdfUrl: "/teoria/sa2-s1-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a l'informe de la biòpsia del principi i, amb el que has après, escriu en 4-5 línies què li està passant a aquelles cèl·lules i per què és perillós.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────

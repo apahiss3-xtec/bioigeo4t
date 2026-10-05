@@ -38,12 +38,12 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color
 span[contenteditable]{display:inline-block}
 .wline{display:block;width:100%;min-height:74px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
 .wline:focus{border-bottom-color:var(--teal);background:rgba(55,48,107,.04)}
-.wline.tall{min-height:120px}
-.wline.xtall{min-height:152px}
-.wline.xxtall{min-height:200px}
-.wline.short{min-height:52px}
-.wline.huge{min-height:340px}
-.fill-cell.xbig{min-height:112px}
+.wline.tall{min-height:72px}
+.wline.xtall{min-height:91px}
+.wline.xxtall{min-height:120px}
+.wline.short{min-height:31px}
+.wline.huge{min-height:204px}
+.fill-cell.xbig{min-height:67px}
 .nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
 .input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
 .input-span.data-span{min-width:70px}
@@ -97,7 +97,7 @@ span[contenteditable]{display:inline-block}
 .data-table tr:nth-child(even) td{background:var(--teal-tint)}
 .fill-cell{display:block;width:100%;min-height:64px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
 .fill-cell.small{min-height:38px}
-.fill-cell.big{min-height:96px}
+.fill-cell.big{min-height:57px}
 .fill-cell:focus{background:rgba(55,48,107,.08);outline:1px solid var(--teal-light);border-radius:2px}
 .label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
 .meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
@@ -133,6 +133,8 @@ span[contenteditable]{display:inline-block}
   .spacer-label{display:none!important}
   .fig,.data-table,.scaffold-box,.challenge-box,.epist-box,.abp-note{break-inside:avoid;page-break-inside:avoid}
 }
+@media print{img.fig{display:block;width:80%!important;margin:4px auto!important}}
+img.fig{display:block;width:56%!important;margin:4px auto!important}@media print{.data-table{break-inside:auto!important;page-break-inside:auto!important}.scaffold-box,.epist-box,.challenge-box,.abp-note{break-inside:auto!important}.figure,.fig-wrap{break-inside:auto!important}}
 </style>
 </head><body>
 <div id="toolbar">
@@ -176,7 +178,6 @@ span[contenteditable]{display:inline-block}
 <tr><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
 <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#127919; Repte</div><div class="challenge-text">Aquesta faixa s'anomena sovint <b>&laquo;zona d'habitabilitat&raquo;</b>, i el nom amaga un problema. Mart hi &eacute;s a dins i no t&eacute; aigua l&iacute;quida a la superf&iacute;cie; a m&eacute;s, la faixa est&agrave; dibuixada pensant en un sol tipus de vida.</div></div></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>1b.</b> Mart &eacute;s un <b>contraexemple</b> de la faixa, o m&eacute;s aviat una prova que la faixa &eacute;s una condici&oacute; <b>necess&agrave;ria per&ograve; no suficient</b>? Argumenta-ho.</p><div class="wline tall" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>1c.</b> <i>(si et queda temps)</i> Dibuixar aquesta faixa &eacute;s <b>extrapolar</b>: allargar una conclusi&oacute; m&eacute;s enll&agrave; dels casos observats. Qu&egrave; estem donant per suposat en fer-ho, i quina mena de vida quedaria <b>fora</b> del que la faixa pot predir?</p><div class="wline tall" contenteditable="true"></div>
 </div>
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#241F4A">2</div><div><span class="stitle">La simulaci&oacute; dels daus</span><div class="sdesc">En equip &middot; laboratori de simulaci&oacute;</div></div></div><div class="divider"></div>
@@ -199,7 +200,6 @@ span[contenteditable]{display:inline-block}
 <p style="font-size:12px;margin:8px 0 3px"><b>2d.</b> Quantes tirades han calgut perqu&egrave; en qued&eacute;s la meitat? Com ho has llegit al gr&agrave;fic, i quina <b>incertesa</b> t&eacute; aquesta lectura?</p><div class="wline" contenteditable="true"></div>
 <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#127919; Repte</div><div class="challenge-text">La probabilitat que un dau concret tregui un 6 &eacute;s exactament la mateixa amb 40 daus que amb 300. I malgrat aix&ograve;, les dues corbes no s&oacute;n igual de regulars.</div></div></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>2e.</b> Explica aquesta parad&ograve;xa. Quin paper hi fan les <b>r&egrave;pliques</b>: corregeixen un error de mesura o fan una altra cosa?</p><div class="wline tall" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>2f.</b> <i>(si et queda temps)</i> Aquest model prediu <b>quin dau concret</b> sortir&agrave; a la propera tirada? Digues qu&egrave; pot predir i qu&egrave; no, i tradueix-ho al cas dels &agrave;toms d'una roca.</p><div class="wline tall" contenteditable="true"></div>
 <div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128483;&#65039; Prepara la resposta oral.</b> Un membre de l'equip triat a l'<b>atzar</b> haur&agrave; de defensar, <b>mirant nom&eacute;s el gr&agrave;fic</b>, quantes tirades han calgut perqu&egrave; en qued&eacute;s la meitat i per qu&egrave; la corba de la classe &eacute;s m&eacute;s fiable que la de l'equip.<div class="wline short" contenteditable="true"></div></div>
 </div>
 
@@ -211,8 +211,6 @@ span[contenteditable]{display:inline-block}
 <tr><td class="label-cell">queda el 3,125 %</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">han passat <b>140 anys</b><br><span style="font-weight:400;font-size:11px;color:#5a5580">no cau en cap semivida sencera: acota-ho</span></td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr></table>
 <p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> Quina informaci&oacute; dona la dataci&oacute; <b>relativa</b> que l'absoluta no pot donar, i a l'inrev&eacute;s? Posa un cas on la relativa n'hi hagi prou i un altre on no en tingui de cap manera.</p><div class="wline xxtall" contenteditable="true"></div>
-<div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#127919; Repte</div><div class="challenge-text">Tot m&egrave;tode de mesura es pot equivocar, i saber <b>com</b> es pot equivocar &eacute;s part de saber-lo fer servir.</div></div></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>3c.</b> Qu&egrave; hauria de passar-li a una roca perqu&egrave; el rellotge don&eacute;s una edat <b>falsa</b>? Proposa una manera com un laboratori podria detectar-ho.</p><div class="wline tall" contenteditable="true"></div>
 </div>
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#B0821F">4</div><div><span class="stitle">El laboratori de dataci&oacute;</span><div class="sdesc">En equip &middot; informe de laboratori</div></div></div><div class="divider"></div>
@@ -231,7 +229,6 @@ span[contenteditable]{display:inline-block}
 <div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="meta-oa-title">Metacognici&oacute;</div>
 <p style="font-size:12px;margin-bottom:3px">Torna a llegir el que has escrit a l'apartat 0. Qu&egrave; hi canviaries ara, i per qu&egrave;?</p><div class="wline" contenteditable="true"></div>
 <p style="font-size:12px;margin:6px 0 3px">Qu&egrave; t'ha costat m&eacute;s d'acceptar: que <b>no</b> es pugui saber qu&egrave; far&agrave; un &agrave;tom concret, o que <b>s&iacute;</b> es pugui saber qu&egrave; faran tots junts?</p><div class="wline" contenteditable="true"></div>
-<p style="font-size:12px;margin:6px 0 3px">Despr&eacute;s d'escriure &laquo;aquesta mostra no la puc datar&raquo;, l'informe et sembla m&eacute;s fluix o m&eacute;s s&ograve;lid? Per qu&egrave;?</p><div class="wline" contenteditable="true"></div></div>
 </div>
 <div class="tasca-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="tasca-title">&#127968; Feina per a casa</div><div class="tasca-item"><div class="tasca-num">1</div><div>Busca <b>dues hip&ograve;tesis diferents</b> sobre com va apar&egrave;ixer la vida a la Terra.</div></div><div class="tasca-item"><div class="tasca-num">2</div><div>Per a cadascuna: <b>una prova concreta</b> a favor i <b>una cosa que encara no explica</b>. A la propera sessi&oacute; haur&agrave;s d'argumentar en veu alta quina de les dues est&agrave; millor fonamentada.</div></div></div>
 <div class="footer"><div class="footer-l">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 2 &middot; Versi&oacute; A &middot; IE Temple &middot; Biologia i Geologia 4t ESO</div><div class="footer-r">&#9203;</div></div>

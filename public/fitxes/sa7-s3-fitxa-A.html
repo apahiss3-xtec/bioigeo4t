@@ -38,12 +38,12 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color
 span[contenteditable]{display:inline-block}
 .wline{display:block;width:100%;min-height:74px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
 .wline:focus{border-bottom-color:var(--teal);background:rgba(55,48,107,.04)}
-.wline.tall{min-height:120px}
-.wline.xtall{min-height:152px}
-.wline.xxtall{min-height:200px}
-.wline.short{min-height:52px}
-.wline.huge{min-height:340px}
-.fill-cell.xbig{min-height:112px}
+.wline.tall{min-height:72px}
+.wline.xtall{min-height:91px}
+.wline.xxtall{min-height:120px}
+.wline.short{min-height:31px}
+.wline.huge{min-height:204px}
+.fill-cell.xbig{min-height:67px}
 .nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
 .input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
 .input-span.data-span{min-width:70px}
@@ -97,7 +97,7 @@ span[contenteditable]{display:inline-block}
 .data-table tr:nth-child(even) td{background:var(--teal-tint)}
 .fill-cell{display:block;width:100%;min-height:64px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
 .fill-cell.small{min-height:38px}
-.fill-cell.big{min-height:96px}
+.fill-cell.big{min-height:57px}
 .fill-cell:focus{background:rgba(55,48,107,.08);outline:1px solid var(--teal-light);border-radius:2px}
 .label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
 .paste-cell{display:block;width:100%;min-height:88px;border:1.6px dashed var(--teal-light);border-radius:6px;background:repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(55,48,107,.035) 7px,rgba(55,48,107,.035) 14px);position:relative}
@@ -135,6 +135,8 @@ span[contenteditable]{display:inline-block}
   .spacer-label{display:none!important}
   .fig,.data-table,.scaffold-box,.challenge-box,.epist-box,.abp-note,.paste-cell{break-inside:avoid;page-break-inside:avoid}
 }
+@media print{img.fig{display:block;width:80%!important;margin:4px auto!important}}
+img.fig{display:block;width:56%!important;margin:4px auto!important}@media print{.data-table{break-inside:auto!important;page-break-inside:auto!important}.scaffold-box,.epist-box,.challenge-box,.abp-note{break-inside:auto!important}}
 </style>
 </head><body>
 <div id="toolbar">
@@ -193,15 +195,12 @@ span[contenteditable]{display:inline-block}
 <tr><td class="label-cell">3 &middot; <b>Fumaroles</b><br><span style="font-weight:400;font-size:11px;color:#5a5580">xemeneies del fons del mar</span></td><td><div class="paste-cell"></div></td><td><div class="paste-cell"></div></td></tr>
 <tr><td class="label-cell">4 &middot; <b>Pansp&egrave;rmia</b><br><span style="font-weight:400;font-size:11px;color:#5a5580">va arribar de l'espai</span></td><td><div class="paste-cell"></div></td><td><div class="paste-cell"></div></td></tr></table>
 <div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div style="flex:1"><div class="epist-title">&#129517; Aquesta targeta no encaixa en cap de les quatre</div><div class="paste-cell" style="margin-top:6px"></div></div></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>2b.</b> La graella nom&eacute;s t&eacute; dues columnes, i un comit&egrave; de veritat en necessita una tercera. Per a cada proposta, escriviu <b>quina prova nova demanaríeu</b> a l'equip que la defensa perqu&egrave; el dictamen pogu&eacute;s canviar.</p>
-<table class="data-table"><tr><th style="width:26%">Proposta</th><th style="width:74%">Quina prova nova demanaríem</th></tr>
 <tr><td class="label-cell">Sopa primordial</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">M&oacute;n ARN</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">Fumaroles</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">Pansp&egrave;rmia</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
 <div class="challenge-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="challenge-title">&#127919; Repte</div><div class="challenge-text">Quan tingueu la graella sencera, mireu-la de lluny i responeu dues coses que no hi s&oacute;n escrites.</div></div></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>2c.</b> Hi ha alguna proposta que hagi quedat <b>sense forat</b>? Qu&egrave; vol dir aix&ograve; exactament: que &eacute;s la bona, o que encara no l'hem provada prou?</p><div class="wline tall" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>2d.</b> Agafeu <b>dues</b> propostes qualssevol i decidiu si s&oacute;n <b>incompatibles</b> (si una &eacute;s certa, l'altra ha de ser falsa) o si podrien ser <b>dos cap&iacute;tols de la mateixa hist&ograve;ria</b>. Justifiqueu-ho.</p><div class="wline tall" contenteditable="true"></div>
 <div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128483;&#65039; Prepara la resposta oral.</b> El docent triar&agrave; <b>una</b> targeta i l'equip haur&agrave; d'explicar per qu&egrave; l'ha posada all&agrave; i per qu&egrave; <b>no va</b> a cap altre lloc.<div class="wline short" contenteditable="true"></div></div>
 </div>
 
@@ -217,8 +216,6 @@ span[contenteditable]{display:inline-block}
 <p style="font-size:11.5px;color:#5a5580;font-style:italic;margin:6px 0 4px">Dada que et dono: la m&agrave;quina que fabrica les prote&iuml;nes dins de les teves c&egrave;l&middot;lules t&eacute;, al centre, una mol&egrave;cula d'ARN i no cap prote&iuml;na.</p>
 <p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> Explica quin problema resol una mol&egrave;cula que fa alhora de <b>recepta i de cuiner</b>, i que no resol un sistema on la informaci&oacute; la guarda una mol&egrave;cula i la feina la fa una altra. Fes servir la dada de sobre com a prova.</p><div class="wline xtall" contenteditable="true"></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>3c.</b> La pansp&egrave;rmia no ataca cap dels tres problemes. Qu&egrave; fa, en lloc de respondre la pregunta? I malgrat aix&ograve;, per qu&egrave; la targeta del meteorit continua sent una prova interessant?</p><div class="wline tall" contenteditable="true"></div>
-<img class="fig" src="../images/sa7-s3-finestra-temps.svg" alt="La finestra de temps" style="margin:4px 0"><p class="figcap">Fig.3 &middot; Amb les dades de la sessi&oacute; passada.</p>
-<p style="font-size:12px;margin:8px 0 3px"><b>3d.</b> Calcula quants milions d'anys dura la <b>finestra verda</b>, de 3.900 Ma als <b>primers</b> indicis (escriu la resta) i compara-la amb l'edat de la Terra. Qu&egrave; li exigeix, una finestra tan curta, a qualsevol de les quatre propostes?</p><div class="wline tall" contenteditable="true"></div>
 </div>
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#B0821F">4</div><div><span class="stitle">El dictamen del comit&egrave;</span><div class="sdesc">En equip &middot; document avaluable</div></div></div><div class="divider"></div>
@@ -233,13 +230,11 @@ span[contenteditable]{display:inline-block}
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#7a6aa8">5</div><div><span class="stitle">Posada en com&uacute; i fonts</span><div class="sdesc">Tota la classe</div></div></div><div class="divider"></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>5a.</b> Escriu la <b>prova que has portat de casa</b>, digues d'on l'has treta i <b>avalua la font</b>: qui ho signa, quina instituci&oacute; hi ha al darrere, amb quina intenci&oacute; ho publiquen i si es pot verificar en una altra banda.</p><div class="wline xtall" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>5b.</b> Anota <b>una idea d'un altre equip</b> que t'hagi fet dubtar del teu ordre, i qu&egrave; hi respondries.</p><div class="wline tall" contenteditable="true"></div>
 </div>
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#c8960a">6</div><div><span class="stitle">Exit tiquet i metacognici&oacute;</span><div class="sdesc">Individual &middot; es lliura</div></div></div><div class="divider"></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>6a.</b> &#128302; <b>Prediu.</b> Una missi&oacute; troba amino&agrave;cids sota el gel d'una lluna gelada. Quina de les propostes sobre l'origen de la vida en sortiria refor&ccedil;ada i quina no canviaria gens? Per qu&egrave; aix&ograve; encara <b>no seria trobar vida</b>?</p><div class="wline tall" contenteditable="true"></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>6b.</b> Per qu&egrave; el m&oacute;n ARN va cridar tant l'atenci&oacute; dels cient&iacute;fics? Respon-ho en dues l&iacute;nies, sense fer servir la paraula <i>ribozim</i>.</p><div class="wline short" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>6c.</b> Un equip publica que, en condicions com les d'una fumarola, s'hi podrien formar cadenes curtes d'ARN, i diu exactament quines condicions caldria muntar al laboratori per comprovar-ho. Digues si aix&ograve; es pot tractar com una hip&ograve;tesi cient&iacute;fica i <b>per qu&egrave;</b>, fent servir les dues preguntes de la Fig.4.</p><div class="wline tall" contenteditable="true"></div>
 <div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="meta-oa-title">Metacognici&oacute;</div>
 <p style="font-size:12px;margin-bottom:3px">Torna a l'apartat 0. Qu&egrave; hi afegiries ara?</p><div class="wline" contenteditable="true"></div>
 <p style="font-size:12px;margin:6px 0 3px">Hi ha alguna proposta que t'agrad&eacute;s m&eacute;s <b>abans</b> de mirar les proves i que hagi baixat de lloc despr&eacute;s? Qu&egrave; et diu aix&ograve; sobre com decidies fins ara?</p><div class="wline" contenteditable="true"></div>

@@ -162,7 +162,7 @@ export const sa3s1 = {
 
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa3-s1-fitxa-A.html", B: "/fitxes/sa3-s1-fitxa-B.html", C: "/fitxes/sa3-s1-fitxa-C.html" },
-  teoriaPdfUrl: null,
+  teoriaPdfUrl: "/teoria/sa3-s1-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a la teva postura de l'apartat 1 i, ara que ja tens la visió gen → proteïna → característica, reescriu-la millorada, separant l'argument científic de l'ètic.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────

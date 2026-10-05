@@ -38,12 +38,12 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color
 span[contenteditable]{display:inline-block}
 .wline{display:block;width:100%;min-height:74px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
 .wline:focus{border-bottom-color:var(--teal);background:rgba(55,48,107,.04)}
-.wline.tall{min-height:120px}
-.wline.xtall{min-height:152px}
-.wline.xxtall{min-height:200px}
-.wline.short{min-height:52px}
-.wline.huge{min-height:340px}
-.fill-cell.xbig{min-height:112px}
+.wline.tall{min-height:72px}
+.wline.xtall{min-height:91px}
+.wline.xxtall{min-height:120px}
+.wline.short{min-height:31px}
+.wline.huge{min-height:204px}
+.fill-cell.xbig{min-height:67px}
 .nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
 .input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
 .input-span.data-span{min-width:70px}
@@ -97,7 +97,7 @@ span[contenteditable]{display:inline-block}
 .data-table tr:nth-child(even) td{background:var(--teal-tint)}
 .fill-cell{display:block;width:100%;min-height:64px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
 .fill-cell.small{min-height:38px}
-.fill-cell.big{min-height:96px}
+.fill-cell.big{min-height:57px}
 .fill-cell:focus{background:rgba(55,48,107,.08);outline:1px solid var(--teal-light);border-radius:2px}
 .label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
 .meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:8px 10px}
@@ -133,6 +133,8 @@ span[contenteditable]{display:inline-block}
   .spacer-label{display:none!important}
   .fig,.data-table,.scaffold-box,.challenge-box,.epist-box,.abp-note{break-inside:avoid;page-break-inside:avoid}
 }
+@media print{img.fig{display:block;width:80%!important;margin:4px auto!important}}
+img.fig{display:block;width:56%!important;margin:4px auto!important}@media print{.data-table{break-inside:auto!important;page-break-inside:auto!important}.scaffold-box,.epist-box,.challenge-box,.abp-note{break-inside:auto!important}.figure,.fig-wrap{break-inside:auto!important}}
 </style>
 </head><body>
 <div id="toolbar">
@@ -204,7 +206,6 @@ span[contenteditable]{display:inline-block}
 <p style="font-size:12px;margin:8px 0 3px"><b>2c.</b> Dibuixa les <b>dues corbes</b> a la graella: primer la del teu equip, despr&eacute;s la de tota la classe amb un altre color.</p>
 <img class="fig" src="../images/sa7-s2-grafic-buit.svg" alt="Graella per al gr&agrave;fic" style="margin:4px 0"><p class="figcap">Fig.3 &middot; La l&iacute;nia taronja del 50 % &eacute;s la que et deixar&agrave; llegir la resposta de 2d.</p>
 <p style="font-size:12px;margin:8px 0 3px"><b>2d.</b> Mirant el gr&agrave;fic: quantes tirades han calgut perqu&egrave; en qued&eacute;s la <b>meitat</b>? Digues tamb&eacute; <b>com ho has llegit</b>.</p><div class="wline" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>2e.</b> Quina de les dues corbes &eacute;s m&eacute;s <b>irregular</b>? Explica per qu&egrave; ho &eacute;s, si la probabilitat de cada dau &eacute;s exactament la mateixa en tots dos casos. Al final, digues per a qu&egrave; han servit les <b>r&egrave;pliques</b> (les dades de tots els equips juntes).</p><div class="wline tall" contenteditable="true"></div>
 <div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128483;&#65039; Prepara la resposta oral.</b> Un membre de l'equip triat a l'<b>atzar</b> haur&agrave; de dir, <b>mirant nom&eacute;s el gr&agrave;fic</b>, quantes tirades han calgut perqu&egrave; en qued&eacute;s la meitat i com ho ha llegit. Escriviu-ne una l&iacute;nia:<div class="wline short" contenteditable="true"></div></div>
 </div>
 
@@ -216,8 +217,6 @@ span[contenteditable]{display:inline-block}
 <tr><td class="label-cell">el 50 %</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">el 12,5 %</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">el 6,25 %</td><td><span class="fill-cell small" contenteditable="true"></span></td><td><span class="fill-cell small" contenteditable="true"></span></td></tr></table>
-<p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> A la SA6 vas datar capes <b>sense</b> cap n&uacute;mero d'anys. Escriu quina pregunta respon cada mena de dataci&oacute; i quina <b>no</b> pot respondre.</p>
-<table class="data-table"><tr><th style="width:24%">Mena de dataci&oacute;</th><th style="width:38%">Quina pregunta respon</th><th style="width:38%">Qu&egrave; NO pot dir</th></tr>
 <tr><td class="label-cell">Relativa<br><span style="font-weight:400;font-size:11px;color:#5a5580">principis geol&ograve;gics</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">Absoluta<br><span style="font-weight:400;font-size:11px;color:#5a5580">semivida</span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
 </div>
@@ -237,14 +236,12 @@ span[contenteditable]{display:inline-block}
 <tr><td style="font-size:12px">L'os &eacute;s <b>m&eacute;s vell</b> que la cendra ______ , datada fa ______ Ma</td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
 <tr><td style="font-size:12px">Per tant, l'os t&eacute; entre... i... milions d'anys</td><td><span class="fill-cell small" contenteditable="true"></span></td></tr>
 <tr><td style="font-size:12px">El principi geol&ograve;gic que ho justifica &eacute;s...</td><td><span class="fill-cell small" contenteditable="true"></span></td></tr></table>
-<p style="font-size:12px;margin:8px 0 3px"><b>4c.</b> Per qu&egrave; el resultat de 4b &eacute;s un <b>interval</b> i no un n&uacute;mero exacte?</p><div class="wline" contenteditable="true"></div>
 <div class="epist-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="epist-title">&#129517; Naturalesa de la ci&egrave;ncia</div><div class="epist-text">Amb aquests rellotges, els laboratoris situen la formaci&oacute; de la Terra fa uns <b>4.600 Ma</b> i els <b>primers indicis de vida</b> entre 3.800 i 3.500 Ma: restes de carboni d'origen probablement biol&ograve;gic i <b>estromat&ograve;lits</b>. Fixa't com s'ha de dir aix&ograve;: la prova no diu que la vida <i>va apar&egrave;ixer</i> en aquell moment exacte.</div></div></div>
 <p style="font-size:12px;margin:8px 0 3px"><b>4d.</b> Amb aquestes proves, qu&egrave; podem afirmar: que la vida <b>va apar&egrave;ixer</b> fa 3.500 Ma, o nom&eacute;s que <b>ja n'hi havia</b>? Explica la difer&egrave;ncia entre les dues frases.</p><div class="wline tall" contenteditable="true"></div>
 <div class="abp-note deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><b>&#128172; Posada en com&uacute; de la classe.</b> Abans de tancar la fitxa comparem els informes de laboratori dels equips i decidim junts qu&egrave; es fa amb la mostra que no es pot datar.</div>
 <div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="meta-oa-title">Metacognici&oacute;</div>
 <p style="font-size:12px;margin-bottom:3px">Torna a llegir el que has escrit a l'apartat 0. Qu&egrave; hi canviaries ara?</p><div class="wline" contenteditable="true"></div>
 <p style="font-size:12px;margin:6px 0 3px">Qu&egrave; t'ha costat m&eacute;s d'acceptar: que <b>no</b> es pugui saber qu&egrave; far&agrave; un &agrave;tom concret, o que <b>s&iacute;</b> es pugui saber qu&egrave; faran tots junts?</p><div class="wline" contenteditable="true"></div>
-<p style="font-size:12px;margin:6px 0 3px">Despr&eacute;s d'escriure &laquo;aquesta mostra no la puc datar&raquo;, l'informe et sembla m&eacute;s fluix o m&eacute;s s&ograve;lid? Per qu&egrave;?</p><div class="wline" contenteditable="true"></div></div>
 </div>
 <div class="tasca-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="tasca-title">&#127968; Feina per a casa</div><div class="tasca-item"><div class="tasca-num">1</div><div>Busca <b>dues hip&ograve;tesis diferents</b> sobre com va apar&egrave;ixer la vida a la Terra.</div></div><div class="tasca-item"><div class="tasca-num">2</div><div>Per a cadascuna, escriu <b>una prova concreta</b> que hi juga a favor i <b>una cosa que encara no explica</b>. Curt, per&ograve; ha de ser teu: a la propera sessi&oacute; ho haur&agrave;s de defensar en veu alta.</div></div></div>
 <div class="footer"><div class="footer-l">SA7 &middot; L'origen de tot &middot; Sessi&oacute; 2 &middot; Versi&oacute; B &middot; IE Temple &middot; Biologia i Geologia 4t ESO</div><div class="footer-r">&#9203;</div></div>

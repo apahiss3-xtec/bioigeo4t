@@ -25,6 +25,11 @@ export const sa4s2 = {
       "Ompliu un quadre de Punnett d'un creuament Aa × Aa i dic quants surten dominants i quants recessius (3:1).",
       "Explico amb les meves paraules per què el quadre diu «3 de cada 4» però una família de 4 fills pot no tenir exactament 3 i 1.",
       "Resolc problemes senzills de genètica seguint els passos: escriure genotips dels pares, fer el quadre, comptar les caselles."
+    ],
+    C: [
+      "Omplo un quadre de Punnett Aa × Aa i compto 3 dominants i 1 recessiu.",
+      "Comparo el que espero amb el que surt quan tiro les monedes.",
+      "Dic que «3 de cada 4» és una probabilitat, no una promesa."
     ]
   },
 
@@ -90,7 +95,8 @@ export const sa4s2 = {
     "Apliqueu el quadre de Punnett al caràcter del vostre Heredity ID i escriviu la predicció per a una família de portadors"
   ],
   exploreDuration: "35 min",
-  appSrc: null,
+  appSrc: "/apps/app_punnett.html",
+  appApartat: "2",
   exploreNote: "Demostració a l'aula: cada equip defensa davant d'un altre per què la seva proporció observada NO és exactament 3:1 però s'hi acosta, fent servir la idea de tendència. Qui té més tirades, més s'hi acosta: és una prova experimental de la llei, no un error.",
 
   // ── EXPLICA ───────────────────────────────────────────────
@@ -123,6 +129,13 @@ export const sa4s2 = {
       text: "El quadre diu «3 de cada 4», però ==no== garanteix que en una família de 4 fills n'hi hagi exactament 3 i 1: cada fill és una ==tirada independent==. Amb ==poques== tirades la proporció balla molt; amb ==moltes== s'acosta a l'esperat (llei dels grans nombres). Confondre la ==tendència== amb una garantia per a cada cas és un error típic: la predicció és ==probabilística==, no una promesa.",
       type: "epistemic",
       badge: "🎲 Atzar vs tendència"
+    },
+    {
+      id: "t5",
+      apartat: "4",
+      heading: "Del ==fenotip== al ==genotip==: deduir el que no es veu",
+      text: "Un fenotip ==recessiu== només té un genotip possible: ==aa==. Un fenotip ==dominant== pot ser ==AA== o ==Aa==: no es veu. Per decidir-ho, ==prova les dues opcions== al quadre de Punnett i compara amb el que et diu l'enunciat. Exemple: planta llisa (L dominant) × planta rugosa (==ll==). Si la llisa és ==LL==, tots els fills són ==Ll== (tots llisos). Si és ==Ll==, la meitat són ==ll== (==1:1==). Si l'enunciat diu que surten fills rugosos, la llisa ha de ser ==Ll==. Pista: un fill recessiu (aa) rep un ==a de cada progenitor==, així que tots dos en porten almenys un.",
+      type: "concept"
     }
   ],
 
@@ -132,8 +145,8 @@ export const sa4s2 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa4-s2-fitxa-A.html", B: "/fitxes/sa4-s2-fitxa-B.html" },
-  teoriaPdfUrl: null,
+  fitxaUrl: { A: "/fitxes/sa4-s2-fitxa-A.html", B: "/fitxes/sa4-s2-fitxa-B.html", C: "/fitxes/sa4-s2-fitxa-C.html" },
+  teoriaPdfUrl: "/teoria/sa4-s2-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a la pregunta del consell genètic de l'apartat 1 i respon-la ara amb un número (la probabilitat que un fill tingui la malaltia) i una frase que expliqui per què és una probabilitat i no una certesa.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────
@@ -164,7 +177,7 @@ export const sa4s2 = {
         title: "El quadre de Punnett",
         time: "24 min",
         phase: "explica",
-        instruction: "Omple el quadre de Punnett d'un creuament Aa × Aa, compta les caselles i escriu la proporció de genotips (1:2:1) i de fenotips (3:1). Després aplica'l al teu caràcter.",
+        instruction: "Omple el quadre de Punnett d'un creuament Aa × Aa, compta les caselles i escriu la proporció de genotips (1:2:1) i de fenotips (3:1). Després aplica'l al teu caràcter. Amb l'app del quadre de Punnett: tria els genotips dels progenitors, escriu la teva predicció ABANS d'omplir el quadre i fes «Tenir 4 fills» diverses vegades i després «Tenir 100 fills». Anota quan s'acosta més l'observat a l'esperat.",
         hints: [
           "Gàmetes del pare a dalt (A, a), de la mare a l'esquerra (A, a).",
           "3 caselles tenen almenys una A (dominant); només aa és recessiu."
@@ -198,7 +211,7 @@ export const sa4s2 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa4-s2-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa4-s2-exit-ticket.html", B: "/fitxes/sa4-s2-exit-ticket.html", C: "/fitxes/sa4-s2-exit-ticket-C.html" },
   exitTicketType: "paper",
   exitTicketCriteri: "4.2",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",

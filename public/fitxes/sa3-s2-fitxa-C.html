@@ -16,7 +16,7 @@
   --purple:#8a5a9e; --purple-tint:#f1eaf4;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#aeb9dc;color:var(--ink);font-size:14px;line-height:1.5;padding:41px 20px 47px}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#aeb9dc;color:var(--ink);font-size:14px;line-height:1.5;padding:43px 20px 49px}
 #toolbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(35,20,45,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(139,79,174,.35);height:44px;display:flex;align-items:center;gap:10px;padding:0 18px}
 .tb-tip{font-family:'Inter',sans-serif;font-size:11px;color:rgba(215,195,225,.75);flex:1}
 .tb-tip strong{color:#e0c8ec}
@@ -33,8 +33,8 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#aeb9dc;color
 /* ── PAGINADOR A4 REAL ─────────────────────────────── */
 #sheets { display:flex; flex-direction:column; align-items:center; gap:26px; }
 .sheet { width:794px; min-height:1123px; background:var(--paper); position:relative; box-shadow:0 4px 24px rgba(60,40,110,.18); overflow:visible; }
-.sheet-body { padding:28px 46px 14px; position:relative; overflow:visible; }
-.sheet.has-head .sheet-body { padding-top:42px; }
+.sheet-body { padding:30px 46px 15px; position:relative; overflow:visible; }
+.sheet.has-head .sheet-body { padding-top:44px; }
 .sheet-head { position:absolute; left:0; right:0; top:0; height:36px; display:none; justify-content:space-between; align-items:center; padding:0 46px; border-bottom:1.5px solid var(--teal-light); background:var(--paper); }
 .sheet.has-head .sheet-head { display:flex; }
 .sheet-head-l { font-family:'Inter',sans-serif; font-size:8.5px; font-weight:700; letter-spacing:.11em; text-transform:uppercase; color:var(--teal-ink); }
@@ -98,9 +98,9 @@ span[contenteditable]{display:inline-block}
 .oa-list li{font-size:14px;padding:2px 0 2px 22px;position:relative;line-height:1.5;border-bottom:1px dashed var(--rule)}
 .oa-list li:last-child{border-bottom:none}
 .oa-list li::before{content:'\25CB';position:absolute;left:4px;top:3px;font-size:13.5px;color:var(--teal-light)}
-.content{padding:11px 24px 19px}
-.section{margin-top:12px}
-.section-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.content{padding:11px 24px 20px}
+.section{margin-top:13px}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:7px}
 .snum{width:26px;height:26px;border-radius:50%;font-size:14.5px;font-weight:900;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .stitle{font-size:16.5px;font-weight:900;text-transform:uppercase;letter-spacing:.01em}
 .sdesc{font-size:13.5px;color:var(--ink-2);font-style:normal;font-family:'Crimson Pro',serif}
@@ -108,12 +108,12 @@ span[contenteditable]{display:inline-block}
 .divider{height:1.5px;background:linear-gradient(to right,var(--rule-dark),transparent);margin-bottom:8px}
 .previ-box{background:var(--teal-tint);border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:8px 13px}
 .previ-box p{font-size:14.5px}
-.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:7px 12px;margin:6px 0}
+.scaffold-box{display:flex;gap:10px;background:var(--aqua-tint);border:1.5px solid var(--aqua);border-radius:8px;padding:7px 12px;margin:7px 0}
 .scaffold-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#1c6f70;margin-bottom:2px}
 .scaffold-text{font-size:13.5px;line-height:1.5;color:var(--ink-2)}
-.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:7px 12px;margin:6px 0}
+.epist-box{display:flex;gap:10px;background:var(--amber-tint);border:1.5px solid var(--amber);border-radius:8px;padding:7px 12px;margin:7px 0}
 .epist-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);margin-bottom:2px}
-.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:7px 12px;margin:6px 0}
+.challenge-box{display:flex;gap:10px;background:var(--orange-tint);border:1.5px solid var(--orange);border-radius:8px;padding:7px 12px;margin:7px 0}
 .challenge-title{font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:2px}
 .challenge-text{font-size:13.5px;line-height:1.5;color:var(--ink-2)}
 .epist-text{font-size:13.5px;font-family:'Crimson Pro',serif;line-height:1.5;color:var(--ink-2)}
@@ -125,24 +125,24 @@ span[contenteditable]{display:inline-block}
 .fill-cell:focus{background:rgba(139,79,174,.08);outline:1px solid var(--teal-light);border-radius:2px}
 .label-cell{font-size:14px;font-weight:700;color:var(--ink-2)}
 .ph-num{width:30px;text-align:center;font-weight:900;color:var(--teal-ink);font-size:16px}
-.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:6px 10px}
+.meta-oa-box{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:7px 10px}
 .meta-oa-title{font-size:11px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
 .meta-oa-item{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;margin-bottom:3px;padding:2px 0}
 .meta-oa-check{width:16px;height:16px;border:1.5px solid var(--teal);border-radius:3px;flex-shrink:0;background:#fff;margin-top:1px}
 .meta-oa-text{flex:1;line-height:1.5}
-.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
-.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:6px 10px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:7px}
+.meta-item{background:var(--teal-tint);border:1.5px solid var(--teal-light);border-radius:8px;padding:7px 10px}
 .meta-icon{font-size:18px;display:block;margin-bottom:2px}
 .meta-label{font-size:11px;font-weight:700;color:var(--teal-ink);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px}
 .stars{display:flex;gap:4px;margin-top:3px}.star{font-size:18px;color:#8ea0d4}
 .tasca-box{background:var(--orange-tint);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:8px 14px;margin-top:11px}
-.tasca-title{font-size:13.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:6px}
+.tasca-title{font-size:13.5px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:#a24e24;margin-bottom:7px}
 .tasca-item{display:flex;gap:8px;align-items:flex-start;margin-bottom:5px;font-size:14px}
 .tasca-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--orange);color:#fff;font-size:13.5px;font-weight:900;display:flex;align-items:center;justify-content:center}
 .spacer-block{position:relative;height:48px;margin:3px 0;border-radius:6px;border:1.5px dashed var(--teal-light);background:repeating-linear-gradient(45deg,transparent,transparent 6px,rgba(139,79,174,.05) 6px,rgba(139,79,174,.05) 12px);display:flex;align-items:center;justify-content:center}
 .spacer-label{font-family:'Inter',sans-serif;font-size:9px;color:var(--teal-light);letter-spacing:.12em;text-transform:uppercase;user-select:none;pointer-events:none}
 
-.footer{margin-top:9px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:5px}
+.footer{margin-top:10px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid var(--rule);padding-top:6px}
 .footer-l{font-size:9px;color:var(--muted);letter-spacing:.07em;text-transform:uppercase}
 .footer-r{font-size:9px;color:var(--teal-ink);font-weight:700}
 .attrib{font-size:8.5px;color:var(--muted);text-align:center;margin-top:5px;line-height:1.5}
@@ -184,7 +184,7 @@ span[contenteditable]{display:inline-block}
 
 /* ── Càpsula «📖 Per llegir»: SEMPRE abans de qualsevol pregunta ── */
 .llegir-box{display:flex;gap:10px;align-items:flex-start;background:var(--c-read-bg);
-  border:1.5px solid #e0c98a;border-radius:9px;padding:7px 12px;margin:6px 0}
+  border:1.5px solid #e0c98a;border-radius:9px;padding:7px 12px;margin:7px 0}
 .llegir-icon{font-size:22px;line-height:1.1;flex-shrink:0}
 .llegir-title{font-size:13.5px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;
   color:var(--c-read-ink);margin-bottom:2px}
@@ -194,17 +194,17 @@ span[contenteditable]{display:inline-block}
 
 /* ── Bàner d'idea clau (mínim 2 cops per fitxa) ── */
 .clau{text-align:center;font-size:14.5px;font-weight:900;color:var(--c-main);background:#fff;
-  border:2px dashed var(--c-main);border-radius:9px;padding:5px 10px;margin:7px 0;line-height:1.5}
+  border:2px dashed var(--c-main);border-radius:9px;padding:6px 10px;margin:7px 0;line-height:1.5}
 .clau .drop{color:var(--c-accent)}
 
 /* ── Encercla: dues opcions plausibles, mai un distractor absurd ── */
-.tria{font-size:14.5px;line-height:1.9;margin:4px 0 5px}
+.tria{font-size:14.5px;line-height:1.9;margin:4px 0 6px}
 .opt{display:inline-block;border:1.6px solid var(--rule-dark);border-radius:9999px;
   padding:2px 13px;margin:2px 5px 2px 0;font-weight:700;background:#fff}
 .tria-o{font-size:13.5px;font-weight:700;color:var(--muted);margin:0 3px}
 
 /* ── Frases per completar ── */
-.frase-completar{font-size:14.5px;line-height:2.5;margin:4px 0 5px}
+.frase-completar{font-size:14.5px;line-height:2.5;margin:4px 0 6px}
 .blank{display:inline-block;border-bottom:1.6px solid var(--rule-dark);vertical-align:bottom;
   margin:0 3px;height:1.15em}
 .blank-s{width:64px}.blank-m{width:110px}.blank-l{width:160px}.blank-xl{width:220px}
@@ -213,7 +213,7 @@ span[contenteditable]{display:inline-block}
 .hint-out{font-size:13.5px;font-weight:700;color:var(--c-ink);margin:2px 0 2px}
 
 /* ── Mètode OBSERVO → EM PREGUNTO → CONNECTO → DEDUEIXO ── */
-.passos-box{border:2px solid var(--c-light);border-radius:11px;margin:7px 0 5px;overflow:hidden}
+.passos-box{border:2px solid var(--c-light);border-radius:11px;margin:7px 0 6px;overflow:hidden}
 .passos-cap{background:var(--c-ink);color:#fff;font-size:13.5px;font-weight:900;letter-spacing:.05em;
   text-transform:uppercase;padding:5px 12px;display:flex;align-items:center;gap:8px}
 .passos-cap .cas-tag{margin-left:auto;font-size:11px;font-weight:700;background:rgba(255,255,255,.2);
@@ -222,7 +222,7 @@ span[contenteditable]{display:inline-block}
 .passos-box.exemple .passos-cap{background:#4a8f57}
 .metode-strip{font-size:13.5px;font-weight:800;color:var(--c-ink);background:var(--c-tint);
   padding:4px 12px;letter-spacing:.02em}
-.pas{display:flex;gap:9px;padding:5px 12px;border-top:1px solid var(--rule)}
+.pas{display:flex;gap:9px;padding:6px 12px;border-top:1px solid var(--rule)}
 .pas-num{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--c-main);color:#fff;
   font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center;margin-top:1px}
 .passos-box.exemple .pas-num{background:#4a8f57}
@@ -243,30 +243,47 @@ span[contenteditable]{display:inline-block}
 .pas-opt.marcat .pas-box::after{content:'✓';position:absolute;top:-4px;left:1px;color:#fff;font-size:14.5px;
   font-weight:900;line-height:1}
 .pas-opt b{color:var(--c-ink)}
-.pas-frase{padding:6px 12px;background:var(--c-tint);border-top:1px solid var(--rule)}
+.pas-frase{padding:7px 12px;background:var(--c-tint);border-top:1px solid var(--rule)}
 .pas-frase-lab{font-size:13.5px;font-weight:700;color:var(--c-ink);margin-bottom:2px}
 .pas-frase .wline{background:transparent}
-.exemple-nota{font-size:13.5px;color:#3e7a4a;font-style:normal;padding:5px 12px 6px;
+.exemple-nota{font-size:13.5px;color:#3e7a4a;font-style:normal;padding:5px 12px 7px;
   border-top:1px solid var(--rule);background:#f2f8f3}
 
 /* ── Calaixos on s'enganxen les tires retallables ── */
 .calaix-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin:7px 0}
-.calaix{border:1.6px solid var(--c-light);border-radius:9px;padding:5px 6px 7px;background:#fff}
+.calaix{border:1.6px solid var(--c-light);border-radius:9px;padding:6px 6px 7px;background:#fff}
 .calaix-head{font-size:13.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;
   letter-spacing:.03em;margin-bottom:5px;text-align:center;line-height:1.5}
 .calaix-cell{border:1.5px dashed var(--rule-dark);border-radius:7px;background:#fff;
-  display:flex;flex-direction:column;gap:7px;padding:5px 5px}
+  display:flex;flex-direction:column;gap:7px;padding:6px 5px}
 .slot{height:44px;border:1.4px dashed var(--c-light);border-radius:6px;background:#fff;
   display:flex;align-items:center;justify-content:center}
 .slot span{font-size:8.5px;color:var(--c-light);letter-spacing:.08em;text-transform:uppercase}
 
 /* ── Comptador senzill (substitueix la taula de perfil de la B) ── */
-.compta-grid{display:flex;gap:10px;margin:6px 0}
+.compta-grid{display:flex;gap:10px;margin:7px 0}
 .compta{flex:1;border:1.6px solid var(--c-light);border-radius:9px;background:#fff;padding:8px;
   text-align:center}
 .compta-t{font-size:13.5px;font-weight:900;color:var(--c-ink);text-transform:uppercase;letter-spacing:.03em}
 .compta-s{font-size:11px;color:var(--muted);margin-bottom:4px;line-height:1.5}
 .compta-caixa{height:40px;border:1.5px solid var(--rule-dark);border-radius:6px;background:#fff}
+
+/* ── Quadre de Punnett amb bastida (SA4, 04/10/2026) ── caselles ja dibuixades;
+   els gàmetes donats van en negreta i els que falten queden en blanc. */
+.punnett-c{border-collapse:collapse;margin:5px auto 3px}
+.punnett-c td{border:1.6px solid var(--rule-dark);width:78px;height:46px;text-align:center;
+  vertical-align:middle;font-size:16px;font-weight:800;background:#fff}
+.punnett-c .corner{color:var(--muted);font-size:11px;font-weight:700;line-height:1.5}
+.punnett-c .gam{background:var(--c-tint);color:var(--c-ink);font-weight:900}
+.punnett-c .gam-buit{background:var(--c-tint)}
+.banc{font-size:14.5px;margin:5px 0 7px;padding:5px 10px;border:1.6px dashed var(--c-light);
+  border-radius:9px;background:#fff;text-align:center;line-height:1.8}
+.banc b{color:var(--c-ink);margin:0 3px}
+.banc .banc-t{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:6px}
+/* el bloc de llegibilitat alinea td a l'esquerra: el Punnett va centrat */
+.sheet-body .punnett-c td,#doc .punnett-c td{text-align:center}
+/* capçaleres amb genotips (Aa, aa, Xʰ…): sense majúscules forçades */
+.data-table th.geno{text-transform:none;letter-spacing:0;font-size:14.5px}
 
 /* ══════════════════════════════════════════════════════════════
    LLEGIBILITAT-C v1 — llegibilitat de la Versió C (dislèxia). 09/09/2026.
@@ -541,7 +558,7 @@ span[contenteditable]{display:inline-block}
     <div class="section deletable" style="margin-top:11px">
       <div class="del-btn" onclick="deleteEl(this)">✕</div>
       <p style="font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-ink);margin-bottom:5px">🧠 Metacognició</p>
-      <div class="meta-oa-box deletable" style="margin-bottom:6px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
+      <div class="meta-oa-box deletable" style="margin-bottom:7px"><div class="del-btn" onclick="deleteEl(this)">✕</div>
         <div class="meta-oa-title">🎯 Torna als objectius — marca el que has après avui:</div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé dir quin material fa falta a cada pas.</div></div>
         <div class="meta-oa-item"><div class="meta-oa-check"></div><div class="meta-oa-text" contenteditable="true">Sé completar les parelles A-T i G-C.</div></div>

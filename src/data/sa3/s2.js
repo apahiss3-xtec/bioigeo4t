@@ -153,6 +153,13 @@ export const sa3s2 = {
       text: "Al final tens una ==massa blanca== a la mà. Però, l'has vist l'ADN? El que has ==observat== és una massa blanca; que ==sigui== ADN és una ==inferència== (ho dedueixes del que saps del procés). Distingir el que observem del que inferim és una de les regles del joc de la ciència. I si algú dubtés que és ADN, caldria una ==prova addicional==, no només mirar-ho.",
       type: "epistemic",
       badge: "🧭 Observar vs inferir"
+    },
+    {
+      id: "t5",
+      apartat: "4",
+      heading: "Un experiment ==amb control==: canviar només una cosa",
+      text: "Per saber si el sabó és necessari, no n'hi ha prou amb fer-ho una vegada: cal ==comparar==. Prepares ==dos tubs iguals== que només es diferencien en ==una sola cosa==: un ==AMB sabó== i un ==SENSE==. Això que canvies a propòsit és la ==variable independent (VI)==. Allò que mesures per veure l'efecte (en quin tub apareix més ADN) és la ==variable dependent (VD)==. Tota la resta (temperatura, quantitat de mostra, temps) s'ha de ==mantenir igual==. A més, un tub ==sense mostra== és el ==control negatiu==: ha de sortir ==buit==; si hi apareix alguna cosa, el resultat no és fiable.",
+      type: "concept"
     }
   ],
 
@@ -164,7 +171,7 @@ export const sa3s2 = {
 
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa3-s2-fitxa-A.html", B: "/fitxes/sa3-s2-fitxa-B.html", C: "/fitxes/sa3-s2-fitxa-C.html" },
-  teoriaPdfUrl: null,
+  teoriaPdfUrl: "/teoria/sa3-s2-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: dissenya l'experiment «cal el sabó?» amb VI, VD, hipòtesi amb direcció i control negatiu, i respon a la pregunta clau: has vist l'ADN o una massa blanca que dedueixes que és ADN?",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────

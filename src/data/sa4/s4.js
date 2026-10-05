@@ -25,6 +25,11 @@ export const sa4s4 = {
       "Explico amb les meves paraules per què l'hemofília i el daltonisme afecten més els homes (només tenen una X).",
       "Omplo un quadre de Punnett d'un cas lligat al X (mare portadora × pare sa) i dic quina proporció de fills i filles pot estar afectada o ser portadora.",
       "Identifico què és una portadora en un pedigrí i explico per què pot transmetre una malaltia sense patir-la."
+    ],
+    C: [
+      "Dic que les dones són XX, els homes XY, i que la Y la dona el pare.",
+      "Omplo un quadre de Punnett mare portadora × pare sa, separant fills i filles.",
+      "Explico què és una portadora: està sana però pot passar la malaltia."
     ]
   },
 
@@ -84,7 +89,8 @@ export const sa4s4 = {
     "Redacteu l'informe: quin risc té un fill de ser afectat? i una filla? què vol dir «portadora»? Doneu probabilitats, no ordres"
   ],
   exploreDuration: "25 min",
-  appSrc: null,
+  appSrc: "/apps/app_pedigri_x.html",
+  appApartat: "2",
   exploreNote: "Demostració a l'aula: cada equip presenta el seu informe de consell genètic a un altre equip, que fa de família i ha de decidir si l'informe és clar i honest (dona probabilitats, distingeix fills i filles, no els diu què han de fer). Si la «família» no ho entén, l'informe no és prou bo.",
 
   // ── EXPLICA ───────────────────────────────────────────────
@@ -127,8 +133,11 @@ export const sa4s4 = {
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
-  fitxaUrl: { A: "/fitxes/sa4-s4-fitxa-A.html", B: "/fitxes/sa4-s4-fitxa-B.html" },
-  teoriaPdfUrl: null,
+  fitxaUrl: { A: "/fitxes/sa4-s4-fitxa-A.html", B: "/fitxes/sa4-s4-fitxa-B.html", C: "/fitxes/sa4-s4-fitxa-C.html" },
+  sessionMaterials: [
+    { id: "rubrica-poster", title: "Rúbrica del pòster Heredity ID (també per coavaluar)", url: "/fitxes/sa4-rubrica-poster-heredity.html", who: "alumnat" }
+  ],
+  teoriaPdfUrl: "/teoria/sa4-s4-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a la família del hook (avi hemofílic, néts afectats) i explica amb els genotips per què la malaltia va saltar la generació dels fills i va reaparèixer en els néts. Després, tanca l'informe de consell genètic separant clarament el risc dels fills i el de les filles.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────
@@ -159,7 +168,7 @@ export const sa4s4 = {
         title: "Herència lligada al X",
         time: "40 min",
         phase: "explica",
-        instruction: "Aprèn la notació X^H / X^h. Resol el creuament mare portadora × pare sa i separa el resultat en fills (XY) i filles (XX). Explica per què afecta més els homes.",
+        instruction: "Aprèn la notació X^H / X^h. Resol el creuament mare portadora × pare sa i separa el resultat en fills (XY) i filles (XX). Explica per què afecta més els homes. Després, amb l'app «Detectiu de pedigrís», marca el cas de l'avi i prova altres famílies: decideix abans de comprovar si encaixa amb l'herència autosòmica, amb la lligada al X o amb totes dues, i anota quina dada descarta el model del X.",
         hints: [
           "L'home només té una X (hemizigot): el que hi ha s'expressa sí o sí.",
           "La dona té dues X: una sana pot tapar la malalta → portadora (sana però la transmet)."
@@ -182,7 +191,7 @@ export const sa4s4 = {
   // ── EXIT TIQUET ──────────────────────────────────────────
   // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
   // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: "/fitxes/sa4-s4-exit-ticket.html",
+  exitTicketUrl: { A: "/fitxes/sa4-s4-exit-ticket.html", B: "/fitxes/sa4-s4-exit-ticket.html", C: "/fitxes/sa4-s4-exit-ticket-C.html" },
   exitTicketType: "paper",
   exitTicketCriteri: "4.1",  // criteri imprès al tiquet (build_tickets.py)
   exitTicketDuration: "10 min",

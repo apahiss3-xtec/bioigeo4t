@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rúbrica · Maqueta del cicle i informe diagnòstic · SA2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#173328;--rule:#B9C9C2;--tint:#F3F8F5;--muted:#4F625B;
+  --g1:#DCEAD6;--g2:#A9CDA2;--g3:#6BA567;--g4:#2E5D2C;}
+*{box-sizing:border-box;}
+body{margin:0;background:#fff;font-family:"Fira Sans Extra Condensed","Fira Sans Condensed",
+  "Arial Narrow",Arial,sans-serif;color:var(--ink);}
+.page{width:297mm;min-height:210mm;margin:12px auto;background:#fff;padding:9mm 11mm;
+  border:1px solid #D6DED9;}
+.head{display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--g4);
+  padding-bottom:7px;margin-bottom:8px;}
+.head .ico{font-size:30px;line-height:1;}
+.head h1{margin:0;font-size:20px;text-transform:uppercase;color:var(--g4);letter-spacing:.01em;}
+.head .sub{font-size:11.5px;color:var(--muted);margin-top:1px;}
+.ident{margin-left:auto;font-size:11px;text-align:right;line-height:1.7;white-space:nowrap;}
+.ident span{display:inline-block;border-bottom:1.5px solid var(--ink);min-width:52mm;}
+.intro{border:1.5px solid var(--g3);border-left:5px solid var(--g4);padding:6px 10px;font-size:11px;
+  line-height:1.42;border-radius:0 7px 7px 0;margin-bottom:8px;}
+table{width:100%;border-collapse:collapse;font-size:10.2px;}
+th,td{border:1px solid var(--rule);padding:4.5px 6px;vertical-align:top;line-height:1.3;}
+thead th{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;text-align:center;}
+thead th.q{background:#fff;color:var(--ink);text-align:left;width:19%;border-bottom:2px solid var(--ink);}
+thead th.h-na{background:var(--g1);color:var(--ink);}
+thead th.h-as{background:var(--g2);color:var(--ink);}
+thead th.h-an{background:var(--g3);color:var(--ink);}
+thead th.h-ae{background:var(--g4);color:#fff;}
+thead th small{display:block;font-size:9px;letter-spacing:0;text-transform:none;font-weight:600;}
+thead th.mark{background:#fff;color:var(--ink);}
+tbody th{background:var(--tint);text-align:left;font-size:10.8px;color:var(--g4);width:19%;}
+tbody th small{display:block;color:var(--muted);font-weight:400;font-size:9.3px;margin-top:2px;}
+tbody th .pes{display:inline-block;margin-top:3px;font-size:8.8px;font-weight:800;color:#fff;
+  background:var(--g4);border-radius:3px;padding:0 4px;text-transform:uppercase;letter-spacing:.04em;}
+tr.bloc td{background:#fff;border-left:0;border-right:0;padding:6px 0 3px;font-weight:800;font-size:10.8px;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--g4);border-bottom:2px solid var(--g4);}
+.lvl{display:inline-block;font-weight:800;font-size:9px;letter-spacing:.05em;border-radius:3px;
+  padding:0 4px;margin-right:3px;border:1px solid var(--g4);}
+.lvl.na{background:var(--g1);color:var(--ink);}.lvl.as{background:var(--g2);color:var(--ink);}
+.lvl.an{background:var(--g3);color:var(--ink);}.lvl.ae{background:var(--g4);color:#fff;}
+.mark{width:4.5%;text-align:center;}
+.note{margin-top:8px;font-size:10.3px;line-height:1.45;border:1.5px solid var(--g2);
+  border-left:5px solid var(--g3);padding:6px 10px;border-radius:0 7px 7px 0;}
+.crit{margin-top:7px;font-size:8.6px;line-height:1.35;color:var(--muted);columns:2;column-gap:7mm;}
+.crit p{margin:0 0 3px;break-inside:avoid;}
+.crit b{color:var(--ink);}
+.foot{margin-top:7px;padding-top:5px;border-top:1.6px solid var(--rule);display:flex;
+  justify-content:space-between;font-size:9.5px;color:var(--muted);}
+.noprint{text-align:center;margin:10px;}
+.noprint button{font:inherit;font-size:13px;padding:7px 16px;border:0;border-radius:7px;
+  background:var(--g4);color:#fff;cursor:pointer;}
+@media print{.page{margin:0;border:0;}
+  .noprint{display:none;}@page{size:A4 landscape;margin:0;}}
+</style>
+</head>
+<body>
+<div class="noprint"><button onclick="window.print()">🖨 Imprimir / PDF (A4 apaïsat)</button></div>
+
+<div class="page">
+  <div class="head">
+    <span class="ico">🧬</span>
+    <div>
+      <h1>Rúbrica · Maqueta del cicle + informe diagnòstic</h1>
+      <div class="sub">SA2 · La cèl·lula que es divideix · producte final de la unitat · Biologia i Geologia 4t ESO · IE Temple</div>
+    </div>
+    <div class="ident">Nom: <span></span><br>Data: <span></span></div>
+  </div>
+
+  <div class="intro"><strong>Què has de fer.</strong> El producte final té tres peces que es van construint al llarg de la SA: la <strong>maqueta</strong> de la mitosi i la meiosi a partir de la mateixa cèl·lula (S2), les <strong>dades de l'índex mitòtic</strong> del teu pacient, abans i després del fàrmac (S3), i l'<strong>informe final de diagnòstic</strong> dels casos clínics, que defenses davant d'una altra parella (S4). <strong>Llegeix aquesta rúbrica abans de començar la maqueta</strong>: et diu exactament què es valora a cada peça.</div>
+
+  <table>
+    <thead><tr><th class="q">Què es valora</th><th class="mark">✓</th><th class="h-na">No assoliment</th><th class="mark">✓</th><th class="h-as">Assoliment satisfactori</th><th class="mark">✓</th><th class="h-an">Assoliment notable</th><th class="mark">✓</th><th class="h-ae">Assoliment excel·lent</th></tr></thead>
+    <tbody>
+      <tr><th>1. Rigor del model (la maqueta)<small>CE1 · 1.1 — interpretar un model</small><br><span class="pes">nucli</span></th><td class="mark"></td><td><span class="lvl na">NA</span> Encara confonc la mitosi i la meiosi a la maqueta, o no parteixo de la mateixa cèl·lula.</td><td class="mark"></td><td><span class="lvl as">AS</span> Faig les dues divisions des de la mateixa cèl·lula i compto bé quantes cèl·lules surten de cadascuna.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, cada cèl·lula filla té el nombre correcte de cromosomes i, a la meiosi, un de cada parella; faig servir el codi (mida = parella, vermell/blau = mare/pare).</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, faig servir la maqueta per explicar per què la meiosi dona combinacions diferents i dic en què el model no s'assembla a una cèl·lula real.</td></tr>
+      <tr><th>2. Ús de les dades de l'índex mitòtic<small>CE3 · 3.3 — interpretar resultats amb eines matemàtiques</small></th><td class="mark"></td><td><span class="lvl na">NA</span> No compto les cèl·lules o no arribo a calcular l'índex mitòtic.</td><td class="mark"></td><td><span class="lvl as">AS</span> Compto el total de cèl·lules i les que es divideixen i calculo l'índex abans i després del fàrmac.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, comparo els dos índexs (i el control) i decideixo amb els números si el fàrmac funciona.</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, valoro els límits de les meves dades (quantes cèl·lules, un sol ratolí, el camp triat) i dic què caldria per estar-ne segur.</td></tr>
+      <tr><th>3. Conclusió argumentada (l'informe)<small>CE4 · 4.1 — explicar processos amb dades i raonament</small><br><span class="pes">nucli</span></th><td class="mark"></td><td><span class="lvl na">NA</span> Dono un diagnòstic sense justificar-lo, o el procés que proposo no encaixa amb el cas.</td><td class="mark"></td><td><span class="lvl as">AS</span> Encerto el procés de cada cas (mitosi normal / mitosi descontrolada / error de meiosi) i cito alguna dada.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, justifico cada diagnòstic amb la dada que el demostra i amb el que passa amb els cromosomes.</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, dic per a cada cas quina dada nova em faria canviar el diagnòstic.</td></tr>
+      <tr><th>4. Comunicació i defensa<small>CE1 · 1.1 — defensar amb criteri opinions fonamentades</small></th><td class="mark"></td><td><span class="lvl na">NA</span> L'informe està incomplet o no s'entén què concloc.</td><td class="mark"></td><td><span class="lvl as">AS</span> L'informe és complet i ordenat: un apartat per cas, amb el diagnòstic ben visible.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, faig servir el vocabulari precís (cromàtide, homòlegs, diploide/haploide, índex mitòtic) i defenso l'informe davant d'una altra parella.</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, responc les objeccions de l'altra parella amb dades i, si em convencen, corregeixo el que calgui i ho dic.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note"><strong>Com es tradueix a la nota.</strong> No hi ha punts: cada fila s'assoleix per nivells (<strong>NA</strong> · <strong>AS</strong> · <strong>AN</strong> · <strong>AE</strong>). El nivell global surt de les files <strong>1</strong> i <strong>3</strong> (el model i la conclusió són el nucli de la SA); les altres dues el poden pujar o baixar <strong>un sol esglaó</strong>. Una maqueta molt bonica amb els cromosomes mal repartits no arriba a AN. <br><strong>Abans d'entregar:</strong> marca tu mateix/a on creus que ets a cada fila. Si no saps quina casella marcar, aquella peça encara no està acabada.</div>
+
+  <div class="crit"><p><b>Criteris d'avaluació (Decret 175/2022, text literal):</b></p><p><b>1.1</b> Analitzar conceptes, fenòmens i processos relacionats amb els sabers de la biologia i la geologia, interpretant informació en diferents formats (models, gràfics, taules, diagrames, fórmules, esquemes, símbols, pàgines web…), mantenint una actitud crítica i obtenint conclusions fonamentades en raons científiques i defensant amb criteri opinions pròpies fonamentades.</p><p><b>3.3</b> Portar a terme l&#x27;experimentació plantejada fent servir els instruments, eines o tècniques adequades amb correcció i interpretar-ne els resultats quan sigui necessari amb eines matemàtiques i tecnològiques per obtenir conclusions raonades i fonamentades o valorar la impossibilitat de fer-ho.</p><p><b>4.1</b> Resoldre problemes o donar explicació a processos biològics o geològics utilitzant coneixements, dades i informació aportades, el raonament lògic, el pensament computacional o recursos digitals.</p></div>
+
+  <div class="foot">
+    <span>SA2 · S1–S4 · Rúbrica del producte final · Biologia i Geologia 4t ESO · IE Temple</span>
+    <span>CC BY-NC · Albert Pahissa</span>
+  </div>
+</div>
+</body>
+</html>

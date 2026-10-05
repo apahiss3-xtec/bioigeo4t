@@ -38,12 +38,12 @@ body{font-family:'Fira Sans Extra Condensed',sans-serif;background:#c9c5dd;color
 span[contenteditable]{display:inline-block}
 .wline{display:block;width:100%;min-height:74px;background:#fff;outline:none;padding:5px 5px;border-bottom:1.5px solid var(--rule-dark);word-break:break-word;cursor:text;line-height:2.0}
 .wline:focus{border-bottom-color:var(--teal);background:rgba(55,48,107,.04)}
-.wline.tall{min-height:120px}
-.wline.xtall{min-height:152px}
-.wline.xxtall{min-height:200px}
-.wline.short{min-height:52px}
-.wline.huge{min-height:340px}
-.fill-cell.xbig{min-height:112px}
+.wline.tall{min-height:72px}
+.wline.xtall{min-height:91px}
+.wline.xxtall{min-height:120px}
+.wline.short{min-height:31px}
+.wline.huge{min-height:204px}
+.fill-cell.xbig{min-height:67px}
 .nom-field{margin-left:auto;font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:6px;flex-shrink:0}
 .input-span{display:inline-block;min-width:100px;border-bottom:1.5px solid var(--rule-dark);font-size:11.5px;padding:1px 3px;outline:none;vertical-align:bottom;min-height:16px;font-family:'Fira Sans Extra Condensed',sans-serif;color:var(--ink)}
 .input-span.data-span{min-width:70px}
@@ -97,7 +97,7 @@ span[contenteditable]{display:inline-block}
 .data-table tr:nth-child(even) td{background:var(--teal-tint)}
 .fill-cell{display:block;width:100%;min-height:64px;outline:none;padding:3px;word-break:break-word;cursor:text;line-height:1.7}
 .fill-cell.small{min-height:38px}
-.fill-cell.big{min-height:96px}
+.fill-cell.big{min-height:57px}
 .fill-cell:focus{background:rgba(55,48,107,.08);outline:1px solid var(--teal-light);border-radius:2px}
 .label-cell{font-size:12px;font-weight:700;color:var(--ink-2)}
 .paste-cell{display:block;width:100%;min-height:88px;border:1.6px dashed var(--teal-light);border-radius:6px;background:repeating-linear-gradient(45deg,transparent,transparent 7px,rgba(55,48,107,.035) 7px,rgba(55,48,107,.035) 14px);position:relative}
@@ -135,6 +135,8 @@ span[contenteditable]{display:inline-block}
   .spacer-label{display:none!important}
   .fig,.data-table,.scaffold-box,.challenge-box,.epist-box,.abp-note,.paste-cell{break-inside:avoid;page-break-inside:avoid}
 }
+@media print{img.fig{display:block;width:80%!important;margin:4px auto!important}}
+img.fig{display:block;width:56%!important;margin:4px auto!important}@media print{.data-table{break-inside:auto!important;page-break-inside:auto!important}.scaffold-box,.epist-box,.challenge-box,.abp-note{break-inside:auto!important}}
 </style>
 </head><body>
 <div id="toolbar">
@@ -188,8 +190,6 @@ span[contenteditable]{display:inline-block}
 <tr><td class="label-cell">Per qu&egrave; aquest resultat va sorprendre tanta gent?</td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">Qu&egrave; NO s'hi va obtenir, tot i que els diaris ho van dir?</td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
 <p style="font-size:12px;margin:8px 0 3px"><b>1b.</b> Explica amb les teves paraules quina difer&egrave;ncia hi ha entre aquestes dues frases: <i>&laquo;s'han format les pe&ccedil;es dels &eacute;ssers vius&raquo;</i> i <i>&laquo;s'ha format un &eacute;sser viu&raquo;</i>.</p><div class="wline tall" contenteditable="true"></div>
-<div class="scaffold-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div><div class="scaffold-title">&#129681; Bastida per a 1c</div><div class="scaffold-text">Avui es pensa que l'atmosfera primitiva <b>no</b> era com la que Miller va posar a l'aparell: tenia sobretot di&ograve;xid de carboni i nitrogen. Davant d'una objecci&oacute; aix&iacute; nom&eacute;s hi ha tres sortides possibles: <b>llen&ccedil;ar</b> la hip&ograve;tesi, <b>ignorar</b> l'objecci&oacute; o <b>modificar</b> la hip&ograve;tesi (per exemple: potser aquestes reaccions passaven nom&eacute;s en llocs concrets, com prop dels volcans). Pensa quina de les tres deixa la hip&ograve;tesi encara <b>comprovable</b>.</div></div></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>1c.</b> Tria una de les tres sortides i <b>justifica-la</b>: per qu&egrave; aquesta i no les altres dues?</p><div class="wline tall" contenteditable="true"></div>
 </div>
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#241F4A">2</div><div><span class="stitle">El comit&egrave;: col&middot;loqueu les proves</span><div class="sdesc">En equip &middot; dossier retallable</div></div></div><div class="divider"></div>
@@ -214,8 +214,6 @@ span[contenteditable]{display:inline-block}
 <tr><td class="label-cell">M&oacute;n ARN</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr>
 <tr><td class="label-cell">Fumaroles</td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
 <p style="font-size:12px;margin:8px 0 3px"><b>3b.</b> La pansp&egrave;rmia no ataca cap dels tres problemes. Per qu&egrave; no? Qu&egrave; fa, en lloc de respondre la pregunta?</p><div class="wline" contenteditable="true"></div>
-<img class="fig" src="../images/sa7-s3-finestra-temps.svg" alt="La finestra de temps" style="margin:4px 0"><p class="figcap">Fig.3 &middot; Amb les dades de la sessi&oacute; passada.</p>
-<p style="font-size:12px;margin:8px 0 3px"><b>3c.</b> Mira la Fig.3 i calcula quants milions d'anys dura <b>la finestra verda</b> (de 3.900 Ma als <b>primers</b> indicis de vida). Escriu la resta que has fet.</p><div class="wline short" contenteditable="true"></div>
 </div>
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#B0821F">4</div><div><span class="stitle">El dictamen del comit&egrave;</span><div class="sdesc">En equip &middot; document avaluable</div></div></div><div class="divider"></div>
@@ -241,7 +239,6 @@ span[contenteditable]{display:inline-block}
 <table class="data-table"><tr><th style="width:22%">De quina proposta &eacute;s</th><th style="width:44%">La prova</th><th style="width:34%">D'on l'he treta</th></tr>
 <tr><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td><td><span class="fill-cell" contenteditable="true"></span></td></tr></table>
 <p style="font-size:12px;margin:8px 0 3px"><b>5b.</b> Aquella font, &eacute;s <b>fiable</b>? Comprova-ho com a la SA1: se sap <b>qui</b> ho ha escrit? hi ha una <b>instituci&oacute;</b> al darrere? per <b>qu&egrave;</b> ho publiquen? es pot <b>verificar</b> en una altra banda?</p><div class="wline tall" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>5c.</b> Anota <b>una idea d'un altre equip</b> que t'hagi fet dubtar del teu ordre.</p><div class="wline short" contenteditable="true"></div>
 </div>
 
 <div class="section"><div class="section-header"><div class="snum" style="background:#c8960a">6</div><div><span class="stitle">Exit tiquet i metacognici&oacute;</span><div class="sdesc">Individual &middot; es lliura</div></div></div><div class="divider"></div>
@@ -253,7 +250,6 @@ span[contenteditable]{display:inline-block}
 <tr><td class="label-cell" style="text-align:center">&#9744;</td><td style="font-size:12px">Perqu&egrave; s'ha trobat ARN dins dels meteorits que cauen a la Terra</td></tr>
 <tr><td class="label-cell" style="text-align:center">&#9744;</td><td style="font-size:12px">Perqu&egrave; l'ARN es forma tot sol amb facilitat a l'aigua calenta del fons del mar</td></tr></table>
 <div class="wline short" contenteditable="true"></div>
-<p style="font-size:12px;margin:8px 0 3px"><b>6c.</b> Un equip publica que, en condicions com les d'una fumarola, s'hi podrien formar cadenes curtes d'ARN, i diu exactament quines condicions caldria muntar al laboratori per comprovar-ho. Digues si aix&ograve; es pot tractar com una hip&ograve;tesi cient&iacute;fica i <b>per qu&egrave;</b>, fent servir les dues preguntes de la Fig.4.</p><div class="wline tall" contenteditable="true"></div>
 <div class="meta-oa-box deletable"><div class="del-btn" onclick="deleteEl(this)">&#10005;</div><div class="meta-oa-title">Metacognici&oacute;</div>
 <p style="font-size:12px;margin-bottom:3px">Torna a l'apartat 0. Qu&egrave; hi afegiries ara sobre qu&egrave; li falta a un mont&oacute; de mol&egrave;cules per ser un &eacute;sser viu?</p><div class="wline" contenteditable="true"></div>
 <p style="font-size:12px;margin:6px 0 3px">Hi ha alguna proposta que t'agrad&eacute;s m&eacute;s <b>abans</b> de mirar les proves i que hagi baixat de lloc despr&eacute;s?</p><div class="wline" contenteditable="true"></div>

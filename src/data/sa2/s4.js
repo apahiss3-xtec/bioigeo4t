@@ -159,7 +159,10 @@ export const sa2s4 = {
 
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s4-fitxa-A.html", B: "/fitxes/sa2-s4-fitxa-B.html", C: "/fitxes/sa2-s4-fitxa-C.html" },
-  teoriaPdfUrl: null,
+  sessionMaterials: [
+    { id: "rubrica-producte", title: "Rúbrica del producte final: maqueta del cicle + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
+  ],
+  teoriaPdfUrl: "/teoria/sa2-s4-teoria.pdf",
   elaborateNote: "Tancament de la SA2: torna a les tres frases inicials (apartat 0) i reescriu-les si cal amb el que has après avui. Aquesta sessió prepara directament la prova de La cèl·lula.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────

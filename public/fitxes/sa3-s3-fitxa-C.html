@@ -268,6 +268,23 @@ span[contenteditable]{display:inline-block}
 .compta-s{font-size:11px;color:var(--muted);margin-bottom:5px;line-height:1.5}
 .compta-caixa{height:40px;border:1.5px solid var(--rule-dark);border-radius:6px;background:#fff}
 
+/* ── Quadre de Punnett amb bastida (SA4, 04/10/2026) ── caselles ja dibuixades;
+   els gàmetes donats van en negreta i els que falten queden en blanc. */
+.punnett-c{border-collapse:collapse;margin:6px auto 4px}
+.punnett-c td{border:1.6px solid var(--rule-dark);width:78px;height:46px;text-align:center;
+  vertical-align:middle;font-size:16px;font-weight:800;background:#fff}
+.punnett-c .corner{color:var(--muted);font-size:11px;font-weight:700;line-height:1.5}
+.punnett-c .gam{background:var(--c-tint);color:var(--c-ink);font-weight:900}
+.punnett-c .gam-buit{background:var(--c-tint)}
+.banc{font-size:14.5px;margin:6px 0 8px;padding:6px 10px;border:1.6px dashed var(--c-light);
+  border-radius:9px;background:#fff;text-align:center;line-height:1.8}
+.banc b{color:var(--c-ink);margin:0 3px}
+.banc .banc-t{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:6px}
+/* el bloc de llegibilitat alinea td a l'esquerra: el Punnett va centrat */
+.sheet-body .punnett-c td,#doc .punnett-c td{text-align:center}
+/* capçaleres amb genotips (Aa, aa, Xʰ…): sense majúscules forçades */
+.data-table th.geno{text-transform:none;letter-spacing:0;font-size:14.5px}
+
 /* ══════════════════════════════════════════════════════════════
    LLEGIBILITAT-C v1 — llegibilitat de la Versió C (dislèxia). 09/09/2026.
    Cos en 'Fira Sans Condensed' (mateixa família que l'Extra Condensed
