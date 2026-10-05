@@ -109,6 +109,10 @@ export const sa2s1 = {
       apartat: "2",
       heading: "Abans de res: què és un ==cromosoma==?",
       text: "L'ADN és un ==fil llarguíssim==. Quan la cèl·lula s'ha de dividir, el fil ==s'enrotlla== i es fa gruixut i curt: això és un ==cromosoma|p==, un bastonet (I). Abans de dividir-se, la cèl·lula ==copia== cada cromosoma i les dues còpies queden enganxades pel mig: fan una ==X==. Compte: ==una X és UN cromosoma== (copiat), no dos. Pensa en ==mitjons==: tens parells de mitjons de ==mides diferents== (cada mida és un tipus de cromosoma), i de cada parell un és de la ==mare|r== i l'altre del ==pare|b==. Als esquemes, el color diu d'on ve i la mida quin tipus és. Les teves cèl·lules en tenen 46 (23 parells); als dibuixos en fem servir només 4 (2 parells) perquè es vegi clar.",
+      image: "/images/sa2-s1-adn-a-cromosoma.webp",
+      imageWide: true,
+      imageTitle: "De l'ADN al cromosoma: com es compacta el fil",
+      imageCaption: "La doble hèlix (1) s'enrotlla al voltant de proteïnes, les histones (2-4), i es plega en fibres (5) i bucles (6) cada cop més compactes fins a formar el cromosoma (7-8). La X de la dreta és UN cromosoma copiat: dues cromàtides idèntiques enganxades pel mig.",
       type: "concept"
     },
     {

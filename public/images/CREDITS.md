@@ -103,3 +103,18 @@ més grossa. Autoria: Albert Pahissa · mateixa llicència que la fitxa (CC BY-N
 > **Emojis dins d'aquests SVG** (📊 🎓 💭 · 🚫 🙉 🎩 · ✅ ⏳ ❌ · 🩹 🧬 ⚠️): cap no fa
 > d'**il·lustració científica**. Són mnemotècnics d'idees abstractes (una garantia, un senyal
 > d'alerta, un calaix), que és l'ús que el criteri 7 deixa passar. Anotat, no retirat.
+
+## Material gràfic afegit a 4t (octubre 2026)
+
+Imatges de tercers: només amb llicència lliure, retolades en català i amb l'autoria al peu de la figura.
+
+| Fitxer | Sessió | Origen i llicència |
+|---|---|---|
+| `cariotip-huma.webp` | SA2·S2, SA4·S4 | Cariotip humà, NHGRI (domini públic), Wikimedia Commons; retolació pròpia |
+| `sa5-s1-pinsans.webp` | SA5·S1 | Fotos de pinsans de Darwin: Kiwi Rex, Wikimedia Commons, CC BY-SA 4.0; retolació pròpia |
+| `sa5-s2-homologia-reals.webp` | SA5·S2 | Homologia d'extremitats: Vladlen666 (Волков Владислав Петрович), Wikimedia Commons, CC BY-SA 4.0; retolació en català |
+| `sa5-s3-arna-seleccio.webp` | SA5·S3 | Foto d'arnes: Martinowksy (Maarten Sanne), Wikimedia Commons, CC BY-SA 3.0; esquemes propis |
+| `sa7-s1-sistema-solar.webp` | SA7·S1 | Foto HL Tau: ALMA (ESO/NAOJ/NRAO), CC BY 4.0; esquemes propis |
+| `sa2-s1-adn-a-cromosoma.webp`, `sa2-s2-segregacio-atzar.webp`, `sa2-s3-cancer-cicle.webp`, `sa4-s1-alels-genotip.webp`, `sa4-s2-mendel-p-f1-f2.webp`, `sa7-s1-expansio.webp` | SA2, SA4, SA7 | Dibuix propi (Temple Obert), CC BY-NC-SA; cromosomes amb la convenció del curs |
+
+Font dels SVG: carpeta `_img/src` i `scripts/_esquemes-sa2/`.

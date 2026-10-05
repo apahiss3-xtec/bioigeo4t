@@ -120,6 +120,10 @@ export const sa4s2 = {
       apartat: "3",
       heading: "Les ==dues lleis de Mendel==",
       text: "==1a llei (uniformitat):== si creues dos homozigots purs diferents (AA × aa), tota la ==primera generació== surt igual (Aa, dominant). ==2a llei (segregació):== els dos al·lels d'un individu se separen a l'atzar als gàmetes; per això, en creuar dos heterozigots, el recessiu ==reapareix== en proporció ==3:1==. La 2a llei és, de fet, el que fas amb les monedes.",
+      image: "/images/sa4-s2-mendel-p-f1-f2.webp",
+      imageWide: true,
+      imageTitle: "Mendel: de P a F2",
+      imageCaption: "Pèsols de flor porpra (A, dominant) i blanca (a, recessiva). 1a llei: tota la F1 és Aa i porpra. 2a llei: en la F2 el blanc reapareix en proporció 3:1 (genotips 1 AA : 2 Aa : 1 aa).",
       type: "concept"
     },
     {

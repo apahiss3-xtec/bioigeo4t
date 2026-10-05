@@ -108,6 +108,10 @@ export const sa7s1 = {
       apartat: "2",
       heading: "El ==Big Bang== i les tres proves que el sostenen",
       text: "El model del ==Big Bang== diu que fa uns ==13.800 milions d'anys== tot el que existeix estava concentrat en un estat extremadament ==dens== i ==calent==, i que des d'aleshores l'univers s'==expandeix== i es ==refreda==. Atenció a una confusió molt estesa: no va ser una ==explosió== dins d'un espai que ja hi era, sinó l'expansió de l'==espai== mateix, i per això no té ==centre==. Tres proves independents el sostenen: (1) l'==expansió==: totes les galàxies llunyanes s'allunyen i com més lluny són, més de pressa ho fan, cosa que, mirada enrere, vol dir que abans estaven més ==juntes==; (2) la ==radiació còsmica de fons==, una llum molt freda i molt uniforme que banya tot el cel i que és la llum més ==antiga== que existeix; (3) l'==abundància== d'hidrogen i heli de l'univers, que coincideix amb la que el model prediu. Cap prova sola seria concloent: la força ve que ==tres proves diferents== apunten al mateix.",
+      image: "/images/sa7-s1-expansio.webp",
+      imageWide: true,
+      imageTitle: "L'univers s'expandeix: l'espai s'estira",
+      imageCaption: "Esquema simplificat (no a escala): amb el temps l'espai s'estira i totes les galàxies s'allunyen entre elles; des de qualsevol galàxia es veuria el mateix, per això no hi ha centre.",
       type: "concept"
     },
     {
@@ -115,6 +119,10 @@ export const sa7s1 = {
       apartat: "3",
       heading: "Del núvol de pols al ==sistema solar==: com es va fer la Terra",
       text: "Fa uns ==4.600 milions d'anys==, en un racó d'una galàxia corrent, un núvol de ==gas i pols== va començar a contreure's per la ==gravetat==. La major part de la massa va anar al centre fins que s'hi va encendre la ==fusió nuclear==: aquell és el ==Sol==. La resta va quedar girant en un ==disc==, i allà els grans de pols van xocar i enganxar-se en cossos cada cop més grans fins a formar els ==planetes==. A prop del Sol feia massa calor perquè els gels i els gasos lleugers s'hi quedessin, i per això hi van resultar planetes petits i ==rocosos==; lluny, en canvi, es van formar els ==gegants gasosos==. La conseqüència que costa d'assimilar: el Sol, la Terra, la Lluna i els àtoms del teu cos venen del ==mateix== núvol i tenen aproximadament la mateixa ==edat==.",
+      image: "/images/sa7-s1-sistema-solar.webp",
+      imageWide: true,
+      imageTitle: "Com es va formar el sistema solar",
+      imageCaption: "De núvol de gas i pols a estrella amb planetes (esquemes simplificats, no a escala) i un disc real: HL Tau. Foto: ALMA (ESO/NAOJ/NRAO), CC BY 4.0; esquemes propis.",
       type: "concept"
     },
     {

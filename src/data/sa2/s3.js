@@ -138,6 +138,10 @@ export const sa2s3 = {
       apartat: "4",
       heading: "El càncer: el cicle ==sense control==",
       text: "Una cèl·lula normal ==s'atura== de dividir-se quan toca (hi ha uns ==controls== del cicle). Al ==càncer|r==, aquests controls ==fallen== i la cèl·lula es divideix sense parar → es forma un ==tumor==. Els fàrmacs antimitòtics ==aturen la divisió==, per això baixa l'índex mitòtic. Però ataquen TOTES les cèl·lules que es divideixen molt, també les ==sanes|o== (cabell, intestí, sang): per això la ==quimioteràpia== té efectes secundaris.",
+      image: "/images/sa2-s3-cancer-cicle.webp",
+      imageWide: true,
+      imageTitle: "Control del cicle: cèl·lula normal i tumoral",
+      imageCaption: "A l'esquerra, una cèl·lula sana es divideix quan cal i s'atura. A la dreta, en una cèl·lula tumoral els controls fallen i la divisió no s'atura: s'acumulen cèl·lules i es forma un tumor.",
       type: "concept"
     },
     {

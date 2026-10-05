@@ -105,6 +105,10 @@ export const sa4s1 = {
       apartat: "2",
       heading: "==Gen== i ==al·lel==: el tema i les seves versions",
       text: "Un ==gen== és un tros d'ADN amb la informació per a un caràcter (per exemple, poder doblegar la llengua). D'un mateix gen n'hi ha ==versions== diferents: els ==al·lels==. Cada persona en té ==dos==, un heretat del pare i un de la mare. Els escrivim amb una lletra: l'al·lel ==dominant|b== en MAJÚSCULA (A) i el ==recessiu|g== en minúscula (a).",
+      image: "/images/sa4-s1-alels-genotip.webp",
+      imageWide: true,
+      imageTitle: "Gen, al·lel i genotip sobre els cromosomes",
+      imageCaption: "Els dos cromosomes d'una parella tenen el mateix gen al mateix lloc (locus), però cada un pot portar un al·lel diferent. Les combinacions donen els tres genotips: AA, Aa i aa.",
       type: "concept"
     },
     {

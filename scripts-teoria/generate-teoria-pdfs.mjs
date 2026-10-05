@@ -111,16 +111,21 @@ function textCard (tp, accent) {
   const formula = tp.formula
     ? `<div class="formula" style="border-color:${accent}">${escapeHtml(tp.formula)}</div>`
     : ''
-  const inlineImg = tp.image ? (() => {
+  const inlineImg = tp.image && !tp.imageWide ? (() => {
     const url = resolveAsset(tp.image)
     return url ? `<img class="inline-img" src="${url}" alt="" />` : ''
   })() : ''
+  // imageWide: figura gran (moltes etiquetes): no cap en una columna, va a pàgina completa al final
+  const wideRef = tp.image && tp.imageWide
+    ? `<div class="wide-ref">→ Figura gran a la pàgina següent: ${escapeHtml(tp.imageTitle || 'esquema')}</div>`
+    : ''
   return `<div class="card text-card${dashed}" style="border-left-color:${borderColor}">
     ${chip}
     <h3>${renderHighlighted(tp.heading, accent)}</h3>
     <p>${renderHighlighted(tp.text, accent)}</p>
     ${formula}
     ${inlineImg}
+    ${wideRef}
   </div>`
 }
 
@@ -139,6 +144,13 @@ function buildHtml (session) {
     groups.get(key).push(html)
   }
   for (const tp of theoryPoints) addToGroup(tp.apartat, textCard(tp, accent))
+  const wideFigs = theoryPoints.filter((tp) => tp.image && tp.imageWide).map((tp) => {
+    const url = resolveAsset(tp.image)
+    if (!url) return ''
+    const cap = tp.imageCaption ? `<figcaption>${renderHighlighted(tp.imageCaption, accent)}</figcaption>` : ''
+    const title = tp.imageTitle ? `<div class="wide-title" style="color:${accent}">${escapeHtml(tp.imageTitle)}</div>` : ''
+    return `<figure class="wide-fig">${title}<img src="${url}" alt="" />${cap}</figure>`
+  }).join('\n')
   for (const res of graphicResources) addToGroup(res.apartat, imageCard(res, accent))
 
   const sortedKeys = [...groups.keys()].sort((a, b) => a - b)
@@ -269,6 +281,20 @@ function buildHtml (session) {
     border-radius: 1.5mm;
   }
 
+  .wide-ref { margin-top: 1.5mm; font-size: 9px; font-weight: 600; font-style: italic; color: #6b5e5e; }
+  .wide-title { font-family: 'Fira Sans Extra Condensed', sans-serif; font-weight: 700; font-size: 14px; text-align: left; margin-bottom: 2mm; }
+  .wide-fig {
+    break-before: page;
+    break-inside: avoid;
+    margin: 0;
+    border: 1px solid rgba(74,63,63,0.12);
+    border-radius: 1.5mm;
+    padding: 1.5mm;
+    text-align: center;
+  }
+  .wide-fig img { display: block; width: 100%; object-fit: contain; }
+  .wide-fig figcaption { font-size: 10px; color: #6b5e5e; text-align: left; line-height: 1.3; margin-top: 1mm; }
+
   .img-card { border: 1px solid rgba(74,63,63,0.12); text-align: center; }
   .img-card img {
     display: block;
@@ -303,6 +329,7 @@ function buildHtml (session) {
   <div class="flow">
     ${body}
   </div>
+  ${wideFigs}
 </body>
 </html>`
 }

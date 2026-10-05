@@ -105,6 +105,10 @@ export const sa5s3 = {
       apartat: "2",
       heading: "==Mutació → variabilitat → selecció== → canvi de la població",
       text: "Les poblacions canvien per una cadena de quatre passos. Primer, a l'==atzar==, apareix una ==mutació==: una variació nova en l'ADN d'algun individu (un color diferent, una resistència). Ningú la busca. Segon, això crea ==variabilitat==: dins la població hi ha individus diferents. Tercer, l'==ambient== fa la ==selecció==: els individus amb la variació avantatjosa sobreviuen i es reprodueixen més. Quart, generació rere generació, la variació avantatjosa es fa ==majoritària==: la població ha ==canviat==. La clau: la mutació és ==a l'atzar==, però la selecció ==no== —la dirigeix l'ambient.",
+      image: "/images/sa5-s3-arna-seleccio.webp",
+      imageWide: true,
+      imageTitle: "L'arna del bedoll: la cadena de la selecció natural",
+      imageCaption: "L'arna del bedoll (Biston betularia) en dues formes de color. En cada ambient, els ocells mengen les més visibles i la forma camuflada es fa majoritària: mutació a l'atzar, variabilitat, selecció per l'ambient i canvi de la població. Foto: Martinowksy (Maarten Sanne), Wikimedia Commons, CC BY-SA 3.0; retolació i esquemes pròpies.",
       type: "concept"
     },
     {

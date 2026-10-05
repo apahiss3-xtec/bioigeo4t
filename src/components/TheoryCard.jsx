@@ -44,6 +44,16 @@ export default function TheoryCard({ point, index }) {
               {point.formula}
             </p>
           )}
+          {point.image && (
+            <figure className="mt-4 overflow-hidden rounded-xl border border-[var(--rule)] bg-white">
+              <img src={asset(point.image)} alt={point.imageCaption || ''} className="block w-full" loading="lazy" />
+              {point.imageCaption && (
+                <figcaption className="px-4 py-2 text-xs text-[var(--muted)]">
+                  <T>{point.imageCaption}</T>
+                </figcaption>
+              )}
+            </figure>
+          )}
           {point.video && (
             <figure className="mt-4 overflow-hidden rounded-xl border border-[var(--rule)] bg-black">
               <video

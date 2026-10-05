@@ -116,6 +116,10 @@ export const sa2s2 = {
       apartat: "2",
       heading: "La ==meiosi==: dues divisions per fer gàmetes",
       text: "La meiosi fa ==gàmetes== (òvuls i espermatozoides). A partir d'una cèl·lula fa ==dues divisions seguides== i n'obté ==quatre cèl·lules==, cadascuna amb la ==meitat|r== del material genètic: ==un cromosoma de cada parella== (23 en els humans, un de cada tipus). A la primera divisió se separen les ==parelles|b== de cromosomes; a la segona, les còpies. Per això el resultat NO és una còpia idèntica de la cèl·lula original.",
+      image: "/images/cariotip-huma.webp",
+      imageWide: true,
+      imageTitle: "Els 23 parells de cromosomes humans",
+      imageCaption: "Cariotip humà real: els 46 cromosomes ordenats en 23 parells. La meiosi fa gàmetes amb UN cromosoma de cada parella (23 en total). Els colors i les bandes són de la tinció del laboratori: no indiquen si el cromosoma ve de la mare o del pare. Il·lustració: NHGRI (domini públic), retolada en català.",
       type: "concept"
     },
     {
@@ -130,6 +134,10 @@ export const sa2s2 = {
       apartat: "3",
       heading: "La meiosi ==barreja==: per això no som clons",
       text: "Quan la meiosi reparteix els cromosomes, ho fa ==a l'atzar==: de cada parella, uns cops va a un gàmeta el del pare i uns cops el de la mare. Per això cada gàmeta que fabriques porta una ==combinació diferent== del material que vas rebre dels teus pares, i dos germans ==no són idèntics== (llevat dels bessons idèntics). La meiosi és la font de la ==variabilitat== dins d'una espècie.",
+      image: "/images/sa2-s2-segregacio-atzar.webp",
+      imageWide: true,
+      imageTitle: "Dues alineacions, quatre gàmetes diferents",
+      imageCaption: "Les parelles s'alineen a l'equador a l'atzar: el cromosoma de la mare pot anar al mateix pol que el de la mare de l'altra parella (cas 1) o no (cas 2). Així, amb només 2 parelles, ja surten 4 combinacions diferents de gàmetes.",
       type: "concept"
     },
     {

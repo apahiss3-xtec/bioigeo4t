@@ -102,7 +102,11 @@ export const sa5s2 = {
       id: "t1",
       apartat: "1",
       heading: "==Òrgans homòlegs==: mateix esquelet, funcions diferents",
-      text: "Dos òrgans són ==homòlegs== quan tenen la ==mateixa estructura interna== encara que facin funcions diferents. El teu braç, l'ala d'un pollastre, l'ala d'un ratpenat i l'aleta d'una balena semblen molt diferents per fora, però per dins tenen ==els mateixos ossos==: un ==húmer==, un ==radi== i un ==cúbit==, i els ossets de la mà, només canviats de mida i forma. Això s'explica perquè totes vénen d'una ==mateixa estructura de partida== que s'ha anat adaptant a funcions diferents: és la ==divergència evolutiva==. Els òrgans homòlegs són una ==prova de parentiu==: indiquen un ==avantpassat comú==.",
+      text: "Dos òrgans són ==homòlegs== quan tenen la ==mateixa estructura interna== encara que facin funcions diferents. El teu braç, la pota d'un gos, l'ala d'un ocell i l'aleta d'una balena semblen molt diferents per fora, però per dins tenen ==els mateixos ossos==: un ==húmer==, un ==radi== i un ==cúbit==, i els ossets de la mà, només canviats de mida i forma. Això s'explica perquè totes vénen d'una ==mateixa estructura de partida== que s'ha anat adaptant a funcions diferents: és la ==divergència evolutiva==. Els òrgans homòlegs són una ==prova de parentiu==: indiquen un ==avantpassat comú==.",
+      image: "/images/sa5-s2-homologia-reals.webp",
+      imageWide: true,
+      imageTitle: "Mateixos ossos, funcions diferents",
+      imageCaption: "Extremitat anterior d'un humà, un gos, un ocell i una balena: l'húmer, el radi, el cúbit, els ossos del carp i els dits hi són sempre, en el mateix ordre. Canvien la mida i la forma segons la funció. Il·lustració: Vladlen666 (Волков Владислав Петрович), Wikimedia Commons, CC BY-SA 4.0; retolació en català.",
       type: "concept"
     },
     {

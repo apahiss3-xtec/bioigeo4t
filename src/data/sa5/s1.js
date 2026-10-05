@@ -114,6 +114,10 @@ export const sa5s1 = {
       apartat: "3",
       heading: "Què és una ==adaptació==: estructura, funció i ambient",
       text: "Una ==adaptació== és un tret que ajuda un organisme a ==sobreviure o reproduir-se== en el seu ambient. Per reconèixer-ne una, uneix tres coses: una ==estructura== que veus (bec, fulla, ala, arrel), la seva ==funció== (per a què serveix) i l'==ambient== on viu. Si encaixen, és una adaptació: el bec fort del pardal (estructura) trenca llavors dures (funció) allà on hi ha llavors (ambient). Compte: una adaptació ho és ==per a un ambient concret==; si l'ambient canvia, pot deixar de ser avantatjosa.",
+      image: "/images/sa5-s1-pinsans.webp",
+      imageWide: true,
+      imageTitle: "Un bec, una funció: les pinsans de Darwin",
+      imageCaption: "Quatre espècies de pinsans de les illes Galápagos: cada bec (estructura) és una adaptació a un tipus d'aliment (funció) en el seu ambient. Fotos: Kiwi Rex, Wikimedia Commons, CC BY-SA 4.0; retolació pròpia.",
       type: "concept"
     },
     {

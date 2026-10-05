@@ -100,6 +100,10 @@ export const sa4s4 = {
       apartat: "1",
       heading: "La ==determinació del sexe==: XX i XY",
       text: "De les 23 parelles de cromosomes, una és la dels ==cromosomes sexuals==. Les dones són ==XX== i els homes ==XY==. La mare, com que és XX, només pot posar una ==X== a cada òvul. El pare és XY: la meitat dels espermatozoides porten ==X== i l'altra meitat ==Y==. Per això ==és el pare qui determina el sexe== dels fills (segons si l'espermatozoide que fecunda porta X → nena, o Y → nen). La proporció esperada és ==1 nen : 1 nena== (50%).",
+      image: "/images/cariotip-huma.webp",
+      imageWide: true,
+      imageTitle: "El cariotip humà: parell 23 = XX o XY",
+      imageCaption: "Dels 23 parells, el darrer és el dels cromosomes sexuals: XX en les dones, XY en els homes. Fixa't que la Y és molt més petita que la X. Il·lustració: NHGRI (domini públic), retolada en català.",
       type: "concept"
     },
     {
