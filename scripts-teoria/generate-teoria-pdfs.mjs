@@ -12,6 +12,25 @@ const publicDir = path.join(webRoot, 'public')
 const outDir = path.join(publicDir, 'teoria')
 fs.mkdirSync(outDir, { recursive: true })
 
+const SITE = 'https://templeobert.cat/bio-geo-4t/'
+const framesDir = path.join(__dirname, 'frames')
+const sessionUrl = (s) => `${SITE}#/sa/${s.saId}/${s.id}`
+const plain = (t) => String(t || '').replace(/==/g, '').replace(/\|[apogrb]/g, '')
+
+// Fotograma d'una animació HyperFrames (extret dels MP4 de public/animacions) com a miniatura
+function frameFor (video) {
+  if (!video) return null
+  const f = path.join(framesDir, path.basename(video, '.mp4') + '.jpg')
+  return fs.existsSync(f) ? `data:image/jpeg;base64,${fs.readFileSync(f).toString('base64')}` : null
+}
+
+// Avís clicable: el full és de paper, la peça interactiva viu al web
+function webNote (kind, session, label, frame) {
+  const what = kind === 'app' ? 'una app interactiva' : 'una animació'
+  const thumb = frame ? `<span class="wn-thumb"><img src="${frame}" alt="" /><i>▶</i></span>` : `<span class="wn-ico">${kind === 'app' ? '🧪' : '▶'}</span>`
+  return `<a class="web-note" href="${sessionUrl(session)}">${thumb}<span class="wn-txt"><b>Per entendre-ho millor</b>: tens ${what} al web — <b>${escapeHtml(session.saLabelShort)}, sessió ${session.sessionNumber}</b>${label ? ` (${escapeHtml(label)})` : ''}.<em>templeobert.cat/bio-geo-4t</em></span></a>`
+}
+
 const SA_LABEL = { sa2: 'La cèl·lula', sa3: 'El codi de la vida', sa4: 'Herència: el que passa de pares a fills' }
 // Color = color.primary de data/saN/index.js (el fons és blanc: el primary té prou contrast com a text)
 const SA_ACCENT = { sa2: '#7B3F9E', sa3: '#2E4A9E', sa4: '#1E7A70' }
@@ -92,17 +111,17 @@ function apartatKey (v) {
   return Number.isNaN(n) ? 9998 : n
 }
 
-function imageCard (res, accent) {
-  const url = resolveAsset(res.src)
+function imageCard (res, accent, session) {
+  const url = res.embed ? null : resolveAsset(res.src)
   const titleHtml = renderHighlighted(res.title || '', accent)
   const noteHtml = res.note ? `<span class="note">${renderHighlighted(res.note, accent)}</span>` : ''
   return `<figure class="card img-card">
     ${url ? `<img src="${url}" alt="${escapeHtml(res.title || '')}" />` : ''}
-    <figcaption><strong>${escapeHtml(res.id || '')}</strong>${res.id ? ' — ' : ''}${titleHtml}${noteHtml ? `<br/>${noteHtml}` : ''}</figcaption>
+    <figcaption><strong>${escapeHtml(res.id || '')}</strong>${res.id ? ' — ' : ''}${titleHtml}${noteHtml ? `<br/>${noteHtml}` : ''}${(res.embed || /animació/i.test(res.title || '')) ? webNote('video', session, '', null) : ''}</figcaption>
   </figure>`
 }
 
-function textCard (tp, accent) {
+function textCard (tp, accent, session) {
   const meta = TYPE_META[tp.type] || TYPE_META.concept
   const borderColor = meta.border(accent)
   const chipText = tp.badge || meta.label
@@ -117,7 +136,7 @@ function textCard (tp, accent) {
   })() : ''
   // imageWide: figura gran (moltes etiquetes): no cap en una columna, va a pàgina completa al final
   const wideRef = tp.image && tp.imageWide
-    ? `<div class="wide-ref">→ Figura gran a la pàgina següent: ${escapeHtml(tp.imageTitle || 'esquema')}</div>`
+    ? `<div class="wide-ref">→ Figura a continuació: ${escapeHtml(tp.imageTitle || 'esquema')}</div>`
     : ''
   return `<div class="card text-card${dashed}" style="border-left-color:${borderColor}">
     ${chip}
@@ -126,10 +145,12 @@ function textCard (tp, accent) {
     ${formula}
     ${inlineImg}
     ${wideRef}
+    ${tp.video ? webNote('video', session, plain(tp.heading), frameFor(tp.video)) : ''}
   </div>`
 }
 
 function buildHtml (session) {
+  session.saLabelShort = session.saId.toUpperCase()
   const accent = SA_ACCENT[session.saId]
   const accentSoft = SA_ACCENT_SOFT[session.saId]
   const saLabel = SA_LABEL[session.saId]
@@ -143,25 +164,30 @@ function buildHtml (session) {
     if (!groups.has(key)) groups.set(key, [])
     groups.get(key).push(html)
   }
-  for (const tp of theoryPoints) addToGroup(tp.apartat, textCard(tp, accent))
-  const wideFigs = theoryPoints.filter((tp) => tp.image && tp.imageWide).map((tp) => {
+  for (const tp of theoryPoints) addToGroup(tp.apartat, textCard(tp, accent, session))
+  // Figures grans: ocupen tot l'ample però just després del bloc d'apartat que les cita (no pàgina sencera)
+  const wideByKey = new Map()
+  for (const tp of theoryPoints.filter((t) => t.image && t.imageWide)) {
     const url = resolveAsset(tp.image)
-    if (!url) return ''
+    if (!url) continue
     const cap = tp.imageCaption ? `<figcaption>${renderHighlighted(tp.imageCaption, accent)}</figcaption>` : ''
     const title = tp.imageTitle ? `<div class="wide-title" style="color:${accent}">${escapeHtml(tp.imageTitle)}</div>` : ''
-    return `<figure class="wide-fig">${title}<img src="${url}" alt="" />${cap}</figure>`
-  }).join('\n')
-  for (const res of graphicResources) addToGroup(res.apartat, imageCard(res, accent))
+    const k = apartatKey(tp.apartat)
+    if (!wideByKey.has(k)) wideByKey.set(k, [])
+    wideByKey.get(k).push(`<figure class="wide-fig">${title}<img src="${url}" alt="" />${cap}</figure>`)
+  }
+  for (const res of graphicResources) addToGroup(res.apartat, imageCard(res, accent, session))
 
   const sortedKeys = [...groups.keys()].sort((a, b) => a - b)
   const multipleGroups = sortedKeys.filter((k) => k < 9998).length > 1
 
   const body = sortedKeys.map((key) => {
     const list = groups.get(key)
-    if (key >= 9998 || !multipleGroups) return list.join('\n')
+    const figs = (wideByKey.get(key) || []).join('\n')
+    if (key >= 9998 || !multipleGroups) return list.join('\n') + figs
     // La xapa d'apartat va dins del mateix bloc que el primer element: així no queda orfe al final d'una columna
     const [first, ...rest] = list
-    return `<div class="apartat-first"><div class="apartat-chip">Apartat ${key}</div>${first}</div>${rest.join('\n')}`
+    return `<div class="apartat-first"><div class="apartat-chip">Apartat ${key}</div>${first}</div>${rest.join('\n')}${figs}`
   }).join('\n')
 
   return `<!doctype html>
@@ -282,18 +308,34 @@ function buildHtml (session) {
   }
 
   .wide-ref { margin-top: 1.5mm; font-size: 9px; font-weight: 600; font-style: italic; color: #6b5e5e; }
-  .wide-title { font-family: 'Fira Sans Extra Condensed', sans-serif; font-weight: 700; font-size: 14px; text-align: left; margin-bottom: 2mm; }
+  .wide-title { font-family: 'Fira Sans Extra Condensed', sans-serif; font-weight: 700; font-size: 11.5px; text-align: left; margin-bottom: 1.5mm; }
   .wide-fig {
-    break-before: page;
+    column-span: all;
     break-inside: avoid;
-    margin: 0;
+    margin: 1mm 0 4mm 0;
     border: 1px solid rgba(74,63,63,0.12);
     border-radius: 1.5mm;
-    padding: 1.5mm;
+    padding: 2mm 3mm;
     text-align: center;
   }
-  .wide-fig img { display: block; width: 100%; object-fit: contain; }
-  .wide-fig figcaption { font-size: 10px; color: #6b5e5e; text-align: left; line-height: 1.3; margin-top: 1mm; }
+  .wide-fig img { display: block; width: auto; max-width: 100%; max-height: 70mm; margin: 0 auto; object-fit: contain; }
+  .wide-fig figcaption { font-size: 8.5px; color: #6b5e5e; text-align: left; line-height: 1.3; margin-top: 1.5mm; }
+
+  .web-note {
+    display: flex; align-items: center; gap: 2.5mm;
+    margin: 2mm 0 0 0; padding: 1.6mm 2.4mm;
+    border: 1.2px solid ${accent}; border-radius: 2mm;
+    background: ${accentSoft}; color: #4a3f3f; text-decoration: none;
+    font-size: 8.5px; line-height: 1.3; break-inside: avoid;
+  }
+  .web-note b { color: ${accent}; }
+  .web-note em { display: block; font-style: normal; font-size: 7.5px; color: #6b5e5e; margin-top: 0.4mm; }
+  .wn-thumb { position: relative; flex: 0 0 26mm; }
+  .wn-thumb img { display: block; width: 26mm; height: auto; border: 1px solid rgba(74,63,63,0.2); border-radius: 1mm; }
+  .wn-thumb i { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 6mm; height: 6mm; line-height: 6mm; text-align: center; font-style: normal; font-size: 8px; color: #fff; background: ${accent}; border-radius: 50%; opacity: 0.92; }
+  .wn-ico { flex: 0 0 auto; font-size: 13px; }
+  .hero + .web-note { margin: 0 0 3mm 0; }
+  .img-card .web-note { text-align: left; margin-top: 1.2mm; }
 
   .img-card { border: 1px solid rgba(74,63,63,0.12); text-align: center; }
   .img-card img {
@@ -326,10 +368,10 @@ function buildHtml (session) {
       </div>
     </div>
   </div>
+  ${session.appSrc ? webNote('app', session, 'apartat Explora', null) : ''}
   <div class="flow">
     ${body}
   </div>
-  ${wideFigs}
 </body>
 </html>`
 }
