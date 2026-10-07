@@ -141,7 +141,8 @@ export const sa3s4 = {
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa3-s4-fitxa-A.html", B: "/fitxes/sa3-s4-fitxa-B.html", C: "/fitxes/sa3-s4-fitxa-C.html" },
   sessionMaterials: [
-    { id: "rubrica-assaig", title: "Rúbrica de l'assaig argumentatiu sobre CRISPR", url: "/fitxes/sa3-rubrica-assaig-crispr.html", who: "alumnat" }
+    { id: "rubrica-assaig", title: "Rúbrica de l'assaig argumentatiu sobre CRISPR", url: "/fitxes/sa3-rubrica-assaig-crispr.html", who: "alumnat" },
+    { id: "pauta-debat", title: "Pauta d'observació del debat CRISPR", url: "/fitxes/sa3-pauta-debat-crispr.html", who: "alumnat" }
   ],
   teoriaPdfUrl: "/teoria/sa3-s4-teoria.pdf",
   elaborateNote: "Tancament de la fitxa i de la SA: amb el marc PODEM/HAURIEM, la distinció somàtica/germinal i la graella de fonts, planifica el teu assaig argumentatiu (postura, argument a favor, contraargument rebatut i conclusió). L'assaig és el producte que avalua tota la SA3.",

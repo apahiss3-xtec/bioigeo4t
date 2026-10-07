@@ -161,6 +161,9 @@ export const sa2s3 = {
 
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s3-fitxa-A.html", B: "/fitxes/sa2-s3-fitxa-B.html", C: "/fitxes/sa2-s3-fitxa-C.html" },
+  sessionMaterials: [
+    { id: "rubrica-index-mitotic", title: "Rúbrica de l'índex mitòtic i el mini-informe", url: "/fitxes/sa2-rubrica-index-mitotic.html", who: "alumnat" }
+  ],
   teoriaPdfUrl: "/teoria/sa2-s3-teoria.pdf",
   elaborateNote: "Tancament: torna a la pregunta del principi (què compta el laboratori) i respon-la amb el que has calculat, i digues en una frase per què el càncer és una divisió sense control.",
 
