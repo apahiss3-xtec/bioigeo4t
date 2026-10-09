@@ -165,7 +165,7 @@ export const sa3s2 = {
 
   graphicResources: [
     { id: "Fig.1", apartat: "2", before: false, title: "L'ADN per dins: doble cadena i complementarietat", src: "/images/sa3-s2-adn-estructura.svg", note: "L'ADN com una escala retorçada de dues cadenes. Cada esglaó és una parella de bases que s'aparellen sempre igual: A amb T i G amb C (complementarietat). L'ordre de les lletres és la informació." },
-    { id: "Fig.2", apartat: "1", before: false, title: "Així es veu l'ADN de maduixa", src: "/images/sa3-s2-foto-adn-maduixa.jpg", note: "La massa blanquinosa que sura a la capa d'alcohol és l'ADN precipitat. Foto: Sheila Richards, Wikimedia Commons, CC BY 4.0 (retallada)." },
+    { id: "Fig.2", apartat: "1", before: false, title: "Així es veu l'ADN de maduixa", src: "/images/sa3-s2-foto-adn-maduixa.jpg", note: "La massa blanquinosa que sura a la capa d'alcohol és l'ADN precipitat. Foto: Sheila Richards, Wikimedia Commons, CC BY 4.0." },
     { id: "Fig.3", apartat: "2", before: false, title: "Per què dues cadenes? Així es copia l'ADN (animació)", src: "/images/sa3-s2-copia-adn-anim.svg", note: "Les dues cadenes se separen i cadascuna fa de motlle (A-T, G-C): surten dues molècules idèntiques abans que la cèl·lula es divideixi." }
   ],
 

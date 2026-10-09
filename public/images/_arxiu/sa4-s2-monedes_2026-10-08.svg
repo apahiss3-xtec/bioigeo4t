@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="'Fira Sans Extra Condensed','Segoe UI',sans-serif">
+  <defs>
+    <style>
+      .ink{fill:#16302c}.mut{fill:#4d6560}
+      .hd{font-size:20px;font-weight:800;fill:#ffffff}
+      .lbl{font-size:14px;fill:#16302c}.sm{font-size:12px;fill:#4d6560}
+      .coinA{fill:#1E7A70;stroke:#17605A;stroke-width:2}
+      .coina{fill:#ffffff;stroke:#17605A;stroke-width:2}
+      .cface{font-size:18px;font-weight:800;fill:#ffffff}
+      .cfacea{font-size:18px;font-weight:800;fill:#17605A}
+      .axis{stroke:#7fbdb2;stroke-width:1.5}
+      .bar{fill:#46B3A6}
+    </style>
+  </defs>
+  <rect x="0" y="0" width="760" height="420" fill="#ffffff"/>
+  <rect x="0" y="0" width="760" height="46" fill="#1E7A70"/>
+  <text x="24" y="30" class="hd">Simular l'herència amb monedes: l'atzar de cada gàmeta</text>
+
+  <!-- ==== LEFT: coin = gamete ==== -->
+  <g transform="translate(30,70)">
+    <rect x="0" y="0" width="330" height="150" rx="12" fill="#EAF5F2" stroke="#bfe0d9" stroke-width="1.5"/>
+    <text x="16" y="26" font-size="13" font-weight="800" fill="#17605A" letter-spacing="1">1 MONEDA = 1 PROGENITOR Aa</text>
+    <circle cx="70" cy="78" r="30" class="coinA"/><text x="70" y="85" text-anchor="middle" class="cface">A</text>
+    <text x="70" y="128" text-anchor="middle" class="sm">CARA → passa A</text>
+    <circle cx="180" cy="78" r="30" class="coina"/><text x="180" y="85" text-anchor="middle" class="cfacea">a</text>
+    <text x="180" y="128" text-anchor="middle" class="sm">CREU → passa a</text>
+    <text x="250" y="70" class="lbl">Cada progenitor</text>
+    <text x="250" y="88" class="lbl">Aa dóna A o a</text>
+    <text x="250" y="106" class="lbl">al 50% (atzar).</text>
+  </g>
+
+  <!-- ==== LEFT-BOTTOM: two coins = one child ==== -->
+  <g transform="translate(30,240)">
+    <rect x="0" y="0" width="330" height="150" rx="12" fill="#fdf7e2" stroke="#e7dca8" stroke-width="1.5"/>
+    <text x="16" y="26" font-size="13" font-weight="800" fill="#7a5800" letter-spacing="1">2 MONEDES ALHORA = 1 FILL/A</text>
+    <circle cx="60" cy="80" r="26" class="coinA"/><text x="60" y="87" text-anchor="middle" class="cface">A</text>
+    <text x="103" y="86" font-size="22" font-weight="800" fill="#7a5800">+</text>
+    <circle cx="146" cy="80" r="26" class="coina"/><text x="146" y="87" text-anchor="middle" class="cfacea">a</text>
+    <text x="188" y="86" font-size="22" font-weight="800" fill="#7a5800">&#8594;</text>
+    <rect x="222" y="56" width="90" height="48" rx="8" fill="#ffffff" stroke="#c8960a" stroke-width="2"/>
+    <text x="267" y="88" text-anchor="middle" font-size="22" font-weight="800" fill="#16302c">Aa</text>
+    <text x="16" y="130" class="sm">Tira les dues, apunta el genotip. Repeteix moltes vegades.</text>
+  </g>
+
+  <!-- ==== RIGHT: chance vs tendency chart ==== -->
+  <g transform="translate(400,70)">
+    <rect x="0" y="0" width="330" height="320" rx="12" fill="#ffffff" stroke="#cfe6e0" stroke-width="1.5"/>
+    <text x="16" y="26" font-size="13" font-weight="800" fill="#17605A" letter-spacing="1">ATZAR vs TENDÈNCIA</text>
+    <text x="16" y="46" class="sm">% de fenotip dominant observat</text>
+    <!-- target line at 75% -->
+    <line x1="40" y1="80" x2="310" y2="80" stroke="#c96f3e" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="314" y="84" text-anchor="end" font-size="11" fill="#a24e24" transform="translate(0,-14)">esperat 75% (3:1)</text>
+    <!-- axis -->
+    <line x1="40" y1="60" x2="40" y2="250" class="axis"/>
+    <line x1="40" y1="250" x2="310" y2="250" class="axis"/>
+    <!-- bars: few trials scatter, many converge -->
+    <rect x="60" y="120" width="34" height="130" class="bar" opacity="0.55"/>
+    <rect x="118" y="150" width="34" height="100" class="bar" opacity="0.6"/>
+    <rect x="176" y="96" width="34" height="154" class="bar" opacity="0.75"/>
+    <rect x="234" y="82" width="34" height="168" class="bar"/>
+    <text x="77" y="266" text-anchor="middle" class="sm">4</text>
+    <text x="135" y="266" text-anchor="middle" class="sm">10</text>
+    <text x="193" y="266" text-anchor="middle" class="sm">40</text>
+    <text x="251" y="266" text-anchor="middle" class="sm">100</text>
+    <text x="175" y="286" text-anchor="middle" class="sm">nombre de tirades (fills simulats)</text>
+    <text x="16" y="308" class="sm">Amb <tspan font-weight="700" fill="#17605A">poques</tspan> tirades el % balla molt; amb <tspan font-weight="700" fill="#17605A">moltes</tspan> s'acosta al 75%.</text>
+  </g>
+</svg>

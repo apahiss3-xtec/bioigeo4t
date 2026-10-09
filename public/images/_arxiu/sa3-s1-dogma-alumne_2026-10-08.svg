@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 330" font-family="'Fira Sans Extra Condensed','Fira Sans Condensed','Segoe UI',Arial,sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E4A9E"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="330" fill="#ffffff"/>
+  <text x="460" y="34" text-anchor="middle" font-size="25" font-weight="700" fill="#2E4A9E">Del codi a la característica — completa-ho tu</text>
+  <text x="460" y="58" text-anchor="middle" font-size="16" fill="#5B7BE0">Escriu QUÈ hi ha a cada caixa i QUÈ fa cada fletxa. Després justifica l'ordre.</text>
+
+  <!-- 4 caixes mudes -->
+  <rect x="30" y="92" width="170" height="118" rx="14" fill="#ffffff" stroke="#2E4A9E" stroke-width="2.5"/>
+  <line x1="52" y1="135" x2="178" y2="135" stroke="#2E4A9E" stroke-width="1.6"/>
+  <line x1="52" y1="166" x2="178" y2="166" stroke="#c9d3ec" stroke-width="1.4"/>
+  <line x1="52" y1="192" x2="178" y2="192" stroke="#c9d3ec" stroke-width="1.4"/>
+  <text x="115" y="230" text-anchor="middle" font-size="14" fill="#8792ad">1</text>
+
+  <rect x="270" y="92" width="170" height="118" rx="14" fill="#ffffff" stroke="#2E7D57" stroke-width="2.5"/>
+  <line x1="292" y1="135" x2="418" y2="135" stroke="#2E7D57" stroke-width="1.6"/>
+  <line x1="292" y1="166" x2="418" y2="166" stroke="#c9e0d3" stroke-width="1.4"/>
+  <line x1="292" y1="192" x2="418" y2="192" stroke="#c9e0d3" stroke-width="1.4"/>
+  <text x="355" y="230" text-anchor="middle" font-size="14" fill="#8792ad">2</text>
+
+  <rect x="510" y="92" width="170" height="118" rx="14" fill="#ffffff" stroke="#B5502A" stroke-width="2.5"/>
+  <line x1="532" y1="135" x2="658" y2="135" stroke="#B5502A" stroke-width="1.6"/>
+  <line x1="532" y1="166" x2="658" y2="166" stroke="#edd2c6" stroke-width="1.4"/>
+  <line x1="532" y1="192" x2="658" y2="192" stroke="#edd2c6" stroke-width="1.4"/>
+  <text x="595" y="230" text-anchor="middle" font-size="14" fill="#8792ad">3</text>
+
+  <rect x="750" y="92" width="150" height="118" rx="14" fill="#ffffff" stroke="#7B3F9E" stroke-width="2.5"/>
+  <line x1="770" y1="135" x2="880" y2="135" stroke="#7B3F9E" stroke-width="1.6"/>
+  <line x1="770" y1="166" x2="880" y2="166" stroke="#ddd0ea" stroke-width="1.4"/>
+  <line x1="770" y1="192" x2="880" y2="192" stroke="#ddd0ea" stroke-width="1.4"/>
+  <text x="825" y="230" text-anchor="middle" font-size="14" fill="#8792ad">4</text>
+
+  <!-- fletxes sense etiqueta -->
+  <line x1="205" y1="152" x2="262" y2="152" stroke="#2E4A9E" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="222" y1="132" x2="250" y2="132" stroke="#b9c3dd" stroke-width="1.4"/>
+  <line x1="445" y1="152" x2="502" y2="152" stroke="#2E4A9E" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="462" y1="132" x2="490" y2="132" stroke="#b9c3dd" stroke-width="1.4"/>
+  <line x1="685" y1="152" x2="744" y2="152" stroke="#2E4A9E" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="702" y1="132" x2="730" y2="132" stroke="#b9c3dd" stroke-width="1.4"/>
+
+  <text x="460" y="272" text-anchor="middle" font-size="16" fill="#333">Sota de cada caixa, escriu <tspan font-weight="700" fill="#2E4A9E">on</tspan> passa (dins o fora del nucli) i <tspan font-weight="700" fill="#B5502A">qui</tspan> ho fa.</text>
+  <text x="460" y="298" text-anchor="middle" font-size="16" fill="#333">Acaba responent: per què la informació és <tspan font-weight="700">l'ordre</tspan> de les lletres i no les lletres soltes?</text>
+</svg>

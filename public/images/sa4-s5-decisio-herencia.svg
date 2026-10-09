@@ -1,47 +1,72 @@
-<svg viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Sans Extra Condensed',sans-serif" role="img" aria-label="Arbre de decisió per determinar el tipus d'herència a partir d'un pedigrí">
-  <rect x="0" y="0" width="760" height="430" fill="#fefdff"/>
+<svg viewBox="0 0 760 468" xmlns="http://www.w3.org/2000/svg" font-family="'Fira Sans Extra Condensed','Segoe UI',Arial,sans-serif" role="img" aria-label="Arbre de decisió per determinar el tipus d'herència a partir d'un pedigrí">
+  <rect x="0" y="0" width="760" height="468" fill="#ffffff"/>
   <text x="380" y="30" text-anchor="middle" font-size="20" font-weight="900" fill="#17605A">Quin tipus d'herència? — guia ràpida a partir del pedigrí</text>
 
   <!-- Q1 -->
-  <rect x="250" y="52" width="260" height="46" rx="10" fill="#e7f4f1" stroke="#1E7A70" stroke-width="2"/>
-  <text x="380" y="72" text-anchor="middle" font-size="14.5" font-weight="700" fill="#17605A">1. El caràcter «salta» generacions?</text>
-  <text x="380" y="90" text-anchor="middle" font-size="12" fill="#3a3340">(apareix, desapareix i torna a aparèixer)</text>
+  <rect x="225" y="48" width="310" height="50" rx="10" fill="#e7f4f1" stroke="#1E7A70" stroke-width="2"/>
+  <text x="380" y="70" text-anchor="middle" font-size="15" font-weight="700" fill="#17605A">1. El caràcter «salta» generacions?</text>
+  <text x="380" y="89" text-anchor="middle" font-size="13" fill="#3a3340">(apareix, desapareix i torna a aparèixer)</text>
 
-  <!-- branch SI / NO -->
-  <line x1="300" y1="98" x2="170" y2="130" stroke="#a7cfc7" stroke-width="2"/>
-  <line x1="460" y1="98" x2="600" y2="130" stroke="#a7cfc7" stroke-width="2"/>
-  <text x="210" y="120" font-size="12" font-weight="800" fill="#c96f3e">SÍ salta</text>
-  <text x="540" y="120" font-size="12" font-weight="800" fill="#8a5a9e">NO, a cada generació</text>
+  <!-- branca SÍ / NO -->
+  <line x1="300" y1="98" x2="190" y2="140" stroke="#a7cfc7" stroke-width="2"/>
+  <line x1="460" y1="98" x2="570" y2="140" stroke="#a7cfc7" stroke-width="2"/>
+  <text x="232" y="122" text-anchor="end" font-size="13" font-weight="800" fill="#c96f3e">SÍ, salta</text>
+  <text x="528" y="122" font-size="13" font-weight="800" fill="#8a5a9e">NO, surt a cada generació</text>
 
-  <!-- Recessiu branch -->
-  <rect x="40" y="132" width="300" height="40" rx="9" fill="#f6ece8" stroke="#c96f3e" stroke-width="2"/>
-  <text x="190" y="157" text-anchor="middle" font-size="14" font-weight="800" fill="#a24e24">→ Probablement RECESSIU</text>
+  <rect x="40" y="140" width="300" height="40" rx="9" fill="#f6ece8" stroke="#c96f3e" stroke-width="2"/>
+  <text x="190" y="166" text-anchor="middle" font-size="15" font-weight="800" fill="#a24e24">→ Probablement RECESSIU</text>
+  <rect x="420" y="140" width="300" height="40" rx="9" fill="#f1eaf4" stroke="#8a5a9e" stroke-width="2"/>
+  <text x="570" y="166" text-anchor="middle" font-size="15" font-weight="800" fill="#6f4585">→ Probablement DOMINANT</text>
 
-  <!-- Dominant branch -->
-  <rect x="430" y="132" width="300" height="40" rx="9" fill="#f1eaf4" stroke="#8a5a9e" stroke-width="2"/>
-  <text x="580" y="157" text-anchor="middle" font-size="14" font-weight="800" fill="#6f4585">→ Probablement DOMINANT</text>
+  <!-- Q2 (recessiu) -->
+  <line x1="190" y1="180" x2="190" y2="200" stroke="#a7cfc7" stroke-width="2"/>
+  <rect x="30" y="200" width="320" height="48" rx="10" fill="#e7f4f1" stroke="#1E7A70" stroke-width="2"/>
+  <text x="190" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#17605A">2. Afecta molt més els HOMES i</text>
+  <text x="190" y="239" text-anchor="middle" font-size="14" font-weight="700" fill="#17605A">passa per mares sense el caràcter?</text>
 
-  <!-- Q2 under recessiu -->
-  <line x1="190" y1="172" x2="190" y2="196" stroke="#a7cfc7" stroke-width="2"/>
-  <rect x="30" y="198" width="320" height="46" rx="10" fill="#e7f4f1" stroke="#1E7A70" stroke-width="2"/>
-  <text x="190" y="218" text-anchor="middle" font-size="13.5" font-weight="700" fill="#17605A">2. Afecta molt més els HOMES i</text>
-  <text x="190" y="236" text-anchor="middle" font-size="13.5" font-weight="700" fill="#17605A">salta per les DONES?</text>
+  <!-- Q3 (dominant) -->
+  <line x1="570" y1="180" x2="570" y2="200" stroke="#a7cfc7" stroke-width="2"/>
+  <rect x="410" y="200" width="320" height="48" rx="10" fill="#f1eaf4" stroke="#8a5a9e" stroke-width="2"/>
+  <text x="570" y="220" text-anchor="middle" font-size="14" font-weight="700" fill="#6f4585">3. Un pare afectat el passa a TOTES</text>
+  <text x="570" y="239" text-anchor="middle" font-size="14" font-weight="700" fill="#6f4585">les filles i a CAP fill?</text>
 
-  <line x1="120" y1="244" x2="90" y2="272" stroke="#a7cfc7" stroke-width="2"/>
-  <line x1="260" y1="244" x2="290" y2="272" stroke="#a7cfc7" stroke-width="2"/>
-  <text x="55" y="264" font-size="11.5" font-weight="800" fill="#c96f3e">SÍ</text>
-  <text x="300" y="264" font-size="11.5" font-weight="800" fill="#1E7A70">NO, per igual</text>
+  <line x1="130" y1="248" x2="95" y2="288" stroke="#a7cfc7" stroke-width="2"/>
+  <line x1="250" y1="248" x2="285" y2="288" stroke="#a7cfc7" stroke-width="2"/>
+  <text x="104" y="272" text-anchor="end" font-size="13" font-weight="800" fill="#c96f3e">SÍ</text>
+  <text x="276" y="272" font-size="13" font-weight="800" fill="#1E7A70">NO, per igual</text>
 
-  <rect x="10" y="274" width="230" height="56" rx="9" fill="#eef7f5" stroke="#17605A" stroke-width="2"/>
-  <text x="125" y="296" text-anchor="middle" font-size="13" font-weight="800" fill="#17605A">LLIGAT AL X recessiu</text>
-  <text x="125" y="315" text-anchor="middle" font-size="11.5" fill="#3a3340">(home = hemizigot, 1 sola X)</text>
+  <line x1="510" y1="248" x2="475" y2="288" stroke="#a7cfc7" stroke-width="2"/>
+  <line x1="630" y1="248" x2="665" y2="288" stroke="#a7cfc7" stroke-width="2"/>
+  <text x="484" y="272" text-anchor="end" font-size="13" font-weight="800" fill="#8a5a9e">SÍ</text>
+  <text x="656" y="272" font-size="13" font-weight="800" fill="#1E7A70">NO</text>
 
-  <rect x="256" y="274" width="230" height="56" rx="9" fill="#eef7f5" stroke="#17605A" stroke-width="2"/>
-  <text x="371" y="296" text-anchor="middle" font-size="13" font-weight="800" fill="#17605A">AUTOSÒMIC recessiu</text>
-  <text x="371" y="315" text-anchor="middle" font-size="11.5" fill="#3a3340">(dos pares sans → fill afectat)</text>
+  <!-- resultats -->
+  <g font-size="12.5" fill="#3a3340" text-anchor="middle">
+    <rect x="5" y="288" width="180" height="72" rx="9" fill="#eef7f5" stroke="#17605A" stroke-width="2"/>
+    <text x="95" y="310" font-size="13" font-weight="800" fill="#17605A">LLIGAT AL X recessiu</text>
+    <text x="95" y="329">home afectat: una sola X</text>
+    <text x="95" y="346">(passa per mares portadores)</text>
 
-  <!-- Then -->
-  <rect x="120" y="356" width="520" height="56" rx="10" fill="#fdf7e2" stroke="#c8960a" stroke-width="2"/>
-  <text x="380" y="378" text-anchor="middle" font-size="13.5" font-weight="800" fill="#7a5800">Després: escriu els GENOTIPS i comprova amb un QUADRE DE PUNNETT.</text>
-  <text x="380" y="398" text-anchor="middle" font-size="13" fill="#3a3340">Si va lligat al sexe, separa sempre FILLS (XY) i FILLES (XX).</text>
+    <rect x="195" y="288" width="180" height="72" rx="9" fill="#eef7f5" stroke="#17605A" stroke-width="2"/>
+    <text x="285" y="310" font-size="13" font-weight="800" fill="#17605A">AUTOSÒMIC recessiu</text>
+    <text x="285" y="329">dos pares sans poden tenir</text>
+    <text x="285" y="346">un fill o una filla afectats</text>
+
+    <rect x="385" y="288" width="180" height="72" rx="9" fill="#f7f2f9" stroke="#6f4585" stroke-width="2"/>
+    <text x="475" y="310" font-size="13" font-weight="800" fill="#6f4585">LLIGAT AL X dominant</text>
+    <text x="475" y="329">el pare dona la seva X a</text>
+    <text x="475" y="346">les filles i la Y als fills</text>
+
+    <rect x="575" y="288" width="180" height="72" rx="9" fill="#f7f2f9" stroke="#6f4585" stroke-width="2"/>
+    <text x="665" y="310" font-size="13" font-weight="800" fill="#6f4585">AUTOSÒMIC dominant</text>
+    <text x="665" y="329">dos pares afectats poden</text>
+    <text x="665" y="346">tenir un fill o una filla sans</text>
+  </g>
+
+  <text x="380" y="382" text-anchor="middle" font-size="13" fill="#3a3340"><tspan font-weight="800" fill="#17605A">Cas rar:</tspan> només homes afectats i de pare a TOTS els fills → lligat a l'Y.</text>
+
+  <!-- Després -->
+  <rect x="60" y="396" width="640" height="58" rx="10" fill="#fdf7e2" stroke="#c8960a" stroke-width="2"/>
+  <text x="380" y="419" text-anchor="middle" font-size="14" font-weight="800" fill="#7a5800">Després: escriu els GENOTIPS i comprova-ho amb un QUADRE DE PUNNETT.</text>
+  <text x="380" y="440" text-anchor="middle" font-size="13.5" fill="#3a3340">Si va lligat al sexe, separa sempre FILLS (XY) i FILLES (XX).</text>
 </svg>

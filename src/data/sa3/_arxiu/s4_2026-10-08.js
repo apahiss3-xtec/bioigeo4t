@@ -39,7 +39,7 @@ export const sa3s4 = {
   apartatExtras: {
     "1": {
       scaffold:
-        "CRISPR és, en essència, unes tisores molt precises. Imagina que l'ADN és un text molt llarg i que en una paraula hi ha una falta d'ortografia que causa una malaltia (com la lletra canviada de l'anèmia falciforme, S3). CRISPR és com una eina de «cerca i reemplaça»: localitza el tros exacte de text i hi fa un tall; en reparar-lo, la cèl·lula hi pot canviar una lletra o deixar aquell tros desactivat. No inventa res de nou: fa el mateix tipus de canvi que estudiaves a S3, però ara dirigit i a voluntat. Aquesta imatge et dona el QUÈ FA; el debat és sobre el FINS ON.",
+        "CRISPR és, en essència, unes tisores molt precises. Imagina que l'ADN és un text molt llarg i que en una paraula hi ha una falta d'ortografia que causa una malaltia (com la lletra canviada de l'anèmia falciforme, S3). CRISPR és com una eina de «cerca i reemplaça»: localitza el tros exacte de text, hi fa un tall i permet corregir la lletra. No inventa res de nou: fa el mateix tipus de canvi que estudiaves a S3, però ara dirigit i a voluntat. Aquesta imatge et dona el QUÈ FA; el debat és sobre el FINS ON.",
       challenge:
         "Explica amb el vocabulari de la SA què fa exactament CRISPR sobre la molècula d'ADN (localitzar seqüència, tallar, editar) i connecta-ho amb S3: si una mutació és un canvi accidental d'una lletra, què és editar amb CRISPR? Després planteja: quina diferència hi ha, en el fons, entre una mutació natural que cura (algunes persones tenen mutacions que les protegeixen de malalties) i una edició feta al laboratori? És només una qüestió de qui la fa?"
     },
@@ -105,7 +105,7 @@ export const sa3s4 = {
       id: "t1",
       apartat: "1",
       heading: "CRISPR: unes ==tisores moleculars== per editar l'ADN",
-      text: "==CRISPR== és una eina que permet ==editar l'ADN== amb precisió: localitza una ==seqüència== concreta, hi fa un ==tall== i permet ==canviar-hi lletres==. És com una funció de «cerca i reemplaça» aplicada al codi de la vida. No fa res que la natura no faci —recorda que una ==mutació|p== és un canvi de lletres (S3)—, però ho fa ==dirigit i a voluntat==. En principi podria ==corregir== la lletra que causa una malaltia, com la de l'==anèmia falciforme==; el primer tractament aprovat (Casgevy), però, no toca aquesta lletra (Fig.4).",
+      text: "==CRISPR== és una eina que permet ==editar l'ADN== amb precisió: localitza una ==seqüència== concreta, hi fa un ==tall== i permet ==canviar-hi lletres==. És com una funció de «cerca i reemplaça» aplicada al codi de la vida. No fa res que la natura no faci —recorda que una ==mutació|p== és un canvi de lletres (S3)—, però ho fa ==dirigit i a voluntat==. Pot servir per ==corregir== la lletra que causa una malaltia, com la de l'==anèmia falciforme==.",
       type: "concept"
     },
     {
@@ -132,10 +132,10 @@ export const sa3s4 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: false, title: "CRISPR: localitzar, tallar, reparar", src: "/images/sa3-s4-crispr.svg", note: "L'eina localitza una seqüència concreta de l'ADN, hi fa un tall dirigit i, quan la cèl·lula el repara, s'hi pot canviar una lletra o desactivar aquell tros (en principi, també la mutació de tipus falciforme de S3). No inventa un canvi nou: dirigeix el mateix tipus de canvi que fa una mutació." },
+    { id: "Fig.1", apartat: "1", before: false, title: "CRISPR: localitzar, tallar, editar", src: "/images/sa3-s4-crispr.svg", note: "L'eina localitza una seqüència concreta de l'ADN, hi fa un tall dirigit i permet canviar la lletra que causa el problema (aquí, corregir la mutació de tipus falciforme de S3). No inventa un canvi nou: dirigeix el mateix tipus de canvi que fa una mutació." },
     { id: "Fig.2", apartat: "2", before: false, title: "Edició somàtica vs germinal", src: "/images/sa3-s4-somatica-germinal.svg", note: "A dalt, edició somàtica: es corregeixen cèl·lules del cos d'un adult; el canvi es queda en ell i no passa als fills. A baix, edició germinal: s'edita un embrió i el canvi entra a totes les cèl·lules, també les que formaran gàmetes, així que s'hereta generació rere generació." },
     { id: "Fig.3", apartat: "1", before: false, title: "CRISPR en acció (animació)", src: "/images/sa3-s4-crispr-anim.svg", note: "L'ARN guia busca la seqüència, la Cas9 talla les dues cadenes i, en reparar el tall, s'hi posa la lletra desitjada. Model simplificat." },
-    { id: "Fig.4", apartat: "2", before: false, title: "Casgevy: un cas real d'edició somàtica", src: "/images/sa3-s4-casgevy.svg", note: "No corregeix la lletra de la falciforme: talla el «potenciador» que encén el gen «fre» BCL11A als glòbuls vermells; sense aquest fre, es torna a fabricar hemoglobina fetal. El canvi no passa als fills." }
+    { id: "Fig.4", apartat: "2", before: false, title: "Casgevy: un cas real d'edició somàtica", src: "/images/sa3-s4-casgevy.svg", note: "No corregeix la lletra de la falciforme: desactiva el gen «fre» BCL11A perquè es torni a fabricar hemoglobina fetal. El canvi no passa als fills." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────

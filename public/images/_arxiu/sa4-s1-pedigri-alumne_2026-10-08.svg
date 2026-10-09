@@ -2,7 +2,7 @@
   <defs>
     <style>
       .ink{fill:#16302c}.mut{fill:#4d6560}.teal{fill:#1E7A70}
-      .lbl{font-size:15px;fill:#16302c}.sm{font-size:13.5px;fill:#4d6560}
+      .lbl{font-size:15px;fill:#16302c}.sm{font-size:12.5px;fill:#4d6560}
       .gt{font-size:13px;font-weight:700;fill:#17605A}
       .roman{font-size:14px;font-weight:700;fill:#8aa39e}
       .sym{stroke:#17605A;stroke-width:2.4;fill:#ffffff}
@@ -32,11 +32,10 @@
   <line class="link" x1="40" y1="258" x2="86" y2="258"/>
   <text class="sm" x="98" y="262">Línia de parella</text>
 
-  <line class="link" x1="63" y1="280" x2="63" y2="314"/>
-  <text class="sm" x="98" y="302">Línia cap als fills</text>
+  <line class="link" x1="63" y1="286" x2="63" y2="326"/>
+  <text class="sm" x="98" y="312">Línia cap als fills</text>
 
-  <text class="sm" x="32" y="336"><tspan font-weight="700" fill="#17605A">Genotip:</tspan> AA i Aa es veuen igual;</text>
-  <text class="sm" x="32" y="354">només aa mostra el recessiu.</text>
+  <text class="sm" x="32" y="352">Genotip: AA i Aa es veuen igual; només aa mostra el recessiu.</text>
 
   <!-- ===== PEDIGRÍ ===== -->
   <!-- Generacions -->
@@ -68,8 +67,8 @@
   <circle class="sym" cx="654" cy="303" r="18"/>
 
   <!-- nota del salt -->
-  <text class="mut" x="336" y="250" font-size="13.5" font-style="italic">Els pares (gen II) no</text>
-  <text class="mut" x="336" y="268" font-size="13.5" font-style="italic">mostren el caràcter</text>
-  <text class="mut" x="336" y="286" font-size="13.5" font-style="italic">i el tornen a passar</text>
-  <text class="mut" x="336" y="304" font-size="13.5" font-style="italic">al nét afectat.</text>
+  <text class="mut" x="326" y="250" font-size="13" font-style="italic">Els pares (gen II) no</text>
+  <text class="mut" x="326" y="268" font-size="13" font-style="italic">mostren el caràcter</text>
+  <text class="mut" x="326" y="286" font-size="13" font-style="italic">i el tornen a passar</text>
+  <text class="mut" x="326" y="304" font-size="13" font-style="italic">al nét afectat.</text>
 </svg>
