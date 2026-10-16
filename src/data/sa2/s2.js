@@ -10,17 +10,18 @@ export const sa2s2 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Tens 46 cromosomes a gairebé totes les cèl·lules del cos. La teva mare també. El teu pare també. I tu vas començar quan UNA cèl·lula de la teva mare (l'òvul) es va fusionar amb UNA cèl·lula del teu pare (l'espermatozoide). Si l'òvul en portés 46 i l'espermatozoide 46, tu en tindries 92... i el teu fill 184. Però tots en tenim 46. On han anat a parar la meitat?",
   engageQuestion: "La mitosi fa dues cèl·lules idèntiques amb TOT el material genètic. Aleshores, per què els gàmetes (òvul i espermatozoide) NO es poden fabricar per mitosi?",
-  engageContext: "Avui modelareu vosaltres mateixos les dues divisions amb els mateixos cromosomes de partida i veureu que donen resultats molt diferents: la mitosi, dues còpies idèntiques; la meiosi, quatre cèl·lules amb la meitat i totes diferents. Al final podreu respondre per què el cos necessita les dues.",
+  engageContext: "Avui entrareu al laboratori: tenyireu la punta d'una arrel de ceba i veureu amb els vostres ulls cromosomes reals de cèl·lules en plena mitosi. Després, a l'explicació, descobrireu l'altra divisió, la meiosi: quatre cèl·lules amb la meitat i totes diferents. Al final podreu respondre per què el cos necessita les dues.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
     A: [
-      "Modelo la mitosi i la meiosi a partir d'una mateixa cèl·lula i argumento, amb el meu model, per què una fa cèl·lules idèntiques i l'altra no.",
+      "Preparo i observo una tinció d'àpex d'arrel de ceba, identifico cèl·lules en cada fase de la mitosi i justifico cada pas del protocol (per què l'àpex, per què l'àcid, per què l'aixafament).",
       "Explico per què els gàmetes han de tenir la meitat del material genètic, deduint-ho del que passaria a la fecundació si no fos així.",
       "Relaciono la meiosi amb la variabilitat: calculo quantes combinacions diferents de gàmetes pot donar una cèl·lula i argumento per què dos germans (que no siguin bessons idèntics) no són iguals.",
       "Justifico quan el cos fa servir cada divisió i per què les dues són imprescindibles per créixer, reparar-se i reproduir-se."
     ],
     B: [
+      "Preparo una tinció d'arrel de ceba seguint el protocol i trobo al microscopi cèl·lules en diferents fases de la mitosi.",
       "Distingeixo la mitosi (2 cèl·lules idèntiques, material genètic complet) de la meiosi (4 cèl·lules, la meitat del material) en un esquema.",
       "Explico amb les meves paraules que els gàmetes tenen la meitat de cromosomes perquè, en unir-se a la fecundació, el nombre torni a ser el normal.",
       "Dic que la meiosi barreja el material genètic i que per això els gàmetes són diferents entre ells.",
@@ -30,6 +31,7 @@ export const sa2s2 = {
     // objectius i tasca pròpia. Han de coincidir amb l'oa-box de
     // fitxa_sa2_s2_VISUAL_C.html.
     C: [
+      "Segueixo els passos del laboratori i trobo una cèl·lula que s'està dividint.",
       "Distingeixo la mitosi (2 cèl·lules iguals) de la meiosi (4 amb la meitat).",
       "Dic per a què serveix cadascuna: créixer i reparar, o fer òvuls i espermatozoides.",
       "Explico per què un fill no és idèntic a cap dels seus pares."
@@ -42,13 +44,13 @@ export const sa2s2 = {
   apartatExtras: {
     "1": {
       scaffold:
-        "Parteix SEMPRE de la mateixa cèl·lula: 4 cromosomes = 2 parelles. Cada parella són els DOS del mateix color (mateixa mida i forma): un l'has heretat del pare i l'altre de la mare. Pas comú a les dues divisions: copia cada cromosoma (fes-ne un segon idèntic i enganxa'l pel centre → forma de X). MITOSI: reparteix les còpies entre dues cèl·lules i compta què et queda. MEIOSI: primera divisió, separa els dos membres de cada PARELLA, un de cada color a cada banda; segona divisió, separa les còpies de cada X. Compta el resultat de cada camí quan el tinguis fet: el número no l'has de saber abans.",
+        "Al microscopi, comença SEMPRE amb l'objectiu petit i puja després. Com reconèixer cada fase: INTERFASE, nucli rodó i granulat, no es veuen cromosomes. PROFASE, el nucli s'omple de fils (cabdell). METAFASE, els cromosomes fan una franja al mig de la cèl·lula. ANAFASE, dos grups de cromosomes que s'allunyen cap als extrems. TELOFASE, dos nuclis a punt de separar-se, amb una paret nova al mig. La majoria de cèl·lules estaran en interfase: és normal.",
       challenge:
-        "El teu model no parteix de 4 cromosomes sinó de 6 (3 parelles), i has de fer la meiosi DUES vegades: la segona, col·locant alguna parella girada respecte de la primera. Compara els gàmetes que t'han sortit els dos cops. A partir d'aquí, la fitxa et demana quantes combinacions diferents podria arribar a donar aquesta cèl·lula, amb el càlcul escrit, i que generalitzis la regla a una espècie amb n parelles."
+        "No et quedis en trobar les fases: la fitxa et demana que justifiquis cada pas del protocol (per què només els 2-3 mm de la punta, per què s'escalfa amb àcid, per què s'aixafa) i que, amb el recompte d'un camp, calculis l'índex mitòtic i diguis si és el que esperaves en un teixit que creix."
     },
     "2": {
       scaffold:
-        "Fixa't només en dues coses de cada resultat: QUANTES cèl·lules surten i QUANT material genètic té cadascuna. Mitosi: 2 cèl·lules, material complet (idèntiques a la mare). Meiosi: 4 cèl·lules, la meitat del material (gàmetes). Mnemotècnic: MitosiI = Idèntiques; meiosi = meitat.",
+        "Tot el que has vist al microscopi és MITOSI: 2 cèl·lules idèntiques amb el material complet. La MEIOSI fa dues divisions seguides: a la primera se separen les PARELLES (un vermell i un blau a cada banda); a la segona, les còpies de cada X. Resultat: 4 cèl·lules amb la meitat (un de cada parella). Mnemotècnic: mitosi = Idèntiques; meiosi = meitat.",
       challenge:
         "La teva taula no es queda en l'exemple humà: hi has de fer el mateix raonament per a tres espècies amb nombres de cromosomes diferents i, a l'última fila, escriure la regla general vàlida per a qualsevol espècie. Pensa-hi mentre ho fas: la mitosi i la meiosi comencen igual (totes dues copien l'ADN); quina és exactament la diferència que fa que una acabi amb material complet i l'altra amb la meitat?"
     },
@@ -84,31 +86,32 @@ export const sa2s2 = {
     ]
   },
 
-  // ── EXPLORA (ABP · modelatge manipulatiu) ─────────────────
+  // ── EXPLORA (laboratori real · tinció d'àpex d'arrel de ceba) ─
   exploreActivity: {
-    what: "Modeleu les dues divisions amb la MATEIXA cèl·lula de partida (les parelles que indiqui la vostra fitxa: 2 al nivell B, 3 al nivell A; cada parella d'una MIDA, i dins la parella un vermell = mare i un blau = pare), amb plastilina, fils de colors o dibuixant. Primer feu la mitosi; després, des de la mateixa cèl·lula, la meiosi. Compareu els dos resultats: quantes cèl·lules surten i quant material té cadascuna. Al nivell A la meiosi es fa DUES vegades, canviant l'orientació d'alguna parella.",
+    what: "Laboratori real: tenyiu la punta d'una arrel de ceba amb orceïna i busqueu al microscopi cèl·lules en mitosi. Les arrels creixen per la punta (l'àpex), i és allà on les cèl·lules es divideixen sense parar. Heu de trobar almenys una cèl·lula de cada fase, fer-ne una foto amb el mòbil a través de l'ocular i comptar les cèl·lules d'un camp per fer un primer càlcul de l'índex mitòtic.",
     who: { mode: "grup", label: "Parelles de laboratori" },
-    time: { A: 47, B: 40 },
-    note: "La gràcia és FER-HO vosaltres i adonar-vos, amb el model a la mà, que partint del mateix s'arriba a resultats diferents. La demostració a l'aula és ensenyar els dos models a una altra parella i defensar per què la meiosi acaba amb la meitat."
+    time: 55,
+    note: "Feu servir bata i guants: l'orceïna taca i porta àcid. La gràcia no és només veure-ho: heu de poder explicar per què cada pas del protocol és necessari. Si una preparació no surt, en feu una altra amb una segona punta."
   },
   exploreInstructions: [
-    "Feu una cèl·lula de partida amb les parelles que digui la vostra fitxa (2 parelles al nivell B, 3 al nivell A): cada parella és d'una mida (un llarg, un curt...) i té un xurro vermell (mare) i un de blau (pare)",
-    "Copieu cada cromosoma: feu-ne un segon xurro idèntic i enganxeu-lo al primer pel centre; ara té forma de X (dues còpies unides). Una X continua sent UN cromosoma. És el pas comú a les dues divisions",
-    "MITOSI: repartiu les còpies en dues cèl·lules i compteu els cromosomes de cada filla",
-    "MEIOSI: primera divisió, separeu les PARELLES; segona divisió, separeu les còpies; compteu quantes cèl·lules i quants cromosomes queden (cada gàmeta ha de tenir UN de cada mida)",
-    "Compareu els dos resultats i anoteu les diferències (nombre de cèl·lules i quantitat de material genètic)"
+    "Talleu només els 2-3 mm de la punta de 2-3 arrels i poseu-los al vidre de rellotge amb 2-3 ml d'orceïna A",
+    "Escalfeu-ho suaument a la flama uns 8 minuts, fins que surtin vapors tènues: MAI ha de bullir",
+    "Poseu una punta al portaobjectes amb una gota d'orceïna B i deixeu-la actuar 1 minut",
+    "Tapeu-la amb el cobreobjectes i doneu-hi copets amb el mànec de l'agulla; poseu-hi 5-6 tires de paper de filtre a sobre i premeu fort amb el polze, sense moure'l ni trencar el vidre (aixafament)",
+    "Observeu-ho primer amb l'objectiu petit i després amb el gran: busqueu una cèl·lula de cada fase i feu-ne una foto pel mòbil a través de l'ocular",
+    "Compteu les cèl·lules d'un camp: quantes estan en divisió i quantes no. Calculeu-ne l'índex mitòtic (ho repetireu bé a la sessió 3)"
   ],
-  exploreDuration: "40 min",
-  appSrc: "/apps/app_mitosi_meiosi.html",
-  exploreNote: "Modelatge (ABP): construïu, compareu i defenseu. Amb l'app interactiva (Mitosi 6 fases · Meiosi 10 fases · comptador de cromosomes a cada fase · notació 2n/n) podeu comprovar l'ordre correcte, el recompte i la notació ploïdica un cop heu fet el model de plastilina/dibuix. L'ordre i el perquè els confirmareu a l'apartat EXPLICA. Demostració a l'aula: ensenyar els dos models a una altra parella i explicar per què la meiosi dona la meitat: un cromosoma de cada parella.",
+  exploreDuration: "55 min",
+  appSrc: "/apps/app_lab_ceba.html",
+  exploreNote: "Laboratori virtual: si no has pogut venir o la preparació no t'ha sortit, fes la pràctica a l'app. Primer ordenes el protocol; després fas servir un microscopi virtual amb una preparació real d'arrel de ceba: hi classifiques les cèl·lules per fases i l'app et calcula l'índex mitòtic.",
 
   // ── EXPLICA ───────────────────────────────────────────────
   theoryPoints: [
     {
       id: "t1",
       apartat: "2",
-      heading: "Recordem la ==mitosi==: dues còpies idèntiques",
-      text: "A la sessió anterior vas veure la ==mitosi|p==: d'una cèl·lula en surten ==dues d'idèntiques==, amb ==tot el material genètic== (els 46 cromosomes, en els humans). El cos la fa servir per ==créixer i reparar==. És la fotocopiadora del cos: la còpia surt igual que l'original.",
+      heading: "Tot el que has vist és ==mitosi==: dues còpies idèntiques",
+      text: "Les cèl·lules que has trobat a l'arrel de ceba feien ==mitosi|p==: d'una cèl·lula en surten ==dues d'idèntiques==, amb ==tot el material genètic== (els 46 cromosomes, en els humans). L'arrel la fa servir per ==créixer==; el teu cos, per ==créixer i reparar==. És la fotocopiadora del cos: la còpia surt igual que l'original. Però, si la ceba només fes mitosi, com faria les llavors? On faria una altra mena de divisió?",
       type: "concept"
     },
     {
@@ -151,7 +154,8 @@ export const sa2s2 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: true, title: "Mitosi i meiosi, comparades", src: "/images/sa2-s2-mitosi-meiosi.svg", note: "La MATEIXA cèl·lula de partida dona dos resultats: mitosi (2 cèl·lules idèntiques, 2n = 4) i meiosi (4 gàmetes amb la meitat: un llarg + un curt, un de cada parella). Mira la llegenda: el color diu d'on ve (mare/pare), la mida el tipus, i una X és UN cromosoma copiat. Fes-la servir per comprovar el teu model." },
+    { id: "Fig.1", apartat: "2", before: true, title: "Mitosi i meiosi, comparades", src: "/images/sa2-s2-mitosi-meiosi.svg", note: "La MATEIXA cèl·lula de partida dona dos resultats: mitosi (2 cèl·lules idèntiques, 2n = 4) i meiosi (4 gàmetes amb la meitat: un llarg + un curt, un de cada parella). Mira la llegenda: el color diu d'on ve (mare/pare), la mida el tipus, i una X és UN cromosoma copiat. Fes-la servir per seguir la demostració del docent." },
+    { id: "App", apartat: "2", before: false, embed: true, aspect: "900 / 700", minHeight: 560, title: "Mitosi i meiosi pas a pas", src: "/apps/app_mitosi_meiosi.html", note: "Mitosi (6 fases) i meiosi (10 fases) amb el comptador de cromosomes a cada fase i la notació 2n / n. Fes-la servir per repassar l'ordre i, a casa, per preparar el vídeo." },
     { id: "Animació", apartat: "3", before: true, embed: true, aspect: "900 / 760", minHeight: 600, title: "23 + 23 = 46: la fecundació pas a pas", src: "/apps/sa2-s2-fecundacio-animacio.html", note: "Avança amb els botons o les fletxes ← →. L'òvul i l'espermatozoide porten 23 cromosomes cadascun, un de cada tipus; el zigot en té 46, en 23 parelles. L'últim pas mostra què passaria sense meiosi: 46 → 92 → 184 → 368." },
     { id: "Fig.2", apartat: "3", before: true, title: "Per què la meitat: la fecundació", src: "/images/sa2-s2-fecundacio.svg", note: "Òvul (n = 23, un de cada tipus) + espermatozoide (n = 23) = zigot (2n = 46, 23 parelles). Els cromosomes són de mides diferents perquè cada mida és un tipus. Si els gàmetes no tinguessin la meitat, cada generació doblaria el nombre de cromosomes." }
   ],
@@ -159,7 +163,7 @@ export const sa2s2 = {
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s2-fitxa-A.html", B: "/fitxes/sa2-s2-fitxa-B.html", C: "/fitxes/sa2-s2-fitxa-C.html" },
   sessionMaterials: [
-    { id: "rubrica-producte", title: "Rúbrica del producte final: maqueta del cicle + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
+    { id: "rubrica-producte", title: "Rúbrica del producte final: vídeo del procés + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
   ],
   teoriaPdfUrl: "/teoria/sa2-s2-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a la pregunta del principi (per què no tenim 92 cromosomes) i respon-la amb el que has après sobre la meiosi i la fecundació.",
@@ -171,37 +175,37 @@ export const sa2s2 = {
       {
         apartat: "0",
         title: "Idees prèvies + posada en comú dels deures",
-        time: "10 min (A: 5)",
+        time: "5 min",
         phase: "engage",
         instruction: "Posa en comú els dos teixits dels deures i respon: d'on creus que surt la barreja que fa que un fill no sigui idèntic als pares. No es corregeix.",
         hints: []
       },
       {
         apartat: "1",
-        title: "Modela: mitosi i meiosi amb la mateixa cèl·lula",
-        time: "40 min (A: 48)",
+        title: "Laboratori: tinció de l'arrel de ceba",
+        time: "55 min",
         phase: "explore",
-        instruction: "Amb les parelles de cromosomes que indiqui la teva fitxa (un color per parella), modela primer la mitosi i després la meiosi. Compta quantes cèl·lules surten i quants cromosomes té cadascuna.",
+        instruction: "Segueix el protocol de la fitxa per tenyir la punta de l'arrel. Al microscopi, busca una cèl·lula de cada fase, fes-ne una foto i dibuixa-la. Compta les cèl·lules d'un camp i fes un primer càlcul de l'índex mitòtic.",
         hints: [
-          "Copia SEMPRE els cromosomes primer: aquest pas és igual a les dues divisions.",
-          "La diferència clau: a la mitosi reparteixes les còpies un cop; a la meiosi divideixes DUES vegades (primer separes les parelles, després les còpies)."
+          "Si no trobes cap cèl·lula en divisió, mou la preparació cap a la punta de l'arrel: és allà on n'hi ha més.",
+          "Les cèl·lules en interfase són la majoria: si en un camp no en veus cap en divisió, prova un altre camp abans de rendir-te."
         ]
       },
       {
         apartat: "2",
-        title: "Mitosi vs meiosi: el resultat",
-        time: "20 min (A: 22)",
+        title: "Explica: de la mitosi a la meiosi",
+        time: "25 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, completa la comparació: nombre de cèl·lules i quantitat de material genètic de cada divisió. Marca quina fa cèl·lules idèntiques.",
+        instruction: "Mira la demostració del docent i la Fig.1. Completa la comparació: nombre de divisions, nombre de cèl·lules i quantitat de material genètic de cada divisió. Marca quina fa cèl·lules idèntiques.",
         hints: [
-          "Compta al teu model: quantes cèl·lules t'han quedat per cada camí i quants cromosomes hi ha dins de cadascuna.",
+          "A la meiosi hi ha DUES divisions: primer se separen les parelles, després les còpies.",
           "Per saber si són idèntiques, compara-les entre elles, no amb la cèl·lula de partida."
         ]
       },
       {
         apartat: "3",
         title: "Per què la meitat + per què no som clons",
-        time: "20 min (A: 18)",
+        time: "15 min",
         phase: "explica",
         instruction: "Amb la Fig.2, explica per què els gàmetes tenen la meitat dels cromosomes i digues quants n'ha de tenir un òvul humà. Després explica per què dos germans no són idèntics.",
         hints: [
@@ -212,7 +216,7 @@ export const sa2s2 = {
       {
         apartat: "4",
         title: "Quan fa el cos cada divisió + torna al hook",
-        time: "20 min (A: 17)",
+        time: "10 min",
         phase: "explica",
         instruction: "Digues on i per a què fa servir el cos cada divisió. Després torna a la pregunta del principi (per què no tenim 92 cromosomes) i respon-la.",
         hints: [
@@ -240,22 +244,23 @@ export const sa2s2 = {
 
   // ── METACOGNICIÓ ─────────────────────────────────────────
   metacognition: {
-    prompt: "Abans d'avui, si t'haguessin preguntat per què no tens 92 cromosomes, què hauries dit? Què ha canviat després de modelar la meiosi?",
+    prompt: "Abans d'avui, havies vist mai un cromosoma de veritat? Què t'ha sorprès de la preparació? I, si t'haguessin preguntat per què no tens 92 cromosomes, què hauries dit? Què ha canviat?",
     type: "reflection"
   },
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Fes un esquema-resum d'una sola cara comparant mitosi i meiosi amb quatre columnes: nombre de divisions, nombre de cèl·lules filles, quantitat de material genètic i per a què serveix. Afegeix-hi una frase pròpia que expliqui, sense copiar, per què la meiosi és imprescindible per a la reproducció. Ho farem servir a la propera sessió per entrar al laboratori d'anàlisi (índex mitòtic).",
-    note: "Aprenentatge significatiu: sintetitzar i comparar amb les pròpies paraules, no copiar la definició; l'esquema alimenta la demostració a l'aula."
+    description: "Peça 1 del producte: grava un vídeo curt (2-3 minuts) on expliquis la mitosi i la meiosi a partir de la MATEIXA cèl·lula de partida (2 parelles de cromosomes: un vermell = mare i un blau = pare a cada parella). Pots fer servir qualsevol material: plastilina, fils, paper retallat, mitjons, una pissarra, objectes de casa... Ha de quedar clar: el pas de còpia (forma de X), com acaba cada divisió (quantes cèl·lules i quants cromosomes té cadascuna) i per què la meiosi dona gàmetes diferents. Es lliura a la sessió 4 i et servirà per estudiar per a la prova.",
+    note: "Aprenentatge significatiu: explicar el procés amb un model propi i en veu alta obliga a entendre'l, no a copiar-lo. Mira la rúbrica del producte abans de gravar."
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
-    "Llegeix l'apartat EXPLICA: recordatori de la mitosi, la meiosi (dues divisions, 4 cèl·lules, la meitat del material), la fecundació (n + n = 2n) i la variabilitat",
-    "Mira la Fig.1 (mitosi vs meiosi) i la Fig.2 (fecundació) i intenta reconstruir tu els dos processos amb un dibuix",
-    "Descarrega la fitxa S2 i completa la comparació i el càlcul dels cromosomes de l'òvul",
-    "A casa, fes l'esquema-resum de comparació mitosi/meiosi de quatre columnes",
+    "Fes la pràctica al laboratori virtual (a l'apartat EXPLORA): ordena el protocol i, al microscopi virtual, classifica les cèl·lules per fases i calcula'n l'índex mitòtic",
+    "Llegeix l'apartat EXPLICA: la mitosi, la meiosi (dues divisions, 4 cèl·lules, la meitat del material), la fecundació (n + n = 2n) i la variabilitat",
+    "Mira la Fig.1 (mitosi vs meiosi), l'app de mitosi i meiosi i la Fig.2 (fecundació)",
+    "Descarrega la fitxa S2 i completa les preguntes del laboratori (amb les dades del laboratori virtual), la comparació i el càlcul dels cromosomes de l'òvul",
+    "A casa, grava el vídeo del procés (mitosi i meiosi) amb el material que vulguis: es lliura a la sessió 4",
     "Fes l'exit tiquet online a l'acordió de sota"
   ],
 

@@ -69,12 +69,12 @@ export const sa2s3 = {
   // ── APARTAT 0 · IDEES PRÈVIES ─────────────────────────────
   ideesPrevies: {
     startPoint:
-      "Primer posem en comú l'esquema-resum mitosi/meiosi dels deures. Després anoteu la vostra intuïció sobre com es detecta un càncer al microscopi. No es corregeix: ho compararem al final.",
+      "Primer recordem el laboratori de la S2: quantes cèl·lules en divisió vau trobar a l'arrel de ceba? Després anoteu la vostra intuïció sobre com es detecta un càncer al microscopi. No es corregeix: ho compararem al final.",
     prompts: [
       {
         kind: "write",
-        text: "Dels deures: en una frase pròpia, per què la meiosi és imprescindible per a la reproducció? (Posada en comú ràpida.)",
-        starter: "La meiosi és imprescindible perquè…"
+        text: "Del laboratori de la S2: a l'arrel de ceba, hi havia més cèl·lules en interfase o en divisió? Per què creus que a la punta de l'arrel n'hi havia tantes en divisió?",
+        starter: "N'hi havia més en… perquè…"
       },
       {
         kind: "write",
@@ -86,19 +86,19 @@ export const sa2s3 = {
 
   // ── EXPLORA (ABP · laboratori de recompte) ────────────────
   exploreActivity: {
-    what: "Sou l'equip d'un laboratori d'oncologia. Cada equip rep una fitxa de pacient diferent (un ratolí amb un fàrmac, una dosi i un temps propis) amb dues micrografies reals: la biòpsia ABANS del tractament i la de DESPRÉS. Compteu a cada biòpsia el total de cèl·lules i quantes estan en divisió, calculeu els dos índexs mitòtics i decidiu si el vostre fàrmac funciona. Després es posen en comú tots els casos de la classe.",
+    what: "Sou l'equip d'un laboratori d'oncologia. Cada equip rep una fitxa de pacient diferent (un ratolí amb un fàrmac, una dosi i un temps propis) amb dues micrografies reals: la biòpsia ABANS del tractament i la de DESPRÉS. A classe compteu la biòpsia INICIAL i calculeu-ne l'índex mitòtic. La biòpsia FINAL, el seu índex i el veredicte del vostre cas els acabeu A CASA, després d'haver practicat el veredicte junts a l'apartat 3 amb un cas de mostra. A la Sessió 4 es posen en comú tots els casos de la classe.",
     who: { mode: "grup", label: "Parelles de laboratori" },
-    time: { A: 44, B: 40 },
+    time: { A: 40, B: 35 },
     note: "La gràcia és arribar VOSALTRES al veredicte a partir de les dades, no que us el diguin. La demostració a l'aula és defensar la vostra conclusió (funciona / no funciona / és tòxic) davant d'una altra parella, ensenyant els números que l'aguanten."
   },
   exploreInstructions: [
     "Mira la Fig.1 i assegura't que distingeixes una cèl·lula EN DIVISIÓ (fils foscos) d'una en INTERFASE (nucli difús)",
     "A la teva fitxa de pacient, anota el fàrmac, la dosi i el temps (el teu cas)",
     "Biòpsia INICIAL: compta el TOTAL de cèl·lules i quantes estan en divisió; índex mitòtic inicial = (en divisió ÷ total) × 100",
-    "Biòpsia FINAL: repeteix el recompte i calcula l'índex mitòtic final",
-    "Compara els dos índexs: ha baixat? Decidiu si el vostre fàrmac funciona i porteu el resultat a la posada en comú de la classe"
+    "🏠 A casa · Biòpsia FINAL: repeteix el recompte i calcula l'índex mitòtic final",
+    "🏠 A casa · Compara els dos índexs: ha baixat? Escriu el veredicte (com l'heu practicat a l'apartat 3) i porta'l a la posada en comú de la Sessió 4"
   ],
-  exploreDuration: "40 min",
+  exploreDuration: "35 min (A: 40)",
   exploreMaterials: ["Fitxa de pacient assignada (biòpsia inicial + final, un cas diferent per equip)", "Calculadora o full de càlcul a mà"],
   exploreNote: "Recompte i decisió basada en dades (ABP). Compteu amb cura: a la fitxa del nivell A veureu que tres cèl·lules mal comptades ja poden moure el veredicte. Com que cada equip té un fàrmac/dosi/temps diferent, a la posada en comú (seminari de laboratori) es comparen tots els casos a la pissarra: quins fàrmacs frenen la divisió, quins no i quins són tòxics.",
 
@@ -176,15 +176,15 @@ export const sa2s3 = {
         title: "Idees prèvies + posada en comú dels deures",
         time: "10 min (A: 5)",
         phase: "engage",
-        instruction: "Posa en comú l'esquema mitosi/meiosi dels deures i respon: què creus que busca un patòleg al microscopi per detectar un càncer. No es corregeix.",
+        instruction: "Recorda el laboratori de la S2 (quantes cèl·lules en divisió vau trobar) i respon: què creus que busca un patòleg al microscopi per detectar un càncer. No es corregeix.",
         hints: []
       },
       {
         apartat: "1",
-        title: "Compta i calcula els dos índexs mitòtics",
-        time: "40 min (A: 45)",
+        title: "Compta la biòpsia inicial (la final, a casa)",
+        time: "35 min (A: 40)",
         phase: "explore",
-        instruction: "A la teva fitxa de pacient, compta a cada biòpsia (inicial i final) el total de cèl·lules i les que estan en divisió, i calcula els dos índexs mitòtics. La Fig.2 mostra un exemple del tipus d'imatge.",
+        instruction: "A la teva fitxa de pacient, compta a la biòpsia INICIAL el total de cèl·lules i les que estan en divisió, i calcula'n l'índex mitòtic. La biòpsia FINAL la comptaràs a casa, igual. La Fig.2 mostra un exemple del tipus d'imatge.",
         hints: [
           "Compta en dos passos: primer TOTES les cèl·lules, després només les que tenen fils foscos (en divisió).",
           "Índex mitòtic = (en divisió ÷ total) × 100. Fes-ho per separat a la biòpsia inicial i a la final."
@@ -203,10 +203,10 @@ export const sa2s3 = {
       },
       {
         apartat: "3",
-        title: "Veredicte: funciona el fàrmac?",
-        time: "25 min (A: 30)",
+        title: "Seminari: practiquem el veredicte",
+        time: "30 min (A: 35)",
         phase: "elabora",
-        instruction: "Compara l'índex inicial i el final i escriu el veredicte de l'equip amb les dades que l'aguanten. Prepara com el defensaràs.",
+        instruction: "Tota la classe resol pas a pas un cas de mostra (un ratolí que passa del 24% al 22%): el fàrmac funciona? Així sabràs fer a casa el veredicte del teu cas, amb la biòpsia FINAL, acompanyat de les dades que l'aguanten.",
         hints: [
           "Si l'índex baixa clarament → el fàrmac frena la divisió → funciona.",
           "No diguis només 'sí funciona': acompanya-ho sempre dels números que has mesurat (dos al nivell B; tres al nivell A, perquè hi entra el control).",
@@ -250,17 +250,17 @@ export const sa2s3 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Amb els teus dos índexs mitòtics, escriu un mini-informe de 4-5 línies com si fos la conclusió d'un article científic: què heu mesurat, quins números heu obtingut abans i després, i quin és el vostre veredicte sobre el fàrmac. Ha de poder-se defensar només amb les dades. El farem servir per tancar la SA a la propera sessió.",
-    note: "Aprenentatge significatiu: comunicar una conclusió amb dades pròpies (prepara la síntesi de la SA), no copiar una definició."
+    description: "1) Acaba el teu cas: compta la biòpsia FINAL de la fitxa de pacient, calcula'n l'índex mitòtic i escriu el veredicte (apartats 1 i 3 de la fitxa), igual que l'hem practicat a classe. 2) Fes una taula de tres columnes (Mitosi / Meiosi / Càncer) amb: quantes cèl·lules resulten, quin material genètic tenen i on/quan passa al cos. 3) Acaba el vídeo del procés (peça 1 del producte). Ho portes tot a la Sessió 4, que acaba amb la prova.",
+    note: "Aprenentatge significatiu: aplicar sol el que s'ha practicat a classe i organitzar els tres processos (no copiar definicions): és la preparació directa de la prova."
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
     "Mira la Fig.1: aprèn a distingir una cèl·lula en divisió (fils foscos) d'una en interfase (nucli difús)",
-    "Amb la Fig.2, compta el total i les cèl·lules en divisió de cada biòpsia i calcula els dos índexs mitòtics",
+    "Amb la Fig.2 (o la teva fitxa de pacient), compta el total i les cèl·lules en divisió de cada biòpsia i calcula els dos índexs mitòtics",
     "Llegeix l'apartat EXPLICA (índex mitòtic, provar un fàrmac abans/després, el càncer com a cicle sense control)",
     "Descarrega la fitxa S3 i completa el recompte, la interpretació i el veredicte",
-    "Redacta el mini-informe de conclusió amb els teus números",
+    "Escriu el veredicte del teu cas amb els dos números i fes la taula Mitosi / Meiosi / Càncer dels deures",
     "Fes l'exit tiquet online a l'acordió de sota"
   ],
 

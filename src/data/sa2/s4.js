@@ -10,7 +10,7 @@ export const sa2s4 = {
   // ── ENGANXA (hook de síntesi) ─────────────────────────────
   engageChallenge: "Tres informes arriben avui al mateix laboratori: (1) una ferida a la pell que es tanca sola en una setmana; (2) una biòpsia de teixit muscular on, de 80 cèl·lules comptades, 28 estaven en divisió; (3) una parella que no aconsegueix tenir fills perquè, segons l'anàlisi, els espermatozoides de l'home tenen 46 cromosomes en comptes de 23. Cap dels tres parla del mateix procés. Quin explica cada cas: mitosi normal, mitosi descontrolada (càncer) o un error en la meiosi?",
   engageQuestion: "Durant tres sessions heu treballat tres peces d'un mateix trencaclosques: com es divideix una cèl·lula (S1), per què n'hi ha dues maneres de fer-ho (S2) i com es detecta quan una divisió es descontrola (S3). Avui les heu de fer servir TOTES tres alhora, com un laboratori de diagnòstic que ha de triar quina eina fer servir a cada cas.",
-  engageContext: "Sou l'equip de diagnòstic d'un centre mèdic. Us arriben tres informes de pacients diferents i, en parella, heu de decidir quin dels tres processos (mitosi normal, mitosi sense control, o un error de meiosi) explica cada cas, justificant-ho amb el vocabulari i els números de les tres darreres sessions. És la sessió de repàs i preparació per a la prova de La cèl·lula.",
+  engageContext: "Sou l'equip de diagnòstic d'un centre mèdic. Us arriben tres informes de pacients diferents i, en parella, heu de decidir quin dels tres processos (mitosi normal, mitosi sense control, o un error de meiosi) explica cada cas, justificant-ho amb el vocabulari i els números de les tres darreres sessions. És la primera hora de la sessió; la segona hora és la prova de La cèl·lula.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -18,7 +18,7 @@ export const sa2s4 = {
       "Distingeixo, davant d'un cas nou, si explica mitosi normal, mitosi descontrolada (càncer) o un error de meiosi, i ho argumento amb el mecanisme correcte, no només amb la paraula.",
       "Relaciono els tres processos amb el mateix esquema del cicle cel·lular: on s'insereix la mitosi, on la meiosi i què falla exactament quan hi ha un tumor.",
       "Comparo els quatre casos i explico per què tots depenen del mateix fet: una cèl·lula ha de copiar o repartir el seu material genètic amb precisió.",
-      "Detecto quan un número alt no demostra res perquè falta amb què comparar-lo, i escric un cas nou que posi a prova aquesta trampa."
+      "Detecto quan un número alt no demostra res perquè falta amb què comparar-lo."
     ],
     B: [
       "Reconec en un cas nou si parla de mitosi normal, de mitosi descontrolada (càncer) o d'un error de meiosi.",
@@ -53,18 +53,6 @@ export const sa2s4 = {
         "Recorda el mapa dels tres: MITOSI (S1) = 1 cèl·lula → 2 idèntiques, per créixer i reparar. MEIOSI (S2) = 1 cèl·lula → 4 amb la meitat (n: un de cada parella), per fer gàmetes. CÀNCER (S3) = mitosi que ha perdut el control, es detecta amb l'índex mitòtic. Situa cada cas d'abans en aquest mapa.",
       challenge:
         "El mapa dels tres processos es pot dibuixar com un sol esquema (un cicle amb una bifurcació i una alarma). Dibuixa'l tu mateix/a amb les teves paraules, sense mirar els apunts, i compara'l després amb el d'un company."
-    },
-    "3": {
-      scaffold:
-        "Per redactar la conclusió de cada cas, omple aquesta frase: «El cas ___ és ___ (mitosi/meiosi/càncer) perquè ___ (la dada o el mecanisme que ho demostra)». Fes-ho una vegada per cada cas de la teva fitxa.",
-      challenge:
-        "A la fitxa, cada cas ha d'anar acompanyat de la dada que el demostra i de quina dada et faria canviar de diagnòstic. I al Repte final n'agafes NOMÉS un, el quart, i el redactes com si fossis tu qui signa l'informe que rebrà el donant: amb el vocabulari tècnic i sense arrodonir cap dada."
-    },
-    "4": {
-      scaffold:
-        "Per inventar el teu cas nou, tria primer QUIN dels tres processos vols que expliqui (mitosi, meiosi o càncer) i després pensa una situació real (un símptoma, una anàlisi, un número) que ho reveli, com als tres casos d'avui.",
-      challenge:
-        "Inventa un cas del tipus del cas 4: un número que sembli alarmant però que, ben mirat, sigui normal (o al revés). Escriu-lo tal com el llegiria un company i, a part, apunta la resposta correcta i quina dada desfà la trampa. Se l'intercanviaràs amb un company perquè l'endevini."
     }
   },
 
@@ -93,9 +81,9 @@ export const sa2s4 = {
 
   // ── EXPLORA (ABP · informe de diagnòstic amb 3 casos) ─────
   exploreActivity: {
-    what: "En parella, rebeu els informes de pacients de la vostra fitxa (tres al nivell B: ferida que cicatritza, biòpsia de teixit muscular amb índex mitòtic alt i espermatozoide amb 46 cromosomes; al nivell A n'hi ha un quart). Per a cada un, decidiu quin dels tres processos l'explica (mitosi normal / mitosi descontrolada / error de meiosi) i redacteu la justificació amb el vocabulari i els números apresos a S1-S3. Al final, prepareu-vos per defensar el vostre informe complet davant d'una altra parella.",
+    what: "En parella, rebeu els informes de pacients de la vostra fitxa (tres al nivell B: ferida que cicatritza, biòpsia de teixit muscular amb índex mitòtic alt i espermatozoide amb 46 cromosomes; al nivell A n'hi ha un quart). Per a cada un, decidiu quin dels tres processos l'explica (mitosi normal / mitosi descontrolada / error de meiosi) i redacteu la justificació amb el vocabulari i els números apresos a S1-S3. Abans, en 5 minuts, es posen en comú els veredictes de la S3 que heu acabat a casa.",
     who: { mode: "grup", label: "Parelles de diagnòstic" },
-    time: { A: 40, B: 35 },
+    time: { A: 35, B: 30 },
     apartats: "1",
     note: "No n'hi ha prou dient la paraula correcta: cal explicar PER QUÈ (el mecanisme) i per què no és cap dels altres dos. És la mateixa lògica de detectiu de S3, ara amb tres sospitosos possibles en comptes d'un."
   },
@@ -105,9 +93,9 @@ export const sa2s4 = {
     "Per a cada informe, aplica les tres preguntes: cèl·lules iguals o a la meitat? senyal de pèrdua de control? quin dels tres processos és? I abans de dir que un número és alt, pregunta't: alt comparat amb què?",
     "Escriu la conclusió de cada cas amb el vocabulari tècnic (índex mitòtic, n/2n, control del cicle)",
     "Poseu-vos d'acord en parella abans d'escriure la versió final",
-    "Prepareu la defensa oral: per a cada cas, la frase-clau que ho demostra"
+    "Per a cada cas, subratlleu la frase-clau que ho demostra: és el que us demanarà la prova"
   ],
-  exploreDuration: "35 min (A: 40)",
+  exploreDuration: "30 min (A: 35)",
   exploreMaterials: ["Els tres informes de pacient (a la fitxa)", "Apunts de S1, S2 i S3 (repàs, no contingut nou)"],
   exploreNote: "Activitat de síntesi: no s'explica res de nou, es reconeix i s'aplica el que ja es va treballar a S1 (cicle/mitosi), S2 (meiosi) i S3 (índex mitòtic). El repte és triar l'eina correcta a cada cas, no aprendre'n una altra.",
 
@@ -136,14 +124,14 @@ export const sa2s4 = {
     },
     {
       id: "t4",
-      apartat: "3",
+      apartat: "2",
       heading: "Per què els tres processos ==importen==",
       text: "Sense ==mitosi|b== no hi hauria creixement ni reparació de ferides. Sense ==meiosi|o== no hi hauria gàmetes ni ==variabilitat== entre germans. Sense un bon ==control del cicle==, una mitosi es pot descontrolar i formar un ==tumor|r==. Els tres fils expliquen per què el cos creix, es repara, es reprodueix... i per què de vegades falla.",
       type: "concept"
     },
     {
       id: "t5",
-      apartat: "3",
+      apartat: "2",
       heading: "Diagnosticar és ==triar l'eina correcta==",
       text: "Un/a professional de la salut no memoritza casos: aplica el ==mètode== correcte a cada informe (comptar cromosomes, calcular un índex, comparar abans/després). El mateix passa a la prova: no cal recordar exemples exactes, cal saber ==quina pregunta fer-se== davant d'un cas nou.",
       type: "epistemic",
@@ -160,10 +148,10 @@ export const sa2s4 = {
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s4-fitxa-A.html", B: "/fitxes/sa2-s4-fitxa-B.html", C: "/fitxes/sa2-s4-fitxa-C.html" },
   sessionMaterials: [
-    { id: "rubrica-producte", title: "Rúbrica del producte final: maqueta del cicle + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
+    { id: "rubrica-producte", title: "Rúbrica del producte final: vídeo del procés + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
   ],
   teoriaPdfUrl: "/teoria/sa2-s4-teoria.pdf",
-  elaborateNote: "Tancament de la SA2: torna a les tres frases inicials (apartat 0) i reescriu-les si cal amb el que has après avui. Aquesta sessió prepara directament la prova de La cèl·lula.",
+  elaborateNote: "Tancament de la SA2: a l'apartat 2 tornes a les tres frases inicials i les reescrius si cal. La segona hora és la prova escrita (60 min, individual i sense apunts). L'informe final del producte es fa a casa després de la prova.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────
   fitxaGuide: {
@@ -179,10 +167,10 @@ export const sa2s4 = {
       },
       {
         apartat: "1",
-        title: "Diagnostica els casos de la teva fitxa",
-        time: "35 min (A: 40)",
+        title: "Posada en comú S3 + diagnostica els casos",
+        time: "30 min (A: 35)",
         phase: "explore",
-        instruction: "Llegeix els informes de pacient de la teva fitxa (tres al nivell B, quatre al nivell A) i decideix, cas per cas, quin procés l'explica (mitosi normal / mitosi descontrolada / error de meiosi). Justifica cada resposta amb el vocabulari i els números de S1-S3.",
+        instruction: "Primer, 5 minuts per posar en comú els veredictes de la S3 (fets a casa). Després llegeix els informes de pacient de la teva fitxa (tres al nivell B, quatre al nivell A) i decideix, cas per cas, quin procés l'explica (mitosi normal / mitosi descontrolada / error de meiosi). Justifica cada resposta amb el vocabulari i els números de S1-S3.",
         hints: [
           "Recorda: a vegades la meiosi falla i un gàmeta queda amb el nombre complet (2n) en lloc de la meitat (n) — és un error de meiosi.",
           "Per a cada cas pregunta't: cèl·lules iguals o a la meitat? hi ha senyal de pèrdua de control?",
@@ -192,54 +180,30 @@ export const sa2s4 = {
       },
       {
         apartat: "2",
-        title: "El mapa dels tres processos",
-        time: "20 min (A: 15)",
+        title: "El mapa dels tres processos + torna a les tres frases",
+        time: "15 min (A: 10)",
         phase: "explica",
-        instruction: "Amb les Fig.1-3 de repàs, dibuixa o completa un sol esquema que situï mitosi, meiosi i càncer partint del mateix cicle cel·lular.",
+        instruction: "Amb les Fig.1-3 de repàs i la teva taula Mitosi / Meiosi / Càncer dels deures, completa un sol esquema que situï els tres processos partint del mateix cicle cel·lular. Després torna a les tres frases de l'apartat 0 i reescriu-les si ara les diries diferent.",
         hints: [
           "Mitosi = 2 idèntiques (tot el cos). Meiosi = 4 amb la meitat, un de cada parella (només gàmetes). Càncer = mitosi sense aturador.",
-          "Les tres respostes a la mateixa pregunta: quantes cèl·lules surten i amb quin material genètic?"
+          "Les tres respostes a la mateixa pregunta: quantes cèl·lules surten i amb quin material genètic?",
+          "Compara la teva frase nova amb la inicial: què hi has afegit que abans no sabies dir?"
         ]
       },
       {
         apartat: "3",
-        title: "Informe final de diagnòstic",
-        time: "25 min",
-        phase: "elabora",
-        instruction: "Redacta la conclusió de tots els casos de la teva fitxa com un informe mèdic, amb la frase-clau de cada un, i explica en 3-4 línies per què els tres processos són importants per al cos.",
-        hints: [
-          "Frase model: «El cas ___ és ___ perquè ___ (la dada que ho demostra)».",
-          "A la conclusió general, connecta creixement/reparació (mitosi), reproducció (meiosi) i risc si falla el control (càncer)."
-        ]
-      },
-      {
-        apartat: "4",
-        title: "Inventa un cas nou + torna a les tres frases",
-        time: "15 min",
-        phase: "elabora",
-        instruction: "Inventa un cas breu que un company hauria de classificar correctament. Després, torna a les tres frases de l'apartat 0 i reescriu-les si ara les diries diferent.",
-        hints: [
-          "Tria primer el procés que vols amagar-hi i després pensa la situació que el revela.",
-          "Compara la teva frase nova amb la inicial: què hi has afegit que abans no sabies dir?"
-        ]
+        title: "Prova escrita de La cèl·lula",
+        time: "60 min",
+        phase: "prova",
+        instruction: "Segona hora: prova individual i sense apunts (full a part, versió B o C). Abans de començar, deseu la fitxa i els apunts.",
+        hints: []
       }
     ]
   },
 
   // ── EXIT TIQUET ──────────────────────────────────────────
-  // Full imprimible del tiquet de sortida (mig A4 · dos tiquets per full).
-  // Generat per scripts/_exit-tickets/build_tickets.py.
-  exitTicketUrl: { A: "/fitxes/sa2-s4-exit-ticket.html", B: "/fitxes/sa2-s4-exit-ticket.html", C: "/fitxes/sa2-s4-exit-ticket-C.html" },
-  exitTicketType: "paper",
-  exitTicketCriteri: "1.1",  // criteri imprès al tiquet (build_tickets.py)
-  exitTicketQuestions: [
-    {
-      id: "q1",
-      type: "open",
-      text: "Explica, en 3-4 línies, per quina cosa es diferencien la mitosi, la meiosi i el càncer si totes tres parteixen del mateix cicle cel·lular.",
-      hint: "Pensa en tres preguntes: quantes cèl·lules surten, amb quin material genètic, i si el procés s'atura quan toca."
-    }
-  ],
+  // Sense exit tiquet des del 15/10/2026: la segona hora és la prova escrita
+  // (60 min). A l'Additio la formativa de la SA2 compta 3 tiquets (S1-S3).
 
   // ── METACOGNICIÓ ─────────────────────────────────────────
   metacognition: {
@@ -249,8 +213,8 @@ export const sa2s4 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Repassa amb els apunts de S1, S2 i S3 els tres processos i completa una taula de tres columnes (Mitosi / Meiosi / Càncer) amb: quantes cèl·lules resulten, quin material genètic tenen, i on/quan passa al cos. Porta-la a la propera sessió com a preparació directa per a la prova de La cèl·lula.",
-    note: "Aprenentatge significatiu: organitzar i comparar (no copiar definicions), preparació explícita de l'avaluació."
+    description: "Peça 2 del producte: l'informe final de diagnòstic. Redacta la conclusió de tots els casos de la fitxa com un informe mèdic (frase model: «El cas ___ és ___ perquè ___»), amb la dada que demostra cada un, i acaba amb 3-4 línies sobre per què els tres processos són importants per al cos. Lliura'l juntament amb el vídeo, seguint la rúbrica del producte.",
+    note: "Aprenentatge significatiu: comunicar un diagnòstic amb dades pròpies. Es fa després de la prova, quan ja tens els tres processos ben lligats."
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────
@@ -258,8 +222,8 @@ export const sa2s4 = {
     "Repassa les Fig.1-3 (cicle/mitosi de S1, mitosi vs meiosi de S2, com distingir la divisió de S3)",
     "Llegeix l'apartat EXPLICA d'avui: connecta els tres processos en un sol mapa",
     "Descarrega la fitxa S4 i resol-ne els casos de diagnòstic amb el vocabulari de les tres sessions anteriors",
-    "Fes la taula comparativa dels deures (Mitosi / Meiosi / Càncer) com a preparació per a la prova",
-    "Fes l'exit tiquet online a l'acordió de sota"
+    "Fes la taula comparativa (Mitosi / Meiosi / Càncer) com a preparació per a la prova",
+    "Parla amb el docent per fer la prova escrita un altre dia"
   ],
 
   // ── COMPETÈNCIES ─────────────────────────────────────────

@@ -616,6 +616,8 @@ export default function SessionPage() {
         </section>
 
         {/* ── SECCIÓ 5 · EXIT TIQUET ───────────────────────── */}
+        {/* Una sessió sense tiquet (p. ex. SA2-S4, que acaba amb la prova) no el declara. */}
+        {(session.exitTicketUrl || session.exitTicketQuestions?.length > 0) && (
         <section className="pb-12">
           <SectionTitle>
             {t('session.exitTicket')}
@@ -659,6 +661,7 @@ export default function SessionPage() {
               viu nomes a la seccio 7 «Has faltat a classe?». */}
           <p className="card px-5 py-4">✏️ {t('session.exitPaperNote')}</p>
         </section>
+        )}
 
         {/* Estructura informe (SA2 S7) */}
         {session.reportStructure && (

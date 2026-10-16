@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laboratori virtual · Arrel de ceba · IE Temple · 4t ESO</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#c084fc; --purple-ink:#5a4aa0; --ink:#1A1A2E; --ink-2:#4A3F3F; --muted:#666;
+  --surface:#fdfafb; --rule:#EAE6F6; --rule-dark:#C8C2DD;
+  --yellow-tint:#FFF9E0; --green:#2e8b57; --green-tint:#EAF4EB; --red:#c0392b; --red-tint:#FBEAEA;
+  --teal-tint:#EAF3F8; --purple-tint:#EFEAF5;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Fira Sans Extra Condensed',sans-serif;background:var(--surface);color:var(--ink-2);font-size:16px;line-height:1.4}
+header{background:var(--purple-ink);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.eyebrow{font-size:11px;font-weight:700;color:var(--purple);letter-spacing:.1em;text-transform:uppercase}
+.h-title{font-size:21px;font-weight:700;color:#fff;line-height:1.1}
+.tabs{display:flex;gap:6px}
+.tab{font-family:inherit;font-size:13px;font-weight:700;border:none;border-radius:999px;padding:6px 14px;cursor:pointer;background:rgba(255,255,255,.14);color:#fff}
+.tab.active{background:var(--purple);color:var(--ink)}
+.tab:disabled{opacity:.45;cursor:not-allowed}
+main{max-width:980px;margin:0 auto;padding:16px}
+.panel{display:none}.panel.active{display:block}
+h2{font-size:19px;color:var(--purple-ink);margin-bottom:4px}
+.lead{color:var(--muted);margin-bottom:12px}
+.box{background:#fff;border:1.5px solid var(--rule);border-radius:12px;padding:12px 14px;margin-bottom:12px}
+.warn{background:var(--yellow-tint);border-color:#f0d878}
+/* ── pas 1 ── */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}}
+.col-t{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.card{display:flex;gap:10px;align-items:flex-start;background:#fff;border:1.5px solid var(--rule-dark);border-radius:10px;padding:9px 11px;margin-bottom:7px;cursor:pointer;transition:all .15s;text-align:left;width:100%;font-family:inherit;font-size:15px;color:var(--ink-2)}
+.card:hover{border-color:var(--purple-ink);background:var(--purple-tint)}
+.card .ico{font-size:22px;line-height:1}
+.card.done{cursor:default;border-color:#9fd0b0;background:var(--green-tint)}
+.card.shake{animation:shake .35s;border-color:var(--red);background:var(--red-tint)}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.num{display:inline-flex;align-items:center;justify-content:center;min-width:24px;height:24px;border-radius:50%;background:var(--purple-ink);color:#fff;font-weight:700;font-size:13px}
+.why{font-size:13.5px;color:var(--green);margin-top:3px}
+.why b{color:var(--ink)}
+.msg{min-height:24px;font-weight:700;margin:6px 0}
+.msg.err{color:var(--red)}.msg.ok{color:var(--green)}
+.btn{font-family:inherit;font-weight:700;font-size:15px;border:none;border-radius:999px;padding:8px 18px;cursor:pointer;background:var(--purple-ink);color:#fff}
+.btn.sec{background:var(--rule);color:var(--purple-ink)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+/* ── pas 2 ── */
+.scope-bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.zoom{font-family:inherit;font-weight:700;border:1.5px solid var(--rule-dark);background:#fff;border-radius:8px;padding:4px 10px;cursor:pointer}
+.zoom.active{background:var(--purple-ink);color:#fff;border-color:var(--purple-ink)}
+.scope{position:relative;overflow:auto;border:3px solid var(--ink);border-radius:14px;background:#000;height:min(62vh,520px)}
+.stage{position:relative;transform-origin:0 0}
+.stage img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+.hs{position:absolute;transform:translate(-50%,-50%);width:4.2%;aspect-ratio:1;border-radius:50%;border:2.5px dashed rgba(255,255,255,.95);background:rgba(90,74,160,.08);cursor:pointer;box-shadow:0 0 0 1.5px rgba(26,26,46,.45);padding:0}
+.hs:hover{background:rgba(255,255,255,.25)}
+.hs.set{border-style:solid;border-color:#ffd54f}
+.hs.div{border-color:#ff7043}
+.hs.right{border-color:#43a047;border-width:3.5px}
+.hs.wrong{border-color:#e53935;border-width:3.5px;background:rgba(229,57,53,.25)}
+.hs .tag{position:absolute;left:50%;top:100%;transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:700;background:rgba(26,26,46,.85);color:#fff;border-radius:6px;padding:0 5px;pointer-events:none}
+.picker{position:fixed;z-index:20;background:#fff;border:2px solid var(--purple-ink);border-radius:12px;padding:8px;box-shadow:0 8px 24px rgba(0,0,0,.25);display:none;width:190px}
+.picker button{display:block;width:100%;text-align:left;font-family:inherit;font-size:15px;border:none;background:none;padding:5px 8px;border-radius:7px;cursor:pointer}
+.picker button:hover{background:var(--purple-tint)}
+.picker small{display:block;color:var(--muted);font-size:12px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:#fff;border:1.5px solid var(--rule);border-radius:10px;padding:8px;text-align:center}
+.stat b{display:block;font-size:24px;color:var(--purple-ink)}
+.stat span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.fases{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;font-size:13.5px}
+@media (max-width:700px){.fases{grid-template-columns:1fr 1fr}}
+.fase{background:var(--teal-tint);border-radius:8px;padding:6px 8px}
+.fase b{display:block;color:var(--ink)}
+.credit{font-size:12px;color:var(--muted);margin-top:6px}
+.credit a{color:var(--purple-ink)}
+.result{font-size:16px}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="eyebrow">SA2 · Sessió 2 · Laboratori virtual</div><div class="h-title">Tinció de l'arrel de ceba</div></div>
+  <div class="tabs">
+    <button class="tab active" data-p="p1">1 · Prepara la mostra</button>
+    <button class="tab" data-p="p2" id="tab2" disabled>2 · Observa i compta</button>
+  </div>
+</header>
+<main>
+  <!-- ═══ PAS 1 ═══ -->
+  <section class="panel active" id="p1">
+    <h2>Pas 1 · Posa els passos del protocol en ordre</h2>
+    <p class="lead">Has faltat al laboratori? Aquí el fas tu. Tria, d'un en un, quin és el pas següent. Si t'equivoques, llegeix la pista.</p>
+    <div class="box warn">⚠️ <b>Al laboratori real:</b> bata, guants i ulleres. L'orceïna A és àcida i taca: si te'n cau a la pell, aigua abundant i avisa el docent.</div>
+    <div class="cols">
+      <div><div class="col-t">Passos desordenats</div><div id="pool"></div></div>
+      <div><div class="col-t">El teu protocol</div><div id="done"></div><div class="msg" id="msg1"></div>
+        <button class="btn" id="go2" style="display:none">Ara, al microscopi →</button></div>
+    </div>
+  </section>
+
+  <!-- ═══ PAS 2 ═══ -->
+  <section class="panel" id="p2">
+    <h2>Pas 2 · Mira la preparació i classifica les cèl·lules</h2>
+    <p class="lead">Fes clic a cada cercle i digues en quina etapa és la cèl·lula. Quan les tinguis totes, prem <b>Comprova</b>. L'app et calcula l'<b>índex mitòtic</b>.</p>
+    <div class="box fases">
+      <div class="fase"><b>Interfase</b>Nucli rodó i granulat. No es veuen cromosomes.</div>
+      <div class="fase"><b>Profase</b>Un cabdell de fils dins del nucli.</div>
+      <div class="fase"><b>Metafase</b>Cromosomes en una franja al mig.</div>
+      <div class="fase"><b>Anafase</b>Dos grups que se separen cap als pols.</div>
+      <div class="fase"><b>Telofase</b>Dos nuclis petits, un a cada banda.</div>
+    </div>
+    <div class="scope-bar">
+      <b>🔬 Augment:</b>
+      <button class="zoom active" data-z="1">×100</button>
+      <button class="zoom" data-z="1.8">×400</button>
+      <button class="zoom" data-z="2.8">×1000</button>
+      <span style="color:var(--muted);font-size:13px">A més augment, arrossega les barres per moure't per la preparació.</span>
+    </div>
+    <div class="scope" id="scope"><div class="stage" id="stage">
+      <img src="../images/sa2-s1-mitosi-ceba-real.jpg" alt="Cèl·lules de l'àpex de l'arrel de ceba tenyides, a 1600 augments" id="img">
+    </div></div>
+    <p class="credit">Imatge: Josef Reischig · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> · Wikimedia Commons. Barra d'escala: 50 µm.</p>
+    <div class="stats">
+      <div class="stat"><b id="sTot">0/0</b><span>Classificades</span></div>
+      <div class="stat"><b id="sInt">0</b><span>Interfase</span></div>
+      <div class="stat"><b id="sDiv">0</b><span>En divisió</span></div>
+      <div class="stat"><b id="sIdx">–</b><span>Índex mitòtic</span></div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn" id="check" disabled>Comprova</button>
+      <button class="btn sec" id="reset">Torna a començar</button>
+    </div>
+    <div class="box result" id="result" style="display:none;margin-top:12px"></div>
+  </section>
+</main>
+<div class="picker" id="picker"></div>
+
+<script>
+// ── PAS 1 ───────────────────────────────────────────
+const STEPS = [
+  {ico:"✂️", t:"Talla 2-3 mm de la punta de l'arrel i posa-la al portaobjectes.", why:"<b>Per què la punta?</b> És el meristema: la zona que creix i on les cèl·lules es divideixen.", hint:"Primer has de tenir el tros d'arrel."},
+  {ico:"💧", t:"Cobreix-la amb 3 gotes d'orceïna A.", why:"<b>Per què orceïna A?</b> És àcida: afluixa la unió entre cèl·lules i comença a tenyir.", hint:"Abans d'escalfar cal posar el colorant àcid."},
+  {ico:"🔥", t:"Escalfa suaument a la flama fins que surtin vapors. ⚠️ Que no bulli.", why:"<b>Per què escalfar?</b> La calor ajuda l'àcid a separar les cèl·lules i el colorant a entrar. Si bull, es destrueixen.", hint:"La calor va just després de l'orceïna A."},
+  {ico:"🧻", t:"Treu l'excés amb paper i posa-hi 1 gota d'orceïna B. Espera 1 minut.", why:"<b>Per què orceïna B?</b> Acaba de tenyir els cromosomes i deixa la mostra a punt.", hint:"Després d'escalfar, canvia de colorant."},
+  {ico:"👍", t:"Posa el cobreobjectes i aixafa amb el polze, amb paper a sobre. ⚠️ Sense trencar-lo.", why:"<b>Per què aixafar?</b> Les cèl·lules queden en <b>una sola capa</b> i es poden veure una a una.", hint:"L'aixafament és l'últim pas abans de mirar."},
+  {ico:"🔬", t:"Mira-ho al microscopi: primer a poc augment, després a molt augment.", why:"<b>Per què de menys a més?</b> A poc augment trobes la zona bona; a molt augment veus els cromosomes.", hint:"Mirar és el final de tot."}
+];
+let next = 0;
+const pool = document.getElementById('pool'), done = document.getElementById('done'), msg1 = document.getElementById('msg1');
+const order = STEPS.map((_,i)=>i).sort(()=>Math.random()-.5);
+order.forEach(i=>{
+  const b = document.createElement('button'); b.className='card';
+  b.innerHTML = `<span class="ico">${STEPS[i].ico}</span><span>${STEPS[i].t}</span>`;
+  b.onclick = ()=>{
+    if(i===next){
+      b.remove();
+      const d = document.createElement('div'); d.className='card done';
+      d.innerHTML = `<span class="num">${i+1}</span><span>${STEPS[i].t}<div class="why">${STEPS[i].why}</div></span>`;
+      done.appendChild(d); next++;
+      msg1.className='msg ok'; msg1.textContent = next<STEPS.length ? 'Molt bé! Quin ve ara?' : 'Protocol complet! Ja tens la preparació.';
+      if(next===STEPS.length){ document.getElementById('go2').style.display='inline-block'; document.getElementById('tab2').disabled=false; }
+    } else {
+      b.classList.remove('shake'); void b.offsetWidth; b.classList.add('shake');
+      msg1.className='msg err'; msg1.textContent = 'Encara no. Pista: ' + STEPS[next].hint;
+    }
+  };
+  pool.appendChild(b);
+});
+function show(p){
+  document.querySelectorAll('.panel').forEach(x=>x.classList.toggle('active',x.id===p));
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('active',x.dataset.p===p));
+}
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{ if(!t.disabled) show(t.dataset.p); });
+document.getElementById('go2').onclick=()=>show('p2');
+
+// ── PAS 2 ───────────────────────────────────────────
+// Coordenades sobre la imatge original (1920×1229). ok = respostes acceptades.
+const W=1920, H=1229;
+const I = ['Interfase'];
+const CELLS = [
+  [465,320,['Profase']], [1610,390,['Metafase']], [1600,700,['Anafase']],
+  [1450,525,['Telofase']], [262,1015,['Profase','Metafase']],
+  [190,210,I],[130,385,I],[310,110,I],[470,160,I],[550,70,I],[705,105,I],[745,330,I],[870,150,I],
+  [990,360,I],[1190,240,I],[1365,350,I],[1525,150,I],[1160,490,I],[1250,615,I],[990,615,I],
+  [820,510,I],[585,525,I],[455,645,I],[700,700,I],[855,670,I],[110,735,I],[355,810,I],[605,870,I],
+  [560,1060,I],[1120,750,I],[1325,790,I],[1305,930,I],[1180,960,I],[1480,910,I],[1680,880,I],
+  [1840,480,I],[1780,640,I],[1505,1075,I],[1650,1065,I],[40,850,I]
+];
+const PHASES = [
+  ['Interfase','no es divideix'],['Profase','cabdell de fils'],['Metafase','franja al mig'],
+  ['Anafase','dos grups que se separen'],['Telofase','dos nuclis petits']
+];
+const stage=document.getElementById('stage'), scope=document.getElementById('scope'), picker=document.getElementById('picker');
+const answers = new Array(CELLS.length).fill(null);
+let current=-1, checked=false;
+const hsEls = CELLS.map(([x,y],k)=>{
+  const h=document.createElement('button'); h.className='hs'; h.style.left=(x/W*100)+'%'; h.style.top=(y/H*100)+'%';
+  h.setAttribute('aria-label','Cèl·lula '+(k+1));
+  h.onclick=e=>{ e.stopPropagation(); if(checked && !h.classList.contains('wrong')) return; current=k; openPicker(e.clientX,e.clientY); };
+  stage.appendChild(h); return h;
+});
+picker.innerHTML = PHASES.map(([p,s])=>`<button data-p="${p}">${p}<small>${s}</small></button>`).join('');
+picker.querySelectorAll('button').forEach(b=>b.onclick=()=>{ answers[current]=b.dataset.p; picker.style.display='none'; paint(); if(checked){ checked=false; document.getElementById('check').click(); } });
+function openPicker(x,y){
+  picker.style.display='block';
+  const r=picker.getBoundingClientRect();
+  picker.style.left=Math.min(x+8, innerWidth-r.width-8)+'px';
+  picker.style.top=Math.min(y+8, innerHeight-r.height-8)+'px';
+}
+document.addEventListener('click',e=>{ if(!picker.contains(e.target)) picker.style.display='none'; });
+function paint(){
+  let n=0, nd=0;
+  answers.forEach((a,k)=>{
+    const h=hsEls[k]; h.className='hs'; h.innerHTML='';
+    if(a){ n++; h.classList.add('set'); if(a!=='Interfase'){ nd++; h.classList.add('div'); }
+      h.innerHTML=`<span class="tag">${a==='Interfase'?'I':a}</span>`; }
+  });
+  document.getElementById('sTot').textContent=`${n}/${CELLS.length}`;
+  document.getElementById('sInt').textContent=n-nd;
+  document.getElementById('sDiv').textContent=nd;
+  document.getElementById('sIdx').textContent = n ? (nd/n*100).toFixed(1).replace('.',',')+' %' : '–';
+  document.getElementById('check').disabled = n<CELLS.length;
+}
+document.getElementById('check').onclick=()=>{
+  checked=true; let ok=0;
+  answers.forEach((a,k)=>{ const good=CELLS[k][2].includes(a); if(good) ok++; hsEls[k].classList.add(good?'right':'wrong'); });
+  const realDiv = CELLS.filter(c=>c[2][0]!=='Interfase').length;
+  const idxReal = (realDiv/CELLS.length*100).toFixed(1).replace('.',',');
+  const nd = answers.filter(a=>a!=='Interfase').length;
+  const idxTeu = (nd/CELLS.length*100).toFixed(1).replace('.',',');
+  const r=document.getElementById('result'); r.style.display='block';
+  r.innerHTML = `<p><b>${ok} de ${CELLS.length}</b> ben classificades. ${ok<CELLS.length ? "Fes clic a les <b>vermelles</b> i torna-les a classificar." : "Perfecte!"}</p>
+    <p style="margin-top:6px">El teu índex: <b>${idxTeu} %</b> · Índex correcte d'aquest camp: <b>${idxReal} %</b>
+    &nbsp;(<i>índex mitòtic = cèl·lules en divisió ÷ total × 100</i>: ${realDiv} ÷ ${CELLS.length} × 100).</p>
+    <p style="margin-top:6px">✏️ <b>Copia-ho a la fitxa</b> (apartat 1) i respon: per què la majoria de cèl·lules són en <b>interfase</b>? Què et diu això de quant dura cada etapa?</p>`;
+};
+document.getElementById('reset').onclick=()=>{ checked=false; answers.fill(null); document.getElementById('result').style.display='none'; paint(); };
+document.querySelectorAll('.zoom').forEach(z=>z.onclick=()=>{
+  document.querySelectorAll('.zoom').forEach(x=>x.classList.toggle('active',x===z));
+  stage.style.width=(parseFloat(z.dataset.z)*100)+'%';
+});
+paint();
+</script>
+</body>
+</html>
