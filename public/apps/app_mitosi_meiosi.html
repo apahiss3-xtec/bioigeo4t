@@ -28,12 +28,16 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+html, body { height: 100%; }
 body {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   background: var(--surface);
   color: var(--ink-2);
-  min-height: 100vh;
+  /* l'app ocupa tota la finestra (iframe o pantalla completa): sense scroll de pàgina */
+  height: 100vh; height: 100dvh;
+  display: flex; flex-direction: column;
 }
+header, .mode-bar, .phase-timeline, .app-footer { flex: none; }
 
 /* ── HEADER ─────────────────────────────────────── */
 header {
@@ -50,7 +54,7 @@ header {
 .header-title { font-size: 22px; font-weight: 700; color: #fff; line-height: 1.1; }
 .header-right { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 
-.lang-btn, .simplify-btn {
+.lang-btn, .simplify-btn, .fs-btn {
   font-family: 'Fira Sans Extra Condensed', sans-serif;
   font-size: 12px; font-weight: 700; letter-spacing: .06em;
   text-transform: uppercase; cursor: pointer;
@@ -63,6 +67,8 @@ header {
 .simplify-btn:hover { background: #f9dc5c; }
 .simplify-btn.active { background: #f9dc5c; box-shadow: 0 0 0 2px var(--purple-ink); }
 
+.fs-btn { background: #fff; color: var(--purple-ink); }
+.fs-btn:hover { background: var(--purple-tint); }
 .lang-btn { background: rgba(255,255,255,.12); color: #fff; }
 .lang-btn:hover { background: rgba(255,255,255,.22); }
 .lang-btn.active { background: var(--purple); color: var(--ink); }
@@ -98,16 +104,20 @@ header {
 }
 
 /* ── LAYOUT ─────────────────────────────────────── */
+/* Dibuix + etiqueta + navegació a l'esquerra; descripció a la dreta (amb scroll propi) */
 .app-body {
+  flex: 1; min-height: 0;
   display: grid;
-  grid-template-columns: 1fr 340px;
-  grid-template-rows: auto 1fr;
-  min-height: calc(100vh - 100px);
+  grid-template-columns: minmax(0, 1fr) clamp(300px, 40%, 460px);
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  grid-template-areas:
+    "canvas side"
+    "label  side"
+    "nav    side";
 }
 
 /* ── PHASE TIMELINE ─────────────────────────────── */
 .phase-timeline {
-  grid-column: 1 / -1;
   display: flex; align-items: center; gap: 0;
   padding: 16px 20px;
   overflow-x: auto;
@@ -141,12 +151,14 @@ header {
 
 /* ── CELL CANVAS ────────────────────────────────── */
 .cell-canvas {
+  grid-area: canvas;
   display: flex; align-items: center; justify-content: center;
-  padding: 32px 24px;
+  padding: 16px 24px;
   background: var(--surface);
   position: relative; overflow: hidden;
-  min-height: 440px;
+  min-height: 0;
 }
+.app-body.compara .cell-canvas { overflow-y: auto; align-items: flex-start; }
 .cell-canvas::before {
   content: '';
   position: absolute; inset: 0;
@@ -156,13 +168,15 @@ header {
 }
 
 .cell-diagram {
-  max-width: 100%; max-height: 360px;
+  /* s'escala al màxim de l'espai disponible (viewBox 400×320) */
+  width: 100%; height: 100%; max-width: 640px;
   transition: opacity .3s ease;
 }
 
 /* ── PHASE LABEL ────────────────────────────────── */
 .phase-label-area {
-  padding: 12px 24px 4px;
+  grid-area: label;
+  padding: 12px 24px 8px;
   background: var(--surface);
   border-top: 1px solid var(--rule);
 }
@@ -182,9 +196,10 @@ header {
 
 /* ── SIDE INFO ──────────────────────────────────── */
 .side-info {
-  grid-row: 2 / 4;
+  grid-area: side;
+  min-height: 0;
   border-left: 1px solid var(--rule);
-  padding: 20px;
+  padding: 20px 22px;
   background: #fff;
   overflow-y: auto;
   display: flex; flex-direction: column; gap: 16px;
@@ -260,8 +275,8 @@ header {
 
 /* ── COMPARISON VIEW ────────────────────────────── */
 .comparison-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 20px; padding: 20px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px; padding: 4px;
 }
 .comparison-cell {
   background: #fff; border: 1px solid var(--rule); border-radius: 12px;
@@ -283,7 +298,7 @@ header {
 
 /* ── NAV BOTTOM ─────────────────────────────────── */
 .bottom-nav {
-  grid-column: 1 / 2;
+  grid-area: nav;
   display: flex; justify-content: space-between; align-items: center;
   padding: 12px 24px;
   border-top: 1px solid var(--rule);
@@ -311,6 +326,43 @@ header {
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--rule); }
 ::-webkit-scrollbar-thumb { background: var(--rule-dark); border-radius: 3px; }
+
+/* ── PEU (autoria i llicència) ──────────────────── */
+.app-footer {
+  padding: 6px 16px; border-top: 1px solid var(--rule);
+  font-size: 12px; line-height: 1.4; color: var(--muted); text-align: center;
+}
+.app-footer a { color: var(--purple-ink); }
+
+/* ── PANTALLES GRANS (ordinador / pantalla completa): text més còmode de llegir ── */
+@media (min-width: 1100px) {
+  .app-body { grid-template-columns: minmax(0, 1fr) clamp(360px, 36%, 560px); }
+  .info-text { font-size: 19px; line-height: 1.55; }
+  .info-text.simplified { font-size: 20px; }
+  .key-point { font-size: 18px; }
+  .info-section-title { font-size: 13px; }
+  .phase-label-title { font-size: 38px; }
+  .phase-btn { font-size: 15px; padding: 9px 18px; }
+  .mode-tab { font-size: 20px; }
+  .step-counter { font-size: 16px; }
+  .nav-btn { font-size: 17px; padding: 10px 26px; }
+  .header-title { font-size: 26px; }
+  .compare-table { font-size: 16px; }
+}
+
+/* ── PANTALLES PETITES (mòbil): una columna i scroll de pàgina ── */
+@media (max-width: 720px) {
+  body { height: auto; min-height: 100vh; display: block; }
+  header { flex-wrap: wrap; }
+  .app-body {
+    display: flex; flex-direction: column;
+  }
+  .cell-canvas { min-height: 300px; }
+  .cell-diagram { height: auto; }
+  .side-info { border-left: 0; border-top: 1px solid var(--rule); overflow: visible; }
+  .bottom-nav { order: 3; }
+  .side-info { order: 4; }
+}
 </style>
 </head>
 <body>
@@ -321,6 +373,7 @@ header {
     <span class="header-title">Divisió cel·lular: Mitosi i Meiosi</span>
   </div>
   <div class="header-right">
+    <button class="fs-btn" id="btnFs" onclick="toggleFullscreen()" title="Pantalla completa">⛶ Pantalla completa</button>
     <button class="simplify-btn" id="btnSimplify" onclick="toggleSimplify()">Simplifica</button>
     <button class="lang-btn" id="btnAr" onclick="setLang('ar')">عربي</button>
     <button class="lang-btn" id="btnEs" onclick="setLang('es')">Castellano</button>
@@ -906,6 +959,10 @@ function renderTimeline() {
   }
 
   tl.innerHTML = html;
+
+  // la fase activa queda centrada a la línia de fases (la meiosi en té 10)
+  const act = tl.querySelector('.phase-btn.active');
+  if (act) tl.scrollLeft = act.offsetLeft - (tl.clientWidth - act.offsetWidth) / 2;
 }
 
 function renderPhase() {
@@ -954,9 +1011,9 @@ function renderPhase() {
         <text x="46" y="30" ${FONT} font-size="13" font-weight="800" fill="#4A3F3F">color = d’on ve</text>
         <text x="46" y="46" ${FONT} font-size="13" font-weight="800"><tspan fill="${colors.mare}">mare</tspan><tspan fill="#666"> o </tspan><tspan fill="${colors.pare}">pare</tspan></text>
         <text x="46" y="62" ${FONT} font-size="12" fill="#666">mida = tipus</text>
-        ${single(160, 34, 'L', 'm', 0, .8)}${double(214, 34, 'L', 'm', 0, .8)}
-        <text x="160" y="72" text-anchor="middle" ${FONT} font-size="11.5" font-weight="700" fill="#666">sense copiar</text>
-        <text x="214" y="72" text-anchor="middle" ${FONT} font-size="11.5" font-weight="700" fill="#666">copiat (X) = 1</text>
+        ${single(152, 34, 'L', 'm', 0, .8)}${double(218, 34, 'L', 'm', 0, .8)}
+        <text x="152" y="72" text-anchor="middle" ${FONT} font-size="11.5" font-weight="700" fill="#666">sense copiar</text>
+        <text x="218" y="72" text-anchor="middle" ${FONT} font-size="11.5" font-weight="700" fill="#666">copiat (X) = 1</text>
       </svg>
       <div style="font-size:13px;color:var(--muted);margin-top:6px">Compta: <strong style="color:var(--purple-ink)">${ph.chromosomes}</strong></div>
       <div class="notation-badge">${ph.notation || ''}</div>
@@ -1065,6 +1122,7 @@ function renderAll() {
 function setMode(m) {
   mode = m;
   currentPhase = 0;
+  document.getElementById('appBody').classList.toggle('compara', m === 'compara');
   document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
   document.getElementById('tab' + m.charAt(0).toUpperCase() + m.slice(1)).classList.add('active');
 
@@ -1114,6 +1172,29 @@ function toggleSimplify() {
   renderPhase();
 }
 
+// Pantalla completa: dins l'iframe cal que la pàgina que l'allotja hi tingui allowfullscreen;
+// si el navegador no ho permet, s'obre l'app en una pestanya nova.
+function toggleFullscreen() {
+  const d = document, el = d.documentElement;
+  if (d.fullscreenElement || d.webkitFullscreenElement) {
+    (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+    return;
+  }
+  const req = el.requestFullscreen || el.webkitRequestFullscreen;
+  if (!req || !(d.fullscreenEnabled || d.webkitFullscreenEnabled)) {
+    window.open(location.href, '_blank', 'noopener');
+    return;
+  }
+  const p = req.call(el);
+  if (p && p.catch) p.catch(() => window.open(location.href, '_blank', 'noopener'));
+}
+function syncFsButton() {
+  const on = !!(document.fullscreenElement || document.webkitFullscreenElement);
+  document.getElementById('btnFs').textContent = on ? '✕ Surt de pantalla completa' : '⛶ Pantalla completa';
+}
+document.addEventListener('fullscreenchange', syncFsButton);
+document.addEventListener('webkitfullscreenchange', syncFsButton);
+
 function setLang(l) {
   lang = lang === l ? null : l;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
@@ -1138,9 +1219,8 @@ document.addEventListener('keydown', e => {
 renderAll();
 </script>
 <!-- §5d Autoria i llicència — obligatori a tot document que veu l'alumnat -->
-<footer style="max-width:1100px;margin:24px auto 16px;padding:12px 16px;border-top:1px solid var(--rule);font-family:'Fira Sans Extra Condensed',sans-serif;font-size:12.5px;line-height:1.6;color:var(--muted);text-align:center">
-  Adaptat per Albert Pahissa de l'original de Jordi Domènech.<br>
-  Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer" style="color:var(--purple-ink)">CC BY-NC-SA 4.0</a> — es pot compartir i modificar, sense ànim de lucre i mencionant l'autor.
+<footer class="app-footer">
+  Adaptat per Albert Pahissa de l'original de Jordi Domènech · Llicència <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ca" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> — es pot compartir i modificar, sense ànim de lucre i mencionant l'autor.
 </footer>
 </body>
 </html>
