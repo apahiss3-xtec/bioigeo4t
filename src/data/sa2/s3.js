@@ -10,7 +10,7 @@ export const sa2s3 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Un laboratori de recerca prova un fàrmac nou contra el càncer. Injecten a ratolins un tumor i després els tracten amb el fàrmac. Per saber si funciona NO obren el ratolí per veure si el tumor és més petit: agafen un trosset de teixit (una biòpsia), el miren al microscopi i compten una sola cosa. Què creus que compten, si un càncer és, precisament, cèl·lules que es divideixen sense control?",
   engageQuestion: "A la Sessió 1 vas veure que un tumor són cèl·lules que fan mitosi sense parar. Si això és així, com podries mesurar amb NÚMEROS si un teixit té càncer... o si un fàrmac l'està frenant?",
-  engageContext: "Avui sou l'equip d'un laboratori de recerca oncològica. Rebreu les biòpsies d'un ratolí (abans i després del tractament), comptareu les cèl·lules en divisió i decidireu, amb dades a la mà, si el fàrmac funciona. Al final haureu de defensar la vostra conclusió com si la publiquéssiu.",
+  engageContext: "Avui el consorci fa l'assaig. Cada equip rep les biòpsies d'un ratolí tractat amb un dels fàrmacs candidats (abans i després del tractament), compta les cèl·lules en divisió i decideix, amb dades a la mà, què ha fet el fàrmac. El vostre resultat serà una fila de la taula de resultats de tota la classe (Sessió 4), i amb aquesta taula cadascú escriurà el seu article científic.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -108,28 +108,51 @@ export const sa2s3 = {
       id: "t1",
       apartat: "2",
       heading: "L'==índex mitòtic==: comptar per diagnosticar",
-      text: "L'==índex mitòtic|p== és el ==percentatge== de cèl·lules d'un teixit que estan ==en divisió== en un moment donat: (cèl·lules en mitosi ÷ total) × 100. És una eina de ==diagnòstic==: com que un ==tumor|r== són cèl·lules que es divideixen sense parar, un índex mitòtic ==més alt del que toca en aquell teixit== fa ==sospitar== d'un procés cancerós.",
-      type: "concept"
+      text: "És el ==percentatge== de cèl·lules d'un teixit que estan ==en divisió== en un moment donat.",
+      formula: { lhs: "Índex mitòtic (%)", num: "cèl·lules en divisió", den: "cèl·lules totals", tail: "× 100" },
+      formulaNote: "Exemple: 12 en divisió de 80 totals → 12 ÷ 80 × 100 = 15 %",
+      bullets: [
+        "Un ==tumor|r== són cèl·lules que es divideixen sense parar.",
+        "Per tant, un índex ==més alt== del que toca en aquell teixit fa ==sospitar== d'un procés cancerós."
+      ],
+      type: "keyequation"
     },
     {
       id: "t1b",
       apartat: "2",
       heading: "Compte: el llindar depèn del ==teixit==",
-      text: "El ~10% és una ==referència general==, no una llei per a tots els teixits. N'hi ha que es ==renoven cada dia== —la ==pell==, l'==intestí==— i on un índex alt és el ==normal==; i n'hi ha que gairebé ==no es divideixen mai== —el teixit ==nerviós==, el ==muscular==— i on un índex baix ja fa sospitar. El que compta de debò són dues coses: que l'índex estigui molt per sobre del que toca ==EN AQUELL teixit==, o que la divisió ==no s'aturi== quan el teixit ja està refet.",
+      text: "El ~10 % és una ==referència general==, no una llei per a tots els teixits.",
+      compare: [
+        { title: "Teixits que es renoven cada dia", color: "g", items: ["==Pell==, ==intestí==, medul·la", "Índex alt = ==normal=="] },
+        { title: "Teixits que gairebé no es divideixen", color: "b", items: ["Teixit ==nerviós==, ==muscular==", "Índex baix ja pot fer ==sospitar=="] }
+      ],
+      after: "El que compta de debò: que l'índex estigui molt per sobre del que toca ==EN AQUELL teixit==, o que la divisió ==no s'aturi== quan el teixit ja està refet.",
       type: "concept"
     },
     {
       id: "t2",
       apartat: "2",
       heading: "Com distingir una cèl·lula ==en divisió==",
-      text: "Al microscopi, una cèl·lula en ==interfase|b== té el nucli ==difús==, sense res destacat: NO compta com a mitosi. Una cèl·lula ==en divisió|p== té els ==cromosomes condensats visibles== (fils foscos): SÍ compta. Comptar bé és clau: confondre-les canvia el diagnòstic. Aquesta és la mateixa mitosi que vas ordenar a la S1, ara aplicada a un cas real.",
+      compare: [
+        { title: "Interfase → NO compta", color: "b", items: ["Nucli ==difús==, rodó i llis", "Sense fils foscos"] },
+        { title: "En divisió → SÍ compta", color: "p", items: ["==Cromosomes condensats== visibles (fils foscos)", "Una telofase amb 2 nuclis = ==1 cèl·lula=="] }
+      ],
+      after: "Confondre-les canvia el diagnòstic. És la mateixa mitosi que vas ordenar a la S1, ara aplicada a un cas real.",
       type: "concept"
     },
     {
       id: "t3",
       apartat: "3",
-      heading: "Provar un fàrmac: ==abans i després==",
-      text: "Per saber si un fàrmac frena el càncer, es mesura l'índex mitòtic ==abans|o== (pre-test) i ==després|g== (post-test) del tractament. Si l'índex ==baixa|g== clarament, el fàrmac ha ==frenat la divisió== → és eficaç. Si es ==manté o puja|r==, no funciona. Si el teixit es ==destrueix|r== del tot, el fàrmac pot ser massa ==tòxic==. Comparar dues mesures és el cor del ==mètode experimental==.",
+      heading: "Provar un fàrmac: ==abans, després i control==",
+      text: "Es mesura l'índex mitòtic ==abans|o== (pre-test) i ==després|g== (post-test) del tractament, i es compara amb un ==grup control== (sense fàrmac).",
+      formula: "Canvi = índex DESPRÉS − índex ABANS",
+      bullets: [
+        "Baixa ==clarament== (i més que el control) → frena la divisió → ==EFICAÇ|g==",
+        "Es manté igual que el control → ==INÚTIL|o==",
+        "El teixit es destrueix del tot → ==TÒXIC|r==",
+        "Les dades no permeten decidir (poques cèl·lules, sense control…) → ==NO CONCLOENT|b=="
+      ],
+      after: "Comparar mesures amb un control és el cor del ==mètode experimental==.",
       type: "epistemic",
       badge: "🔬 Com funciona la ciència"
     },
@@ -137,7 +160,15 @@ export const sa2s3 = {
       id: "t4",
       apartat: "4",
       heading: "El càncer: el cicle ==sense control==",
-      text: "Una cèl·lula normal ==s'atura== de dividir-se quan toca (hi ha uns ==controls== del cicle). Al ==càncer|r==, aquests controls ==fallen== i la cèl·lula es divideix sense parar → es forma un ==tumor==. Els fàrmacs antimitòtics ==aturen la divisió==, per això baixa l'índex mitòtic. Però ataquen TOTES les cèl·lules que es divideixen molt, també les ==sanes|o== (cabell, intestí, sang): per això la ==quimioteràpia== té efectes secundaris.",
+      compare: [
+        { title: "Cèl·lula normal", color: "g", items: ["Els ==controls== del cicle funcionen", "Es divideix quan cal i ==s'atura=="] },
+        { title: "Cèl·lula tumoral", color: "r", items: ["Els controls ==fallen==", "Es divideix ==sense parar== → tumor"] }
+      ],
+      bullets: [
+        "Els fàrmacs ==antimitòtics== aturen la divisió → baixa l'índex mitòtic.",
+        "Però ataquen TOTES les cèl·lules que es divideixen molt, també les ==sanes|o== (cabell, intestí, sang).",
+        "Per això la ==quimioteràpia== té efectes secundaris."
+      ],
       image: "/images/sa2-s3-cancer-cicle.webp",
       imageWide: true,
       imageTitle: "Control del cicle: cèl·lula normal i tumoral",
@@ -148,7 +179,14 @@ export const sa2s3 = {
       id: "t5",
       apartat: "4",
       heading: "Per què importa fer-ho ==amb rigor==",
-      text: "Un sol ratolí no demostra res: els assajos es fan amb ==molts casos== i sovint ==a cegues== (qui compta no sap quin tractament ha rebut la mostra) per no ==enganyar-se== a si mateix. Decidir si un fàrmac serveix afecta ==vides reals==: per això la ciència exigeix ==dades==, repetició i honestedat, no impressions.",
+      text: "Un sol ratolí no demostra res. Un assaig fiable té:",
+      bullets: [
+        "==Molts casos== (per això ajuntarem els resultats de TOTA la classe)",
+        "Un ==grup control== per comparar",
+        "Recompte ==a cegues==: qui compta no sap quin tractament ha rebut la mostra",
+        "==Honestedat==: s'escriu també el que no surt bé i els límits de l'assaig"
+      ],
+      after: "Decidir si un fàrmac serveix afecta ==vides reals==: la ciència exigeix dades, no impressions.",
       type: "epistemic",
       badge: "🧭 Ètica i ciència"
     }
@@ -162,7 +200,8 @@ export const sa2s3 = {
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s3-fitxa-A.html", B: "/fitxes/sa2-s3-fitxa-B.html", C: "/fitxes/sa2-s3-fitxa-C.html" },
   sessionMaterials: [
-    { id: "rubrica-index-mitotic", title: "Rúbrica de l'índex mitòtic i el mini-informe", url: "/fitxes/sa2-rubrica-index-mitotic.html", who: "alumnat" }
+    { id: "rubrica-index-mitotic", title: "Rúbrica de l'índex mitòtic i el mini-informe", url: "/fitxes/sa2-rubrica-index-mitotic.html", who: "alumnat" },
+    { id: "rubrica-article", title: "Rúbrica de l'article científic (producte final)", url: "/fitxes/sa2-rubrica-article.html", who: "alumnat" }
   ],
   teoriaPdfUrl: "/teoria/sa2-s3-teoria.pdf",
   elaborateNote: "Tancament: torna a la pregunta del principi (què compta el laboratori) i respon-la amb el que has calculat, i digues en una frase per què el càncer és una divisió sense control.",
@@ -250,8 +289,8 @@ export const sa2s3 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "1) Acaba el teu cas: compta la biòpsia FINAL de la fitxa de pacient, calcula'n l'índex mitòtic i escriu el veredicte (apartats 1 i 3 de la fitxa), igual que l'hem practicat a classe. 2) Fes una taula de tres columnes (Mitosi / Meiosi / Càncer) amb: quantes cèl·lules resulten, quin material genètic tenen i on/quan passa al cos. 3) Acaba el vídeo del procés (peça 1 del producte). Ho portes tot a la Sessió 4, que acaba amb la prova.",
-    note: "Aprenentatge significatiu: aplicar sol el que s'ha practicat a classe i organitzar els tres processos (no copiar definicions): és la preparació directa de la prova."
+    description: "1) Acaba el teu cas: compta la biòpsia FINAL de la fitxa de pacient, calcula'n l'índex mitòtic i escriu el veredicte (apartats 1 i 3 de la fitxa), igual que l'hem practicat a classe. Guarda bé els números (fàrmac, dosi, temps, índex inicial i final): seran la fila del teu equip a la taula de resultats del consorci i les dades del teu article. 2) Prepara la prova de la Sessió 4: repassa les fitxes S1-S3 (cicle i mitosi, meiosi i fecundació, índex mitòtic).",
+    note: "Aprenentatge significatiu: aplicar sol el que s'ha practicat a classe: el teu cas és la fila del teu equip a la taula del consorci i les dades del teu article."
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────
@@ -260,7 +299,7 @@ export const sa2s3 = {
     "Amb la Fig.2 (o la teva fitxa de pacient), compta el total i les cèl·lules en divisió de cada biòpsia i calcula els dos índexs mitòtics",
     "Llegeix l'apartat EXPLICA (índex mitòtic, provar un fàrmac abans/després, el càncer com a cicle sense control)",
     "Descarrega la fitxa S3 i completa el recompte, la interpretació i el veredicte",
-    "Escriu el veredicte del teu cas amb els dos números i fes la taula Mitosi / Meiosi / Càncer dels deures",
+    "Escriu el veredicte del teu cas amb els dos números",
     "Fes l'exit tiquet online a l'acordió de sota"
   ],
 

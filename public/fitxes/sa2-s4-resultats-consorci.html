@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Full de resultats del consorci · SA2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#173328;--rule:#B9C9C2;--tint:#F3F8F5;--muted:#4F625B;
+  --g1:#DCEAD6;--g2:#A9CDA2;--g3:#6BA567;--g4:#2E5D2C;
+  --tox:#3b3b3b;--aug:#d9534f;--sense:#f0a03c;--lleu:#f5dc5a;--forta:#5aa55a;}
+*{box-sizing:border-box;}
+body{margin:0;background:#fff;font-family:"Fira Sans Extra Condensed","Fira Sans Condensed","Arial Narrow",Arial,sans-serif;color:var(--ink);}
+.page{width:297mm;min-height:210mm;margin:12px auto;background:#fff;padding:9mm 11mm;border:1px solid #D6DED9;}
+.head{display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--g4);padding-bottom:7px;margin-bottom:8px;}
+.head .ico{font-size:30px;line-height:1;}
+.head h1{margin:0;font-size:20px;text-transform:uppercase;color:var(--g4);letter-spacing:.01em;}
+.head .sub{font-size:11.5px;color:var(--muted);margin-top:1px;}
+.ident{margin-left:auto;font-size:11px;text-align:right;line-height:1.7;white-space:nowrap;}
+.ident span{display:inline-block;border-bottom:1.5px solid var(--ink);min-width:52mm;}
+.intro{border:1.5px solid var(--g3);border-left:5px solid var(--g4);padding:6px 10px;font-size:11px;line-height:1.42;border-radius:0 7px 7px 0;margin-bottom:8px;}
+.intro ol{margin:3px 0 0;padding-left:18px;}
+table.res{width:100%;border-collapse:collapse;font-size:10.5px;}
+table.res th,table.res td{border:1px solid var(--rule);padding:3px 4px;text-align:center;vertical-align:middle;}
+table.res thead th{background:var(--g4);color:#fff;font-size:10.5px;letter-spacing:.03em;}
+table.res thead tr.t2 th{background:var(--g3);color:var(--ink);}
+table.res thead tr.t3 th{background:var(--g1);color:var(--ink);font-weight:600;font-size:9.5px;}
+table.res thead th.dosi{border-left:3px solid var(--ink);}
+table.res tbody th{background:var(--tint);text-align:left;font-size:11px;color:var(--g4);white-space:nowrap;}
+table.res tbody th small{display:block;color:var(--muted);font-weight:400;font-size:9px;}
+table.res tbody td{height:13mm;min-width:12mm;}
+table.res td.canvi{background:#fafcfb;font-weight:800;}
+table.res td.d1{border-left:3px solid var(--ink);}
+table.res td.m3{border-left:2px solid var(--g3);}
+table.res th.m3{border-left:2px solid var(--g3);}
+table.res tr.control th,table.res tr.control td{background:#FFF7E0;}
+table.res tr.control th{color:#7a5300;}
+table.res td.ver{text-align:left;min-width:30mm;}
+.below{display:flex;gap:10px;margin-top:8px;align-items:stretch;}
+.box{border:1.5px solid var(--g2);border-left:5px solid var(--g3);border-radius:0 7px 7px 0;padding:6px 10px;font-size:10.5px;line-height:1.4;}
+.formula{display:flex;align-items:center;gap:8px;font-weight:800;font-size:12px;color:var(--g4);margin:2px 0;}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:3px;}
+.legend span{display:inline-flex;align-items:center;gap:4px;}
+.sw{display:inline-block;width:14px;height:14px;border-radius:3px;border:1px solid var(--ink);}
+h2{font-size:14px;text-transform:uppercase;color:var(--g4);margin:2px 0 6px;letter-spacing:.02em;}
+.cols{display:grid;grid-template-columns:1.15fr 1fr;gap:12px;}
+.q{border:1px solid var(--rule);border-radius:7px;padding:5px 9px;margin-bottom:6px;font-size:10.8px;}
+.q b.n{display:inline-block;background:var(--g4);color:#fff;border-radius:50%;width:17px;height:17px;text-align:center;line-height:17px;font-size:10px;margin-right:5px;}
+.q .hint{color:var(--muted);font-size:9.8px;}
+.q .lines{margin-top:3px;min-height:18mm;background-image:repeating-linear-gradient(transparent 0 5.6mm,var(--rule) 5.6mm calc(5.6mm + 1px));outline:none;}
+.cand{border:2px solid var(--g4);border-radius:8px;padding:7px 10px;font-size:11.5px;margin-top:4px;}
+.cand .lines{min-height:17mm;background-image:repeating-linear-gradient(transparent 0 5.6mm,var(--rule) 5.6mm calc(5.6mm + 1px));outline:none;}
+.graf{border:1px solid var(--rule);border-radius:7px;padding:6px 8px;}
+.graf svg{width:100%;height:auto;display:block;}
+.graf .cap{font-size:10px;margin-top:3px;}
+.graf .cap span{display:inline-block;border-bottom:1px solid var(--ink);min-width:70%;}
+.foot{margin-top:7px;padding-top:5px;border-top:1.6px solid var(--rule);display:flex;justify-content:space-between;font-size:9.5px;color:var(--muted);}
+.noprint{text-align:center;margin:10px;}
+.noprint button{font:inherit;font-size:13px;padding:7px 16px;border:0;border-radius:7px;background:var(--g4);color:#fff;cursor:pointer;}
+[contenteditable]:focus{outline:2px solid var(--g3);}
+@media print{.page{margin:0;border:0;}.noprint{display:none;}@page{size:A4 landscape;margin:0;}}
+</style>
+</head>
+<body>
+<div class="noprint"><button onclick="window.print()">🖨 Imprimir / PDF (A4 apaïsat)</button></div>
+
+<!-- ═════════ PÀGINA 1 · LA TAULA DEL CONSORCI ═════════ -->
+<div class="page">
+  <div class="head">
+    <span class="ico">🧪</span>
+    <div>
+      <h1>Full de resultats del consorci · seminari</h1>
+      <div class="sub">SA2 · La cèl·lula · S4 · Quin fàrmac frena el tumor? · Biologia i Geologia 4t ESO · IE Temple</div>
+    </div>
+    <div class="ident">Nom: <span></span><br>El meu equip (fàrmac i dosi): <span></span></div>
+  </div>
+
+  <div class="intro"><strong>Seminari de resultats (15 min).</strong> Un sol equip no pot dir quin fàrmac és millor; la taula de tota la classe, sí.
+    <ol>
+      <li>Cada equip dicta la seva fila: <strong>índex mitòtic inicial i final</strong> (%) del fàrmac i del control, a 1 mes i a 3 mesos. Copia-ho tot.</li>
+      <li>Calcula el <strong>canvi</strong> de cada casella (final − inicial) i <strong>acoloreix-la</strong> amb el codi de sota.</li>
+      <li>Aquesta taula és la <strong>Taula 1</strong> del teu article: les dades són de tota la classe, la redacció és teva.</li>
+    </ol>
+  </div>
+
+  <table class="res">
+    <thead>
+      <tr>
+        <th rowspan="3">Tractament</th>
+        <th colspan="6" class="dosi">Dosi 10 U</th>
+        <th colspan="6" class="dosi">Dosi 30 U</th>
+        <th rowspan="3">Veredicte<br><small style="font-weight:400">eficaç · inútil · tòxic</small></th>
+      </tr>
+      <tr class="t2">
+        <th colspan="3" class="dosi">1 mes</th><th colspan="3" class="m3">3 mesos</th>
+        <th colspan="3" class="dosi">1 mes</th><th colspan="3" class="m3">3 mesos</th>
+      </tr>
+      <tr class="t3">
+        <th class="dosi">IM inicial %</th><th>IM final %</th><th>Canvi</th>
+        <th class="m3">IM inicial %</th><th>IM final %</th><th>Canvi</th>
+        <th class="dosi">IM inicial %</th><th>IM final %</th><th>Canvi</th>
+        <th class="m3">IM inicial %</th><th>IM final %</th><th>Canvi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="control"><th>Control (placebo)<small>la referència: llegeix-lo primer</small></th>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="ver" contenteditable="true">—</td></tr>
+      <tr><th>C<small>Cicloflavina A</small></th>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="ver" contenteditable="true"></td></tr>
+      <tr><th>H<small>Heferodoxina</small></th>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="ver" contenteditable="true"></td></tr>
+      <tr><th>Z<small>Zanton L</small></th>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="ver" contenteditable="true"></td></tr>
+      <tr><th>C + H</th>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="ver" contenteditable="true"></td></tr>
+      <tr><th>C + Z</th>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="ver" contenteditable="true"></td></tr>
+      <tr><th>H + Z</th>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="d1" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="m3" contenteditable="true"></td><td contenteditable="true"></td><td class="canvi" contenteditable="true"></td>
+        <td class="ver" contenteditable="true"></td></tr>
+    </tbody>
+  </table>
+
+  <div class="below">
+    <div class="box" style="flex:1">
+      <div class="formula">Canvi = IM final − IM inicial</div>
+      Negatiu (−) = l'índex <strong>baixa</strong> → el tumor es divideix menys. Positiu (+) = l'índex <strong>puja</strong>.
+      <div class="formula" style="margin-top:4px">Efecte del fàrmac = canvi del fàrmac − canvi del control</div>
+      Si el fàrmac baixa igual que el control, <strong>no ha fet res</strong>.
+    </div>
+    <div class="box" style="flex:1.1">
+      <strong>Codi de colors</strong> (acoloreix la casella «Canvi»):
+      <div class="legend">
+        <span><i class="sw" style="background:var(--forta)"></i>Baixada forta</span>
+        <span><i class="sw" style="background:var(--lleu)"></i>Baixada lleu</span>
+        <span><i class="sw" style="background:var(--sense)"></i>Sense baixada</span>
+        <span><i class="sw" style="background:var(--aug)"></i>Augment</span>
+        <span><i class="sw" style="background:var(--tox)"></i>Toxicitat (teixit destruït, no es pot comptar)</span>
+      </div>
+      <div style="margin-top:4px">Fixa amb la classe on és el límit entre «lleu» i «forta» abans d'acolorir.</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>SA2 · S4 · Full de resultats del consorci · Biologia i Geologia 4t ESO · IE Temple</span>
+    <span>CC BY-NC · Albert Pahissa</span>
+  </div>
+</div>
+
+<!-- ═════════ PÀGINA 2 · ANÀLISI + FIGURA ═════════ -->
+<div class="page">
+  <div class="head">
+    <span class="ico">🔍</span>
+    <div>
+      <h1>Analitza la taula · sempre contra el control</h1>
+      <div class="sub">Les respostes d'aquesta pàgina són l'esborrany dels apartats Resultats i Conclusions del teu article</div>
+    </div>
+    <div class="ident">Nom: <span></span></div>
+  </div>
+
+  <div class="cols">
+    <div>
+      <div class="q"><b class="n">1</b><strong>Control.</strong> Quant canvia l'índex <em>sense</em> fàrmac? Per què el necessitem?
+        <div class="hint">«En el grup control, l'índex passa del __ % al __ % …»</div><div class="lines" contenteditable="true"></div></div>
+      <div class="q"><b class="n">2</b><strong>Cada fàrmac.</strong> Quin baixa més l'índex que el control? Quin no fa res?
+        <div class="hint">«Comparativament, el fàrmac __ baixa més que el control; en canvi, __ …»</div><div class="lines" contenteditable="true"></div></div>
+      <div class="q"><b class="n">3</b><strong>Dosi i temps.</strong> 30 U fa més efecte que 10 U? 3 mesos més que 1 mes? I les combinacions?
+        <div class="hint">«A 30 U … ; a 3 mesos … ; la combinació __ …»</div><div class="lines" contenteditable="true"></div></div>
+      <div class="q"><b class="n">4</b><strong>Toxicitat.</strong> Algun tractament destrueix el teixit? Es pot fer servir igualment?
+        <div class="lines" contenteditable="true"></div></div>
+      <div class="q"><b class="n">5</b><strong>Límits.</strong> Quantes mostres hi ha de cada tractament? Què <em>no</em> podem afirmar? Quin experiment ho confirmaria?
+        <div class="lines" contenteditable="true"></div></div>
+    </div>
+
+    <div>
+      <div class="graf">
+        <strong style="font-size:11px">Esborrany de la Figura 1</strong> <span style="font-size:9.8px;color:var(--muted)">· tria una dosi i un temps (o fes-ne més d'una) · barra clara = inicial, fosca = final</span>
+        <svg viewBox="0 0 460 250" role="img" aria-label="Plantilla buida de gràfic de barres">
+          <g font-family="inherit" font-size="11" fill="#173328">
+            <text transform="translate(14 130) rotate(-90)" text-anchor="middle">Índex mitòtic (%)</text>
+            <g stroke="#B9C9C2" stroke-width="1">
+              <line x1="44" y1="20" x2="450" y2="20"/><line x1="44" y1="60" x2="450" y2="60"/>
+              <line x1="44" y1="100" x2="450" y2="100"/><line x1="44" y1="140" x2="450" y2="140"/>
+              <line x1="44" y1="180" x2="450" y2="180"/>
+            </g>
+            <line x1="44" y1="14" x2="44" y2="220" stroke="#173328" stroke-width="1.6"/>
+            <line x1="44" y1="220" x2="452" y2="220" stroke="#173328" stroke-width="1.6"/>
+            <g text-anchor="end" font-size="9.5" fill="#4F625B">
+              <text x="40" y="224">0</text><text x="40" y="184">__</text><text x="40" y="144">__</text>
+              <text x="40" y="104">__</text><text x="40" y="64">__</text><text x="40" y="24">__</text>
+            </g>
+            <g text-anchor="middle" font-size="10.5">
+              <text x="73" y="236" font-weight="800" fill="#7a5300">Control</text>
+              <text x="131" y="236">C</text><text x="189" y="236">H</text><text x="247" y="236">Z</text>
+              <text x="305" y="236">C+H</text><text x="363" y="236">C+Z</text><text x="421" y="236">H+Z</text>
+            </g>
+            <text x="248" y="249" text-anchor="middle" font-size="10">Tractament</text>
+          </g>
+        </svg>
+        <div class="cap"><strong>Figura 1.–</strong> <span contenteditable="true">&nbsp;</span></div>
+      </div>
+
+      <div class="cand">
+        <strong>🏆 Fàrmac candidat del consorci:</strong> ____________________ a ______ U durant ________
+        <div style="font-size:10px;color:var(--muted);margin-top:2px">perquè (dada que ho demostra, comparada amb el control) i no és tòxic perquè…</div>
+        <div class="lines" contenteditable="true"></div>
+      </div>
+
+      <div class="box" style="margin-top:6px">
+        <strong>Del full a l'article.</strong> Taula de la pàg. 1 → <strong>Taula 1</strong>. Gràfic → <strong>Figura 1</strong>.
+        Preguntes 1–4 → <strong>Resultats</strong> (descriu i compara, sense «per tant»). Pregunta 5 i fàrmac candidat → <strong>Conclusions</strong>.
+        Revisa-ho amb la <strong>rúbrica de l'article</strong>.
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>SA2 · S4 · Full de resultats del consorci · Biologia i Geologia 4t ESO · IE Temple</span>
+    <span>CC BY-NC · Albert Pahissa</span>
+  </div>
+</div>
+</body>
+</html>

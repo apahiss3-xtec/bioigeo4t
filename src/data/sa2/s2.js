@@ -10,7 +10,7 @@ export const sa2s2 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Tens 46 cromosomes a gairebé totes les cèl·lules del cos. La teva mare també. El teu pare també. I tu vas començar quan UNA cèl·lula de la teva mare (l'òvul) es va fusionar amb UNA cèl·lula del teu pare (l'espermatozoide). Si l'òvul en portés 46 i l'espermatozoide 46, tu en tindries 92... i el teu fill 184. Però tots en tenim 46. On han anat a parar la meitat?",
   engageQuestion: "La mitosi fa dues cèl·lules idèntiques amb TOT el material genètic. Aleshores, per què els gàmetes (òvul i espermatozoide) NO es poden fabricar per mitosi?",
-  engageContext: "Avui entrareu al laboratori: tenyireu la punta d'una arrel de ceba i veureu amb els vostres ulls cromosomes reals de cèl·lules en plena mitosi. Després, a l'explicació, descobrireu l'altra divisió, la meiosi: quatre cèl·lules amb la meitat i totes diferents. Al final podreu respondre per què el cos necessita les dues.",
+  engageContext: "Avui entrareu al laboratori: tenyireu la punta d'una arrel de ceba i veureu amb els vostres ulls cromosomes reals de cèl·lules en plena mitosi. Després, a l'explicació, descobrireu l'altra divisió, la meiosi: quatre cèl·lules amb la meitat i totes diferents. Al final podreu respondre per què el cos necessita les dues. Per al consorci, avui és l'entrenament: a la Sessió 3 comptareu cèl·lules en divisió com aquestes per provar els fàrmacs.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -111,14 +111,27 @@ export const sa2s2 = {
       id: "t1",
       apartat: "2",
       heading: "Tot el que has vist és ==mitosi==: dues còpies idèntiques",
-      text: "Les cèl·lules que has trobat a l'arrel de ceba feien ==mitosi|p==: d'una cèl·lula en surten ==dues d'idèntiques==, amb ==tot el material genètic== (els 46 cromosomes, en els humans). L'arrel la fa servir per ==créixer==; el teu cos, per ==créixer i reparar==. És la fotocopiadora del cos: la còpia surt igual que l'original. Però, si la ceba només fes mitosi, com faria les llavors? On faria una altra mena de divisió?",
+      text: "Les cèl·lules que has trobat a l'arrel de ceba feien ==mitosi|p==: és la fotocopiadora del cos.",
+      formula: "1 cèl·lula (2n) → 2 cèl·lules idèntiques (2n)",
+      bullets: [
+        "Amb ==tot el material genètic== (46 cromosomes en els humans).",
+        "L'arrel la fa servir per ==créixer==; el teu cos, per ==créixer i reparar==."
+      ],
+      after: "Però, si la ceba només fes mitosi, com faria les llavors? On faria una altra mena de divisió?",
       type: "concept"
     },
     {
       id: "t2",
       apartat: "2",
       heading: "La ==meiosi==: dues divisions per fer gàmetes",
-      text: "La meiosi fa ==gàmetes== (òvuls i espermatozoides). A partir d'una cèl·lula fa ==dues divisions seguides== i n'obté ==quatre cèl·lules==, cadascuna amb la ==meitat|r== del material genètic: ==un cromosoma de cada parella== (23 en els humans, un de cada tipus). A la primera divisió se separen les ==parelles|b== de cromosomes; a la segona, les còpies. Per això el resultat NO és una còpia idèntica de la cèl·lula original.",
+      text: "La meiosi fa ==gàmetes== (òvuls i espermatozoides) amb ==dues divisions seguides==:",
+      formula: "1 cèl·lula (2n) → 4 cèl·lules (n)",
+      bullets: [
+        "==1a divisió==: se separen les ==parelles|b== de cromosomes.",
+        "==2a divisió==: se separen les còpies (les dues meitats de cada X).",
+        "Resultat: cada gàmeta té ==la meitat|r==: ==un cromosoma== de cada parella (23 en els humans)."
+      ],
+      after: "Per això el resultat NO és una còpia idèntica de la cèl·lula original.",
       image: "/images/cariotip-huma.webp",
       imageWide: true,
       imageTitle: "Els 23 parells de cromosomes humans",
@@ -129,14 +142,25 @@ export const sa2s2 = {
       id: "t3",
       apartat: "3",
       heading: "Per què la ==meitat==? La fecundació",
-      text: "A la ==fecundació|g==, un òvul (==n==, la meitat) s'uneix amb un espermatozoide (==n==, la meitat) i formen el ==zigot== (==2n==, complet). Si els gàmetes tinguessin el material sencer, cada generació el ==doblaria== (46 → 92 → 184...). La meiosi ho evita: a cada gàmeta hi posa ==un cromosoma de cada parella== (no 23 qualssevol) perquè, en sumar-se les dues meitats, el nombre torni a ser el normal.",
+      text: "A la ==fecundació|g== s'uneixen dues meitats i tornen a fer un complet:",
+      formula: "òvul (n) + espermatozoide (n) = zigot (2n)",
+      formulaNote: "En humans: 23 + 23 = 46",
+      bullets: [
+        "Si els gàmetes portessin el material sencer, cada generació el ==doblaria==: 46 → 92 → 184…",
+        "La meiosi ho evita posant ==un cromosoma== de cada parella (no 23 qualssevol) a cada gàmeta."
+      ],
       type: "concept"
     },
     {
       id: "t4",
       apartat: "3",
       heading: "La meiosi ==barreja==: per això no som clons",
-      text: "Quan la meiosi reparteix els cromosomes, ho fa ==a l'atzar==: de cada parella, uns cops va a un gàmeta el del pare i uns cops el de la mare. Per això cada gàmeta que fabriques porta una ==combinació diferent== del material que vas rebre dels teus pares, i dos germans ==no són idèntics== (llevat dels bessons idèntics). La meiosi és la font de la ==variabilitat== dins d'una espècie.",
+      text: "Quan la meiosi reparteix els cromosomes, ho fa ==a l'atzar==: de cada parella, uns cops va a un gàmeta el del pare i uns cops el de la mare.",
+      bullets: [
+        "Cada gàmeta porta una ==combinació diferent==.",
+        "Per això dos germans ==no són idèntics== (llevat dels bessons idèntics).",
+        "La meiosi és la font de la ==variabilitat== dins d'una espècie."
+      ],
       image: "/images/sa2-s2-segregacio-atzar.webp",
       imageWide: true,
       imageTitle: "Dues alineacions, quatre gàmetes diferents",
@@ -147,7 +171,11 @@ export const sa2s2 = {
       id: "t5",
       apartat: "4",
       heading: "Quan fa servir el cos ==cada divisió==",
-      text: "La ==mitosi== passa a ==tot el cos== durant tota la vida: cada cop que creixes, cures una ferida o reposes cèl·lules. La ==meiosi== només passa als ==ovaris i als testicles==, per fabricar gàmetes. Les dues són imprescindibles: sense mitosi no creixeries ni et curaries; sense meiosi no hi hauria ==reproducció==. Aquesta és la raó per la qual les dues divisions són tan importants en el desenvolupament, el creixement i la reproducció humans.",
+      compare: [
+        { title: "Mitosi", color: "b", items: ["A ==tot el cos==, tota la vida", "Per créixer, curar ferides, reposar cèl·lules", "Sense ella: no creixeries ni et curaries"] },
+        { title: "Meiosi", color: "o", items: ["Només a ==ovaris i testicles==", "Per fabricar gàmetes", "Sense ella: no hi hauria ==reproducció=="] }
+      ],
+      after: "Les dues són imprescindibles per al desenvolupament, el creixement i la reproducció humans.",
       type: "epistemic",
       badge: "🧬 Per què importa"
     }
@@ -163,7 +191,8 @@ export const sa2s2 = {
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s2-fitxa-A.html", B: "/fitxes/sa2-s2-fitxa-B.html", C: "/fitxes/sa2-s2-fitxa-C.html" },
   sessionMaterials: [
-    { id: "rubrica-producte", title: "Rúbrica del producte final: vídeo del procés + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
+    { id: "rubrica-producte", title: "Rúbrica del vídeo del procés (deures d'avui)", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" },
+    { id: "rubrica-article", title: "Rúbrica del producte final: l'article científic", url: "/fitxes/sa2-rubrica-article.html", who: "alumnat" }
   ],
   teoriaPdfUrl: "/teoria/sa2-s2-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a la pregunta del principi (per què no tenim 92 cromosomes) i respon-la amb el que has après sobre la meiosi i la fecundació.",
@@ -250,8 +279,8 @@ export const sa2s2 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Peça 1 del producte: grava un vídeo curt (2-3 minuts) on expliquis la mitosi i la meiosi a partir de la MATEIXA cèl·lula de partida (2 parelles de cromosomes: un vermell = mare i un blau = pare a cada parella). Pots fer servir qualsevol material: plastilina, fils, paper retallat, mitjons, una pissarra, objectes de casa... Ha de quedar clar: el pas de còpia (forma de X), com acaba cada divisió (quantes cèl·lules i quants cromosomes té cadascuna) i per què la meiosi dona gàmetes diferents. Es lliura a la sessió 4 i et servirà per estudiar per a la prova.",
-    note: "Aprenentatge significatiu: explicar el procés amb un model propi i en veu alta obliga a entendre'l, no a copiar-lo. Mira la rúbrica del producte abans de gravar."
+    description: "Peça complementària del producte: grava un vídeo curt (2-3 minuts) on expliquis la mitosi i la meiosi a partir de la MATEIXA cèl·lula de partida (2 parelles de cromosomes: un vermell = mare i un blau = pare a cada parella). Pots fer servir qualsevol material: plastilina, fils, paper retallat, mitjons, una pissarra, objectes de casa... Ha de quedar clar: el pas de còpia (forma de X), com acaba cada divisió (quantes cèl·lules i quants cromosomes té cadascuna) i per què la meiosi dona gàmetes diferents. Es lliura a l'inici de la sessió 3 i et servirà per estudiar per a la prova.",
+    note: "Aprenentatge significatiu: explicar el procés amb un model propi i en veu alta obliga a entendre'l, no a copiar-lo. Mira la rúbrica del vídeo abans de gravar."
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────
@@ -260,7 +289,7 @@ export const sa2s2 = {
     "Llegeix l'apartat EXPLICA: la mitosi, la meiosi (dues divisions, 4 cèl·lules, la meitat del material), la fecundació (n + n = 2n) i la variabilitat",
     "Mira la Fig.1 (mitosi vs meiosi), l'app de mitosi i meiosi i la Fig.2 (fecundació)",
     "Descarrega la fitxa S2 i completa les preguntes del laboratori (amb les dades del laboratori virtual), la comparació i el càlcul dels cromosomes de l'òvul",
-    "A casa, grava el vídeo del procés (mitosi i meiosi) amb el material que vulguis: es lliura a la sessió 4",
+    "A casa, grava el vídeo del procés (mitosi i meiosi) amb el material que vulguis: es lliura a l'inici de la sessió 3",
     "Fes l'exit tiquet online a l'acordió de sota"
   ],
 

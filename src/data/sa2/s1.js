@@ -10,7 +10,7 @@ export const sa2s1 = {
   // ── ENGANXA (hook) ───────────────────────────────────────
   engageChallenge: "Un familiar rep un informe mèdic. Hi apareix una frase: «s'observen cèl·lules que es divideixen sense control». Espera... i les cèl·lules normals, també es divideixen? Doncs sí: ara mateix, mentre llegeixes això, milions de cèl·lules teves s'estan dividint per curar una ferida o fer-te créixer. Aleshores, quina diferència hi ha entre una divisió normal i una de tumoral?",
   engageQuestion: "Tot el teu cos ha sortit d'UNA sola cèl·lula que s'ha dividit una vegada rere una altra. Si la divisió cel·lular és normal i necessària, per què una cèl·lula tumoral és perillosa?",
-  engageContext: "Avui feu de laboratori d'anàlisi: observareu cèl·lules de veritat que s'estan dividint i n'identificareu les fases. Al final de la sessió podreu explicar, amb el que hàgiu vist, per què una cèl·lula que «no s'atura» és un problema.",
+  engageContext: "Aquesta SA sou un consorci de recerca que ha de trobar quin fàrmac frena un tumor. Abans de provar cap fàrmac, el consorci necessita gent que sàpiga reconèixer una cèl·lula que s'està dividint. Avui observareu cèl·lules de veritat en divisió i n'identificareu les fases: és la tècnica que fareu servir a l'assaig de la Sessió 3.",
 
   // ── OBJECTIUS D'APRENENTATGE PER NIVELL (només A i B) ────
   levelObjectives: {
@@ -108,7 +108,17 @@ export const sa2s1 = {
       id: "t0",
       apartat: "2",
       heading: "Abans de res: què és un ==cromosoma==?",
-      text: "L'ADN és un ==fil llarguíssim==. Quan la cèl·lula s'ha de dividir, el fil ==s'enrotlla== i es fa gruixut i curt: això és un ==cromosoma|p==, un bastonet (I). Abans de dividir-se, la cèl·lula ==copia== cada cromosoma i les dues còpies queden enganxades pel mig: fan una ==X==. Compte: ==una X és UN cromosoma== (copiat), no dos. Pensa en ==mitjons==: tens parells de mitjons de ==mides diferents== (cada mida és un tipus de cromosoma), i de cada parell un és de la ==mare|r== i l'altre del ==pare|b==. Als esquemes, el color diu d'on ve i la mida quin tipus és. Les teves cèl·lules en tenen 46 (23 parells); als dibuixos en fem servir només 4 (2 parells) perquè es vegi clar.",
+      text: "L'ADN és un ==fil llarguíssim==. Abans de dividir-se, la cèl·lula el prepara en tres passos:",
+      bullets: [
+        "==S'enrotlla==: el fil es fa gruixut i curt → un ==cromosoma|p== (un bastonet: I).",
+        "==Es copia==: les dues còpies queden enganxades pel mig → una ==X==.",
+        "Compte: ==una X és UN cromosoma== (copiat), no dos."
+      ],
+      compare: [
+        { title: "Com els mitjons", color: "p", items: ["Parells de ==mides diferents== = tipus de cromosoma", "De cada parell, un de la ==mare|r== i un del ==pare|b=="] },
+        { title: "Quants n'hi ha?", color: "a", items: ["Les teves cèl·lules: ==46== (23 parells)", "Als dibuixos: només 4 (2 parells), perquè es vegi clar"] }
+      ],
+      after: "Als esquemes, el ==color== diu d'on ve (mare/pare) i la ==mida== quin tipus és.",
       image: "/images/sa2-s1-adn-a-cromosoma.webp",
       imageWide: true,
       imageTitle: "De l'ADN al cromosoma: com es compacta el fil",
@@ -119,7 +129,11 @@ export const sa2s1 = {
       id: "t1",
       apartat: "2",
       heading: "El ==cicle cel·lular==: la major part del temps, la cèl·lula NO es divideix",
-      text: "Una cèl·lula passa la major part de la seva vida en ==interfase|o==: creix, treballa i ==copia tot el seu ADN==. Només de tant en tant entra en ==divisió|p==. Copiar l'ADN abans de dividir-se és el que permet que cada cèl·lula filla en rebi una còpia completa i idèntica.",
+      text: "Una cèl·lula passa la major part de la vida en ==interfase|o== i només de tant en tant entra en ==divisió|p==.",
+      compare: [
+        { title: "Interfase (gairebé sempre)", color: "o", items: ["Creix i treballa", "==Copia tot el seu ADN=="] },
+        { title: "Divisió (de tant en tant)", color: "p", items: ["Reparteix l'ADN copiat", "Cada filla en rep una ==còpia completa i idèntica=="] }
+      ],
       type: "concept"
     },
     {
@@ -133,21 +147,34 @@ export const sa2s1 = {
       id: "t3",
       apartat: "3",
       heading: "Per què el cos ==divideix cèl·lules==?",
-      text: "La mitosi fa cèl·lules noves ==idèntiques== a l'original. El cos la fa servir per ==reparar== (tancar una ferida, substituir cèl·lules mortes) i per ==créixer== (per això un nadó es fa gran). Cada dia perds i reposes milions de cèl·lules de la pell i de l'intestí gràcies a la mitosi.",
+      text: "La mitosi fa cèl·lules noves ==idèntiques== a l'original. El cos la fa servir per a dues coses:",
+      bullets: [
+        "==Reparar==: tancar una ferida, substituir cèl·lules mortes.",
+        "==Créixer==: per això un nadó es fa gran."
+      ],
+      after: "Cada dia perds i reposes milions de cèl·lules de la pell i de l'intestí gràcies a la mitosi.",
       type: "concept"
     },
     {
       id: "t4",
       apartat: "3",
       heading: "Quan es perd el ==control==: el càncer",
-      text: "Una cèl·lula sana rep senyals de ==quan dividir-se i quan aturar-se==. En una cèl·lula ==tumoral|r== aquest control falla: es divideix ==sense parar==, encara que no calgui, i forma una massa (un tumor). Per això la frase de la biòpsia —«cèl·lules que es divideixen sense control»— descriu justament una mitosi que ha perdut els frens.",
+      compare: [
+        { title: "Cèl·lula sana", color: "g", items: ["Rep senyals per ==dividir-se== i per ==aturar-se==", "S'atura quan ja no cal"] },
+        { title: "Cèl·lula tumoral", color: "r", items: ["El control ==falla==", "Es divideix ==sense parar== → massa = tumor"] }
+      ],
+      after: "La frase de la biòpsia —«cèl·lules que es divideixen sense control»— descriu justament una mitosi que ha perdut els frens. El consorci buscarà un fàrmac que els torni a posar.",
       type: "concept"
     },
     {
       id: "t5",
       apartat: "4",
       heading: "Comptar cèl·lules ens diu quina fase ==dura més==",
-      text: "En una preparació veus una ==foto congelada==: com més cèl·lules trobis en un estat, més temps dura aquell estat. Aquesta regla és la que et permet respondre la Secció 4 amb els teus propis recomptes. Comptar les cèl·lules de cada fase i calcular quina proporció representa la divisió és el que fan servir els laboratoris: és l'==índex mitòtic==.",
+      text: "En una preparació veus una ==foto congelada==. Regla: com més cèl·lules trobis en un estat, ==més temps dura== aquell estat.",
+      bullets: [
+        "Amb aquesta regla respons la Secció 4 amb els teus recomptes.",
+        "Si comptes quina proporció de cèl·lules està en divisió, obtens l'==índex mitòtic==: el número que farà servir el consorci a la Sessió 3."
+      ],
       type: "epistemic",
       badge: "🔬 Com es mesura al laboratori"
     }
@@ -162,7 +189,7 @@ export const sa2s1 = {
   // ── ELABORA ──────────────────────────────────────────────
   fitxaUrl: { A: "/fitxes/sa2-s1-fitxa-A.html", B: "/fitxes/sa2-s1-fitxa-B.html", C: "/fitxes/sa2-s1-fitxa-C.html" },
   sessionMaterials: [
-    { id: "rubrica-producte", title: "Rúbrica del producte final: maqueta del cicle + informe diagnòstic", url: "/fitxes/sa2-rubrica-maqueta-informe.html", who: "alumnat" }
+    { id: "rubrica-article", title: "Rúbrica del producte final: l'article científic", url: "/fitxes/sa2-rubrica-article.html", who: "alumnat" }
   ],
   teoriaPdfUrl: "/teoria/sa2-s1-teoria.pdf",
   elaborateNote: "Tancament de la fitxa: torna a l'informe de la biòpsia del principi i, amb el que has après, escriu en 4-5 línies què li està passant a aquelles cèl·lules i per què és perillós.",

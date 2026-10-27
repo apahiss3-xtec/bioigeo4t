@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rúbrica · Article científic · SA2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#173328;--rule:#B9C9C2;--tint:#F3F8F5;--muted:#4F625B;
+  --g1:#DCEAD6;--g2:#A9CDA2;--g3:#6BA567;--g4:#2E5D2C;}
+*{box-sizing:border-box;}
+body{margin:0;background:#fff;font-family:"Fira Sans Extra Condensed","Fira Sans Condensed",
+  "Arial Narrow",Arial,sans-serif;color:var(--ink);}
+.page{width:297mm;min-height:210mm;margin:12px auto;background:#fff;padding:9mm 11mm;
+  border:1px solid #D6DED9;}
+.head{display:flex;align-items:center;gap:12px;border-bottom:3px solid var(--g4);
+  padding-bottom:7px;margin-bottom:8px;}
+.head .ico{font-size:30px;line-height:1;}
+.head h1{margin:0;font-size:20px;text-transform:uppercase;color:var(--g4);letter-spacing:.01em;}
+.head .sub{font-size:11.5px;color:var(--muted);margin-top:1px;}
+.ident{margin-left:auto;font-size:11px;text-align:right;line-height:1.7;white-space:nowrap;}
+.ident span{display:inline-block;border-bottom:1.5px solid var(--ink);min-width:52mm;}
+.intro{border:1.5px solid var(--g3);border-left:5px solid var(--g4);padding:6px 10px;font-size:11px;
+  line-height:1.42;border-radius:0 7px 7px 0;margin-bottom:8px;}
+table{width:100%;border-collapse:collapse;font-size:10.2px;}
+th,td{border:1px solid var(--rule);padding:4.5px 6px;vertical-align:top;line-height:1.3;}
+thead th{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;text-align:center;}
+thead th.q{background:#fff;color:var(--ink);text-align:left;width:19%;border-bottom:2px solid var(--ink);}
+thead th.h-na{background:var(--g1);color:var(--ink);}
+thead th.h-as{background:var(--g2);color:var(--ink);}
+thead th.h-an{background:var(--g3);color:var(--ink);}
+thead th.h-ae{background:var(--g4);color:#fff;}
+thead th small{display:block;font-size:9px;letter-spacing:0;text-transform:none;font-weight:600;}
+thead th.mark{background:#fff;color:var(--ink);}
+tbody th{background:var(--tint);text-align:left;font-size:10.8px;color:var(--g4);width:19%;}
+tbody th small{display:block;color:var(--muted);font-weight:400;font-size:9.3px;margin-top:2px;}
+tbody th .pes{display:inline-block;margin-top:3px;font-size:8.8px;font-weight:800;color:#fff;
+  background:var(--g4);border-radius:3px;padding:0 4px;text-transform:uppercase;letter-spacing:.04em;}
+tr.bloc td{background:#fff;border-left:0;border-right:0;padding:6px 0 3px;font-weight:800;font-size:10.8px;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--g4);border-bottom:2px solid var(--g4);}
+.lvl{display:inline-block;font-weight:800;font-size:9px;letter-spacing:.05em;border-radius:3px;
+  padding:0 4px;margin-right:3px;border:1px solid var(--g4);}
+.lvl.na{background:var(--g1);color:var(--ink);}.lvl.as{background:var(--g2);color:var(--ink);}
+.lvl.an{background:var(--g3);color:var(--ink);}.lvl.ae{background:var(--g4);color:#fff;}
+.mark{width:4.5%;text-align:center;}
+.note{margin-top:8px;font-size:10.3px;line-height:1.45;border:1.5px solid var(--g2);
+  border-left:5px solid var(--g3);padding:6px 10px;border-radius:0 7px 7px 0;}
+.crit{margin-top:7px;font-size:8.6px;line-height:1.35;color:var(--muted);columns:2;column-gap:7mm;}
+.crit p{margin:0 0 3px;break-inside:avoid;}
+.crit b{color:var(--ink);}
+.foot{margin-top:7px;padding-top:5px;border-top:1.6px solid var(--rule);display:flex;
+  justify-content:space-between;font-size:9.5px;color:var(--muted);}
+table.chk{font-size:10px;}
+table.chk thead th{background:var(--g4);color:#fff;}
+table.chk thead th.q{background:var(--g4);color:#fff;border-bottom:0;}
+table.chk thead th small{font-weight:400;}
+table.chk tbody th{width:13%;vertical-align:middle;}
+table.chk td{padding:3px 6px;}
+table.chk td.it{width:44%;}
+table.chk td.vx{width:7%;}
+table.chk td:last-child{width:28%;}
+.noprint{text-align:center;margin:10px;}
+.noprint button{font:inherit;font-size:13px;padding:7px 16px;border:0;border-radius:7px;
+  background:var(--g4);color:#fff;cursor:pointer;}
+@media print{.page{margin:0;border:0;}
+  .noprint{display:none;}@page{size:A4 landscape;margin:0;}}
+</style>
+</head>
+<body>
+<div class="noprint"><button onclick="window.print()">🖨 Imprimir / PDF (A4 apaïsat)</button></div>
+
+<div class="page">
+  <div class="head">
+    <span class="ico">📄</span>
+    <div>
+      <h1>Rúbrica · Article científic: quin fàrmac frena el tumor?</h1>
+      <div class="sub">SA2 · La cèl·lula · producte final del consorci de recerca (individual) · Biologia i Geologia 4t ESO · IE Temple</div>
+    </div>
+    <div class="ident">Nom: <span></span><br>Data: <span></span></div>
+  </div>
+
+  <div class="intro"><strong>Què has de fer.</strong> Un <strong>article científic individual</strong>, amb la plantilla del model d'article, que publica els resultats de l'assaig del consorci: els fàrmacs C, H i Z comparats amb el <strong>grup control</strong> a partir de l'<strong>índex mitòtic</strong> (dades: la <strong>taula del consorci</strong> del seminari de la S4). <strong>Bloc A · les dades</strong> és el cor de l'article; <strong>bloc B · l'article</strong> és com ho comuniques. Pàgina 2: <strong>llista de comprovació</strong>.</div>
+
+  <table>
+    <thead><tr><th class="q">Què es valora</th><th class="mark">✓</th><th class="h-na">No assoliment</th><th class="mark">✓</th><th class="h-as">Assoliment satisfactori</th><th class="mark">✓</th><th class="h-an">Assoliment notable</th><th class="mark">✓</th><th class="h-ae">Assoliment excel·lent</th></tr></thead>
+    <tbody>
+      <tr class="bloc"><td colspan="9">A · Les dades — què mostren els resultats i què en concloc</td></tr>
+      <tr><th>1. Resultats: taula i figura<small>CE3 · 3.5 — presentar resultats amb taules i gràfics</small><br><span class="pes">nucli</span></th><td class="mark"></td><td><span class="lvl na">NA</span> No presento les dades en una taula o un gràfic, o no se sap a quin tractament correspon cada valor.</td><td class="mark"></td><td><span class="lvl as">AS</span> Hi ha la taula del consorci (fàrmac, dosi, temps, índex abans → després) i un gràfic de barres de l'índex mitòtic amb títol, eixos i unitats (%).</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, taula i figura estan numerades i amb peu, hi surt el <strong>control</strong> al costat de cada fàrmac i el text hi remet («Tal com veiem a la figura 1…»).</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, trio el gràfic que millor mostra la comparació (p. ex. barres agrupades per dosi) i s'entén sense llegir el text.</td></tr>
+      <tr><th>2. Resultats: descripció i comparació<small>CE3 · 3.3 — interpretar resultats amb eines matemàtiques</small><br><span class="pes">nucli</span></th><td class="mark"></td><td><span class="lvl na">NA</span> Copio els números sense descriure'ls, o ja dono opinions i conclusions en aquest apartat.</td><td class="mark"></td><td><span class="lvl as">AS</span> Descric els resultats principals amb números i unitats («l'índex passa del __ % al __ %») sense opinar.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, comparo cada fàrmac <strong>amb el control</strong> i entre ells («A baixa més que B», «no hi ha diferència entre…»), també la dosi i el temps.</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, assenyalo les dades inesperades (toxicitat, augments) i quantifico la diferència respecte del control.</td></tr>
+      <tr><th>3. Conclusions<small>CE3 · 3.5 i 3.3 — argumentar la connexió resultats → conclusions; valorar-ne els límits</small><br><span class="pes">nucli</span></th><td class="mark"></td><td><span class="lvl na">NA</span> La conclusió no respon la pregunta, o afirma alguna cosa que les dades no mostren.</td><td class="mark"></td><td><span class="lvl as">AS</span> Dic quin fàrmac frena millor el tumor i si la hipòtesi és certa o falsa, citant algun resultat.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, cada afirmació es recolza en una dada i en connectors («com que…, per tant…»), i descarto els fàrmacs tòxics o inútils amb la seva dada.</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, dic els <strong>límits</strong> de l'assaig (poques mostres…), què NO podem afirmar i quin <strong>experiment futur</strong> ho confirmaria.</td></tr>
+      <tr class="bloc"><td colspan="9">B · L'article — com ho comunico</td></tr>
+      <tr><th>4. Introducció i hipòtesi<small>CE3 · 3.1 — formular hipòtesis contrastables</small></th><td class="mark"></td><td><span class="lvl na">NA</span> No explico el tema, o no hi ha objectiu ni hipòtesi.</td><td class="mark"></td><td><span class="lvl as">AS</span> Defineixo els conceptes clau (mitosi, tumor, índex mitòtic) i dic l'objectiu de la recerca.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, formulo una hipòtesi contrastable del tipus «si…, llavors…» i la justifico amb el que se sap del càncer i la mitosi.</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, recolzo la introducció en una font citada i hi poso una imatge o esquema que aclareix el vocabulari.</td></tr>
+      <tr><th>5. Material i mètodes<small>CE3 · 3.3 — fer servir tècniques adequades amb correcció</small></th><td class="mark"></td><td><span class="lvl na">NA</span> No explico què vam fer, o no s'entén com es van obtenir les dades.</td><td class="mark"></td><td><span class="lvl as">AS</span> Explico els passos en ordre («en primer lloc…, a continuació…») i com es calcula l'índex mitòtic.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, faig servir bé <em>mostra, tractament, dosi, control</em> i <em>rèplica</em>, en veu passiva («les mostres han estat tractades…»).</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, el mètode és prou detallat perquè un altre grup el pugui repetir, i justifico per què cal un grup control.</td></tr>
+      <tr><th>6. Títol, resum, referències i presentació<small>CE2 · 2.1 — citar les fonts correctament</small></th><td class="mark"></td><td><span class="lvl na">NA</span> Falta el títol, el resum o les referències, o l'article és desordenat i amb moltes faltes.</td><td class="mark"></td><td><span class="lvl as">AS</span> Té tots els apartats del model en ordre, un títol i un resum breu.</td><td class="mark"></td><td><span class="lvl an">AN</span> A més, el títol és una <strong>afirmació</strong> que avança la conclusió, el resum fa objectiu → resultat → conclusió i cito les fonts (Autor, any).</td><td class="mark"></td><td><span class="lvl ae">AE</span> A més, sembla un article de debò: format net, ortografia revisada, anglès en cursiva i referències amb el format complet del model.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note"><strong>Com es tradueix a la nota.</strong> No hi ha punts: cada fila s'assoleix per nivells (<strong>NA</strong> · <strong>AS</strong> · <strong>AN</strong> · <strong>AE</strong>). El nivell global surt del <strong>bloc A</strong> (files 1–3): analitzar les dades és el cor del repte. El bloc B el pot pujar o baixar <strong>un sol esglaó</strong>. Un article molt ben presentat que no compara cap fàrmac amb el control no arriba a AN. <br><strong>Abans d'entregar:</strong> passa la llista de comprovació de la pàgina 2 i demana a un company/a que te la revisi.</div>
+
+  
+
+  <div class="foot">
+    <span>SA2 · S3 (dades) → S4 (seminari) → casa · Rúbrica de l'article científic · Biologia i Geologia 4t ESO · IE Temple</span>
+    <span>CC BY-NC · Albert Pahissa</span>
+  </div>
+</div>
+
+<div class="page">
+  <div class="head">
+    <span class="ico">✅</span>
+    <div>
+      <h1>Llista de comprovació de l'article (V / X / ?)</h1>
+      <div class="sub">Marca V (sí), X (no) o ? (no n'estic segur/a). Després, un company/a la revisa i et deixa un comentari.</div>
+    </div>
+    <div class="ident">Autor/a: <span></span><br>Revisor/a: <span></span></div>
+  </div>
+  <table class="chk">
+    <thead><tr><th class="q">Apartat</th><th class="q">Comprova que…</th><th>Jo<small>V / X / ?</small></th><th>Revisor/a<small>V / X / ?</small></th><th class="q">Comentari del revisor/a</th></tr></thead>
+    <tbody>
+      <tr><th rowspan="2">Títol i resum</th><td class="it">El títol és una afirmació (no una pregunta) i avança la conclusió.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">El resum diu, en 4–5 línies: què s'ha fet, amb quin objectiu, quin resultat i què es conclou.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><th rowspan="4">Introducció</th><td class="it">Defineix mitosi, tumor i índex mitòtic.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Diu l'objectiu: quin fàrmac frena el creixement del tumor.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Hi ha una hipòtesi «si…, llavors…» justificada.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Cita almenys una font (Autor, any).</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><th rowspan="3">Material i mètodes</th><td class="it">Explica els passos en ordre i en veu passiva («les biòpsies han estat…»).</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Diu com es calcula l'índex mitòtic (fórmula).</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Fa servir mostra, tractament, dosi, control i rèplica.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><th rowspan="3">Resultats</th><td class="it">Hi ha la taula del consorci amb unitats (%) i un peu numerat.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Hi ha un gràfic de barres amb títol, eixos, unitats i el control.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Es descriu i es compara amb el control, sense opinar ni «per tant».</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><th rowspan="3">Conclusions</th><td class="it">Diu si la hipòtesi és certa, falsa o no es pot determinar, i per què.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Cada afirmació es basa en una dada dels resultats.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Diu els límits de l'assaig i un experiment futur.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><th rowspan="2">Referències i presentació</th><td class="it">Hi ha les fonts dels textos i de les imatges, amb el format del model.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+      <tr><td class="it">Un sol tipus de lletra, ortografia revisada, paraules en anglès en cursiva.</td><td class="vx"></td><td class="vx"></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="crit"><p><b>Criteris d'avaluació (Decret 175/2022, text literal):</b></p><p><b>2.1</b> Resoldre qüestions i aprofundir en aspectes relacionats amb els sabers de la matèria de Biologia i Geologia localitzant, seleccionant, organitzant i analitzant críticament la informació de diferents fonts, citant-les correctament amb respecte per la propietat intel·lectual.</p><p><b>3.1</b> Plantejar preguntes sobre fenòmens quotidians i formular hipòtesis que puguin ser respostes o contrastades en el context escolar a través de l&#x27;experimentació, la presa de dades i l&#x27;anàlisi de fenòmens biològics i geològics, diferenciant-les d&#x27;aquelles qüestions pseudocientífiques que no admeten comprovació experimental.</p><p><b>3.3</b> Portar a terme l&#x27;experimentació plantejada fent servir els instruments, eines o tècniques adequades amb correcció i interpretar-ne els resultats quan sigui necessari amb eines matemàtiques i tecnològiques per obtenir conclusions raonades i fonamentades o valorar la impossibilitat de fer-ho.</p><p><b>3.5</b> Presentar de manera clara i rigorosa els resultats i les conclusions obtingudes mitjançant l&#x27;experimentació, argumentant la connexió entre uns i altres, i l&#x27;observació de camp, utilitzant el format adequat (taules, gràfics, informes, etc.) i eines digitals.</p></div>
+
+  <div class="foot">
+    <span>SA2 · S3 (dades) → S4 (seminari) → casa · Rúbrica de l'article científic · Biologia i Geologia 4t ESO · IE Temple</span>
+    <span>CC BY-NC · Albert Pahissa</span>
+  </div>
+</div>
+</body>
+</html>
