@@ -158,17 +158,59 @@ def avaluacio(sa):
     return json.loads(r.stdout)
 
 
+def frases(v):
+    """`llegir` pot ser una frase o una llista de frases curtes."""
+    return ' '.join(v) if isinstance(v, list) else (v or '')
+
+
+def textos_figura(etiq, f):
+    """Peu i text alternatiu d'una figura (`figure`, `figuraFeedback`, cas…)."""
+    f = f or {}
+    return [(etiq, f.get(k, '')) for k in ('alt', 'caption')]
+
+
+def textos_grafic(etiq, ch):
+    ch = ch or {}
+    out = [(etiq, ch.get(k, '')) for k in ('titol', 'nota')]
+    out.append((etiq, (ch.get('referencia') or {}).get('label', '')))
+    out += [(etiq, d.get('name', '')) for d in ch.get('data', [])]
+    return out
+
+
+def textos_taula(etiq, t):
+    t = t or {}
+    out = [(etiq, t.get('caption', ''))]
+    out += [(etiq, h) for h in t.get('headers', [])]
+    out += [(etiq, str(c)) for fila in t.get('rows', []) for c in fila]
+    return out
+
+
 def textos_escrita(a):
     out = []
     e = a.get('escrita') or {}
     out.append(('escrita.intro', e.get('intro', '')))
+    out.append(('escrita.cas', e.get('cas', '')))
+    out += [('escrita.passos', p) for p in e.get('passos', [])]
     for q in e.get('questions', []):
-        out.append((f"escrita.{q['id']}.text", q['text']))
-        out.append((f"escrita.{q['id']}.as", q['model']['as']))
-        out.append((f"escrita.{q['id']}.ae", q['model']['ae']))
-        out.append((f"escrita.{q['id']}.aeWhy", q.get('aeWhy', '')))
-        out.append((f"escrita.{q['id']}.source", q.get('source', '')))
-        out += [(f"escrita.{q['id']}.must", m) for m in q.get('must', [])]
+        i = q['id']
+        out.append((f"escrita.{i}.text", q['text']))
+        out.append((f"escrita.{i}.titol", q.get('titol', '')))
+        out.append((f"escrita.{i}.escena", q.get('escena', '')))
+        out += textos_figura(f"escrita.{i}.figure", q.get('figure'))
+        out += textos_taula(f"escrita.{i}.dades", q.get('dades'))
+        out += textos_grafic(f"escrita.{i}.chart", q.get('chart'))
+        for p in q.get('parts', []):
+            et = f"escrita.{i}.{p['id']}"
+            out.append((et, p.get('text', '')))
+            out.append((f"{et}.cita", (p.get('cita') or {}).get('text', '')))
+            out += [(f"{et}.pista", h) for h in p.get('hints', [])]
+            out += textos_taula(f"{et}.dades", p.get('dades'))
+            out += textos_grafic(f"{et}.chart", p.get('chart'))
+        out.append((f"escrita.{i}.as", q['model']['as']))
+        out.append((f"escrita.{i}.ae", q['model']['ae']))
+        out.append((f"escrita.{i}.aeWhy", q.get('aeWhy', '')))
+        out.append((f"escrita.{i}.source", q.get('source', '')))
+        out += [(f"escrita.{i}.must", m) for m in q.get('must', [])]
     return [(l, x) for l, x in out if x]
 
 
@@ -176,17 +218,29 @@ def textos_test(a):
     out = []
     t = a.get('test') or {}
     out.append(('test.context', t.get('context', '')))
+    for cas in t.get('casos', []):
+        et = f"test.cas{cas['id']}"
+        out += [(et, cas.get(k, '')) for k in ('titol', 'text')]
+        out += textos_figura(et, cas)
     for q in t.get('questions', []):
         out.append((f"test.{q['id']}.text", q['text']))
         out += [(f"test.{q['id']}.opt", o) for o in q['options']]
         out += [(f"test.{q['id']}.fb", v) for v in q.get('feedback', {}).values()]
+        out += [(f"test.{q['id']}.pista", h) for h in q.get('hints', [])]
+        out += textos_figura(f"test.{q['id']}.figure", q.get('figure'))
+        out += textos_figura(f"test.{q['id']}.figuraFeedback", q.get('figuraFeedback'))
+        out += textos_grafic(f"test.{q['id']}.chart", q.get('chart'))
     c = a.get('c') or {}
     for q in c.get('preguntes', []):
-        out += [(f"c.{q['id']}", q.get(k, '')) for k in ('llegir', 'text')]
+        out.append((f"c.{q['id']}", frases(q.get('llegir'))))
+        out.append((f"c.{q['id']}", q.get('text', '')))
         out += [(f"c.{q['id']}.opt", o) for o in q['options']]
+        out += [(f"c.{q['id']}.pista", h) for h in q.get('hints', [])]
+        out += textos_grafic(f"c.{q['id']}.chart", q.get('chart'))
     k = c.get('completar')
     if k:
-        out.append((f"c.{k['id']}", k.get('frase', '') + ' ' + k.get('llegir', '')))
+        out.append((f"c.{k['id']}", k.get('frase', '') + ' ' + frases(k.get('llegir'))))
+        out += [(f"c.{k['id']}.pista", h) for h in k.get('hints', [])]
     return [(l, x) for l, x in out if x]
 
 

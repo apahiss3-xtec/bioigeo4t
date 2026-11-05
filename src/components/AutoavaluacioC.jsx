@@ -1,12 +1,15 @@
 import { useMemo, useRef, useState } from 'react'
 import { permutacioEstable } from '../utils.js'
+import Hint from './Hint.jsx'
+import { Grafic } from './AvalFigures.jsx'
 
 // ── Autoavaluació · Versió fàcil (nivell C) ──
 // Pensada perquè l'alumnat de nivell C no col·lapsi davant d'una pàgina
 // llarga: UN sol pas per pantalla, frases curtes, emojis, cap bloc
 // d'escriptura. Les dades viuen a `sa.avaluacio.c` (data/saN/avaluacio.js):
 //   checklist  → 3-4 frases «Sé…», resposta 🙂 / 😕
-//   preguntes  → 2-3 d'escollir, cadascuna amb imatge i càpsula «Per llegir»
+//   preguntes  → les que calgui, d'escollir, amb imatge o gràfic, càpsula
+//                «Per llegir» (frase o llista de frases) i pistes opcionals
 //   completar  → 1 frase amb forats {0} {1} i banc de paraules
 // Criteris: vault, «Nivell C - Criteris fitxes» (opcions sempre plausibles,
 // imatge + Per llegir abans de cada pregunta, vocabulari planer).
@@ -37,6 +40,27 @@ const FACES = [
   { id: 'no', emoji: '😕', label: 'Encara no', color: '#b3261e' }
 ]
 
+// Càpsula «Per llegir». Accepta una frase o una llista de frases curtes; la
+// llista es mostra línia a línia perquè no quedi un bloc.
+function PerLlegir({ llegir }) {
+  if (!llegir?.length) return null
+  if (!Array.isArray(llegir)) {
+    return (
+      <p className="mb-4 rounded-2xl bg-[var(--bg-soft)] p-4">
+        <strong>📖 Per llegir · </strong>{gem(llegir)}
+      </p>
+    )
+  }
+  return (
+    <div className="mb-4 rounded-2xl bg-[var(--bg-soft)] p-4">
+      <p className="mb-1 font-bold">📖 Per llegir</p>
+      <ul className="space-y-1">
+        {llegir.map((l, i) => <li key={i}>{gem(l)}</li>)}
+      </ul>
+    </div>
+  )
+}
+
 // Parteix «L'osmosi és el moviment de l'{0} a través de la {1}.»
 const partsFrase = (frase) =>
   frase.split(/(\{\d+\})/).filter(Boolean).map((p) => {
@@ -45,7 +69,7 @@ const partsFrase = (frase) =>
   })
 
 export default function AutoavaluacioC({
-  sa, curs, name, setName, grades, exitDone, setExitDone, exitGrades, setExitGrades,
+  sa, curs, name, setName, grades, tiquets, exitDone, setExitDone, exitGrades, setExitGrades,
   chartData, globalLevel, downloadPdf
 }) {
   const c = sa.avaluacio.c
@@ -86,7 +110,7 @@ export default function AutoavaluacioC({
     : 0
   const totalPreg = preguntes.length + (completar ? completar.respostes.length : 0)
   const repassar = checklist.filter((it) => cares[it.id] === 'no')
-  const fets = sa.sessionsData.filter((s) => exitDone[s.id])
+  const fets = tiquets.filter((s) => exitDone[s.id])
 
   // Pot passar al pas següent? Només bloquegem on cal una tria per avançar.
   const canNext =
@@ -183,7 +207,7 @@ export default function AutoavaluacioC({
               1. Marca els que <strong>has fet</strong>. 2. Tria la nota que hi vas treure.
             </p>
             <div className="space-y-3">
-              {sa.sessionsData.map((s) => {
+              {tiquets.map((s) => {
                 const done = !!exitDone[s.id]
                 return (
                   <div
@@ -242,20 +266,22 @@ export default function AutoavaluacioC({
           return (
             <div>
               <p className="text-2xl font-bold mb-3">❓ Pregunta {num}</p>
-              {q.llegir && (
-                <p className="mb-4 rounded-2xl bg-[var(--bg-soft)] p-4">
-                  <strong>📖 Per llegir · </strong>{gem(q.llegir)}
-                </p>
-              )}
+              <PerLlegir llegir={q.llegir} />
               {q.img && (
                 <img
                   src={q.img}
                   alt={q.alt || ''}
-                  className="mx-auto mb-4 max-h-64 w-auto rounded-xl border border-[var(--rule)]"
+                  className="mx-auto mb-4 h-auto max-h-72 w-auto max-w-full rounded-xl border border-[var(--rule)]"
                 />
               )}
+              <Grafic chart={q.chart} render={gem} />
               <p className="mb-4 text-xl font-semibold">{gem(q.text)}</p>
-              <div className="grid gap-3 sm:grid-cols-2">
+              {triada == null && q.hints?.length > 0 && (
+                <div className="mb-4">
+                  <Hint key={q.id} hints={q.hints} gran render={gem} etiqueta="Vull una pista" />
+                </div>
+              )}
+              <div className={`grid gap-3 ${q.options.length === 2 ? 'sm:grid-cols-2' : ''}`}>
                 {perms[q.id].map((oi) => {
                   const chosen = triada === oi
                   const answered = triada != null
@@ -293,10 +319,11 @@ export default function AutoavaluacioC({
         {cur === 'completar' && completar && (
           <div>
             <p className="text-2xl font-bold mb-3">🧩 Completa la frase</p>
-            {completar.llegir && (
-              <p className="mb-4 rounded-2xl bg-[var(--bg-soft)] p-4">
-                <strong>📖 Per llegir · </strong>{gem(completar.llegir)}
-              </p>
+            <PerLlegir llegir={completar.llegir} />
+            {!comprovat && completar.hints?.length > 0 && (
+              <div className="mb-4">
+                <Hint hints={completar.hints} gran render={gem} etiqueta="Vull una pista" />
+              </div>
             )}
             <p className="mb-2 text-base text-[var(--muted)]">
               Toca un forat i després una paraula.
@@ -471,7 +498,7 @@ export default function AutoavaluacioC({
             <h2 style={ph2}>🎟️ Exit tiquets</h2>
             <table style={pt}>
               <tbody>
-                {sa.sessionsData.map((s) => {
+                {tiquets.map((s) => {
                   const g = exitDone[s.id] ? exitGrades[s.id] : null
                   return (
                     <tr key={s.id}>

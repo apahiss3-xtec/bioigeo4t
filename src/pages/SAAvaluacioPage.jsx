@@ -35,6 +35,11 @@ export default function SAAvaluacioPage() {
   const { saId } = useParams()
   const sa = getSA(saId)
   const [name, setName] = useState('')
+  // Només les sessions que tenen exit tiquet (la S4 de la SA2 acaba amb la
+  // prova escrita i no en té): la llista, el gràfic i el PDF en surten igual.
+  const tiquets = (sa?.sessionsData || []).filter((s) =>
+    Object.keys(s).some((k) => k.startsWith('exitTicket'))
+  )
   // Exit tiquets: primer l'alumne marca quins ha fet (exitDone) i només
   // d'aquests en tria la nota. El gràfic, la nota estimada i el PDF només
   // compten els marcats (29/09/2026: abans hi havia un botó «No fet»).
@@ -54,7 +59,7 @@ export default function SAAvaluacioPage() {
   const chartData = useMemo(
     () =>
       (sa?.objectives || []).map((oa) => {
-        const linked = sa.sessionsData.filter((s) => s.oaLinks.includes(oa.id))
+        const linked = tiquets.filter((s) => s.oaLinks.includes(oa.id))
         const scores = linked.map(exitScore).filter((v) => v != null)
         const value = scores.length
           ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
@@ -71,7 +76,7 @@ export default function SAAvaluacioPage() {
   const hasC = !!sa.avaluacio?.c
   const versioC = hasC && nivell === 'C'
 
-  const gradedScores = sa.sessionsData.map(exitScore).filter((v) => v != null)
+  const gradedScores = tiquets.map(exitScore).filter((v) => v != null)
   const globalLevel = gradedScores.length
     ? scoreToLevel(gradedScores.reduce((a, b) => a + b, 0) / gradedScores.length)
     : null
@@ -158,6 +163,7 @@ export default function SAAvaluacioPage() {
           name={name}
           setName={setName}
           grades={GRADES}
+          tiquets={tiquets}
           exitDone={exitDone}
           setExitDone={setExitDone}
           exitGrades={exitGrades}
@@ -246,7 +252,7 @@ export default function SAAvaluacioPage() {
           vas treure. El gràfic i la nota estimada només compten els que has marcat.
         </p>
         <div className="space-y-3 mb-6">
-          {sa.sessionsData.map((s) => (
+          {tiquets.map((s) => (
             <div
               key={s.id}
               className="flex flex-col gap-2 rule pt-3 first:pt-0 first:border-0 sm:flex-row sm:items-center sm:justify-between"
@@ -427,7 +433,7 @@ export default function SAAvaluacioPage() {
             <h2 style={pdfH2}>{t('auto.exitSection')}</h2>
             <table style={pdfTable}>
               <tbody>
-                {sa.sessionsData.map((s) => (
+                {tiquets.map((s) => (
                   <tr key={s.id}>
                     <td style={pdfTd}>S{s.sessionNumber} · {s.title}</td>
                     <td style={{ ...pdfTd, width: 150, fontWeight: 700 }}>

@@ -1,6 +1,8 @@
-import { useMemo, useState } from 'react'
+import { Fragment, useMemo, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import T from '../translate/T.jsx'
+import Hint from './Hint.jsx'
+import { Figura, Grafic } from './AvalFigures.jsx'
 import { permutacioEstable } from '../utils.js'
 
 // Test de transferència: cas pràctic amb context NOU (diferent del de la
@@ -23,23 +25,22 @@ export default function TransferTest({ test, onChange }) {
 
   if (!test?.questions?.length) return null
 
-  const choose = (qid, oi) =>
-    setAnswers((prev) => {
-      if (prev[qid] === oi) return prev
-      const next = { ...prev, [qid]: oi }
-      // El PDF ha de portar també el resultat del test, no només la
-      // checklist: per això l'estat puja cap a SAAvaluacioPage.
-      onChange?.(
-        test.questions.map((q) => ({
-          id: q.id,
-          text: q.text,
-          chosen: next[q.id] === undefined ? null : q.options[next[q.id]],
-          correct: q.options[q.correct],
-          ok: next[q.id] === q.correct
-        }))
-      )
-      return next
-    })
+  const choose = (qid, oi) => {
+    if (answers[qid] === oi) return
+    const next = { ...answers, [qid]: oi }
+    setAnswers(next)
+    // El PDF ha de portar també el resultat del test, no només la
+    // checklist: per això l'estat puja cap a SAAvaluacioPage.
+    onChange?.(
+      test.questions.map((q) => ({
+        id: q.id,
+        text: q.text,
+        chosen: next[q.id] === undefined ? null : q.options[next[q.id]],
+        correct: q.options[q.correct],
+        ok: next[q.id] === q.correct
+      }))
+    )
+  }
 
   const answered = Object.keys(answers).length
   const correct = test.questions.filter((q) => answers[q.id] === q.correct).length
@@ -56,18 +57,42 @@ export default function TransferTest({ test, onChange }) {
         </p>
       </div>
 
+
       {test.questions.map((q, i) => {
         const chosen = answers[q.id]
         const isAnswered = chosen !== undefined
         const isCorrect = chosen === q.correct
+        // El cas només es presenta a la primera pregunta que en penja.
+        const cas = test.casos?.find((c) => c.id === q.cas)
+        const obreCas = cas && test.questions[i - 1]?.cas !== q.cas
         return (
-          <div key={q.id} className="card p-5">
+          <Fragment key={q.id}>
+            {obreCas && (
+              <section className="pt-2">
+                <p className="kicker mb-1">Cas {test.casos.indexOf(cas) + 1}</p>
+                <h3 className="mb-2 font-display text-xl font-bold leading-snug">
+                  <T>{cas.titol}</T>
+                </h3>
+                <p>
+                  <T>{cas.text}</T>
+                </p>
+                <Figura src={cas.img} alt={cas.alt} caption={cas.caption} maxW={cas.maxW} />
+              </section>
+            )}
+          <div className="card p-5">
             <p className="mb-3 flex gap-3">
               <span className="bignum">{i + 1}</span>
               <span className="pt-1.5">
                 <T>{q.text}</T>
               </span>
             </p>
+            <Figura {...q.figure} />
+            <Grafic chart={q.chart} />
+            {!isAnswered && q.hints?.length > 0 && (
+              <div className="mb-3">
+                <Hint hints={q.hints} />
+              </div>
+            )}
             <div className="space-y-2">
               {(ordres[q.id] ?? q.options.map((_, k) => k)).map((oi, pos) => {
                 const opt = q.options[oi]
@@ -111,12 +136,22 @@ export default function TransferTest({ test, onChange }) {
                       : 'bg-[rgba(238,141,58,0.1)]'
                   }`}
                 >
-                  <strong>{isCorrect ? '✓ Molt bé. ' : '↻ Repensa-ho. '}</strong>
+                  {/* Hi ha retorns que ja comencen per «Molt bé»: no ho diem dos cops. */}
+                  <strong>
+                    {isCorrect
+                      ? /^molt bé/i.test(q.feedback.correct)
+                        ? '✓ '
+                        : '✓ Molt bé. '
+                      : '↻ Repensa-ho. '}
+                  </strong>
                   <T>{isCorrect ? q.feedback.correct : q.feedback.wrong}</T>
                 </motion.p>
               )}
             </AnimatePresence>
+            {/* Una figura que desvetllaria la resposta només surt després de contestar. */}
+            {isAnswered && q.figuraFeedback && <Figura {...q.figuraFeedback} />}
           </div>
+          </Fragment>
         )
       })}
 
