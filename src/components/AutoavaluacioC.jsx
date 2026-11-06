@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react'
-import { permutacioEstable } from '../utils.js'
+import { asset, permutacioEstable } from '../utils.js'
 import Hint from './Hint.jsx'
 import { Grafic } from './AvalFigures.jsx'
 
@@ -269,7 +269,7 @@ export default function AutoavaluacioC({
               <PerLlegir llegir={q.llegir} />
               {q.img && (
                 <img
-                  src={q.img}
+                  src={asset(q.img)}
                   alt={q.alt || ''}
                   className="mx-auto mb-4 h-auto max-h-72 w-auto max-w-full rounded-xl border border-[var(--rule)]"
                 />

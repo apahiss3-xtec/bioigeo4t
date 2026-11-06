@@ -1,3 +1,4 @@
+import { asset } from '../utils.js'
 import {
   Bar,
   BarChart,
@@ -41,7 +42,7 @@ export function Figura({ src, alt = '', caption, maxW, render = perDefecte }) {
     <figure className="my-4">
       <div className="overflow-x-auto rounded-xl border border-[var(--rule)] bg-white p-2">
         <img
-          src={src}
+          src={asset(src)}
           alt={alt}
           loading="lazy"
           className={`mx-auto block h-auto w-full ${maxW ? '' : 'min-w-[520px] sm:min-w-0'}`}
