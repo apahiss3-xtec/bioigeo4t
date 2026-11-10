@@ -5,6 +5,7 @@ export const sa5s1 = {
   sessionNumber: 1,
   biome: "sa5",
   duration: "2h",
+  guiaPerApartats: true,
   engageImage: "/images/sa5-s1-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
@@ -131,7 +132,8 @@ export const sa5s1 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "2", before: false, title: "Classificar per trets compartits: el pati en grups", src: "/images/sa5-s1-classificacio.svg", note: "Esquema d'exemple de com agrupar sis organismes del pati aplicant criteris de trets compartits (té plomes? / fa flors?). NO és un arbre evolutiu: és una classificació per semblances observables. A sota, el model de nomenclatura binomial (Gènere espècie, en cursiva). A la fitxa de l'alumne els grups queden buits: els has d'omplir tu amb el criteri que triïs." }
+    { id: "Fig.1", apartat: "2", before: false, title: "Classificar per trets compartits: el pati en grups", src: "/images/sa5-s1-classificacio.svg", caption: "Mira com es dividen els organismes amb cada pregunta «sí/no» i com s'escriu un nom científic.", note: "Esquema d'exemple de com agrupar sis organismes del pati aplicant criteris de trets compartits (té plomes? / fa flors?). NO és un arbre evolutiu: és una classificació per semblances observables. A sota, el model de nomenclatura binomial (Gènere espècie, en cursiva). A la fitxa de l'alumne els grups queden buits: els has d'omplir tu amb el criteri que triïs." },
+    { id: "Fig.2", apartat: "2", before: false, title: "Esquema buit per classificar els teus organismes", src: "/images/sa5-s1-classificacio-alumne.svg", caption: "Aquest és l'esquema de la fitxa: tria tu els criteris i escriu a cada grup els organismes que has observat.", note: "Versió muda de la Fig.1, la mateixa que porta la fitxa en paper (nivells A i B)." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -149,12 +151,75 @@ export const sa5s1 = {
   fitxaGuide: {
     fitxaName: "Fitxa S17 — Safari evolutiu al pati",
     steps: [
-      { apartat: "P", title: "Prova SA4 · genètica", time: "55 min", phase: "prova", instruction: "Primera hora: prova individual de genètica que tanca la SA4 (Heredity ID). Sense apunts. El docent reparteix la prova (versió B o C).", hints: [] },
-      { apartat: "0", title: "Idees prèvies", time: "5 min", phase: "engage", instruction: "Omple l'apartat 0: per què creus que els éssers vius tenen la forma que tenen i si han canviat amb el temps. No es corregeix; ho compararàs al final de la situació.", hints: [] },
-      { apartat: "1", title: "Safari: observació de camp", time: "25 min", phase: "explore", instruction: "Al pati, repartiu-vos els quatre organismes dins l'equip i omple la taula d'observació dels teus separant «Observo» (el que veig) de «Penso» (què interpreto). Anota almenys tres trets precisos de cada organisme.", hints: ["A «Observo» hi va NOMÉS el que es veu: color, forma, mida, parts del cos.", "A «Penso» hi va la teva interpretació: per a què creus que serveix cada tret."] },
-      { apartat: "2", title: "Classificar i anomenar", time: "15 min", phase: "explica", instruction: "Amb la teoria i la Fig.1, tria un criteri de trets compartits i agrupa els organismes. Escriu el nom científic de cadascun (Gènere espècie, en cursiva).", hints: ["Classificar = agrupar per semblances segons un criteri que triïs.", "Nom científic: dues paraules en llatí, gènere en majúscula, espècie en minúscula, en cursiva."] },
-      { apartat: "3", title: "Què és una adaptació", time: "10 min", phase: "elabora", instruction: "Tria un tret d'un organisme i explica'l com una cadena estructura → funció → ambient. És una adaptació?", hints: ["Uneix tres coses: què veus, per a què serveix, on viu.", "Una adaptació ho és per a un ambient concret."] },
-      { apartat: "4", title: "Natura o nosaltres? (a casa)", time: "a casa", phase: "elabora", instruction: "Feina per a casa: llegeix el punt de teoria «Natura o nosaltres?» i separa els organismes del pati en «triats pels humans» (domesticats) i «hi són per natura», i justifica un cas de cada tipus amb un tret concret.", hints: ["Selecció artificial = els humans trien qui es reprodueix (domesticació).", "Selecció natural = l'ambient «tria» sense ningú al darrere."] }
+      {
+        apartat: "—",
+        icon: "📝",
+        title: "Prova de genètica de la SA4 (pendent de la sessió anterior)",
+        time: "55 min",
+        phase: "prova",
+        instruction: "Abans d'obrir la fitxa, fas la prova individual de genètica que tanca la SA4 (Heredity ID), sense apunts. El docent reparteix la versió B o C.",
+        items: [
+          "La prova és individual i sense apunts ni ajuda: espera la indicació del docent per començar.",
+          "Era la preparació demanada a la sessió anterior: refer sense mirar les solucions els problemes de les fitxes S2, S3 i S4.",
+          "A la sessió anterior també et van demanar escriure tres millores del teu pòster a partir de la coavaluació rebuda: comenta amb el docent si ho tens pendent.",
+          "Quan acabis la prova, passes a la fitxa S17 (apartat 0)."
+        ]
+      },
+      {
+        apartat: "0",
+        title: "Idees prèvies",
+        time: "5 min",
+        phase: "engage",
+        instruction: "Respon les dues preguntes de l'apartat 0: per què una girafa té el coll llarg o una gallina no vola gaire, i si els éssers vius han canviat al llarg de milions d'anys. No es corregeix; ho compararàs al final de la situació.",
+        hints: []
+      },
+      {
+        apartat: "1",
+        title: "Safari: observació de camp",
+        time: "25 min",
+        phase: "explore",
+        explora: true,
+        instruction: "Al pati, en equip de 3-4, repartiu-vos els organismes i ompliu la taula d'observació separant «Observo» (el que veus) de «Penso» (què interpretes). Després respon a la pregunta sobre l'organisme poc espectacular.",
+        hints: [
+          "A «Observo», pots comprovar amb els ulls el que escrius? Si no, és una interpretació.",
+          "Si algú no veiés l'organisme, podria dibuixar-lo només amb les teves notes?",
+          "Per a cada tret de «Penso», quina pista del que veus t'ha fet pensar-ho?"
+        ]
+      },
+      {
+        apartat: "2",
+        title: "Classificar i anomenar",
+        time: "15 min",
+        phase: "explica",
+        instruction: "Amb la teoria i l'esquema, tria dos criteris de trets compartits per agrupar els organismes que has observat i explica quin t'és més útil. Escriu el nom científic de tres organismes seguint el model.",
+        hints: [
+          "Quin tret es veu a simple vista i et permet separar els organismes en un «sí» i un «no»?",
+          "Si canvies de criteri, els grups queden igual? Què en deduïes?",
+          "Quantes paraules té un nom científic i com s'escriu cadascuna (majúscula, minúscula, cursiva)?"
+        ]
+      },
+      {
+        apartat: "3",
+        title: "Què és una adaptació",
+        time: "10 min",
+        phase: "elabora",
+        instruction: "Tria un tret d'un organisme del pati i completa la cadena estructura → funció → ambient. Després decideix si seguiria sent avantatjós si l'ambient canviés.",
+        hints: [
+          "Quina part de l'organisme veus, per a què creus que li serveix i en quin ambient viu?",
+          "Si l'ambient canvia de cop, el tret continua ajudant a sobreviure? Per què?"
+        ]
+      },
+      {
+        apartat: "4",
+        title: "Natura o nosaltres?",
+        time: "a casa",
+        phase: "elabora",
+        instruction: "Feina per a casa: llegeix el punt de teoria «Natura o nosaltres?» i fes dues llistes amb els organismes del pati. Tria'n un de cada llista i digues quin tret concret en delata l'origen.",
+        hints: [
+          "Qui decideix quins individus es reprodueixen en cada cas: els humans o l'ambient?",
+          "Quin organisme ens dona menjar, ombra o companyia i el cuidem? Hi ha algun cas a mig camí?"
+        ]
+      }
     ]
   },
 
@@ -179,7 +244,7 @@ export const sa5s1 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "1) Completa l'apartat 4 de la fitxa (Natura o nosaltres?): llegeix el punt de teoria corresponent i separa els organismes del pati en «triats pels humans» i «hi són per natura», justificant un cas de cada. 2) Tria l'organisme del pati que t'hagi cridat més l'atenció i fes-li una foto o un dibuix acurat. Anota un tret que creguis que és una adaptació i escriu una hipòtesi (cadena estructura → funció → ambient) de per què és avantatjós. A la propera sessió buscarem les PROVES que confirmen o refuten aquestes històries.",
+    description: "Porta-ho fet a la propera sessió (la S2 ho recollirà a l'inici). 1) Completa l'apartat 4 de la fitxa (Natura o nosaltres?): llegeix el punt de teoria corresponent i separa els organismes del pati en «triats pels humans» i «hi són per natura», justificant un cas de cada. 2) Tria l'organisme del pati que t'hagi cridat més l'atenció i fes-li una foto o un dibuix acurat. Anota un tret que creguis que és una adaptació i escriu una hipòtesi (cadena estructura → funció → ambient) de per què és avantatjós. A la propera sessió buscarem les PROVES que confirmen o refuten aquestes històries.",
     note: "Aprenentatge significatiu: connectar l'evolució amb organismes reals i tangibles del teu entorn, no memoritzar definicions abstractes."
   },
 

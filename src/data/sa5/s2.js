@@ -5,6 +5,7 @@ export const sa5s2 = {
   sessionNumber: 2,
   biome: "sa5",
   duration: "2h",
+  guiaPerApartats: true,
   engageImage: "/images/sa5-s2-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
@@ -68,7 +69,7 @@ export const sa5s2 = {
     prompts: [
       {
         kind: "write",
-        text: "Un dofí i un tauró tenen forma molt semblant i tots dos neden molt bé. Vol dir això que són parents propers? Per què ho creus?",
+        text: "Un dofí i un tauró tenen forma semblant i tots dos neden molt bé. Són parents propers? Per què ho creus?",
         starter: "Crec que… perquè…"
       },
       {
@@ -81,7 +82,7 @@ export const sa5s2 = {
 
   // ── EXPLORA (ABP · manipulatiu ala de pollastre) ─────────
   exploreActivity: {
-    what: "Observació de l'esquelet d'una ala de pollastre (neta i bullida, portada de casa o preparada a l'aula). En equip, localitzeu els ossos i compareu-los amb el vostre propi braç i amb la figura de tetràpodes: húmer (un os llarg), radi i cúbit (dos ossos junts) i els ossets de la mà. Després relacioneu cada organisme del pati amb un tipus de prova de l'evolució.",
+    what: "Observació de l'esquelet d'una ala de pollastre (neta i bullida, portada de casa o preparada a l'aula). En equip, localitzeu els ossos i compareu-los amb el vostre propi braç i amb la figura de tetràpodes: húmer (un os llarg), radi i cúbit (dos ossos junts) i els ossets de la mà.",
     who: { mode: "grup", label: "Equips de 3-4 (detectius de l'evolució)" },
     time: 32,
     note: "Manipulatiu segur i assequible: substitueix els cranis d'homínids (no disponibles). L'ala de pollastre és homòloga del braç humà; palpar els mateixos ossos en un animal tan diferent és la millor manera d'entendre l'homologia."
@@ -89,8 +90,7 @@ export const sa5s2 = {
   exploreInstructions: [
     "Localitzeu a l'ala de pollastre els tres blocs d'ossos: l'húmer (un os llarg), el radi i el cúbit (dos ossos junts) i els ossets de la mà",
     "Compareu-los amb el vostre propi braç i amb la Fig.1: són els mateixos ossos? Quins canvien de mida o de forma?",
-    "Compareu ara l'ala d'un ocell amb l'ala d'un insecte (imatge): fan la mateixa funció, però per dins s'assemblen?",
-    "Ompliu la graella de proves: relacioneu cada organisme del pati amb el tipus de prova que millor explicaria el seu parentiu"
+    "Compareu ara l'ala d'un ocell amb l'ala d'un insecte (imatge): fan la mateixa funció, però per dins s'assemblen?"
   ],
   exploreDuration: "32 min",
   appSrc: null,
@@ -134,8 +134,8 @@ export const sa5s2 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: false, title: "Homologia vs analogia", src: "/images/sa5-s2-homologia-analogia.svg", note: "A dalt, quatre extremitats de tetràpodes (braç humà, ala de pollastre, ala de ratpenat, aleta de balena): tenen els mateixos ossos (húmer, radi, cúbit i ossets de la mà) canviats de mida = HOMOLOGIA, prova de parentiu. A baix, ala d'ocell (amb ossos) vs ala d'insecte (membrana sense ossos): mateixa funció, estructura diferent = ANALOGIA, no prova parentiu. A la fitxa de l'alumne els ossos són en gris perquè els pintis tu." },
-    { id: "Fig.3", apartat: "4", before: false, title: "Arbre de semblances ja construït", src: "/images/sa5-s2-arbre.svg", note: "Arbre per interpretar (no per refer): pardal i gallina comparteixen el node 1; ratpenat i balena, el node 2; tots comparteixen l'arrel. L'eix vertical és el temps. Com més a prop és el node compartit, més emparentades estan les espècies. Fixa't: el ratpenat s'assembla més al pardal per fora (vola), però l'arbre el situa més a prop de la balena." }
+    { id: "Fig.1", apartat: "1", before: false, title: "Homologia vs analogia", caption: "Compara els ossos de les quatre extremitats de dalt i, a baix, l'ala d'ocell amb la d'insecte: què s'hi repeteix i què canvia?", src: "/images/sa5-s2-homologia-analogia.svg", note: "A dalt, quatre extremitats de tetràpodes (braç humà, ala de pollastre, ala de ratpenat, aleta de balena): tenen els mateixos ossos (húmer, radi, cúbit i ossets de la mà) canviats de mida = HOMOLOGIA, prova de parentiu. A baix, ala d'ocell (amb ossos) vs ala d'insecte (membrana sense ossos): mateixa funció, estructura diferent = ANALOGIA, no prova parentiu. A la fitxa de l'alumne els ossos són en gris perquè els pintis tu." },
+    { id: "Fig.3", apartat: "4", before: false, title: "Arbre de semblances ja construït", caption: "Segueix les branques fins als nodes: quin node comparteixen dues espècies i com de lluny és?", src: "/images/sa5-s2-arbre.svg", note: "Arbre per interpretar (no per refer): pardal i gallina comparteixen el node 1; ratpenat i balena, el node 2; tots comparteixen l'arrel. L'eix vertical és el temps. Com més a prop és el node compartit, més emparentades estan les espècies. Fixa't: el ratpenat s'assembla més al pardal per fora (vola), però l'arbre el situa més a prop de la balena." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -147,11 +147,12 @@ export const sa5s2 = {
   fitxaGuide: {
     fitxaName: "Fitxa S18 — Les proves de l'evolució",
     steps: [
-      { apartat: "0", title: "Idees prèvies", time: "6 min", phase: "engage", instruction: "Omple l'apartat 0: el dofí i el tauró són parents? Quina prova buscaries per demostrar un parentiu? No es corregeix.", hints: [] },
-      { apartat: "1", title: "Homologia: l'ala de pollastre", time: "32 min", phase: "explore", instruction: "Amb l'ala de pollastre a la mà i la Fig.1, localitza l'húmer, el radi i el cúbit i compara'ls amb el teu braç. Pinta del mateix color els ossos que són iguals a les quatre extremitats.", hints: ["Els mateixos ossos, canviats de mida = homologia = parentiu.", "Un os llarg (húmer), dos ossos junts (radi i cúbit), ossets de la mà."] },
-      { apartat: "2", title: "Analogia", time: "20 min", phase: "explica", instruction: "Compara l'ala d'ocell amb l'ala d'insecte. Fan la mateixa funció? S'assemblen per dins? Decideix si és homologia o analogia.", hints: ["Mateixa funció + estructura diferent = analogia = convergència.", "L'analogia NO prova parentiu."] },
-      { apartat: "3", title: "Vestigis i graella de proves", time: "22 min", phase: "elabora", instruction: "Explica què és una estructura vestigial amb un exemple i omple la graella relacionant organismes del pati amb el tipus de prova.", hints: ["Vestigi = òrgan que va perdre la funció (apèndix, queixals del seny, còccix).", "Tipus de prova: anatòmica, bioquímica, paleontològica, biogeogràfica."] },
-      { apartat: "4", title: "Interpretar l'arbre", time: "20 min", phase: "elabora", instruction: "Amb la Fig.3, respon les preguntes d'interpretació: quines espècies comparteixen l'avantpassat comú més recent i quines estan menys emparentades.", hints: ["Node = avantpassat comú; eix vertical = temps.", "Com més a prop el node compartit, més emparentades."] }
+      { apartat: "—", icon: "📌", title: "Pendents de la sessió anterior", time: "7 min", phase: "engage", instruction: "Abans de començar, comprova amb el company que tens fets els deures de la S1 i deixa la teva hipòtesi a mà: avui buscarem les proves que la poden confirmar o refutar.", items: ["Tens acabat l'apartat 4 de la fitxa «Natura o nosaltres?»: organismes del pati separats en «triats pels humans» i «hi són per natura», amb un cas justificat de cada.", "Tens la foto o el dibuix de l'organisme del pati que vas triar, amb un tret que sembli una adaptació.", "Tens escrita la hipòtesi (estructura → funció → ambient) de per què aquest tret és avantatjós."] },
+      { apartat: "0", title: "Idees prèvies", time: "6 min", phase: "engage", instruction: "Respon amb les teves paraules les dues preguntes de l'apartat 0 de la fitxa: el dofí i el tauró, i la prova per al parentiu entre l'home i el ximpanzé. No es corregeix.", hints: [] },
+      { apartat: "1", title: "Homologia: l'ala de pollastre", time: "32 min", phase: "explore", explora: true, instruction: "En equip, localitza els ossos de l'ala de pollastre i compara'ls amb el teu braç i amb la Fig.1. Després resol les preguntes 1a i 1b de la fitxa sobre els ossos de les quatre extremitats.", hints: ["Quins ossos reconeixes a l'ala que també tens al braç? Estan en el mateix ordre?", "Què canvia d'una extremitat a una altra: els ossos o la seva mida i forma?", "Què et diu aquesta coincidència sobre el passat dels dos animals?"] },
+      { apartat: "2", title: "Analogia", time: "20 min", phase: "explica", instruction: "Compara l'ala d'ocell amb l'ala d'insecte i marca a la fitxa si és homologia o analogia. Explica la teva elecció.", hints: ["Fan la mateixa funció? I per dins, tenen la mateixa estructura?", "Quin criteri compta per decidir si dos éssers són parents: què fa l'òrgan o com és?"] },
+      { apartat: "3", title: "Vestigis i graella de proves", time: "22 min", phase: "elabora", instruction: "Explica què és una estructura vestigial amb un exemple (3a) i omple la graella (3b) decidint quin tipus de prova relaciona cada organisme del pati amb un altre.", hints: ["Quin òrgan teu o d'un animal ja gairebé no serveix per a res? Què devia fer als avantpassats?", "Per a cada parella, què compararies: ossos o fulles, ADN, fòssils o on viuen?"] },
+      { apartat: "4", title: "Interpretar l'arbre de semblances", time: "20 min", phase: "elabora", instruction: "Amb la Fig.3 només has de llegir l'arbre, no refer-lo: respon les preguntes 4a i 4b de la fitxa justificant-ho amb els nodes.", hints: ["Quin node comparteixen les dues espècies? Està a dalt o a baix de l'arbre?", "Una semblança per fora (com volar) és el mateix que compartir un avantpassat recent?"] }
     ]
   },
 
@@ -176,7 +177,7 @@ export const sa5s2 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Busca (o recorda) un exemple d'estructura vestigial en el teu propi cos o en un animal que coneguis i escriu una frase explicant quina funció tenia abans. Prepara't per a la propera sessió, on veurem PER QUÈ canvien els éssers vius (mutació, variabilitat i selecció natural) amb una simulació.",
+    description: "Busca (o recorda) un exemple d'estructura vestigial en el teu propi cos o en un animal que coneguis i escriu una frase explicant quina funció tenia abans. A la propera sessió (S3) començarem revisant-ho: porta-ho escrit a la fitxa o al quadern. Prepara't també per a la sessió, on veurem PER QUÈ canvien els éssers vius (mutació, variabilitat i selecció natural) amb una simulació.",
     note: "Aprenentatge significatiu: connectar una prova de l'evolució (vestigi) amb el propi cos, no memoritzar una llista."
   },
 

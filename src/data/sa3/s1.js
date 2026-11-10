@@ -156,8 +156,8 @@ export const sa3s1 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "2", before: false, title: "Del codi a la característica", src: "/images/sa3-s1-dogma.svg", note: "El camí general de la informació genètica: l'ordre de les lletres de l'ADN es copia a l'ARN i serveix per fabricar una proteïna, que dona una característica a l'organisme." },
-    { id: "Fig.2", apartat: "2", before: false, title: "On és l'ADN? Del cos al gen", src: "/images/sa3-s1-zoom-adn.svg", note: "Zoom del cos a la cèl·lula, el nucli, el cromosoma, l'ADN i el gen. Gairebé totes les cèl·lules porten el mateix ADN; un gen és el tros amb les instruccions per a una proteïna." }
+    { id: "Fig.1", apartat: "2", before: true, title: "Del codi a la característica", src: "/images/sa3-s1-dogma.svg", caption: "Segueix les fletxes de l'ADN fins a la característica i fixa't en què passa a cada pas.", note: "El camí general de la informació genètica: l'ordre de les lletres de l'ADN es copia a l'ARN i serveix per fabricar una proteïna, que dona una característica a l'organisme." },
+    { id: "Fig.2", apartat: "2", before: false, title: "On és l'ADN? Del cos al gen", src: "/images/sa3-s1-zoom-adn.svg", caption: "Mira com passem del cos al gen: en quina estructura de la cèl·lula és l'ADN?", note: "Zoom del cos a la cèl·lula, el nucli, el cromosoma, l'ADN i el gen. Gairebé totes les cèl·lules porten el mateix ADN; un gen és el tros amb les instruccions per a una proteïna." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -166,23 +166,37 @@ export const sa3s1 = {
   elaborateNote: "Tancament de la fitxa: torna a la teva postura de l'apartat 1 i, ara que ja tens la visió gen → proteïna → característica, reescriu-la millorada, separant l'argument científic de l'ètic.",
 
   // ── GUIA DE LA FITXA ─────────────────────────────────────
+  guiaPerApartats: true,
   fitxaGuide: {
     fitxaName: "Fitxa S1 — Reescriure la vida?",
     steps: [
+      {
+        apartat: "—",
+        icon: "📌",
+        title: "Tanquem la SA2 i obrim la SA3",
+        time: "8 min",
+        phase: "engage",
+        instruction: "Abans de començar, comprova amb el teu company què et queda pendent de la SA2, que vam tancar amb la prova escrita, i deixa-ho a punt. Avui comença una SA nova: obre el quadern net.",
+        items: [
+          "L'article científic (producte final de la SA2) començat o acabat, revisat amb la rúbrica de l'article, per lliurar quan t'ho indiqui el docent.",
+          "Material de la SA3 a punt: fitxa S1 (versió del teu nivell), quadern i bolígraf."
+        ]
+      },
       {
         apartat: "0",
         title: "Idees prèvies",
         time: "6 min",
         phase: "engage",
-        instruction: "Omple l'apartat 0: què creus que són l'ADN i un gen, i si un canvi petit pot canviar un ésser viu. No es corregeix; ho compararàs al final de la SA.",
+        instruction: "Omple l'apartat 0: què creus que són l'ADN i un gen i on són dins del teu cos, i si un canvi molt petit dins d'una cèl·lula pot canviar una persona sencera. No es corregeix; ho compararàs al final de la SA.",
         hints: []
       },
       {
         apartat: "1",
-        title: "Comitè: llegeix el cas i posiciona't",
+        title: "El comitè: llegeix el cas i posiciona't",
         time: "34 min",
         phase: "explore",
-        instruction: "Llegeix el cas dels «bebès editats» i respon les preguntes per ordre de dificultat (literals → inferencials → avaluatives). Acorda amb l'equip una postura i dos motius; l'anàlisi ètica a fons la faràs a l'apartat 4.",
+        explora: true,
+        instruction: "En equip de 3-4, llegeix el cas dels «bebès editats» i respon les preguntes per ordre de dificultat (literal, inferencial, avaluativa). Acordeu una postura d'equip (permetre, prohibir o permetre amb condicions) i dos motius; l'anàlisi ètica a fons és a l'apartat 4.",
         hints: [
           "Les preguntes literals tenen la resposta AL text; les avaluatives no: demanen què en penses i per què.",
           "Una bona postura admet la millor objecció del bàndol contrari abans de respondre-la."
@@ -193,10 +207,10 @@ export const sa3s1 = {
         title: "L'ADN, els gens i el camí a la proteïna",
         time: "22 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, completa el camí ADN → ARN → proteïna → característica i explica què és un gen. Fes servir una comparació teva (recepta, codi, pla…).",
+        instruction: "Mira la Fig.1 i completa el camí ADN, ARN, proteïna, característica escrivint què fa cada fletxa (amb el banc de paraules, que en té dues de sobres). Després explica què és un gen amb una comparació teva.",
         hints: [
-          "Un gen és el tros del missatge que porta les instruccions per a UNA proteïna.",
-          "L'ADN és informació (la recepta), no la peça que treballa (el plat)."
+          "Al banc de paraules, dues opcions no descriuen cap pas del camí: descarta-les primer.",
+          "Per a la comparació, decideix qui fa de recepta i qui de plat (pista: la cèl·lula fa de cuiner)."
         ]
       },
       {
@@ -204,10 +218,10 @@ export const sa3s1 = {
         title: "Quan canvia una lletra: mutació i CRISPR",
         time: "18 min",
         phase: "explica",
-        instruction: "Explica què és una mutació i com un canvi al gen pot canviar una característica. Digues què fa CRISPR en el cas dels bebès editats.",
+        instruction: "Explica què és una mutació i com pot canviar una característica d'un ésser viu. Després digues què fa CRISPR en el cas dels bebès editats.",
         hints: [
-          "Mutació = canviar, afegir o treure lletres de l'ADN.",
-          "CRISPR són «tisores» que tallen i editen un tros concret de l'ADN."
+          "Pensa en la recepta: què passa amb el plat si canvies una sola xifra?",
+          "Torna al cas de l'apartat 1: quin gen es va tocar i per a què?"
         ]
       },
       {
@@ -215,7 +229,7 @@ export const sa3s1 = {
         title: "Es pot vs s'ha de fer: la teva postura",
         time: "20 min",
         phase: "elabora",
-        instruction: "Reescriu la teva postura de l'apartat 1 separant l'argument científic (es pot fer amb seguretat?) de l'ètic (s'hauria de fer?). Detecta si hi ha tecnofòbia o tecnofília i corregeix-ho.",
+        instruction: "Escriu un argument científic (es pot fer amb prou seguretat?) i un d'ètic (s'hauria de fer? en quines condicions?) sobre editar l'ADN d'embrions. Revisa que cap dels dos sigui tecnofòbia o tecnofília.",
         hints: [
           "«Es pot» és ciència; «s'ha de» és ètica: no els barregis.",
           "Rebutjar o acceptar només «perquè és nou» no és un argument."

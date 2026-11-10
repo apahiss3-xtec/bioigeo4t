@@ -5,6 +5,7 @@ export const sa3s3 = {
   sessionNumber: 3,
   biome: "sa3",
   duration: "2h",
+  guiaPerApartats: true,
   engageImage: "/images/sa3-s3-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
@@ -66,16 +67,16 @@ export const sa3s3 = {
   // ── APARTAT 0 · IDEES PRÈVIES ─────────────────────────────
   ideesPrevies: {
     startPoint:
-      "Abans de començar, recupera el que vas veure a la sessió passada i el vídeo de casa. No es corregeix.",
+      "Recupera el que saps. No es corregeix.",
     prompts: [
       {
         kind: "write",
-        text: "Ahir vas veure que l'ADN guarda informació amb quatre lletres. Per a què creus que serveix aquesta informació? Què fabrica, la cèl·lula, seguint-la?",
+        text: "La informació de l'ADN, per a què serveix? Què fabrica la cèl·lula seguint-la?",
         starter: "La informació de l'ADN serveix per… i la cèl·lula fabrica…"
       },
       {
         kind: "write",
-        text: "L'ADN es queda dins el nucli, però les proteïnes es fabriquen fora. Com creus que arriba el missatge de l'ADN fins a la fàbrica de proteïnes?",
+        text: "L'ADN es queda al nucli, però les proteïnes es fabriquen fora. Com creus que el missatge arriba fins a la fàbrica de proteïnes?",
         starter: "Crec que el missatge arriba…"
       }
     ]
@@ -98,6 +99,7 @@ export const sa3s3 = {
   ],
   exploreDuration: "25 min",
   appSrc: "/apps/app_traductor_adn.html",
+  appApartat: "2",
   exploreNote: "Itinerari guiat: la taula de codons i la seqüència es donen, però la traducció i la interpretació del canvi les feu vosaltres. És un exercici de resolució de problemes (mètode preferent a 4t).",
 
   // ── EXPLICA ───────────────────────────────────────────────
@@ -134,10 +136,10 @@ export const sa3s3 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: false, title: "El camí de l'ADN a la proteïna", src: "/images/sa3-s3-dogma-detall.svg", note: "Del gen (al nucli) a la característica. L'ADN es copia a ARNm (transcripció, dins el nucli); l'ARNm surt i al ribosoma es llegeix de tres en tres per encadenar aminoàcids i fabricar la proteïna (traducció). La proteïna dona la característica." },
-    { id: "Fig.2", apartat: "4", before: false, title: "Una lletra canviada: l'anèmia falciforme", src: "/images/sa3-s3-falciforme.svg", note: "El mateix gen amb una sola lletra diferent. El codó GAG (glutamat) passa a GTG/GUG (valina); la proteïna canvia i el glòbul vermell, rodó i flexible, es torna una falç rígida." },
-    { id: "Fig.3", apartat: "2", before: false, title: "El codi genètic complet", src: "/images/sa3-s3-taula-codons.svg", note: "Fila = 1a lletra del codó, columna = 2a, dins la casella = 3a. Fixa't que molts aminoàcids tenen més d'un codó." },
-    { id: "Fig.4", apartat: "4", before: false, title: "Glòbuls falciformes al microscopi", src: "/images/sa3-s3-foto-frotis-falciformes.jpg", note: "Frotis de sang d'una persona amb anèmia falciforme: entre els glòbuls rodons n'hi ha d'allargats en forma de falç. Foto: Ed Uthman, Wikimedia Commons, CC BY 2.0." }
+    { id: "Fig.1", apartat: "1", before: true, caption: "Mira on passa cada pas i quina màquina el fa, per completar el camí a la fitxa.", title: "El camí de l'ADN a la proteïna", src: "/images/sa3-s3-dogma-detall.svg", note: "Del gen (al nucli) a la característica. L'ADN es copia a ARNm (transcripció, dins el nucli); l'ARNm surt i al ribosoma es llegeix de tres en tres per encadenar aminoàcids i fabricar la proteïna (traducció). La proteïna dona la característica." },
+    { id: "Fig.2", apartat: "4", before: true, caption: "Busca la lletra que canvia i segueix què passa amb el codó, la proteïna i el glòbul vermell.", title: "Una lletra canviada: l'anèmia falciforme", src: "/images/sa3-s3-falciforme.svg", note: "El mateix gen amb una sola lletra diferent. El codó GAG (glutamat) passa a GTG/GUG (valina); la proteïna canvia i el glòbul vermell, rodó i flexible, es torna una falç rígida." },
+    { id: "Fig.3", apartat: "2", before: true, caption: "Fes-la servir per buscar cada codó: 1a lletra a la fila, 2a a la columna, 3a dins la casella.", title: "El codi genètic complet", src: "/images/sa3-s3-taula-codons.svg", note: "Fila = 1a lletra del codó, columna = 2a, dins la casella = 3a. Fixa't que molts aminoàcids tenen més d'un codó." },
+    { id: "Fig.4", apartat: "4", before: false, caption: "Observa la forma dels glòbuls: quins són normals i quins tenen forma de falç?", title: "Glòbuls falciformes al microscopi", src: "/images/sa3-s3-foto-frotis-falciformes.jpg", note: "Frotis de sang d'una persona amb anèmia falciforme: entre els glòbuls rodons n'hi ha d'allargats en forma de falç. Foto: Ed Uthman, Wikimedia Commons, CC BY 2.0." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -150,11 +152,25 @@ export const sa3s3 = {
     fitxaName: "Fitxa S3 — De l'ADN a la proteïna",
     steps: [
       {
+        apartat: "—",
+        icon: "📌",
+        title: "Pendent de la sessió anterior",
+        time: "7 min",
+        phase: "engage",
+        instruction: "A S2 vau fer el laboratori de l'ADN i us vau endur un vídeo curt sobre transcripció i traducció. Comprova què en tens i comenta-ho amb la parella abans de començar la fitxa.",
+        items: [
+          "Tens anotada UNA cosa que t'ha quedat clara del vídeo de transcripció i traducció?",
+          "Tens anotada UNA pregunta sobre el vídeo? Digues-la a la parella.",
+          "Si no vas poder fer els deures, escriu ara una pregunta sobre com l'ADN fabrica proteïnes.",
+          "Guarda les preguntes: les recuperarem a l'apartat 1, quan vegem el camí de l'ADN a la proteïna."
+        ]
+      },
+      {
         apartat: "0",
         title: "Idees prèvies",
         time: "6 min",
         phase: "engage",
-        instruction: "Omple l'apartat 0: per a què serveix la informació de l'ADN i com creus que el missatge arriba fins a la fàbrica de proteïnes. No es corregeix.",
+        instruction: "Omple l'apartat 0: per a què serveix la informació de l'ADN, què fabrica la cèl·lula seguint-la i com creus que el missatge arriba fins a la fàbrica de proteïnes. No es corregeix.",
         hints: []
       },
       {
@@ -162,10 +178,10 @@ export const sa3s3 = {
         title: "El camí: transcripció i traducció",
         time: "20 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, completa el camí gen → ARNm → proteïna → característica i indica on passa cada pas (transcripció al nucli, traducció al ribosoma).",
+        instruction: "Amb la Fig.1, completa el camí gen → ARNm → proteïna → característica i escriu el nom, el lloc i la màquina de cada pas. Mira si la teva pregunta del vídeo hi té resposta.",
         hints: [
-          "Transcripció = copiar l'ADN a ARNm (al nucli). Traducció = fabricar la proteïna (al ribosoma).",
-          "L'ARNm és el missatger que surt del nucli perquè l'ADN no en surt."
+          "Un pas COPIA el missatge i l'altre el FA SERVIR per fabricar: quin nom lliga amb cada verb?",
+          "L'ADN no surt mai del nucli. Mira a la Fig.1 qui en surt i cap a on va."
         ]
       },
       {
@@ -173,9 +189,10 @@ export const sa3s3 = {
         title: "Tradueix el codi genètic",
         time: "25 min",
         phase: "explore",
-        instruction: "Passa la seqüència d'ADN a ARNm (U en lloc de T), separa-la en codons de 3 lletres i, amb la taula de codons, escriu la proteïna.",
+        explora: true,
+        instruction: "En parelles, passa el fragment d'ADN del gen de l'hemoglobina a ARNm, separa'l en 7 codons i, amb la taula de codons, escriu la proteïna. Després explica què és un codó i què és un anticodó.",
         hints: [
-          "L'ARN polimerasa llegeix la cadena motlle; per això l'ARNm té les mateixes lletres que la cadena codificant, amb U en lloc de T.",
+          "L'ARN polimerasa llegeix la cadena motlle; l'ARNm té les mateixes lletres que la cadena codificant, amb U en lloc de T.",
           "Cada 3 lletres (codó) = 1 aminoàcid. Comença per AUG (inici)."
         ]
       },
@@ -184,9 +201,9 @@ export const sa3s3 = {
         title: "Del genotip al fenotip",
         time: "12 min",
         phase: "explica",
-        instruction: "Explica amb un exemple com l'ordre de les lletres (genotip) acaba determinant una característica (fenotip). Fes servir la idea A-D-N-A / N-A-D-A.",
+        instruction: "Escriu amb les teves paraules què és el genotip i què és el fenotip, i explica amb un exemple per què la informació és l'ordre de les lletres. Fes servir la idea A-D-N-A / N-A-D-A.",
         hints: [
-          "Ordre de lletres → ordre d'aminoàcids → forma de la proteïna → característica.",
+          "Un dels dos és el que hi ha escrit a l'ADN i l'altre el que es veu o es pot mesurar: quin és quin?",
           "Mateixes lletres en un altre ordre = missatge diferent."
         ]
       },
@@ -195,7 +212,7 @@ export const sa3s3 = {
         title: "Una lletra ho canvia tot: la mutació",
         time: "17 min",
         phase: "elabora",
-        instruction: "Tradueix el gen MUTAT (anèmia falciforme), marca la lletra i l'aminoàcid que canvien i explica per què això causa la malaltia. Digues quan un canvi de lletra NO tindria efecte.",
+        instruction: "Tradueix el gen MUTAT (anèmia falciforme), compara'l amb el normal de l'apartat 2 i omple la taula: lletra, codó i aminoàcid que canvien. Explica el camí complet fins a la persona.",
         hints: [
           "Compara el gen normal i el mutat l'un al costat de l'altre.",
           "Si el codó nou dona el mateix aminoàcid, la proteïna no canvia (mutació silenciosa)."
@@ -249,7 +266,7 @@ export const sa3s3 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Prepara't per al debat de la propera sessió sobre CRISPR (edició genètica): si ara ja saps que canviar una lletra de l'ADN pot curar o causar una malaltia, pensa DOS arguments a favor i DOS en contra d'editar el genoma d'un embrió humà. Anota d'on has tret la informació (recorda la graella de fonts fiables de SA1).",
+    description: "Prepara't per al debat de la propera sessió sobre CRISPR (edició genètica): si ara ja saps que canviar una lletra de l'ADN pot curar o causar una malaltia, pensa DOS arguments a favor i DOS en contra d'editar el genoma d'un embrió humà. Anota d'on has tret la informació (recorda la graella de fonts fiables de SA1). Porta-ho escrit (4 arguments i la font de cadascun): ho recollirem a l'inici de la propera sessió.",
     note: "Connecta el mecanisme (avui: com una lletra canvia la proteïna) amb la decisió ètica (S4: hauríem de reescriure-la nosaltres?)."
   },
 

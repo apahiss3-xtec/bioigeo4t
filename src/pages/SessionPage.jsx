@@ -13,6 +13,7 @@ import TheoryCard from '../components/TheoryCard.jsx'
 import ExitTicketForm from '../components/ExitTicketForm.jsx'
 import Accordion from '../components/Accordion.jsx'
 import FitxaGuide from '../components/FitxaGuide.jsx'
+import Hint from '../components/Hint.jsx'
 import ActivityCard from '../components/ActivityCard.jsx'
 import NivellSelector from '../components/NivellSelector.jsx'
 import { useNivell, pickLevel, hasLevel } from '../nivell/NivellContext.jsx'
@@ -154,15 +155,271 @@ export default function SessionPage() {
           allowFullScreen
         />
       ) : (
-        <img src={asset(g.src)} alt={g.title} className="w-full bg-white" loading="lazy" />
+        <img
+          src={asset(g.src)}
+          alt={g.title}
+          className={`w-full bg-white${session.guiaPerApartats ? ' max-h-[75vh] object-contain' : ''}`}
+          loading="lazy"
+        />
       )}
+      {/* `caption` és el peu per a l'alumnat; `note` (nota de producció) només
+          es publica si la figura encara no té `caption`. */}
       <figcaption className="px-5 py-3 text-sm text-[var(--muted)]">
         <strong className="text-[var(--text)]">
           {g.id} · {g.title}
         </strong>{' '}
-        — {g.note}
+        — <T>{g.caption || g.note}</T>
       </figcaption>
     </figure>
+  )
+
+  // ── MODE GUIA (`session.guiaPerApartats`, portat de 3r el 10/11/2026) ──
+  // Un sol recorregut que segueix `fitxaGuide.steps` en ordre: cada apartat de
+  // la fitxa porta dins seu què s'hi fa, les figures, la teoria i les pistes.
+  // Els passos sense número (apartat "—": revisió de deures, punts pendents de
+  // la sessió anterior, posada en comú…) s'hi intercalen; per això la sessió
+  // comença sempre pel que va quedar pendent. Figures o teoria sense pas
+  // conegut surten al final, mai es perden.
+  const guiaSteps = session.fitxaGuide?.steps || []
+  const guiaNums = guiaSteps.map((s) => s.apartat)
+  const apartat0 = session.repas || session.ideesPrevies
+  // L'activitat d'exploració va al pas marcat `explora: true`; si cap pas ho
+  // diu, a l'apartat 1 (com al mode clàssic).
+  const pasExplora = guiaSteps.some((s) => s.explora) ? null : '1'
+  const orfes = session.guiaPerApartats
+    ? {
+        graphics: (session.graphicResources || []).filter((g) => !guiaNums.includes(g.apartat)),
+        theory: (session.theoryPoints || []).filter((p) => !guiaNums.includes(p.apartat)),
+      }
+    : null
+  const goToStep = (i) =>
+    document.getElementById(`pas-${i}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+  const renderGuiaMapa = () => (
+    <section className="pb-12">
+      <SectionTitle>{t('session.guiaTitle')}</SectionTitle>
+      <div className="card p-6">
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <p className="min-w-0 text-[var(--muted)]">{t('session.guiaIntro')}</p>
+          {fitxaUrl && (
+            <a
+              href={asset(fitxaUrl)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-[var(--purple-ink)] px-4 py-2 font-display font-semibold text-white hover:bg-[var(--purple-deep)] transition-colors"
+            >
+              📄 {t('session.downloadFitxa')} (Nivell {fitxaEsDelNivell ? nivell : 'B'})
+            </a>
+          )}
+        </div>
+        <ol className="grid gap-1">
+          {guiaSteps.map((step, i) => (
+            <li key={i}>
+              <button
+                onClick={() => goToStep(i)}
+                className="tap flex w-full items-center gap-3 rounded-lg px-2 py-1.5 text-start hover:bg-[var(--bg-soft)]"
+              >
+                <span
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-display font-bold text-white"
+                  style={{ background: step.apartat === '—' ? 'var(--muted)' : 'var(--biome)' }}
+                >
+                  {step.apartat === '—' ? step.icon || '•' : step.apartat}
+                </span>
+                <span className="min-w-0 flex-1">
+                  <T>{step.title}</T>
+                </span>
+                {step.time && (
+                  <span className="shrink-0 text-sm text-[var(--muted)]">{tempsNivell(step.time, nivell)}</span>
+                )}
+              </button>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+
+  const renderGuiaPas = (step, index) => {
+    const num = step.apartat
+    const numerat = num !== '—'
+    const exploraAqui = step.explora || (numerat && pasExplora === num)
+    const appAqui = appSrcAny && numerat && (session.appApartat ? session.appApartat === num : num === '1')
+    return (
+      <section key={index} id={`pas-${index}`} className="scroll-mt-20 pb-12">
+        <div className="mb-5 flex items-start gap-4">
+          <span
+            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full font-display text-2xl font-bold text-white"
+            style={{ background: numerat ? 'var(--biome)' : 'var(--muted)' }}
+          >
+            {numerat ? num : step.icon || '•'}
+          </span>
+          <div className="min-w-0">
+            <p className="kicker" style={{ color: 'var(--biome-accent)' }}>
+              {numerat ? <>{t('session.apartat')} {num}</> : t('session.pasSenseApartat')}
+              {phaseLabel(step.phase) && <> · {phaseLabel(step.phase)}</>}
+              {step.time && <> · ⏱️ {tempsNivell(step.time, nivell)}</>}
+            </p>
+            <h2 className="text-2xl md:text-3xl leading-tight">
+              <T>{step.title}</T>
+            </h2>
+          </div>
+        </div>
+
+        <div
+          className="mb-6 rounded-xl border-s-4 p-4"
+          style={{ borderInlineStartColor: 'var(--biome)', background: 'var(--bg-soft)' }}
+        >
+          <p className="kicker mb-1">📝 {t(numerat ? 'session.aLaFitxa' : 'session.queFas')}</p>
+          <p>
+            <T>{step.instruction}</T>
+          </p>
+          {/* Punts pendents (deures, material que calia portar…): llista de comprovació */}
+          {step.items?.length > 0 && (
+            <ul className="mt-3 space-y-2">
+              {step.items.map((it, i) => (
+                <li key={i} className="flex gap-3">
+                  <span aria-hidden="true">☑️</span>
+                  <p className="min-w-0 flex-1">
+                    <T>{it}</T>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        {num === '0' && apartat0 && (
+          <div className="card mb-6 p-6">
+            {apartat0.startPoint && (
+              <p className="mb-5">
+                <T>{apartat0.startPoint}</T>
+              </p>
+            )}
+            <ol className="space-y-5">
+              {apartat0.prompts.map((p, i) => (
+                <li key={i} className="flex gap-4">
+                  <span className="bignum" style={{ color: 'var(--biome-accent)' }}>
+                    {i + 1}
+                  </span>
+                  <p className="min-w-0 flex-1 pt-1">
+                    <T>{p.text}</T>
+                  </p>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-5 text-sm italic text-[var(--muted)]">
+              {apartat0.note ? <T>{apartat0.note}</T> : t('session.ideesPreviesNote')}
+            </p>
+          </div>
+        )}
+
+        {exploraAqui && session.exploreActivity && (
+          <div className="mb-6">
+            <ActivityCard activity={session.exploreActivity} />
+          </div>
+        )}
+
+        {numerat && graphicsBefore(num).length > 0 && (
+          <div className="mb-6 grid gap-6">
+            {graphicsBefore(num).map((g) => (
+              <GraphicFigure key={g.id} g={g} />
+            ))}
+          </div>
+        )}
+
+        {numerat && session.casNoticia?.apartat === num && (
+          <div className="mb-6">
+            <CasNoticia cas={session.casNoticia} />
+          </div>
+        )}
+
+        {appAqui && (
+          <div className="mb-6">
+            <AppFrame appSrc={appSrcAny} title={session.title} />
+          </div>
+        )}
+
+        {exploraAqui && session.exploreInstructions && (
+          <div className="card mb-6 p-6">
+            <ol className="space-y-4">
+              {session.exploreInstructions.map((text, i) => (
+                <li key={i} className="flex gap-4">
+                  <span className="bignum" style={{ color: 'var(--biome-accent)' }}>
+                    {i + 1}
+                  </span>
+                  <p className="pt-1">
+                    <T>{text}</T>
+                  </p>
+                </li>
+              ))}
+            </ol>
+            {session.exploreMaterials && (
+              <div className="mt-6 rule pt-4">
+                <p className="kicker mb-2">{t('session.materials')}</p>
+                <ul className="flex flex-wrap gap-2">
+                  {session.exploreMaterials.map((m, i) => (
+                    <li
+                      key={i}
+                      className="rounded-full bg-[var(--bg-soft)] border border-[var(--rule)] px-3 py-1 text-sm"
+                    >
+                      <T>{m}</T>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {session.exploreNote && (
+              <p className="mt-5 text-sm italic text-[var(--muted)]">
+                <T>{session.exploreNote}</T>
+              </p>
+            )}
+          </div>
+        )}
+
+        {numerat && theoryByApartat(num).length > 0 && (
+          <div className="mb-6 space-y-5">
+            {theoryByApartat(num).map((p, i) => (
+              <TheoryCard key={p.id} point={p} index={i} />
+            ))}
+          </div>
+        )}
+        {numerat && graphicsAfter(num).length > 0 && (
+          <div className="mb-6 grid gap-6">
+            {graphicsAfter(num).map((g) => (
+              <GraphicFigure key={g.id} g={g} />
+            ))}
+          </div>
+        )}
+        {numerat && session.miniHistoria?.apartat === num && (
+          <div className="mb-6">
+            <MiniHistoria historia={session.miniHistoria} />
+          </div>
+        )}
+
+        {step.hints?.length > 0 && <Hint hints={step.hints} />}
+        {numerat && <ApartatExtra extras={session.apartatExtras?.[num]} nivell={nivell} />}
+      </section>
+    )
+  }
+
+  const renderGuia = () => (
+    <>
+      {renderGuiaMapa()}
+      {guiaSteps.map(renderGuiaPas)}
+      {(orfes.graphics.length > 0 || orfes.theory.length > 0) && (
+        <section className="pb-12">
+          <p className="kicker mb-4">📈 {t('session.graphicResources')}</p>
+          <div className="grid gap-6">
+            {orfes.theory.map((p, i) => (
+              <TheoryCard key={p.id} point={p} index={i} />
+            ))}
+            {orfes.graphics.map((g) => (
+              <GraphicFigure key={g.id} g={g} />
+            ))}
+          </div>
+        </section>
+      )}
+    </>
   )
 
   return (
@@ -307,6 +564,7 @@ export default function SessionPage() {
           </section>
         )}
 
+        {session.guiaPerApartats ? renderGuia() : (<>
         {/* ── APARTAT 0 · IDEES PRÈVIES (abans de tocar teoria) ── */}
         {session.ideesPrevies && (
           <section className="pb-12">
@@ -537,6 +795,8 @@ export default function SessionPage() {
             <FitxaGuide guide={session.fitxaGuide} />
           </section>
         )}
+
+        </>)}
 
         {/* ── SECCIÓ 4 · ELABORA (materials i descàrregues) ───── */}
         <section className="pb-12">

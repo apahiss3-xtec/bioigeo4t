@@ -34,6 +34,7 @@ export const sa5s4 = {
 
   // ── BASTIMENT/REPTE PER APARTAT segons el nivell ────────
   // scaffoldFade: SA5 final del 2n trimestre; la bastida baixa (tendència cap a SA6-7).
+  guiaPerApartats: true,
   scaffoldFade: "baixa",
   apartatExtras: {
     "1": {
@@ -128,8 +129,7 @@ export const sa5s4 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: false, title: "Targeta-cas del museu (model RESOLT: la gallina del pati)", src: "/images/sa5-s4-targeta-cas.svg", note: "Model d'una targeta-cas totalment resolta amb la gallina domèstica del pati (Gallus gallus domesticus): el tret observat (ales curtes, gairebé no vola), l'adaptació (estructura → funció → ambient), la prova de l'evolució (selecció artificial / domesticació, amb el gall salvatge de la selva com a avantpassat) i la comparació Lamarck (fals) vs neodarwinisme. És el model que has de seguir per fer la targeta del teu organisme; a la fitxa la faràs tu en blanc." },
-    { id: "Fig.2", apartat: "1", before: false, title: "Targeta-cas en blanc (per al teu organisme)", src: "/images/sa5-s4-targeta-cas-alumne.svg", note: "La mateixa plantilla de targeta-cas, buida, perquè hi posis el teu organisme del pati. Segueix l'ordre dels quatre eixos: tret observat, adaptació (estructura → funció → ambient), prova de l'evolució i Lamarck vs neodarwinisme." }
+    { id: "Fig.1", apartat: "1", before: false, title: "Targeta-cas del museu (model RESOLT: la gallina del pati)", src: "/images/sa5-s4-targeta-cas.svg", caption: "Mira com s'ordenen els quatre eixos i copia'n l'estructura per al teu organisme.", note: "Model d'una targeta-cas totalment resolta amb la gallina domèstica del pati (Gallus gallus domesticus): el tret observat (ales curtes, gairebé no vola), l'adaptació (estructura → funció → ambient), la prova de l'evolució (selecció artificial / domesticació, amb el gall salvatge de la selva com a avantpassat) i la comparació Lamarck (fals) vs neodarwinisme. És el model que has de seguir per fer la targeta del teu organisme; a la fitxa la faràs tu en blanc." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -141,11 +141,12 @@ export const sa5s4 = {
   fitxaGuide: {
     fitxaName: "Fitxa S20 — El museu evolutiu del pati",
     steps: [
-      { apartat: "0", title: "L'enigma de la situació", time: "5 min", phase: "engage", instruction: "Recorda l'enigma inicial: al pati, què és obra de la natura i què és obra nostra? Escriu un exemple de cada. No es corregeix; el tancaràs al final.", hints: [] },
-      { apartat: "1", title: "La teva targeta-cas", time: "35 min", phase: "explore", instruction: "Completa la targeta-cas del teu organisme (Fig.2) amb els quatre eixos i prepara la defensa oral de 45 segons. Consulta el model resolt de la gallina (Fig.1) només si et cal.", hints: ["Adaptació = estructura → funció → ambient.", "Tria bé la prova: homologia, analogia, vestigial, adaptació o selecció artificial (domesticació)."] },
-      { apartat: "2", title: "Coavaluació dels estands", time: "20 min", phase: "explore", instruction: "Visita els altres estands i coavalua'ls amb la rúbrica: marca el nivell de cada criteri i escriu una cosa que fan bé i una millora concreta.", hints: ["No diguis només «està bé»: mira si els quatre apartats hi són i si són correctes.", "Detecta explicacions lamarckianes disfressades de neodarwinistes."] },
-      { apartat: "3", title: "Exercici individual tipus PAU", time: "25 min", phase: "elabora", instruction: "Analitza sol un cas nou (peix globus o tolerància a la lactosa) des de les quatre teories i argumenta quina l'explica millor. Detecta i corregeix l'error lamarckià.", hints: ["Segueix l'estructura fixisme / lamarckisme / darwinisme / neodarwinisme.", "«L'organisme es va esforçar i ho va passar als fills» = lamarckià = fals."] },
-      { apartat: "4", title: "Metacognició de tancament", time: "10 min", phase: "evaluate", instruction: "Tanca la situació i el trimestre: respon l'enigma inicial amb el vocabulari nou i reflexiona sobre què has après i què t'agradaria entendre millor.", hints: ["Torna a l'exemple de natura/nosaltres del principi i millora'l.", "Pensa en un moment concret (una prova, la simulació, un estand) que t'hagi fet fer un salt."] }
+      { apartat: "—", icon: "📌", title: "Punts pendents de la sessió anterior", time: "10 min", phase: "engage", instruction: "Abans d'inaugurar el museu, treu la targeta-cas que vas preparar a casa i comprova que està llesta; l'aprofitaràs a l'apartat 1 i a l'estand del museu.", items: ["Tinc triat l'organisme del pati i el tret que vaig observar.", "Sé dir quina adaptació és (estructura → funció → ambient) i quin tipus de prova de l'evolució el sustenta.", "Tinc una frase de Lamarck i una de neodarwinisme, i sé per què la de Lamarck és falsa.", "Si no l'he acabada, la completo ara amb l'equip abans de passar a l'apartat 1."] },
+      { apartat: "0", title: "L'enigma de la situació", time: "5 min", phase: "engage", instruction: "Recorda l'enigma amb què vam obrir la SA5 i escriu un exemple d'organisme del pati que sigui com és per obra de la natura i un altre per obra nostra. No es corregeix; el tancaràs al final.", hints: [] },
+      { apartat: "1", title: "La teva targeta-cas del museu", time: "35 min", phase: "explore", explora: true, instruction: "En equip, completa la taula de la targeta-cas del teu organisme amb els quatre eixos i prepara la defensa oral de 45 segons. Mira el model resolt de la gallina (Fig.1) per copiar-ne l'estructura.", hints: ["Quin és el tret que vau veure, i per a què serveix en quin ambient (estructura → funció → ambient)?", "Quina de les proves estudiades el sustenta: homologia, analogia, vestigial, adaptació o selecció artificial? Com ho justifiques?", "Quina frase de Lamarck és falsa, i com ho explicaria el neodarwinisme?"] },
+      { apartat: "2", title: "Coavaluació dels estands", time: "20 min", phase: "explore", instruction: "Visita els altres estands i coavalua'ls amb la rúbrica: marca el nivell de cada criteri i escriu una cosa que fan bé i una millora concreta amb «Podríeu... perquè...».", hints: ["Hi són els quatre eixos i són correctes?", "L'explicació que defensen és neodarwiniana de debò o és lamarckiana disfressada?"] },
+      { apartat: "3", title: "Exercici individual tipus PAU", time: "25 min", phase: "elabora", instruction: "Sol, explica el cas del peix globus i la serp amb la cadena mutació → variabilitat → selecció → canvi, omple la graella de les quatre teories i escriu com ho explicaria (malament) el lamarckisme i quina prova el descartaria.", hints: ["Quin pas de la cadena és a l'atzar i quin depèn de l'ambient?", "Què diria cada teoria: hi ha variabilitat prèvia? Com s'hereta el tret?", "On col·loca Lamarck l'origen del canvi, abans o després de néixer? Quina prova parla de què es transmet?"] },
+      { apartat: "4", title: "Metacognició de tancament", time: "10 min", phase: "evaluate", instruction: "Torna a l'enigma de l'apartat 0: el respondries igual? Escriu quina idea t'ha canviat més la manera de mirar els éssers vius, quin moment t'ha fet fer el salt i què et falta entendre.", hints: ["Pensa en un moment concret (una prova, la simulació, un estand) que t'hagi fet fer un salt.", "Quin exemple d'ara posaries millor que el del principi?"] }
     ]
   },
 
@@ -176,7 +177,7 @@ export const sa5s4 = {
   // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
     "Llegeix l'apartat EXPLICA: la targeta-cas amb els quatre eixos, selecció natural vs artificial (domesticació), l'habilitat PAU d'analitzar un cas des de les quatre teories i com la ciència es revisa",
-    "Estudia la Fig.1 (targeta-cas resolta de la gallina del pati) i fes tu la Fig.2 en blanc amb un organisme del pati que triïs",
+    "Estudia la Fig.1 (targeta-cas resolta de la gallina del pati) i omple la taula de la targeta-cas amb un organisme del pati que triïs",
     "Descarrega la fitxa S20 i completa la teva targeta-cas i la rúbrica de coavaluació",
     "Fes l'exercici individual tipus PAU (peix globus o lactosa) analitzant el cas des de les quatre teories i corregint l'error lamarckià",
     "Respon la metacognició de tancament tornant a l'enigma inicial de la situació"

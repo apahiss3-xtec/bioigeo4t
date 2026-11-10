@@ -103,7 +103,12 @@
     "nextSession": "Sessió següent",
     "backToSA": "Torna a la SA",
     "criteriNum": "criteri",
-    "criteriOfficial": "Text oficial del currículum"
+    "criteriOfficial": "Text oficial del currículum",
+    "guiaTitle": "La sessió pas a pas",
+    "guiaIntro": "Tens la fitxa al davant? Seguim els apartats en ordre. Toca un apartat per anar-hi.",
+    "aLaFitxa": "A la fitxa",
+    "queFas": "Què fas",
+    "pasSenseApartat": "Fora de la fitxa"
   },
   "exitForm": {
     "nom": "Nom",

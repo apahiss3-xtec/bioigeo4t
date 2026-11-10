@@ -5,6 +5,7 @@ export const sa5s3 = {
   sessionNumber: 3,
   biome: "sa5",
   duration: "2h",
+  guiaPerApartats: true,
   engageImage: "/images/sa5-s3-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
@@ -136,8 +137,8 @@ export const sa5s3 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: false, title: "Simulació de selecció natural: el fons ho decideix", src: "/images/sa5-s3-simulacio.svg", note: "Esquema de la simulació: les mateixes preses de dos colors sobre dos fons diferents. Sobre el fons fosc, les preses clares ressalten i el depredador les caça; sobreviuen les fosques. Sobre el fons clar, a l'inrevés. La població «evoluciona» cap al color que camufla, sense que cap presa «vulgui» canviar: és l'ambient (el fons = variable independent) qui selecciona. A la teva simulació tu tries el fons i comptes els supervivents (variable dependent)." },
-    { id: "Fig.2", apartat: "3", before: false, title: "Un mateix cas, quatre teories (coll de la girafa)", src: "/images/sa5-s3-graella.svg", note: "Graella d'anàlisi RESOLTA amb el cas del coll de la girafa vist des de les quatre teories: fixisme (no canvia), lamarckisme (estira el coll i el transmet — fals), darwinisme (ja hi havia colls diferents, selecció natural), neodarwinisme (mutacions a l'atzar + herència genètica). A la fitxa hauràs d'omplir tu la mateixa graella amb un altre cas (resistència a un antibiòtic). És l'habilitat clau tipus PAU d'aquesta situació." }
+    { id: "Fig.1", apartat: "1", before: false, title: "El muntatge de la simulació: dos fons, dues preses", src: "/images/sa5-s3-simulacio-alumne.svg", caption: "Mira les preses de cada color sobre cada fons i prediu quines costarà més de veure per al depredador.", note: "Mateixa figura muda que les fitxes A i B: només mostra el muntatge (preses de dos colors sobre dos fons) perquè l'alumne prediu el resultat abans de fer la cacera. Hi ha una versió resolta (sa5-s3-simulacio.svg) que no s'usa aquí perquè revela la resposta." },
+    { id: "Fig.2", apartat: "3", before: false, title: "Un mateix cas, quatre teories (coll de la girafa)", src: "/images/sa5-s3-graella.svg", caption: "Mira com canvia l'explicació de la girafa a cada fila i fixa't en què s'hereta a cadascuna.", note: "Graella RESOLTA amb el cas del coll de la girafa: és el model que també porta la fitxa (A i B). Tu has d'omplir la graella amb un altre cas, no copiar aquesta." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -149,11 +150,12 @@ export const sa5s3 = {
   fitxaGuide: {
     fitxaName: "Fitxa S19 — Per què canvien els éssers vius?",
     steps: [
-      { apartat: "0", title: "Idees prèvies", time: "6 min", phase: "engage", instruction: "Omple l'apartat 0: què creus que passa quan un bacteri es fa resistent i si l'esforç de la girafa es transmet als fills. No es corregeix; ho compararàs al final.", hints: [] },
-      { apartat: "1", title: "Disseny i simulació de selecció natural", time: "40 min", phase: "explore", instruction: "Dissenya i fes la simulació: defineix la variable independent (fons), la dependent (supervivents), el control i les rèpliques (rondes). Registra els resultats a la taula i escriu la hipòtesi amb direcció abans de començar.", hints: ["VI = el que tu canvies (el color del fons). VD = el que mesures (quins colors sobreviuen).", "Rèpliques = repetir rondes perquè l'atzar no t'enganyi: una sola ronda no demostra res."] },
-      { apartat: "2", title: "La cadena del canvi", time: "20 min", phase: "explica", instruction: "Amb la teoria i la teva simulació, ordena i explica la cadena mutació → variabilitat → selecció → canvi en un cas real. Marca què és atzar i què depèn de l'ambient.", hints: ["La mutació és a l'atzar; la selecció la dirigeix l'ambient.", "«L'organisme va voler canviar» és sempre incorrecte."] },
-      { apartat: "3", title: "Graella de les 4 teories", time: "24 min", phase: "elabora", instruction: "Omple la graella d'anàlisi (Fig.2) amb un cas nou (resistència a un antibiòtic): què en diu cada teoria? Explica per què el lamarckisme és fals i quina prova el descarta.", hints: ["Segueix el model resolt del coll de la girafa.", "Lamarckisme = «l'esforç/ús es transmet» → fals: s'hereten els gens, no el que fas amb el cos."] },
-      { apartat: "4", title: "La ciència es revisa", time: "10 min", phase: "elabora", instruction: "Explica per què cada teoria va tenir sentit en el seu context i què va aportar Lamarck que encara conservem. Com mostra que la ciència es corregeix amb el temps?", hints: ["Lamarck: primer a dir que les espècies canvien (idea encertada, mecanisme erroni).", "La ciència és col·lectiva i es revisa amb noves proves."] }
+      { apartat: "—", icon: "📌", title: "Punts pendents de la sessió anterior", time: "6 min", phase: "engage", instruction: "Abans de començar la fitxa, recupera la feina que et va quedar de la sessió 2 i comprova que la tens a punt.", items: ["Treu l'exemple d'estructura vestigial que havies de buscar (del teu cos o d'un animal) i la frase on explicaves quina funció tenia abans.", "Explica'l a la teva parella en uns 30 segons: coincidiu en l'exemple? Està tan clar que és un vestigi?", "Si no l'has fet, pensa'n un ara i escriu la frase: avui veurem per què canvien els éssers vius i hi tornarem."] },
+      { apartat: "0", title: "Idees prèvies", time: "6 min", phase: "engage", instruction: "Respon per escrit les dues preguntes de l'apartat 0: què creus que passa quan un bacteri es fa resistent a un antibiòtic i si l'esforç d'una girafa passa als seus fills. No es corregeix; ho compararàs al final.", hints: [] },
+      { apartat: "1", title: "Disseny i simulació de selecció natural", time: "40 min", phase: "explore", explora: true, instruction: "Fes la simulació en equip: escriu la hipòtesi abans de començar, caça les preses ronda a ronda i registra els supervivents de cada color a la taula. Acaba dient cap a quin color evoluciona la població.", hints: ["Quina d'aquestes coses canvies tu a propòsit i quina només mesures? Això et diu qui és la VI i qui és la VD.", "Què podries comptar abans de caçar per tenir un punt de comparació?", "Per què una sola ronda podria enganyar-te? Què hi guanyes repetint-la?"] },
+      { apartat: "2", title: "La cadena del canvi", time: "20 min", phase: "explica", instruction: "Aplica la cadena mutació, variabilitat, selecció i canvi als bacteris resistents a l'antibiòtic: omple cada baula i indica si és atzar o ambient. Si fas el nivell A, tria un altre cas real i explica per què seria un error dir que l'organisme «va voler» canviar.", hints: ["En quina baula no hi ha cap «intenció»? Qui fa de filtre a l'antibiòtic?", "Quan algú diu que l'organisme «va voler» o «es va esforçar», quina teoria està fent servir?"] },
+      { apartat: "3", title: "La graella de les quatre teories", time: "24 min", phase: "elabora", instruction: "Mira el model resolt de la girafa (Fig.2) i omple la teva graella amb un cas nou: què en diria cada teoria? Després explica per què el lamarckisme sembla lògic però és fals i quina prova el descartaria.", hints: ["Fixa't en què canvia i què es manté d'una fila a l'altra de la girafa abans d'omplir la teva.", "Què s'hereta realment: el que has fet amb el cos o el que portes als gens? Quin cas pensat ho posaria a prova?"] },
+      { apartat: "4", title: "La ciència es revisa", time: "10 min", phase: "elabora", instruction: "Escriu un argument sobre per què seria injust dir que «Lamarck era ximple»: què va encertar, què va aportar que encara conservem i què ens diu això de com funciona la ciència.", hints: ["Què deien la majoria de científics abans de Lamarck sobre si les espècies canvien?", "Què tenia Darwin que no tenia Lamarck, i què li faltava a Darwin?"] }
     ]
   },
 
@@ -178,14 +180,14 @@ export const sa5s3 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Prepara la targeta-cas del teu organisme del pati per al museu evolutiu (S20): tria el tret que has observat, digues quina adaptació és (estructura → funció → ambient), quin tipus de prova de l'evolució el sustenta i com l'explicarien Lamarck i el neodarwinisme (una frase cadascun, deixant clar per què Lamarck s'equivoca).",
+    description: "Prepara a casa la targeta-cas del teu organisme del pati per al museu evolutiu i porta-la feta a la sessió 4 (s'hi recollirà a l'inici): tria el tret que has observat, digues quina adaptació és (estructura → funció → ambient), quin tipus de prova de l'evolució el sustenta i com l'explicarien Lamarck i el neodarwinisme (una frase cadascun, deixant clar per què Lamarck s'equivoca).",
     note: "Aprenentatge significatiu: aplicar les 4 teories a un organisme real i teu prepara la síntesi de la SA al museu del pati."
   },
 
   // ── HAS FALTAT? ──────────────────────────────────────────
   recoveryInstructions: [
     "Llegeix l'apartat EXPLICA: la cadena mutació → variabilitat → selecció → canvi, les quatre teories (fixisme, lamarckisme, darwinisme, neodarwinisme), per què el lamarckisme és fals i com la ciència es revisa",
-    "Estudia la Fig.1 (com el fons selecciona el color que sobreviu) i la Fig.2 (la graella de les 4 teories amb el coll de la girafa resolt)",
+    "Mira la Fig.1 (el muntatge de la simulació amb dos fons) i la Fig.2 (la graella de les 4 teories amb el coll de la girafa resolt)",
     "Descarrega la fitxa S19 i fes una mini-simulació a casa amb paperets de colors sobre dos fons diferents, registrant quins sobreviuen",
     "Omple la graella de les 4 teories amb el cas de la resistència a un antibiòtic, seguint el model de la girafa",
     "Respon l'exit tiquet online (a l'acordió de sota) i prepara la targeta-cas del teu organisme per al museu de la propera sessió"

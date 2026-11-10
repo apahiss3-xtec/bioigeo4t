@@ -114,7 +114,8 @@ function apartatKey (v) {
 function imageCard (res, accent, session) {
   const url = res.embed ? null : resolveAsset(res.src)
   const titleHtml = renderHighlighted(res.title || '', accent)
-  const noteHtml = res.note ? `<span class="note">${renderHighlighted(res.note, accent)}</span>` : ''
+  const capText = res.caption || res.note
+  const noteHtml = capText ? `<span class="note">${renderHighlighted(capText, accent)}</span>` : ''
   return `<figure class="card img-card">
     ${url ? `<img src="${url}" alt="${escapeHtml(res.title || '')}" />` : ''}
     <figcaption><strong>${escapeHtml(res.id || '')}</strong>${res.id ? ' — ' : ''}${titleHtml}${noteHtml ? `<br/>${noteHtml}` : ''}${(res.embed || /animació/i.test(res.title || '')) ? webNote('video', session, '', null) : ''}</figcaption>

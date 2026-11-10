@@ -5,6 +5,7 @@ export const sa3s4 = {
   sessionNumber: 4,
   biome: "sa3",
   duration: "2h",
+  guiaPerApartats: true,
   engageImage: "/images/sa3-s4-portada.jpg",
 
   // ── ENGANXA (hook) ───────────────────────────────────────
@@ -86,6 +87,7 @@ export const sa3s4 = {
     what: "Debat argumentat en gran grup sobre l'edició genètica d'embrions humans, a partir del cas real de les bessones editades (2018). Primer, en equips, analitzeu un petit dossier de fonts diverses sobre CRISPR (una notícia rigorosa, un titular sensacionalista, la web d'una empresa, una font científica) i decidiu de quines us fieu i per què. Després us posicioneu i debateu, distingint sempre QUÈ ES POT fer (ciència) de QUÈ S'HAURIA de fer (ètica). El debat és la preparació de l'assaig argumentatiu individual, el producte que avalua la SA.",
     who: { mode: "grup", label: "Equips de 3-4 → debat en gran grup" },
     time: 16,
+    apartats: "3",
     note: "No es tracta de «guanyar» el debat ni d'imposar una postura. Es tracta de construir arguments fonamentats, escoltar l'altra banda i decidir amb criteri propi. La qualitat d'un argument no depèn de si estàs a favor o en contra, sinó de com el sostens."
   },
   exploreInstructions: [
@@ -132,10 +134,10 @@ export const sa3s4 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "1", before: false, title: "CRISPR: localitzar, tallar, reparar", src: "/images/sa3-s4-crispr.svg", note: "L'eina localitza una seqüència concreta de l'ADN, hi fa un tall dirigit i, quan la cèl·lula el repara, s'hi pot canviar una lletra o desactivar aquell tros (en principi, també la mutació de tipus falciforme de S3). No inventa un canvi nou: dirigeix el mateix tipus de canvi que fa una mutació." },
-    { id: "Fig.2", apartat: "2", before: false, title: "Edició somàtica vs germinal", src: "/images/sa3-s4-somatica-germinal.svg", note: "A dalt, edició somàtica: es corregeixen cèl·lules del cos d'un adult; el canvi es queda en ell i no passa als fills. A baix, edició germinal: s'edita un embrió i el canvi entra a totes les cèl·lules, també les que formaran gàmetes, així que s'hereta generació rere generació." },
-    { id: "Fig.3", apartat: "1", before: false, title: "CRISPR en acció (animació)", src: "/images/sa3-s4-crispr-anim.svg", note: "L'ARN guia busca la seqüència, la Cas9 talla les dues cadenes i, en reparar el tall, s'hi posa la lletra desitjada. Model simplificat." },
-    { id: "Fig.4", apartat: "2", before: false, title: "Casgevy: un cas real d'edició somàtica", src: "/images/sa3-s4-casgevy.svg", note: "No corregeix la lletra de la falciforme: talla el «potenciador» que encén el gen «fre» BCL11A als glòbuls vermells; sense aquest fre, es torna a fabricar hemoglobina fetal. El canvi no passa als fills." }
+    { id: "Fig.1", apartat: "1", before: true, caption: "Segueix els tres passos d'esquerra a dreta: què fa l'eina a cada un?", title: "CRISPR: localitzar, tallar, reparar", src: "/images/sa3-s4-crispr.svg", note: "L'eina localitza una seqüència concreta de l'ADN, hi fa un tall dirigit i, quan la cèl·lula el repara, s'hi pot canviar una lletra o desactivar aquell tros (en principi, també la mutació de tipus falciforme de S3). No inventa un canvi nou: dirigeix el mateix tipus de canvi que fa una mutació." },
+    { id: "Fig.2", apartat: "2", before: true, caption: "Fixa't en quin dels dos camins el canvi continua cap als descendents.", title: "Edició somàtica vs germinal", src: "/images/sa3-s4-somatica-germinal.svg", note: "A dalt, edició somàtica: es corregeixen cèl·lules del cos d'un adult; el canvi es queda en ell i no passa als fills. A baix, edició germinal: s'edita un embrió i el canvi entra a totes les cèl·lules, també les que formaran gàmetes, així que s'hereta generació rere generació." },
+    { id: "Fig.3", apartat: "1", before: false, caption: "Segueix l'ARN guia fins a la seqüència i observa on talla la Cas9.", title: "CRISPR en acció (animació)", src: "/images/sa3-s4-crispr-anim.svg", note: "L'ARN guia busca la seqüència, la Cas9 talla les dues cadenes i, en reparar el tall, s'hi posa la lletra desitjada. Model simplificat." },
+    { id: "Fig.4", apartat: "2", before: false, caption: "Observa què talla Casgevy i per què el canvi no passa als fills.", title: "Casgevy: un cas real d'edició somàtica", src: "/images/sa3-s4-casgevy.svg", note: "No corregeix la lletra de la falciforme: talla el «potenciador» que encén el gen «fre» BCL11A als glòbuls vermells; sense aquest fre, es torna a fabricar hemoglobina fetal. El canvi no passa als fills." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -152,11 +154,24 @@ export const sa3s4 = {
     fitxaName: "Fitxa S4 — Podem o hauríem? El debat CRISPR",
     steps: [
       {
+        apartat: "—",
+        icon: "📌",
+        title: "Punts pendents de les sessions anteriors",
+        time: "7 min",
+        phase: "engage",
+        instruction: "Abans de començar la fitxa, treu els deures i deixa'ls damunt la taula: els faràs servir als apartats de fonts fiables i de l'assaig. Comprova amb el company que no et falta res.",
+        items: [
+          "Els 2 arguments a favor i els 2 en contra d'editar el genoma d'un embrió humà (deures de la S3), amb la font d'on has tret cada informació anotada.",
+          "La notícia de genètica, ADN o CRISPR que vas portar a la S1 (paper o captura), amb qui la signa i la intenció que li veus: la podràs fer servir per practicar la fiabilitat de fonts.",
+          "Si te'n falta algun, anota ara mateix el que recordis; els completaràs mentre treballes les fonts (apartat 3) i l'assaig (apartat 4)."
+        ]
+      },
+      {
         apartat: "0",
         title: "Idees prèvies",
         time: "6 min",
         phase: "engage",
-        instruction: "Omple l'apartat 0: la teva primera reacció sobre editar l'ADN per curar i com decideixes si et creus una notícia. No es corregeix.",
+        instruction: "Omple l'apartat 0: la teva primera reacció davant la idea d'editar l'ADN per curar i en què et fixes per decidir si et creus una notícia. No es corregeix.",
         hints: []
       },
       {
@@ -164,9 +179,9 @@ export const sa3s4 = {
         title: "Què fa CRISPR",
         time: "16 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, explica què fa CRISPR sobre l'ADN (localitzar, tallar, editar) i connecta-ho amb la mutació de la S3.",
+        instruction: "Mira la figura i completa els tres passos de CRISPR; després explica amb paraules teves què és editar amb CRISPR si una mutació és un canvi accidental de lletres.",
         hints: [
-          "CRISPR = «cerca i reemplaça» sobre l'ADN: localitza la seqüència, la talla i canvia la lletra.",
+          "Pensa en el «cerca i reemplaça» d'un processador de textos: què ha de fer primer, què després i què al final?",
           "Una mutació és un canvi de lletres accidental; editar és dirigir aquest mateix tipus de canvi a voluntat."
         ]
       },
@@ -175,9 +190,9 @@ export const sa3s4 = {
         title: "Somàtica o germinal",
         time: "18 min",
         phase: "explica",
-        instruction: "Amb la Fig.2, explica la diferència entre editar cèl·lules del cos (somàtica) i editar un embrió (germinal) i per què la segona genera tant debat.",
+        instruction: "Llegeix els dos casos reals i omple la taula comparant l'edició somàtica i la germinal; després explica per què la germinal genera tant debat.",
         hints: [
-          "Somàtica = es queda en la persona, no s'hereta. Germinal = passa als descendents per sempre.",
+          "Per a cada cas pregunta't: quines cèl·lules s'han editat? Aquest canvi el podran heretar els fills?",
           "Pensa qui assumeix el risc i si ha pogut consentir-hi."
         ]
       },
@@ -186,10 +201,29 @@ export const sa3s4 = {
         title: "Fets o soroll: fonts fiables",
         time: "16 min",
         phase: "explore",
-        instruction: "Analitza les fonts del dossier amb la graella de SA1 i separa, per a cada una, el fet contrastat de l'opinió o l'exageració.",
+        explora: true,
+        instruction: "En equip, valora la fiabilitat de les 4 fonts del dossier amb la graella de SA1 i anota de cada una un fet contrastat; després tria de quina et fiaries més i per què.",
         hints: [
           "Qui ho diu? Hi ha una institució? Quina intenció? Es pot verificar?",
           "El que no es pot verificar ni contrastar no és ciència, encara que ho sembli."
+        ]
+      },
+      {
+        apartat: "—",
+        icon: "🗣️",
+        title: "El debat: podem o hauríem?",
+        time: "20 min",
+        phase: "elabora",
+        instruction: "Debat en gran grup sobre l'edició genètica d'embrions humans. Defensa la postura amb arguments (postura + raó + prova o valor), escolta l'altra banda i apunta el que et servirà per a l'assaig de l'apartat 4. No es tracta de guanyar.",
+        items: [
+          "Tingues a mà els teus 2 arguments a favor i 2 en contra, i les fonts de l'apartat 3.",
+          "Quan parlis, digues si el teu argument és de «què es pot fer» (ciència) o de «què s'hauria de fer» (ètica).",
+          "Abans de respondre, resumeix en una frase el que ha dit l'altra persona.",
+          "Anota el millor argument de cada banda: els faràs servir a l'assaig."
+        ],
+        hints: [
+          "Si no saps com començar: «Crec que… perquè…, com mostra…».",
+          "Per rebatre, no neguis la persona: busca on falla la raó o la prova."
         ]
       },
       {
@@ -197,7 +231,7 @@ export const sa3s4 = {
         title: "Prepara el teu assaig",
         time: "24 min",
         phase: "elabora",
-        instruction: "Amb el marc PODEM/HAURIEM, planifica el teu assaig: postura, un argument a favor i un en contra ben sostinguts, i qui era Rosalind Franklin.",
+        instruction: "Llegeix el recordatori sobre Rosalind Franklin i escriu la teva postura, un argument a favor i un argument en contra ben sostinguts (postura + raó + prova o valor).",
         hints: [
           "Argument = postura + raó (científica o ètica) + prova o valor.",
           "Un bon assaig no ignora l'altra banda: la rebat."

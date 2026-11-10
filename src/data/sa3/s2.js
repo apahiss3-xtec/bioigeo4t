@@ -1,5 +1,6 @@
 export const sa3s2 = {
   id: "s2",
+  guiaPerApartats: true,
   saId: "sa3",
   title: "Com trauries l’ADN d’una cèl·lula?",
   sessionNumber: 2,
@@ -164,9 +165,9 @@ export const sa3s2 = {
   ],
 
   graphicResources: [
-    { id: "Fig.1", apartat: "2", before: false, title: "L'ADN per dins: doble cadena i complementarietat", src: "/images/sa3-s2-adn-estructura.svg", note: "L'ADN com una escala retorçada de dues cadenes. Cada esglaó és una parella de bases que s'aparellen sempre igual: A amb T i G amb C (complementarietat). L'ordre de les lletres és la informació." },
-    { id: "Fig.2", apartat: "1", before: false, title: "Així es veu l'ADN de maduixa", src: "/images/sa3-s2-foto-adn-maduixa.jpg", note: "La massa blanquinosa que sura a la capa d'alcohol és l'ADN precipitat. Foto: Sheila Richards, Wikimedia Commons, CC BY 4.0 (retallada)." },
-    { id: "Fig.3", apartat: "2", before: false, title: "Per què dues cadenes? Així es copia l'ADN (animació)", src: "/images/sa3-s2-copia-adn-anim.svg", note: "Les dues cadenes se separen i cadascuna fa de motlle (A-T, G-C): surten dues molècules idèntiques abans que la cèl·lula es divideixi." }
+    { id: "Fig.1", apartat: "2", before: true, title: "L'ADN per dins: doble cadena i complementarietat", src: "/images/sa3-s2-adn-estructura.svg", caption: "Mira un esglaó: quines dues lletres s'hi donen la mà? Fixa't que és sempre igual, també a l'altra cadena.", note: "Mateixa figura que la fitxa B i C (la fitxa A porta la versió muda sa3-s2-adn-estructura-alumne.svg). L'ordre de les lletres és la informació." },
+    { id: "Fig.2", apartat: "3", before: false, title: "Així es veu l'ADN de maduixa", src: "/images/sa3-s2-foto-adn-maduixa.jpg", caption: "Mira on s'acumula la massa blanquinosa: entre quines dues capes de líquid apareix?", note: "Només web. Foto: Sheila Richards, Wikimedia Commons, CC BY 4.0 (retallada). Va a l'apartat 3 perquè mostra l'ADN precipitat, no el protocol." },
+    { id: "Fig.3", apartat: "2", before: false, title: "Per què dues cadenes? Així es copia l'ADN (animació)", src: "/images/sa3-s2-copia-adn-anim.svg", caption: "Observa què fa cada cadena quan se separen i com s'omplen les lletres que falten.", note: "Només web. Les dues cadenes se separen i cadascuna fa de motlle (A-T, G-C): surten dues molècules idèntiques." }
   ],
 
   // ── ELABORA ──────────────────────────────────────────────
@@ -178,6 +179,19 @@ export const sa3s2 = {
   fitxaGuide: {
     fitxaName: "Fitxa S2 — Com trauries l'ADN d'una cèl·lula?",
     steps: [
+      {
+        apartat: "—",
+        icon: "📌",
+        title: "Punts pendents de la sessió anterior: la notícia de genètica",
+        time: "8 min",
+        phase: "engage",
+        instruction: "Abans d'obrir la fitxa, comprova amb la parella els deures de la sessió 1: la notícia que havies de portar.",
+        items: [
+          "Has portat UNA notícia recent sobre genètica, ADN o CRISPR (en paper o captura).",
+          "Hi tens anotat qui la signa i amb quina intenció sembla escrita.",
+          "Explica-la a la parella en un minut i guarda-la: la faràs servir per practicar la fiabilitat de fonts i per al debat CRISPR del final de la SA."
+        ]
+      },
       {
         apartat: "0",
         title: "Idees prèvies",
@@ -191,10 +205,11 @@ export const sa3s2 = {
         title: "Laboratori: dedueix i dissenya el protocol",
         time: "47 min",
         phase: "explore",
-        instruction: "Identifica els tres obstacles, empleneu la taula obstacle → material → per què, i dissenyeu la seqüència de passos. Munteu-ho i recolliu l'ADN.",
+        explora: true,
+        instruction: "En equip, empleneu la taula de deducció (obstacle → material → mecanisme) i ordeneu els quatre passos del protocol, escrivint per què cal cada un. Munteu l'experiment i prepareu-vos per explicar-lo a un altre equip.",
         hints: [
-          "Comença per l'obstacle, no pel pas: què impedeix veure l'ADN? (teixit, membranes de greix, ADN dissolt)",
-          "El sabó dissol greixos → obre les membranes. L'alcohol fred fa precipitar l'ADN → va l'últim."
+          "Comença per l'obstacle, no pel pas: què impedeix veure l'ADN a cada moment?",
+          "Per a cada material, pregunta't: quin obstacle fa desaparèixer? I si el poses abans d'hora, què passa?"
         ]
       },
       {
@@ -202,10 +217,10 @@ export const sa3s2 = {
         title: "Com és l'ADN: doble cadena i complementarietat",
         time: "20 min",
         phase: "explica",
-        instruction: "Amb la Fig.1, dibuixa/completa la doble cadena i les parelles de bases. Escriu la cadena complementària d'una seqüència donada (A-T sempre juntes, G-C sempre juntes).",
+        instruction: "Mira la Fig.1 i completa la cadena complementària de la seqüència de la fitxa. Després explica per què l'ordre de les lletres és informació i què aporta tenir dues cadenes.",
         hints: [
-          "A s'aparella amb T; G s'aparella amb C. Sempre igual.",
-          "L'ordre de les lletres és el missatge; dues cadenes = còpia de seguretat."
+          "Mira un esglaó de la Fig.1: quina relació hi ha entre les dues lletres que hi ha?",
+          "Pensa què passaria si només tinguessis una cadena i la cèl·lula s'hagués de dividir."
         ]
       },
       {
@@ -213,10 +228,10 @@ export const sa3s2 = {
         title: "Per què l'ADN es fa visible: solubilitat",
         time: "12 min",
         phase: "explica",
-        instruction: "Explica per què l'ADN es veu quan hi afegeixes alcohol fred, fent servir les paraules «soluble» i «precipita». Digues per què l'alcohol va l'últim.",
+        instruction: "Explica per què l'ADN es veu quan hi afegeixes alcohol fred, fent servir les paraules «soluble» i «precipita». Digues també per què l'alcohol va l'últim.",
         hints: [
-          "L'ADN és soluble en aigua (invisible) però no en alcohol fred (precipita).",
-          "Precipitar = deixar d'estar dissolt i tornar-se sòlid i visible."
+          "Pensa en el sucre dins l'aigua: es veu? On és?",
+          "Compara com està l'ADN abans i després de tocar l'alcohol, i què en depèn l'ordre."
         ]
       },
       {
@@ -224,10 +239,11 @@ export const sa3s2 = {
         title: "Cal el sabó? Dissenya-ho + observar vs inferir",
         time: "15 min",
         phase: "elabora",
-        instruction: "Dissenya l'experiment per comprovar si el sabó és necessari (VI amb/sense sabó, VD, control negatiu). Respon: has vist l'ADN o una massa que dedueixes que ho és?",
+        instruction: "Dissenya l'experiment per comprovar si el sabó és necessari: pregunta amb VI i VD, hipòtesi amb direcció, control negatiu i rèpliques. Acaba dient què has vist exactament i què has deduït.",
         hints: [
-          "Canvia NOMÉS una cosa (amb/sense sabó); la resta igual.",
-          "Control negatiu = tub sense mostra: ha de sortir buit."
+          "Només pots canviar una cosa entre els dos tubs: tota la resta ha de ser igual.",
+          "Per al control negatiu, pensa quin ingredient d'un tub el deixaria sense res que detectar.",
+          "Separa el que podria fotografiar una càmera del que només suposes."
         ]
       }
     ]
@@ -278,7 +294,7 @@ export const sa3s2 = {
 
   // ── FEINA A CASA ─────────────────────────────────────────
   homework: {
-    description: "Mira un vídeo curt sobre TRANSCRIPCIÓ i TRADUCCIÓ (com l'ADN es converteix en proteïna). No cal que ho entenguis tot: anota una cosa que t'hagi quedat clara i una pregunta. Ho farem servir per començar la propera sessió, on veurem el detall del camí ADN → ARN → proteïna.",
+    description: "Mira un vídeo curt sobre TRANSCRIPCIÓ i TRADUCCIÓ (com l'ADN es converteix en proteïna). No cal que ho entenguis tot: anota UNA cosa que t'hagi quedat clara i UNA pregunta que et queda. Al principi de la propera sessió ho compartirem a classe: porta-ho anotat (paper o mòbil).",
     note: "Aprenentatge significatiu: preparar la sessió següent connectant l'estructura de l'ADN (avui) amb com fabrica proteïnes (S3)."
   },
 
