@@ -131,6 +131,18 @@ export const sa3s2 = {
       apartat: "1",
       heading: "Per què l'ADN no es veu: ==tres obstacles==",
       text: "L'ADN és dins del ==nucli|p== de cada cèl·lula, i les cèl·lules formen un teixit compacte. Per fer-lo visible cal superar tres obstacles: (1) trencar el teixit i les cèl·lules (==triturar==); (2) obrir les ==membranes==, que estan fetes de ==greix==, amb ==sabó o detergent==, que dissol els greixos; (3) l'ADN, un cop fora, queda ==dissolt a l'aigua== i encara no es veu. La ==sal== ajuda a agrupar-lo neutralitzant les seves càrregues.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/cebes-cel-lules-nucli.jpg",
+          "caption": "Cèl·lules de ceba al microscopi: cada punt fosc és un nucli, on hi ha l'ADN tancat.",
+          "credit": "Mccloughlin · CC BY 4.0 · Wikimedia Commons"
+        },
+        {
+          "src": "/images/sa3-fotos/maduixa-lisi.jpg",
+          "caption": "Maduixa triturada amb sabó i sal: trenquem teixit i membranes per alliberar l'ADN.",
+          "credit": "Sheila Richards · CC BY 4.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -138,6 +150,18 @@ export const sa3s2 = {
       apartat: "2",
       heading: "Com és l'ADN per dins: la ==doble cadena== i les quatre lletres",
       text: "L'ADN és com una ==escala de corda retorçada== (una ==doble hèlix==): dues cadenes llargues enrotllades. Els esglaons són parelles de ==bases== (les «lletres»): l'==A sempre s'aparella amb la T==, i la ==G sempre amb la C==. Això és la ==complementarietat==. L'ordre de les lletres és el missatge; tenir-lo per duplicat (dues cadenes) permet ==copiar-lo sense perdre'l== quan la cèl·lula es divideix.",
+      images: [
+        {
+          "src": "/images/sa3-ubicacio-actg.svg",
+          "wide": true,
+          "caption": "Fes zoom: cèl·lula → nucli → cromosoma → doble hèlix → les lletres. Fixa't que A sempre va amb T i G sempre amb C."
+        },
+        {
+          "src": "/images/sa3-fotos/adn-estructura-bases.png",
+          "caption": "Model 3D de l'ADN: les dues cadenes enrotllades i, al mig, els esglaons de bases aparellades.",
+          "credit": "Zephyris (trad. Alejandro Porto) · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -145,6 +169,18 @@ export const sa3s2 = {
       apartat: "3",
       heading: "Per què apareix: ==solubilitat i precipitació==",
       text: "L'ADN és ==soluble== en aigua (dissolt, invisible), però ==NO== és soluble en ==alcohol fred==. Quan hi afegim alcohol, l'ADN deixa de poder estar dissolt i es torna a ajuntar en una massa sòlida i blanca: ==precipita== i es fa visible. Per això l'alcohol va sempre l'==últim== pas: primer alliberem l'ADN i, al final, el fem aparèixer. L'alcohol ha d'estar fred perquè la precipitació sigui més neta.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/adn-precipitat-tub.jpg",
+          "caption": "En afegir alcohol fred, l'ADN precipita: la massa blanca que sura al tub.",
+          "credit": "Joo Nath · CC BY-SA 4.0 · Wikimedia Commons"
+        },
+        {
+          "src": "/images/sa3-fotos/maduixa-6.jpg",
+          "caption": "ADN de maduixa precipitat a la capa d'alcohol.",
+          "credit": "Sheila Richards · CC BY 4.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -152,6 +188,18 @@ export const sa3s2 = {
       apartat: "4",
       heading: "==Observar== no és ==inferir==: què has vist de veritat?",
       text: "Al final tens una ==massa blanca== a la mà. Però, l'has vist l'ADN? El que has ==observat== és una massa blanca; que ==sigui== ADN és una ==inferència== (ho dedueixes del que saps del procés). Distingir el que observem del que inferim és una de les regles del joc de la ciència. I si algú dubtés que és ADN, caldria una ==prova addicional==, no només mirar-ho.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/adn-aillat-microscopi.jpg",
+          "caption": "ADN de tomàquet aïllat, vist al microscopi: observes fibres; que siguin ADN és una inferència.",
+          "credit": "ConformationXII · CC BY-SA 4.0 · Wikimedia Commons"
+        },
+        {
+          "src": "/images/sa3-fotos/maduixa-3.jpg",
+          "caption": "Què veus aquí de veritat? Una massa blanca i filamentosa. La resta, ho dedueixes.",
+          "credit": "Sheila Richards · CC BY 4.0 · Wikimedia Commons"
+        }
+      ],
       type: "epistemic",
       badge: "🧭 Observar vs inferir"
     },
@@ -160,6 +208,13 @@ export const sa3s2 = {
       apartat: "4",
       heading: "Un experiment ==amb control==: canviar només una cosa",
       text: "Per saber si el sabó és necessari, no n'hi ha prou amb fer-ho una vegada: cal ==comparar==. Prepares ==dos tubs iguals== que només es diferencien en ==una sola cosa==: un ==AMB sabó== i un ==SENSE==. Això que canvies a propòsit és la ==variable independent (VI)==. Allò que mesures per veure l'efecte (en quin tub apareix més ADN) és la ==variable dependent (VD)==. Tota la resta (temperatura, quantitat de mostra, temps) s'ha de ==mantenir igual==. A més, un tub ==sense mostra== és el ==control negatiu==: ha de sortir ==buit==; si hi apareix alguna cosa, el resultat no és fiable.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/dos-tubs-assaig.jpg",
+          "caption": "Dos tubs iguals que només canvien en una cosa (amb sabó / sense sabó): això és un experiment amb control.",
+          "credit": "Jeffrey M. Vinocur · CC BY 2.5 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     }
   ],

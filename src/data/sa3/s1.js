@@ -129,6 +129,18 @@ export const sa3s1 = {
       apartat: "2",
       heading: "L'ADN és un ==missatge de quatre lletres==",
       text: "Dins del ==nucli|p== de cada cèl·lula hi ha l'==ADN==: una molècula molt llarga escrita amb només quatre «lletres» (les bases ==A, T, G, C==). L'ordre d'aquestes lletres és informació, com l'ordre de les lletres d'aquest text. Un ==gen== és un tros d'aquest missatge: el fragment que porta les instruccions per fabricar ==una proteïna==.",
+      images: [
+        {
+          "src": "/images/sa3-ubicacio-actg.svg",
+          "wide": true,
+          "caption": "Fes zoom: cèl·lula → nucli → cromosoma → doble hèlix → les lletres. Fixa't que A sempre va amb T i G sempre amb C."
+        },
+        {
+          "src": "/images/sa3-fotos/cromosomes-fluorescencia.jpg",
+          "caption": "Cromosomes humans reals al microscopi de fluorescència: cadascun és un fil d'ADN molt enrotllat.",
+          "credit": "Steffen Dietzel · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -136,6 +148,13 @@ export const sa3s1 = {
       apartat: "2",
       heading: "Del ==codi== a la característica: el camí gen → proteïna",
       text: "Les instruccions de l'ADN es copien a una molècula intermèdia, l'==ARN|g==, i amb aquesta còpia la cèl·lula fabrica una ==proteïna|b==. Les proteïnes són les peces que FAN la feina (color dels ulls, defenses, digestió…). Per això el camí és: ==ADN → ARN → proteïna → característica==. Aquesta és la idea general; el detall de cada pas el veuràs a les properes sessions.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/ribosoma-traduccio.png",
+          "caption": "El ribosoma llegeix la còpia (ARNm) i va enganxant aminoàcids: així neix la proteïna.",
+          "credit": "LadyofHats · domini públic · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -143,6 +162,18 @@ export const sa3s1 = {
       apartat: "3",
       heading: "Canviar una lletra: què és una ==mutació== i què fa CRISPR",
       text: "Si es canvia, s'afegeix o es treu una lletra de l'ADN, tenim una ==mutació==: la proteïna pot sortir diferent, o deixar de funcionar. La tècnica ==CRISPR|r== és unes «tisores» moleculars que permeten ==tallar i editar== un tros concret de l'ADN a voluntat. Al cas de 2018 es va editar un gen per intentar bloquejar l'entrada del virus del VIH a les cèl·lules.",
+      images: [
+        {
+          "src": "/images/sa3-ubicacio-crispr.svg",
+          "wide": true,
+          "caption": "On talla CRISPR: l'ARN guia busca 20 lletres que encaixin, Cas9 reconeix el PAM (TGG) i talla les dues cadenes 3 lletres abans."
+        },
+        {
+          "src": "/images/sa3-fotos/crispr-cas9-guia.png",
+          "caption": "Esquema de Cas9 (tisora) amb l'ARN guia sobre l'ADN. Busca el PAM i la zona de tall.",
+          "credit": "Mariuswalter · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -150,6 +181,13 @@ export const sa3s1 = {
       apartat: "4",
       heading: "«Es pot fer» no és «s'ha de fer»: ==decidir amb criteri==",
       text: "Que una cosa es pugui fer (pregunta ==científica==) no vol dir que s'hagi de fer (pregunta ==ètica==). Davant d'una tecnologia nova cal fugir de dos extrems: la ==tecnofòbia== (rebutjar-la només perquè és nova) i la ==tecnofília== (acceptar-la només perquè és nova). Les dues decideixen ABANS de mirar les proves i les conseqüències. I abans de fiar-nos d'una notícia, cal preguntar-nos ==qui la signa, amb quina intenció i si es pot verificar==.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/he-jiankui-cimera-2018.jpg",
+          "caption": "He Jiankui presentant el seu experiment a Hong Kong (novembre de 2018). Qui ho signa? Es pot verificar?",
+          "credit": "VOA (Iris Tong) · domini públic · Wikimedia Commons"
+        }
+      ],
       type: "epistemic",
       badge: "🧭 Pensar amb criteri"
     }

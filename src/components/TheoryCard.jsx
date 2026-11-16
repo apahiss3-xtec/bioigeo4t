@@ -137,6 +137,29 @@ export default function TheoryCard({ point, index }) {
               )}
             </figure>
           )}
+          {point.images?.length > 0 && (
+            <div className={`mt-4 grid gap-3 ${point.images.length > 1 ? 'sm:grid-cols-2' : ''}`}>
+              {point.images.map((im, i) => (
+                <figure
+                  key={i}
+                  className={`overflow-hidden rounded-xl border border-[var(--rule)] bg-white ${im.wide ? 'sm:col-span-2' : ''}`}
+                >
+                  <img
+                    src={asset(im.src)}
+                    alt={im.alt || im.caption || ''}
+                    className={`block w-full ${im.wide ? '' : 'h-56 object-contain bg-white'}`}
+                    loading="lazy"
+                  />
+                  {(im.caption || im.credit) && (
+                    <figcaption className="px-4 py-2 text-xs text-[var(--muted)]">
+                      {im.caption && <T>{im.caption}</T>}
+                      {im.credit && <span className="block mt-0.5 opacity-75">📷 {im.credit}</span>}
+                    </figcaption>
+                  )}
+                </figure>
+              ))}
+            </div>
+          )}
           {point.video && (
             <figure className="mt-4 overflow-hidden rounded-xl border border-[var(--rule)] bg-black">
               <video

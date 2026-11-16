@@ -117,6 +117,13 @@ export const sa3s3 = {
       apartat: "2",
       heading: "El codi genètic: ==codons== i ==anticodons==",
       text: "L'ARNm es llegeix de ==tres en tres== lletres. Cada grup de tres és un ==codó==, i cada codó indica un ==aminoàcid== (les peces de què estan fetes les proteïnes). Hi ha un codó d'==inici== (==AUG==) i codons d'==aturada|p== (STOP). L'ARN de transferència que porta cada aminoàcid té un ==anticodó==: tres lletres que encaixen amb el codó per ==complementarietat==. Com que l'ARN no té T, en comptes de T fa servir ==U==.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/codo-anticodo.png",
+          "caption": "El codó de l'ARNm (3 lletres) encaixa amb l'anticodó de l'ARNt, que porta l'aminoàcid.",
+          "credit": "Yikrazuul · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -124,6 +131,13 @@ export const sa3s3 = {
       apartat: "3",
       heading: "Del ==genotip== al ==fenotip==",
       text: "El ==genotip== és la informació escrita a l'ADN (l'==ordre de les lletres==); el ==fenotip== és la característica observable (la sang normal o falciforme, el color dels ulls…). L'ordre de les lletres decideix l'ordre dels ==aminoàcids==, que decideix la ==forma== de la proteïna, que decideix si ==funciona== bé. Per això la informació és l'==ordre== de les lletres, no les lletres soltes: com a ==A-D-N-A== i ==N-A-D-A==, les mateixes lletres en un altre ordre volen dir coses diferents.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/globuls-normals-falciformes.jpg",
+          "caption": "Fenotip visible: glòbuls vermells normals (rodons) i falciformes (en forma de falç).",
+          "credit": "Confidence24 · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -131,6 +145,13 @@ export const sa3s3 = {
       apartat: "4",
       heading: "Una lletra ho pot canviar tot: la ==mutació==",
       text: "Una ==mutació== és un canvi en la seqüència de l'ADN. A l'==anèmia falciforme== canvia ==una sola lletra== del gen de l'hemoglobina: el codó canvia i, on hi havia d'anar ==glutamat==, hi va ==valina==. La proteïna canvia de forma, els glòbuls vermells prenen ==forma de falç== i la persona té la malaltia. Però ==no totes les mutacions== tenen efecte: si el codó nou dona el ==mateix aminoàcid==, la proteïna no canvia (==mutació silenciosa==). Les mutacions són també la matèria primera de l'==evolució== (SA5).",
+      images: [
+        {
+          "src": "/images/sa3-fotos/hemoglobina-3d.png",
+          "caption": "L'hemoglobina, la proteïna que porta l'oxigen. Un sol aminoàcid canviat altera la seva forma.",
+          "credit": "Zephyris (Richard Wheeler) · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     }
   ],

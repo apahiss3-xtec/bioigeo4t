@@ -108,6 +108,18 @@ export const sa3s4 = {
       apartat: "1",
       heading: "CRISPR: unes ==tisores moleculars== per editar l'ADN",
       text: "==CRISPR== és una eina que permet ==editar l'ADN== amb precisió: localitza una ==seqüència== concreta, hi fa un ==tall== i permet ==canviar-hi lletres==. És com una funció de «cerca i reemplaça» aplicada al codi de la vida. No fa res que la natura no faci —recorda que una ==mutació|p== és un canvi de lletres (S3)—, però ho fa ==dirigit i a voluntat==. En principi podria ==corregir== la lletra que causa una malaltia, com la de l'==anèmia falciforme==; el primer tractament aprovat (Casgevy), però, no toca aquesta lletra (Fig.4).",
+      images: [
+        {
+          "src": "/images/sa3-ubicacio-crispr.svg",
+          "wide": true,
+          "caption": "On talla CRISPR: l'ARN guia busca 20 lletres que encaixin, Cas9 reconeix el PAM (TGG) i talla les dues cadenes 3 lletres abans."
+        },
+        {
+          "src": "/images/sa3-fotos/cas9-estructura-real.jpg",
+          "caption": "Estructura real de Cas9 (proteïna) agafant l'ARN guia i l'ADN, obtinguda per cristal·lografia.",
+          "credit": "Nishimasu et al. · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -115,6 +127,13 @@ export const sa3s4 = {
       apartat: "2",
       heading: "==Somàtica== o ==germinal==: la diferència que ho canvia tot",
       text: "Editar les cèl·lules del ==cos== d'una persona (per exemple, les cèl·lules mare de la medul·la, com fa ==Casgevy==, aprovat el 2023) és edició ==somàtica==: el canvi es queda ==en ella== i ==no s'hereta==. Editar un ==embrió|p== o els ==gàmetes|p== és edició ==germinal==: el canvi entra a ==totes les cèl·lules== i ==passa als descendents== per sempre. Per això molts països ==permeten== investigar l'edició somàtica però ==prohibeixen== l'edició germinal en humans: un error no afectaria una persona, sinó ==tota una descendència== que no ha pogut ==consentir-hi==.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/embrio-8-cel.jpg",
+          "caption": "Embrió humà de 8 cèl·lules (dia 3). Editar-lo seria edició germinal: el canvi passaria als descendents.",
+          "credit": "ekem / RWJMS IVF Program · domini públic · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -122,6 +141,13 @@ export const sa3s4 = {
       apartat: "3",
       heading: "==Fets== o ==soroll==: destriar la informació (graella de SA1)",
       text: "Sobre CRISPR circula molta informació desigual. Per destriar-la, torna a la ==graella de fonts fiables== de SA1: ==qui== ho diu, si hi ha una ==institució== al darrere, quina ==intenció== té (informar, vendre, espantar) i si es pot ==verificar== amb altres fonts. Un mateix fet es pot explicar com a ==notícia rigorosa== o com a ==titular sensacionalista==. Cal separar el ==fet contrastat== de l'==opinió== i l'==exageració==: allò que no es pot verificar ni contrastar ==no és ciència==, encara que ho sembli.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/diaris.jpg",
+          "caption": "Molta informació, desigual: qui ho diu, amb quina intenció i es pot verificar?",
+          "credit": "Daniel R. Blume · CC BY-SA 2.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     },
     {
@@ -129,6 +155,13 @@ export const sa3s4 = {
       apartat: "4",
       heading: "==Podem== vs ==hauríem==: decidir amb arguments",
       text: "La ciència pot dir què és ==possible==, però ==no decideix tota sola== què és ==desitjable==: això ho decidim ==entre tots==, amb ==arguments==. Un argument sòlid és una ==postura== + una ==raó== (científica o ètica) + una ==prova o un valor== que la sosté. En una ==qüestió sociocientífica== (SSI) com aquesta cal pesar ==beneficis== (curar malalties greus) i ==riscos== (desigualtat, errors irreversibles, «==millorar==» en lloc de curar). I convé recordar, amb el cas de ==Rosalind Franklin== que vas veure a la ==sessió 2==, que la ciència és una ==tasca col·lectiva== on el reconeixement no sempre ha estat ==just==.",
+      images: [
+        {
+          "src": "/images/sa3-fotos/balanca.jpg",
+          "caption": "Decidir és pesar: beneficis a un plat, riscos a l'altre, amb arguments.",
+          "credit": "Nikodem Nijaki · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       type: "concept"
     }
   ],
