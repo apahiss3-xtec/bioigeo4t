@@ -98,6 +98,13 @@ export const sa7s4 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa7-fotos/s4-t1.jpg",
+          "caption": "Llançament d'un transbordador: explorar l'espai és una qüestió científica i també social.",
+          "credit": "NASA · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Una pregunta, dues menes de ==raons==",
       text: "Les preguntes com la d'avui es diuen ==sociocientífiques== perquè tenen sempre dues capes barrejades. A sota hi ha les ==dades==: quant costa una missió, quantes possibilitats hi ha de trobar el que es busca, què s'ha trobat fins ara. Aquestes es poden comprovar, i per tant es poden discutir amb proves i es poden equivocar. A sobre hi ha els ==valors==: què és més urgent, què és més just, què li deu una generació a la següent. Aquests no es mesuren, i això no vol dir que valguin menys ni que tot valgui igual —un valor també es defensa amb raons—, però vol dir que si tu i jo tenim la mateixa dada i valors diferents, podem arribar a conclusions diferents sense que cap dels dos s'equivoqui en els números. La Fig.1 et dona les dues preguntes per separar-les, amb un exemple resolt que no té res a veure amb el tema d'avui. El que has de saber fer amb això és doble: separar-ho en els teus arguments i, sobretot, ==reconèixer-ho== en els dels altres, perquè la majoria de discussions que no avancen és perquè un parla de dades i l'altre de valors sense adonar-se'n.",
@@ -105,6 +112,13 @@ export const sa7s4 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa7-fotos/s4-t2.jpg",
+          "caption": "La Terra des de l'espai: els satèl·lits ens ajuden a preveure el temps i a vigilar el clima.",
+          "credit": "NASA · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Què hi guanyem ==aquí baix==",
       text: "Hi ha un argument que apareix sempre en aquests debats i que has de tenir ben entès abans de fer-lo servir o de respondre'l: el de dir que mirar altres mons ha acabat servint per cuidar millor aquest. No és un argument buit i té casos concrets al darrere, però els casos els has de posar tu: en tens dos de treballats aquest mateix curs, i has de ser tu qui els recordi i triï el que expliqui millor la idea. A la fitxa se't demana un cas concret i, després, la part difícil: ==fins on arriba== aquest argument. Perquè tot argument en té, de límit, i el d'aquest no és evident. Pensa-hi abans de fer-lo servir al debat, perquè si el dius sense el límit te'l poden tombar en una frase; i, sobretot, saber fins on arriba un argument que t'agrada és tan important com saber respondre'n un que no.",
@@ -112,6 +126,13 @@ export const sa7s4 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa7-fotos/s4-t3.jpg",
+          "caption": "Pensament crític a l'aula: compara el teu perfil d'ara amb el de principi de curs.",
+          "credit": "Dareed · CC0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "El teu ==perfil epistèmic==, un any després",
       text: "La primera sessió del curs et va demanar que ordenessis unes afirmacions de més a menys certa i que diguessis quina ==garantia== feies servir per decidir-ho: si t'ho creies perquè ho deia algú que en sap, perquè hi havia dades, perquè encaixava amb un model que ja funciona, perquè sempre ho has sentit dir o perquè ho diu la gent com tu. Allò era el teu perfil epistèmic de partida. Avui el tornes a mirar, però amb una diferència: entremig has passat per set situacions on les coses es justificaven de maneres que no s'assemblen gens entre elles, i el mapa de la Fig.3 et demana precisament que recordis quina mena de prova hi havia darrere de cada una. La pregunta de tancament del curs no és quina nota has tret, sinó aquesta: ha canviat la mena de raó amb què et conformes? I n'hi ha una altra que la completa: hi ha alguna idea que tenies al setembre que hagis canviat, i saps dir ==què== t'ho va fer canviar? Poder respondre aquesta segona pregunta és, probablement, la cosa més útil que et pots endur d'aquesta matèria.",
@@ -120,6 +141,13 @@ export const sa7s4 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa7-fotos/s4-t4.jpg",
+          "caption": "Una prova escrita: aplicar el que saps a un cas nou, no repetir de memòria.",
+          "credit": "Alison wood · CC BY 3.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Una prova que no és de ==memòria==",
       text: "La prova final del curs és una ==situació-problema==: un cas nou que no has vist mai, amb dades a la mà, on has d'anar fent servir coses que has après en situacions diferents. No es puntua: es mira, per a cada objectiu, si ho has assolit i fins a quin nivell, exactament com s'ha fet tot l'any. El que s'hi valora no és recordar definicions, sinó tres coses: que triïs bé quina eina va a cada pregunta, que ==justifiquis== cada pas amb la dada concreta en què et bases i que, quan una cosa no es pugui saber amb les dades que tens, ho ==diguis== en lloc d'inventar-t'ho. Aquesta última és la que la gent falla més, i és la que has treballat des del primer dia: dir «amb aquestes dades no es pot decidir» és una resposta correcta si va acompanyada de què faria falta per decidir-ho.",

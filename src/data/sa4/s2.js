@@ -103,6 +103,13 @@ export const sa4s2 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa4-fotos/s2-t1.jpg",
+          "caption": "Llançar una moneda: cada gàmeta s'emporta un al·lel o l'altre amb un 50 % de probabilitat.",
+          "credit": "ICMA Photos · CC BY-SA 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Cada ==gàmeta== és una ==moneda a l'aire==",
       text: "Un progenitor ==Aa== té dos al·lels, però cada gàmeta (òvul o espermatozoide) en porta ==només un==. Quin? Ho decideix l'atzar de la meiosi, com una ==moneda==: 50% A, 50% a. Quan s'ajunten un gàmeta del pare i un de la mare, el fill rep una combinació. Tirar dues monedes (una per progenitor) ==simula== exactament aquest atzar.",
@@ -110,6 +117,13 @@ export const sa4s2 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa4-fotos/s2-t2.jpg",
+          "caption": "Quadre de Punnett de dues plantes Aa: 1 AA, 2 Aa i 1 aa, és a dir, 3 de violeta i 1 de blanca.",
+          "credit": "Madprime · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "El ==quadre de Punnett==: comptar totes les combinacions",
       text: "El ==quadre de Punnett== és una taula que posa els gàmetes del pare a dalt (A, a) i els de la mare a l'esquerra (A, a). Cada casella és un fill possible. Per a ==Aa × Aa== surten ==AA, Aa, Aa, aa==: genotips ==1:2:1== i fenotips ==3 dominants : 1 recessiu==. És una eina de ==predicció==: dóna la proporció esperada quan hi ha molts descendents.",

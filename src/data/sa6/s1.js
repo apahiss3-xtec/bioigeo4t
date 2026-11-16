@@ -97,6 +97,13 @@ export const sa6s1 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa6-fotos/s1-t1.jpg",
+          "caption": "La Pangea de Wegener: els continents encaixen com les peces d'un trencaclosques.",
+          "credit": "Von Alfred Wegener erstellte Karte · CC0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Wegener i la ==deriva continental==: llegir la memòria del planeta",
       text: "Fa cent anys, Alfred ==Wegener== va proposar una idea agosarada: els continents no estan fixos, sinó que es ==mouen== lentament, i abans formaven una sola massa que després es va trencar. La va sostenir amb ==proves== que no es podien explicar d'una altra manera: l'==encaix== de les costes (Amèrica i Àfrica encaixen), els ==fòssils guia== —el mateix fòssil terrestre a dues costes ara separades per un oceà que aquell ésser viu mai hauria pogut travessar—, i la ==continuïtat== de roques i serralades d'un continent a un altre. Cap prova sola és definitiva, però totes juntes apunten al mateix: els continents han estat units. Aquesta és la ==memòria== del planeta.",
@@ -104,6 +111,13 @@ export const sa6s1 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa6-fotos/s1-t2.jpg",
+          "caption": "Mapa dels límits de plaques: divergents, convergents i transformants.",
+          "credit": "Eric Gaba (Sting - fr:Sting) · CC BY-SA 2.5 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "La ==tectònica de plaques== i els tres tipus de ==límits==",
       text: "Avui sabem que la capa exterior rígida de la Terra (la ==litosfera==) està trencada en ==plaques== que es mouen sobre una capa més calenta i deformable. On dues plaques es toquen hi ha un ==límit==, i n'hi ha de tres tipus segons què passa amb l'escorça. ==Divergent==: les plaques se ==separen==, puja magma i es crea ==escorça nova== (les ==dorsals== oceàniques). ==Convergent==: les plaques ==xoquen==; una s'enfonsa sota l'altra (==subducció==, amb ==fosses== profundes) o totes dues s'==arruguen== formant serralades (==orògens==, com l'Himàlaia). ==Transformant==: les plaques ==llisquen== de costat, sense crear ni destruir escorça, i hi ha grans ==terratrèmols==. Per això els terratrèmols i els volcans no són a tot arreu: es concentren als ==límits==.",
@@ -111,6 +125,13 @@ export const sa6s1 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa6-fotos/s1-t3.jpg",
+          "caption": "Simulació de la convecció del mantell: el material calent puja i el fred baixa.",
+          "credit": "Kakitc · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "El ==motor==: la convecció del mantell (el que li faltava a Wegener)",
       text: "Si les plaques es mouen, alguna cosa les ha d'empènyer. La resposta és la ==calor== interna de la Terra: el ==mantell== es mou en corrents de ==convecció== —el material calent puja, s'escampa sota les plaques i les arrossega, es refreda i torna a baixar—, igual que l'aigua d'una olla que bull. Aquest ==motor== és el que li ==faltava== a Wegener: ell va descriure que els continents es movien, però no sabia ==per què==, i per això molts científics no el van creure durant dècades. Quan es van descobrir noves proves (el ==magnetisme== de les roques i l'edat del ==fons oceànic==), la idea es va acceptar del tot.",
@@ -118,6 +139,13 @@ export const sa6s1 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa6-fotos/s1-t4.jpg",
+          "caption": "Fòssils iguals a banda i banda de l'Atlàntic: una de les proves de Wegener.",
+          "credit": "Woudloper · CC BY-SA 1.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Una hipòtesi ==rebutjada== que es va acabar acceptant",
       text: "La història de la deriva continental és un exemple de com ==avança la ciència==. Wegener tenia raó en el ==què== (els continents es mouen) però li faltava el ==com== (el mecanisme), i sense mecanisme la comunitat científica va ==rebutjar== la seva idea durant molt de temps. No va ser tossuderia: en ciència, una bona explicació ha d'aguantar les ==proves== i oferir un ==mecanisme== plausible. Quan van arribar proves noves i el motor de la convecció, la mateixa comunitat va ==canviar d'opinió==. Que la ciència es ==revisi== amb noves dades no és un defecte: és exactament el que la fa fiable.",

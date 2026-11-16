@@ -107,6 +107,13 @@ export const sa6s5 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa6-fotos/s5-t2.jpg",
+          "caption": "Walter Alvarez al límit Cretaci–Paleogen: una capa fina que no quadrava va explicar l'extinció dels dinosaures.",
+          "credit": "Orangeboxes2 · CC0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Les proves que ==no quadren== no s'amaguen: s'expliquen",
       text: "A tota reconstrucció hi ha alguna prova que ==no encaixa== del tot. La temptació és ==ignorar-la==, perquè espatlla una explicació que ja ens agrada. En ciència es fa el contrari: es diu ==obertament== quina prova no quadra i per què se li ha donat menys ==pes== —perquè és una observació ==aïllada==, perquè es podria explicar d'una altra manera, perquè la mesura és poc ==fiable==. Aquesta honestedat no debilita l'explicació: la fa ==més forta==, perquè demostra que has mirat també el que et ==contradiu==. El cas de ==Wegener== ho il·lustra al revés: la comunitat científica no el va rebutjar per les proves que tenia, sinó perquè li faltava el ==mecanisme== i perquè hi havia dades que no sabia encaixar. Quan als anys ==seixanta== va aparèixer la prova del fons oceànic i la ==convecció== del mantell, la mateixa idea que havien rebutjat va passar a ser la ==teoria== central de la geologia.",
@@ -122,6 +129,13 @@ export const sa6s5 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa6-fotos/s5-t4.jpg",
+          "caption": "Mapa de perillositat sísmica: l'informe de riscos parteix de dades com aquestes.",
+          "credit": "SEDch · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "L'==informe== de riscos: la part individual",
       text: "El vídeo és el producte de l'==equip==; l'informe de riscos és ==teu==. Un informe tècnic segueix sempre el mateix ordre i cada bloc respon una pregunta. ==SITUACIÓ==: on és l'indret i què hi ha (poble, camps, carretera, càmping). ==DADES== físiques: la ==litologia==, el ==relleu== i la ==vegetació==. ==RISCOS== deduïts: quins fenòmens hi poden passar, de quina ==dada== surt cadascun i si és ==intern==, ==extern== o ==induït==. ==FACTOR HUMÀ==: què hi han afegit les persones i si això puja la ==perillositat== (canvia el terreny) o l'==exposició== (canvia el que hi ha allà). I ==MESURES==: dues propostes dient si són de ==predicció==, ==prevenció== o ==correcció==, sobre quin ==factor== actuen i quin ==límit== tenen. Fixa-t'hi: és el mateix raonament que has fet amb el planeta, però mirant el ==present== en comptes del passat. La geologia que explica per què el Mont Caro té fòssils ==marins== és la que explica per què el delta s'==enfonsa==.",

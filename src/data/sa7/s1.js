@@ -127,6 +127,13 @@ export const sa7s1 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa7-fotos/s1-t4.jpg",
+          "caption": "Camp ultraprofund del Hubble: la llum d'aquestes galàxies va sortir fa milers de milions d'anys.",
+          "credit": "NASA and the European Space Agency. · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Mirar ==lluny== és mirar ==enrere==",
       text: "Com pot la ciència saber res d'un passat que ningú no va veure? En el cas de l'univers, la resposta és sorprenentment directa: la ==llum== no és instantània, triga a arribar. La llum del Sol tarda uns ==8 minuts== a arribar-nos; la de l'estel més proper, uns ==4 anys==; la de les galàxies més llunyanes que veu el telescopi ==James Webb==, més de ==13.000 milions d'anys==. Això vol dir que quan mirem lluny no veiem com són aquells objectes ==ara==, sinó com eren quan la llum va sortir: el cel és un ==arxiu== del passat. Per això l'astronomia pot ==observar== èpoques antiquíssimes sense cap testimoni. I per això, també, hi ha coses que ==no== podrem observar mai, i sobre les quals la ciència honesta diu que ==explora==, no que ==afirma==.",

@@ -108,6 +108,13 @@ export const sa1s3 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa1-fotos/s3-t1.jpg",
+          "caption": "Karl Popper: una idea científica ha de poder-se demostrar falsa.",
+          "credit": "Franz Barta · No restrictions · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Una promesa que ==no pot fallar== no diu res",
       text: "Per saber si una promesa és ciència, pregunta't ==quin resultat la faria caure==. Si cap resultat no la pot fer caure («si no et funciona és que no hi creus»), no és que sigui molt certa: és que ==no es pot comprovar== (senyal 1) i ==no admet crítica== (senyal 2).",
@@ -116,6 +123,13 @@ export const sa1s3 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa1-fotos/s3-t2.jpg",
+          "caption": "Científics discutint resultats: el que sobreviu a la crítica d'un altre equip és més fiable.",
+          "credit": "The Official CTBTO Photostream · CC BY 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Un ==segon detector== és millor que un",
       text: "A la ciència, un resultat val més quan ==algú altre== el revisa sense saber què n'has dit tu. Si dues persones arriben al mateix veredicte per separat, el detector funciona. Si no, el desacord pot ser sobre la ==dada== (què diu el cas) o sobre la ==garantia== (si allò ja és prova prou bona).",
@@ -123,6 +137,13 @@ export const sa1s3 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa1-fotos/s3-t3.jpg",
+          "caption": "Una exposició a classe: explicar-ho en veu alta és la primera prova d'un argument.",
+          "credit": "Julie Lindsay · CC BY 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Explicar-ho és ==posar-ho a prova==",
       text: "Quan exposes el teu cas, la classe fa de ==segon detector==. Segueix el guió: ==què promet==, ==quins senyals== (amb la frase), ==com ho comprovaries== amb dos grups i ==quin resultat== la faria caure, i a quin ==calaix== va. Una bona pregunta dels companys ataca la prova, no la persona.",

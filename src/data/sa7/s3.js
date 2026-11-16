@@ -103,6 +103,13 @@ export const sa7s3 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa7-fotos/s3-t1.jpg",
+          "caption": "Muntatge de Miller-Urey: aigua, gasos i descàrregues elèctriques que imiten els llamps.",
+          "credit": "GYassineMrabetTalk✉ · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Què va demostrar l'experiment de ==Miller-Urey== i què no",
       text: "L'any 1953, Stanley ==Miller==, al laboratori de Harold ==Urey==, va tancar dins d'un aparell de vidre aigua i els gasos que aleshores es creia que formaven l'atmosfera primitiva —metà, amoníac i hidrogen— i hi va fer passar descàrregues elèctriques durant una setmana per imitar els ==llamps==. Al cap d'aquells dies el líquid contenia diversos ==aminoàcids==, que són les peces amb què es fabriquen les proteïnes de tots els éssers vius. El resultat va ser importantíssim perquè demostrava una cosa que abans només era una suposició: que les molècules de la vida es poden formar a partir de matèria ==inorgànica==, sense que hi intervingui cap ésser viu. La feina d'avui comença just aquí: els diaris de l'època van titular que s'havia creat vida al laboratori, i tu has de mesurar amb precisió la distància que hi ha entre el resultat i el titular. Hi ha, a més, una objecció seriosa que has de conèixer: avui es pensa que l'atmosfera primitiva no era com la que Miller va posar dins l'aparell. Què s'ha de fer amb una hipòtesi quan apareix una objecció així és la primera pregunta de la fitxa.",
@@ -117,6 +124,19 @@ export const sa7s3 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa7-fotos/s3-t3.jpg",
+          "caption": "Fumarola hidrotermal (fumador negre) al fons del mar: un dels escenaris proposats per a l'origen de la vida.",
+          "credit": "MARUM − Zentrum für Marine Umweltwissenschaften, Universität · CC BY 4.0 · Wikimedia Commons"
+        }
+      ],
+      youtube: {
+        "id": "iwDshSQDkXo",
+        "title": "Origen de la vida | 3CatCampus",
+        "note": "Vídeo: l'espurna dels llamps, la panspèrmia i el fons de l'oceà. Quins dels tres escenaris reconeixes?",
+        "credit": "3CatCampus · Origen de la vida (Biologia 3r i 4t ESO)"
+      },
       apartat: "3",
       heading: "Els tres escenaris i la proposta que ==trasllada== la pregunta",
       text: "La ==sopa primordial== imagina un oceà o unes basses poc profundes on, amb l'energia dels llamps i de la radiació, s'hi van anar acumulant molècules orgàniques fins a fer-hi un brou concentrat: és l'escenari de l'experiment de 1953. El ==món ARN== proposa que abans de l'ADN i de les proteïnes hi va haver l'==ARN==, i el motiu és una propietat que l'ADN no té: hi ha molècules d'ARN que ==guarden informació== i alhora ==actuen== com si fossin eines, tallant i unint altres molècules sense necessitat de cap proteïna. En dieuen ==ribozims==. Les ==fumaroles hidrotermals== situen l'escena al fons del mar, en xemeneies de roca plenes de ==porus== microscòpics per on surt aigua calenta i alcalina que es troba amb l'aigua freda i àcida del mar, en un lloc on no arriba gens de llum. Finalment, la ==panspèrmia== diu que les molècules —o fins i tot la vida— van arribar de l'espai dins de meteorits, i té una prova real a favor que et sorprendrà; però fixa't bé en què respon i en què no respon, perquè amb aquesta n'hi ha prou de llegir-la amb atenció per veure què hi falla com a resposta a la pregunta d'avui.",
@@ -124,6 +144,13 @@ export const sa7s3 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa7-fotos/s3-t4.jpg",
+          "caption": "El robot Perseverance i els seus instruments: busca senyals de vida passada a Mart.",
+          "credit": "NASA · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "L'astrobiologia ==explora==, no ==afirma==",
       text: "Cap de les quatre propostes no està demostrada, i això no és cap escàndol: és l'estat normal d'una pregunta oberta. Però una pregunta oberta no vol dir que qualsevol resposta valgui igual, i el criteri per separar-les és molt concret. Una hipòtesi és ==científica== quan es pot posar a prova, és a dir, quan es pot dir per endavant què s'hauria d'==observar== si fos certa i, sobretot, què s'hauria d'observar si fos ==falsa==. La fitxa et demanarà que apliquis aquestes dues preguntes a una afirmació concreta i que en treguis tu la conclusió; i el que és difícil no és treure-la, sinó escriure-la amb precisió, perquè «no és ciència» i «és falsa» són dues coses diferents i confondre-les és un error que has vist tot el curs. La ==astrobiologia==, la ciència que estudia la possibilitat de vida en altres llocs, treballa exactament així: ==explora== escenaris, hi busca proves i diu clarament fins on arriba. Al llarg del curs has anat construint una escala de certeses, i avui l'has de saber fer servir amb quatre candidates que estan totes al mateix esglaó: totes són hipòtesis amb proves, i el que has de decidir és quina està ==més ben fonamentada== ara mateix.",

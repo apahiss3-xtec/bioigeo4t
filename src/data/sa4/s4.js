@@ -108,6 +108,13 @@ export const sa4s4 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa4-fotos/s4-t2.jpg",
+          "caption": "Cariotip humà: el cromosoma X és gran i el Y, molt petit.",
+          "credit": "National Human Genome Research Institute (NHGRI) · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "==Herència lligada al X==: per què afecta més els homes",
       text: "El cromosoma ==Y== és petit i porta ==pocs gens==; el ==X== en porta molts que el Y ==no== té. Un caràcter ==lligat al X== recessiu (com l'==hemofília== o el ==daltonisme==) es comporta diferent segons el sexe: la dona (==XX==) té dues còpies, així que una X sana pot ==tapar== l'al·lel malalt → és ==portadora== (sana, però el transmet). L'home (==XY==) només té ==una X==: el que hi hagi s'expressa ==sí o sí==, perquè el Y no en porta còpia (diem que és ==hemizigot==). Per això ==els homes pateixen molt més== aquests caràcters: n'hi ha prou amb una sola còpia de l'al·lel malalt.",
@@ -115,6 +122,13 @@ export const sa4s4 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa4-fotos/s4-t3.jpg",
+          "caption": "Herència lligada al X amb la mare portadora: la meitat dels fills nois poden estar afectats.",
+          "credit": "Genomics Education Programme · CC BY 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Un cas real: ==mare portadora × pare sa==",
       text: "Notació: ==X^H== = al·lel sa, ==X^h== = al·lel de l'hemofília. Una dona ==portadora== (X^H X^h) amb un home ==sa== (X^H Y) pot tenir: filles ==X^H X^H== (sanes) o ==X^H X^h== (portadores) — ==cap filla malalta==; i fills ==X^H Y== (sans) o ==X^h Y== (==hemofílics==). Resultat: ==meitat dels fills afectats==, ==cap filla afectada== (però la meitat portadores). Així la malaltia ==«salta»== generacions: viatja amagada per les dones portadores i apareix en els seus fills homes. (Per això l'avi malalt no té fills malalts, però sí néts.)",
@@ -123,6 +137,13 @@ export const sa4s4 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa4-fotos/s4-t4.jpg",
+          "caption": "Consell genètic: el professional informa dels riscos; la decisió és de la família.",
+          "credit": "DataBase Center for Life Science (DBCLS) · CC BY 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "==Consell genètic== i ==bioètica==: informar, no decidir",
       text: "El ==consell genètic== és l'assessorament que rep una família per conèixer el ==risc== que un fill tingui una malaltia genètica, a partir del ==pedigrí== i de proves. La feina de l'assessor és ==donar informació== (probabilitats i què signifiquen), ==no decidir== per la família. Això obre ==dilemes bioètics==: val la pena saber que ets portador d'una malaltia sense cura? qui pot accedir a la teva informació genètica? La ciència diu ==què és probable==; què fer amb aquesta informació és una ==decisió de valors== de cada persona. Fer bona ciència inclou saber ==on acaba el que la ciència pot respondre==.",

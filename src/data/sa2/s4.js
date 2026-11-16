@@ -54,6 +54,13 @@ export const sa2s4 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa2-fotos/s4-t1.jpg",
+          "caption": "Les fases de la meiosi: d'una cèl·lula 2n en surten quatre de n, totes diferents.",
+          "credit": "Ali Zifan · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "repas",
       heading: "Repàs: el mateix cicle, ==dues sortides==",
       text: "Tota cèl·lula ve del ==cicle cel·lular== (S1): creix, copia el seu material genètic i es divideix. Després hi ha dues sortides:",
@@ -65,6 +72,13 @@ export const sa2s4 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa2-fotos/s4-t2.jpg",
+          "caption": "Teixit tumoral al microscopi: cèl·lules que s'han dividit sense control.",
+          "credit": "Ed Uthman from Houston, TX, USA · CC BY 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "repas",
       heading: "Repàs: quan el cicle ==perd el control==",
       text: "El ==càncer|r== no és un tercer tipus de divisió: és ==mitosi normal que no s'atura quan toca== (S3). Es detecta amb l'índex mitòtic:",
@@ -89,6 +103,13 @@ export const sa2s4 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa2-fotos/s4-t4.jpg",
+          "caption": "Model del desenvolupament de l'embrió: mitosi, meiosi i fecundació treballen juntes.",
+          "credit": "Museum of Veterinary Anatomy FMVZ USP / Wagner Souza e Silva · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "repas",
       heading: "Per què els tres processos ==importen==",
       bullets: [
@@ -101,6 +122,13 @@ export const sa2s4 = {
     },
     {
       id: "t5",
+      images: [
+        {
+          "src": "images/sa2-fotos/s4-t5.jpg",
+          "caption": "Una gràfica de full de càlcul: compara sempre cada grup amb el control.",
+          "credit": "Brews ohare · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "repas",
       heading: "Llegir la taula del consorci: ==sempre contra el control==",
       text: "Una dada sola no diu res. Per analitzar els resultats, segueix aquest ordre:",

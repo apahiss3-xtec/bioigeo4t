@@ -160,6 +160,25 @@ export default function TheoryCard({ point, index }) {
               ))}
             </div>
           )}
+          {point.youtube && (
+            <figure className="mt-4 overflow-hidden rounded-xl border border-[var(--rule)] bg-black">
+              <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src={`https://www.youtube-nocookie.com/embed/${point.youtube.id}?rel=0${point.youtube.start ? `&start=${point.youtube.start}` : ''}`}
+                  title={point.youtube.title || point.heading}
+                  loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+              <figcaption className="px-4 py-2 text-xs text-[var(--muted)] bg-[var(--card,white)]">
+                🎬 {point.youtube.note ? <T>{point.youtube.note}</T> : point.youtube.title}
+                {point.youtube.credit && <span className="block mt-0.5 opacity-75">{point.youtube.credit}</span>}
+              </figcaption>
+            </figure>
+          )}
           {point.video && (
             <figure className="mt-4 overflow-hidden rounded-xl border border-[var(--rule)] bg-black">
               <video

@@ -99,6 +99,13 @@ export const sa5s4 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa5-fotos/s4-t1.jpg",
+          "caption": "Els pinsans de Darwin: becs diferents per a aliments diferents.",
+          "credit": "Collage by Kiwi Rex · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "La ==targeta-cas==: els quatre eixos de la situació en una sola mirada",
       text: "Tota la situació cap en una targeta amb quatre caselles. Primer, el ==tret observat==: allò concret que vau veure al pati. Segon, l'==adaptació==, que sempre connecta ==estructura → funció → ambient== (aquest tret serveix per a alguna cosa en un ambient concret). Tercer, la ==prova de l'evolució== que el sustenta: ==homologia== (mateix origen, funció diferent), ==analogia== (funció igual, origen diferent), ==estructura vestigial==, adaptació o ==selecció artificial== (domesticació). Quart, la comparació ==Lamarck vs neodarwinisme==. Si sabeu omplir aquesta targeta per a un organisme, sabeu evolució.",
@@ -106,6 +113,13 @@ export const sa5s4 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa5-fotos/s4-t2.jpg",
+          "caption": "La papallona Biston betularia: la forma clara i la fosca van canviar de freqüència segons el color dels troncs.",
+          "credit": "Charles J. Sharp · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "==Natura o nosaltres==: selecció natural i selecció artificial",
       text: "Al pati hi conviuen els dos motors del canvi. A la ==selecció natural==, és l'==ambient== qui «tria» quins individus sobreviuen i es reprodueixen (els ocells salvatges, els insectes, les males herbes). A la ==selecció artificial== o ==domesticació==, som ==nosaltres== qui triem (la gallina, que ve del gall salvatge de la selva; la morera i el plataner, plantats i podats). El mecanisme és el mateix —hi ha variabilitat i algú selecciona—, però canvia ==qui selecciona==. Darwin va fer servir la domesticació com a ==prova viva== que la selecció funciona.",
@@ -113,6 +127,13 @@ export const sa5s4 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa5-fotos/s4-t3.jpg",
+          "caption": "Girafes: el cas clàssic per caçar l'error lamarckià.",
+          "credit": "Byrdyak · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "L'habilitat ==PAU==: un cas, quatre teories, i caçar l'error lamarckià",
       text: "L'exercici tipus selectivitat sempre demana analitzar un cas des de les ==quatre teories==. ==Fixisme==: no canvia. ==Lamarckisme==: l'ús/l'esforç desenvolupa el tret i es ==transmet== (FALS). ==Darwinisme==: ja hi havia ==variabilitat== i l'ambient ==selecciona==, però sense saber com s'hereta. ==Neodarwinisme==: ==mutacions a l'atzar== en els gens + herència + selecció natural (model actual). La ==trampa== recurrent: qualsevol frase amb «l'organisme ==va voler==, es va ==esforçar==, ho ==necessitava== i per això ho va aconseguir i ho va passar als fills» és ==lamarckiana i incorrecta==. El que s'hereta són els ==gens==, no el que has fet amb el cos.",
@@ -120,6 +141,13 @@ export const sa5s4 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa5-fotos/s4-t4.jpg",
+          "caption": "Portada de L'origen de les espècies (1859).",
+          "credit": "Unknown authorUnknown author · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "La ciència es ==revisa==: mirada de tancament",
       text: "En tancar la situació val la pena recordar-ho: les explicacions de l'evolució han ==canviat== amb el temps perquè la ciència és una tasca ==col·lectiva== que es ==corregeix== amb noves proves. Lamarck va encertar que les espècies canvien i es va equivocar en el mecanisme; Darwin va trobar el mecanisme però li faltava la genètica; el neodarwinisme ho va unir tot quan es va conèixer l'ADN. Saber distingir «el que una teoria explicava en el seu temps» de «el que sabem ara» és pensar com un ==científic==, i és el fil que hem seguit tota la situació.",

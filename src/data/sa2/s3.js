@@ -119,6 +119,13 @@ export const sa2s3 = {
     },
     {
       id: "t1b",
+      images: [
+        {
+          "src": "images/sa2-fotos/s3-t1b.jpg",
+          "caption": "Epiteli de l'intestí: és un teixit que es renova molt, i per això té un índex mitòtic alt de manera normal.",
+          "credit": "Juan Carlos Fonseca Mata · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Compte: el llindar depèn del ==teixit==",
       text: "El ~10 % és una ==referència general==, no una llei per a tots els teixits.",
@@ -142,6 +149,13 @@ export const sa2s3 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa2-fotos/s3-t3.jpg",
+          "caption": "Ratolins de laboratori: per provar un fàrmac hi ha d'haver un grup tractat i un grup control.",
+          "credit": "Commissioned by Understanding Animal Research · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Provar un fàrmac: ==abans, després i control==",
       text: "Es mesura l'índex mitòtic ==abans|o== (pre-test) i ==després|g== (post-test) del tractament, i es compara amb un ==grup control== (sense fàrmac).",
@@ -177,6 +191,13 @@ export const sa2s3 = {
     },
     {
       id: "t5",
+      images: [
+        {
+          "src": "images/sa2-fotos/s3-t5.jpg",
+          "caption": "Un sol ratolí no demostra res: calen molts individus, a l'atzar i amb control.",
+          "credit": "Andrey Chernogorodov · CC BY 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Per què importa fer-ho ==amb rigor==",
       text: "Un sol ratolí no demostra res. Un assaig fiable té:",

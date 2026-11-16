@@ -118,6 +118,13 @@ export const sa5s2 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa5-fotos/s2-t3.jpg",
+          "caption": "Cec i apèndix del conill i de l'humà: en nosaltres és un òrgan vestigial.",
+          "credit": "George Howard Parker · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "==Estructures vestigials== i els altres tipus de proves",
       text: "Una ==estructura vestigial== és un òrgan que ==abans tenia una funció i ara gairebé no en té==, i va quedant reduït generació rere generació: l'==apèndix==, els ==queixals del seny== o l'os de la cua (==còccix==) en humans; els ossets de la ==pelvis== en balenes, que recorden que els seus avantpassats caminaven. Les restes d'òrgans antics són una prova de l'evolució. A més de les proves ==anatòmiques== (homologia, analogia, vestigis), n'hi ha de ==bioquímiques== (comparar l'ADN o les proteïnes: com més semblants, més parents), ==paleontològiques== (fòssils que mostren canvis graduals, com l'==Archaeopteryx==), ==embriològiques== i ==biogeogràfiques== (on viu cada espècie: els pinsans de les Galápagos).",

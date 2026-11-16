@@ -87,6 +87,13 @@ export const sa4s5 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa4-fotos/s5-t1.jpg",
+          "caption": "Una sessió de pòsters en un congrés: els científics defensen la seva recerca davant dels companys.",
+          "credit": "NOAASatellites · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Defensar un ==pòster científic==: comunicar és fer ciència",
       text: "Un ==pòster científic== no és un mural decoratiu: és la manera com els científics comuniquen una recerca en un ==congrés==. Ha de deixar clar, en poc espai, la ==pregunta de recerca==, la ==metodologia== (com s'han recollit les dades i s'ha fet el ==pedigrí==), els ==resultats== i la ==conclusió== argumentada. Defensar-lo vol dir explicar-lo sense llegir-lo i ==respondre les preguntes== dels altres. Una bona defensa preveu les objeccions: dades poques, models alternatius, límits de la conclusió. En ciència, una idea només val si ==resisteix la crítica== dels altres.",
@@ -95,6 +102,13 @@ export const sa4s5 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa4-fotos/s5-t2.jpg",
+          "caption": "Revisió entre iguals: s'avalua amb criteris compartits, no amb gustos.",
+          "credit": "Alon Friedman · CC0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "La ==coavaluació== amb rúbrica: criteris, no opinions",
       text: "Coavaluar és jutjar el treball d'un altre equip amb ==criteris explícits==, no amb un «m'agrada». La ==rúbrica== separa la ==qualitat científica== (que la conclusió sobre el tipus d'herència sigui ==correcta i justificada== amb el pedigrí — el criteri de més ==pes==) de la ==qualitat comunicativa== (disseny, claredat, presentació oral). Avaluar bé els altres t'ajuda a ==avaluar-te a tu== (CE4.2: revisar les pròpies conclusions). Cada nota ha d'anar amb un ==comentari de millora== concret.",
@@ -111,6 +125,13 @@ export const sa4s5 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa4-fotos/s5-t3.jpg",
+          "caption": "Pedigrí recessiu: dos pares sans tenen un fill afectat, per tant tots dos són portadors.",
+          "credit": "Jerome Walker · CC BY 2.5 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "==Decidir el tipus d'herència== a partir d'un pedigrí (síntesi de la SA)",
       text: "Per defensar una conclusió (i per resoldre un problema), primer ==dedueixes el model== d'herència mirant el pedigrí: si el caràcter ==«salta» generacions== → probablement ==recessiu==; si apareix a cada generació → ==dominant==. Si afecta ==molt més els homes== i salta per les dones → sospita de ==lligat al X recessiu== (recorda: l'home és ==hemizigot==). Dos progenitors sense el caràcter amb un fill afectat → ==recessiu==. Un cop tens el model, escrius els ==genotips== i comproves amb un ==quadre de Punnett==, separant ==fills i filles== si va lligat al sexe. Aquest mètode serveix per a qualsevol cas, fins i tot per a sistemes de sexe diferents (papallones ==ZW/ZZ==).",
@@ -119,6 +140,13 @@ export const sa4s5 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa4-fotos/s5-t4.jpg",
+          "caption": "Gregor Mendel, que amb els pèsols va descobrir les regles de l'herència.",
+          "credit": "Bateson, William · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Tancament de la SA4: què he après sobre l'herència",
       text: "En aquesta SA has passat de ==descriure== l'herència (vocabulari, pedigrí) a ==predir-la== (Mendel, Punnett) i a ==explicar-ne els casos difícils== (codominància, al·lelisme múltiple, lligat al sexe). Has vist que un ==model científic== (les lleis de Mendel) és potent però té ==límits==, i que ampliar-lo (poligènia, lligat al X) el fa més útil sense trencar-lo. I has practicat les dues cares de la ciència: ==resoldre== problemes i ==comunicar-los==. Aquesta manera de pensar —model, predicció, límits, revisió— la faràs servir també a l'==evolució== (SA5).",

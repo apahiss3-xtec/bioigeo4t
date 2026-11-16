@@ -100,6 +100,13 @@ export const sa6s3 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa6-fotos/s3-t1.jpg",
+          "caption": "Un riu que diposita sediments avui: el mateix procés que va formar les roques antigues.",
+          "credit": "U.S. Fish and Wildlife Service · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "L'==actualisme==: el present és la clau del passat",
       text: "Ningú no era aquí fa 200 milions d'anys, però sí que podem mirar què passa ==avui==. Un riu diposita ==sorra== al seu llit; un mar tranquil diposita ==fang== i closques al fons; un volcà escampa ==cendra==. Si suposem que les ==lleis== de la natura eren les mateixes abans que ara —això és l'==actualisme==—, aleshores una roca de sorra endurida amb marques d'==ones== ens diu que allà hi havia una platja o un riu. Aquesta idea, de James ==Hutton== i Charles ==Lyell==, és la que converteix les roques en un ==document== llegible. Ara bé, no tot passa a poc a poc: hi ha esdeveniments ==sobtats== i rars —un impacte d'asteroide, una erupció gegant— que també deixen la seva capa. Tenir-los en compte és el ==neocatastrofisme==. Els dos junts expliquen millor el registre que qualsevol dels dos sol.",
@@ -108,6 +115,13 @@ export const sa6s3 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa6-fotos/s3-t2.jpg",
+          "caption": "La discordança de Hutton: capes inclinades sota capes horitzontals, dues històries separades per una erosió.",
+          "credit": "The original uploader was Dave souza at English Wikipedia. L · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Els ==principis== per posar ordre al temps",
       text: "Amb quatre regles pots ordenar gairebé qualsevol tall. ==HORITZONTALITAT==: els sediments es dipositen en capes ==horitzontals==; si les trobes inclinades o plegades, és perquè les plaques les han mogut ==després== de dipositar-se. ==SUPERPOSICIÓ==: si la sèrie no s'ha capgirat, la capa de ==sota== és més ==antiga== que la de sobre. ==INTERSECCIÓ==: qualsevol cosa que en ==talla== una altra —una ==falla==, un ==dic== de magma que travessa les capes— és més ==jove== que tot allò que talla. I la ==DISCORDANÇA==: una superfície d'==erosió== entremig de la sèrie vol dir que aquell terreny va ==emergir==, es va erosionar durant molt de temps i després hi van tornar a caure sediments: és un tros de la història que ==falta==. Amb això obtens la datació ==relativa==, l'ordre. Per als ==anys== fa falta la datació ==absoluta==, que es mesura amb la ==radioactivitat== de certs minerals.",
@@ -115,6 +129,13 @@ export const sa6s3 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa6-fotos/s3-t3.jpg",
+          "caption": "Ammonit: un fòssil guia que permet datar les capes del Mesozoic.",
+          "credit": "Michael Rowe · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Els ==fòssils guia==: rellotges que es poden portar d'un continent a l'altre",
       text: "Un ==fòssil guia== és una espècie que serveix per posar ==edat== a una capa. Per fer-ho bé ha de complir quatre condicions: haver viscut poc ==temps== (així marca un moment concret), haver-se escampat per molts ==llocs==, haver estat ==abundant== i ser fàcil de ==reconèixer==. Quan trobes el mateix fòssil guia en dues capes separades per centenars de quilòmetres, pots afirmar que tenen la mateixa ==edat==: això és ==correlacionar==. Amb aquest mètode s'ha construït l'escala del ==temps geològic== —Proterozoic, ==Paleozoic==, ==Mesozoic==, ==Cenozoic==—, que és el calendari compartit de tots els geòlegs. I aquí es tanca el cercle de la sessió 1: quan Wegener va veure el mateix ==Mesosaurus== —un rèptil d'aigua dolça que no podia travessar cap oceà— a Sud-amèrica i a l'Àfrica, no estava mirant dos animals: estava mirant una ==prova== que aquells dos continents havien estat ==junts==.",
@@ -122,6 +143,13 @@ export const sa6s3 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa6-fotos/s3-t4.jpg",
+          "caption": "Marques d'ona fossilitzades: allà hi havia aigua poc profunda.",
+          "credit": "Mike Beauregard on Flickr · CC BY 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "De les roques al ==paisatge==: reconstruir una història",
       text: "Cada capa és una ==escena==. Una ==calcària== plena de corals o closques et diu que allà hi havia un mar ==càlid== i poc profund. Un ==gres== amb marques d'ones, una platja o un ==riu==. Una argila fosca amb fulles, una ==llacuna== tranquil·la. Una capa de ==cendra==, un volcà a prop. Llegint-les de baix a dalt reconstrueixes com anava ==canviant== aquell lloc. I amb això s'expliquen coses que semblen impossibles. Exemple resolt, d'un altre indret: als ==Alps== hi ha capes amb closques marines a 3.000 m. Per llegir-ho es fan dues preguntes seguides, sempre en aquest ordre: (1) **on es formaria avui una roca com aquesta?** —al fons d'un mar— i (2) **què li ha passat després a aquell terreny?** —el xoc de dues plaques l'ha plegat i ==aixecat==. Les closques no van pujar soles: va pujar la ==roca== que les contenia. A l'apartat 4 del full faràs exactament aquestes dues preguntes, però amb dos llocs de casa que has de resoldre tu. El paisatge d'avui —el relleu, on va l'aigua, quina vegetació hi creix— és el resultat ==acumulat== de tot això, i cada element hi ==influeix== sobre els altres.",

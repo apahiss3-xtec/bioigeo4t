@@ -101,6 +101,13 @@ export const sa7s2 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa7-fotos/s2-t1.jpg",
+          "caption": "Zona d'habitabilitat: la franja on un planeta pot tenir aigua líquida.",
+          "credit": "Spacegel. This image uses star and exoplanet visualizations  · CC BY 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Què tenia aquest planeta i no tenien els veïns",
       text: "La vida que coneixem necessita ==aigua líquida==, i l'aigua només és líquida dins d'una franja estreta de temperatures. Per això la primera condició és la ==distància== a l'estrella: massa a prop, l'aigua s'evapora i s'escapa; massa lluny, es queda glaçada per sempre. Ara bé, la distància tota sola no decideix res, i la Fig.1 ho ensenya sense dir-ho: hi ha un planeta ben col·locat dins la franja bona que no té aigua líquida a la superfície. La pregunta que has de resoldre a classe és quines ==altres== condicions hi entren en joc, i totes tenen a veure amb una mateixa cosa: què cal perquè un planeta ==tingui== una atmosfera i què cal perquè no la vagi ==perdent==. Quan tinguis la llista, la conclusió important no serà la llista, sinó què li passa a un raonament quan una condició es compleix i el resultat, tot i així, no es dona.",
@@ -108,6 +115,13 @@ export const sa7s2 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa7-fotos/s2-t2.jpg",
+          "caption": "Corba de desintegració: a cada semivida queda la meitat dels àtoms inestables.",
+          "credit": "Pradana Aumars (talk · contribs) · CC0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "De l'==atzar== d'un dau a la previsió d'un ==rellotge==",
       text: "Els àtoms d'alguns elements són ==inestables==: es transformen en àtoms d'un altre element, i quan ho fan ja no tornen enrere. El conjunt d'aquestes transformacions és el que s'anomena ==radioactivitat==, i és exactament el fenomen que has simulat amb els daus. El model té dues cares que has de separar bé abans de treure'n cap conclusió. Una és el que passa amb un ==àtom sol==, o amb un dau sol, en una tirada concreta. L'altra és el que passa amb un ==nombre enorme== d'àtoms alhora, que és sempre el cas d'una roca de veritat. Compara les dues corbes que dibuixaràs, la del teu equip i la de tota la classe, i pregunta't quina de les dues cares explica la diferència entre elles, si la probabilitat de cada dau és exactament la mateixa als dos casos. D'aquí sortirà la resposta a què hi fan, aquí, les ==rèpliques==.",
@@ -115,6 +129,13 @@ export const sa7s2 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa7-fotos/s2-t3.jpg",
+          "caption": "Datació radiomètrica: la proporció entre àtom pare i àtom fill dona l'edat de la roca.",
+          "credit": "Carie Frantz (Carie027) · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "==Semivida==, datació ==relativa== i datació ==absoluta==",
       text: "S'anomena ==semivida== el temps que ha de passar perquè se n'hagi transformat la ==meitat==. Compte amb el nom: no vol dir la meitat de la vida del conjunt. La regla que ho governa tot és una de sola: cada semivida es menja la meitat ==del que queda== en aquell moment, no la meitat del que hi havia al principi. Aplica-la tu unes quantes vegades seguides i veuràs per què la corba no arriba mai del tot a zero. La semivida de cada element és ==fixa== i no depèn de la temperatura ni de la pressió, i això és precisament el que la converteix en un ==rellotge== fiable. Aquest rellotge dona a la geologia una mena de datació que a la SA6 no tenies: allà, amb els ==principis geològics==, podies dir moltes coses sobre unes capes, però hi havia una pregunta que no podies respondre mai. Identificar quina és aquesta pregunta, i quina de les dues datacions respon cada cosa, és la feina de l'apartat 3 de la fitxa.",
@@ -122,6 +143,13 @@ export const sa7s2 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa7-fotos/s2-t4.jpg",
+          "caption": "Estromatòlits de Shark Bay (Austràlia): els actuals s'assemblen a les restes de vida més antigues.",
+          "credit": "Paul Harrison · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Quan la vida hi era, i què d'això podem ==afirmar==",
       text: "Aplicant aquests rellotges a les roques més antigues i als meteorits, els laboratoris situen la formació de la Terra fa uns ==4.600 milions d'anys==, i els primers ==indicis== de vida entre ==3.800== i ==3.500 milions d'anys== enrere: restes de carboni d'origen probablement biològic a les roques més antigues que s'han conservat, i ==estromatòlits==, estructures fetes per capes de microorganismes que encara avui es formen en algunes badies. Ara ve la part difícil, i és de llenguatge. Aquestes proves permeten construir dues frases que semblen iguals i no ho són gens: una diu que la vida va ==aparèixer== en aquell moment, l'altra diu que en aquell moment ja n'hi ==havia==. Decidir quina de les dues sosté la prova —i per què les roques anteriors, que gairebé no s'han conservat, hi tenen alguna cosa a veure— és el que se't demana a la fitxa. La mateixa prudència val per a la Fig.1, dibuixada a partir de l'==única== vida que coneixem. Això no és un defecte de la ciència: és la diferència entre ==explorar== i ==afirmar==.",

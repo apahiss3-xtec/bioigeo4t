@@ -129,6 +129,12 @@ export const sa3s1 = {
       apartat: "2",
       heading: "L'ADN és un ==missatge de quatre lletres==",
       text: "Dins del ==nucli|p== de cada cèl·lula hi ha l'==ADN==: una molècula molt llarga escrita amb només quatre «lletres» (les bases ==A, T, G, C==). L'ordre d'aquestes lletres és informació, com l'ordre de les lletres d'aquest text. Un ==gen== és un tros d'aquest missatge: el fragment que porta les instruccions per fabricar ==una proteïna==.",
+      youtube: {
+        id: "ItBSubR-DPc",
+        title: "Fonaments de genètica | 3CatCampus",
+        note: "Mira el vídeo: què és l'ADN, de què està fet (els ==nucleòtids==) i per què l'ordre de les lletres A, T, G, C és tan important.",
+        credit: "3CatCampus · Fonaments de genètica (Biologia 3r i 4t ESO)"
+      },
       images: [
         {
           "src": "/images/sa3-ubicacio-actg.svg",

@@ -140,6 +140,13 @@ export const sa2s2 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa2-fotos/s2-t3.jpg",
+          "caption": "Fecundació: un òvul (n) i un espermatozoide (n) formen un zigot (2n).",
+          "credit": "{{Sciencia58}} · CC0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Per què la ==meitat==? La fecundació",
       text: "A la ==fecundació|g== s'uneixen dues meitats i tornen a fer un complet:",
@@ -169,6 +176,12 @@ export const sa2s2 = {
     },
     {
       id: "t5",
+      youtube: {
+        "id": "Ho5CHa3KeuY",
+        "title": "Tipus de reproduccions | 3CatCampus",
+        "note": "Vídeo: reproducció asexual (mitosi) i sexual (meiosi). Quina dona més diversitat genètica?",
+        "credit": "3CatCampus · Tipus de reproduccions (Biologia 3r i 4t ESO)"
+      },
       apartat: "4",
       heading: "Quan fa servir el cos ==cada divisió==",
       compare: [

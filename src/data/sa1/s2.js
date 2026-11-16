@@ -100,6 +100,13 @@ export const sa1s2 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa1-fotos/s2-t1.jpg",
+          "caption": "Un fitxer amb calaixos: classificar afirmacions obliga a decidir on va cadascuna.",
+          "credit": "Watty62 · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Els ==tres calaixos==",
       text: "==CIÈNCIA|g==: s'ha posat a prova amb una prova justa i accepta el resultat, encara que no li agradi. ==PSEUDOCIÈNCIA|r==: es presenta com a ciència, però no es deixa posar a prova o no canvia quan la prova li surt en contra. ==ENCARA NO COMPROVAT|o==: es pot posar a prova i qui ho investiga ho admet, però encara no hi ha prou proves. No és pseudociència: és una pregunta oberta.",
@@ -107,6 +114,13 @@ export const sa1s2 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa1-fotos/s2-t2.jpg",
+          "caption": "Dades de l'assaig d'una vacuna: comparar el grup tractat amb el grup control és el que demostra si funciona.",
+          "credit": "U.S Food and Drug Administration and Pfizer Inc. · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Com es comprova ==de debò== si una cosa funciona",
       text: "Una prova justa té quatre peces. (1) Un ==grup de comparació== que no rep el producte o en rep una imitació: si no, no saps si s'hauria curat sol. (2) Repartir la gent ==a l'atzar==: si cadascú tria, els grups ja són diferents abans de començar. (3) ==A cegues==: ningú no sap qui rep què, perquè les ganes que funcioni et fan notar una millora que no hi és. (4) ==Prou gent==, i repetir-ho: amb 4 persones, la sort decideix. Si els dos grups surten igual, la promesa cau. I després, ==acceptar el resultat==, encara que no agradi: això és el que fa el cas 5 i no fa el cas 1.",
@@ -115,6 +129,13 @@ export const sa1s2 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa1-fotos/s2-t3.jpg",
+          "caption": "El mòbil, on arriben la majoria d'afirmacions: el format pot fer semblar ciència el que no ho és.",
+          "credit": "Amari Blackburn · CC BY 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "El calaix depèn de ==com es presenta==",
       text: "El cas 6 ho mostra: els investigadors diuen «en humans encara no ho sabem» (encara no comprovat), i una influencer diu «està demostrat que t'allarga la vida» (pseudociència). ==El mateix tema== pot anar a calaixos diferents segons què es fa amb la prova.",

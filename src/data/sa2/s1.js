@@ -138,6 +138,13 @@ export const sa2s1 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa2-fotos/s1-t2.jpg",
+          "caption": "Arrel de ceba al microscopi: hi trobaràs cèl·lules en totes les fases de la mitosi.",
+          "credit": "Catfaster · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "La ==mitosi==: quatre fases per repartir l'ADN",
       text: "La mitosi reparteix l'ADN copiat en dues cèl·lules idèntiques, i ho fa en 4 fases: ==profase|g==, ==metafase|r==, ==anafase|b== i ==telofase|p==. Què passa exactament a cadascuna i en quin ordre van, ho has de deduir tu de la Fig.1 i escriure-ho a la fitxa: aquí no ho trobaràs resolt.",
@@ -145,6 +152,13 @@ export const sa2s1 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa2-fotos/s1-t3.jpg",
+          "caption": "Fases de la cicatrització d'una ferida: la mitosi substitueix les cèl·lules perdudes.",
+          "credit": "Mikael Häggström · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Per què el cos ==divideix cèl·lules==?",
       text: "La mitosi fa cèl·lules noves ==idèntiques== a l'original. El cos la fa servir per a dues coses:",
@@ -157,6 +171,13 @@ export const sa2s1 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa2-fotos/s1-t4.jpg",
+          "caption": "Cèl·lules HeLa, d'un tumor: es divideixen sense parar des de 1951.",
+          "credit": "Unknown photographer · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Quan es perd el ==control==: el càncer",
       compare: [

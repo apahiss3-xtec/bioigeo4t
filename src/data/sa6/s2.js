@@ -107,6 +107,13 @@ export const sa6s2 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa6-fotos/s2-t2.jpg",
+          "caption": "Expansió del fons oceànic: a la dorsal es crea litosfera nova que s'allunya cap als costats.",
+          "credit": "Surachit · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "El ==motor==: la convecció del mantell",
       text: "La ==calor== interna de la Terra mou el mantell en corrents de ==convecció==. El material calent és menys ==dens== i ==puja==; quan arriba a dalt, s'escampa sota les plaques i les ==arrossega==; en refredar-se es torna més dens i ==baixa==. És el mateix que has vist al got: el colorant calent puja, s'escampa per la superfície i torna a baixar pels costats. On dos corrents ==pugen== i se separen, s'obre una ==dorsal== i neix escorça nova (l'oceà s'obre). On un corrent ==baixa==, l'escorça s'enfonsa: ==subducció== (l'oceà es tanca). Aquest era el ==motor== que li faltava a Wegener per convèncer tothom.",
@@ -114,6 +121,13 @@ export const sa6s2 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa6-fotos/s2-t3.jpg",
+          "caption": "El Rift de l'Àfrica oriental vist des de l'espai: un continent que s'està trencant, el primer pas del cicle de Wilson.",
+          "credit": "NASA/METI/AIST/Japan Space Systems, and U.S./Japan ASTER Sci · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "El ==cicle de Wilson==: els oceans neixen, creixen i moren",
       text: "Els oceans tenen una ==vida==. ==Neixen== quan un continent es ==trenca== i s'hi obre una dorsal (com el ==Rift== de l'Àfrica oriental avui). ==Creixen== mentre la dorsal fabrica escorça nova a banda i banda (com l'==Atlàntic==). Es ==tanquen== quan als seus marges comença la ==subducció== i l'escorça oceànica s'enfonsa més ràpid del que es crea (com el ==Pacífic==, que s'encongeix). I ==desapareixen== quan els dos continents que hi havia als costats ==xoquen== i aixequen una serralada (com quan es va tancar l'oceà de Tetis i es va formar l'==Himàlaia==). La diferència entre ==néixer== i ==créixer== és l'==edat== i l'==amplada==: un oceà que acaba de trencar el continent encara és una ==franja estreta== dins d'una vall; un que fa desenes de milions d'anys que fabrica escorça ja és ==ample==. Aquest recorregut és el ==cicle de Wilson==: explica per què un oceà pot néixer i, centenars de milions d'anys després, ja no existir.",
@@ -121,6 +135,13 @@ export const sa6s2 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa6-fotos/s2-t4.jpg",
+          "caption": "Estrats: les capes de més avall són les més antigues.",
+          "credit": "Pearson Scott Foresman · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Llegir el temps a les roques: ==columnes== i principis geològics",
       text: "El passat del planeta queda ==registrat== a les roques. Els sediments es dipositen en capes (==estrats==) gairebé ==horitzontals== (principi d'==horitzontalitat==). Si després no s'han capgirat, la capa de ==sota== és més ==antiga== que la de sobre (principi de ==superposició==). Llegint una ==columna== d'estrats de baix a dalt reconstruïm l'==ordre== dels esdeveniments: quan hi havia mar, quan un riu, quan una erupció, quins ==fòssils== hi vivien. I si un tros de capes apareix ==inclinat== sota d'altres d'horitzontals, o si en ==falta== un tros, això també és informació: ens diu que les plaques van moure el terreny o que l'erosió va esborrar una part de la història. Les roques són la ==memòria== del planeta i tenen un ordre.",

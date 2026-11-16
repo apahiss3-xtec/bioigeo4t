@@ -102,6 +102,13 @@ export const sa4s3 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa4-fotos/s3-t1.jpg",
+          "caption": "Bella de nit (Mirabilis jalapa): el creuament de vermella i blanca dona flors roses.",
+          "credit": "Another one of my pictures:[[File:|150x150px]] This photogra · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "==Dominància incompleta==: l'heterozigot és una ==barreja==",
       text: "A vegades ==cap al·lel domina== del tot. En les flors de la ==bella de nit== (Mirabilis jalapa), una planta vermella (==VV==) creuada amb una blanca (==BB==) dóna fills tots ==rosa== (==VB==): un fenotip ==intermedi==, barreja dels dos. Si creues dues roses (VB × VB) surten ==1 vermell : 2 rosa : 1 blanc==. Fixa't: aquí la proporció de ==fenotips== (1:2:1) és igual que la de ==genotips==, perquè cada genotip es veu diferent.",
@@ -116,6 +123,13 @@ export const sa4s3 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa4-fotos/s3-t3.jpg",
+          "caption": "Prova del grup sanguini: les aglutinacions indiquen quins antígens tenen els glòbuls vermells.",
+          "credit": "SpicyMilkBoy · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "==Al·lelisme múltiple==: un gen amb ==més de dos== al·lels",
       text: "Mendel treballava amb ==dos== al·lels per gen, però un gen en pot tenir ==més==. El sistema ==ABO== en té ==tres==: ==I^A==, ==I^B== i ==i==. Regles: I^A i I^B ==dominen== sobre i, però entre ells són ==codominants==. Així, grup A = I^A I^A o I^A i · grup B = I^B I^B o I^B i · grup ==AB== = I^A I^B · grup ==0== = ==ii==. Cada persona només en porta ==dos==, però a la població n'hi ha tres circulant.",

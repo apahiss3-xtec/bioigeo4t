@@ -110,6 +110,13 @@ export const sa1s1 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa1-fotos/s1-t2.jpg",
+          "caption": "Un debat: cada argument necessita una garantia que el sostingui.",
+          "credit": "MAJOR MANKUTAM · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Les ==garanties==: en què basem els nostres arguments",
       text: "Quan volem convèncer algú fem servir ==garanties==. N'hi ha 5 tipus: ==dades|o== (números, mesures), ==models|g== (com funciona un sistema), ==hàbits|b== («sempre ha estat així»), ==autoritat|r== (la fiabilitat d'algú) i ==identitat i valors|p== (el que volem o creiem). Un mateix argument en pot combinar diverses.",
@@ -117,6 +124,13 @@ export const sa1s1 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa1-fotos/s1-t3.jpg",
+          "caption": "Material de laboratori: una mesura controlada val més com a garantia que una opinió.",
+          "credit": "Dominique Roger · CC BY-SA 3.0 igo · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "No totes les garanties valen igual",
       text: "Les ==dades i els models== donen més certesa que l'autoritat, els hàbits o el que vols creure. Mira quina garantia fas servir més tu: fiar-te sempre d'un sol tipus et fa fàcil d'enganyar.",
@@ -125,6 +139,13 @@ export const sa1s1 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa1-fotos/s1-t4.jpg",
+          "caption": "Grànuls homeopàtics: dilucions tan grans que no hi queda cap molècula del producte original.",
+          "credit": "Dr. Moumita Sahana · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "El ==detector de pseudociència==: 5 senyals",
       text: "Les pseudociències semblen ciència, però repeteixen els mateixos trucs. ==1 · No es pot comprovar==: la promesa és vaga o parla d'una cosa impossible de mesurar. ==2 · No admet crítica==: té una excusa per a cada resultat en contra. ==3 · Es basa en autoritat==: famosos, «experts» o testimonis en lloc de dades. ==4 · Sona «científica»==: «quàntic», «energia», «toxines», «natural»… paraules que no expliquen res. ==5 · Apel·la al que vols creure==: s'aprofita del que desitges o et fa por. Amb ==un sol senyal== ja pots sospitar; com més senyals, més clar.",
@@ -132,6 +153,13 @@ export const sa1s1 = {
     },
     {
       id: "t5",
+      images: [
+        {
+          "src": "images/sa1-fotos/s1-t5.jpg",
+          "caption": "Iogurt: menjar bacteris vius sembla estrany, però la ciència ho ha comprovat.",
+          "credit": "Josefine Stenudd from Gothenburg, Sweden · CC BY 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Estrany no vol dir pseudociència",
       text: "Un anunci pot parlar de medicaments, de bacteris o de coses que sonen rares i ser ==ciència==: el que compta és si ==s'ha posat a prova== amb un grup de comparació i si ==accepta el resultat==. Per això un dels quatre anuncis de la fitxa no encén el detector.",

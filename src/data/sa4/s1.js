@@ -113,6 +113,19 @@ export const sa4s1 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa4-fotos/s1-t2.jpg",
+          "caption": "Flors de pèsol: el color violeta (dominant) es veu tant en AA com en Aa; el blanc només en aa.",
+          "credit": "Sciencia58 · CC0 · Wikimedia Commons"
+        }
+      ],
+      youtube: {
+        "id": "ItBSubR-DPc",
+        "title": "Fonaments de genètica | 3CatCampus",
+        "note": "Vídeo: gens dominants i recessius. Fixa't per què un tret dominant es veu amb un sol al·lel.",
+        "credit": "3CatCampus · Fonaments de genètica (Biologia 3r i 4t ESO)"
+      },
       apartat: "2",
       heading: "==Genotip== i ==fenotip==: el que portes i el que es veu",
       text: "El ==genotip== són els dos al·lels que tens: ==AA==, ==Aa== o ==aa==. El ==fenotip== és el que es veu. Si els dos al·lels són iguals ets ==homozigot== (AA o aa); si són diferents, ==heterozigot== (Aa). Regla d'or: n'hi ha prou amb ==una sola majúscula== perquè es vegi el tret dominant, així que ==AA i Aa es veuen igual==; només ==aa== mostra el tret recessiu.",
@@ -120,6 +133,13 @@ export const sa4s1 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa4-fotos/s1-t3.jpg",
+          "caption": "Pedigrí: quadrats = homes, cercles = dones, símbol ple = té el tret.",
+          "credit": "Storyminusthes · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "El ==pedigrí==: dibuixar una família",
       text: "Un ==pedigrí== (o arbre genealògic) és el mapa d'una característica en una família. Els símbols són universals: ==quadrat== = home, ==cercle== = dona, figura ==plena== = té el caràcter, buida = no el té. Les línies ==horitzontals== uneixen les parelles i les ==verticals== baixen cap als fills. Serveix per veure d'un cop d'ull com es transmet un tret al llarg de les generacions.",
@@ -127,6 +147,13 @@ export const sa4s1 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa4-fotos/s1-t4.jpg",
+          "caption": "Tres generacions: un tret recessiu pot desaparèixer en una i tornar a la següent.",
+          "credit": "Linda Bartlett (Photographer) · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Per què un caràcter ==salta generacions==",
       text: "Una persona ==Aa== (heterozigota) mostra el tret dominant però ==porta amagat== l'al·lel recessiu: n'és un ==portador==. Si dos portadors (Aa × Aa) tenen fills, un fill pot rebre ==a== de tots dos i ser ==aa==: mostrarà el tret recessiu que ==cap dels pares no mostrava==. Per això una malaltia recessiva pot aparèixer en fills de pares sans i sembla que «salta» generacions. Deduir un genotip d'un pedigrí és a vegades ==segur== (tot aa és aa) i a vegades només ==probable==: cal distingir-ho.",

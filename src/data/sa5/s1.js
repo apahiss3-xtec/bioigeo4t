@@ -98,6 +98,12 @@ export const sa5s1 = {
   theoryPoints: [
     {
       id: "t1",
+      youtube: {
+        "id": "6GEFeL7rOzs",
+        "title": "Biodiversitat animal | 3CatCampus",
+        "note": "Vídeo: la biodiversitat animal de la ciutat. Quins d'aquests animals podries trobar al pati?",
+        "credit": "3CatCampus · Biodiversitat animal (Biologia 3r i 4t ESO)"
+      },
       apartat: "2",
       heading: "==Biodiversitat== i ==classificar==: posar ordre a la vida",
       text: "Al pati hi conviuen molts éssers vius diferents: això és la ==biodiversitat==. Per estudiar-los, els biòlegs els ==classifiquen==, és a dir, els ==agrupen per semblances==. Classificar sempre comença triant un ==criteri== observable (té plomes?, fa flors?, té les potes articulades?). Amb un bon criteri, organismes que s'assemblen queden junts. El mateix conjunt d'organismes es pot classificar de maneres diferents segons el criteri que triïs.",
@@ -105,6 +111,13 @@ export const sa5s1 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa5-fotos/s1-t2.jpg",
+          "caption": "Gallus gallus domesticus: el mateix nom científic a tot el món, digui com digui cada llengua.",
+          "credit": "Jörg Hempel · CC BY-SA 3.0 de · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "La ==nomenclatura binomial==: el nom científic universal",
       text: "«Gallina», «hen», «pollo»... cada llengua té el seu nom, i això confon. Per això els científics fan servir un ==nom científic== únic per a tot el món: la ==nomenclatura binomial== de Linné. Té ==dues paraules== en llatí: el ==gènere== (amb majúscula) i l'==espècie== (amb minúscula), i s'escriu sempre en ==cursiva== o subratllat. Exemples del pati: ==Gallus gallus== (gallina), ==Morus alba== (morera), ==Platanus × hispanica== (plataner), ==Passer domesticus== (pardal).",

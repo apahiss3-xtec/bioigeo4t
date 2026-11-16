@@ -114,6 +114,13 @@ export const sa5s3 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa5-fotos/s3-t2.jpg",
+          "caption": "Charles Darwin, autor de la teoria de la selecció natural.",
+          "credit": "John Collier · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Les ==quatre teories==: un mateix cas, quatre explicacions",
       text: "Al llarg de la història s'han donat quatre grans explicacions. El ==fixisme/creacionisme== deia que les espècies ==no canvien==: sempre han estat iguals. El ==lamarckisme== (Lamarck, 1809) deia que l'òrgan que s'==usa== es desenvolupa i es ==transmet== als fills (la girafa estira el coll i el passa). El ==darwinisme== (Darwin, 1859) va trobar el mecanisme correcte: ja hi ha ==variabilitat== i l'ambient fa ==selecció natural==, però Darwin no sabia com s'heretava. El ==neodarwinisme== (segle XX) uneix Darwin amb la ==genètica== de Mendel i l'ADN: la variació ve de ==mutacions a l'atzar== i s'hereta pels gens. És el model que la ciència accepta avui.",
@@ -121,6 +128,13 @@ export const sa5s3 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa5-fotos/s3-t3.jpg",
+          "caption": "La idea de Lamarck amb les girafes: estirar el coll no canvia els gens dels fills.",
+          "credit": "Universalwin1222 · CC BY-SA 4.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Per què el ==lamarckisme== sembla lògic però és ==fals==",
       text: "Dir que «l'esforç es transmet» sona de sentit comú, però és ==fals==: els caràcters que adquireixes durant la vida ==no es transmeten== als fills pels gens. Si un culturista té molt de múscul, els seus fills no neixen musculats; si talles la cua a ratolins generació rere generació, segueixen naixent amb cua. El que s'hereta són els ==gens==, no el que has fet amb el teu cos. Aquesta és la diferència clau entre Lamarck i el neodarwinisme, i és la ==trampa== més habitual a les proves: «l'organisme va voler / es va esforçar» és sempre una explicació lamarckiana ==incorrecta==.",
@@ -128,6 +142,13 @@ export const sa5s3 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa5-fotos/s3-t4.jpg",
+          "caption": "Jean-Baptiste Lamarck, el primer a defensar que les espècies canvien.",
+          "credit": "The original uploader was Kelson at French Wikipedia. · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "La ciència es ==revisa==: cada teoria en el seu context",
       text: "Seria injust dir que Lamarck «s'equivocava perquè era ximple». Va ser el ==primer== a defensar que les espècies ==canvien==, en una època en què gairebé tothom era fixista: es va equivocar en el mecanisme, però va encertar la idea gran. Darwin va trobar el mecanisme però li faltava la genètica, que encara no existia. El neodarwinisme va poder unir-ho tot perquè ja es coneixia l'ADN. La ciència no és una veritat ==fixa==: és una tasca ==col·lectiva== que es ==corregeix== amb noves proves. Distingir «el que la teoria explicava en el seu temps» de «el que sabem ara» és pensar com un científic.",

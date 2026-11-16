@@ -100,6 +100,13 @@ export const sa6s4 = {
   theoryPoints: [
     {
       id: "t1",
+      images: [
+        {
+          "src": "images/sa6-fotos/s4-t1.jpg",
+          "caption": "Danys del terratrèmol de 2011 al Japó: perillositat, exposició i vulnerabilitat alhora.",
+          "credit": "Caleb Eames, U.S. Marine Corps · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "1",
       heading: "Què és un ==risc==: tres factors, no un",
       text: "Un fenomen natural no és, per si sol, un ==risc==. Un terratrèmol enorme al mig d'un ==desert== buit no fa cap mal. El risc apareix quan es donen ==tres== coses alhora. La ==perillositat== és la probabilitat que el fenomen passi en aquell lloc i amb quina ==força==: depèn de la geologia i del clima, i és la part que no hem triat nosaltres. L'==exposició== és què i qui hi ha ==allà== per rebre el cop: cases, carreteres, camps, persones. I la ==vulnerabilitat== és com de malament ho passaria allò que està exposat: una casa vella de ==tàpia== pateix molt més que un edifici construït amb norma ==sismoresistent==, i una població que ha fet ==simulacres== pateix menys que una que no sap què fer. Si un dels tres factors és ==zero==, el risc és zero. I això té una conseqüència important: encara que no puguem evitar el ==fenomen==, sí que podem reduir el ==dany==.",
@@ -107,6 +114,13 @@ export const sa6s4 = {
     },
     {
       id: "t2",
+      images: [
+        {
+          "src": "images/sa6-fotos/s4-t2.jpg",
+          "caption": "Inundació del Brahmaputra vista per satèl·lit: un risc extern lligat al clima.",
+          "credit": "MODIS Land Rapid Response Team, NASA GSFC · Public domain · Wikimedia Commons"
+        }
+      ],
       apartat: "2",
       heading: "Riscos ==interns== i ==externs==: què els decideix en un lloc concret",
       text: "Els riscos ==interns== (o endògens) vénen de l'energia de ==dins== de la Terra i són conseqüència directa del que vas estudiar a S21 i S22: els ==terratrèmols== i el ==vulcanisme== es concentren als ==límits== de plaques i a les ==falles== actives. Els riscos ==externs== (o exògens) els mouen l'==aigua==, el vent i la ==gravetat== a la superfície: ==inundacions==, ==esllavissades==, despreniments, erosió de la costa. Quins pot patir un indret concret ho decideixen tres dades que ja saps llegir. La ==litologia==: la calcària és dura, s'esquerda i deixa caure ==blocs==; les argiles i les margues són toves i ==llisquen== quan s'amaren; els sediments ==solts== i amarats del delta ==amplifiquen== les sacsejades i s'enfonsen. El ==relleu==: com més ==pendent==, més energia té tot el que baixa, i una plana vora un riu és ==inundable== per definició. I la ==vegetació==: les ==arrels== lliguen el sòl i les fulles frenen la pluja; un vessant ==cremat== queda nu i la primera tempesta forta se l'emporta.",
@@ -114,6 +128,13 @@ export const sa6s4 = {
     },
     {
       id: "t3",
+      images: [
+        {
+          "src": "images/sa6-fotos/s4-t3.jpg",
+          "caption": "Una casa a la plana d'inundació: on construïm també decideix el risc.",
+          "credit": "Tony Atkin · CC BY-SA 2.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "3",
       heading: "Quan el ==desastre== no és del tot natural",
       text: "Nosaltres no fem els terratrèmols ni la pluja, però sí que decidim ==on== posem les coses i ==com== tractem el terreny, i això canvia el risc. Construir en una zona ==inundable== no canvia el barranc: el que puja és l'==exposició==. ==Desforestar== o deixar un vessant ==cremat== sí que canvia el terreny: el que puja és la ==perillositat==. Els ==embassaments== de l'Ebre retenen la major part del ==sediment== que abans arribava al mar; com que el delta es va construir amb aquest fang, ara s'==enfonsa== i s'encongeix, i cada temporal hi entra més ==endins==. I fins i tot es poden desencadenar terratrèmols: el 2013, la injecció de gas a pressió del magatzem ==Castor==, davant de la costa entre Vinaròs i Alcanar i a prop de la falla d'==Amposta==, va anar seguida de més de ==mil== sismes, el més fort de magnitud ==4,3==; la instal·lació es va tancar sense arribar a funcionar mai. A tot això, l'==escalfament global== hi afegeix pluges més ==intenses== i concentrades i un nivell del mar més ==alt==. Per això molts «desastres naturals» són, en bona part, ==decisions== humanes antigues que la natura acaba cobrant.",
@@ -122,6 +143,13 @@ export const sa6s4 = {
     },
     {
       id: "t4",
+      images: [
+        {
+          "src": "images/sa6-fotos/s4-t4.jpg",
+          "caption": "Sismograma: registrar els terratrèmols és la base de la predicció i de la prevenció.",
+          "credit": "Z22 · CC BY-SA 3.0 · Wikimedia Commons"
+        }
+      ],
       apartat: "4",
       heading: "Què s'hi pot fer: ==predicció==, ==prevenció== i ==correcció==",
       text: "Davant d'un risc hi ha tres maneres d'actuar, i val la pena no confondre-les. La ==predicció== busca saber si passarà i ==quan==: xarxes ==sísmiques==, avisos meteorològics de Protecció Civil, sensors de ==nivell== als barrancs, sistemes d'alerta primerenca. La ==prevenció== actua ==abans== que passi res per evitar el dany: fer ==mapes== de perillositat i no autoritzar-hi construccions (baixa l'==exposició==), aplicar la norma ==sismoresistent==, ==reforestar== un vessant, i fer ==protocols== i simulacres a les escoles (baixa la ==vulnerabilitat==). La ==correcció== són obres que redueixen el fenomen o el desvien: ==malles== i murs en un talús, ==terrasses== en un vessant, canalitzacions, aportació de ==sorra== a les platges. Cap mesura no és gratuïta ni perfecta, i cap no és ==neutral==: una canalització pot enviar l'aigua ==més avall== i crear el problema al poble següent. Per això decidir sobre riscos no és només una qüestió ==tècnica==: també és una decisió ==col·lectiva== sobre qui assumeix quin perill.",
