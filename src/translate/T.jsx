@@ -178,7 +178,97 @@ const renderGloss = (text, helpLang, rtl, keyBase) => {
 // · sempre mostra el català i ressalta les paraules marcades amb ==…==
 // · si hi ha idioma d'ajuda actiu, les paraules conegudes mostren la
 //   traducció en un tooltip en passar-hi per sobre (o amb el teclat).
+// ──────────────────────────────────────────────────────────
+// Enumeracions dins d'un paràgraf → llista vertical (anti-dislèxia)
+// «…tres obstacles: (1) trencar…; (2) obrir…; (3) …» es pinta com:
+//   intro / 1 · item / 2 · item / 3 · item / (cloenda, si n'hi ha)
+// Regles: cal (1) i (2) consecutius; el (1) ha d'anar a l'inici o
+// després de «:» «.» «;» «?» «!» (així «membrana (1), nucli (2)» —
+// etiquetes de figura— no es converteix). Admet ==(1)== ressaltat.
+// Es pinta amb <span> en bloc perquè sovint T viu dins d'un <p>.
+// ──────────────────────────────────────────────────────────
+const enumMark = (n) => new RegExp(`(?:==)?\\(${n}\\)(?:==)?[ \\t]*`, 'g')
+const SENT_BREAK = /[.!?»]\s+(?=[A-ZÀ-ÚÇ«¿¡])/
+
+const netejaItem = (s) => {
+  let prev
+  do {
+    prev = s
+    s = s.replace(/\s+$/, '').replace(/[,;]$/, '').replace(/\s(?:i|y|and)$/, '')
+  } while (s !== prev)
+  return s
+}
+
+export const splitEnum = (text) => {
+  if (!text.includes('(1)') || !text.includes('(2)')) return null
+  const marks = []
+  let from = 0
+  for (let n = 1; n < 20; n++) {
+    const re = enumMark(n)
+    re.lastIndex = from
+    const m = re.exec(text)
+    if (!m) break
+    if (n === 1) {
+      const before = text.slice(0, m.index)
+      if (before.trim() && !/[:.;?!»]\s*$/.test(before)) return null
+    }
+    marks.push({ start: m.index, end: m.index + m[0].length })
+    from = m.index + m[0].length
+  }
+  if (marks.length < 2) return null
+  const intro = text.slice(0, marks[0].start).trim()
+  const items = marks.map((mk, i) =>
+    netejaItem(text.slice(mk.end, i + 1 < marks.length ? marks[i + 1].start : text.length))
+  )
+  // Cloenda: si els ítems previs són curts (sense punt i seguit), la frase
+  // que ve després del primer punt de l'últim ítem ja no en forma part.
+  let outro = ''
+  if (!items.slice(0, -1).some((it) => SENT_BREAK.test(it))) {
+    const last = items[items.length - 1]
+    const m = last.match(SENT_BREAK)
+    if (m) {
+      const cut = m.index + 1
+      items[items.length - 1] = last.slice(0, cut).trim()
+      outro = last.slice(cut).trim()
+    }
+  }
+  if (items.some((it) => !it)) return null
+  return { intro, items, outro }
+}
+
 export default function T({ children }) {
+  const enumParts = typeof children === 'string' ? splitEnum(children) : null
+  if (!enumParts) return <TInline>{children}</TInline>
+  const { intro, items, outro } = enumParts
+  return (
+    <span className="enum-block">
+      {intro && (
+        <span className="enum-intro">
+          <TInline>{intro}</TInline>
+        </span>
+      )}
+      <span role="list" className="enum-list">
+        {items.map((it, i) => (
+          <span role="listitem" className="enum-item" key={i}>
+            <span className="enum-num" aria-hidden="true">
+              {i + 1}
+            </span>
+            <span className="enum-text">
+              <TInline>{it}</TInline>
+            </span>
+          </span>
+        ))}
+      </span>
+      {outro && (
+        <span className="enum-outro">
+          <TInline>{outro}</TInline>
+        </span>
+      )}
+    </span>
+  )
+}
+
+function TInline({ children }) {
   const { helpLang } = useTranslate()
   const text = typeof children === 'string' ? children : null
 

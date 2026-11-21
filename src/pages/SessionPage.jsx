@@ -154,6 +154,11 @@ export default function SessionPage() {
           loading="lazy"
           allowFullScreen
         />
+      ) : g.zoom ? (
+        // g.zoom: imatge densa (infografia) → clic per obrir-la a mida real
+        <a href={asset(g.src)} target="_blank" rel="noopener" title="Obre la imatge a mida gran">
+          <img src={asset(g.src)} alt={g.title} className="w-full bg-white cursor-zoom-in" loading="lazy" />
+        </a>
       ) : (
         <img
           src={asset(g.src)}
@@ -169,6 +174,17 @@ export default function SessionPage() {
           {g.id} · {g.title}
         </strong>{' '}
         — <T>{g.caption || g.note}</T>
+        {g.zoom && (
+          <a
+            href={asset(g.src)}
+            target="_blank"
+            rel="noopener"
+            className="mt-2 block font-semibold"
+            style={{ color: 'var(--biome-accent)' }}
+          >
+            🔍 Obre-la a mida gran
+          </a>
+        )}
       </figcaption>
     </figure>
   )

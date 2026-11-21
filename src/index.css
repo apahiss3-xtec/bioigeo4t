@@ -279,3 +279,17 @@ body.simplified a {
 /* Ela geminada amb Fira Sans Condensed (versió fàcil): tanca el punt volat,
    com la classe .gem de les fitxes C. */
 .gem { margin: 0 -0.085em; font-style: normal; }
+
+/* Enumeracions (1)(2)(3) dins d'un text → llista vertical (vegeu T.jsx) */
+.enum-block { display: block; }
+.enum-intro { display: block; }
+.enum-list { display: flex; flex-direction: column; gap: 0.45em; margin: 0.5em 0 0; }
+.enum-item { display: flex; gap: 0.6em; align-items: flex-start; }
+.enum-num {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  min-width: 1.65em; height: 1.65em; margin-top: 0.1em; border-radius: 999px;
+  background: color-mix(in srgb, var(--biome-accent) 16%, transparent);
+  color: var(--biome-accent); font-weight: 700; font-size: 0.85em; line-height: 1;
+}
+.enum-text { min-width: 0; }
+.enum-outro { display: block; margin-top: 0.6em; }
